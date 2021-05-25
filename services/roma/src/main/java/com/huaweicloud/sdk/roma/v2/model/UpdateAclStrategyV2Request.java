@@ -45,7 +45,7 @@ public class UpdateAclStrategyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateAclStrategyV2Request  {
 
 
     /**
-     * Get aclId
+     * ACL策略的编号。可通过查询ACL信息获取该ID。
      * @return aclId
      */
     public String getAclId() {

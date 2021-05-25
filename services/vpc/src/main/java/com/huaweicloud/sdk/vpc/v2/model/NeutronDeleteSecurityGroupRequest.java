@@ -32,7 +32,7 @@ public class NeutronDeleteSecurityGroupRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 安全组ID
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

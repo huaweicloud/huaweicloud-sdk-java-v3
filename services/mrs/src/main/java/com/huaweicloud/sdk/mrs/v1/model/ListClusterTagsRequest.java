@@ -32,7 +32,7 @@ public class ListClusterTagsRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群ID。获取方法，请参见[获取集群ID](mrs_02_9001.xml)。
      * @return clusterId
      */
     public String getClusterId() {

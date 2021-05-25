@@ -27,7 +27,7 @@ public class ShowResourceRelationsRequest  {
     
     private String resourceId;
     /**
-     * Gets or Sets direction
+     * 资源关系的指向
      */
     public static final class DirectionEnum {
 
@@ -132,7 +132,7 @@ public class ShowResourceRelationsRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -154,7 +154,7 @@ public class ShowResourceRelationsRequest  {
 
 
     /**
-     * Get direction
+     * 资源关系的指向
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -176,7 +176,7 @@ public class ShowResourceRelationsRequest  {
 
 
     /**
-     * Get limit
+     * 最大的返回数量
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -200,7 +200,7 @@ public class ShowResourceRelationsRequest  {
 
 
     /**
-     * Get marker
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
      * @return marker
      */
     public String getMarker() {

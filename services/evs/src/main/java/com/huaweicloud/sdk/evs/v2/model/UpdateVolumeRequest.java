@@ -39,7 +39,7 @@ public class UpdateVolumeRequest  {
 
 
     /**
-     * Get volumeId
+     * 云硬盘ID。
      * @return volumeId
      */
     public String getVolumeId() {

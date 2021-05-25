@@ -39,7 +39,7 @@ public class CreateInstanceBy3rdRequest  {
 
 
     /**
-     * Get instanceLabel
+     * 实例标签（不同的第三方需要和CloudIDE服务共同设定标签）。不传默认为classroom
      * @return instanceLabel
      */
     public String getInstanceLabel() {

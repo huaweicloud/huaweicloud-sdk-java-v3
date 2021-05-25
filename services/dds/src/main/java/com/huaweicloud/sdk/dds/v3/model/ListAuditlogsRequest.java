@@ -68,7 +68,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,7 +92,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -114,7 +114,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get nodeId
+     * 查询审计日志的节点ID。不传值，默认查询所有的节点,集群实例审计日志分布在mongos节点上。
      * @return nodeId
      */
     public String getNodeId() {
@@ -136,7 +136,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get startTime
+     * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
      * @return startTime
      */
     public String getStartTime() {
@@ -158,7 +158,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间，时间跨度不超过30天。其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
      * @return endTime
      */
     public String getEndTime() {
@@ -180,7 +180,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @return offset
      */
     public Integer getOffset() {
@@ -202,7 +202,7 @@ public class ListAuditlogsRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。取值范围：1~100。不传该参数时，默认查询前100条实例信息。
      * @return limit
      */
     public Integer getLimit() {

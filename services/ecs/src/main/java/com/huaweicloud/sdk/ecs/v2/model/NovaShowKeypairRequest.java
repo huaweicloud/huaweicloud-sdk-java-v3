@@ -38,7 +38,7 @@ public class NovaShowKeypairRequest  {
 
 
     /**
-     * Get keypairName
+     * 密钥名称信息。
      * @return keypairName
      */
     public String getKeypairName() {
@@ -60,7 +60,7 @@ public class NovaShowKeypairRequest  {
 
 
     /**
-     * Get openStackAPIVersion
+     * 微版本头
      * @return openStackAPIVersion
      */
     public String getOpenStackAPIVersion() {

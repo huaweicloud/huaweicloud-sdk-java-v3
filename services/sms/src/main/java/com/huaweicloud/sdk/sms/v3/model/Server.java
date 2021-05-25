@@ -255,9 +255,9 @@ public class Server  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network")
+    @JsonProperty(value="networks")
     
-    private List<NetWork> network = null;
+    private List<NetWork> networks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -671,38 +671,38 @@ public class Server  {
 
     
 
-    public Server withNetwork(List<NetWork> network) {
-        this.network = network;
+    public Server withNetworks(List<NetWork> networks) {
+        this.networks = networks;
         return this;
     }
 
     
-    public Server addNetworkItem(NetWork networkItem) {
-        if(this.network == null) {
-            this.network = new ArrayList<>();
+    public Server addNetworksItem(NetWork networksItem) {
+        if(this.networks == null) {
+            this.networks = new ArrayList<>();
         }
-        this.network.add(networkItem);
+        this.networks.add(networksItem);
         return this;
     }
 
-    public Server withNetwork(Consumer<List<NetWork>> networkSetter) {
-        if(this.network == null) {
-            this.network = new ArrayList<>();
+    public Server withNetworks(Consumer<List<NetWork>> networksSetter) {
+        if(this.networks == null) {
+            this.networks = new ArrayList<>();
         }
-        networkSetter.accept(this.network);
+        networksSetter.accept(this.networks);
         return this;
     }
 
     /**
      * 源端服务器的网卡信息
-     * @return network
+     * @return networks
      */
-    public List<NetWork> getNetwork() {
-        return network;
+    public List<NetWork> getNetworks() {
+        return networks;
     }
 
-    public void setNetwork(List<NetWork> network) {
-        this.network = network;
+    public void setNetworks(List<NetWork> networks) {
+        this.networks = networks;
     }
 
     
@@ -961,7 +961,7 @@ public class Server  {
             Objects.equals(this.memory, server.memory) &&
             Objects.equals(this.disks, server.disks) &&
             Objects.equals(this.btrfsList, server.btrfsList) &&
-            Objects.equals(this.network, server.network) &&
+            Objects.equals(this.networks, server.networks) &&
             Objects.equals(this.domainId, server.domainId) &&
             Objects.equals(this.hasRsync, server.hasRsync) &&
             Objects.equals(this.paravirtualization, server.paravirtualization) &&
@@ -975,7 +975,7 @@ public class Server  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, ip, name, hostname, osType, osVersion, firmware, cpuQuantity, memory, disks, btrfsList, network, domainId, hasRsync, paravirtualization, rawDevices, driverFiles, systemServices, accountRights, bootLoader, systemDir, volumeGroups);
+        return Objects.hash(id, ip, name, hostname, osType, osVersion, firmware, cpuQuantity, memory, disks, btrfsList, networks, domainId, hasRsync, paravirtualization, rawDevices, driverFiles, systemServices, accountRights, bootLoader, systemDir, volumeGroups);
     }
     @Override
     public String toString() {
@@ -992,7 +992,7 @@ public class Server  {
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
         sb.append("    btrfsList: ").append(toIndentedString(btrfsList)).append("\n");
-        sb.append("    network: ").append(toIndentedString(network)).append("\n");
+        sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    hasRsync: ").append(toIndentedString(hasRsync)).append("\n");
         sb.append("    paravirtualization: ").append(toIndentedString(paravirtualization)).append("\n");

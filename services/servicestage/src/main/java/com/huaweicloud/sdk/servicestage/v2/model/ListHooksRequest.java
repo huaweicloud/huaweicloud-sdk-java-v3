@@ -44,7 +44,7 @@ public class ListHooksRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class ListHooksRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {
@@ -90,7 +90,7 @@ public class ListHooksRequest  {
 
 
     /**
-     * Get project
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
      * @return project
      */
     public String getProject() {

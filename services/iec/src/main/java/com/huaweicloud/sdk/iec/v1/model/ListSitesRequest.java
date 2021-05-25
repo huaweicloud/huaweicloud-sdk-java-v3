@@ -63,7 +63,7 @@ public class ListSitesRequest  {
     
     private String flavor;
     /**
-     * Gets or Sets volumeType
+     * 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
      */
     public static final class VolumeTypeEnum {
 
@@ -156,7 +156,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘站点列表当前页面的数量。 取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -180,7 +180,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -202,7 +202,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get id
+     * 查询条件，站点ID。
      * @return id
      */
     public String getId() {
@@ -224,7 +224,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get area
+     * 边缘实例所在大区。   大小写通用，皆支持。 支持多个查询，中间使用','分隔。
      * @return area
      */
     public String getArea() {
@@ -246,7 +246,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get province
+     * 边缘实例所在省份。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
      * @return province
      */
     public String getProvince() {
@@ -268,7 +268,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get city
+     * 边缘实例所在城市。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
      * @return city
      */
     public String getCity() {
@@ -290,7 +290,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get flavor
+     * 边缘实例规格。
      * @return flavor
      */
     public String getFlavor() {
@@ -312,7 +312,7 @@ public class ListSitesRequest  {
 
 
     /**
-     * Get volumeType
+     * 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
      * @return volumeType
      */
     public VolumeTypeEnum getVolumeType() {

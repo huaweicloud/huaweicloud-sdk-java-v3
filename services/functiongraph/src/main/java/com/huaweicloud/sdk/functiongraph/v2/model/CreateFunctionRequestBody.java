@@ -12,15 +12,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.Dependency;
 import com.huaweicloud.sdk.functiongraph.v2.model.FuncCode;
-import com.huaweicloud.sdk.functiongraph.v2.model.FuncVpc;
-import com.huaweicloud.sdk.functiongraph.v2.model.MountConfig;
-import com.huaweicloud.sdk.functiongraph.v2.model.StrategyConfig;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -33,33 +26,9 @@ public class CreateFunctionRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_urn")
-    
-    private String funcUrn;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_name")
     
     private String funcName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
-    private String namespace;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
-    private String projectName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -222,12 +191,6 @@ public class CreateFunctionRequestBody  {
     @JsonProperty(value="memory_size")
     
     private Integer memorySize;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
-    private Integer cpu;
     /**
      * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
      */
@@ -339,33 +302,9 @@ public class CreateFunctionRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_size")
-    
-    private Long codeSize;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_data")
     
     private String userData;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="digest")
-    
-    private String digest;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
-    private String version;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_name")
-    
-    private String imageName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -387,70 +326,10 @@ public class CreateFunctionRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_description")
-    
-    private String versionDescription;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified")
-    
-    private OffsetDateTime lastModified;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified_utc")
-    
-    private Long lastModifiedUtc;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="func_code")
     
     private FuncCode funcCode;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_vpc")
-    
-    private FuncVpc funcVpc;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mount_config")
-    
-    private MountConfig mountConfig;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="concurrency")
-    
-    private Integer concurrency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="depend_list")
-    
-    private List<String> dependList = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="strategy_config")
-    
-    private StrategyConfig strategyConfig;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend_config")
-    
-    private String extendConfig;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependencies")
-    
-    private List<Dependency> dependencies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="initializer_handler")
@@ -468,28 +347,6 @@ public class CreateFunctionRequestBody  {
     @JsonProperty(value="enterprise_project_id")
     
     private String enterpriseProjectId;
-
-    public CreateFunctionRequestBody withFuncUrn(String funcUrn) {
-        this.funcUrn = funcUrn;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
-     * @return funcUrn
-     */
-    public String getFuncUrn() {
-        return funcUrn;
-    }
-
-    public void setFuncUrn(String funcUrn) {
-        this.funcUrn = funcUrn;
-    }
-
-    
 
     public CreateFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
@@ -509,72 +366,6 @@ public class CreateFunctionRequestBody  {
 
     public void setFuncName(String funcName) {
         this.funcName = funcName;
-    }
-
-    
-
-    public CreateFunctionRequestBody withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 域名id。
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    
-
-    public CreateFunctionRequestBody withNamespace(String namespace) {
-        this.namespace = namespace;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 租户的project id。
-     * @return namespace
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-
-    
-
-    public CreateFunctionRequestBody withProjectName(String projectName) {
-        this.projectName = projectName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 租户的project name。
-     * @return projectName
-     */
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
     }
 
     
@@ -689,28 +480,6 @@ public class CreateFunctionRequestBody  {
 
     
 
-    public CreateFunctionRequestBody withCpu(Integer cpu) {
-        this.cpu = cpu;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数占用的cpu资源。 单位为millicore（1 core=1000 millicores）。 取值与MemorySize成比例，默认是128M内存占0.1个核（100 millicores）。 函数占用的CPU为基础CPU：200 millicores，再加上内存按比例占用的CPU，计算方法：内存/128 *100 + 200。
-     * @return cpu
-     */
-    public Integer getCpu() {
-        return cpu;
-    }
-
-    public void setCpu(Integer cpu) {
-        this.cpu = cpu;
-    }
-
-    
-
     public CreateFunctionRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -777,28 +546,6 @@ public class CreateFunctionRequestBody  {
 
     
 
-    public CreateFunctionRequestBody withCodeSize(Long codeSize) {
-        this.codeSize = codeSize;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数大小，单位：字节。
-     * @return codeSize
-     */
-    public Long getCodeSize() {
-        return codeSize;
-    }
-
-    public void setCodeSize(Long codeSize) {
-        this.codeSize = codeSize;
-    }
-
-    
-
     public CreateFunctionRequestBody withUserData(String userData) {
         this.userData = userData;
         return this;
@@ -817,72 +564,6 @@ public class CreateFunctionRequestBody  {
 
     public void setUserData(String userData) {
         this.userData = userData;
-    }
-
-    
-
-    public CreateFunctionRequestBody withDigest(String digest) {
-        this.digest = digest;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数代码SHA512 hash值，用于判断函数是否变化。
-     * @return digest
-     */
-    public String getDigest() {
-        return digest;
-    }
-
-    public void setDigest(String digest) {
-        this.digest = digest;
-    }
-
-    
-
-    public CreateFunctionRequestBody withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数版本号，由系统自动生成，规则：vYYYYMMDD-HHMMSS（v+年月日-时分秒）。
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    
-
-    public CreateFunctionRequestBody withImageName(String imageName) {
-        this.imageName = imageName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数版本的内部标识。
-     * @return imageName
-     */
-    public String getImageName() {
-        return imageName;
-    }
-
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
     }
 
     
@@ -953,72 +634,6 @@ public class CreateFunctionRequestBody  {
 
     
 
-    public CreateFunctionRequestBody withVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数版本描述。
-     * @return versionDescription
-     */
-    public String getVersionDescription() {
-        return versionDescription;
-    }
-
-    public void setVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-    }
-
-    
-
-    public CreateFunctionRequestBody withLastModified(OffsetDateTime lastModified) {
-        this.lastModified = lastModified;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数最后一次更新时间。
-     * @return lastModified
-     */
-    public OffsetDateTime getLastModified() {
-        return lastModified;
-    }
-
-    public void setLastModified(OffsetDateTime lastModified) {
-        this.lastModified = lastModified;
-    }
-
-    
-
-    public CreateFunctionRequestBody withLastModifiedUtc(Long lastModifiedUtc) {
-        this.lastModifiedUtc = lastModifiedUtc;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数最后一次更新utc时间。
-     * @return lastModifiedUtc
-     */
-    public Long getLastModifiedUtc() {
-        return lastModifiedUtc;
-    }
-
-    public void setLastModifiedUtc(Long lastModifiedUtc) {
-        this.lastModifiedUtc = lastModifiedUtc;
-    }
-
-    
-
     public CreateFunctionRequestBody withFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
         return this;
@@ -1044,209 +659,6 @@ public class CreateFunctionRequestBody  {
 
     public void setFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
-    }
-
-    
-
-    public CreateFunctionRequestBody withFuncVpc(FuncVpc funcVpc) {
-        this.funcVpc = funcVpc;
-        return this;
-    }
-
-    public CreateFunctionRequestBody withFuncVpc(Consumer<FuncVpc> funcVpcSetter) {
-        if(this.funcVpc == null ){
-            this.funcVpc = new FuncVpc();
-            funcVpcSetter.accept(this.funcVpc);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get funcVpc
-     * @return funcVpc
-     */
-    public FuncVpc getFuncVpc() {
-        return funcVpc;
-    }
-
-    public void setFuncVpc(FuncVpc funcVpc) {
-        this.funcVpc = funcVpc;
-    }
-
-    
-
-    public CreateFunctionRequestBody withMountConfig(MountConfig mountConfig) {
-        this.mountConfig = mountConfig;
-        return this;
-    }
-
-    public CreateFunctionRequestBody withMountConfig(Consumer<MountConfig> mountConfigSetter) {
-        if(this.mountConfig == null ){
-            this.mountConfig = new MountConfig();
-            mountConfigSetter.accept(this.mountConfig);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get mountConfig
-     * @return mountConfig
-     */
-    public MountConfig getMountConfig() {
-        return mountConfig;
-    }
-
-    public void setMountConfig(MountConfig mountConfig) {
-        this.mountConfig = mountConfig;
-    }
-
-    
-
-    public CreateFunctionRequestBody withConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get concurrency
-     * @return concurrency
-     */
-    public Integer getConcurrency() {
-        return concurrency;
-    }
-
-    public void setConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-    }
-
-    
-
-    public CreateFunctionRequestBody withDependList(List<String> dependList) {
-        this.dependList = dependList;
-        return this;
-    }
-
-    
-    public CreateFunctionRequestBody addDependListItem(String dependListItem) {
-        if(this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        this.dependList.add(dependListItem);
-        return this;
-    }
-
-    public CreateFunctionRequestBody withDependList(Consumer<List<String>> dependListSetter) {
-        if(this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        dependListSetter.accept(this.dependList);
-        return this;
-    }
-
-    /**
-     * 依赖id列表
-     * @return dependList
-     */
-    public List<String> getDependList() {
-        return dependList;
-    }
-
-    public void setDependList(List<String> dependList) {
-        this.dependList = dependList;
-    }
-
-    
-
-    public CreateFunctionRequestBody withStrategyConfig(StrategyConfig strategyConfig) {
-        this.strategyConfig = strategyConfig;
-        return this;
-    }
-
-    public CreateFunctionRequestBody withStrategyConfig(Consumer<StrategyConfig> strategyConfigSetter) {
-        if(this.strategyConfig == null ){
-            this.strategyConfig = new StrategyConfig();
-            strategyConfigSetter.accept(this.strategyConfig);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get strategyConfig
-     * @return strategyConfig
-     */
-    public StrategyConfig getStrategyConfig() {
-        return strategyConfig;
-    }
-
-    public void setStrategyConfig(StrategyConfig strategyConfig) {
-        this.strategyConfig = strategyConfig;
-    }
-
-    
-
-    public CreateFunctionRequestBody withExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数扩展配置。
-     * @return extendConfig
-     */
-    public String getExtendConfig() {
-        return extendConfig;
-    }
-
-    public void setExtendConfig(String extendConfig) {
-        this.extendConfig = extendConfig;
-    }
-
-    
-
-    public CreateFunctionRequestBody withDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
-        return this;
-    }
-
-    
-    public CreateFunctionRequestBody addDependenciesItem(Dependency dependenciesItem) {
-        if(this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        this.dependencies.add(dependenciesItem);
-        return this;
-    }
-
-    public CreateFunctionRequestBody withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if(this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        dependenciesSetter.accept(this.dependencies);
-        return this;
-    }
-
-    /**
-     * 函数依赖代码包列表。
-     * @return dependencies
-     */
-    public List<Dependency> getDependencies() {
-        return dependencies;
-    }
-
-    public void setDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
     }
 
     
@@ -1326,84 +738,46 @@ public class CreateFunctionRequestBody  {
             return false;
         }
         CreateFunctionRequestBody createFunctionRequestBody = (CreateFunctionRequestBody) o;
-        return Objects.equals(this.funcUrn, createFunctionRequestBody.funcUrn) &&
-            Objects.equals(this.funcName, createFunctionRequestBody.funcName) &&
-            Objects.equals(this.domainId, createFunctionRequestBody.domainId) &&
-            Objects.equals(this.namespace, createFunctionRequestBody.namespace) &&
-            Objects.equals(this.projectName, createFunctionRequestBody.projectName) &&
+        return Objects.equals(this.funcName, createFunctionRequestBody.funcName) &&
             Objects.equals(this._package, createFunctionRequestBody._package) &&
             Objects.equals(this.runtime, createFunctionRequestBody.runtime) &&
             Objects.equals(this.timeout, createFunctionRequestBody.timeout) &&
             Objects.equals(this.handler, createFunctionRequestBody.handler) &&
             Objects.equals(this.memorySize, createFunctionRequestBody.memorySize) &&
-            Objects.equals(this.cpu, createFunctionRequestBody.cpu) &&
             Objects.equals(this.codeType, createFunctionRequestBody.codeType) &&
             Objects.equals(this.codeUrl, createFunctionRequestBody.codeUrl) &&
             Objects.equals(this.codeFilename, createFunctionRequestBody.codeFilename) &&
-            Objects.equals(this.codeSize, createFunctionRequestBody.codeSize) &&
             Objects.equals(this.userData, createFunctionRequestBody.userData) &&
-            Objects.equals(this.digest, createFunctionRequestBody.digest) &&
-            Objects.equals(this.version, createFunctionRequestBody.version) &&
-            Objects.equals(this.imageName, createFunctionRequestBody.imageName) &&
             Objects.equals(this.xrole, createFunctionRequestBody.xrole) &&
             Objects.equals(this.appXrole, createFunctionRequestBody.appXrole) &&
             Objects.equals(this.description, createFunctionRequestBody.description) &&
-            Objects.equals(this.versionDescription, createFunctionRequestBody.versionDescription) &&
-            Objects.equals(this.lastModified, createFunctionRequestBody.lastModified) &&
-            Objects.equals(this.lastModifiedUtc, createFunctionRequestBody.lastModifiedUtc) &&
             Objects.equals(this.funcCode, createFunctionRequestBody.funcCode) &&
-            Objects.equals(this.funcVpc, createFunctionRequestBody.funcVpc) &&
-            Objects.equals(this.mountConfig, createFunctionRequestBody.mountConfig) &&
-            Objects.equals(this.concurrency, createFunctionRequestBody.concurrency) &&
-            Objects.equals(this.dependList, createFunctionRequestBody.dependList) &&
-            Objects.equals(this.strategyConfig, createFunctionRequestBody.strategyConfig) &&
-            Objects.equals(this.extendConfig, createFunctionRequestBody.extendConfig) &&
-            Objects.equals(this.dependencies, createFunctionRequestBody.dependencies) &&
             Objects.equals(this.initializerHandler, createFunctionRequestBody.initializerHandler) &&
             Objects.equals(this.initializerTimeout, createFunctionRequestBody.initializerTimeout) &&
             Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, digest, version, imageName, xrole, appXrole, description, versionDescription, lastModified, lastModifiedUtc, funcCode, funcVpc, mountConfig, concurrency, dependList, strategyConfig, extendConfig, dependencies, initializerHandler, initializerTimeout, enterpriseProjectId);
+        return Objects.hash(funcName, _package, runtime, timeout, handler, memorySize, codeType, codeUrl, codeFilename, userData, xrole, appXrole, description, funcCode, initializerHandler, initializerTimeout, enterpriseProjectId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateFunctionRequestBody {\n");
-        sb.append("    funcUrn: ").append(toIndentedString(funcUrn)).append("\n");
         sb.append("    funcName: ").append(toIndentedString(funcName)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-        sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    _package: ").append(toIndentedString(_package)).append("\n");
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
         sb.append("    memorySize: ").append(toIndentedString(memorySize)).append("\n");
-        sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    codeType: ").append(toIndentedString(codeType)).append("\n");
         sb.append("    codeUrl: ").append(toIndentedString(codeUrl)).append("\n");
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
-        sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-        sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
-        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-        sb.append("    lastModifiedUtc: ").append(toIndentedString(lastModifiedUtc)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
-        sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
-        sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
-        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
-        sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
-        sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
-        sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
-        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

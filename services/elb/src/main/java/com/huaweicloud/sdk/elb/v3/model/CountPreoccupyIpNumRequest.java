@@ -72,7 +72,7 @@ public class CountPreoccupyIpNumRequest  {
     }
 
     /**
-     * Get availabilityZoneId
+     * 功能描述：LB需要部署的AZ列表 约束：若查询创建一个LB所需预占IP数时，该参数为必选
      * @return availabilityZoneId
      */
     public List<String> getAvailabilityZoneId() {
@@ -94,7 +94,7 @@ public class CountPreoccupyIpNumRequest  {
 
 
     /**
-     * Get ipTargetEnable
+     * 是否启用跨VPC后端转发
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -116,7 +116,7 @@ public class CountPreoccupyIpNumRequest  {
 
 
     /**
-     * Get ipVersion
+     * 负载均衡器网络类型，枚举值4，6
      * @return ipVersion
      */
     public Integer getIpVersion() {
@@ -138,7 +138,7 @@ public class CountPreoccupyIpNumRequest  {
 
 
     /**
-     * Get l7FlavorId
+     * 七层Flavor的ID。如果欲创建7层规格的弹性负载均衡实例，则该参数为必选
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -160,7 +160,7 @@ public class CountPreoccupyIpNumRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 负载均衡器ID。当查询创建第一个七层监听器所需预占的ip数时，该参数为必选。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

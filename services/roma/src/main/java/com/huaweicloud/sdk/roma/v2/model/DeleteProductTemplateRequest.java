@@ -38,7 +38,7 @@ public class DeleteProductTemplateRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteProductTemplateRequest  {
 
 
     /**
-     * Get productTemplateId
+     * 产品模板ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return productTemplateId

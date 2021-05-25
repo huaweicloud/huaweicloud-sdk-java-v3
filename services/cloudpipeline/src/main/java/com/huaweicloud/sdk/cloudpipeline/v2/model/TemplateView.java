@@ -40,12 +40,6 @@ public class TemplateView  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_url")
-    
-    private String templateUrl;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
     private String userId;
@@ -184,28 +178,6 @@ public class TemplateView  {
 
     public void setTemplateType(String templateType) {
         this.templateType = templateType;
-    }
-
-    
-
-    public TemplateView withTemplateUrl(String templateUrl) {
-        this.templateUrl = templateUrl;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 模板编辑URL
-     * @return templateUrl
-     */
-    public String getTemplateUrl() {
-        return templateUrl;
-    }
-
-    public void setTemplateUrl(String templateUrl) {
-        this.templateUrl = templateUrl;
     }
 
     
@@ -522,7 +494,6 @@ public class TemplateView  {
         return Objects.equals(this.templateId, templateView.templateId) &&
             Objects.equals(this.templateName, templateView.templateName) &&
             Objects.equals(this.templateType, templateView.templateType) &&
-            Objects.equals(this.templateUrl, templateView.templateUrl) &&
             Objects.equals(this.userId, templateView.userId) &&
             Objects.equals(this.userName, templateView.userName) &&
             Objects.equals(this.domainId, templateView.domainId) &&
@@ -539,7 +510,7 @@ public class TemplateView  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, templateName, templateType, templateUrl, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, isWatch, description, parameter, flow, states);
+        return Objects.hash(templateId, templateName, templateType, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, isWatch, description, parameter, flow, states);
     }
     @Override
     public String toString() {
@@ -548,7 +519,6 @@ public class TemplateView  {
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
-        sb.append("    templateUrl: ").append(toIndentedString(templateUrl)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

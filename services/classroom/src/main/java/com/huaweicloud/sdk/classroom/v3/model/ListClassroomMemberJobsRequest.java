@@ -50,7 +50,7 @@ public class ListClassroomMemberJobsRequest  {
 
 
     /**
-     * Get classroomId
+     * 课堂ID
      * @return classroomId
      */
     public String getClassroomId() {
@@ -72,7 +72,7 @@ public class ListClassroomMemberJobsRequest  {
 
 
     /**
-     * Get memberId
+     * 用户ID
      * @return memberId
      */
     public String getMemberId() {
@@ -94,7 +94,7 @@ public class ListClassroomMemberJobsRequest  {
 
 
     /**
-     * Get offset
+     * 信息记录的起始编号
      * minimum: 1
      * maximum: 1000
      * @return offset
@@ -118,7 +118,7 @@ public class ListClassroomMemberJobsRequest  {
 
 
     /**
-     * Get limit
+     * 每页包含的信息记录数
      * minimum: 1
      * maximum: 100
      * @return limit

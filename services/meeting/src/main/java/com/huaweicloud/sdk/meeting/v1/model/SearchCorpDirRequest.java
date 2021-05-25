@@ -74,7 +74,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,7 +98,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -120,7 +120,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
      * minimum: 0
      * @return offset
      */
@@ -143,7 +143,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -167,7 +167,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件。支持账号、姓名、手机、邮箱模糊搜索
      * @return searchKey
      */
     public String getSearchKey() {
@@ -189,7 +189,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get deptCode
+     * 部门编码 maxLength：32 minLength：0 
      * @return deptCode
      */
     public String getDeptCode() {
@@ -211,7 +211,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get querySubDept
+     * 是否查询子部门下的用户 默认值：true 
      * @return querySubDept
      */
     public Boolean getQuerySubDept() {
@@ -233,7 +233,7 @@ public class SearchCorpDirRequest  {
 
 
     /**
-     * Get searchScope
+     * * 搜索范围 * NORMAL_USER表示查询普通用户。返回普通用户（响应中isHardTerminal=false，type=NORMAL_USER） * HARD_TERMINAL表示查询硬终端用户。返回大屏用户（响应中isHardTerminal=false，type=WHITE_BOARD）和硬终端用户（响应中isHardTerminal=true，type=HARD_TERMINAL） * ALL表示查询所有用户。 * 默认值为ALL 
      * @return searchScope
      */
     public String getSearchScope() {

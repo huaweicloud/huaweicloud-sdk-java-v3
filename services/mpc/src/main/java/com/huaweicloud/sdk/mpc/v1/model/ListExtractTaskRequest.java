@@ -35,7 +35,7 @@ public class ListExtractTaskRequest  {
     
     private List<String> taskId = null;
         /**
-     * Gets or Sets status
+     * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：等待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
      */
     public static final class StatusEnum {
 
@@ -176,7 +176,7 @@ public class ListExtractTaskRequest  {
 
 
     /**
-     * Get xLanguage
+     * 客户端语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -214,7 +214,7 @@ public class ListExtractTaskRequest  {
     }
 
     /**
-     * Get taskId
+     * 任务ID。一次最多10个 
      * @return taskId
      */
     public List<String> getTaskId() {
@@ -236,7 +236,7 @@ public class ListExtractTaskRequest  {
 
 
     /**
-     * Get status
+     * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：等待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -258,7 +258,7 @@ public class ListExtractTaskRequest  {
 
 
     /**
-     * Get startTime
+     * 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
      * @return startTime
      */
     public String getStartTime() {
@@ -280,7 +280,7 @@ public class ListExtractTaskRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
      * @return endTime
      */
     public String getEndTime() {
@@ -302,7 +302,7 @@ public class ListExtractTaskRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
      * minimum: 0
      * maximum: 50000
      * @return page
@@ -326,7 +326,7 @@ public class ListExtractTaskRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
      * minimum: 1
      * maximum: 100
      * @return size

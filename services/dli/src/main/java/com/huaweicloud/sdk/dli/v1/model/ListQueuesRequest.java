@@ -50,7 +50,7 @@ public class ListQueuesRequest  {
 
 
     /**
-     * Get withPriv
+     * 是否返回权限信息。
      * @return withPriv
      */
     public Boolean getWithPriv() {
@@ -72,7 +72,7 @@ public class ListQueuesRequest  {
 
 
     /**
-     * Get withChargeInfo
+     * 是否返回收费信息
      * @return withChargeInfo
      */
     public Boolean getWithChargeInfo() {
@@ -94,7 +94,7 @@ public class ListQueuesRequest  {
 
 
     /**
-     * Get queueType
+     * 队列的类型,。有如下三种类型： sql general all 如果不指定，默认为sql。
      * @return queueType
      */
     public String getQueueType() {
@@ -116,7 +116,7 @@ public class ListQueuesRequest  {
 
 
     /**
-     * Get tags
+     * 查询根据标签进行过滤
      * @return tags
      */
     public String getTags() {

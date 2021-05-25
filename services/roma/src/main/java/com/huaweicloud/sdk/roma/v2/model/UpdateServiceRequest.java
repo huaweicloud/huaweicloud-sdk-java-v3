@@ -45,7 +45,7 @@ public class UpdateServiceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateServiceRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * @return serviceId
      */
     public String getServiceId() {

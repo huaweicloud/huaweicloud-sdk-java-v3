@@ -39,7 +39,7 @@ public class RestoreBackupRequest  {
 
 
     /**
-     * Get backupId
+     * 备份id
      * @return backupId
      */
     public String getBackupId() {

@@ -50,7 +50,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。  偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -72,7 +72,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get limit
+     * 查询的数量限制。  取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
      * @return limit
      */
     public Integer getLimit() {
@@ -94,7 +94,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get name
+     * 检索应用名称。  支持后向模糊匹配，长度不得超过64个字符，只能包含英文字母、下划线和数字。
      * @return name
      */
     public String getName() {
@@ -116,7 +116,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get platform
+     * 应用平台。  目前仅支持HMS、APNS、APNS_SANDBOX。  HMS是为开发者提供的消息推送平台。  APNS和APNS_SANDBOX是用于推送iOS消息的服务平台。
      * @return platform
      */
     public String getPlatform() {

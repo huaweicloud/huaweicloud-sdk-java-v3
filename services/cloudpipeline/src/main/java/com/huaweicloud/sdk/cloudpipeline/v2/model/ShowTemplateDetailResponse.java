@@ -42,12 +42,6 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_url")
-    
-    private String templateUrl;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
     private String userId;
@@ -186,28 +180,6 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     public void setTemplateType(String templateType) {
         this.templateType = templateType;
-    }
-
-    
-
-    public ShowTemplateDetailResponse withTemplateUrl(String templateUrl) {
-        this.templateUrl = templateUrl;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 模板编辑URL
-     * @return templateUrl
-     */
-    public String getTemplateUrl() {
-        return templateUrl;
-    }
-
-    public void setTemplateUrl(String templateUrl) {
-        this.templateUrl = templateUrl;
     }
 
     
@@ -524,7 +496,6 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         return Objects.equals(this.templateId, showTemplateDetailResponse.templateId) &&
             Objects.equals(this.templateName, showTemplateDetailResponse.templateName) &&
             Objects.equals(this.templateType, showTemplateDetailResponse.templateType) &&
-            Objects.equals(this.templateUrl, showTemplateDetailResponse.templateUrl) &&
             Objects.equals(this.userId, showTemplateDetailResponse.userId) &&
             Objects.equals(this.userName, showTemplateDetailResponse.userName) &&
             Objects.equals(this.domainId, showTemplateDetailResponse.domainId) &&
@@ -541,7 +512,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, templateName, templateType, templateUrl, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, isWatch, description, parameter, flow, states);
+        return Objects.hash(templateId, templateName, templateType, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, isWatch, description, parameter, flow, states);
     }
     @Override
     public String toString() {
@@ -550,7 +521,6 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
-        sb.append("    templateUrl: ").append(toIndentedString(templateUrl)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

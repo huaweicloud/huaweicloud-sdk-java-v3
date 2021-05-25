@@ -32,7 +32,7 @@ public class ShowRegionInfoOfMeetingRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {

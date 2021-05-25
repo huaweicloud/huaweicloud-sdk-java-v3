@@ -31,7 +31,7 @@ public class ListScalingInstancesRequest  {
     
     private String scalingGroupId;
     /**
-     * Gets or Sets lifeCycleState
+     * 实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
      */
     public static final class LifeCycleStateEnum {
 
@@ -145,7 +145,7 @@ public class ListScalingInstancesRequest  {
     
     private LifeCycleStateEnum lifeCycleState;
     /**
-     * Gets or Sets healthStatus
+     * 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
      */
     public static final class HealthStatusEnum {
 
@@ -235,7 +235,7 @@ public class ListScalingInstancesRequest  {
     
     private HealthStatusEnum healthStatus;
     /**
-     * Gets or Sets protectFromScalingDown
+     * 实例保护状态：true：已设置实例保护。false：未设置实例保护。
      */
     public static final class ProtectFromScalingDownEnum {
 
@@ -340,7 +340,7 @@ public class ListScalingInstancesRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -362,7 +362,7 @@ public class ListScalingInstancesRequest  {
 
 
     /**
-     * Get lifeCycleState
+     * 实例在伸缩组中的生命周期状态：INSERVICE： 正在使用。PENDING：正在加入伸缩组。REMOVING：正在移出伸缩组。PENDING_WAIT：正在加入伸缩组：等待。REMOVING_WAIT：正在移出伸缩组：等待。
      * @return lifeCycleState
      */
     public LifeCycleStateEnum getLifeCycleState() {
@@ -384,7 +384,7 @@ public class ListScalingInstancesRequest  {
 
 
     /**
-     * Get healthStatus
+     * 实例健康状态：INITIALIZING：初始化。NORMAL：正常。ERROR：异常
      * @return healthStatus
      */
     public HealthStatusEnum getHealthStatus() {
@@ -406,7 +406,7 @@ public class ListScalingInstancesRequest  {
 
 
     /**
-     * Get protectFromScalingDown
+     * 实例保护状态：true：已设置实例保护。false：未设置实例保护。
      * @return protectFromScalingDown
      */
     public ProtectFromScalingDownEnum getProtectFromScalingDown() {
@@ -428,7 +428,7 @@ public class ListScalingInstancesRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -450,7 +450,7 @@ public class ListScalingInstancesRequest  {
 
 
     /**
-     * Get limit
+     * 查询的记录条数，默认为20。
      * @return limit
      */
     public Integer getLimit() {

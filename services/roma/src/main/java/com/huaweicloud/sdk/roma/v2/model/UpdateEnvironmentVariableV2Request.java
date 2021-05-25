@@ -45,7 +45,7 @@ public class UpdateEnvironmentVariableV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateEnvironmentVariableV2Request  {
 
 
     /**
-     * Get envVariableId
+     * 环境变量的ID
      * @return envVariableId
      */
     public String getEnvVariableId() {

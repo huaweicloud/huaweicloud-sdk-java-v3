@@ -39,7 +39,7 @@ public class UpdatePublicZoneRequest  {
 
 
     /**
-     * Get zoneId
+     * 待修改zone的ID
      * @return zoneId
      */
     public String getZoneId() {

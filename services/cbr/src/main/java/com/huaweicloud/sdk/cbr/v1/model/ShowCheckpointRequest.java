@@ -32,7 +32,7 @@ public class ShowCheckpointRequest  {
 
 
     /**
-     * Get checkpointId
+     * 还原点ID
      * @return checkpointId
      */
     public String getCheckpointId() {

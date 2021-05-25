@@ -38,7 +38,7 @@ public class ShowDetailsOfAclPolicyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ShowDetailsOfAclPolicyV2Request  {
 
 
     /**
-     * Get aclId
+     * ACL策略的编号
      * @return aclId
      */
     public String getAclId() {

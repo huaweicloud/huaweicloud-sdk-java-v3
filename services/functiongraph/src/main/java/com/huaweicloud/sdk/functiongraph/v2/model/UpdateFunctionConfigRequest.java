@@ -39,7 +39,7 @@ public class UpdateFunctionConfigRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型。
      * @return functionUrn
      */
     public String getFunctionUrn() {

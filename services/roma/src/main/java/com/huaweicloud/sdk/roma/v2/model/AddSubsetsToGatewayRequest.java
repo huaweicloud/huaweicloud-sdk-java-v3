@@ -45,7 +45,7 @@ public class AddSubsetsToGatewayRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class AddSubsetsToGatewayRequest  {
 
 
     /**
-     * Get deviceId
+     * 设备ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return deviceId

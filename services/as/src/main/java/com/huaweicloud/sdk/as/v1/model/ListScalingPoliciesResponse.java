@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ScalingPolicyDetail;
+import com.huaweicloud.sdk.as.v1.model.ScalingV1PolicyDetail;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -44,7 +44,7 @@ public class ListScalingPoliciesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scaling_policies")
     
-    private List<ScalingPolicyDetail> scalingPolicies = null;
+    private List<ScalingV1PolicyDetail> scalingPolicies = null;
     
     public ListScalingPoliciesResponse withTotalNumber(Integer totalNumber) {
         this.totalNumber = totalNumber;
@@ -112,13 +112,13 @@ public class ListScalingPoliciesResponse extends SdkResponse {
 
     
 
-    public ListScalingPoliciesResponse withScalingPolicies(List<ScalingPolicyDetail> scalingPolicies) {
+    public ListScalingPoliciesResponse withScalingPolicies(List<ScalingV1PolicyDetail> scalingPolicies) {
         this.scalingPolicies = scalingPolicies;
         return this;
     }
 
     
-    public ListScalingPoliciesResponse addScalingPoliciesItem(ScalingPolicyDetail scalingPoliciesItem) {
+    public ListScalingPoliciesResponse addScalingPoliciesItem(ScalingV1PolicyDetail scalingPoliciesItem) {
         if(this.scalingPolicies == null) {
             this.scalingPolicies = new ArrayList<>();
         }
@@ -126,7 +126,7 @@ public class ListScalingPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    public ListScalingPoliciesResponse withScalingPolicies(Consumer<List<ScalingPolicyDetail>> scalingPoliciesSetter) {
+    public ListScalingPoliciesResponse withScalingPolicies(Consumer<List<ScalingV1PolicyDetail>> scalingPoliciesSetter) {
         if(this.scalingPolicies == null) {
             this.scalingPolicies = new ArrayList<>();
         }
@@ -138,11 +138,11 @@ public class ListScalingPoliciesResponse extends SdkResponse {
      * 伸缩策略列表
      * @return scalingPolicies
      */
-    public List<ScalingPolicyDetail> getScalingPolicies() {
+    public List<ScalingV1PolicyDetail> getScalingPolicies() {
         return scalingPolicies;
     }
 
-    public void setScalingPolicies(List<ScalingPolicyDetail> scalingPolicies) {
+    public void setScalingPolicies(List<ScalingV1PolicyDetail> scalingPolicies) {
         this.scalingPolicies = scalingPolicies;
     }
 

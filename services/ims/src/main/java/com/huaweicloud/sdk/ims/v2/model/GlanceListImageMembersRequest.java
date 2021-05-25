@@ -32,7 +32,7 @@ public class GlanceListImageMembersRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像id
      * @return imageId
      */
     public String getImageId() {

@@ -32,7 +32,7 @@ public class DeleteWhitelistRequest  {
 
 
     /**
-     * Get whitelistId
+     * 白名单id
      * @return whitelistId
      */
     public String getWhitelistId() {

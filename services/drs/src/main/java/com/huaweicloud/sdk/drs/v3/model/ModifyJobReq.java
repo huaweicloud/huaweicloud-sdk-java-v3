@@ -432,7 +432,7 @@ public class ModifyJobReq  {
     
     private Boolean isRecreate;
     /**
-     * 迁移方向
+     * 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
      */
     public static final class JobDirectionEnum {
 
@@ -930,7 +930,7 @@ public class ModifyJobReq  {
 
 
     /**
-     * 迁移方向
+     * 迁移方向,up 入云 灾备场景时对应本云为备,down 出云 灾备场景时对应本云为主,non-dbs 自建
      * @return jobDirection
      */
     public JobDirectionEnum getJobDirection() {

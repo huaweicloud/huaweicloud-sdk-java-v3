@@ -32,7 +32,7 @@ public class ShowRealnameAuthenticationReviewResultRequest  {
 
 
     /**
-     * Get customerId
+     * |参数名称：客户ID。| |参数的约束及描述：|
      * @return customerId
      */
     public String getCustomerId() {

@@ -144,7 +144,7 @@ public class RestAttendeeDTO  {
 
 
     /**
-     * 与会者帐号，兼容终端老版本。如果没有携带userUUID，就通过accountId查询用户信息。
+     * 与会者的账号ID。 如果是账号/密码鉴权场景，选填，表示华为云会议帐号ID。 如果是APPID鉴权场景，必填，表示第三方的User ID，同时需要携带appid参数。
      * @return accountId
      */
     public String getAccountId() {
@@ -212,7 +212,7 @@ public class RestAttendeeDTO  {
 
 
     /**
-     * 电话号码(可支持SIP、TEL号码格式)。最大不超过127个字符。phone、email和sms三者需至少填写一个。当type为telepresence时，且设备为三屏智真，则该字段填写中屏号码。
+     * 如果是账号/密码鉴权场景，必填，号码（可支持SIP、TEL号码格式）。 如果是APP ID鉴权场景，选填。 最大不超过127个字符。phone、email和sms三者需至少填写一个。
      * @return phone
      */
     public String getPhone() {
@@ -234,7 +234,7 @@ public class RestAttendeeDTO  {
 
 
     /**
-     * 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写左屏号码
+     * 预留字段，取值类型同phone。
      * @return phone2
      */
     public String getPhone2() {
@@ -256,7 +256,7 @@ public class RestAttendeeDTO  {
 
 
     /**
-     * 预留字段，取值类型同phone。当type为telepresence时，且设备为三屏智真，则该字段填写右屏号码
+     * 预留字段，取值类型同phone。
      * @return phone3
      */
     public String getPhone3() {
@@ -346,7 +346,7 @@ public class RestAttendeeDTO  {
 
 
     /**
-     * 会议开始时是否自动邀请该与会者。默认自动邀请。 - 0: 不自动邀请 - 1: 自动邀请
+     * 会议开始时是否自动邀请该与会者。默认不自动邀请。 - 0: 不自动邀请 - 1: 自动邀请
      * minimum: 0
      * maximum: 1
      * @return isAutoInvite
@@ -458,7 +458,7 @@ public class RestAttendeeDTO  {
 
 
     /**
-     * 会议Paas服务APPID。
+     * App ID，应用标识，一个应用只需创建一次。如果是APP ID鉴权场景，此项必填。
      * @return appId
      */
     public String getAppId() {

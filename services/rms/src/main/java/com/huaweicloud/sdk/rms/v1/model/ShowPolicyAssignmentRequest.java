@@ -32,7 +32,7 @@ public class ShowPolicyAssignmentRequest  {
 
 
     /**
-     * Get policyAssignmentId
+     * 规则ID
      * @return policyAssignmentId
      */
     public String getPolicyAssignmentId() {

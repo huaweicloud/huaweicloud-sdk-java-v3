@@ -32,7 +32,7 @@ public class ListBlockchainChannelsRequest  {
 
 
     /**
-     * Get blockchainId
+     * blockchainID
      * @return blockchainId
      */
     public String getBlockchainId() {

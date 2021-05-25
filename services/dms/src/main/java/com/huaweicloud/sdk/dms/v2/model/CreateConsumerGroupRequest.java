@@ -39,7 +39,7 @@ public class CreateConsumerGroupRequest  {
 
 
     /**
-     * Get queueId
+     * 指定的队列ID
      * @return queueId
      */
     public String getQueueId() {

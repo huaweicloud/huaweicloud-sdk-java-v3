@@ -44,7 +44,7 @@ public class ListAgenciesRequest  {
 
 
     /**
-     * Get domainId
+     * 委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return domainId
      */
     public String getDomainId() {
@@ -66,7 +66,7 @@ public class ListAgenciesRequest  {
 
 
     /**
-     * Get trustDomainId
+     * 被委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return trustDomainId
      */
     public String getTrustDomainId() {
@@ -88,7 +88,7 @@ public class ListAgenciesRequest  {
 
 
     /**
-     * Get name
+     * 委托名，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return name
      */
     public String getName() {

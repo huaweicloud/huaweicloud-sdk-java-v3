@@ -56,7 +56,7 @@ public class ListMqsInstanceTopicsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListMqsInstanceTopicsRequest  {
 
 
     /**
-     * Get appName
+     * 应用名称。
      * @return appName
      */
     public String getAppName() {
@@ -100,7 +100,7 @@ public class ListMqsInstanceTopicsRequest  {
 
 
     /**
-     * Get name
+     * Topic名称。
      * @return name
      */
     public String getName() {
@@ -122,7 +122,7 @@ public class ListMqsInstanceTopicsRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询大小。默认查询所有的topic。
      * @return limit
      */
     public String getLimit() {
@@ -144,7 +144,7 @@ public class ListMqsInstanceTopicsRequest  {
 
 
     /**
-     * Get offset
+     * 分页查询的偏移量。默认值是0。
      * @return offset
      */
     public String getOffset() {

@@ -38,7 +38,7 @@ public class ListFunctionsRequest  {
 
 
     /**
-     * Get marker
+     * 上一次查询到的最后的记录位置。
      * @return marker
      */
     public String getMarker() {
@@ -60,7 +60,7 @@ public class ListFunctionsRequest  {
 
 
     /**
-     * Get maxitems
+     * 每次查询获取的最大函数记录数量 最大值：400 如果不提供该值或者提供的值大于400或等于0，则使用默认值：400 如果该值小于0，则返回参数错误。
      * @return maxitems
      */
     public String getMaxitems() {

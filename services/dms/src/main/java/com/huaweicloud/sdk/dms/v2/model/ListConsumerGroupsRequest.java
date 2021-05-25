@@ -56,7 +56,7 @@ public class ListConsumerGroupsRequest  {
 
 
     /**
-     * Get queueId
+     * 指定的队列ID
      * @return queueId
      */
     public String getQueueId() {
@@ -78,7 +78,7 @@ public class ListConsumerGroupsRequest  {
 
 
     /**
-     * Get includeDeadletter
+     * 是否包含死信信息。默认值为：false
      * @return includeDeadletter
      */
     public Boolean getIncludeDeadletter() {
@@ -100,7 +100,7 @@ public class ListConsumerGroupsRequest  {
 
 
     /**
-     * Get includeMessagesNum
+     * 是否查询消费组的详情，默认值为true。  配置为false时，查询的消费组列表不包含消费详情，接口响应速度快。
      * @return includeMessagesNum
      */
     public Boolean getIncludeMessagesNum() {
@@ -122,7 +122,7 @@ public class ListConsumerGroupsRequest  {
 
 
     /**
-     * Get pageSize
+     * 设置每页显示的消费组数量。  page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -144,7 +144,7 @@ public class ListConsumerGroupsRequest  {
 
 
     /**
-     * Get currentPage
+     * 设置查询消费组的页码。  page_size和current_page必须同时配置有效值，否则默认查询所有消费组。
      * @return currentPage
      */
     public Integer getCurrentPage() {

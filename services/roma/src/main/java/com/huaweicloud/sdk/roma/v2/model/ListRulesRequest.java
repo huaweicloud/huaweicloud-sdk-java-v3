@@ -56,7 +56,7 @@ public class ListRulesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListRulesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -102,7 +102,7 @@ public class ListRulesRequest  {
 
 
     /**
-     * Get appId
+     * 应用ID
      * @return appId
      */
     public String getAppId() {
@@ -124,7 +124,7 @@ public class ListRulesRequest  {
 
 
     /**
-     * Get name
+     * 规则名称
      * @return name
      */
     public String getName() {
@@ -146,7 +146,7 @@ public class ListRulesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -228,7 +227,7 @@ public class ShowLifeCycleHookResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime;
+    private String createTime;
 
     public ShowLifeCycleHookResponse withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
@@ -384,7 +383,7 @@ public class ShowLifeCycleHookResponse extends SdkResponse {
 
     
 
-    public ShowLifeCycleHookResponse withCreateTime(OffsetDateTime createTime) {
+    public ShowLifeCycleHookResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -396,11 +395,11 @@ public class ShowLifeCycleHookResponse extends SdkResponse {
      * 生命周期挂钩创建时间，遵循UTC时间。
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

@@ -90,7 +90,7 @@ public class ListNatGatewaySnatRulesRequest  {
     
     private Integer sourceType;
     /**
-     * Gets or Sets status
+     * 功能说明：SNAT规则的状态。
      */
     public static final class StatusEnum {
 
@@ -207,7 +207,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 解冻/冻结状态。 取值范围： \"true\"：解冻 \"false\"：冻结
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -229,7 +229,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get cidr
+     * 可以是网段或者主机格式，与network_id参数二选一。 Source_type=0时，cidr必须是vpc子网网段的子集(不能相等）; Source_type=1时，cidr必须指定专线侧网段。
      * @return cidr
      */
     public String getCidr() {
@@ -251,7 +251,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -275,7 +275,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get floatingIpAddress
+     * 功能说明：弹性公网IP，多个弹性公网IP使用逗号分隔。 取值范围：最大长度1024字节。
      * @return floatingIpAddress
      */
     public String getFloatingIpAddress() {
@@ -297,7 +297,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get floatingIpId
+     * 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。
      * @return floatingIpId
      */
     public String getFloatingIpId() {
@@ -319,7 +319,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get id
+     * SNAT规则的ID。
      * @return id
      */
     public String getId() {
@@ -341,7 +341,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get description
+     * SNAT规则的描述，长度限制为255。
      * @return description
      */
     public String getDescription() {
@@ -363,7 +363,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get createdAt
+     * SNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -399,7 +399,7 @@ public class ListNatGatewaySnatRulesRequest  {
     }
 
     /**
-     * Get natGatewayId
+     * 公网NAT网关实例的ID。
      * @return natGatewayId
      */
     public List<String> getNatGatewayId() {
@@ -421,7 +421,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get networkId
+     * 规则使用的网络id。与cidr参数二选一。
      * @return networkId
      */
     public String getNetworkId() {
@@ -443,7 +443,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get sourceType
+     * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
      * @return sourceType
      */
     public Integer getSourceType() {
@@ -465,7 +465,7 @@ public class ListNatGatewaySnatRulesRequest  {
 
 
     /**
-     * Get status
+     * 功能说明：SNAT规则的状态。
      * @return status
      */
     public StatusEnum getStatus() {

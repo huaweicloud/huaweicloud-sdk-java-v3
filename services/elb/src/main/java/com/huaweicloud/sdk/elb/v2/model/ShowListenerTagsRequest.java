@@ -32,7 +32,7 @@ public class ShowListenerTagsRequest  {
 
 
     /**
-     * Get listenerId
+     * 监听器ID。
      * @return listenerId
      */
     public String getListenerId() {

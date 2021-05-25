@@ -45,7 +45,7 @@ public class UpdateIterationV4Request  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -67,7 +67,7 @@ public class UpdateIterationV4Request  {
 
 
     /**
-     * Get iterationId
+     * 迭代id
      * @return iterationId
      */
     public Integer getIterationId() {

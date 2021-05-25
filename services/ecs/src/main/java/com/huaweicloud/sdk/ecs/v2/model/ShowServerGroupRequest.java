@@ -32,7 +32,7 @@ public class ShowServerGroupRequest  {
 
 
     /**
-     * Get serverGroupId
+     * 弹性云服务器组UUID。
      * @return serverGroupId
      */
     public String getServerGroupId() {

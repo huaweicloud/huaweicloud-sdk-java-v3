@@ -27,7 +27,7 @@ public class ListDatastoresRequest  {
     
     private String xLanguage;
     /**
-     * Gets or Sets databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
      */
     public static final class DatabaseNameEnum {
 
@@ -126,7 +126,7 @@ public class ListDatastoresRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -150,7 +150,7 @@ public class ListDatastoresRequest  {
 
 
     /**
-     * Get databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
      * @return databaseName
      */
     public DatabaseNameEnum getDatabaseName() {

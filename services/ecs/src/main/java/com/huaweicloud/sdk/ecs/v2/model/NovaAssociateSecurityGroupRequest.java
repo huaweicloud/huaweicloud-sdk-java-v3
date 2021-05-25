@@ -39,7 +39,7 @@ public class NovaAssociateSecurityGroupRequest  {
 
 
     /**
-     * Get serverId
+     * 弹性云服务器ID。
      * @return serverId
      */
     public String getServerId() {

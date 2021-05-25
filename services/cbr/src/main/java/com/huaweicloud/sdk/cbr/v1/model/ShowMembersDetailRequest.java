@@ -80,7 +80,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get backupId
+     * 备份id
      * @return backupId
      */
     public String getBackupId() {
@@ -102,7 +102,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get destProjectId
+     * 接受备份共享的项目id
      * @return destProjectId
      */
     public String getDestProjectId() {
@@ -124,7 +124,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get imageId
+     * 接受的共享备份副本注册的镜像id
      * @return imageId
      */
     public String getImageId() {
@@ -146,7 +146,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get status
+     * 备份共享状态
      * @return status
      */
     public String getStatus() {
@@ -168,7 +168,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get vaultId
+     * 目标端接受共享备份的存储库id，仅支持uuid
      * @return vaultId
      */
     public String getVaultId() {
@@ -190,7 +190,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量，正整数
      * @return limit
      */
     public Integer getLimit() {
@@ -212,7 +212,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get marker
+     * 上一次查询最后一条的id，仅支持uuid
      * @return marker
      */
     public String getMarker() {
@@ -234,7 +234,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get offset
+     * 偏移值，正整数
      * @return offset
      */
     public Integer getOffset() {
@@ -256,7 +256,7 @@ public class ShowMembersDetailRequest  {
 
 
     /**
-     * Get sort
+     * sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。
      * @return sort
      */
     public String getSort() {

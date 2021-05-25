@@ -39,7 +39,7 @@ public class AddServerGroupMemberRequest  {
 
 
     /**
-     * Get serverGroupId
+     * 云服务器组ID。
      * @return serverGroupId
      */
     public String getServerGroupId() {

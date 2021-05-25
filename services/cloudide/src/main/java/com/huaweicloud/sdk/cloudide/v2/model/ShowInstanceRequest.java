@@ -32,7 +32,7 @@ public class ShowInstanceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例id
      * @return instanceId
      */
     public String getInstanceId() {

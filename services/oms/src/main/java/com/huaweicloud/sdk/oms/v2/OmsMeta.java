@@ -12,6 +12,41 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class OmsMeta {
 
+    public static final HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEvents = genForcreateSyncEvents();
+
+    private static HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> genForcreateSyncEvents() {
+        // basic
+        HttpRequestDef.Builder<CreateSyncEventsRequest, CreateSyncEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSyncEventsRequest.class, CreateSyncEventsResponse.class)
+                .withName("CreateSyncEvents")
+                .withUri("/v2/{project_id}/sync-tasks/{sync_task_id}/events")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("sync_task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateSyncEventsRequest::getSyncTaskId, (req, v) -> {
+                req.setSyncTaskId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SyncObjectReq.class,
+            f -> f.withMarshaller(CreateSyncEventsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTaskRequest, CreateTaskResponse> createTask = genForcreateTask();
 
     private static HttpRequestDef<CreateTaskRequest, CreateTaskResponse> genForcreateTask() {
@@ -277,41 +312,6 @@ public class OmsMeta {
             String.class,
             f -> f.withMarshaller(ShowApiInfoRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEvents = genForcreateSyncEvents();
-
-    private static HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> genForcreateSyncEvents() {
-        // basic
-        HttpRequestDef.Builder<CreateSyncEventsRequest, CreateSyncEventsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSyncEventsRequest.class, CreateSyncEventsResponse.class)
-                .withName("CreateSyncEvents")
-                .withUri("/v2/{project_id}/sync-tasks/{sync_task_id}/events")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("sync_task_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(CreateSyncEventsRequest::getSyncTaskId, (req, v) -> {
-                req.setSyncTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            SyncObjectReq.class,
-            f -> f.withMarshaller(CreateSyncEventsRequest::getBody, (req, v) -> {
-                req.setBody(v);
             })
         );
 

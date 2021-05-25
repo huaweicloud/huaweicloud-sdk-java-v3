@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListOffSiteInstancesRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -114,7 +114,7 @@ public class ListOffSiteInstancesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

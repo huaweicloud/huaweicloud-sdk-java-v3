@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.BatchQueryJobReq;
+import com.huaweicloud.sdk.drs.v3.model.BatchQueryParamReq;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -22,7 +22,7 @@ import java.util.Objects;
 public class BatchShowParamsRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型
      */
     public static final class XLanguageEnum {
 
@@ -110,7 +110,7 @@ public class BatchShowParamsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchQueryJobReq body;
+    private BatchQueryParamReq body;
 
     public BatchShowParamsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -121,7 +121,7 @@ public class BatchShowParamsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -136,14 +136,14 @@ public class BatchShowParamsRequest  {
 
     
 
-    public BatchShowParamsRequest withBody(BatchQueryJobReq body) {
+    public BatchShowParamsRequest withBody(BatchQueryParamReq body) {
         this.body = body;
         return this;
     }
 
-    public BatchShowParamsRequest withBody(Consumer<BatchQueryJobReq> bodySetter) {
+    public BatchShowParamsRequest withBody(Consumer<BatchQueryParamReq> bodySetter) {
         if(this.body == null ){
-            this.body = new BatchQueryJobReq();
+            this.body = new BatchQueryParamReq();
             bodySetter.accept(this.body);
         }
         
@@ -155,11 +155,11 @@ public class BatchShowParamsRequest  {
      * Get body
      * @return body
      */
-    public BatchQueryJobReq getBody() {
+    public BatchQueryParamReq getBody() {
         return body;
     }
 
-    public void setBody(BatchQueryJobReq body) {
+    public void setBody(BatchQueryParamReq body) {
         this.body = body;
     }
 

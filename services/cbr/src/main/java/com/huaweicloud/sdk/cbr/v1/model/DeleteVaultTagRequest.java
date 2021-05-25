@@ -38,7 +38,7 @@ public class DeleteVaultTagRequest  {
 
 
     /**
-     * Get key
+     * 不能为空或空字符串，不检查长度和字符集，去掉key前后的空格后检查，去掉key前后的空格后使用。 即使底层存在非法的tag也要能删。
      * @return key
      */
     public String getKey() {
@@ -60,7 +60,7 @@ public class DeleteVaultTagRequest  {
 
 
     /**
-     * Get vaultId
+     * 资源id
      * @return vaultId
      */
     public String getVaultId() {

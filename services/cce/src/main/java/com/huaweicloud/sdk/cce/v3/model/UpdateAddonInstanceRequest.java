@@ -39,7 +39,7 @@ public class UpdateAddonInstanceRequest  {
 
 
     /**
-     * Get id
+     * 插件实例id
      * @return id
      */
     public String getId() {

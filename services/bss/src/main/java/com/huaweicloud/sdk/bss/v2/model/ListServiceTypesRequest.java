@@ -38,7 +38,7 @@ public class ListServiceTypesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。zh_CN：中文en_US：英文缺省为zh_CN。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ListServiceTypesRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * 云服务类型编码。例如ECS的云服务类型编码为“hws.service.type.ec2”。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {

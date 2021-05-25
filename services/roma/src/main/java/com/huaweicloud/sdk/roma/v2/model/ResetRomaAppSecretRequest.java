@@ -45,7 +45,7 @@ public class ResetRomaAppSecretRequest  {
 
 
     /**
-     * Get appId
+     * 应用ID
      * @return appId
      */
     public String getAppId() {
@@ -67,7 +67,7 @@ public class ResetRomaAppSecretRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {

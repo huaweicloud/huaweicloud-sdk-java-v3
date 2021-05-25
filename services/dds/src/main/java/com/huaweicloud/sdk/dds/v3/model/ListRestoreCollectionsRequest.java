@@ -62,7 +62,7 @@ public class ListRestoreCollectionsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,7 +86,7 @@ public class ListRestoreCollectionsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -108,7 +108,7 @@ public class ListRestoreCollectionsRequest  {
 
 
     /**
-     * Get dbName
+     * 数据库名称。
      * @return dbName
      */
     public String getDbName() {
@@ -130,7 +130,7 @@ public class ListRestoreCollectionsRequest  {
 
 
     /**
-     * Get restoreTime
+     * 恢复时间点。UNIX时间戳格式，单位是毫秒，时区是UTC。
      * @return restoreTime
      */
     public String getRestoreTime() {
@@ -152,7 +152,7 @@ public class ListRestoreCollectionsRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置偏移量。取值大于或等于0。不传该参数时，查询偏移量默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -174,7 +174,7 @@ public class ListRestoreCollectionsRequest  {
 
 
     /**
-     * Get limit
+     * 查询个数上限值。取值范围：1~100。不传该参数时，默认查询前100条信息。
      * @return limit
      */
     public Integer getLimit() {

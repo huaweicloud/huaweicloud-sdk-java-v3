@@ -38,7 +38,7 @@ public class GlanceShowImageMemberRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像id
      * @return imageId
      */
     public String getImageId() {
@@ -60,7 +60,7 @@ public class GlanceShowImageMemberRequest  {
 
 
     /**
-     * Get memberId
+     * 成员id
      * @return memberId
      */
     public String getMemberId() {

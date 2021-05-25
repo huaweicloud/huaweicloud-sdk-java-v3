@@ -51,7 +51,7 @@ public class ListRepositoryTagsRequest  {
     
     private String orderColumn;
     /**
-     * Gets or Sets orderType
+     * 排序类型，可设置为desc（降序）、asc（升序） 
      */
     public static final class OrderTypeEnum {
 
@@ -150,7 +150,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -172,7 +172,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {
@@ -194,7 +194,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get offset
+     * 起始索引。**注意：offset和limit参数需要配套使用** 
      * @return offset
      */
     public String getOffset() {
@@ -216,7 +216,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get limit
+     * 返回条数。**注意：offset和limit参数需要配套使用* 
      * @return limit
      */
     public String getLimit() {
@@ -238,7 +238,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get orderColumn
+     * 按列排序，可设置为updated_at（按更新时间排序） 
      * @return orderColumn
      */
     public String getOrderColumn() {
@@ -260,7 +260,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get orderType
+     * 排序类型，可设置为desc（降序）、asc（升序） 
      * @return orderType
      */
     public OrderTypeEnum getOrderType() {
@@ -282,7 +282,7 @@ public class ListRepositoryTagsRequest  {
 
 
     /**
-     * Get tag
+     * 镜像版本名
      * @return tag
      */
     public String getTag() {

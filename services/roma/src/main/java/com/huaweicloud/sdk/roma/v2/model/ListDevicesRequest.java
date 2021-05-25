@@ -110,7 +110,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -132,7 +132,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -156,7 +156,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset
@@ -180,7 +180,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get appId
+     * 应用ID
      * @return appId
      */
     public String getAppId() {
@@ -202,7 +202,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get productId
+     * 设备归属的产品ID
      * minimum: 1
      * maximum: 999999999999999999
      * @return productId
@@ -226,7 +226,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get productName
+     * 设备归属的产品名称
      * @return productName
      */
     public String getProductName() {
@@ -248,7 +248,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get deviceName
+     * 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
      * @return deviceName
      */
     public String getDeviceName() {
@@ -270,7 +270,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get clientId
+     * 设备客户端ID，平台生成的设备唯一标识
      * @return clientId
      */
     public String getClientId() {
@@ -292,7 +292,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get nodeId
+     * 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
      * @return nodeId
      */
     public String getNodeId() {
@@ -314,7 +314,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get nodeType
+     * 节点类型 0-直连 1-网关 2-子设备，不传默认查询所有
      * minimum: 0
      * maximum: 10
      * @return nodeType
@@ -338,7 +338,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get onlineStatus
+     * 是否在线 0-未连接 1-在线 2-离线，支持传入多个值以逗号分隔
      * @return onlineStatus
      */
     public String getOnlineStatus() {
@@ -360,7 +360,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get createdDateStart
+     * 创建时间起始，格式timestamp(ms)，使用UTC时区
      * minimum: 1
      * maximum: 999999999999999999
      * @return createdDateStart
@@ -384,7 +384,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get createdDateEnd
+     * 创建时间截止，格式timestamp(ms)，使用UTC时区
      * minimum: 1
      * maximum: 999999999999999999
      * @return createdDateEnd
@@ -408,7 +408,7 @@ public class ListDevicesRequest  {
 
 
     /**
-     * Get tag
+     * 标签
      * @return tag
      */
     public String getTag() {

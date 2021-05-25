@@ -44,7 +44,7 @@ public class ShowTaskListByProjectIdV2Request  {
 
 
     /**
-     * Get projectId
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -66,7 +66,7 @@ public class ShowTaskListByProjectIdV2Request  {
 
 
     /**
-     * Get offset
+     * 分页索引，偏移量
      * minimum: 0
      * @return offset
      */
@@ -89,7 +89,7 @@ public class ShowTaskListByProjectIdV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的数量,每页最多显示100条
      * minimum: 1
      * maximum: 100
      * @return limit

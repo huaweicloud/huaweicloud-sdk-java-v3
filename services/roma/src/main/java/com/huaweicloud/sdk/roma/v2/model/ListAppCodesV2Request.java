@@ -50,7 +50,7 @@ public class ListAppCodesV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -72,7 +72,7 @@ public class ListAppCodesV2Request  {
 
 
     /**
-     * Get appId
+     * 应用编号
      * @return appId
      */
     public String getAppId() {
@@ -94,7 +94,7 @@ public class ListAppCodesV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -116,7 +116,7 @@ public class ListAppCodesV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

@@ -27,7 +27,7 @@ public class ListFlavorsRequest  {
     
     private String xLanguage;
     /**
-     * Gets or Sets databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
      */
     public static final class DatabaseNameEnum {
 
@@ -138,7 +138,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -162,7 +162,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
      * @return databaseName
      */
     public DatabaseNameEnum getDatabaseName() {
@@ -184,7 +184,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get versionName
+     * 数据库版本号，获取方法请参见5.1查询数据库引擎的版本。（可输入小版本号）
      * @return versionName
      */
     public String getVersionName() {
@@ -206,7 +206,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get specCode
+     * 规格编码
      * @return specCode
      */
     public String getSpecCode() {

@@ -41,7 +41,7 @@ public class ListSlowlogRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets sortKey
+     * 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
      */
     public static final class SortKeyEnum {
 
@@ -125,7 +125,7 @@ public class ListSlowlogRequest  {
     
     private SortKeyEnum sortKey;
     /**
-     * Gets or Sets sortDir
+     * 降序或升序（分别对应desc和asc，默认为“desc”）
      */
     public static final class SortDirEnum {
 
@@ -230,7 +230,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -252,7 +252,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * @return offset
      */
     public Integer getOffset() {
@@ -274,7 +274,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量。
      * @return limit
      */
     public Integer getLimit() {
@@ -296,7 +296,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get sortKey
+     * 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -318,7 +318,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get sortDir
+     * 降序或升序（分别对应desc和asc，默认为“desc”）
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -340,7 +340,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get startTime
+     * 查询开始时间，时间为UTC时间的Unix时间戳。如：1598803200000。
      * @return startTime
      */
     public String getStartTime() {
@@ -362,7 +362,7 @@ public class ListSlowlogRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，时间为UTC时间的Unix时间戳。如：1599494399000。
      * @return endTime
      */
     public String getEndTime() {

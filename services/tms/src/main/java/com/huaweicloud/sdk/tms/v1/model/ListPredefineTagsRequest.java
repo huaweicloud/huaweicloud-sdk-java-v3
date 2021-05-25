@@ -51,7 +51,7 @@ public class ListPredefineTagsRequest  {
     
     private String orderField;
     /**
-     * Gets or Sets orderMethod
+     * order_field字段的排序方法。 可输入的值包含（区分大小写）： asc（升序） desc（降序） 只能选择以上值的其中之一。 不传则默认值为：desc
      */
     public static final class OrderMethodEnum {
 
@@ -144,7 +144,7 @@ public class ListPredefineTagsRequest  {
 
 
     /**
-     * Get key
+     * 键，支持模糊查询，不区分大小写，如果包含“non-URL-safe”的字符，需要进行“urlencoded”。
      * @return key
      */
     public String getKey() {
@@ -166,7 +166,7 @@ public class ListPredefineTagsRequest  {
 
 
     /**
-     * Get value
+     * 值，支持模糊查询，不区分大小写，如果包含“non-URL-safe”的字符，需要进行“urlencoded”。
      * @return value
      */
     public String getValue() {
@@ -188,7 +188,7 @@ public class ListPredefineTagsRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。 最小为1，最大为1000，未输入时默认为10，为0时不限制查询数据条数。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -212,7 +212,7 @@ public class ListPredefineTagsRequest  {
 
 
     /**
-     * Get marker
+     * 分页位置标识（索引）。 从marker指定索引的下一条数据开始查询。 说明： 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据响应体中marker值配入此参数，当返回的tags为空列表时表示查询到最后一页。
      * @return marker
      */
     public String getMarker() {
@@ -234,7 +234,7 @@ public class ListPredefineTagsRequest  {
 
 
     /**
-     * Get orderField
+     * 排序字段： 可输入的值包含（区分大小写）：update_time（更新时间）、key（键）、value（值）。 只能选择以上排序字段中的一个，并按照排序方法字段order_method进行排序，如果不传则默认值为：update_time。 如以下： 若该字段为update_time，则剩余两个默认字段排序为key升序，value升序。 若该字段如为key，则剩余两个默认字段排序为update_time降序，value升序。 若该字段如为value，则剩余两个默认字段排序为update_time降序，key升序。 若该字段不传，默认字段为update_time，则剩余两个默认字段排序为key升序，value升序。
      * @return orderField
      */
     public String getOrderField() {
@@ -256,7 +256,7 @@ public class ListPredefineTagsRequest  {
 
 
     /**
-     * Get orderMethod
+     * order_field字段的排序方法。 可输入的值包含（区分大小写）： asc（升序） desc（降序） 只能选择以上值的其中之一。 不传则默认值为：desc
      * @return orderMethod
      */
     public OrderMethodEnum getOrderMethod() {

@@ -51,7 +51,7 @@ public class UpdateProductTopicRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class UpdateProductTopicRequest  {
 
 
     /**
-     * Get productId
+     * 产品ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return productId
@@ -97,7 +97,7 @@ public class UpdateProductTopicRequest  {
 
 
     /**
-     * Get topicId
+     * 产品主题ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return topicId

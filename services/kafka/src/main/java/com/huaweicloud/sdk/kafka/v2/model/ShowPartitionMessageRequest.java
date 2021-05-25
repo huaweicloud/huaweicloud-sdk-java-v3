@@ -50,7 +50,7 @@ public class ShowPartitionMessageRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -72,7 +72,7 @@ public class ShowPartitionMessageRequest  {
 
 
     /**
-     * Get topic
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {
@@ -94,7 +94,7 @@ public class ShowPartitionMessageRequest  {
 
 
     /**
-     * Get partition
+     * 分区编号。
      * @return partition
      */
     public Integer getPartition() {
@@ -116,7 +116,7 @@ public class ShowPartitionMessageRequest  {
 
 
     /**
-     * Get messageOffset
+     * 消息位置。
      * @return messageOffset
      */
     public String getMessageOffset() {

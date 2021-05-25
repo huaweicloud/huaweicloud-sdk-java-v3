@@ -51,7 +51,7 @@ public class CreateResponsePropertyRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class CreateResponsePropertyRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * @return serviceId
      */
     public String getServiceId() {
@@ -95,7 +95,7 @@ public class CreateResponsePropertyRequest  {
 
 
     /**
-     * Get commandId
+     * 命令ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return commandId

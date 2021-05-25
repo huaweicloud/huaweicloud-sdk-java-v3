@@ -32,7 +32,7 @@ public class ShowApiInfoRequest  {
 
 
     /**
-     * Get version
+     * 版本信息。
      * @return version
      */
     public String getVersion() {

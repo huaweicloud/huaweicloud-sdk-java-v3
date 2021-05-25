@@ -38,7 +38,7 @@ public class KeystoneListAllProjectPermissionsForGroupRequest  {
 
 
     /**
-     * Get domainId
+     * 租户ID，获取方式请参见：[获取项目名称、项目ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return domainId
      */
     public String getDomainId() {
@@ -60,7 +60,7 @@ public class KeystoneListAllProjectPermissionsForGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return groupId
      */
     public String getGroupId() {

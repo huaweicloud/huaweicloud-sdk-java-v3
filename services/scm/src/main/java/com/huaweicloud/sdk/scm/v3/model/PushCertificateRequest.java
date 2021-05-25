@@ -39,7 +39,7 @@ public class PushCertificateRequest  {
 
 
     /**
-     * Get certificateId
+     * 证书id。
      * @return certificateId
      */
     public String getCertificateId() {

@@ -39,7 +39,7 @@ public class CreateIssueV4Request  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

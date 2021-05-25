@@ -32,7 +32,7 @@ public class ShowResourceRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源id.
      * @return resourceId
      */
     public String getResourceId() {

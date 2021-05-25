@@ -104,7 +104,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get orderId
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -126,7 +126,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get customerId
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -148,7 +148,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get createTimeBegin
+     * 订单创建开始时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * @return createTimeBegin
      */
     public String getCreateTimeBegin() {
@@ -170,7 +170,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get createTimeEnd
+     * 订单创建结束时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * @return createTimeEnd
      */
     public String getCreateTimeEnd() {
@@ -192,7 +192,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -214,7 +214,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get status
+     * 订单状态。 1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认
      * minimum: 1
      * maximum: 9
      * @return status
@@ -238,7 +238,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get orderType
+     * 订单类型。 1：开通2：续订3：变更4：退订11：按需转包年/包月13：试用14：转商用15：费用调整
      * @return orderType
      */
     public String getOrderType() {
@@ -260,7 +260,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的订单数量，默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -284,7 +284,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -308,7 +308,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get orderBy
+     * 查询的订单列表排序。 支持按照创建时间进行排序，带-表示倒序。 创建时间：升序为createTime，倒序为-createTime。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -330,7 +330,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get paymentTimeBegin
+     * 订单支付开始时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * @return paymentTimeBegin
      */
     public String getPaymentTimeBegin() {
@@ -352,7 +352,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get paymentTimeEnd
+     * 订单支付结束时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。
      * @return paymentTimeEnd
      */
     public String getPaymentTimeEnd() {
@@ -374,7 +374,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单列表时，需要携带该参数；否则只能查询自己客户的订单列表。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

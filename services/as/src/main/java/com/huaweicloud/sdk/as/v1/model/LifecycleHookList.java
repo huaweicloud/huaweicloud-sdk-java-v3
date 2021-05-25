@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -226,7 +225,7 @@ public class LifecycleHookList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private OffsetDateTime createTime;
+    private String createTime;
 
     public LifecycleHookList withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
@@ -382,7 +381,7 @@ public class LifecycleHookList  {
 
     
 
-    public LifecycleHookList withCreateTime(OffsetDateTime createTime) {
+    public LifecycleHookList withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -394,11 +393,11 @@ public class LifecycleHookList  {
      * 创建生命周期挂钩时间，遵循UTC时间。
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

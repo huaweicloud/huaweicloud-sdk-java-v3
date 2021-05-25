@@ -45,7 +45,7 @@ public class HangUpRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -67,7 +67,7 @@ public class HangUpRequest  {
 
 
     /**
-     * Get xConferenceAuthorization
+     * 会控授权令牌，通过获取会控token接口获得。
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -32,7 +32,7 @@ public class DeleteNatGatewayRequest  {
 
 
     /**
-     * Get natGatewayId
+     * 公网NAT网关实例的ID。
      * @return natGatewayId
      */
     public String getNatGatewayId() {

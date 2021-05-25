@@ -32,7 +32,7 @@ public class DeletePublicIpRequest  {
 
 
     /**
-     * Get publicipId
+     * 弹性公网IP ID
      * @return publicipId
      */
     public String getPublicipId() {

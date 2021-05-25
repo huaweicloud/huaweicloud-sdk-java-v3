@@ -51,7 +51,7 @@ public class UpdateInstanceActionRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -73,7 +73,7 @@ public class UpdateInstanceActionRequest  {
 
 
     /**
-     * Get componentId
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {
@@ -95,7 +95,7 @@ public class UpdateInstanceActionRequest  {
 
 
     /**
-     * Get instanceId
+     * 组件实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

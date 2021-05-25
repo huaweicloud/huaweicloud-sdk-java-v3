@@ -1075,12 +1075,6 @@ public class QueryJobResp  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_coupon")
-    
-    private Boolean issueCoupon;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="multi_write")
     
     private Boolean multiWrite;
@@ -1108,6 +1102,12 @@ public class QueryJobResp  {
     @JsonProperty(value="alarm_notify")
     
     private String alarmNotify;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="incre_start_position")
+    
+    private String increStartPosition;
 
     public QueryJobResp withId(String id) {
         this.id = id;
@@ -2074,28 +2074,6 @@ public class QueryJobResp  {
 
     
 
-    public QueryJobResp withIssueCoupon(Boolean issueCoupon) {
-        this.issueCoupon = issueCoupon;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否发放了代金券
-     * @return issueCoupon
-     */
-    public Boolean getIssueCoupon() {
-        return issueCoupon;
-    }
-
-    public void setIssueCoupon(Boolean issueCoupon) {
-        this.issueCoupon = issueCoupon;
-    }
-
-    
-
     public QueryJobResp withMultiWrite(Boolean multiWrite) {
         this.multiWrite = multiWrite;
         return this;
@@ -2206,6 +2184,28 @@ public class QueryJobResp  {
 
     
 
+    public QueryJobResp withIncreStartPosition(String increStartPosition) {
+        this.increStartPosition = increStartPosition;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 增量任务启动位点
+     * @return increStartPosition
+     */
+    public String getIncreStartPosition() {
+        return increStartPosition;
+    }
+
+    public void setIncreStartPosition(String increStartPosition) {
+        this.increStartPosition = increStartPosition;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2256,16 +2256,16 @@ public class QueryJobResp  {
             Objects.equals(this.vpcId, queryJobResp.vpcId) &&
             Objects.equals(this.subnetId, queryJobResp.subnetId) &&
             Objects.equals(this.securityGroupId, queryJobResp.securityGroupId) &&
-            Objects.equals(this.issueCoupon, queryJobResp.issueCoupon) &&
             Objects.equals(this.multiWrite, queryJobResp.multiWrite) &&
             Objects.equals(this.supportIpV6, queryJobResp.supportIpV6) &&
             Objects.equals(this.inheritId, queryJobResp.inheritId) &&
             Objects.equals(this.gtid, queryJobResp.gtid) &&
-            Objects.equals(this.alarmNotify, queryJobResp.alarmNotify);
+            Objects.equals(this.alarmNotify, queryJobResp.alarmNotify) &&
+            Objects.equals(this.increStartPosition, queryJobResp.increStartPosition);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, parentId, name, status, description, createTime, taskType, sourceEndpoint, dmqEndpoint, sourceSharding, targetEndpoint, netType, failedReason, instInfo, actualStartTime, fullTransferCompleteTime, updateTime, jobDirection, dbUseType, needRestart, isTargetReadonly, conflictPolicy, filterDdlPolicy, speedLimit, schemaType, nodeNum, objectSwitch, masterJobId, fullMode, structTrans, indexTrans, replaceDefiner, migrateUser, syncDatabase, errorCode, errorMessage, targetRootDb, azCode, vpcId, subnetId, securityGroupId, issueCoupon, multiWrite, supportIpV6, inheritId, gtid, alarmNotify);
+        return Objects.hash(id, parentId, name, status, description, createTime, taskType, sourceEndpoint, dmqEndpoint, sourceSharding, targetEndpoint, netType, failedReason, instInfo, actualStartTime, fullTransferCompleteTime, updateTime, jobDirection, dbUseType, needRestart, isTargetReadonly, conflictPolicy, filterDdlPolicy, speedLimit, schemaType, nodeNum, objectSwitch, masterJobId, fullMode, structTrans, indexTrans, replaceDefiner, migrateUser, syncDatabase, errorCode, errorMessage, targetRootDb, azCode, vpcId, subnetId, securityGroupId, multiWrite, supportIpV6, inheritId, gtid, alarmNotify, increStartPosition);
     }
     @Override
     public String toString() {
@@ -2312,12 +2312,12 @@ public class QueryJobResp  {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
-        sb.append("    issueCoupon: ").append(toIndentedString(issueCoupon)).append("\n");
         sb.append("    multiWrite: ").append(toIndentedString(multiWrite)).append("\n");
         sb.append("    supportIpV6: ").append(toIndentedString(supportIpV6)).append("\n");
         sb.append("    inheritId: ").append(toIndentedString(inheritId)).append("\n");
         sb.append("    gtid: ").append(toIndentedString(gtid)).append("\n");
         sb.append("    alarmNotify: ").append(toIndentedString(alarmNotify)).append("\n");
+        sb.append("    increStartPosition: ").append(toIndentedString(increStartPosition)).append("\n");
         sb.append("}");
         return sb.toString();
     }

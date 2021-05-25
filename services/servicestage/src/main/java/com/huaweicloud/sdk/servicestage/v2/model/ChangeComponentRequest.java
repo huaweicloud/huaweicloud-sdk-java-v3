@@ -45,7 +45,7 @@ public class ChangeComponentRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -67,7 +67,7 @@ public class ChangeComponentRequest  {
 
 
     /**
-     * Get componentId
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.meeting.v1.model.OrgGroupDTO;
 import com.huaweicloud.sdk.meeting.v1.model.QueryAdminResultDTO;
 import com.huaweicloud.sdk.meeting.v1.model.QueryCorpBasicResultDTO;
 import com.huaweicloud.sdk.meeting.v1.model.QueryCorpResResultDTO;
@@ -37,6 +38,12 @@ public class QueryCorpResultDTO  {
     @JsonProperty(value="resInfo")
     
     private QueryCorpResResultDTO resInfo;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="groupDTO")
+    
+    private OrgGroupDTO groupDTO;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -131,6 +138,35 @@ public class QueryCorpResultDTO  {
 
     
 
+    public QueryCorpResultDTO withGroupDTO(OrgGroupDTO groupDTO) {
+        this.groupDTO = groupDTO;
+        return this;
+    }
+
+    public QueryCorpResultDTO withGroupDTO(Consumer<OrgGroupDTO> groupDTOSetter) {
+        if(this.groupDTO == null ){
+            this.groupDTO = new OrgGroupDTO();
+            groupDTOSetter.accept(this.groupDTO);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get groupDTO
+     * @return groupDTO
+     */
+    public OrgGroupDTO getGroupDTO() {
+        return groupDTO;
+    }
+
+    public void setGroupDTO(OrgGroupDTO groupDTO) {
+        this.groupDTO = groupDTO;
+    }
+
+    
+
     public QueryCorpResultDTO withId(String id) {
         this.id = id;
         return this;
@@ -165,11 +201,12 @@ public class QueryCorpResultDTO  {
         return Objects.equals(this.basicInfo, queryCorpResultDTO.basicInfo) &&
             Objects.equals(this.adminInfo, queryCorpResultDTO.adminInfo) &&
             Objects.equals(this.resInfo, queryCorpResultDTO.resInfo) &&
+            Objects.equals(this.groupDTO, queryCorpResultDTO.groupDTO) &&
             Objects.equals(this.id, queryCorpResultDTO.id);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, adminInfo, resInfo, id);
+        return Objects.hash(basicInfo, adminInfo, resInfo, groupDTO, id);
     }
     @Override
     public String toString() {
@@ -178,6 +215,7 @@ public class QueryCorpResultDTO  {
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    adminInfo: ").append(toIndentedString(adminInfo)).append("\n");
         sb.append("    resInfo: ").append(toIndentedString(resInfo)).append("\n");
+        sb.append("    groupDTO: ").append(toIndentedString(groupDTO)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();

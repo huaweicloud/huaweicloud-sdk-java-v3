@@ -39,7 +39,7 @@ public class CreateCustomfieldsRequest  {
 
 
     /**
-     * Get projectId
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {

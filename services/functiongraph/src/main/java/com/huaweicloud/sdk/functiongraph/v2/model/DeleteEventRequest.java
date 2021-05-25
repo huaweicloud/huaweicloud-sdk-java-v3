@@ -38,7 +38,7 @@ public class DeleteEventRequest  {
 
 
     /**
-     * Get eventId
+     * 事件ID。
      * @return eventId
      */
     public String getEventId() {
@@ -60,7 +60,7 @@ public class DeleteEventRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
      * @return functionUrn
      */
     public String getFunctionUrn() {

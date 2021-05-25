@@ -32,7 +32,7 @@ public class DeleteAuthorizeRequest  {
 
 
     /**
-     * Get name
+     * 授权名称。
      * @return name
      */
     public String getName() {

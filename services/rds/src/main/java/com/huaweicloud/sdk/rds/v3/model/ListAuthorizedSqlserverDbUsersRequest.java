@@ -56,7 +56,7 @@ public class ListAuthorizedSqlserverDbUsersRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,7 +80,7 @@ public class ListAuthorizedSqlserverDbUsersRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -102,7 +102,7 @@ public class ListAuthorizedSqlserverDbUsersRequest  {
 
 
     /**
-     * Get dbName
+     * 数据库名。
      * @return dbName
      */
     public String getDbName() {
@@ -124,7 +124,7 @@ public class ListAuthorizedSqlserverDbUsersRequest  {
 
 
     /**
-     * Get page
+     * 分页页码，从1开始。
      * @return page
      */
     public Integer getPage() {
@@ -146,7 +146,7 @@ public class ListAuthorizedSqlserverDbUsersRequest  {
 
 
     /**
-     * Get limit
+     * 每页数据条数。取值范围[1, 100]。
      * @return limit
      */
     public Integer getLimit() {

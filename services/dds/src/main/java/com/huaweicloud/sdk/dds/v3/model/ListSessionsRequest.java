@@ -68,7 +68,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID。允许查询的节点如下： 集群下面的 mongos节点以及 副本集、单节点实例下面的所有节点。
      * @return nodeId
      */
     public String getNodeId() {
@@ -90,7 +90,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置，偏移量。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @return offset
      */
     public Integer getOffset() {
@@ -112,7 +112,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。取值范围[1, 20]，默认10 （表示返回10条数据）。
      * @return limit
      */
     public Integer getLimit() {
@@ -134,7 +134,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get planSummary
+     * 执行计划描述。取空值表示查询所有语句类型，也可指定执行计划，例如： COLLSCAN IXSCAN FETCH SORT LIMIT SKIP COUNT COUNT_SCAN TEXT PROJECTION 等
      * @return planSummary
      */
     public String getPlanSummary() {
@@ -156,7 +156,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get type
+     * 操作类型。取空值表示查询所有操作类型。也可指定操作类型，例如： none update insert query command getmore remove killcursors等
      * @return type
      */
     public String getType() {
@@ -178,7 +178,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get namespace
+     * 命名空间。取空值表示查询所有命名空间。也可根据当前业务进行指定。
      * @return namespace
      */
     public String getNamespace() {
@@ -200,7 +200,7 @@ public class ListSessionsRequest  {
 
 
     /**
-     * Get costTime
+     * 运行时间，单位为 ms。取空值表示查询所有的运行时间。也可根据当前业务需要进行配置，表示查询超出 cost_time 的会话。
      * @return costTime
      */
     public Integer getCostTime() {

@@ -39,7 +39,7 @@ public class BatchDeleteServerTagsRequest  {
 
 
     /**
-     * Get serverId
+     * 云服务器ID。
      * @return serverId
      */
     public String getServerId() {

@@ -38,7 +38,7 @@ public class ListMonitoredObjectsOfInstanceRequest  {
 
 
     /**
-     * Get instanceId
+     * 主维度对象ID，与DCS实例列表中实例ID相同。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ListMonitoredObjectsOfInstanceRequest  {
 
 
     /**
-     * Get dimName
+     * 主维度ID，当前支持子维度的主维度ID的有dcs_instance_id。
      * @return dimName
      */
     public String getDimName() {

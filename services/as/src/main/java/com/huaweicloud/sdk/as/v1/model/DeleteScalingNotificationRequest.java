@@ -38,7 +38,7 @@ public class DeleteScalingNotificationRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组标识。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -60,7 +60,7 @@ public class DeleteScalingNotificationRequest  {
 
 
     /**
-     * Get topicUrn
+     * SMN服务中Topic的唯一的资源标识。
      * @return topicUrn
      */
     public String getTopicUrn() {

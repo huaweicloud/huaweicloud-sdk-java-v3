@@ -32,7 +32,7 @@ public class ShowApiInfoRequest  {
 
 
     /**
-     * Get version
+     * 待查询版本号。以v开头，如v2。
      * @return version
      */
     public String getVersion() {

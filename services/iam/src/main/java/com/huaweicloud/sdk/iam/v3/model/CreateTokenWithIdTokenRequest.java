@@ -39,7 +39,7 @@ public class CreateTokenWithIdTokenRequest  {
 
 
     /**
-     * Get xIdpId
+     * 身份提供商ID。
      * @return xIdpId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

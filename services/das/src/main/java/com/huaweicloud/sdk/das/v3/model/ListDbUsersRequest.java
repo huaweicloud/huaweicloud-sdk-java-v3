@@ -51,7 +51,7 @@ public class ListDbUsersRequest  {
     
     private String dbUsername;
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -144,7 +144,7 @@ public class ListDbUsersRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -166,7 +166,7 @@ public class ListDbUsersRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @return offset
      */
     public Integer getOffset() {
@@ -188,7 +188,7 @@ public class ListDbUsersRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
      * @return limit
      */
     public Integer getLimit() {
@@ -210,7 +210,7 @@ public class ListDbUsersRequest  {
 
 
     /**
-     * Get dbUserId
+     * 数据库用户ID
      * @return dbUserId
      */
     public String getDbUserId() {
@@ -232,7 +232,7 @@ public class ListDbUsersRequest  {
 
 
     /**
-     * Get dbUsername
+     * 数据库用户名称
      * @return dbUsername
      */
     public String getDbUsername() {
@@ -254,7 +254,7 @@ public class ListDbUsersRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

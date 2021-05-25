@@ -45,7 +45,7 @@ public class UpdateDDosRequest  {
 
 
     /**
-     * Get floatingIpId
+     * 用户EIP对应的ID
      * @return floatingIpId
      */
     public String getFloatingIpId() {
@@ -67,7 +67,7 @@ public class UpdateDDosRequest  {
 
 
     /**
-     * Get ip
+     * ip
      * @return ip
      */
     public String getIp() {

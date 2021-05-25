@@ -62,7 +62,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get throttleId
+     * 流控策略的ID
      * @return throttleId
      */
     public String getThrottleId() {
@@ -106,7 +106,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get objectType
+     * 特殊流控类型：APP, USER
      * @return objectType
      */
     public String getObjectType() {
@@ -128,7 +128,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get appName
+     * 筛选的特殊应用名称
      * @return appName
      */
     public String getAppName() {
@@ -150,7 +150,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -172,7 +172,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

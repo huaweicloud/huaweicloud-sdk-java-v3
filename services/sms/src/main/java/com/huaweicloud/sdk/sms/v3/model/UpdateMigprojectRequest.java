@@ -39,7 +39,7 @@ public class UpdateMigprojectRequest  {
 
 
     /**
-     * Get migProjectId
+     * 迁移项目id
      * @return migProjectId
      */
     public String getMigProjectId() {

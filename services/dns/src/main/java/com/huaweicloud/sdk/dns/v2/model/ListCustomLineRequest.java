@@ -56,7 +56,7 @@ public class ListCustomLineRequest  {
 
 
     /**
-     * Get lineId
+     * 解析线路ID。
      * @return lineId
      */
     public String getLineId() {
@@ -78,7 +78,7 @@ public class ListCustomLineRequest  {
 
 
     /**
-     * Get name
+     * 解析线路名称。
      * @return name
      */
     public String getName() {
@@ -100,7 +100,7 @@ public class ListCustomLineRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的资源个数。取值范围为0~100。
      * @return limit
      */
     public Integer getLimit() {
@@ -122,7 +122,7 @@ public class ListCustomLineRequest  {
 
 
     /**
-     * Get offset
+     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。
      * @return offset
      */
     public Integer getOffset() {
@@ -144,7 +144,7 @@ public class ListCustomLineRequest  {
 
 
     /**
-     * Get showDetail
+     * 是否查询详细信息。  取值范围：  true：是，查询详细信息。 false：否，不查询详细信息。 默认为true。
      * @return showDetail
      */
     public Boolean getShowDetail() {

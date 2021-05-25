@@ -39,7 +39,7 @@ public class NeutronUpdateFloatingIpRequest  {
 
 
     /**
-     * Get floatingipId
+     * floatingip的ID
      * @return floatingipId
      */
     public String getFloatingipId() {

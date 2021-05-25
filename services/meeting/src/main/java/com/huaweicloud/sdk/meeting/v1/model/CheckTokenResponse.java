@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.meeting.v1.model.ProxyTokenDTO;
 import com.huaweicloud.sdk.meeting.v1.model.UserInfo;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -46,6 +47,12 @@ public class CheckTokenResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="createTime")
+    
+    private Long createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user")
     
     private UserInfo user;
@@ -79,6 +86,48 @@ public class CheckTokenResponse extends SdkResponse {
     @JsonProperty(value="daysPwdAvailable")
     
     private Integer daysPwdAvailable;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="proxyToken")
+    
+    private ProxyTokenDTO proxyToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="delayDelete")
+    
+    private Boolean delayDelete;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tokenType")
+    
+    private Integer tokenType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="refreshToken")
+    
+    private String refreshToken;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="refreshValidPeriod")
+    
+    private Long refreshValidPeriod;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="refreshExpireTime")
+    
+    private Long refreshExpireTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="refreshCreateTime")
+    
+    private Long refreshCreateTime;
 
     public CheckTokenResponse withAccessToken(String accessToken) {
         this.accessToken = accessToken;
@@ -168,6 +217,28 @@ public class CheckTokenResponse extends SdkResponse {
 
     
 
+    public CheckTokenResponse withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 业务token的创建时间戳，单位：毫秒。
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    
+
     public CheckTokenResponse withUser(UserInfo user) {
         this.user = user;
         return this;
@@ -206,7 +277,7 @@ public class CheckTokenResponse extends SdkResponse {
 
 
     /**
-     * 登录帐号类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 16：workplace pc 
+     * 登录帐号类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 15：硬终端; * 16：welink pc; * 17：cloudlink 大屏; * 18：welink mobile; * 20：welink 大屏; * 24：cloudlink/welink pad; * 26：智慧屏; * 50：手机客户端; * 51：PAD客户端; * 52：PC客户端; * 53：电视客户端; * 54：大屏客户端。 
      * @return clientType
      */
     public Integer getClientType() {
@@ -307,6 +378,167 @@ public class CheckTokenResponse extends SdkResponse {
 
     
 
+    public CheckTokenResponse withProxyToken(ProxyTokenDTO proxyToken) {
+        this.proxyToken = proxyToken;
+        return this;
+    }
+
+    public CheckTokenResponse withProxyToken(Consumer<ProxyTokenDTO> proxyTokenSetter) {
+        if(this.proxyToken == null ){
+            this.proxyToken = new ProxyTokenDTO();
+            proxyTokenSetter.accept(this.proxyToken);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get proxyToken
+     * @return proxyToken
+     */
+    public ProxyTokenDTO getProxyToken() {
+        return proxyToken;
+    }
+
+    public void setProxyToken(ProxyTokenDTO proxyToken) {
+        this.proxyToken = proxyToken;
+    }
+
+    
+
+    public CheckTokenResponse withDelayDelete(Boolean delayDelete) {
+        this.delayDelete = delayDelete;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否延时删除状态
+     * @return delayDelete
+     */
+    public Boolean getDelayDelete() {
+        return delayDelete;
+    }
+
+    public void setDelayDelete(Boolean delayDelete) {
+        this.delayDelete = delayDelete;
+    }
+
+    
+
+    public CheckTokenResponse withTokenType(Integer tokenType) {
+        this.tokenType = tokenType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * token类型 * 0：用户ACCESS TOKEN； * 1：会控TOKEN * 2：一次性TOKEN 
+     * @return tokenType
+     */
+    public Integer getTokenType() {
+        return tokenType;
+    }
+
+    public void setTokenType(Integer tokenType) {
+        this.tokenType = tokenType;
+    }
+
+    
+
+    public CheckTokenResponse withRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 刷新token字符串。
+     * @return refreshToken
+     */
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    
+
+    public CheckTokenResponse withRefreshValidPeriod(Long refreshValidPeriod) {
+        this.refreshValidPeriod = refreshValidPeriod;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 刷新token有效时长，单位：秒。
+     * @return refreshValidPeriod
+     */
+    public Long getRefreshValidPeriod() {
+        return refreshValidPeriod;
+    }
+
+    public void setRefreshValidPeriod(Long refreshValidPeriod) {
+        this.refreshValidPeriod = refreshValidPeriod;
+    }
+
+    
+
+    public CheckTokenResponse withRefreshExpireTime(Long refreshExpireTime) {
+        this.refreshExpireTime = refreshExpireTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 刷新token的失效时间戳，单位：秒。
+     * @return refreshExpireTime
+     */
+    public Long getRefreshExpireTime() {
+        return refreshExpireTime;
+    }
+
+    public void setRefreshExpireTime(Long refreshExpireTime) {
+        this.refreshExpireTime = refreshExpireTime;
+    }
+
+    
+
+    public CheckTokenResponse withRefreshCreateTime(Long refreshCreateTime) {
+        this.refreshCreateTime = refreshCreateTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 刷新token的创建时间戳，单位：毫秒。
+     * @return refreshCreateTime
+     */
+    public Long getRefreshCreateTime() {
+        return refreshCreateTime;
+    }
+
+    public void setRefreshCreateTime(Long refreshCreateTime) {
+        this.refreshCreateTime = refreshCreateTime;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -320,16 +552,24 @@ public class CheckTokenResponse extends SdkResponse {
             Objects.equals(this.tokenIp, checkTokenResponse.tokenIp) &&
             Objects.equals(this.validPeriod, checkTokenResponse.validPeriod) &&
             Objects.equals(this.expireTime, checkTokenResponse.expireTime) &&
+            Objects.equals(this.createTime, checkTokenResponse.createTime) &&
             Objects.equals(this.user, checkTokenResponse.user) &&
             Objects.equals(this.clientType, checkTokenResponse.clientType) &&
             Objects.equals(this.forceLoginInd, checkTokenResponse.forceLoginInd) &&
             Objects.equals(this.firstLogin, checkTokenResponse.firstLogin) &&
             Objects.equals(this.pwdExpired, checkTokenResponse.pwdExpired) &&
-            Objects.equals(this.daysPwdAvailable, checkTokenResponse.daysPwdAvailable);
+            Objects.equals(this.daysPwdAvailable, checkTokenResponse.daysPwdAvailable) &&
+            Objects.equals(this.proxyToken, checkTokenResponse.proxyToken) &&
+            Objects.equals(this.delayDelete, checkTokenResponse.delayDelete) &&
+            Objects.equals(this.tokenType, checkTokenResponse.tokenType) &&
+            Objects.equals(this.refreshToken, checkTokenResponse.refreshToken) &&
+            Objects.equals(this.refreshValidPeriod, checkTokenResponse.refreshValidPeriod) &&
+            Objects.equals(this.refreshExpireTime, checkTokenResponse.refreshExpireTime) &&
+            Objects.equals(this.refreshCreateTime, checkTokenResponse.refreshCreateTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(accessToken, tokenIp, validPeriod, expireTime, user, clientType, forceLoginInd, firstLogin, pwdExpired, daysPwdAvailable);
+        return Objects.hash(accessToken, tokenIp, validPeriod, expireTime, createTime, user, clientType, forceLoginInd, firstLogin, pwdExpired, daysPwdAvailable, proxyToken, delayDelete, tokenType, refreshToken, refreshValidPeriod, refreshExpireTime, refreshCreateTime);
     }
     @Override
     public String toString() {
@@ -339,12 +579,20 @@ public class CheckTokenResponse extends SdkResponse {
         sb.append("    tokenIp: ").append(toIndentedString(tokenIp)).append("\n");
         sb.append("    validPeriod: ").append(toIndentedString(validPeriod)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
         sb.append("    forceLoginInd: ").append(toIndentedString(forceLoginInd)).append("\n");
         sb.append("    firstLogin: ").append(toIndentedString(firstLogin)).append("\n");
         sb.append("    pwdExpired: ").append(toIndentedString(pwdExpired)).append("\n");
         sb.append("    daysPwdAvailable: ").append(toIndentedString(daysPwdAvailable)).append("\n");
+        sb.append("    proxyToken: ").append(toIndentedString(proxyToken)).append("\n");
+        sb.append("    delayDelete: ").append(toIndentedString(delayDelete)).append("\n");
+        sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
+        sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
+        sb.append("    refreshValidPeriod: ").append(toIndentedString(refreshValidPeriod)).append("\n");
+        sb.append("    refreshExpireTime: ").append(toIndentedString(refreshExpireTime)).append("\n");
+        sb.append("    refreshCreateTime: ").append(toIndentedString(refreshCreateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

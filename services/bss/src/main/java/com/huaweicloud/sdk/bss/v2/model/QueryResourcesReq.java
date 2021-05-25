@@ -160,7 +160,7 @@ public class QueryResourcesReq  {
     }
 
     /**
-     * 资源状态。 查询指定状态的资源。多个状态以英文逗号分隔。 2：已生效4：已冻结
+     * 资源状态。 查询指定状态的资源。多个状态以英文逗号分隔。 2：使用中4：已冻结5：已过期
      * @return statusList
      */
     public List<Integer> getStatusList() {

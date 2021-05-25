@@ -32,7 +32,7 @@ public class RemoveProjectRequest  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

@@ -44,7 +44,7 @@ public class BroadcastParticipantRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -66,7 +66,7 @@ public class BroadcastParticipantRequest  {
 
 
     /**
-     * Get participantID
+     * 与会者标识。
      * @return participantID
      */
     public String getParticipantID() {
@@ -88,7 +88,7 @@ public class BroadcastParticipantRequest  {
 
 
     /**
-     * Get xConferenceAuthorization
+     * 会控授权令牌，通过获取会控token接口获得。
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

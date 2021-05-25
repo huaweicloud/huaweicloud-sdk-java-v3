@@ -32,7 +32,7 @@ public class AutoRenewalResourcesRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID。 您可以调用“查询客户包年/包月资源列表”接口获取资源ID。 设置主资源时会将从资源一起设置，主从关系为： 云主机为主资源，对应的从资源为云硬盘共享带宽的情况下，带宽为主资源，对应的从资源为弹性IP（可能包含多个IP）独享带宽的情况下，弹性IP为主资源，对应的从资源为带宽
      * @return resourceId
      */
     public String getResourceId() {

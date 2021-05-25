@@ -32,7 +32,7 @@ public class ShowIssueCompletionRateRequest  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

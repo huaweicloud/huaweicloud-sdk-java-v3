@@ -44,7 +44,7 @@ public class ListApiRuntimeDefinitionV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class ListApiRuntimeDefinitionV2Request  {
 
 
     /**
-     * Get apiId
+     * API的编号
      * @return apiId
      */
     public String getApiId() {
@@ -88,7 +88,7 @@ public class ListApiRuntimeDefinitionV2Request  {
 
 
     /**
-     * Get envId
+     * API的发布环境编号
      * @return envId
      */
     public String getEnvId() {

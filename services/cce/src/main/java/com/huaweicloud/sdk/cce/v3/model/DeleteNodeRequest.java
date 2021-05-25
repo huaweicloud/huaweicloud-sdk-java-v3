@@ -39,7 +39,7 @@ public class DeleteNodeRequest  {
     
     private String errorStatus;
     /**
-     * Gets or Sets nodepoolScaleDown
+     * 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
      */
     public static final class NodepoolScaleDownEnum {
 
@@ -126,7 +126,7 @@ public class DeleteNodeRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
      * @return clusterId
      */
     public String getClusterId() {
@@ -148,7 +148,7 @@ public class DeleteNodeRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
      * @return nodeId
      */
     public String getNodeId() {
@@ -170,7 +170,7 @@ public class DeleteNodeRequest  {
 
 
     /**
-     * Get errorStatus
+     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
      * @return errorStatus
      */
     public String getErrorStatus() {
@@ -192,7 +192,7 @@ public class DeleteNodeRequest  {
 
 
     /**
-     * Get nodepoolScaleDown
+     * 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
      * @return nodepoolScaleDown
      */
     public NodepoolScaleDownEnum getNodepoolScaleDown() {

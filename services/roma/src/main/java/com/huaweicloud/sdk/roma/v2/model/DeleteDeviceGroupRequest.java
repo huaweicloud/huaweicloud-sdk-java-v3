@@ -38,7 +38,7 @@ public class DeleteDeviceGroupRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteDeviceGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 设备分组ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return groupId

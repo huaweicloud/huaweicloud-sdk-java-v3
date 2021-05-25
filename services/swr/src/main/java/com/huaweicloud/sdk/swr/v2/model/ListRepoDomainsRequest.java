@@ -38,7 +38,7 @@ public class ListRepoDomainsRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -60,7 +60,7 @@ public class ListRepoDomainsRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {

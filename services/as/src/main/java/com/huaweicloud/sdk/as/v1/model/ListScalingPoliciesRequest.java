@@ -33,7 +33,7 @@ public class ListScalingPoliciesRequest  {
     
     private String scalingPolicyName;
     /**
-     * Gets or Sets scalingPolicyType
+     * 策略类型。
      */
     public static final class ScalingPolicyTypeEnum {
 
@@ -150,7 +150,7 @@ public class ListScalingPoliciesRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -172,7 +172,7 @@ public class ListScalingPoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyName
+     * 伸缩策略名称。
      * @return scalingPolicyName
      */
     public String getScalingPolicyName() {
@@ -194,7 +194,7 @@ public class ListScalingPoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyType
+     * 策略类型。
      * @return scalingPolicyType
      */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
@@ -216,7 +216,7 @@ public class ListScalingPoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩策略ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {
@@ -238,7 +238,7 @@ public class ListScalingPoliciesRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -260,7 +260,7 @@ public class ListScalingPoliciesRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数，默认20，最大100。
      * minimum: 0
      * maximum: 100
      * @return limit

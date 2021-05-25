@@ -32,7 +32,7 @@ public class DeletePublicZoneRequest  {
 
 
     /**
-     * Get zoneId
+     * 待删除zone的ID
      * @return zoneId
      */
     public String getZoneId() {

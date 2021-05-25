@@ -34,6 +34,12 @@ public class ListFunctionsResponse extends SdkResponse {
     
     private Integer nextMarker;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Long count;
+
     public ListFunctionsResponse withFunctions(List<ListFunctionResult> functions) {
         this.functions = functions;
         return this;
@@ -92,6 +98,28 @@ public class ListFunctionsResponse extends SdkResponse {
 
     
 
+    public ListFunctionsResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 满足查询条件的函数总数。
+     * @return count
+     */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -102,11 +130,12 @@ public class ListFunctionsResponse extends SdkResponse {
         }
         ListFunctionsResponse listFunctionsResponse = (ListFunctionsResponse) o;
         return Objects.equals(this.functions, listFunctionsResponse.functions) &&
-            Objects.equals(this.nextMarker, listFunctionsResponse.nextMarker);
+            Objects.equals(this.nextMarker, listFunctionsResponse.nextMarker) &&
+            Objects.equals(this.count, listFunctionsResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(functions, nextMarker);
+        return Objects.hash(functions, nextMarker, count);
     }
     @Override
     public String toString() {
@@ -114,6 +143,7 @@ public class ListFunctionsResponse extends SdkResponse {
         sb.append("class ListFunctionsResponse {\n");
         sb.append("    functions: ").append(toIndentedString(functions)).append("\n");
         sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

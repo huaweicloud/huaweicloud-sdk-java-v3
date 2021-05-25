@@ -38,7 +38,7 @@ public class DeleteMqsInstanceTopicRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteMqsInstanceTopicRequest  {
 
 
     /**
-     * Get name
+     * 待删除的topic，多个topic以“,”分割。
      * @return name
      */
     public String getName() {

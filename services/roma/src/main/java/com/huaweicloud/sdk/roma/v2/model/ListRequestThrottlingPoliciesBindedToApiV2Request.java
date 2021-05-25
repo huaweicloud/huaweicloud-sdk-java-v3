@@ -68,7 +68,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -90,7 +90,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get apiId
+     * API编号
      * @return apiId
      */
     public String getApiId() {
@@ -112,7 +112,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get throttleId
+     * 流控策略的编号
      * @return throttleId
      */
     public String getThrottleId() {
@@ -134,7 +134,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get throttleName
+     * 流控策略的名称
      * @return throttleName
      */
     public String getThrottleName() {
@@ -156,7 +156,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get envId
+     * 绑定的环境编号
      * @return envId
      */
     public String getEnvId() {
@@ -178,7 +178,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -200,7 +200,7 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

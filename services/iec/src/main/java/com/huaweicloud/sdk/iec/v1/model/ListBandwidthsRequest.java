@@ -44,7 +44,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get limit
+     * 查询的数目，取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -68,7 +68,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -90,7 +90,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get siteId
+     * 边缘站点ID。
      * @return siteId
      */
     public String getSiteId() {

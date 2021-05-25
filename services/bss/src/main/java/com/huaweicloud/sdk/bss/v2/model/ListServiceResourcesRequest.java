@@ -50,7 +50,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。中文：zh_CN英文：en_US缺省为zh_CN。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * 云服务类型编码。例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -96,7 +96,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的数量，默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -120,7 +120,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset

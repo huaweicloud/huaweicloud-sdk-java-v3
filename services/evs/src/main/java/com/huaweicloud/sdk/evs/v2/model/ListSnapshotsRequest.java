@@ -92,7 +92,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。 说明:分页查询快照时使用，与limit配合使用。假如共有30个快照，设置offset为11，limit为10，即为从第12个快照开始查询，一次最多可读取10个快照。
      * @return offset
      */
     public Integer getOffset() {
@@ -114,7 +114,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get limit
+     * 返回结果个数限制，值为大于0的整数。默认值为1000。
      * @return limit
      */
     public Integer getLimit() {
@@ -136,7 +136,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get name
+     * 云硬盘快照名称。最大支持255个字节。
      * @return name
      */
     public String getName() {
@@ -158,7 +158,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get status
+     * 云硬盘快照状态，具体请参见A.3 云硬盘快照状态。
      * @return status
      */
     public String getStatus() {
@@ -180,7 +180,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get volumeId
+     * 快照所属云硬盘的ID。
      * @return volumeId
      */
     public String getVolumeId() {
@@ -202,7 +202,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get availabilityZone
+     * 快照所属云硬盘的可用区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -224,7 +224,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get id
+     * 指定快照id进行过滤。
      * @return id
      */
     public String getId() {
@@ -246,7 +246,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get dedicatedStorageName
+     * 专属存储的名称。
      * @return dedicatedStorageName
      */
     public String getDedicatedStorageName() {
@@ -268,7 +268,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get dedicatedStorageId
+     * 专属存储ID。
      * @return dedicatedStorageId
      */
     public String getDedicatedStorageId() {
@@ -290,7 +290,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get serviceType
+     * 服务类型。仅支持EVS、DSS、DESS。
      * @return serviceType
      */
     public String getServiceType() {
@@ -312,7 +312,7 @@ public class ListSnapshotsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 > 说明： >  > 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\"[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\"。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

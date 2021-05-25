@@ -50,7 +50,7 @@ public class ListFirewallsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数  取值范围：0~1000
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -74,7 +74,7 @@ public class ListFirewallsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -96,7 +96,7 @@ public class ListFirewallsRequest  {
 
 
     /**
-     * Get id
+     * 通过ID过滤网络ACL。
      * @return id
      */
     public String getId() {
@@ -118,7 +118,7 @@ public class ListFirewallsRequest  {
 
 
     /**
-     * Get name
+     * 通过name模糊匹配网络ACL。
      * @return name
      */
     public String getName() {

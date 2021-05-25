@@ -50,7 +50,7 @@ public class ListEdgeCloudRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。 当前偏移量，默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -72,7 +72,7 @@ public class ListEdgeCloudRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘业务列表当前页面的数量。 取值范围：0~1000。
      * @return limit
      */
     public Integer getLimit() {
@@ -94,7 +94,7 @@ public class ListEdgeCloudRequest  {
 
 
     /**
-     * Get name
+     * 边缘业务名称。
      * @return name
      */
     public String getName() {
@@ -116,7 +116,7 @@ public class ListEdgeCloudRequest  {
 
 
     /**
-     * Get id
+     * 边缘业务ID。
      * @return id
      */
     public String getId() {

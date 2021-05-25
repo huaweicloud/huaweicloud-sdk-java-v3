@@ -32,7 +32,7 @@ public class ShowPrivateZoneRequest  {
 
 
     /**
-     * Get zoneId
+     * 待查询zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

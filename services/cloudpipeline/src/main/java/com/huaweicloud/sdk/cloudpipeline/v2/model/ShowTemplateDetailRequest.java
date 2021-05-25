@@ -50,7 +50,7 @@ public class ShowTemplateDetailRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ShowTemplateDetailRequest  {
 
 
     /**
-     * Get templateId
+     * 模板ID
      * @return templateId
      */
     public String getTemplateId() {
@@ -96,7 +96,7 @@ public class ShowTemplateDetailRequest  {
 
 
     /**
-     * Get templateType
+     * 模板类型
      * @return templateType
      */
     public String getTemplateType() {
@@ -118,7 +118,7 @@ public class ShowTemplateDetailRequest  {
 
 
     /**
-     * Get source
+     * 接口调用方
      * @return source
      */
     public String getSource() {

@@ -730,6 +730,33 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscounts = genForlistOrderDiscounts();
+
+    private static HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> genForlistOrderDiscounts() {
+        // basic
+        HttpRequestDef.Builder<ListOrderDiscountsRequest, ListOrderDiscountsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOrderDiscountsRequest.class, ListOrderDiscountsResponse.class)
+                .withName("ListOrderDiscounts")
+                .withUri("/v2/orders/customer-orders/order-discounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("order_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListOrderDiscountsRequest::getOrderId, (req, v) -> {
+                req.setOrderId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> listPayPerUseCustomerResources = genForlistPayPerUseCustomerResources();
 
     private static HttpRequestDef<ListPayPerUseCustomerResourcesRequest, ListPayPerUseCustomerResourcesResponse> genForlistPayPerUseCustomerResources() {

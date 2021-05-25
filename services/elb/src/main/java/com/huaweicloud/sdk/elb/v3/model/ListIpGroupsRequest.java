@@ -84,7 +84,7 @@ public class ListIpGroupsRequest  {
     }
 
     /**
-     * Get description
+     * ip地址组的描述信息。
      * @return description
      */
     public List<String> getDescription() {
@@ -120,7 +120,7 @@ public class ListIpGroupsRequest  {
     }
 
     /**
-     * Get id
+     * ip地址组的id
      * @return id
      */
     public List<String> getId() {
@@ -156,7 +156,7 @@ public class ListIpGroupsRequest  {
     }
 
     /**
-     * Get ipList
+     * ip地址，多个用逗号分隔
      * @return ipList
      */
     public List<String> getIpList() {
@@ -178,7 +178,7 @@ public class ListIpGroupsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -202,7 +202,7 @@ public class ListIpGroupsRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -238,7 +238,7 @@ public class ListIpGroupsRequest  {
     }
 
     /**
-     * Get name
+     * ip地址组的名称
      * @return name
      */
     public List<String> getName() {
@@ -260,7 +260,7 @@ public class ListIpGroupsRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {

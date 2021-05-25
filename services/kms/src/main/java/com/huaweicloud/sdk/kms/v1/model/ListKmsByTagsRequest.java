@@ -45,7 +45,7 @@ public class ListKmsByTagsRequest  {
 
 
     /**
-     * Get resourceInstances
+     * 资源实例
      * @return resourceInstances
      */
     public String getResourceInstances() {
@@ -67,7 +67,7 @@ public class ListKmsByTagsRequest  {
 
 
     /**
-     * Get versionId
+     * API版本号
      * @return versionId
      */
     public String getVersionId() {

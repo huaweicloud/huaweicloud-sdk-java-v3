@@ -32,7 +32,7 @@ public class ShowVolumeRequest  {
 
 
     /**
-     * Get volumeId
+     * 磁盘ID。
      * @return volumeId
      */
     public String getVolumeId() {

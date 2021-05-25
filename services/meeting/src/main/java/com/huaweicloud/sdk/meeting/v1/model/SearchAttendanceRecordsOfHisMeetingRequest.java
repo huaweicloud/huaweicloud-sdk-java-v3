@@ -74,7 +74,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get confUUID
+     * 会议UUID。
      * @return confUUID
      */
     public String getConfUUID() {
@@ -96,7 +96,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get offset
+     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -118,7 +118,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get limit
+     * 指定返回的记录数，默认是20，最大500条。
      * minimum: 0
      * maximum: 500
      * @return limit
@@ -142,7 +142,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get searchKey
+     * 查询用来当作关键词的字符串。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -164,7 +164,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get userUUID
+     * 用户的UUID（已在USG注册过的）。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -186,7 +186,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get xAuthorizationType
+     * 标识是否为第三方portal过来的请求。
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -210,7 +210,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get xSiteId
+     * 用于区分到哪个HCSO站点鉴权。
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -234,7 +234,7 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言。默认简体中文。 - zh-CN: 简体中文。 - en-US: 美国英文。
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {

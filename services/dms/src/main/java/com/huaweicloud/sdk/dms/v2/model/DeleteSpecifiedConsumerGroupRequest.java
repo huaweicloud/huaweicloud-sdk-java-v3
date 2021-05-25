@@ -38,7 +38,7 @@ public class DeleteSpecifiedConsumerGroupRequest  {
 
 
     /**
-     * Get queueId
+     * 队列ID
      * @return queueId
      */
     public String getQueueId() {
@@ -60,7 +60,7 @@ public class DeleteSpecifiedConsumerGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 待删除的消费组ID
      * @return groupId
      */
     public String getGroupId() {

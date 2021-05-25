@@ -38,7 +38,7 @@ public class DisassociateSignatureKeyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DisassociateSignatureKeyV2Request  {
 
 
     /**
-     * Get signBindingsId
+     * API与签名密钥的绑定关系编号
      * @return signBindingsId
      */
     public String getSignBindingsId() {

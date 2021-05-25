@@ -21,9 +21,9 @@ public class UpdateSinkTaskQuotaReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sink_max_tasks")
     
-    private String sinkMaxTasks;
+    private Integer sinkMaxTasks;
 
-    public UpdateSinkTaskQuotaReq withSinkMaxTasks(String sinkMaxTasks) {
+    public UpdateSinkTaskQuotaReq withSinkMaxTasks(Integer sinkMaxTasks) {
         this.sinkMaxTasks = sinkMaxTasks;
         return this;
     }
@@ -35,11 +35,11 @@ public class UpdateSinkTaskQuotaReq  {
      * 转储任务的总个数。 
      * @return sinkMaxTasks
      */
-    public String getSinkMaxTasks() {
+    public Integer getSinkMaxTasks() {
         return sinkMaxTasks;
     }
 
-    public void setSinkMaxTasks(String sinkMaxTasks) {
+    public void setSinkMaxTasks(Integer sinkMaxTasks) {
         this.sinkMaxTasks = sinkMaxTasks;
     }
 

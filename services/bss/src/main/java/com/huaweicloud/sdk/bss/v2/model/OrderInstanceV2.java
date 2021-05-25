@@ -358,7 +358,7 @@ public class OrderInstanceV2  {
 
 
     /**
-     * 资源状态： 1 初始化2 已生效3 已过期4 已冻结
+     * 资源状态。状态说明请参见资源状态说明。 2：使用中3：已关闭（页面不展示这个状态）4：已冻结5：已过期
      * @return status
      */
     public Integer getStatus() {

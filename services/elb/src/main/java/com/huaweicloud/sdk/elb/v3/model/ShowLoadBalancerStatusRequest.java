@@ -32,7 +32,7 @@ public class ShowLoadBalancerStatusRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 所属负载均衡器id
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

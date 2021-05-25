@@ -38,7 +38,7 @@ public class ListProjectTemplatesRequest  {
 
 
     /**
-     * Get arch
+     * cpu架构 x86|arm
      * @return arch
      */
     public String getArch() {
@@ -60,7 +60,7 @@ public class ListProjectTemplatesRequest  {
 
 
     /**
-     * Get stackId
+     * 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
      * @return stackId
      */
     public String getStackId() {

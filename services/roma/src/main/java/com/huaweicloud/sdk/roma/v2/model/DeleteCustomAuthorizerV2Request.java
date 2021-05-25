@@ -38,7 +38,7 @@ public class DeleteCustomAuthorizerV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteCustomAuthorizerV2Request  {
 
 
     /**
-     * Get authorizerId
+     * 自定义认证的ID
      * @return authorizerId
      */
     public String getAuthorizerId() {

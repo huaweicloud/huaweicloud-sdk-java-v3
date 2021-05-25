@@ -45,7 +45,7 @@ public class KeystoneUpdateProtocolRequest  {
 
 
     /**
-     * Get idpId
+     * 身份提供商ID。
      * @return idpId
      */
     public String getIdpId() {
@@ -67,7 +67,7 @@ public class KeystoneUpdateProtocolRequest  {
 
 
     /**
-     * Get protocolId
+     * 待更新的协议ID。
      * @return protocolId
      */
     public String getProtocolId() {

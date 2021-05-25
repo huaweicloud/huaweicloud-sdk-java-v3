@@ -56,7 +56,7 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     /**
-     * Get appQuotaId
+     * 客户端配额编号
      * @return appQuotaId
      */
     public String getAppQuotaId() {
@@ -100,7 +100,7 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     /**
-     * Get appName
+     * 客户端应用名称
      * @return appName
      */
     public String getAppName() {
@@ -122,7 +122,7 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -144,7 +144,7 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

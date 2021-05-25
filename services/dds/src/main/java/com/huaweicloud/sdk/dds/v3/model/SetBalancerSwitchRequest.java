@@ -27,7 +27,7 @@ public class SetBalancerSwitchRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets action
+     * 开启或关闭集群均衡。
      */
     public static final class ActionEnum {
 
@@ -120,7 +120,7 @@ public class SetBalancerSwitchRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -142,7 +142,7 @@ public class SetBalancerSwitchRequest  {
 
 
     /**
-     * Get action
+     * 开启或关闭集群均衡。
      * @return action
      */
     public ActionEnum getAction() {

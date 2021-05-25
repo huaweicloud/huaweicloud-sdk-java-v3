@@ -32,7 +32,7 @@ public class NovaDeleteKeypairRequest  {
 
 
     /**
-     * Get keypairName
+     * 密钥名称。
      * @return keypairName
      */
     public String getKeypairName() {

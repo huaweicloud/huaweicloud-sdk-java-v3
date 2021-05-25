@@ -44,7 +44,7 @@ public class DeleteSourceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class DeleteSourceRequest  {
 
 
     /**
-     * Get ruleId
+     * 规则ID
      * @return ruleId
      */
     public String getRuleId() {
@@ -88,7 +88,7 @@ public class DeleteSourceRequest  {
 
 
     /**
-     * Get sourceId
+     * 源数据源ID
      * minimum: 1
      * maximum: 999999999999999999
      * @return sourceId

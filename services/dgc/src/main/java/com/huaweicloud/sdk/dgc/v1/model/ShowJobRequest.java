@@ -32,7 +32,7 @@ public class ShowJobRequest  {
 
 
     /**
-     * Get jobName
+     * 作业名称.
      * @return jobName
      */
     public String getJobName() {

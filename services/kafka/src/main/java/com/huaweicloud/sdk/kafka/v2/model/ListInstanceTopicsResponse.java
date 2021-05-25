@@ -24,9 +24,9 @@ public class ListInstanceTopicsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
+    @JsonProperty(value="total")
     
-    private Integer count;
+    private Integer total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -36,12 +36,24 @@ public class ListInstanceTopicsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="remain_partitions")
+    
+    private Integer remainPartitions;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="max_partitions")
+    
+    private Integer maxPartitions;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topics")
     
     private List<ListInstanceTopicsRespTopics> topics = null;
     
-    public ListInstanceTopicsResponse withCount(Integer count) {
-        this.count = count;
+    public ListInstanceTopicsResponse withTotal(Integer total) {
+        this.total = total;
         return this;
     }
 
@@ -50,14 +62,14 @@ public class ListInstanceTopicsResponse extends SdkResponse {
 
     /**
      * topic总数。
-     * @return count
+     * @return total
      */
-    public Integer getCount() {
-        return count;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
     
@@ -80,6 +92,50 @@ public class ListInstanceTopicsResponse extends SdkResponse {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    
+
+    public ListInstanceTopicsResponse withRemainPartitions(Integer remainPartitions) {
+        this.remainPartitions = remainPartitions;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 剩余分区数。
+     * @return remainPartitions
+     */
+    public Integer getRemainPartitions() {
+        return remainPartitions;
+    }
+
+    public void setRemainPartitions(Integer remainPartitions) {
+        this.remainPartitions = remainPartitions;
+    }
+
+    
+
+    public ListInstanceTopicsResponse withMaxPartitions(Integer maxPartitions) {
+        this.maxPartitions = maxPartitions;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 分区总数。
+     * @return maxPartitions
+     */
+    public Integer getMaxPartitions() {
+        return maxPartitions;
+    }
+
+    public void setMaxPartitions(Integer maxPartitions) {
+        this.maxPartitions = maxPartitions;
     }
 
     
@@ -107,7 +163,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * Topic列表。
+     * topic列表。
      * @return topics
      */
     public List<ListInstanceTopicsRespTopics> getTopics() {
@@ -129,20 +185,24 @@ public class ListInstanceTopicsResponse extends SdkResponse {
             return false;
         }
         ListInstanceTopicsResponse listInstanceTopicsResponse = (ListInstanceTopicsResponse) o;
-        return Objects.equals(this.count, listInstanceTopicsResponse.count) &&
+        return Objects.equals(this.total, listInstanceTopicsResponse.total) &&
             Objects.equals(this.size, listInstanceTopicsResponse.size) &&
+            Objects.equals(this.remainPartitions, listInstanceTopicsResponse.remainPartitions) &&
+            Objects.equals(this.maxPartitions, listInstanceTopicsResponse.maxPartitions) &&
             Objects.equals(this.topics, listInstanceTopicsResponse.topics);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, size, topics);
+        return Objects.hash(total, size, remainPartitions, maxPartitions, topics);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceTopicsResponse {\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    remainPartitions: ").append(toIndentedString(remainPartitions)).append("\n");
+        sb.append("    maxPartitions: ").append(toIndentedString(maxPartitions)).append("\n");
         sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
         sb.append("}");
         return sb.toString();

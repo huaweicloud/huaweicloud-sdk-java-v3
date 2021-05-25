@@ -49,7 +49,7 @@ public class PostMigProjectBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
-    private String startTargetServer;
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -253,7 +253,7 @@ public class PostMigProjectBody  {
 
     
 
-    public PostMigProjectBody withStartTargetServer(String startTargetServer) {
+    public PostMigProjectBody withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
@@ -265,11 +265,11 @@ public class PostMigProjectBody  {
      * 迁移后是否启动目的端虚拟机
      * @return startTargetServer
      */
-    public String getStartTargetServer() {
+    public Boolean getStartTargetServer() {
         return startTargetServer;
     }
 
-    public void setStartTargetServer(String startTargetServer) {
+    public void setStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
     }
 

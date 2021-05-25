@@ -38,7 +38,7 @@ public class ShowL7RuleRequest  {
 
 
     /**
-     * Get l7policyId
+     * 7层转发策略。
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -60,7 +60,7 @@ public class ShowL7RuleRequest  {
 
 
     /**
-     * Get l7ruleId
+     * 7层转发规则。
      * @return l7ruleId
      */
     public String getL7ruleId() {

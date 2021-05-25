@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookRequestBody;
+import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class UpdateLifeCycleHookRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateLifeCycleHookRequestBody body;
+    private UpdateLifeCycleHookOption body;
 
     public UpdateLifeCycleHookRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -45,7 +45,7 @@ public class UpdateLifeCycleHookRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组标识。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -67,7 +67,7 @@ public class UpdateLifeCycleHookRequest  {
 
 
     /**
-     * Get lifecycleHookName
+     * 生命周期挂钩标识。
      * @return lifecycleHookName
      */
     public String getLifecycleHookName() {
@@ -80,14 +80,14 @@ public class UpdateLifeCycleHookRequest  {
 
     
 
-    public UpdateLifeCycleHookRequest withBody(UpdateLifeCycleHookRequestBody body) {
+    public UpdateLifeCycleHookRequest withBody(UpdateLifeCycleHookOption body) {
         this.body = body;
         return this;
     }
 
-    public UpdateLifeCycleHookRequest withBody(Consumer<UpdateLifeCycleHookRequestBody> bodySetter) {
+    public UpdateLifeCycleHookRequest withBody(Consumer<UpdateLifeCycleHookOption> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateLifeCycleHookRequestBody();
+            this.body = new UpdateLifeCycleHookOption();
             bodySetter.accept(this.body);
         }
         
@@ -99,11 +99,11 @@ public class UpdateLifeCycleHookRequest  {
      * Get body
      * @return body
      */
-    public UpdateLifeCycleHookRequestBody getBody() {
+    public UpdateLifeCycleHookOption getBody() {
         return body;
     }
 
-    public void setBody(UpdateLifeCycleHookRequestBody body) {
+    public void setBody(UpdateLifeCycleHookOption body) {
         this.body = body;
     }
 

@@ -32,7 +32,7 @@ public class DeleteResourceGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 资源分组ID。
      * @return groupId
      */
     public String getGroupId() {

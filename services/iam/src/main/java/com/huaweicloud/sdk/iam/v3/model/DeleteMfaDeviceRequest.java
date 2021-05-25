@@ -38,7 +38,7 @@ public class DeleteMfaDeviceRequest  {
 
 
     /**
-     * Get userId
+     * 绑定MFA设备的IAM 用户ID。
      * @return userId
      */
     public String getUserId() {
@@ -60,7 +60,7 @@ public class DeleteMfaDeviceRequest  {
 
 
     /**
-     * Get serialNumber
+     * MFA设备序列号。
      * @return serialNumber
      */
     public String getSerialNumber() {

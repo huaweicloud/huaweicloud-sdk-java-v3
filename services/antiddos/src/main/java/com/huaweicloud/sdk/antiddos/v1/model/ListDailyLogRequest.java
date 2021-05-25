@@ -56,7 +56,7 @@ public class ListDailyLogRequest  {
 
 
     /**
-     * Get floatingIpId
+     * 用户EIP对应的ID
      * @return floatingIpId
      */
     public String getFloatingIpId() {
@@ -78,7 +78,7 @@ public class ListDailyLogRequest  {
 
 
     /**
-     * Get sortDir
+     * 可选范围： - desc：表示时间降序 - asc：表示时间升序 默认值为“desc”。
      * @return sortDir
      */
     public String getSortDir() {
@@ -100,7 +100,7 @@ public class ListDailyLogRequest  {
 
 
     /**
-     * Get limit
+     * 返回结果个数限制，此次查询返回数量最大值，取值范围：1～100，与offset配合使用。 若“limit”与“offset”均不携带则返回所有主机列表。
      * @return limit
      */
     public String getLimit() {
@@ -122,7 +122,7 @@ public class ListDailyLogRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，“limit”携带时此字段有效。
      * @return offset
      */
     public String getOffset() {
@@ -144,7 +144,7 @@ public class ListDailyLogRequest  {
 
 
     /**
-     * Get ip
+     * 用户EIP
      * @return ip
      */
     public String getIp() {

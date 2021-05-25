@@ -32,7 +32,7 @@ public class ListOrderCouponsByOrderIdRequest  {
 
 
     /**
-     * Get orderId
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {

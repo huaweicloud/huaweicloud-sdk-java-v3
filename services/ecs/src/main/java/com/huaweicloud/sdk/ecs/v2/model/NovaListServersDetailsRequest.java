@@ -77,7 +77,7 @@ public class NovaListServersDetailsRequest  {
     
     private String reservationId;
     /**
-     * Gets or Sets sortKey
+     * 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
      */
     public static final class SortKeyEnum {
 
@@ -215,7 +215,7 @@ public class NovaListServersDetailsRequest  {
     
     private SortKeyEnum sortKey;
     /**
-     * Gets or Sets status
+     * 云服务器状态。   取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。
      */
     public static final class StatusEnum {
 
@@ -392,7 +392,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get changesSince
+     * 云服务器上次更新状态的时间戳信息。时间戳为UTC格式。
      * @return changesSince
      */
     public String getChangesSince() {
@@ -414,7 +414,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get flavor
+     * 云服务器规格ID。
      * @return flavor
      */
     public String getFlavor() {
@@ -436,7 +436,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get image
+     * 镜像ID  在使用image作为条件过滤时，不能同时支持其他过滤条件和分页条件。如果同时指定image及其他条件，则以image条件为准；当条件不含image时，接口功能不受限制。
      * @return image
      */
     public String getImage() {
@@ -458,7 +458,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get ip
+     * IPv4地址过滤结果，匹配规则为模糊匹配。
      * @return ip
      */
     public String getIp() {
@@ -480,7 +480,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回云服务器数量限制。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -504,7 +504,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get marker
+     * 从marker指定的云服务器ID的下一条数据开始查询。
      * @return marker
      */
     public String getMarker() {
@@ -526,7 +526,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get name
+     * 云服务器名称。
      * @return name
      */
     public String getName() {
@@ -548,7 +548,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get notTags
+     * 查询tag字段中不包含该值的云服务器，值为标签的Key。  > 说明： >  > 系统近期对标签功能进行了升级。如果之前添加的Tag为“Key.Value”的形式，则查询的时候需要使用“Key”来查询。 >  > 例如：之前添加的tag为“a.b”,则升级后，查询时需使用“not-tags=a”。
      * @return notTags
      */
     public String getNotTags() {
@@ -570,7 +570,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get reservationId
+     * 批量创建弹性云服务器时，指定返回的ID，用于查询本次批量创建的弹性云服务器。
      * @return reservationId
      */
     public String getReservationId() {
@@ -592,7 +592,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get sortKey
+     * 查询结果按弹性云服务器属性排序，默认排序顺序为created_at逆序。
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -614,7 +614,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get status
+     * 云服务器状态。   取值范围： ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  直到2.37微版本，非上面范围的status字段将返回空列表，2.38之后的微版本，将返回400错误。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -636,7 +636,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get tags
+     * 查询tag字段中包含该值的云服务器。
      * @return tags
      */
     public String getTags() {
@@ -658,7 +658,7 @@ public class NovaListServersDetailsRequest  {
 
 
     /**
-     * Get openStackAPIVersion
+     * 微版本头
      * @return openStackAPIVersion
      */
     public String getOpenStackAPIVersion() {

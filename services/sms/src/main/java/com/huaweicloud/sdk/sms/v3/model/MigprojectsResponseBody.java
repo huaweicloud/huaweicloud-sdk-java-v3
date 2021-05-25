@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.TemplateRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -36,9 +35,9 @@ public class MigprojectsResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
+    @JsonProperty(value="use_public_ip")
     
-    private String description;
+    private Boolean usePublicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -48,9 +47,9 @@ public class MigprojectsResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template")
+    @JsonProperty(value="start_target_server")
     
-    private TemplateRequest template;
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -60,15 +59,21 @@ public class MigprojectsResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
+    @JsonProperty(value="speed_limit")
     
-    private String startTargetServer;
+    private Integer speedLimit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="use_public_ip")
+    @JsonProperty(value="exist_server")
     
-    private Boolean usePublicIp;
+    private Boolean existServer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
     /**
      * 迁移项目默认迁移类型
      */
@@ -162,15 +167,9 @@ public class MigprojectsResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="speed_limit")
+    @JsonProperty(value="syncing")
     
-    private Long speedLimit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exist_server")
-    
-    private Boolean existServer;
+    private Boolean syncing;
 
     public MigprojectsResponseBody withId(String id) {
         this.id = id;
@@ -216,8 +215,8 @@ public class MigprojectsResponseBody  {
 
     
 
-    public MigprojectsResponseBody withDescription(String description) {
-        this.description = description;
+    public MigprojectsResponseBody withUsePublicIp(Boolean usePublicIp) {
+        this.usePublicIp = usePublicIp;
         return this;
     }
 
@@ -225,15 +224,15 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 迁移项目描述
-     * @return description
+     * 是否使用公网IP迁移
+     * @return usePublicIp
      */
-    public String getDescription() {
-        return description;
+    public Boolean getUsePublicIp() {
+        return usePublicIp;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setUsePublicIp(Boolean usePublicIp) {
+        this.usePublicIp = usePublicIp;
     }
 
     
@@ -260,31 +259,24 @@ public class MigprojectsResponseBody  {
 
     
 
-    public MigprojectsResponseBody withTemplate(TemplateRequest template) {
-        this.template = template;
+    public MigprojectsResponseBody withStartTargetServer(Boolean startTargetServer) {
+        this.startTargetServer = startTargetServer;
         return this;
     }
 
-    public MigprojectsResponseBody withTemplate(Consumer<TemplateRequest> templateSetter) {
-        if(this.template == null ){
-            this.template = new TemplateRequest();
-            templateSetter.accept(this.template);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get template
-     * @return template
+     * 迁移后是否启动目的端虚拟机
+     * @return startTargetServer
      */
-    public TemplateRequest getTemplate() {
-        return template;
+    public Boolean getStartTargetServer() {
+        return startTargetServer;
     }
 
-    public void setTemplate(TemplateRequest template) {
-        this.template = template;
+    public void setStartTargetServer(Boolean startTargetServer) {
+        this.startTargetServer = startTargetServer;
     }
 
     
@@ -311,8 +303,8 @@ public class MigprojectsResponseBody  {
 
     
 
-    public MigprojectsResponseBody withStartTargetServer(String startTargetServer) {
-        this.startTargetServer = startTargetServer;
+    public MigprojectsResponseBody withSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
         return this;
     }
 
@@ -320,21 +312,23 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 迁移后是否启动目的端虚拟机
-     * @return startTargetServer
+     * 模板中配置的限速信息，单位：Mbps
+     * minimum: 0
+     * maximum: 10000
+     * @return speedLimit
      */
-    public String getStartTargetServer() {
-        return startTargetServer;
+    public Integer getSpeedLimit() {
+        return speedLimit;
     }
 
-    public void setStartTargetServer(String startTargetServer) {
-        this.startTargetServer = startTargetServer;
+    public void setSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
     }
 
     
 
-    public MigprojectsResponseBody withUsePublicIp(Boolean usePublicIp) {
-        this.usePublicIp = usePublicIp;
+    public MigprojectsResponseBody withExistServer(Boolean existServer) {
+        this.existServer = existServer;
         return this;
     }
 
@@ -342,15 +336,37 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 是否使用公网IP迁移
-     * @return usePublicIp
+     * 迁移项目下是否存在服务器
+     * @return existServer
      */
-    public Boolean getUsePublicIp() {
-        return usePublicIp;
+    public Boolean getExistServer() {
+        return existServer;
     }
 
-    public void setUsePublicIp(Boolean usePublicIp) {
-        this.usePublicIp = usePublicIp;
+    public void setExistServer(Boolean existServer) {
+        this.existServer = existServer;
+    }
+
+    
+
+    public MigprojectsResponseBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     
@@ -399,8 +415,8 @@ public class MigprojectsResponseBody  {
 
     
 
-    public MigprojectsResponseBody withSpeedLimit(Long speedLimit) {
-        this.speedLimit = speedLimit;
+    public MigprojectsResponseBody withSyncing(Boolean syncing) {
+        this.syncing = syncing;
         return this;
     }
 
@@ -408,39 +424,15 @@ public class MigprojectsResponseBody  {
 
 
     /**
-     * 模板中配置的限速信息，单位：Mbps
-     * minimum: 0
-     * maximum: 10000
-     * @return speedLimit
+     * 是否持续同步
+     * @return syncing
      */
-    public Long getSpeedLimit() {
-        return speedLimit;
+    public Boolean getSyncing() {
+        return syncing;
     }
 
-    public void setSpeedLimit(Long speedLimit) {
-        this.speedLimit = speedLimit;
-    }
-
-    
-
-    public MigprojectsResponseBody withExistServer(Boolean existServer) {
-        this.existServer = existServer;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 迁移项目下是否存在服务器
-     * @return existServer
-     */
-    public Boolean getExistServer() {
-        return existServer;
-    }
-
-    public void setExistServer(Boolean existServer) {
-        this.existServer = existServer;
+    public void setSyncing(Boolean syncing) {
+        this.syncing = syncing;
     }
 
     
@@ -456,20 +448,20 @@ public class MigprojectsResponseBody  {
         MigprojectsResponseBody migprojectsResponseBody = (MigprojectsResponseBody) o;
         return Objects.equals(this.id, migprojectsResponseBody.id) &&
             Objects.equals(this.name, migprojectsResponseBody.name) &&
-            Objects.equals(this.description, migprojectsResponseBody.description) &&
-            Objects.equals(this.isdefault, migprojectsResponseBody.isdefault) &&
-            Objects.equals(this.template, migprojectsResponseBody.template) &&
-            Objects.equals(this.region, migprojectsResponseBody.region) &&
-            Objects.equals(this.startTargetServer, migprojectsResponseBody.startTargetServer) &&
             Objects.equals(this.usePublicIp, migprojectsResponseBody.usePublicIp) &&
+            Objects.equals(this.isdefault, migprojectsResponseBody.isdefault) &&
+            Objects.equals(this.startTargetServer, migprojectsResponseBody.startTargetServer) &&
+            Objects.equals(this.region, migprojectsResponseBody.region) &&
+            Objects.equals(this.speedLimit, migprojectsResponseBody.speedLimit) &&
+            Objects.equals(this.existServer, migprojectsResponseBody.existServer) &&
+            Objects.equals(this.description, migprojectsResponseBody.description) &&
             Objects.equals(this.type, migprojectsResponseBody.type) &&
             Objects.equals(this.enterpriseProject, migprojectsResponseBody.enterpriseProject) &&
-            Objects.equals(this.speedLimit, migprojectsResponseBody.speedLimit) &&
-            Objects.equals(this.existServer, migprojectsResponseBody.existServer);
+            Objects.equals(this.syncing, migprojectsResponseBody.syncing);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, isdefault, template, region, startTargetServer, usePublicIp, type, enterpriseProject, speedLimit, existServer);
+        return Objects.hash(id, name, usePublicIp, isdefault, startTargetServer, region, speedLimit, existServer, description, type, enterpriseProject, syncing);
     }
     @Override
     public String toString() {
@@ -477,16 +469,16 @@ public class MigprojectsResponseBody  {
         sb.append("class MigprojectsResponseBody {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
-        sb.append("    template: ").append(toIndentedString(template)).append("\n");
-        sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
+        sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");
+        sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
+        sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("}");
         return sb.toString();
     }

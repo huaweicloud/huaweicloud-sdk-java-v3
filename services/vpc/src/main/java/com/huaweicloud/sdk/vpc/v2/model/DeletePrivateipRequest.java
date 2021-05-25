@@ -32,7 +32,7 @@ public class DeletePrivateipRequest  {
 
 
     /**
-     * Get privateipId
+     * 私有IP ID
      * @return privateipId
      */
     public String getPrivateipId() {

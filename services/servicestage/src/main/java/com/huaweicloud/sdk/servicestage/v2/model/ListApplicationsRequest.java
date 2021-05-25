@@ -39,7 +39,7 @@ public class ListApplicationsRequest  {
     
     private String orderBy;
     /**
-     * Gets or Sets order
+     * desc/asc，默认desc。
      */
     public static final class OrderEnum {
 
@@ -132,7 +132,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get limit
+     * 指定个数，明确指定的时候用于分页，取值[0, 100]。不指定的时候表示不分页，最多查询1000条记录。
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -156,7 +156,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get offset
+     * 指定查询偏移量，默认偏移量为0.
      * @return offset
      */
     public Integer getOffset() {
@@ -178,7 +178,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get orderBy
+     * 排序字段，默认按创建时间排序。  排序字段支持枚举值：create_time、name、update_time。 
      * @return orderBy
      */
     public String getOrderBy() {
@@ -200,7 +200,7 @@ public class ListApplicationsRequest  {
 
 
     /**
-     * Get order
+     * desc/asc，默认desc。
      * @return order
      */
     public OrderEnum getOrder() {

@@ -32,7 +32,7 @@ public class ShowBackupRequest  {
 
 
     /**
-     * Get backupId
+     * 备份ID
      * @return backupId
      */
     public String getBackupId() {

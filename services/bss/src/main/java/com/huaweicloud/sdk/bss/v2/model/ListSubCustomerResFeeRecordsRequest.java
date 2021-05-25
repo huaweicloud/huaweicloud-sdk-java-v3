@@ -83,6 +83,18 @@ public class ListSubCustomerResFeeRecordsRequest  {
     
     private String indirectPartnerId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_date_begin")
+    
+    private String billDateBegin;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="bill_date_end")
+    
+    private String billDateEnd;
+
     public ListSubCustomerResFeeRecordsRequest withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -92,7 +104,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get customerId
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -114,7 +126,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get cycle
+     * 查询的客户消费记录所在账期，格式：YYYY-MM。
      * @return cycle
      */
     public String getCycle() {
@@ -136,7 +148,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get cloudServiceType
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -158,7 +170,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get region
+     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
      * @return region
      */
     public String getRegion() {
@@ -180,7 +192,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get chargeMode
+     * 计费模式。 1 : 包年/包月3：按需10: 预留实例
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -202,7 +214,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get billType
+     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费
      * minimum: 0
      * maximum: 17
      * @return billType
@@ -226,7 +238,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -250,7 +262,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的数量限制。默认值为10。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -274,7 +286,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {
@@ -296,7 +308,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get includeZeroRecord
+     * 返回是否包含应付金额为0的记录。 true：包含false：不包含
      * @return includeZeroRecord
      */
     public Boolean getIncludeZeroRecord() {
@@ -318,7 +330,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。 如果华为云伙伴能力中心需要查询客户在精英服务商关联期间的消费，需要携带该字段；否则只能查询该客户在与自己关联期间的消费。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -327,6 +339,50 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
+    }
+
+    
+
+    public ListSubCustomerResFeeRecordsRequest withBillDateBegin(String billDateBegin) {
+        this.billDateBegin = billDateBegin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：查询的资源消费记录的开始日期，格式为YYYY-MM-DD。| |参数的约束及描述：必须和cycle（即资源的消费账期）在同一个月。|
+     * @return billDateBegin
+     */
+    public String getBillDateBegin() {
+        return billDateBegin;
+    }
+
+    public void setBillDateBegin(String billDateBegin) {
+        this.billDateBegin = billDateBegin;
+    }
+
+    
+
+    public ListSubCustomerResFeeRecordsRequest withBillDateEnd(String billDateEnd) {
+        this.billDateEnd = billDateEnd;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：查询的资源消费记录的结束日期，格式为YYYY-MM-DD。| |参数的约束及描述：必须和cycle（即资源的消费账期）在同一个月。bill_date_begin和bill_date_end两个参数必须同时出现，否则仅按照cycle（即资源的消费账期）进行查询。|
+     * @return billDateEnd
+     */
+    public String getBillDateEnd() {
+        return billDateEnd;
+    }
+
+    public void setBillDateEnd(String billDateEnd) {
+        this.billDateEnd = billDateEnd;
     }
 
     
@@ -350,11 +406,13 @@ public class ListSubCustomerResFeeRecordsRequest  {
             Objects.equals(this.limit, listSubCustomerResFeeRecordsRequest.limit) &&
             Objects.equals(this.resourceId, listSubCustomerResFeeRecordsRequest.resourceId) &&
             Objects.equals(this.includeZeroRecord, listSubCustomerResFeeRecordsRequest.includeZeroRecord) &&
-            Objects.equals(this.indirectPartnerId, listSubCustomerResFeeRecordsRequest.indirectPartnerId);
+            Objects.equals(this.indirectPartnerId, listSubCustomerResFeeRecordsRequest.indirectPartnerId) &&
+            Objects.equals(this.billDateBegin, listSubCustomerResFeeRecordsRequest.billDateBegin) &&
+            Objects.equals(this.billDateEnd, listSubCustomerResFeeRecordsRequest.billDateEnd);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, includeZeroRecord, indirectPartnerId);
+        return Objects.hash(customerId, cycle, cloudServiceType, region, chargeMode, billType, offset, limit, resourceId, includeZeroRecord, indirectPartnerId, billDateBegin, billDateEnd);
     }
     @Override
     public String toString() {
@@ -371,6 +429,8 @@ public class ListSubCustomerResFeeRecordsRequest  {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    includeZeroRecord: ").append(toIndentedString(includeZeroRecord)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
+        sb.append("    billDateBegin: ").append(toIndentedString(billDateBegin)).append("\n");
+        sb.append("    billDateEnd: ").append(toIndentedString(billDateEnd)).append("\n");
         sb.append("}");
         return sb.toString();
     }

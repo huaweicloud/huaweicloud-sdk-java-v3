@@ -32,7 +32,7 @@ public class ShowClassroomDetailRequest  {
 
 
     /**
-     * Get classroomId
+     * 课堂ID
      * @return classroomId
      */
     public String getClassroomId() {

@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListDatastoreVersionsRequest  {
 
     /**
-     * Gets or Sets datastoreName
+     * 数据库版本类型。取值为“DDS-Community”。
      */
     public static final class DatastoreNameEnum {
 
@@ -114,7 +114,7 @@ public class ListDatastoreVersionsRequest  {
 
 
     /**
-     * Get datastoreName
+     * 数据库版本类型。取值为“DDS-Community”。
      * @return datastoreName
      */
     public DatastoreNameEnum getDatastoreName() {

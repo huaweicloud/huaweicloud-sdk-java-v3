@@ -27,7 +27,7 @@ public class ListTrackersRequest  {
     
     private String trackerName;
     /**
-     * Gets or Sets trackerType
+     * 标识追踪器类型。 目前支持系统追踪器有管理类追踪器（system）和数据类追踪器（data）。
      */
     public static final class TrackerTypeEnum {
 
@@ -120,7 +120,7 @@ public class ListTrackersRequest  {
 
 
     /**
-     * Get trackerName
+     * 标示追踪器名称。 在不传入该字段的情况下，将查询租户所有的追踪器。
      * @return trackerName
      */
     public String getTrackerName() {
@@ -142,7 +142,7 @@ public class ListTrackersRequest  {
 
 
     /**
-     * Get trackerType
+     * 标识追踪器类型。 目前支持系统追踪器有管理类追踪器（system）和数据类追踪器（data）。
      * @return trackerType
      */
     public TrackerTypeEnum getTrackerType() {

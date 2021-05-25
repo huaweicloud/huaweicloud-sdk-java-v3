@@ -70,7 +70,7 @@ public class NeutronListFirewallGroupsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -92,7 +92,7 @@ public class NeutronListFirewallGroupsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -128,7 +128,7 @@ public class NeutronListFirewallGroupsRequest  {
     }
 
     /**
-     * Get id
+     * 使用id过滤网络ACL组
      * @return id
      */
     public List<String> getId() {
@@ -164,7 +164,7 @@ public class NeutronListFirewallGroupsRequest  {
     }
 
     /**
-     * Get name
+     * 使用name过滤ACL组
      * @return name
      */
     public List<String> getName() {
@@ -200,7 +200,7 @@ public class NeutronListFirewallGroupsRequest  {
     }
 
     /**
-     * Get description
+     * 使用description过滤ACL组
      * @return description
      */
     public List<String> getDescription() {
@@ -222,7 +222,7 @@ public class NeutronListFirewallGroupsRequest  {
 
 
     /**
-     * Get ingressFirewallPolicyId
+     * 使用入方向的网络ACL策略ID过滤网络ACL组
      * @return ingressFirewallPolicyId
      */
     public String getIngressFirewallPolicyId() {
@@ -244,7 +244,7 @@ public class NeutronListFirewallGroupsRequest  {
 
 
     /**
-     * Get egressFirewallPolicyId
+     * 使用出方向的网络ACL策略过滤查询网络ACL组
      * @return egressFirewallPolicyId
      */
     public String getEgressFirewallPolicyId() {

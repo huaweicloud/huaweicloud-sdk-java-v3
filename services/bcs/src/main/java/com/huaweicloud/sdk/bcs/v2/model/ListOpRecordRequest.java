@@ -31,7 +31,7 @@ public class ListOpRecordRequest  {
     
     private String blockchainId;
     /**
-     * Gets or Sets operationStatus
+     * 操作状态
      */
     public static final class OperationStatusEnum {
 
@@ -133,7 +133,7 @@ public class ListOpRecordRequest  {
     
     private OperationStatusEnum operationStatus;
     /**
-     * Gets or Sets resourceType
+     * 资源类型
      */
     public static final class ResourceTypeEnum {
 
@@ -235,7 +235,7 @@ public class ListOpRecordRequest  {
     
     private ResourceTypeEnum resourceType;
     /**
-     * Gets or Sets operationType
+     * 操作类型,  可选数值如下（括号中为该数值对应的操作类型含义）：99（OpCreate）,00（OpDelete）,01（OpUpgrade）,91（OpUpgradeRb）,02（OpAddOrg）,03（OpScaleOrg）,04（OpJoinChannel）,05（OpJoinUnion）
      */
     public static final class OperationTypeEnum {
 
@@ -370,7 +370,7 @@ public class ListOpRecordRequest  {
 
 
     /**
-     * Get blockchainId
+     * 区块链ID
      * @return blockchainId
      */
     public String getBlockchainId() {
@@ -392,7 +392,7 @@ public class ListOpRecordRequest  {
 
 
     /**
-     * Get operationStatus
+     * 操作状态
      * @return operationStatus
      */
     public OperationStatusEnum getOperationStatus() {
@@ -414,7 +414,7 @@ public class ListOpRecordRequest  {
 
 
     /**
-     * Get resourceType
+     * 资源类型
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -436,7 +436,7 @@ public class ListOpRecordRequest  {
 
 
     /**
-     * Get operationType
+     * 操作类型,  可选数值如下（括号中为该数值对应的操作类型含义）：99（OpCreate）,00（OpDelete）,01（OpUpgrade）,91（OpUpgradeRb）,02（OpAddOrg）,03（OpScaleOrg）,04（OpJoinChannel）,05（OpJoinUnion）
      * @return operationType
      */
     public OperationTypeEnum getOperationType() {
@@ -458,7 +458,7 @@ public class ListOpRecordRequest  {
 
 
     /**
-     * Get operationId
+     * 操作记录ID
      * @return operationId
      */
     public String getOperationId() {

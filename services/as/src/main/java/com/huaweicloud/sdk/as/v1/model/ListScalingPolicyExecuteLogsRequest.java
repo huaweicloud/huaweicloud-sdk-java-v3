@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -36,7 +35,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
     
     private String logId;
     /**
-     * Gets or Sets scalingResourceType
+     * 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
      */
     public static final class ScalingResourceTypeEnum {
 
@@ -126,7 +125,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
     
     private String scalingResourceId;
     /**
-     * Gets or Sets executeType
+     * 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
      */
     public static final class ExecuteTypeEnum {
 
@@ -226,13 +225,13 @@ public class ListScalingPolicyExecuteLogsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime;
+    private String startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime;
+    private String endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -255,7 +254,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩策略ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {
@@ -277,7 +276,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get logId
+     * 日志ID。
      * @return logId
      */
     public String getLogId() {
@@ -299,7 +298,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get scalingResourceType
+     * 伸缩资源类型：伸缩组：SCALING_GROUP。带宽：BANDWIDTH
      * @return scalingResourceType
      */
     public ScalingResourceTypeEnum getScalingResourceType() {
@@ -321,7 +320,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get scalingResourceId
+     * 伸缩资源ID。
      * @return scalingResourceId
      */
     public String getScalingResourceId() {
@@ -343,7 +342,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get executeType
+     * 策略执行类型：SCHEDULED：自动触发（定时）。RECURRENCE：自动触发（周期）。ALARM：自动触发（告警）。MANUAL：手动触发。
      * @return executeType
      */
     public ExecuteTypeEnum getExecuteType() {
@@ -356,7 +355,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
     
 
-    public ListScalingPolicyExecuteLogsRequest withStartTime(OffsetDateTime startTime) {
+    public ListScalingPolicyExecuteLogsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -365,20 +364,20 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get startTime
+     * 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
      * @return startTime
      */
-    public OffsetDateTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(OffsetDateTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
     
 
-    public ListScalingPolicyExecuteLogsRequest withEndTime(OffsetDateTime endTime) {
+    public ListScalingPolicyExecuteLogsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -387,14 +386,14 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get endTime
+     * 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -409,7 +408,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -431,8 +430,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
 
     /**
-     * Get limit
-     * minimum: 0
+     * 查询记录数，默认20，最大100。
      * maximum: 100
      * @return limit
      */

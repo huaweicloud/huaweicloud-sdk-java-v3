@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ListSlowlogStatisticsRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -137,7 +137,7 @@ public class ListSlowlogStatisticsRequest  {
     
     private String endDate;
     /**
-     * Gets or Sets type
+     * 语句类型，ALL表示查询所有语句类型，也可指定日志类型 - INSERT - UPDATE - SELECT - DELETE - CREATE - ALL
      */
     public static final class TypeEnum {
 
@@ -254,7 +254,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -278,7 +278,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -300,7 +300,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get curPage
+     * 当前页号
      * @return curPage
      */
     public Integer getCurPage() {
@@ -322,7 +322,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get perPage
+     * 每页多少条记录，取值范围0~100
      * @return perPage
      */
     public Integer getPerPage() {
@@ -344,7 +344,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get startDate
+     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
      * @return startDate
      */
     public String getStartDate() {
@@ -366,7 +366,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get endDate
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
      * @return endDate
      */
     public String getEndDate() {
@@ -388,7 +388,7 @@ public class ListSlowlogStatisticsRequest  {
 
 
     /**
-     * Get type
+     * 语句类型，ALL表示查询所有语句类型，也可指定日志类型 - INSERT - UPDATE - SELECT - DELETE - CREATE - ALL
      * @return type
      */
     public TypeEnum getType() {

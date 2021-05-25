@@ -38,7 +38,7 @@ public class StopMeetingRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -60,7 +60,7 @@ public class StopMeetingRequest  {
 
 
     /**
-     * Get xConferenceAuthorization
+     * 会控授权令牌，通过获取会控token接口获得。
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

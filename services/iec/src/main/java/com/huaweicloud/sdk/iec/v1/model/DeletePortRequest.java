@@ -32,7 +32,7 @@ public class DeletePortRequest  {
 
 
     /**
-     * Get portId
+     * 端口ID。
      * @return portId
      */
     public String getPortId() {

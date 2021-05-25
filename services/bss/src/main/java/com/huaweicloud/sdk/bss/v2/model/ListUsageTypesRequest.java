@@ -50,7 +50,7 @@ public class ListUsageTypesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。中文：zh_CN英文：en_US缺省为zh_CN。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListUsageTypesRequest  {
 
 
     /**
-     * Get resourceTypeCode
+     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {
@@ -96,7 +96,7 @@ public class ListUsageTypesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -120,7 +120,7 @@ public class ListUsageTypesRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的数量，默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit

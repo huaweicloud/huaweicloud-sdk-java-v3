@@ -38,7 +38,7 @@ public class ShowBuiltInPolicyDefinitionRequest  {
 
 
     /**
-     * Get policyDefinitionId
+     * 策略ID
      * @return policyDefinitionId
      */
     public String getPolicyDefinitionId() {
@@ -60,7 +60,7 @@ public class ShowBuiltInPolicyDefinitionRequest  {
 
 
     /**
-     * Get xLanguage
+     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

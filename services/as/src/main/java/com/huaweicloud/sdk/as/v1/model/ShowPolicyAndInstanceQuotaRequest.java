@@ -32,7 +32,7 @@ public class ShowPolicyAndInstanceQuotaRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {

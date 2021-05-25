@@ -161,7 +161,7 @@ public class ShowFunctionTriggerRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="triggerId")
+    @JsonProperty(value="trigger_id")
     
     private String triggerId;
 
@@ -174,7 +174,7 @@ public class ShowFunctionTriggerRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {

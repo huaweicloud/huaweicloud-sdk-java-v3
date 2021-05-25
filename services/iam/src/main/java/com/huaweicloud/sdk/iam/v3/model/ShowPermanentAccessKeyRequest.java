@@ -32,7 +32,7 @@ public class ShowPermanentAccessKeyRequest  {
 
 
     /**
-     * Get accessKey
+     * 待查询的指定AK。
      * @return accessKey
      */
     public String getAccessKey() {

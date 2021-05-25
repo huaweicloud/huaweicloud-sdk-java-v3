@@ -50,7 +50,7 @@ public class ListErrorServersRequest  {
 
 
     /**
-     * Get limit
+     * 每一页记录的错误数量
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -74,7 +74,7 @@ public class ListErrorServersRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -98,7 +98,7 @@ public class ListErrorServersRequest  {
 
 
     /**
-     * Get migproject
+     * 需要查询的迁移项目id，添加此字段将只查询对应id下的迁移任务报错信息
      * @return migproject
      */
     public String getMigproject() {
@@ -120,7 +120,7 @@ public class ListErrorServersRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 需要查询的企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

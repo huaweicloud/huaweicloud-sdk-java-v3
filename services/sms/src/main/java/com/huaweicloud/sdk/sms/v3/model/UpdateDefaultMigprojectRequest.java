@@ -32,7 +32,7 @@ public class UpdateDefaultMigprojectRequest  {
 
 
     /**
-     * Get migProjectId
+     * 迁移项目ID
      * @return migProjectId
      */
     public String getMigProjectId() {

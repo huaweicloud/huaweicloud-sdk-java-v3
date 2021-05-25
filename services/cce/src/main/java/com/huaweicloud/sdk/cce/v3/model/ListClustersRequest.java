@@ -35,7 +35,7 @@ public class ListClustersRequest  {
     
     private String detail;
     /**
-     * Gets or Sets status
+     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源
      */
     public static final class StatusEnum {
 
@@ -161,7 +161,7 @@ public class ListClustersRequest  {
     
     private StatusEnum status;
     /**
-     * Gets or Sets type
+     * 集群类型： - VirtualMachine：CCE集群 - ARM64：鲲鹏集群
      */
     public static final class TypeEnum {
 
@@ -260,7 +260,7 @@ public class ListClustersRequest  {
 
 
     /**
-     * Get errorStatus
+     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
      * @return errorStatus
      */
     public String getErrorStatus() {
@@ -282,7 +282,7 @@ public class ListClustersRequest  {
 
 
     /**
-     * Get detail
+     * 查询集群详细信息。若设置为true，获取集群下节点总数(totalNodesNumber)、正常节点数(activeNodesNumber)、CPU总量(totalNodesCPU)、内存总量(totalNodesMemory)、已安装插件列表(installedAddonInstances)，已安装插件列表中包含名称(addonTemplateName)、版本号(version)、插件的状态信息(status)，放入到annotation中。
      * @return detail
      */
     public String getDetail() {
@@ -304,7 +304,7 @@ public class ListClustersRequest  {
 
 
     /**
-     * Get status
+     * 集群状态，取值如下 - Available：可用，表示集群处于正常状态。 - Unavailable：不可用，表示集群异常，需手动删除或联系管理员删除。 - ScalingUp：扩容中，表示集群正处于扩容过程中。 - ScalingDown：缩容中，表示集群正处于缩容过程中。 - Creating：创建中，表示集群正处于创建过程中。 - Deleting：删除中，表示集群正处于删除过程中。 - Upgrading：升级中，表示集群正处于升级过程中。 - Resizing：规格变更中，表示集群正处于变更规格中。 - Empty：集群无任何资源
      * @return status
      */
     public StatusEnum getStatus() {
@@ -326,7 +326,7 @@ public class ListClustersRequest  {
 
 
     /**
-     * Get type
+     * 集群类型： - VirtualMachine：CCE集群 - ARM64：鲲鹏集群
      * @return type
      */
     public TypeEnum getType() {
@@ -348,7 +348,7 @@ public class ListClustersRequest  {
 
 
     /**
-     * Get version
+     * 集群版本过滤
      * @return version
      */
     public String getVersion() {

@@ -100,7 +100,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回端口列表数量。取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -124,7 +124,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -146,7 +146,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get networkId
+     * 子网的neutron的network的ID。
      * @return networkId
      */
     public String getNetworkId() {
@@ -168,7 +168,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get id
+     * 按照端口ID过滤查询
      * @return id
      */
     public String getId() {
@@ -190,7 +190,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get name
+     * 按照name过滤查询  取值范围：最大长度不超过255
      * @return name
      */
     public String getName() {
@@ -212,7 +212,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 按照admin_state_up进行过滤  约束：只支持true
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -248,7 +248,7 @@ public class ListPortsRequest  {
     }
 
     /**
-     * Get fixedIps
+     * 根据绑定的IP查询端口。按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询，示例：fixed_ips=ip_address=xxx&fixed_ips=subnet_id=xxxx
      * @return fixedIps
      */
     public List<String> getFixedIps() {
@@ -270,7 +270,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get macAddress
+     * 根据网卡的mac地址查询端口。
      * @return macAddress
      */
     public String getMacAddress() {
@@ -292,7 +292,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get deviceId
+     * 根据设备ID查询端口。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -314,7 +314,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get deviceOwner
+     * 根据设备主查询端口。
      * @return deviceOwner
      */
     public String getDeviceOwner() {
@@ -336,7 +336,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get status
+     * 按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
      * @return status
      */
     public String getStatus() {
@@ -358,7 +358,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get securityGroups
+     * 根据安全组信息ID查询端口。
      * @return securityGroups
      */
     public String getSecurityGroups() {

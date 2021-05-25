@@ -45,7 +45,7 @@ public class UpdateRequestThrottlingPolicyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateRequestThrottlingPolicyV2Request  {
 
 
     /**
-     * Get throttleId
+     * 流控策略的编号
      * @return throttleId
      */
     public String getThrottleId() {

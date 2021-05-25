@@ -32,7 +32,7 @@ public class DeleteIpGroupRequest  {
 
 
     /**
-     * Get ipgroupId
+     * 待更新的IP地址组的id
      * @return ipgroupId
      */
     public String getIpgroupId() {

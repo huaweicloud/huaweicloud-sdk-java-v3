@@ -50,7 +50,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get xLanguage
+     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * |参数名称：云服务类型编码| |参数的约束及描述：|
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -96,7 +96,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get limit
+     * |参数名称：每次查询的数量| |参数的约束及描述：|
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -120,7 +120,7 @@ public class ListServiceResourcesRequest  {
 
 
     /**
-     * Get offset
+     * |参数名称：偏移量| |参数的约束及描述：|
      * minimum: 0
      * maximum: 2147483647
      * @return offset

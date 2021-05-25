@@ -44,7 +44,7 @@ public class ShowMultiAccountTransferAmountRequest  {
 
 
     /**
-     * Get balanceType
+     * 账户类型：BALANCE_TYPE_DEBIT：余额账户BALANCE_TYPE_CREDIT：信用账户
      * @return balanceType
      */
     public String getBalanceType() {
@@ -66,7 +66,7 @@ public class ShowMultiAccountTransferAmountRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，默认值为0。只有信用账户有效。
      * minimum: 0
      * maximum: 21474836476
      * @return offset
@@ -90,7 +90,7 @@ public class ShowMultiAccountTransferAmountRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询条数，默认值为10。只有信用账户有效。
      * minimum: 0
      * maximum: 100
      * @return limit

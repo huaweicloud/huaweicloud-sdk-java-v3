@@ -44,7 +44,7 @@ public class ShowResourceByIdRequest  {
 
 
     /**
-     * Get provider
+     * 云服务英文简写
      * @return provider
      */
     public String getProvider() {
@@ -66,7 +66,7 @@ public class ShowResourceByIdRequest  {
 
 
     /**
-     * Get type
+     * 云服务资源类型名称
      * @return type
      */
     public String getType() {
@@ -88,7 +88,7 @@ public class ShowResourceByIdRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {

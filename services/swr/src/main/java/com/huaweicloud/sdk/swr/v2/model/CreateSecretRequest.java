@@ -32,7 +32,7 @@ public class CreateSecretRequest  {
 
 
     /**
-     * Get projectname
+     * 项目名称，缺省值默认为区域名称，例如：cn-north-1。 
      * @return projectname
      */
     public String getProjectname() {

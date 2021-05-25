@@ -260,47 +260,25 @@ public class CloudPipelineClient {
     }
 
     /**
-     * 执行流水线
-     * 执行流水线
+     * 停止流水线
+     * 停止流水线
      *
-     * @param StartPipelineRequest 请求对象
-     * @return StartPipelineResponse
+     * @param StopPipelineNewRequest 请求对象
+     * @return StopPipelineNewResponse
      */
-    public StartPipelineResponse startPipeline(StartPipelineRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.startPipeline);
-    }
-
-    /**
-     * 执行流水线
-     * 执行流水线
-     *
-     * @param StartPipelineRequest 请求对象
-     * @return SyncInvoker<StartPipelineRequest, StartPipelineResponse>
-     */
-    public SyncInvoker<StartPipelineRequest, StartPipelineResponse> startPipelineInvoker(StartPipelineRequest request) {
-        return new SyncInvoker<StartPipelineRequest, StartPipelineResponse>(request, CloudPipelineMeta.startPipeline, hcClient);
+    public StopPipelineNewResponse stopPipelineNew(StopPipelineNewRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.stopPipelineNew);
     }
 
     /**
      * 停止流水线
      * 停止流水线
      *
-     * @param StopPipelineRequest 请求对象
-     * @return StopPipelineResponse
+     * @param StopPipelineNewRequest 请求对象
+     * @return SyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse>
      */
-    public StopPipelineResponse stopPipeline(StopPipelineRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.stopPipeline);
-    }
-
-    /**
-     * 停止流水线
-     * 停止流水线
-     *
-     * @param StopPipelineRequest 请求对象
-     * @return SyncInvoker<StopPipelineRequest, StopPipelineResponse>
-     */
-    public SyncInvoker<StopPipelineRequest, StopPipelineResponse> stopPipelineInvoker(StopPipelineRequest request) {
-        return new SyncInvoker<StopPipelineRequest, StopPipelineResponse>(request, CloudPipelineMeta.stopPipeline, hcClient);
+    public SyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse> stopPipelineNewInvoker(StopPipelineNewRequest request) {
+        return new SyncInvoker<StopPipelineNewRequest, StopPipelineNewResponse>(request, CloudPipelineMeta.stopPipelineNew, hcClient);
     }
 
 }

@@ -44,7 +44,7 @@ public class NovaListKeypairsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回秘钥数量限制。  在微版本2.35后支持
      * @return limit
      */
     public Integer getLimit() {
@@ -66,7 +66,7 @@ public class NovaListKeypairsRequest  {
 
 
     /**
-     * Get marker
+     * 从marker指定的keypair的名称的下一条数据开始查询。  在微版本2.35后支持。
      * @return marker
      */
     public String getMarker() {
@@ -88,7 +88,7 @@ public class NovaListKeypairsRequest  {
 
 
     /**
-     * Get openStackAPIVersion
+     * 微版本头
      * @return openStackAPIVersion
      */
     public String getOpenStackAPIVersion() {

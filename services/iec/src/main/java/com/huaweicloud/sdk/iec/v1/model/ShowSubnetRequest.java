@@ -32,7 +32,7 @@ public class ShowSubnetRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网ID。
      * @return subnetId
      */
     public String getSubnetId() {

@@ -32,7 +32,7 @@ public class ListNamespacesRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

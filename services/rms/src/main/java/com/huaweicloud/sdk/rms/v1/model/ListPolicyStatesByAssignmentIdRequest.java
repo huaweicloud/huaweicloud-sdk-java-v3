@@ -62,7 +62,7 @@ public class ListPolicyStatesByAssignmentIdRequest  {
 
 
     /**
-     * Get policyAssignmentId
+     * 规则ID
      * @return policyAssignmentId
      */
     public String getPolicyAssignmentId() {
@@ -84,7 +84,7 @@ public class ListPolicyStatesByAssignmentIdRequest  {
 
 
     /**
-     * Get complianceState
+     * 合规状态
      * @return complianceState
      */
     public String getComplianceState() {
@@ -106,7 +106,7 @@ public class ListPolicyStatesByAssignmentIdRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -128,7 +128,7 @@ public class ListPolicyStatesByAssignmentIdRequest  {
 
 
     /**
-     * Get resourceName
+     * 资源名称
      * @return resourceName
      */
     public String getResourceName() {
@@ -150,7 +150,7 @@ public class ListPolicyStatesByAssignmentIdRequest  {
 
 
     /**
-     * Get limit
+     * 最大的返回数量
      * minimum: 1
      * maximum: 200
      * @return limit
@@ -174,7 +174,7 @@ public class ListPolicyStatesByAssignmentIdRequest  {
 
 
     /**
-     * Get marker
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
      * @return marker
      */
     public String getMarker() {

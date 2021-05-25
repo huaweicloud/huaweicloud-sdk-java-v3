@@ -38,7 +38,7 @@ public class ShowProjectDetailRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ShowProjectDetailRequest  {
 
 
     /**
-     * Get cloneUrl
+     * 仓库克隆URL。
      * @return cloneUrl
      */
     public String getCloneUrl() {

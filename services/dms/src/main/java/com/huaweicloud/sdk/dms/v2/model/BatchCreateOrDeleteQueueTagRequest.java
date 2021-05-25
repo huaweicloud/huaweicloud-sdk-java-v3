@@ -39,7 +39,7 @@ public class BatchCreateOrDeleteQueueTagRequest  {
 
 
     /**
-     * Get queueId
+     * 队列ID。
      * @return queueId
      */
     public String getQueueId() {

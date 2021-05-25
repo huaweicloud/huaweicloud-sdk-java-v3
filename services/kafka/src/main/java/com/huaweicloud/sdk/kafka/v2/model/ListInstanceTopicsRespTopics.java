@@ -19,6 +19,12 @@ public class ListInstanceTopicsRespTopics  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="policiesOnly")
+    
+    private Boolean policiesOnly;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
@@ -52,6 +58,40 @@ public class ListInstanceTopicsRespTopics  {
     @JsonProperty(value="sync_message_flush")
     
     private Boolean syncMessageFlush;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="external_configs")
+    
+    private Object externalConfigs;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="topic_type")
+    
+    private Integer topicType;
+
+    public ListInstanceTopicsRespTopics withPoliciesOnly(Boolean policiesOnly) {
+        this.policiesOnly = policiesOnly;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否为默认策略。
+     * @return policiesOnly
+     */
+    public Boolean getPoliciesOnly() {
+        return policiesOnly;
+    }
+
+    public void setPoliciesOnly(Boolean policiesOnly) {
+        this.policiesOnly = policiesOnly;
+    }
+
+    
 
     public ListInstanceTopicsRespTopics withName(String name) {
         this.name = name;
@@ -185,6 +225,50 @@ public class ListInstanceTopicsRespTopics  {
 
     
 
+    public ListInstanceTopicsRespTopics withExternalConfigs(Object externalConfigs) {
+        this.externalConfigs = externalConfigs;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 扩展配置。
+     * @return externalConfigs
+     */
+    public Object getExternalConfigs() {
+        return externalConfigs;
+    }
+
+    public void setExternalConfigs(Object externalConfigs) {
+        this.externalConfigs = externalConfigs;
+    }
+
+    
+
+    public ListInstanceTopicsRespTopics withTopicType(Integer topicType) {
+        this.topicType = topicType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * topic类型。
+     * @return topicType
+     */
+    public Integer getTopicType() {
+        return topicType;
+    }
+
+    public void setTopicType(Integer topicType) {
+        this.topicType = topicType;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -194,27 +278,33 @@ public class ListInstanceTopicsRespTopics  {
             return false;
         }
         ListInstanceTopicsRespTopics listInstanceTopicsRespTopics = (ListInstanceTopicsRespTopics) o;
-        return Objects.equals(this.name, listInstanceTopicsRespTopics.name) &&
+        return Objects.equals(this.policiesOnly, listInstanceTopicsRespTopics.policiesOnly) &&
+            Objects.equals(this.name, listInstanceTopicsRespTopics.name) &&
             Objects.equals(this.replication, listInstanceTopicsRespTopics.replication) &&
             Objects.equals(this.partition, listInstanceTopicsRespTopics.partition) &&
             Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime) &&
             Objects.equals(this.syncReplication, listInstanceTopicsRespTopics.syncReplication) &&
-            Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush);
+            Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush) &&
+            Objects.equals(this.externalConfigs, listInstanceTopicsRespTopics.externalConfigs) &&
+            Objects.equals(this.topicType, listInstanceTopicsRespTopics.topicType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, replication, partition, retentionTime, syncReplication, syncMessageFlush);
+        return Objects.hash(policiesOnly, name, replication, partition, retentionTime, syncReplication, syncMessageFlush, externalConfigs, topicType);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceTopicsRespTopics {\n");
+        sb.append("    policiesOnly: ").append(toIndentedString(policiesOnly)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    replication: ").append(toIndentedString(replication)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
         sb.append("    syncReplication: ").append(toIndentedString(syncReplication)).append("\n");
         sb.append("    syncMessageFlush: ").append(toIndentedString(syncMessageFlush)).append("\n");
+        sb.append("    externalConfigs: ").append(toIndentedString(externalConfigs)).append("\n");
+        sb.append("    topicType: ").append(toIndentedString(topicType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -47,7 +47,7 @@ public class CreateUserRepositoryAuthRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -69,7 +69,7 @@ public class CreateUserRepositoryAuthRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {

@@ -38,7 +38,7 @@ public class ListCustomPoliciesRequest  {
 
 
     /**
-     * Get page
+     * 分页查询时数据的页数，查询值最小为1。需要与per_page同时存在。
      * @return page
      */
     public Integer getPage() {
@@ -60,7 +60,7 @@ public class ListCustomPoliciesRequest  {
 
 
     /**
-     * Get perPage
+     * 分页查询时每页的数据个数，取值范围为[1,300]。需要与page同时存在。
      * @return perPage
      */
     public Integer getPerPage() {

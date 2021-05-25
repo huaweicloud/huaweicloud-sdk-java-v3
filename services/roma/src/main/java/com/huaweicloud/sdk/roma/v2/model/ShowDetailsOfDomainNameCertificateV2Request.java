@@ -50,7 +50,7 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -72,7 +72,7 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
 
 
     /**
-     * Get domainId
+     * 域名的编号
      * @return domainId
      */
     public String getDomainId() {
@@ -94,7 +94,7 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
 
 
     /**
-     * Get groupId
+     * 分组的编号
      * @return groupId
      */
     public String getGroupId() {
@@ -116,7 +116,7 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
 
 
     /**
-     * Get certificateId
+     * 证书的编号
      * @return certificateId
      */
     public String getCertificateId() {

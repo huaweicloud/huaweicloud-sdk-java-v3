@@ -27,8 +27,14 @@ public class EnvironmentCheck  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
-    private String id;
+    private Long id;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="params")
+    
+    private List<String> params = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
@@ -137,13 +143,7 @@ public class EnvironmentCheck  {
     
     private String errorParams;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
-    private List<String> params = null;
-    
-    public EnvironmentCheck withId(String id) {
+    public EnvironmentCheck withId(Long id) {
         this.id = id;
         return this;
     }
@@ -153,14 +153,52 @@ public class EnvironmentCheck  {
 
     /**
      * 该检查项的ID
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return id
      */
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    
+
+    public EnvironmentCheck withParams(List<String> params) {
+        this.params = params;
+        return this;
+    }
+
+    
+    public EnvironmentCheck addParamsItem(String paramsItem) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
+        this.params.add(paramsItem);
+        return this;
+    }
+
+    public EnvironmentCheck withParams(Consumer<List<String>> paramsSetter) {
+        if(this.params == null) {
+            this.params = new ArrayList<>();
+        }
+        paramsSetter.accept(this.params);
+        return this;
+    }
+
+    /**
+     * 参数
+     * @return params
+     */
+    public List<String> getParams() {
+        return params;
+    }
+
+    public void setParams(List<String> params) {
+        this.params = params;
     }
 
     
@@ -253,42 +291,6 @@ public class EnvironmentCheck  {
 
     
 
-    public EnvironmentCheck withParams(List<String> params) {
-        this.params = params;
-        return this;
-    }
-
-    
-    public EnvironmentCheck addParamsItem(String paramsItem) {
-        if(this.params == null) {
-            this.params = new ArrayList<>();
-        }
-        this.params.add(paramsItem);
-        return this;
-    }
-
-    public EnvironmentCheck withParams(Consumer<List<String>> paramsSetter) {
-        if(this.params == null) {
-            this.params = new ArrayList<>();
-        }
-        paramsSetter.accept(this.params);
-        return this;
-    }
-
-    /**
-     * 参数
-     * @return params
-     */
-    public List<String> getParams() {
-        return params;
-    }
-
-    public void setParams(List<String> params) {
-        this.params = params;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -299,26 +301,26 @@ public class EnvironmentCheck  {
         }
         EnvironmentCheck environmentCheck = (EnvironmentCheck) o;
         return Objects.equals(this.id, environmentCheck.id) &&
+            Objects.equals(this.params, environmentCheck.params) &&
             Objects.equals(this.name, environmentCheck.name) &&
             Objects.equals(this.result, environmentCheck.result) &&
             Objects.equals(this.errorCode, environmentCheck.errorCode) &&
-            Objects.equals(this.errorParams, environmentCheck.errorParams) &&
-            Objects.equals(this.params, environmentCheck.params);
+            Objects.equals(this.errorParams, environmentCheck.errorParams);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, result, errorCode, errorParams, params);
+        return Objects.hash(id, params, name, result, errorCode, errorParams);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnvironmentCheck {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorParams: ").append(toIndentedString(errorParams)).append("\n");
-        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("}");
         return sb.toString();
     }

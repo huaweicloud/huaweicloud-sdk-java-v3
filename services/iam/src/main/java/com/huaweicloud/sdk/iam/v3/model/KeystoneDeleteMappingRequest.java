@@ -32,7 +32,7 @@ public class KeystoneDeleteMappingRequest  {
 
 
     /**
-     * Get id
+     * 待删除的映射ID。
      * @return id
      */
     public String getId() {

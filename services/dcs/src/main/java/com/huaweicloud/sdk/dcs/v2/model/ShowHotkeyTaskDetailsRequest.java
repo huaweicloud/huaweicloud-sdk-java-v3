@@ -38,7 +38,7 @@ public class ShowHotkeyTaskDetailsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ShowHotkeyTaskDetailsRequest  {
 
 
     /**
-     * Get hotkeyId
+     * 热key分析任务ID。
      * @return hotkeyId
      */
     public String getHotkeyId() {

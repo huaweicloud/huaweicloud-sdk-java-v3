@@ -44,7 +44,7 @@ public class ShowJobListByProjectIdRequest  {
 
 
     /**
-     * Get pageIndex
+     * 分页页码， 表示从此页开始查询， page_index大于等于0
      * minimum: 0
      * @return pageIndex
      */
@@ -67,7 +67,7 @@ public class ShowJobListByProjectIdRequest  {
 
 
     /**
-     * Get pageSize
+     * 每页显示的条目数量，page_size小于等于100
      * minimum: 0
      * maximum: 100
      * @return pageSize
@@ -91,7 +91,7 @@ public class ShowJobListByProjectIdRequest  {
 
 
     /**
-     * Get projectId
+     * 项目ID，32位数字、小写字母组合。[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)
      * @return projectId
      */
     public String getProjectId() {

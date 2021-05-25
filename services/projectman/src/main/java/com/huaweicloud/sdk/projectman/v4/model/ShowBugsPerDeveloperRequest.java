@@ -39,7 +39,7 @@ public class ShowBugsPerDeveloperRequest  {
 
 
     /**
-     * Get projectId
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {

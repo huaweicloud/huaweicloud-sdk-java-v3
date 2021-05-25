@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.UpdateScalingV2PolicyRequestBody;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingV2PolicyOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class UpdateScalingV2PolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateScalingV2PolicyRequestBody body;
+    private UpdateScalingV2PolicyOption body;
 
     public UpdateScalingV2PolicyRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
@@ -39,7 +39,7 @@ public class UpdateScalingV2PolicyRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩策略ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {
@@ -52,14 +52,14 @@ public class UpdateScalingV2PolicyRequest  {
 
     
 
-    public UpdateScalingV2PolicyRequest withBody(UpdateScalingV2PolicyRequestBody body) {
+    public UpdateScalingV2PolicyRequest withBody(UpdateScalingV2PolicyOption body) {
         this.body = body;
         return this;
     }
 
-    public UpdateScalingV2PolicyRequest withBody(Consumer<UpdateScalingV2PolicyRequestBody> bodySetter) {
+    public UpdateScalingV2PolicyRequest withBody(Consumer<UpdateScalingV2PolicyOption> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateScalingV2PolicyRequestBody();
+            this.body = new UpdateScalingV2PolicyOption();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class UpdateScalingV2PolicyRequest  {
      * Get body
      * @return body
      */
-    public UpdateScalingV2PolicyRequestBody getBody() {
+    public UpdateScalingV2PolicyOption getBody() {
         return body;
     }
 
-    public void setBody(UpdateScalingV2PolicyRequestBody body) {
+    public void setBody(UpdateScalingV2PolicyOption body) {
         this.body = body;
     }
 

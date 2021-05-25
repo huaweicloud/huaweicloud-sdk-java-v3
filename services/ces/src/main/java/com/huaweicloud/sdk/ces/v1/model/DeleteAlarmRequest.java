@@ -32,7 +32,7 @@ public class DeleteAlarmRequest  {
 
 
     /**
-     * Get alarmId
+     * 告警规则的ID。
      * @return alarmId
      */
     public String getAlarmId() {

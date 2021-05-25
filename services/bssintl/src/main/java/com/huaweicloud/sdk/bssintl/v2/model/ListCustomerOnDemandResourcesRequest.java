@@ -39,7 +39,7 @@ public class ListCustomerOnDemandResourcesRequest  {
 
 
     /**
-     * Get xLanguage
+     * |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US，缺省为zh_CN|
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -38,7 +38,7 @@ public class ListSecretsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。  默认值：50。 
      * @return limit
      */
     public String getLimit() {
@@ -60,7 +60,7 @@ public class ListSecretsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源id，为空时为查询第一页 
      * @return marker
      */
     public String getMarker() {

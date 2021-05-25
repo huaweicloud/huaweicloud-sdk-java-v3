@@ -39,7 +39,7 @@ public class UpdateVaultRequest  {
 
 
     /**
-     * Get vaultId
+     * 存储库ID
      * @return vaultId
      */
     public String getVaultId() {

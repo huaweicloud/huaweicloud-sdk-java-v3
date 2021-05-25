@@ -306,7 +306,7 @@ public class QueryResRecordsDetailReq  {
 
 
     /**
-     * |参数名称：偏移量| |参数的约束及描述：该参数非必填，且只允许数字，默认为1|
+     * |参数名称：偏移量| |参数的约束及描述：该参数非必填，且只允许数字，默认为0|
      * minimum: 0
      * maximum: 2147483647
      * @return offset

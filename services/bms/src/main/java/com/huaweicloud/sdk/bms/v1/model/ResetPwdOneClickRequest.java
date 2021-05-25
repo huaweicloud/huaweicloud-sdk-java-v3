@@ -39,7 +39,7 @@ public class ResetPwdOneClickRequest  {
 
 
     /**
-     * Get serverId
+     * 裸金属服务器ID。可以从裸金属服务器控制台查询，或者通过调用7.3.4-查询裸金属服务器列表（OpenStack原生）API获取。
      * @return serverId
      */
     public String getServerId() {

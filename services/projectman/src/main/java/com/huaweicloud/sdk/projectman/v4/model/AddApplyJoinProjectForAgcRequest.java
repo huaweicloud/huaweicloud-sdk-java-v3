@@ -44,7 +44,7 @@ public class AddApplyJoinProjectForAgcRequest  {
 
 
     /**
-     * Get domainId
+     * 租户id
      * @return domainId
      */
     public String getDomainId() {
@@ -66,7 +66,7 @@ public class AddApplyJoinProjectForAgcRequest  {
 
 
     /**
-     * Get userId
+     * 用户id
      * @return userId
      */
     public String getUserId() {
@@ -88,7 +88,7 @@ public class AddApplyJoinProjectForAgcRequest  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {

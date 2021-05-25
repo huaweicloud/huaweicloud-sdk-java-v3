@@ -56,7 +56,7 @@ public class ShowJobExercisesRequest  {
 
 
     /**
-     * Get jobId
+     * 作业ID。
      * @return jobId
      */
     public String getJobId() {
@@ -78,7 +78,7 @@ public class ShowJobExercisesRequest  {
 
 
     /**
-     * Get sourceFrom
+     * 作业来源于课堂或课程。 取值范围： classroom:课堂作业 course:课程作业
      * @return sourceFrom
      */
     public String getSourceFrom() {
@@ -100,7 +100,7 @@ public class ShowJobExercisesRequest  {
 
 
     /**
-     * Get sourceId
+     * 课堂ID或者课程ID。
      * @return sourceId
      */
     public String getSourceId() {
@@ -122,7 +122,7 @@ public class ShowJobExercisesRequest  {
 
 
     /**
-     * Get offset
+     * 信息记录的起始编号
      * minimum: 1
      * maximum: 1000
      * @return offset
@@ -146,7 +146,7 @@ public class ShowJobExercisesRequest  {
 
 
     /**
-     * Get limit
+     * 每页包含的信息记录数
      * minimum: 1
      * maximum: 100
      * @return limit

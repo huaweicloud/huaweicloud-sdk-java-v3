@@ -38,7 +38,7 @@ public class DeleteNatGatewayDnatRuleRequest  {
 
 
     /**
-     * Get natGatewayId
+     * 公网NAT网关实例的ID。
      * @return natGatewayId
      */
     public String getNatGatewayId() {
@@ -60,7 +60,7 @@ public class DeleteNatGatewayDnatRuleRequest  {
 
 
     /**
-     * Get dnatRuleId
+     * DNAT规则的ID。
      * @return dnatRuleId
      */
     public String getDnatRuleId() {

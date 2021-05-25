@@ -27,7 +27,7 @@ public class DeleteFunctionTriggerRequest  {
     
     private String functionUrn;
     /**
-     * Gets or Sets triggerTypeCode
+     * 触发器类型代码。
      */
     public static final class TriggerTypeCodeEnum {
 
@@ -161,7 +161,7 @@ public class DeleteFunctionTriggerRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="triggerId")
+    @JsonProperty(value="trigger_id")
     
     private String triggerId;
 
@@ -174,7 +174,7 @@ public class DeleteFunctionTriggerRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -196,7 +196,7 @@ public class DeleteFunctionTriggerRequest  {
 
 
     /**
-     * Get triggerTypeCode
+     * 触发器类型代码。
      * @return triggerTypeCode
      */
     public TriggerTypeCodeEnum getTriggerTypeCode() {
@@ -218,7 +218,7 @@ public class DeleteFunctionTriggerRequest  {
 
 
     /**
-     * Get triggerId
+     * 触发器编码。
      * @return triggerId
      */
     public String getTriggerId() {

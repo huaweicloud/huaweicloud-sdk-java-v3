@@ -39,7 +39,7 @@ public class CreateNodePoolRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
      * @return clusterId
      */
     public String getClusterId() {

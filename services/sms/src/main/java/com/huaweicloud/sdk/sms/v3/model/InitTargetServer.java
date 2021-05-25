@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.sms.v3.model.DiskIntargetServer;
-import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -27,12 +26,6 @@ public class InitTargetServer  {
     
     private List<DiskIntargetServer> disks = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_groups")
-    
-    private VolumeGroups volumeGroups;
-
     public InitTargetServer withDisks(List<DiskIntargetServer> disks) {
         this.disks = disks;
         return this;
@@ -69,35 +62,6 @@ public class InitTargetServer  {
 
     
 
-    public InitTargetServer withVolumeGroups(VolumeGroups volumeGroups) {
-        this.volumeGroups = volumeGroups;
-        return this;
-    }
-
-    public InitTargetServer withVolumeGroups(Consumer<VolumeGroups> volumeGroupsSetter) {
-        if(this.volumeGroups == null ){
-            this.volumeGroups = new VolumeGroups();
-            volumeGroupsSetter.accept(this.volumeGroups);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get volumeGroups
-     * @return volumeGroups
-     */
-    public VolumeGroups getVolumeGroups() {
-        return volumeGroups;
-    }
-
-    public void setVolumeGroups(VolumeGroups volumeGroups) {
-        this.volumeGroups = volumeGroups;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -107,19 +71,17 @@ public class InitTargetServer  {
             return false;
         }
         InitTargetServer initTargetServer = (InitTargetServer) o;
-        return Objects.equals(this.disks, initTargetServer.disks) &&
-            Objects.equals(this.volumeGroups, initTargetServer.volumeGroups);
+        return Objects.equals(this.disks, initTargetServer.disks);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(disks, volumeGroups);
+        return Objects.hash(disks);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class InitTargetServer {\n");
         sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
-        sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

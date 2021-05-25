@@ -12,6 +12,76 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class AsMeta {
 
+    public static final HttpRequestDef<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> attachCallbackInstanceLifeCycleHook = genForattachCallbackInstanceLifeCycleHook();
+
+    private static HttpRequestDef<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> genForattachCallbackInstanceLifeCycleHook() {
+        // basic
+        HttpRequestDef.Builder<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, AttachCallbackInstanceLifeCycleHookRequest.class, AttachCallbackInstanceLifeCycleHookResponse.class)
+                .withName("AttachCallbackInstanceLifeCycleHook")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AttachCallbackInstanceLifeCycleHookRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CallbackLifeCycleHookOption.class,
+            f -> f.withMarshaller(AttachCallbackInstanceLifeCycleHookRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> batchAddScalingInstances = genForbatchAddScalingInstances();
+
+    private static HttpRequestDef<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> genForbatchAddScalingInstances() {
+        // basic
+        HttpRequestDef.Builder<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchAddScalingInstancesRequest.class, BatchAddScalingInstancesResponse.class)
+                .withName("BatchAddScalingInstances")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchAddScalingInstancesRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchAddInstancesOption.class,
+            f -> f.withMarshaller(BatchAddScalingInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> batchDeleteScalingConfigs = genForbatchDeleteScalingConfigs();
 
     private static HttpRequestDef<BatchDeleteScalingConfigsRequest, BatchDeleteScalingConfigsResponse> genForbatchDeleteScalingConfigs() {
@@ -26,7 +96,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteScalingConfigsRequestBody.class,
+            BatchDeleteScalingConfigOption.class,
             f -> f.withMarshaller(BatchDeleteScalingConfigsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -39,14 +109,68 @@ public class AsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse> completeLifecycleAction = genForcompleteLifecycleAction();
+    public static final HttpRequestDef<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> batchDeleteScalingPolicies = genForbatchDeleteScalingPolicies();
 
-    private static HttpRequestDef<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse> genForcompleteLifecycleAction() {
+    private static HttpRequestDef<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> genForbatchDeleteScalingPolicies() {
         // basic
-        HttpRequestDef.Builder<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, CompleteLifecycleActionRequest.class, CompleteLifecycleActionResponse.class)
-                .withName("CompleteLifecycleAction")
-                .withUri("/autoscaling-api/v1/{project_id}/scaling_instance_hook/{scaling_group_id}/callback")
+        HttpRequestDef.Builder<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteScalingPoliciesRequest.class, BatchDeleteScalingPoliciesResponse.class)
+                .withName("BatchDeleteScalingPolicies")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_policies/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteScalingPoliciesOption.class,
+            f -> f.withMarshaller(BatchDeleteScalingPoliciesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> batchPauseScalingPolicies = genForbatchPauseScalingPolicies();
+
+    private static HttpRequestDef<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> genForbatchPauseScalingPolicies() {
+        // basic
+        HttpRequestDef.Builder<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchPauseScalingPoliciesRequest.class, BatchPauseScalingPoliciesResponse.class)
+                .withName("BatchPauseScalingPolicies")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_policies/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchPauseScalingPoliciesOption.class,
+            f -> f.withMarshaller(BatchPauseScalingPoliciesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> batchProtectScalingInstances = genForbatchProtectScalingInstances();
+
+    private static HttpRequestDef<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> genForbatchProtectScalingInstances() {
+        // basic
+        HttpRequestDef.Builder<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchProtectScalingInstancesRequest.class, BatchProtectScalingInstancesResponse.class)
+                .withName("BatchProtectScalingInstances")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -54,15 +178,182 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(CompleteLifecycleActionRequest::getScalingGroupId, (req, v) -> {
+            f -> f.withMarshaller(BatchProtectScalingInstancesRequest::getScalingGroupId, (req, v) -> {
                 req.setScalingGroupId(v);
             })
         );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CompleteLifecycleActionRequestBody.class,
-            f -> f.withMarshaller(CompleteLifecycleActionRequest::getBody, (req, v) -> {
+            BatchProtectInstancesOption.class,
+            f -> f.withMarshaller(BatchProtectScalingInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> batchRemoveScalingInstances = genForbatchRemoveScalingInstances();
+
+    private static HttpRequestDef<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> genForbatchRemoveScalingInstances() {
+        // basic
+        HttpRequestDef.Builder<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchRemoveScalingInstancesRequest.class, BatchRemoveScalingInstancesResponse.class)
+                .withName("BatchRemoveScalingInstances")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchRemoveScalingInstancesRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchRemoveInstancesOption.class,
+            f -> f.withMarshaller(BatchRemoveScalingInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> batchResumeScalingPolicies = genForbatchResumeScalingPolicies();
+
+    private static HttpRequestDef<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> genForbatchResumeScalingPolicies() {
+        // basic
+        HttpRequestDef.Builder<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchResumeScalingPoliciesRequest.class, BatchResumeScalingPoliciesResponse.class)
+                .withName("BatchResumeScalingPolicies")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_policies/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchResumeScalingPoliciesOption.class,
+            f -> f.withMarshaller(BatchResumeScalingPoliciesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> batchSetScalingInstancesStandby = genForbatchSetScalingInstancesStandby();
+
+    private static HttpRequestDef<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> genForbatchSetScalingInstancesStandby() {
+        // basic
+        HttpRequestDef.Builder<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSetScalingInstancesStandbyRequest.class, BatchSetScalingInstancesStandbyResponse.class)
+                .withName("BatchSetScalingInstancesStandby")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchSetScalingInstancesStandbyRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchEnterStandbyInstancesOption.class,
+            f -> f.withMarshaller(BatchSetScalingInstancesStandbyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> batchUnprotectScalingInstances = genForbatchUnprotectScalingInstances();
+
+    private static HttpRequestDef<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> genForbatchUnprotectScalingInstances() {
+        // basic
+        HttpRequestDef.Builder<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUnprotectScalingInstancesRequest.class, BatchUnprotectScalingInstancesResponse.class)
+                .withName("BatchUnprotectScalingInstances")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchUnprotectScalingInstancesRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchUnprotectInstancesOption.class,
+            f -> f.withMarshaller(BatchUnprotectScalingInstancesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandby = genForbatchUnsetScalingInstancesStandby();
+
+    private static HttpRequestDef<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> genForbatchUnsetScalingInstancesStandby() {
+        // basic
+        HttpRequestDef.Builder<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUnsetScalingInstancesStandbyRequest.class, BatchUnsetScalingInstancesStandbyResponse.class)
+                .withName("BatchUnsetScalingInstancesStandby")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchUnsetScalingInstancesStandbyRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchExitStandByInstancesOption.class,
+            f -> f.withMarshaller(BatchUnsetScalingInstancesStandbyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -96,7 +387,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateLifeCycleHookRequestBody.class,
+            CreateLifeCycleHookOption.class,
             f -> f.withMarshaller(CreateLifyCycleHookRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -123,7 +414,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateScalingConfigRequestBody.class,
+            CreateScalingConfigOption.class,
             f -> f.withMarshaller(CreateScalingConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -150,7 +441,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateScalingGroupRequestBody.class,
+            CreateScalingGroupOption.class,
             f -> f.withMarshaller(CreateScalingGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -185,7 +476,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateNotificationRequestBody.class,
+            CreateNotificationOption.class,
             f -> f.withMarshaller(CreateScalingNotificationRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -212,7 +503,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateScalingPolicyRequestBody.class,
+            CreateScalingPolicyOption.class,
             f -> f.withMarshaller(CreateScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -225,13 +516,13 @@ public class AsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateScalingTagsRequest, CreateScalingTagsResponse> createScalingTags = genForcreateScalingTags();
+    public static final HttpRequestDef<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> createScalingTagInfo = genForcreateScalingTagInfo();
 
-    private static HttpRequestDef<CreateScalingTagsRequest, CreateScalingTagsResponse> genForcreateScalingTags() {
+    private static HttpRequestDef<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> genForcreateScalingTagInfo() {
         // basic
-        HttpRequestDef.Builder<CreateScalingTagsRequest, CreateScalingTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateScalingTagsRequest.class, CreateScalingTagsResponse.class)
-                .withName("CreateScalingTags")
+        HttpRequestDef.Builder<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateScalingTagInfoRequest.class, CreateScalingTagInfoResponse.class)
+                .withName("CreateScalingTagInfo")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -239,8 +530,8 @@ public class AsMeta {
         builder.withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateScalingTagsRequest.ResourceTypeEnum.class,
-            f -> f.withMarshaller(CreateScalingTagsRequest::getResourceType, (req, v) -> {
+            CreateScalingTagInfoRequest.ResourceTypeEnum.class,
+            f -> f.withMarshaller(CreateScalingTagInfoRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
             })
         );
@@ -248,15 +539,15 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(CreateScalingTagsRequest::getResourceId, (req, v) -> {
+            f -> f.withMarshaller(CreateScalingTagInfoRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             })
         );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateScalingTagsRequestBody.class,
-            f -> f.withMarshaller(CreateScalingTagsRequest::getBody, (req, v) -> {
+            CreateTagsOption.class,
+            f -> f.withMarshaller(CreateScalingTagInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -462,13 +753,13 @@ public class AsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteScalingTagsRequest, DeleteScalingTagsResponse> deleteScalingTags = genFordeleteScalingTags();
+    public static final HttpRequestDef<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> deleteScalingTagInfo = genFordeleteScalingTagInfo();
 
-    private static HttpRequestDef<DeleteScalingTagsRequest, DeleteScalingTagsResponse> genFordeleteScalingTags() {
+    private static HttpRequestDef<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> genFordeleteScalingTagInfo() {
         // basic
-        HttpRequestDef.Builder<DeleteScalingTagsRequest, DeleteScalingTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DeleteScalingTagsRequest.class, DeleteScalingTagsResponse.class)
-                .withName("DeleteScalingTags")
+        HttpRequestDef.Builder<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteScalingTagInfoRequest.class, DeleteScalingTagInfoResponse.class)
+                .withName("DeleteScalingTagInfo")
                 .withUri("/autoscaling-api/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -476,8 +767,8 @@ public class AsMeta {
         builder.withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteScalingTagsRequest.ResourceTypeEnum.class,
-            f -> f.withMarshaller(DeleteScalingTagsRequest::getResourceType, (req, v) -> {
+            DeleteScalingTagInfoRequest.ResourceTypeEnum.class,
+            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
             })
         );
@@ -485,77 +776,15 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(DeleteScalingTagsRequest::getResourceId, (req, v) -> {
+            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
             })
         );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteScalingTagsRequestBody.class,
-            f -> f.withMarshaller(DeleteScalingTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse> enableOrDisableScalingGroup = genForenableOrDisableScalingGroup();
-
-    private static HttpRequestDef<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse> genForenableOrDisableScalingGroup() {
-        // basic
-        HttpRequestDef.Builder<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, EnableOrDisableScalingGroupRequest.class, EnableOrDisableScalingGroupResponse.class)
-                .withName("EnableOrDisableScalingGroup")
-                .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("scaling_group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(EnableOrDisableScalingGroupRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            EnableOrDisableScalingGroupRequestBody.class,
-            f -> f.withMarshaller(EnableOrDisableScalingGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> executeScalingPolicies = genForexecuteScalingPolicies();
-
-    private static HttpRequestDef<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> genForexecuteScalingPolicies() {
-        // basic
-        HttpRequestDef.Builder<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ExecuteScalingPoliciesRequest.class, ExecuteScalingPoliciesResponse.class)
-                .withName("ExecuteScalingPolicies")
-                .withUri("/autoscaling-api/v1/{project_id}/scaling_policies/action")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ExecuteScalingPoliciesRequestBody.class,
-            f -> f.withMarshaller(ExecuteScalingPoliciesRequest::getBody, (req, v) -> {
+            DeleteTagsOption.class,
+            f -> f.withMarshaller(DeleteScalingTagInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -589,7 +818,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ExecuteScalingPolicyRequestBody.class,
+            ExecuteScalingPolicyOption.class,
             f -> f.withMarshaller(ExecuteScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -686,7 +915,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowTagsRequestBody.class,
+            QueryTagsOption.class,
             f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -721,7 +950,7 @@ public class AsMeta {
         builder.withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
+            String.class,
             f -> f.withMarshaller(ListScalingActivityLogsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
             })
@@ -729,7 +958,7 @@ public class AsMeta {
         builder.withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
+            String.class,
             f -> f.withMarshaller(ListScalingActivityLogsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             })
@@ -777,10 +1006,18 @@ public class AsMeta {
                 req.setScalingGroupId(v);
             })
         );
+        builder.withRequestField("log_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getLogId, (req, v) -> {
+                req.setLogId(v);
+            })
+        );
         builder.withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
+            String.class,
             f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
             })
@@ -788,7 +1025,7 @@ public class AsMeta {
         builder.withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
+            String.class,
             f -> f.withMarshaller(ListScalingActivityV2LogsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             })
@@ -933,6 +1170,14 @@ public class AsMeta {
             Integer.class,
             f -> f.withMarshaller(ListScalingGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListScalingGroupsRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
             })
         );
 
@@ -1158,7 +1403,7 @@ public class AsMeta {
         builder.withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
+            String.class,
             f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
             })
@@ -1166,7 +1411,7 @@ public class AsMeta {
         builder.withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
+            String.class,
             f -> f.withMarshaller(ListScalingPolicyExecuteLogsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
             })
@@ -1247,6 +1492,146 @@ public class AsMeta {
             ListScalingTagInfosByTenantIdRequest.ResourceTypeEnum.class,
             f -> f.withMarshaller(ListScalingTagInfosByTenantIdRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseScalingGroupRequest, PauseScalingGroupResponse> pauseScalingGroup = genForpauseScalingGroup();
+
+    private static HttpRequestDef<PauseScalingGroupRequest, PauseScalingGroupResponse> genForpauseScalingGroup() {
+        // basic
+        HttpRequestDef.Builder<PauseScalingGroupRequest, PauseScalingGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PauseScalingGroupRequest.class, PauseScalingGroupResponse.class)
+                .withName("PauseScalingGroup")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(PauseScalingGroupRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            PauseScalingGroupOption.class,
+            f -> f.withMarshaller(PauseScalingGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PauseScalingPolicyRequest, PauseScalingPolicyResponse> pauseScalingPolicy = genForpauseScalingPolicy();
+
+    private static HttpRequestDef<PauseScalingPolicyRequest, PauseScalingPolicyResponse> genForpauseScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<PauseScalingPolicyRequest, PauseScalingPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, PauseScalingPolicyRequest.class, PauseScalingPolicyResponse.class)
+                .withName("PauseScalingPolicy")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(PauseScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
+                req.setScalingPolicyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            PauseScalingPolicyOption.class,
+            f -> f.withMarshaller(PauseScalingPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumeScalingGroupRequest, ResumeScalingGroupResponse> resumeScalingGroup = genForresumeScalingGroup();
+
+    private static HttpRequestDef<ResumeScalingGroupRequest, ResumeScalingGroupResponse> genForresumeScalingGroup() {
+        // basic
+        HttpRequestDef.Builder<ResumeScalingGroupRequest, ResumeScalingGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResumeScalingGroupRequest.class, ResumeScalingGroupResponse.class)
+                .withName("ResumeScalingGroup")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_group/{scaling_group_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResumeScalingGroupRequest::getScalingGroupId, (req, v) -> {
+                req.setScalingGroupId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResumeScalingGroupOption.class,
+            f -> f.withMarshaller(ResumeScalingGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> resumeScalingPolicy = genForresumeScalingPolicy();
+
+    private static HttpRequestDef<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> genForresumeScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResumeScalingPolicyRequest.class, ResumeScalingPolicyResponse.class)
+                .withName("ResumeScalingPolicy")
+                .withUri("/autoscaling-api/v1/{project_id}/scaling_policy/{scaling_policy_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("scaling_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResumeScalingPolicyRequest::getScalingPolicyId, (req, v) -> {
+                req.setScalingPolicyId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResumeScalingPolicyOption.class,
+            f -> f.withMarshaller(ResumeScalingPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 
@@ -1449,7 +1834,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateLifeCycleHookRequestBody.class,
+            UpdateLifeCycleHookOption.class,
             f -> f.withMarshaller(UpdateLifeCycleHookRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1484,43 +1869,8 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateScalingGroupRequestBody.class,
+            UpdateScalingGroupOption.class,
             f -> f.withMarshaller(UpdateScalingGroupRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse> updateScalingGroupInstance = genForupdateScalingGroupInstance();
-
-    private static HttpRequestDef<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse> genForupdateScalingGroupInstance() {
-        // basic
-        HttpRequestDef.Builder<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateScalingGroupInstanceRequest.class, UpdateScalingGroupInstanceResponse.class)
-                .withName("UpdateScalingGroupInstance")
-                .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("scaling_group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(UpdateScalingGroupInstanceRequest::getScalingGroupId, (req, v) -> {
-                req.setScalingGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateScalingGroupInstanceRequestBody.class,
-            f -> f.withMarshaller(UpdateScalingGroupInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1554,9 +1904,55 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateScalingPolicyRequestBody.class,
+            UpdateScalingPolicyOption.class,
             f -> f.withMarshaller(UpdateScalingPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions = genForlistApiVersions();
+
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion = genForshowApiVersion();
+
+    private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowApiVersionRequest, ShowApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApiVersionRequest.class, ShowApiVersionResponse.class)
+                .withName("ShowApiVersion")
+                .withUri("/{api_version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("api_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ShowApiVersionRequest.ApiVersionEnum.class,
+            f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
+                req.setApiVersion(v);
             })
         );
 
@@ -1581,7 +1977,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateScalingPolicyV2RequestBody.class,
+            CreateScalingPolicyV2Option.class,
             f -> f.withMarshaller(CreateScalingV2PolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1809,7 +2205,7 @@ public class AsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateScalingV2PolicyRequestBody.class,
+            UpdateScalingV2PolicyOption.class,
             f -> f.withMarshaller(UpdateScalingV2PolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

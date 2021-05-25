@@ -34,7 +34,7 @@ public class UpdateDbUserRequest  {
     
     private String dbUserId;
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -133,7 +133,7 @@ public class UpdateDbUserRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -155,7 +155,7 @@ public class UpdateDbUserRequest  {
 
 
     /**
-     * Get dbUserId
+     * 数据库用户ID
      * @return dbUserId
      */
     public String getDbUserId() {
@@ -177,7 +177,7 @@ public class UpdateDbUserRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -39,7 +39,7 @@ public class CreateSecretVersionRequest  {
 
 
     /**
-     * Get secretId
+     * 凭据的资源标识符。
      * @return secretId
      */
     public String getSecretId() {

@@ -32,7 +32,7 @@ public class DeleteSubNetworkInterfaceRequest  {
 
 
     /**
-     * Get subNetworkInterfaceId
+     * 弹性辅助网卡唯一标识
      * @return subNetworkInterfaceId
      */
     public String getSubNetworkInterfaceId() {

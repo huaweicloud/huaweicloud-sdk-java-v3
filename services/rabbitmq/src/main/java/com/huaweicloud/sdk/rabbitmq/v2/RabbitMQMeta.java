@@ -12,13 +12,13 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class RabbitMQMeta {
 
-    public static final HttpRequestDef<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> batchCreateOrDeleteInstanceTag = genForbatchCreateOrDeleteInstanceTag();
+    public static final HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTag = genForbatchCreateOrDeleteRabbitMqTag();
 
-    private static HttpRequestDef<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> genForbatchCreateOrDeleteInstanceTag() {
+    private static HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> genForbatchCreateOrDeleteRabbitMqTag() {
         // basic
-        HttpRequestDef.Builder<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteInstanceTagRequest.class, BatchCreateOrDeleteInstanceTagResponse.class)
-                .withName("BatchCreateOrDeleteInstanceTag")
+        HttpRequestDef.Builder<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteRabbitMqTagRequest.class, BatchCreateOrDeleteRabbitMqTagResponse.class)
+                .withName("BatchCreateOrDeleteRabbitMqTag")
                 .withUri("/v2/{project_id}/rabbitmq/{instance_id}/tags/action")
                 .withContentType("application/json");
 
@@ -27,7 +27,7 @@ public class RabbitMQMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
@@ -35,7 +35,7 @@ public class RabbitMQMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchCreateOrDeleteTagReq.class,
-            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -254,8 +254,8 @@ public class RabbitMQMeta {
         // requests
         builder.withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ListInstancesDetailsRequest.EngineEnum.class,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(ListInstancesDetailsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             })
@@ -356,8 +356,8 @@ public class RabbitMQMeta {
         // requests
         builder.withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ListProductsRequest.EngineEnum.class,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             })
@@ -532,36 +532,9 @@ public class RabbitMQMeta {
         builder.withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowInstanceExtendProductInfoRequest.EngineEnum.class,
+            String.class,
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTags = genForshowInstanceTags();
-
-    private static HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> genForshowInstanceTags() {
-        // basic
-        HttpRequestDef.Builder<ShowInstanceTagsRequest, ShowInstanceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTagsRequest.class, ShowInstanceTagsResponse.class)
-                .withName("ShowInstanceTags")
-                .withUri("/v2/{project_id}/rabbitmq/{instance_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowInstanceTagsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
             })
         );
 
@@ -591,17 +564,44 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTags = genForshowProjectTags();
+    public static final HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTags = genForshowRabbitMqProjectTags();
 
-    private static HttpRequestDef<ShowProjectTagsRequest, ShowProjectTagsResponse> genForshowProjectTags() {
+    private static HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> genForshowRabbitMqProjectTags() {
         // basic
-        HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
-                .withName("ShowProjectTags")
+        HttpRequestDef.Builder<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRabbitMqProjectTagsRequest.class, ShowRabbitMqProjectTagsResponse.class)
+                .withName("ShowRabbitMqProjectTags")
                 .withUri("/v2/{project_id}/rabbitmq/tags")
                 .withContentType("application/json");
 
         // requests
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTags = genForshowRabbitMqTags();
+
+    private static HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> genForshowRabbitMqTags() {
+        // basic
+        HttpRequestDef.Builder<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRabbitMqTagsRequest.class, ShowRabbitMqTagsResponse.class)
+                .withName("ShowRabbitMqTags")
+                .withUri("/v2/{project_id}/rabbitmq/{instance_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRabbitMqTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
 
         // response
         

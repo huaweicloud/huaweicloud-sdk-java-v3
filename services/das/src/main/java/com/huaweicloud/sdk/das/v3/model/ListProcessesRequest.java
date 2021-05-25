@@ -57,7 +57,7 @@ public class ListProcessesRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -150,7 +150,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -172,7 +172,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get dbUserId
+     * 数据库用户ID
      * @return dbUserId
      */
     public String getDbUserId() {
@@ -194,7 +194,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get user
+     * 用户
      * @return user
      */
     public String getUser() {
@@ -216,7 +216,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get database
+     * 数据库
      * @return database
      */
     public String getDatabase() {
@@ -238,7 +238,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @return offset
      */
     public Integer getOffset() {
@@ -260,7 +260,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get limit
+     * 每页记录数，默认为20，最大取值100。
      * @return limit
      */
     public Integer getLimit() {
@@ -282,7 +282,7 @@ public class ListProcessesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

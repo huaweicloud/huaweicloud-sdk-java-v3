@@ -122,7 +122,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询中每页的转发策略个数
      * minimum: 0
      * maximum: 9223372036854775807
      * @return limit
@@ -146,7 +146,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的转发策略的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -168,7 +168,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -190,7 +190,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get id
+     * 转发策略ID。
      * @return id
      */
     public String getId() {
@@ -212,7 +212,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get name
+     * 转发策略名称。
      * @return name
      */
     public String getName() {
@@ -234,7 +234,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get description
+     * 转发策略的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -256,7 +256,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 转发策略的管理状态；取值范围： true/false。该字段为预留字段，暂未启用。默认为true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -278,7 +278,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get listenerId
+     * 转发策略所在的监听器ID。
      * @return listenerId
      */
     public String getListenerId() {
@@ -300,7 +300,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get action
+     * 转发策略的匹配动作。 取值范围：REDIRECT_TO_POOL：将匹配的流量转发到redirect_pool_id指定的后端云服务器组上；REDIRECT_TO_LISTENER：将listener_id指定的HTTP监听器的流量重定向到redirect_listener_id指定的TERMINATED_HTTPS监听器上。
      * @return action
      */
     public String getAction() {
@@ -322,7 +322,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get redirectPoolId
+     * 流量匹配后转发到后端云服务器组的ID。
      * @return redirectPoolId
      */
     public String getRedirectPoolId() {
@@ -344,7 +344,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get redirectListenerId
+     * 流量匹配后转发到的监听器的ID。
      * @return redirectListenerId
      */
     public String getRedirectListenerId() {
@@ -366,7 +366,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get redirectUrl
+     * 转发策略重定向到的url。该字段为预留字段，暂未启用。
      * @return redirectUrl
      */
     public String getRedirectUrl() {
@@ -388,7 +388,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get position
+     * 转发优先级，从1递增，最高100。默认值：100；该字段为预留字段，暂未启用。
      * @return position
      */
     public Integer getPosition() {
@@ -410,7 +410,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get provisioningStatus
+     * 转发策略的配置状态，可以为ACTIVE、PENDING_CREATE 或者ERROR。默认值：ACTIVE；该字段为预留字段，暂未启用。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {
@@ -432,7 +432,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。  取值范围：带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若子账号查询转发策略列表时，需要指定enterprise_project_id为all_granted_eps或者具体企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -454,7 +454,7 @@ public class ListL7policiesRequest  {
 
 
     /**
-     * Get displayAllRules
+     * 是否显示所有的rule信息。取值范围：false表示不显示（跟以前一样只显示ID）；true表示显示。
      * @return displayAllRules
      */
     public Boolean getDisplayAllRules() {

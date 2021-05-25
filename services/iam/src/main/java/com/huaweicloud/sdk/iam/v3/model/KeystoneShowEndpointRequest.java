@@ -32,7 +32,7 @@ public class KeystoneShowEndpointRequest  {
 
 
     /**
-     * Get endpointId
+     * 待查询的终端节点ID。
      * @return endpointId
      */
     public String getEndpointId() {

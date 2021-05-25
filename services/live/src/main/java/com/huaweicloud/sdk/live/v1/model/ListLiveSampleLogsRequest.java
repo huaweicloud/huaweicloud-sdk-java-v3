@@ -45,7 +45,7 @@ public class ListLiveSampleLogsRequest  {
 
 
     /**
-     * Get playDomain
+     * 播放域名。
      * @return playDomain
      */
     public String getPlayDomain() {
@@ -67,7 +67,7 @@ public class ListLiveSampleLogsRequest  {
 
 
     /**
-     * Get startTime
+     * 查询开始时间，UTC时间：YYYY-MM-DDTHH:mm:ssZ，如北京时间2020年3月4日16点00分00秒可表示为2020-03-04T08:00:00Z。仅支持查询最近3个月内的数据。
      * @return startTime
      */
     public OffsetDateTime getStartTime() {
@@ -89,7 +89,7 @@ public class ListLiveSampleLogsRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，UTC时间：YYYY-MM-DDTHH:mm:ssZ，如北京时间2020年3月4日16点00分00秒可表示为2020-03-04T08:00:00Z。查询时间跨度不能大于7天。
      * @return endTime
      */
     public OffsetDateTime getEndTime() {

@@ -44,7 +44,7 @@ public class CheckAuthUsersOfAppRequest  {
 
 
     /**
-     * Get appId
+     * 应用ID
      * @return appId
      */
     public String getAppId() {
@@ -66,7 +66,7 @@ public class CheckAuthUsersOfAppRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -88,7 +88,7 @@ public class CheckAuthUsersOfAppRequest  {
 
 
     /**
-     * Get userName
+     * 查询应用的指定名称的成员，精确匹配
      * @return userName
      */
     public String getUserName() {

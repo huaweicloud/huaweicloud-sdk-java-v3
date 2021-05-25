@@ -39,7 +39,7 @@ public class DeleteServerGroupMemberRequest  {
 
 
     /**
-     * Get serverGroupId
+     * 云服务器组ID。
      * @return serverGroupId
      */
     public String getServerGroupId() {

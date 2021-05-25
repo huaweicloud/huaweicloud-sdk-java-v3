@@ -39,7 +39,7 @@ public class ListBigkeyScanTasksRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets status
+     * 分析任务状态
      */
     public static final class StatusEnum {
 
@@ -144,7 +144,7 @@ public class ListBigkeyScanTasksRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -166,7 +166,7 @@ public class ListBigkeyScanTasksRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * @return offset
      */
     public Integer getOffset() {
@@ -188,7 +188,7 @@ public class ListBigkeyScanTasksRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量。
      * @return limit
      */
     public Integer getLimit() {
@@ -210,7 +210,7 @@ public class ListBigkeyScanTasksRequest  {
 
 
     /**
-     * Get status
+     * 分析任务状态
      * @return status
      */
     public StatusEnum getStatus() {

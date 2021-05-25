@@ -26,9 +26,9 @@ public class UpdateVersionAliasRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="alias_name")
     
-    private String name;
+    private String aliasName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -45,7 +45,7 @@ public class UpdateVersionAliasRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -58,8 +58,8 @@ public class UpdateVersionAliasRequest  {
 
     
 
-    public UpdateVersionAliasRequest withName(String name) {
-        this.name = name;
+    public UpdateVersionAliasRequest withAliasName(String aliasName) {
+        this.aliasName = aliasName;
         return this;
     }
 
@@ -67,15 +67,15 @@ public class UpdateVersionAliasRequest  {
 
 
     /**
-     * Get name
-     * @return name
+     * 要更新的别名名称。
+     * @return aliasName
      */
-    public String getName() {
-        return name;
+    public String getAliasName() {
+        return aliasName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
     }
 
     
@@ -119,19 +119,19 @@ public class UpdateVersionAliasRequest  {
         }
         UpdateVersionAliasRequest updateVersionAliasRequest = (UpdateVersionAliasRequest) o;
         return Objects.equals(this.functionUrn, updateVersionAliasRequest.functionUrn) &&
-            Objects.equals(this.name, updateVersionAliasRequest.name) &&
+            Objects.equals(this.aliasName, updateVersionAliasRequest.aliasName) &&
             Objects.equals(this.body, updateVersionAliasRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, name, body);
+        return Objects.hash(functionUrn, aliasName, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateVersionAliasRequest {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

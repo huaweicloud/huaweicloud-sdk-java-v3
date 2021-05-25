@@ -110,7 +110,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get couponId
+     * 优惠券ID。
      * @return couponId
      */
     public String getCouponId() {
@@ -132,7 +132,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get customerId
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -154,7 +154,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get orderId
+     * 订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -176,7 +176,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get couponType
+     * 优惠券类型： 1：代金券4：现金券
      * minimum: 1
      * maximum: 4
      * @return couponType
@@ -200,7 +200,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get status
+     * 客户优惠券实例状态： 1：未激活2：可使用3：已使用4：已过期5：已回收
      * minimum: 1
      * maximum: 5
      * @return status
@@ -224,7 +224,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get createTimeBegin
+     * 创建时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出创建时间大于这个时间的记录。
      * @return createTimeBegin
      */
     public String getCreateTimeBegin() {
@@ -246,7 +246,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get createTimeEnd
+     * 创建时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出创建时间小于这个时间的记录。
      * @return createTimeEnd
      */
     public String getCreateTimeEnd() {
@@ -268,7 +268,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get effectiveTimeBegin
+     * 生效时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出生效时间大于这个时间的记录。
      * @return effectiveTimeBegin
      */
     public String getEffectiveTimeBegin() {
@@ -290,7 +290,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get effectiveTimeEnd
+     * 生效时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出生效时间小于这个时间的记录。
      * @return effectiveTimeEnd
      */
     public String getEffectiveTimeEnd() {
@@ -312,7 +312,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get expireTimeBegin
+     * 失效时间（开始）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出失效时间大于这个时间的记录。
      * @return expireTimeBegin
      */
     public String getExpireTimeBegin() {
@@ -334,7 +334,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get expireTimeEnd
+     * 失效时间（结束）。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。 其中，HH范围是0～23，mm和ss范围是0～59。 输入这个条件，会查询出失效时间小于这个时间的记录。
      * @return expireTimeEnd
      */
     public String getExpireTimeEnd() {
@@ -356,7 +356,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483646
      * @return offset
@@ -380,7 +380,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get limit
+     * 查询的每页数量。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -404,7 +404,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

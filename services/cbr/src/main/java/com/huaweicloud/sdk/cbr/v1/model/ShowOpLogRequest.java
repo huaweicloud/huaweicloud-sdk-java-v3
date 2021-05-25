@@ -32,7 +32,7 @@ public class ShowOpLogRequest  {
 
 
     /**
-     * Get operationLogId
+     * 任务ID
      * @return operationLogId
      */
     public String getOperationLogId() {

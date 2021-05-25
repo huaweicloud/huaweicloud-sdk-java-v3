@@ -21,22 +21,22 @@ public class RabbitMQClient {
      * 批量添加或删除实例标签
      * 批量添加或删除实例标签。
      *
-     * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
-     * @return BatchCreateOrDeleteInstanceTagResponse
+     * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
+     * @return BatchCreateOrDeleteRabbitMqTagResponse
      */
-    public BatchCreateOrDeleteInstanceTagResponse batchCreateOrDeleteInstanceTag(BatchCreateOrDeleteInstanceTagRequest request) {
-        return hcClient.syncInvokeHttp(request, RabbitMQMeta.batchCreateOrDeleteInstanceTag);
+    public BatchCreateOrDeleteRabbitMqTagResponse batchCreateOrDeleteRabbitMqTag(BatchCreateOrDeleteRabbitMqTagRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.batchCreateOrDeleteRabbitMqTag);
     }
 
     /**
      * 批量添加或删除实例标签
      * 批量添加或删除实例标签。
      *
-     * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
-     * @return SyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse>
+     * @param BatchCreateOrDeleteRabbitMqTagRequest 请求对象
+     * @return SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>
      */
-    public SyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> batchCreateOrDeleteInstanceTagInvoker(BatchCreateOrDeleteInstanceTagRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse>(request, RabbitMQMeta.batchCreateOrDeleteInstanceTag, hcClient);
+    public SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTagInvoker(BatchCreateOrDeleteRabbitMqTagRequest request) {
+        return new SyncInvoker<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse>(request, RabbitMQMeta.batchCreateOrDeleteRabbitMqTag, hcClient);
     }
 
     /**
@@ -304,7 +304,7 @@ public class RabbitMQClient {
     }
 
     /**
-     * 查询指定实例成功
+     * 查询指定实例
      * 查询指定实例的详细信息。
      *
      * @param ShowInstanceRequest 请求对象
@@ -315,7 +315,7 @@ public class RabbitMQClient {
     }
 
     /**
-     * 查询指定实例成功
+     * 查询指定实例
      * 查询指定实例的详细信息。
      *
      * @param ShowInstanceRequest 请求对象
@@ -348,28 +348,6 @@ public class RabbitMQClient {
     }
 
     /**
-     * 查询实例标签
-     * 查询实例标签。
-     *
-     * @param ShowInstanceTagsRequest 请求对象
-     * @return ShowInstanceTagsResponse
-     */
-    public ShowInstanceTagsResponse showInstanceTags(ShowInstanceTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showInstanceTags);
-    }
-
-    /**
-     * 查询实例标签
-     * 查询实例标签。
-     *
-     * @param ShowInstanceTagsRequest 请求对象
-     * @return SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>
-     */
-    public SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTagsInvoker(ShowInstanceTagsRequest request) {
-        return new SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>(request, RabbitMQMeta.showInstanceTags, hcClient);
-    }
-
-    /**
      * 查询维护时间窗时间段
      * 查询维护时间窗开始时间和结束时间。
      *
@@ -395,22 +373,44 @@ public class RabbitMQClient {
      * 查询项目标签
      * 查询项目标签。
      *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return ShowProjectTagsResponse
+     * @param ShowRabbitMqProjectTagsRequest 请求对象
+     * @return ShowRabbitMqProjectTagsResponse
      */
-    public ShowProjectTagsResponse showProjectTags(ShowProjectTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showProjectTags);
+    public ShowRabbitMqProjectTagsResponse showRabbitMqProjectTags(ShowRabbitMqProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showRabbitMqProjectTags);
     }
 
     /**
      * 查询项目标签
      * 查询项目标签。
      *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>
+     * @param ShowRabbitMqProjectTagsRequest 请求对象
+     * @return SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>
      */
-    public SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTagsInvoker(ShowProjectTagsRequest request) {
-        return new SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>(request, RabbitMQMeta.showProjectTags, hcClient);
+    public SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTagsInvoker(ShowRabbitMqProjectTagsRequest request) {
+        return new SyncInvoker<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse>(request, RabbitMQMeta.showRabbitMqProjectTags, hcClient);
+    }
+
+    /**
+     * 查询实例标签
+     * 查询实例标签。
+     *
+     * @param ShowRabbitMqTagsRequest 请求对象
+     * @return ShowRabbitMqTagsResponse
+     */
+    public ShowRabbitMqTagsResponse showRabbitMqTags(ShowRabbitMqTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showRabbitMqTags);
+    }
+
+    /**
+     * 查询实例标签
+     * 查询实例标签。
+     *
+     * @param ShowRabbitMqTagsRequest 请求对象
+     * @return SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>
+     */
+    public SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTagsInvoker(ShowRabbitMqTagsRequest request) {
+        return new SyncInvoker<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse>(request, RabbitMQMeta.showRabbitMqTags, hcClient);
     }
 
     /**

@@ -784,6 +784,137 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> listCustomerBillsMonthlyBreakDown = genForlistCustomerBillsMonthlyBreakDown();
+
+    private static HttpRequestDef<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> genForlistCustomerBillsMonthlyBreakDown() {
+        // basic
+        HttpRequestDef.Builder<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomerBillsMonthlyBreakDownRequest.class, ListCustomerBillsMonthlyBreakDownResponse.class)
+                .withName("ListCustomerBillsMonthlyBreakDown")
+                .withUri("/v2/costs/cost-analysed-bills/monthly-breakdown")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("shared_month",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getSharedMonth, (req, v) -> {
+                req.setSharedMonth(v);
+            })
+        );
+        builder.withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getChargingMode, (req, v) -> {
+                req.setChargingMode(v);
+            })
+        );
+        builder.withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getServiceTypeCode, (req, v) -> {
+                req.setServiceTypeCode(v);
+            })
+        );
+        builder.withRequestField("resource_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceTypeCode, (req, v) -> {
+                req.setResourceTypeCode(v);
+            })
+        );
+        builder.withRequestField("region_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getRegionCode, (req, v) -> {
+                req.setRegionCode(v);
+            })
+        );
+        builder.withRequestField("bill_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getBillType, (req, v) -> {
+                req.setBillType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceId, (req, v) -> {
+                req.setResourceId(v);
+            })
+        );
+        builder.withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getResourceName, (req, v) -> {
+                req.setResourceName(v);
+            })
+        );
+        builder.withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+        builder.withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getMethod, (req, v) -> {
+                req.setMethod(v);
+            })
+        );
+        builder.withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getSubCustomerId, (req, v) -> {
+                req.setSubCustomerId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCustomerBillsMonthlyBreakDownRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> listCustomerOnDemandResources = genForlistCustomerOnDemandResources();
 
     private static HttpRequestDef<ListCustomerOnDemandResourcesRequest, ListCustomerOnDemandResourcesResponse> genForlistCustomerOnDemandResources() {
@@ -1594,6 +1725,33 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscounts = genForlistOrderDiscounts();
+
+    private static HttpRequestDef<ListOrderDiscountsRequest, ListOrderDiscountsResponse> genForlistOrderDiscounts() {
+        // basic
+        HttpRequestDef.Builder<ListOrderDiscountsRequest, ListOrderDiscountsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOrderDiscountsRequest.class, ListOrderDiscountsResponse.class)
+                .withName("ListOrderDiscounts")
+                .withUri("/v2/orders/customer-orders/order-discounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("order_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListOrderDiscountsRequest::getOrderId, (req, v) -> {
+                req.setOrderId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> listPartnerAdjustRecords = genForlistPartnerAdjustRecords();
 
     private static HttpRequestDef<ListPartnerAdjustRecordsRequest, ListPartnerAdjustRecordsResponse> genForlistPartnerAdjustRecords() {
@@ -2384,6 +2542,22 @@ public class BssMeta {
             String.class,
             f -> f.withMarshaller(ListSubCustomerResFeeRecordsRequest::getIndirectPartnerId, (req, v) -> {
                 req.setIndirectPartnerId(v);
+            })
+        );
+        builder.withRequestField("bill_date_begin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSubCustomerResFeeRecordsRequest::getBillDateBegin, (req, v) -> {
+                req.setBillDateBegin(v);
+            })
+        );
+        builder.withRequestField("bill_date_end",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSubCustomerResFeeRecordsRequest::getBillDateEnd, (req, v) -> {
+                req.setBillDateEnd(v);
             })
         );
 

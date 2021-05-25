@@ -32,7 +32,7 @@ public class ShowSecurityGroupRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 安全组资源ID
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

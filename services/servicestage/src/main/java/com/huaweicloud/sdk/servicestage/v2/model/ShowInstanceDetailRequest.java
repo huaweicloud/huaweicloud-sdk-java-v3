@@ -44,7 +44,7 @@ public class ShowInstanceDetailRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -66,7 +66,7 @@ public class ShowInstanceDetailRequest  {
 
 
     /**
-     * Get componentId
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {
@@ -88,7 +88,7 @@ public class ShowInstanceDetailRequest  {
 
 
     /**
-     * Get instanceId
+     * 组件实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

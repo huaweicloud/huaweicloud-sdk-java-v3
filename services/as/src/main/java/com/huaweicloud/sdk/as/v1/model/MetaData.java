@@ -12,19 +12,25 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 用户自定义键值对
+ * 创建磁盘的元数据
  */
 public class MetaData  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customize_key")
+    @JsonProperty(value="__system__encrypted")
     
-    private String customizeKey;
+    private String systemEncrypted;
 
-    public MetaData withCustomizeKey(String customizeKey) {
-        this.customizeKey = customizeKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__system__cmkid")
+    
+    private String systemCmkid;
+
+    public MetaData withSystemEncrypted(String systemEncrypted) {
+        this.systemEncrypted = systemEncrypted;
         return this;
     }
 
@@ -32,15 +38,41 @@ public class MetaData  {
 
 
     /**
-     * 用户自定义数据总长度不大于512字节。用户自定义键不能是空串，不能包含符号.，以及不能以符号$开头。说明：Windows弹性云服务器Administrator用户的密码。示例：键（固定）：admin_pass值：cloud.1234创建密码方式鉴权的Windows弹性云服务器时为必选字段。
-     * @return customizeKey
+     * metadata中的表示加密功能的字段，0代表不加密，1代表加密。  该字段不存在时，云硬盘默认为不加密。
+     * @return systemEncrypted
      */
-    public String getCustomizeKey() {
-        return customizeKey;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__system__encrypted")
+    public String getSystemEncrypted() {
+        return systemEncrypted;
     }
 
-    public void setCustomizeKey(String customizeKey) {
-        this.customizeKey = customizeKey;
+    public void setSystemEncrypted(String systemEncrypted) {
+        this.systemEncrypted = systemEncrypted;
+    }
+
+    
+
+    public MetaData withSystemCmkid(String systemCmkid) {
+        this.systemCmkid = systemCmkid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户主密钥ID，是metadata中的表示加密功能的字段，与__system__encrypted配合使用。
+     * @return systemCmkid
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__system__cmkid")
+    public String getSystemCmkid() {
+        return systemCmkid;
+    }
+
+    public void setSystemCmkid(String systemCmkid) {
+        this.systemCmkid = systemCmkid;
     }
 
     
@@ -54,17 +86,19 @@ public class MetaData  {
             return false;
         }
         MetaData metaData = (MetaData) o;
-        return Objects.equals(this.customizeKey, metaData.customizeKey);
+        return Objects.equals(this.systemEncrypted, metaData.systemEncrypted) &&
+            Objects.equals(this.systemCmkid, metaData.systemCmkid);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(customizeKey);
+        return Objects.hash(systemEncrypted, systemCmkid);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetaData {\n");
-        sb.append("    customizeKey: ").append(toIndentedString(customizeKey)).append("\n");
+        sb.append("    systemEncrypted: ").append(toIndentedString(systemEncrypted)).append("\n");
+        sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
         sb.append("}");
         return sb.toString();
     }

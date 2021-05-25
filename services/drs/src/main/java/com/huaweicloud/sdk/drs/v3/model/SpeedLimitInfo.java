@@ -66,7 +66,7 @@ public class SpeedLimitInfo  {
 
 
     /**
-     * 结束时间,此时间为utc时间,输入必须为59分结尾，格式为时:分，例如：15:59
+     * 结束时间,此时间为UTC时间,输入必须为59分结尾，格式为hh:mm，小时数为两位，例如：05:59。
      * @return end
      */
     public String getEnd() {

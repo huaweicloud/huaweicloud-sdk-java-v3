@@ -56,7 +56,7 @@ public class ListIssuedCouponQuotasRequest  {
 
 
     /**
-     * Get quotaId
+     * 精英服务商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -78,7 +78,7 @@ public class ListIssuedCouponQuotasRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -100,7 +100,7 @@ public class ListIssuedCouponQuotasRequest  {
 
 
     /**
-     * Get parentQuotaId
+     * 父额度ID，即华为云伙伴能力中心用于发放给精英服务商代金券额度的额度ID。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {
@@ -122,7 +122,7 @@ public class ListIssuedCouponQuotasRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -146,7 +146,7 @@ public class ListIssuedCouponQuotasRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询记录数。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit

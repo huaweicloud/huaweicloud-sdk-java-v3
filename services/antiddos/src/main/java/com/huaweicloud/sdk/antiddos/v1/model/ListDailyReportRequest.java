@@ -38,7 +38,7 @@ public class ListDailyReportRequest  {
 
 
     /**
-     * Get floatingIpId
+     * 用户EIP对应的ID
      * @return floatingIpId
      */
     public String getFloatingIpId() {
@@ -60,7 +60,7 @@ public class ListDailyReportRequest  {
 
 
     /**
-     * Get ip
+     * 用户EIP
      * @return ip
      */
     public String getIp() {

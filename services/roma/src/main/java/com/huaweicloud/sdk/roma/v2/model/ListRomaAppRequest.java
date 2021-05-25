@@ -74,7 +74,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -96,7 +96,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，大于等于0
      * minimum: 0
      * maximum: 10
      * @return offset
@@ -120,7 +120,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -144,7 +144,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get favorite
+     * 查询收藏的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，获取收藏的应用 - 为false时，获取未被收藏的应用products
      * @return favorite
      */
     public Boolean getFavorite() {
@@ -166,7 +166,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get authRole
+     * 获取拥有指定权限应用
      * @return authRole
      */
     public String getAuthRole() {
@@ -188,7 +188,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get name
+     * 应用名称，模糊匹配
      * @return name
      */
     public String getName() {
@@ -210,7 +210,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get owner
+     * 查询有权限访问的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，查询当前用户创建的应用 - 为false时，查询非当前用户创建的有权限的应用，比如其它人共享的应用
      * @return owner
      */
     public Boolean getOwner() {
@@ -232,7 +232,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * Get userName
+     * 从当前调用者有权限的所有应用中过滤出指定用户名有权限的应用
      * @return userName
      */
     public String getUserName() {

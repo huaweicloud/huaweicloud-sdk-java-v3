@@ -16,9 +16,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.as.v1.model.EipMetaData;
 import com.huaweicloud.sdk.as.v1.model.JobRecords;
-import com.huaweicloud.sdk.as.v1.model.MetaData;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -228,7 +227,7 @@ public class ScalingPolicyExecuteLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="execute_time")
     
-    private OffsetDateTime executeTime;
+    private String executeTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -238,9 +237,9 @@ public class ScalingPolicyExecuteLogList  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
+    @JsonProperty(value="tenant_id")
     
-    private String projectId;
+    private String tenantId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -354,7 +353,7 @@ public class ScalingPolicyExecuteLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="limit_value")
     
-    private Integer limitValue;
+    private String limitValue;
     /**
      * 策略执行任务类型。ADD：添加。REMOVE：减少。SET：设置为
      */
@@ -456,7 +455,7 @@ public class ScalingPolicyExecuteLogList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MetaData metaData;
+    private EipMetaData metaData;
 
     public ScalingPolicyExecuteLogList withStatus(StatusEnum status) {
         this.status = status;
@@ -524,7 +523,7 @@ public class ScalingPolicyExecuteLogList  {
 
     
 
-    public ScalingPolicyExecuteLogList withExecuteTime(OffsetDateTime executeTime) {
+    public ScalingPolicyExecuteLogList withExecuteTime(String executeTime) {
         this.executeTime = executeTime;
         return this;
     }
@@ -536,11 +535,11 @@ public class ScalingPolicyExecuteLogList  {
      * 策略执行时间，遵循UTC时间。
      * @return executeTime
      */
-    public OffsetDateTime getExecuteTime() {
+    public String getExecuteTime() {
         return executeTime;
     }
 
-    public void setExecuteTime(OffsetDateTime executeTime) {
+    public void setExecuteTime(String executeTime) {
         this.executeTime = executeTime;
     }
 
@@ -568,8 +567,8 @@ public class ScalingPolicyExecuteLogList  {
 
     
 
-    public ScalingPolicyExecuteLogList withProjectId(String projectId) {
-        this.projectId = projectId;
+    public ScalingPolicyExecuteLogList withTenantId(String tenantId) {
+        this.tenantId = tenantId;
         return this;
     }
 
@@ -578,14 +577,14 @@ public class ScalingPolicyExecuteLogList  {
 
     /**
      * 租户id。
-     * @return projectId
+     * @return tenantId
      */
-    public String getProjectId() {
-        return projectId;
+    public String getTenantId() {
+        return tenantId;
     }
 
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
     }
 
     
@@ -700,7 +699,7 @@ public class ScalingPolicyExecuteLogList  {
 
     
 
-    public ScalingPolicyExecuteLogList withLimitValue(Integer limitValue) {
+    public ScalingPolicyExecuteLogList withLimitValue(String limitValue) {
         this.limitValue = limitValue;
         return this;
     }
@@ -712,11 +711,11 @@ public class ScalingPolicyExecuteLogList  {
      * 操作限制。当scaling_resource_type为BANDWIDTH时，且operation不为SET时，limit_value生效，单位为Mbit/s。此时，当operation为ADD时，limit_value表示最高带宽限制；当operation为REDUCE时，limit_value表示最低带宽限制。
      * @return limitValue
      */
-    public Integer getLimitValue() {
+    public String getLimitValue() {
         return limitValue;
     }
 
-    public void setLimitValue(Integer limitValue) {
+    public void setLimitValue(String limitValue) {
         this.limitValue = limitValue;
     }
 
@@ -780,14 +779,14 @@ public class ScalingPolicyExecuteLogList  {
 
     
 
-    public ScalingPolicyExecuteLogList withMetaData(MetaData metaData) {
+    public ScalingPolicyExecuteLogList withMetaData(EipMetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ScalingPolicyExecuteLogList withMetaData(Consumer<MetaData> metaDataSetter) {
+    public ScalingPolicyExecuteLogList withMetaData(Consumer<EipMetaData> metaDataSetter) {
         if(this.metaData == null ){
-            this.metaData = new MetaData();
+            this.metaData = new EipMetaData();
             metaDataSetter.accept(this.metaData);
         }
         
@@ -799,11 +798,11 @@ public class ScalingPolicyExecuteLogList  {
      * Get metaData
      * @return metaData
      */
-    public MetaData getMetaData() {
+    public EipMetaData getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaData metaData) {
+    public void setMetaData(EipMetaData metaData) {
         this.metaData = metaData;
     }
 
@@ -823,7 +822,7 @@ public class ScalingPolicyExecuteLogList  {
             Objects.equals(this.executeType, scalingPolicyExecuteLogList.executeType) &&
             Objects.equals(this.executeTime, scalingPolicyExecuteLogList.executeTime) &&
             Objects.equals(this.id, scalingPolicyExecuteLogList.id) &&
-            Objects.equals(this.projectId, scalingPolicyExecuteLogList.projectId) &&
+            Objects.equals(this.tenantId, scalingPolicyExecuteLogList.tenantId) &&
             Objects.equals(this.scalingPolicyId, scalingPolicyExecuteLogList.scalingPolicyId) &&
             Objects.equals(this.scalingResourceType, scalingPolicyExecuteLogList.scalingResourceType) &&
             Objects.equals(this.scalingResourceId, scalingPolicyExecuteLogList.scalingResourceId) &&
@@ -836,7 +835,7 @@ public class ScalingPolicyExecuteLogList  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(status, failedReason, executeType, executeTime, id, projectId, scalingPolicyId, scalingResourceType, scalingResourceId, oldValue, desireValue, limitValue, type, jobRecords, metaData);
+        return Objects.hash(status, failedReason, executeType, executeTime, id, tenantId, scalingPolicyId, scalingResourceType, scalingResourceId, oldValue, desireValue, limitValue, type, jobRecords, metaData);
     }
     @Override
     public String toString() {
@@ -847,7 +846,7 @@ public class ScalingPolicyExecuteLogList  {
         sb.append("    executeType: ").append(toIndentedString(executeType)).append("\n");
         sb.append("    executeTime: ").append(toIndentedString(executeTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    scalingPolicyId: ").append(toIndentedString(scalingPolicyId)).append("\n");
         sb.append("    scalingResourceType: ").append(toIndentedString(scalingResourceType)).append("\n");
         sb.append("    scalingResourceId: ").append(toIndentedString(scalingResourceId)).append("\n");

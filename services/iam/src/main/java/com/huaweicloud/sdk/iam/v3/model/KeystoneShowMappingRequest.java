@@ -32,7 +32,7 @@ public class KeystoneShowMappingRequest  {
 
 
     /**
-     * Get id
+     * 待查询的映射ID。
      * @return id
      */
     public String getId() {

@@ -32,7 +32,7 @@ public class ShowNamespaceAuthRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {

@@ -32,7 +32,7 @@ public class DeleteApplicationRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {

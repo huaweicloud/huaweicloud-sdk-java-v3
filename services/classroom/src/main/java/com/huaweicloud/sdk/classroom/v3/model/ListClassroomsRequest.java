@@ -44,7 +44,7 @@ public class ListClassroomsRequest  {
 
 
     /**
-     * Get offset
+     * 信息记录的起始编号
      * minimum: 1
      * maximum: 1000
      * @return offset
@@ -68,7 +68,7 @@ public class ListClassroomsRequest  {
 
 
     /**
-     * Get limit
+     * 每页包含的信息记录数
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -92,7 +92,7 @@ public class ListClassroomsRequest  {
 
 
     /**
-     * Get queryType
+     * 查询的课堂类别，默认查询所有的课堂。 取值范围： create：只查询当前用户创建的课堂。 attend：只查询当前用户加入的课堂。 all：查询当前用户所有的课堂。
      * @return queryType
      */
     public String getQueryType() {

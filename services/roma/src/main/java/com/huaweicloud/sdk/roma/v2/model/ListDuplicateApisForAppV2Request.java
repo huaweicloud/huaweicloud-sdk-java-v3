@@ -38,7 +38,7 @@ public class ListDuplicateApisForAppV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ListDuplicateApisForAppV2Request  {
 
 
     /**
-     * Get appId
+     * 应用id
      * @return appId
      */
     public String getAppId() {

@@ -39,6 +39,12 @@ public class TokenInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="role")
+    
+    private Integer role;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="expireTime")
     
     private Long expireTime;
@@ -141,6 +147,30 @@ public class TokenInfo  {
 
     public void setWsURL(String wsURL) {
         this.wsURL = wsURL;
+    }
+
+    
+
+    public TokenInfo withRole(Integer role) {
+        this.role = role;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议中的角色 1：会议主席 0：普通与会者
+     * minimum: 0
+     * maximum: 1
+     * @return role
+     */
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
     }
 
     
@@ -325,6 +355,7 @@ public class TokenInfo  {
         return Objects.equals(this.token, tokenInfo.token) &&
             Objects.equals(this.tmpWsToken, tokenInfo.tmpWsToken) &&
             Objects.equals(this.wsURL, tokenInfo.wsURL) &&
+            Objects.equals(this.role, tokenInfo.role) &&
             Objects.equals(this.expireTime, tokenInfo.expireTime) &&
             Objects.equals(this.userID, tokenInfo.userID) &&
             Objects.equals(this.orgID, tokenInfo.orgID) &&
@@ -335,7 +366,7 @@ public class TokenInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(token, tmpWsToken, wsURL, expireTime, userID, orgID, participantID, confTokenExpireTime, vmrCurrentConfID, supportNotifyType);
+        return Objects.hash(token, tmpWsToken, wsURL, role, expireTime, userID, orgID, participantID, confTokenExpireTime, vmrCurrentConfID, supportNotifyType);
     }
     @Override
     public String toString() {
@@ -344,6 +375,7 @@ public class TokenInfo  {
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    tmpWsToken: ").append(toIndentedString(tmpWsToken)).append("\n");
         sb.append("    wsURL: ").append(toIndentedString(wsURL)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    userID: ").append(toIndentedString(userID)).append("\n");
         sb.append("    orgID: ").append(toIndentedString(orgID)).append("\n");

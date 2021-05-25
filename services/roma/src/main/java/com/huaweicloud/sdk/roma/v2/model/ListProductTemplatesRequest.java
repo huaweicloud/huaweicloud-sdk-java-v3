@@ -45,7 +45,7 @@ public class ListProductTemplatesRequest  {
     
     private String name;
     /**
-     * Gets or Sets status
+     * 产品模板状态 0-启用 1-停用
      */
     public static final class StatusEnum {
 
@@ -162,7 +162,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -184,7 +184,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -208,7 +208,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get id
+     * 产品模板ID
      * minimum: 1
      * maximum: 999999999999999999
      * @return id
@@ -232,7 +232,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get name
+     * 产品模板名称
      * @return name
      */
     public String getName() {
@@ -254,7 +254,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get status
+     * 产品模板状态 0-启用 1-停用
      * minimum: 0
      * maximum: 10
      * @return status
@@ -278,7 +278,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get createdUserName
+     * 创建用户名
      * @return createdUserName
      */
     public String getCreatedUserName() {
@@ -300,7 +300,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get createdDateStart
+     * 创建时间起始，格式timestamp(ms)，使用UTC时区
      * minimum: 1
      * maximum: 999999999999999999
      * @return createdDateStart
@@ -324,7 +324,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get createdDateEnd
+     * 创建时间截止，格式timestamp(ms)，使用UTC时区
      * minimum: 1
      * maximum: 999999999999999999
      * @return createdDateEnd
@@ -348,7 +348,7 @@ public class ListProductTemplatesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

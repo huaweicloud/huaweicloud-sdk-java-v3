@@ -458,6 +458,28 @@ public class BssClient {
     }
 
     /**
+     * 查询月度成本
+     * 功能描述：查询月度成本
+     *
+     * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
+     * @return ListCustomerBillsMonthlyBreakDownResponse
+     */
+    public ListCustomerBillsMonthlyBreakDownResponse listCustomerBillsMonthlyBreakDown(ListCustomerBillsMonthlyBreakDownRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listCustomerBillsMonthlyBreakDown);
+    }
+
+    /**
+     * 查询月度成本
+     * 功能描述：查询月度成本
+     *
+     * @param ListCustomerBillsMonthlyBreakDownRequest 请求对象
+     * @return SyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse>
+     */
+    public SyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse> listCustomerBillsMonthlyBreakDownInvoker(ListCustomerBillsMonthlyBreakDownRequest request) {
+        return new SyncInvoker<ListCustomerBillsMonthlyBreakDownRequest, ListCustomerBillsMonthlyBreakDownResponse>(request, BssMeta.listCustomerBillsMonthlyBreakDown, hcClient);
+    }
+
+    /**
      * 查询客户按需资源列表
      * 功能描述：客户在伙伴销售平台查询已开通的按需资源
      *
@@ -763,6 +785,28 @@ public class BssClient {
      */
     public SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse> listOrderCouponsByOrderIdInvoker(ListOrderCouponsByOrderIdRequest request) {
         return new SyncInvoker<ListOrderCouponsByOrderIdRequest, ListOrderCouponsByOrderIdResponse>(request, BssMeta.listOrderCouponsByOrderId, hcClient);
+    }
+
+    /**
+     * 查询订单可用折扣
+     * 功能描述：功能介绍客户在伙伴销售平台支付待支付订单时，查询可使用的折扣。只返回商务合同折扣和伙伴授权折扣客户在客户自建平台查看订单可用的优惠券列表。
+     *
+     * @param ListOrderDiscountsRequest 请求对象
+     * @return ListOrderDiscountsResponse
+     */
+    public ListOrderDiscountsResponse listOrderDiscounts(ListOrderDiscountsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listOrderDiscounts);
+    }
+
+    /**
+     * 查询订单可用折扣
+     * 功能描述：功能介绍客户在伙伴销售平台支付待支付订单时，查询可使用的折扣。只返回商务合同折扣和伙伴授权折扣客户在客户自建平台查看订单可用的优惠券列表。
+     *
+     * @param ListOrderDiscountsRequest 请求对象
+     * @return SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>
+     */
+    public SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscountsInvoker(ListOrderDiscountsRequest request) {
+        return new SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request, BssMeta.listOrderDiscounts, hcClient);
     }
 
     /**

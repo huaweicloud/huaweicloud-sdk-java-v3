@@ -38,7 +38,7 @@ public class ListServerGroupsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回server group数量限制。
      * @return limit
      */
     public Integer getLimit() {
@@ -60,7 +60,7 @@ public class ListServerGroupsRequest  {
 
 
     /**
-     * Get marker
+     * 从marker指定的server group的下一条数据开始查询。
      * @return marker
      */
     public String getMarker() {

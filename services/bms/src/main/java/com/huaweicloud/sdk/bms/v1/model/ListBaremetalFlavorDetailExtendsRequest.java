@@ -32,7 +32,7 @@ public class ListBaremetalFlavorDetailExtendsRequest  {
 
 
     /**
-     * Get availabilityZone
+     * 可用区，需要指定可用区（AZ）的名称。请参考地区和终端节点获取。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

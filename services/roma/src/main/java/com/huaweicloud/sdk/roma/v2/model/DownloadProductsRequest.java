@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -25,10 +27,10 @@ public class DownloadProductsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
+    @JsonProperty(value="product_ids")
     
-    private Integer productId;
-
+    private List<Integer> productIds = null;
+    
     public DownloadProductsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -38,7 +40,7 @@ public class DownloadProductsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -51,26 +53,38 @@ public class DownloadProductsRequest  {
 
     
 
-    public DownloadProductsRequest withProductId(Integer productId) {
-        this.productId = productId;
+    public DownloadProductsRequest withProductIds(List<Integer> productIds) {
+        this.productIds = productIds;
         return this;
     }
 
     
-
-
-    /**
-     * Get productId
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productId
-     */
-    public Integer getProductId() {
-        return productId;
+    public DownloadProductsRequest addProductIdsItem(Integer productIdsItem) {
+        if(this.productIds == null) {
+            this.productIds = new ArrayList<>();
+        }
+        this.productIds.add(productIdsItem);
+        return this;
     }
 
-    public void setProductId(Integer productId) {
-        this.productId = productId;
+    public DownloadProductsRequest withProductIds(Consumer<List<Integer>> productIdsSetter) {
+        if(this.productIds == null) {
+            this.productIds = new ArrayList<>();
+        }
+        productIdsSetter.accept(this.productIds);
+        return this;
+    }
+
+    /**
+     * 待导出产品ID列表
+     * @return productIds
+     */
+    public List<Integer> getProductIds() {
+        return productIds;
+    }
+
+    public void setProductIds(List<Integer> productIds) {
+        this.productIds = productIds;
     }
 
     
@@ -85,18 +99,18 @@ public class DownloadProductsRequest  {
         }
         DownloadProductsRequest downloadProductsRequest = (DownloadProductsRequest) o;
         return Objects.equals(this.instanceId, downloadProductsRequest.instanceId) &&
-            Objects.equals(this.productId, downloadProductsRequest.productId);
+            Objects.equals(this.productIds, downloadProductsRequest.productIds);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, productId);
+        return Objects.hash(instanceId, productIds);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DownloadProductsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    productIds: ").append(toIndentedString(productIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

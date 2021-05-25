@@ -44,7 +44,7 @@ public class ShowStreamPortraitRequest  {
 
 
     /**
-     * Get playDomain
+     * 播放域名。 
      * @return playDomain
      */
     public String getPlayDomain() {
@@ -66,7 +66,7 @@ public class ShowStreamPortraitRequest  {
 
 
     /**
-     * Get stream
+     * 流名。 
      * @return stream
      */
     public String getStream() {
@@ -88,7 +88,7 @@ public class ShowStreamPortraitRequest  {
 
 
     /**
-     * Get time
+     * 统计日期，日期格式按照ISO8601表示法，格式：YYYYMMDD，如20200904。可以查询过去31天的数据（不含当天）。 
      * @return time
      */
     public String getTime() {

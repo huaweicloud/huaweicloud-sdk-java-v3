@@ -39,7 +39,7 @@ public class ResizeClusterRequest  {
 
 
     /**
-     * Get clusterId
+     * 待调整大小的集群ID
      * @return clusterId
      */
     public String getClusterId() {

@@ -38,7 +38,7 @@ public class CheckRomaAppSecretRequest  {
 
 
     /**
-     * Get appId
+     * 应用ID
      * @return appId
      */
     public String getAppId() {
@@ -60,7 +60,7 @@ public class CheckRomaAppSecretRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {

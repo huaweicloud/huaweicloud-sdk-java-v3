@@ -38,7 +38,7 @@ public class KeystoneAddUserToGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return groupId
      */
     public String getGroupId() {
@@ -60,7 +60,7 @@ public class KeystoneAddUserToGroupRequest  {
 
 
     /**
-     * Get userId
+     * 待添加的IAM用户ID，获取方式请参见：[获取IAM用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return userId
      */
     public String getUserId() {

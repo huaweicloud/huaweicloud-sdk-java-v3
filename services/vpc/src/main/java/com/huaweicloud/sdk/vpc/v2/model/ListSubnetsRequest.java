@@ -44,7 +44,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -66,7 +66,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源id，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -88,7 +88,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get vpcId
+     * 按照vpc_id过滤查询  企业项目细粒度授权场景下，该字段必传
      * @return vpcId
      */
     public String getVpcId() {

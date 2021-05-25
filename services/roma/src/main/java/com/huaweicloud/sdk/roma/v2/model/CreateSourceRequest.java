@@ -45,7 +45,7 @@ public class CreateSourceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class CreateSourceRequest  {
 
 
     /**
-     * Get ruleId
+     * 规则ID
      * @return ruleId
      */
     public String getRuleId() {

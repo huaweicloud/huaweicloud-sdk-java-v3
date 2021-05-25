@@ -32,7 +32,7 @@ public class SecurityGroups  {
 
 
     /**
-     * 安全组ID。
+     * 安全组ID
      * @return id
      */
     public String getId() {

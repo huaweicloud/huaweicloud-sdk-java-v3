@@ -32,7 +32,7 @@ public class ShowPrivateipRequest  {
 
 
     /**
-     * Get privateipId
+     * 私有IP ID
      * @return privateipId
      */
     public String getPrivateipId() {

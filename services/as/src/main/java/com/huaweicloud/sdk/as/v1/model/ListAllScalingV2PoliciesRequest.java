@@ -33,7 +33,7 @@ public class ListAllScalingV2PoliciesRequest  {
     
     private String scalingResourceId;
     /**
-     * Gets or Sets scalingResourceType
+     * 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
      */
     public static final class ScalingResourceTypeEnum {
 
@@ -123,7 +123,7 @@ public class ListAllScalingV2PoliciesRequest  {
     
     private String scalingPolicyName;
     /**
-     * Gets or Sets scalingPolicyType
+     * 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
      */
     public static final class ScalingPolicyTypeEnum {
 
@@ -231,7 +231,7 @@ public class ListAllScalingV2PoliciesRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets sortBy
+     * 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
      */
     public static final class SortByEnum {
 
@@ -321,7 +321,7 @@ public class ListAllScalingV2PoliciesRequest  {
     
     private SortByEnum sortBy;
     /**
-     * Gets or Sets order
+     * 排序顺序ASC：升序；DESC：降序
      */
     public static final class OrderEnum {
 
@@ -420,7 +420,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingResourceId
+     * 伸缩组ID。
      * @return scalingResourceId
      */
     public String getScalingResourceId() {
@@ -442,7 +442,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingResourceType
+     * 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
      * @return scalingResourceType
      */
     public ScalingResourceTypeEnum getScalingResourceType() {
@@ -464,7 +464,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyName
+     * 伸缩策略名称。
      * @return scalingPolicyName
      */
     public String getScalingPolicyName() {
@@ -486,7 +486,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyType
+     * 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
      * @return scalingPolicyType
      */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
@@ -508,7 +508,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩策略ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {
@@ -530,7 +530,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -552,7 +552,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数，默认20，最大100。
      * @return limit
      */
     public Integer getLimit() {
@@ -574,7 +574,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get sortBy
+     * 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
      * @return sortBy
      */
     public SortByEnum getSortBy() {
@@ -596,7 +596,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get order
+     * 排序顺序ASC：升序；DESC：降序
      * @return order
      */
     public OrderEnum getOrder() {
@@ -618,7 +618,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

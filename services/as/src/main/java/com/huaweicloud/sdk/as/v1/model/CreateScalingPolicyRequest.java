@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.CreateScalingPolicyRequestBody;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingPolicyOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateScalingPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateScalingPolicyRequestBody body;
+    private CreateScalingPolicyOption body;
 
-    public CreateScalingPolicyRequest withBody(CreateScalingPolicyRequestBody body) {
+    public CreateScalingPolicyRequest withBody(CreateScalingPolicyOption body) {
         this.body = body;
         return this;
     }
 
-    public CreateScalingPolicyRequest withBody(Consumer<CreateScalingPolicyRequestBody> bodySetter) {
+    public CreateScalingPolicyRequest withBody(Consumer<CreateScalingPolicyOption> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateScalingPolicyRequestBody();
+            this.body = new CreateScalingPolicyOption();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class CreateScalingPolicyRequest  {
      * Get body
      * @return body
      */
-    public CreateScalingPolicyRequestBody getBody() {
+    public CreateScalingPolicyOption getBody() {
         return body;
     }
 
-    public void setBody(CreateScalingPolicyRequestBody body) {
+    public void setBody(CreateScalingPolicyOption body) {
         this.body = body;
     }
 

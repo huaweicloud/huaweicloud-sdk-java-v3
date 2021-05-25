@@ -62,7 +62,7 @@ public class ShowDevicesInGroupRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ShowDevicesInGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 设备分组ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return groupId
@@ -108,7 +108,7 @@ public class ShowDevicesInGroupRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -132,7 +132,7 @@ public class ShowDevicesInGroupRequest  {
 
 
     /**
-     * Get productName
+     * 产品名称
      * @return productName
      */
     public String getProductName() {
@@ -154,7 +154,7 @@ public class ShowDevicesInGroupRequest  {
 
 
     /**
-     * Get deviceName
+     * 设备名称
      * @return deviceName
      */
     public String getDeviceName() {
@@ -176,7 +176,7 @@ public class ShowDevicesInGroupRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

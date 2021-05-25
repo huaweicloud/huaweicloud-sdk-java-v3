@@ -62,7 +62,7 @@ public class SearchCorpVmrRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,7 +86,7 @@ public class SearchCorpVmrRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -108,7 +108,7 @@ public class SearchCorpVmrRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
      * minimum: 0
      * @return offset
      */
@@ -131,7 +131,7 @@ public class SearchCorpVmrRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -155,7 +155,7 @@ public class SearchCorpVmrRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件。支持云会议室名称、ID及分配的用户、硬终端名称模糊搜索。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -177,7 +177,7 @@ public class SearchCorpVmrRequest  {
 
 
     /**
-     * Get status
+     * 云会议室状态，为null则查询是所有 * 0、正常 * 1、停用 * 2、未分配 
      * minimum: 0
      * maximum: 2
      * @return status

@@ -44,7 +44,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘安全组规则列表数量。取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -68,7 +68,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -90,7 +90,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 安全组ID。uuid
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

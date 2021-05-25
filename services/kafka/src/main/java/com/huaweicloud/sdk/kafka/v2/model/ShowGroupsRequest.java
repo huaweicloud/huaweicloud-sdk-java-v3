@@ -38,7 +38,7 @@ public class ShowGroupsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ShowGroupsRequest  {
 
 
     /**
-     * Get group
+     * 消费组名称。
      * @return group
      */
     public String getGroup() {

@@ -45,7 +45,7 @@ public class UpdateEventRequest  {
 
 
     /**
-     * Get eventId
+     * 事件ID。
      * @return eventId
      */
     public String getEventId() {
@@ -67,7 +67,7 @@ public class UpdateEventRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
      * @return functionUrn
      */
     public String getFunctionUrn() {

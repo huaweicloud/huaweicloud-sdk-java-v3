@@ -33,7 +33,7 @@ public class DownloadBlockchainCertRequest  {
     
     private String orgName;
     /**
-     * Gets or Sets certType
+     * 下载证书类别
      */
     public static final class CertTypeEnum {
 
@@ -132,7 +132,7 @@ public class DownloadBlockchainCertRequest  {
 
 
     /**
-     * Get blockchainId
+     * blockchainID
      * @return blockchainId
      */
     public String getBlockchainId() {
@@ -154,7 +154,7 @@ public class DownloadBlockchainCertRequest  {
 
 
     /**
-     * Get orgName
+     * order或者peer组织名称
      * @return orgName
      */
     public String getOrgName() {
@@ -176,7 +176,7 @@ public class DownloadBlockchainCertRequest  {
 
 
     /**
-     * Get certType
+     * 下载证书类别
      * @return certType
      */
     public CertTypeEnum getCertType() {

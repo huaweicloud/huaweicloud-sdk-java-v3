@@ -56,7 +56,7 @@ public class ListAllResourcesRequest  {
 
 
     /**
-     * Get regionId
+     * 区域ID
      * @return regionId
      */
     public String getRegionId() {
@@ -78,7 +78,7 @@ public class ListAllResourcesRequest  {
 
 
     /**
-     * Get epId
+     * 企业项目ID
      * @return epId
      */
     public String getEpId() {
@@ -100,7 +100,7 @@ public class ListAllResourcesRequest  {
 
 
     /**
-     * Get type
+     * 资源类型（provider.type）
      * @return type
      */
     public String getType() {
@@ -122,7 +122,7 @@ public class ListAllResourcesRequest  {
 
 
     /**
-     * Get limit
+     * 最大的返回数量
      * minimum: 1
      * maximum: 200
      * @return limit
@@ -146,7 +146,7 @@ public class ListAllResourcesRequest  {
 
 
     /**
-     * Get marker
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
      * @return marker
      */
     public String getMarker() {

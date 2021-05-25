@@ -39,7 +39,7 @@ public class EnableEnterpriseProjectRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID，不能为0。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

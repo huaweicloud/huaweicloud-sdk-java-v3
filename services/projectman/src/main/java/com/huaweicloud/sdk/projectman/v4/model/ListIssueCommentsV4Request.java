@@ -50,7 +50,7 @@ public class ListIssueCommentsV4Request  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -72,7 +72,7 @@ public class ListIssueCommentsV4Request  {
 
 
     /**
-     * Get issueId
+     * 工作项id
      * @return issueId
      */
     public Integer getIssueId() {
@@ -94,7 +94,7 @@ public class ListIssueCommentsV4Request  {
 
 
     /**
-     * Get offset
+     * 分页索引，偏移量
      * minimum: 0
      * @return offset
      */
@@ -117,7 +117,7 @@ public class ListIssueCommentsV4Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条数,最大显示100条
      * minimum: 1
      * maximum: 100
      * @return limit

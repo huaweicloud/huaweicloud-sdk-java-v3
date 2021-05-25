@@ -82,7 +82,7 @@ public class ListSubNetworkInterfacesRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回的个数 取值范围：0-2000
      * @return limit
      */
     public Integer getLimit() {
@@ -104,7 +104,7 @@ public class ListSubNetworkInterfacesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -140,7 +140,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get id
+     * 功能说明：辅助弹性网卡ID，支持多ID过滤 使用场景：查询需要的多个辅助弹性网卡信息
      * @return id
      */
     public List<String> getId() {
@@ -176,7 +176,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get virsubnetId
+     * 功能说明：辅助弹性网卡所属虚拟子网的ID，支持多个ID过滤 使用场景：过滤需要的单个或者多个虚拟子网下的辅助弹性网卡
      * @return virsubnetId
      */
     public List<String> getVirsubnetId() {
@@ -212,7 +212,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get privateIpAddress
+     * 功能说明：辅助弹性网卡的私有IPv4地址，支持多个地址同时过滤 使用场景：通过单个或者多个ip地址过滤查询辅助弹性网卡
      * @return privateIpAddress
      */
     public List<String> getPrivateIpAddress() {
@@ -248,7 +248,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get macAddress
+     * 功能说明：辅助弹性网卡的mac地址，支持多个同时过滤 使用场景：使用mac地址精确过滤辅助弹性网卡
      * @return macAddress
      */
     public List<String> getMacAddress() {
@@ -284,7 +284,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get vpcId
+     * 功能说明：辅助弹性网卡所属的VPC_ID，支持多ID过滤 使用场景：过滤单个或多个VPC下的辅助弹性网卡信息
      * @return vpcId
      */
     public List<String> getVpcId() {
@@ -320,7 +320,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get description
+     * 功能说明：辅助弹性网卡的描述信息，支持多个同时过滤 使用场景：通过描述信息过滤辅助弹性网卡
      * @return description
      */
     public List<String> getDescription() {
@@ -356,7 +356,7 @@ public class ListSubNetworkInterfacesRequest  {
     }
 
     /**
-     * Get parentId
+     * 功能说明：辅助弹性网卡的宿主网卡的ID，支持多ID过滤 使用场景：过滤单个或多个宿主网卡下存在的辅助弹性网卡
      * @return parentId
      */
     public List<String> getParentId() {

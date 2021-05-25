@@ -39,7 +39,7 @@ public class CreateAnonymousAuthRandomRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -61,7 +61,7 @@ public class CreateAnonymousAuthRandomRequest  {
 
 
     /**
-     * Get xPassword
+     * 会议密码。
      * @return xPassword
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

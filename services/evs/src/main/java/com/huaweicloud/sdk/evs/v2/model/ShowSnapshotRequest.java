@@ -32,7 +32,7 @@ public class ShowSnapshotRequest  {
 
 
     /**
-     * Get snapshotId
+     * 快照ID。
      * @return snapshotId
      */
     public String getSnapshotId() {

@@ -22,7 +22,7 @@ import java.util.Objects;
 public class ListTemplatesV2Request  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      */
     public static final class XLanguageEnum {
 
@@ -127,7 +127,7 @@ public class ListTemplatesV2Request  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -151,7 +151,7 @@ public class ListTemplatesV2Request  {
 
 
     /**
-     * Get actionId
+     * 请填写固定值“query”。
      * @return actionId
      */
     public String getActionId() {

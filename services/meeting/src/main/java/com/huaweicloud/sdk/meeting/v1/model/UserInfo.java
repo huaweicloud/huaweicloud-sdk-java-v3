@@ -95,6 +95,96 @@ public class UserInfo  {
     
     private String nameEn;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="isBindPhone")
+    
+    private Boolean isBindPhone;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="freeUser")
+    
+    private Boolean freeUser;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="thirdAccount")
+    
+    private String thirdAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="visionAccount")
+    
+    private String visionAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="headPictureUrl")
+    
+    private String headPictureUrl;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="password")
+    
+    private String password;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private Integer status;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="paidAccount")
+    
+    private String paidAccount;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="paidPassword")
+    
+    private String paidPassword;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="weLinkUser")
+    
+    private Boolean weLinkUser;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="appId")
+    
+    private String appId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tr069Account")
+    
+    private String tr069Account;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="corpType")
+    
+    private Integer corpType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cloudUserId")
+    
+    private String cloudUserId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="grayUser")
+    
+    private Boolean grayUser;
+
     public UserInfo withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -381,6 +471,336 @@ public class UserInfo  {
 
     
 
+    public UserInfo withIsBindPhone(Boolean isBindPhone) {
+        this.isBindPhone = isBindPhone;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标识是否绑定手机
+     * @return isBindPhone
+     */
+    public Boolean getIsBindPhone() {
+        return isBindPhone;
+    }
+
+    public void setIsBindPhone(Boolean isBindPhone) {
+        this.isBindPhone = isBindPhone;
+    }
+
+    
+
+    public UserInfo withFreeUser(Boolean freeUser) {
+        this.freeUser = freeUser;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标识是否是免费试用用户
+     * @return freeUser
+     */
+    public Boolean getFreeUser() {
+        return freeUser;
+    }
+
+    public void setFreeUser(Boolean freeUser) {
+        this.freeUser = freeUser;
+    }
+
+    
+
+    public UserInfo withThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户的第三方账号，例如华为账号登录时获取到的union_id
+     * @return thirdAccount
+     */
+    public String getThirdAccount() {
+        return thirdAccount;
+    }
+
+    public void setThirdAccount(String thirdAccount) {
+        this.thirdAccount = thirdAccount;
+    }
+
+    
+
+    public UserInfo withVisionAccount(String visionAccount) {
+        this.visionAccount = visionAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 智慧屏设备id
+     * @return visionAccount
+     */
+    public String getVisionAccount() {
+        return visionAccount;
+    }
+
+    public void setVisionAccount(String visionAccount) {
+        this.visionAccount = visionAccount;
+    }
+
+    
+
+    public UserInfo withHeadPictureUrl(String headPictureUrl) {
+        this.headPictureUrl = headPictureUrl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 头像链接
+     * @return headPictureUrl
+     */
+    public String getHeadPictureUrl() {
+        return headPictureUrl;
+    }
+
+    public void setHeadPictureUrl(String headPictureUrl) {
+        this.headPictureUrl = headPictureUrl;
+    }
+
+    
+
+    public UserInfo withPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 机机密码，用于智慧屏登录
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
+
+    public UserInfo withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户状态。 * 0：正常 * 1：停用 
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    
+
+    public UserInfo withPaidAccount(String paidAccount) {
+        this.paidAccount = paidAccount;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 付费用户机机账号，用于智慧屏登录
+     * @return paidAccount
+     */
+    public String getPaidAccount() {
+        return paidAccount;
+    }
+
+    public void setPaidAccount(String paidAccount) {
+        this.paidAccount = paidAccount;
+    }
+
+    
+
+    public UserInfo withPaidPassword(String paidPassword) {
+        this.paidPassword = paidPassword;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 付费用户机机密码，用于智慧屏登录
+     * @return paidPassword
+     */
+    public String getPaidPassword() {
+        return paidPassword;
+    }
+
+    public void setPaidPassword(String paidPassword) {
+        this.paidPassword = paidPassword;
+    }
+
+    
+
+    public UserInfo withWeLinkUser(Boolean weLinkUser) {
+        this.weLinkUser = weLinkUser;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标识是否是WeLink用户
+     * @return weLinkUser
+     */
+    public Boolean getWeLinkUser() {
+        return weLinkUser;
+    }
+
+    public void setWeLinkUser(Boolean weLinkUser) {
+        this.weLinkUser = weLinkUser;
+    }
+
+    
+
+    public UserInfo withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用ID
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
+    
+
+    public UserInfo withTr069Account(String tr069Account) {
+        this.tr069Account = tr069Account;
+        return this;
+    }
+
+    
+
+
+    /**
+     * tr069帐号
+     * @return tr069Account
+     */
+    public String getTr069Account() {
+        return tr069Account;
+    }
+
+    public void setTr069Account(String tr069Account) {
+        this.tr069Account = tr069Account;
+    }
+
+    
+
+    public UserInfo withCorpType(Integer corpType) {
+        this.corpType = corpType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业类型。 * 0：企业版 * 1：公共企业，手机、邮箱注册时会放到该企业内 * 2：公共企业，智慧屏用户自动开户时会放到该企业内 * 3：公共企业，大屏用户自动开户时会放到该企业内 * 4：公共TOC消费者企业 * 5：免费版 * 6：专业版 
+     * @return corpType
+     */
+    public Integer getCorpType() {
+        return corpType;
+    }
+
+    public void setCorpType(Integer corpType) {
+        this.corpType = corpType;
+    }
+
+    
+
+    public UserInfo withCloudUserId(String cloudUserId) {
+        this.cloudUserId = cloudUserId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 华为云账号ID
+     * @return cloudUserId
+     */
+    public String getCloudUserId() {
+        return cloudUserId;
+    }
+
+    public void setCloudUserId(String cloudUserId) {
+        this.cloudUserId = cloudUserId;
+    }
+
+    
+
+    public UserInfo withGrayUser(Boolean grayUser) {
+        this.grayUser = grayUser;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标识是否是灰度用户
+     * @return grayUser
+     */
+    public Boolean getGrayUser() {
+        return grayUser;
+    }
+
+    public void setGrayUser(Boolean grayUser) {
+        this.grayUser = grayUser;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -402,11 +822,26 @@ public class UserInfo  {
             Objects.equals(this.userType, userInfo.userType) &&
             Objects.equals(this.adminType, userInfo.adminType) &&
             Objects.equals(this.name, userInfo.name) &&
-            Objects.equals(this.nameEn, userInfo.nameEn);
+            Objects.equals(this.nameEn, userInfo.nameEn) &&
+            Objects.equals(this.isBindPhone, userInfo.isBindPhone) &&
+            Objects.equals(this.freeUser, userInfo.freeUser) &&
+            Objects.equals(this.thirdAccount, userInfo.thirdAccount) &&
+            Objects.equals(this.visionAccount, userInfo.visionAccount) &&
+            Objects.equals(this.headPictureUrl, userInfo.headPictureUrl) &&
+            Objects.equals(this.password, userInfo.password) &&
+            Objects.equals(this.status, userInfo.status) &&
+            Objects.equals(this.paidAccount, userInfo.paidAccount) &&
+            Objects.equals(this.paidPassword, userInfo.paidPassword) &&
+            Objects.equals(this.weLinkUser, userInfo.weLinkUser) &&
+            Objects.equals(this.appId, userInfo.appId) &&
+            Objects.equals(this.tr069Account, userInfo.tr069Account) &&
+            Objects.equals(this.corpType, userInfo.corpType) &&
+            Objects.equals(this.cloudUserId, userInfo.cloudUserId) &&
+            Objects.equals(this.grayUser, userInfo.grayUser);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(userId, ucloginAccount, serviceAccount, numberHA1, alias1, companyId, spId, companyDomain, realm, userType, adminType, name, nameEn);
+        return Objects.hash(userId, ucloginAccount, serviceAccount, numberHA1, alias1, companyId, spId, companyDomain, realm, userType, adminType, name, nameEn, isBindPhone, freeUser, thirdAccount, visionAccount, headPictureUrl, password, status, paidAccount, paidPassword, weLinkUser, appId, tr069Account, corpType, cloudUserId, grayUser);
     }
     @Override
     public String toString() {
@@ -425,6 +860,21 @@ public class UserInfo  {
         sb.append("    adminType: ").append(toIndentedString(adminType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    nameEn: ").append(toIndentedString(nameEn)).append("\n");
+        sb.append("    isBindPhone: ").append(toIndentedString(isBindPhone)).append("\n");
+        sb.append("    freeUser: ").append(toIndentedString(freeUser)).append("\n");
+        sb.append("    thirdAccount: ").append(toIndentedString(thirdAccount)).append("\n");
+        sb.append("    visionAccount: ").append(toIndentedString(visionAccount)).append("\n");
+        sb.append("    headPictureUrl: ").append(toIndentedString(headPictureUrl)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    paidAccount: ").append(toIndentedString(paidAccount)).append("\n");
+        sb.append("    paidPassword: ").append(toIndentedString(paidPassword)).append("\n");
+        sb.append("    weLinkUser: ").append(toIndentedString(weLinkUser)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    tr069Account: ").append(toIndentedString(tr069Account)).append("\n");
+        sb.append("    corpType: ").append(toIndentedString(corpType)).append("\n");
+        sb.append("    cloudUserId: ").append(toIndentedString(cloudUserId)).append("\n");
+        sb.append("    grayUser: ").append(toIndentedString(grayUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

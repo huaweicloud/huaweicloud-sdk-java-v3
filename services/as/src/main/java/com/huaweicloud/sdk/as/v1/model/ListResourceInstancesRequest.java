@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ShowTagsRequestBody;
+import com.huaweicloud.sdk.as.v1.model.QueryTagsOption;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -22,7 +22,7 @@ import java.util.Objects;
 public class ListResourceInstancesRequest  {
 
     /**
-     * Gets or Sets resourceType
+     * 资源类型，枚举类：SCALING_GROUP_TAG。
      */
     public static final class ResourceTypeEnum {
 
@@ -104,7 +104,7 @@ public class ListResourceInstancesRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ShowTagsRequestBody body;
+    private QueryTagsOption body;
 
     public ListResourceInstancesRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
@@ -115,7 +115,7 @@ public class ListResourceInstancesRequest  {
 
 
     /**
-     * Get resourceType
+     * 资源类型，枚举类：SCALING_GROUP_TAG。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -128,14 +128,14 @@ public class ListResourceInstancesRequest  {
 
     
 
-    public ListResourceInstancesRequest withBody(ShowTagsRequestBody body) {
+    public ListResourceInstancesRequest withBody(QueryTagsOption body) {
         this.body = body;
         return this;
     }
 
-    public ListResourceInstancesRequest withBody(Consumer<ShowTagsRequestBody> bodySetter) {
+    public ListResourceInstancesRequest withBody(Consumer<QueryTagsOption> bodySetter) {
         if(this.body == null ){
-            this.body = new ShowTagsRequestBody();
+            this.body = new QueryTagsOption();
             bodySetter.accept(this.body);
         }
         
@@ -147,11 +147,11 @@ public class ListResourceInstancesRequest  {
      * Get body
      * @return body
      */
-    public ShowTagsRequestBody getBody() {
+    public QueryTagsOption getBody() {
         return body;
     }
 
-    public void setBody(ShowTagsRequestBody body) {
+    public void setBody(QueryTagsOption body) {
         this.body = body;
     }
 

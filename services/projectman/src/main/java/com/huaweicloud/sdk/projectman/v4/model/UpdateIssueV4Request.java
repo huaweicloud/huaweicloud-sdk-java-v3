@@ -45,7 +45,7 @@ public class UpdateIssueV4Request  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -67,7 +67,7 @@ public class UpdateIssueV4Request  {
 
 
     /**
-     * Get issueId
+     * 工作项id
      * @return issueId
      */
     public Integer getIssueId() {

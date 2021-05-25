@@ -32,7 +32,7 @@ public class ShowQueueTagsRequest  {
 
 
     /**
-     * Get queueId
+     * 队列ID。
      * @return queueId
      */
     public String getQueueId() {

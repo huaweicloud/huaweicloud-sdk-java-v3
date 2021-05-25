@@ -50,7 +50,7 @@ public class ShowTranscodingsTemplateRequest  {
 
 
     /**
-     * Get domain
+     * 播放域名
      * @return domain
      */
     public String getDomain() {
@@ -72,7 +72,7 @@ public class ShowTranscodingsTemplateRequest  {
 
 
     /**
-     * Get appName
+     * 应用名称
      * @return appName
      */
     public String getAppName() {
@@ -94,7 +94,7 @@ public class ShowTranscodingsTemplateRequest  {
 
 
     /**
-     * Get page
+     * 分页编号，默认为0。
      * minimum: 0
      * @return page
      */
@@ -117,7 +117,7 @@ public class ShowTranscodingsTemplateRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。  取值范围：1-100。  默认为10。 
      * minimum: 1
      * maximum: 100
      * @return size

@@ -39,7 +39,7 @@ public class UpdateConnectionRequest  {
 
 
     /**
-     * Get connectionName
+     * 连接名称.
      * @return connectionName
      */
     public String getConnectionName() {

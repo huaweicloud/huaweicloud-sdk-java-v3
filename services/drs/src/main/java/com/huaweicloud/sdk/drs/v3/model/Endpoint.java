@@ -225,7 +225,7 @@ public class Endpoint  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ssl_link")
     
-    private String sslLink;
+    private Boolean sslLink;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -751,7 +751,7 @@ public class Endpoint  {
 
     
 
-    public Endpoint withSslLink(String sslLink) {
+    public Endpoint withSslLink(Boolean sslLink) {
         this.sslLink = sslLink;
         return this;
     }
@@ -763,11 +763,11 @@ public class Endpoint  {
      * 是否SSL安全连接。
      * @return sslLink
      */
-    public String getSslLink() {
+    public Boolean getSslLink() {
         return sslLink;
     }
 
-    public void setSslLink(String sslLink) {
+    public void setSslLink(Boolean sslLink) {
         this.sslLink = sslLink;
     }
 

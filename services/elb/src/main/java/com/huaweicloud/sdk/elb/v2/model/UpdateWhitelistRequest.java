@@ -39,7 +39,7 @@ public class UpdateWhitelistRequest  {
 
 
     /**
-     * Get whitelistId
+     * 待更新的白名单id
      * @return whitelistId
      */
     public String getWhitelistId() {

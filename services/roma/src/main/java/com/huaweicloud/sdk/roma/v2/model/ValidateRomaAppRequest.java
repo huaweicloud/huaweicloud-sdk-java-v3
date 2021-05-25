@@ -50,7 +50,7 @@ public class ValidateRomaAppRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -72,7 +72,7 @@ public class ValidateRomaAppRequest  {
 
 
     /**
-     * Get name
+     * 应用名称，不支持模糊匹配
      * @return name
      */
     public String getName() {
@@ -94,7 +94,7 @@ public class ValidateRomaAppRequest  {
 
 
     /**
-     * Get id
+     * 应用ID
      * @return id
      */
     public String getId() {
@@ -116,7 +116,7 @@ public class ValidateRomaAppRequest  {
 
 
     /**
-     * Get key
+     * 应用key
      * @return key
      */
     public String getKey() {

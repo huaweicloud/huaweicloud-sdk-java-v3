@@ -404,7 +404,7 @@ public class Property  {
 
 
     /**
-     * 最小值，当data_type为integer或number时有效
+     * 最大值，当data_type为integer或number时有效
      * @return max
      */
     public String getMax() {

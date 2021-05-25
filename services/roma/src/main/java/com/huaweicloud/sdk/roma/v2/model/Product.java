@@ -166,7 +166,7 @@ public class Product  {
     
     private String description;
     /**
-     * 产品的协议类型 0-mqtt 1-coap 2-modbus 3-http, 4-opcua
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
      */
     public static final class ProtocolTypeEnum {
 
@@ -177,19 +177,9 @@ public class Product  {
         public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
         
         /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ProtocolTypeEnum NUMBER_1 = new ProtocolTypeEnum(1);
-        
-        /**
          * Enum NUMBER_2 for value: 2
          */
         public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
-        
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final ProtocolTypeEnum NUMBER_3 = new ProtocolTypeEnum(3);
         
         /**
          * Enum NUMBER_4 for value: 4
@@ -202,9 +192,7 @@ public class Product  {
         private static Map<Integer, ProtocolTypeEnum> createStaticFields() {
             Map<Integer, ProtocolTypeEnum> map = new HashMap<>();
             map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
             map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
             map.put(4, NUMBER_4);
             return Collections.unmodifiableMap(map);
         }
@@ -559,7 +547,7 @@ public class Product  {
 
 
     /**
-     * 产品的协议类型 0-mqtt 1-coap 2-modbus 3-http, 4-opcua
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
      * @return protocolType
      */
     public ProtocolTypeEnum getProtocolType() {

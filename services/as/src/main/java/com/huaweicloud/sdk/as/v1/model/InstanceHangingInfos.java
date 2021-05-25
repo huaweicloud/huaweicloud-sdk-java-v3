@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -140,7 +139,7 @@ public class InstanceHangingInfos  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
-    private OffsetDateTime timeout;
+    private String timeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -258,7 +257,7 @@ public class InstanceHangingInfos  {
 
     
 
-    public InstanceHangingInfos withTimeout(OffsetDateTime timeout) {
+    public InstanceHangingInfos withTimeout(String timeout) {
         this.timeout = timeout;
         return this;
     }
@@ -270,11 +269,11 @@ public class InstanceHangingInfos  {
      * 超时时间，遵循UTC时间，格式为：YYYY-MM-DDThh:mm:ssZZ。
      * @return timeout
      */
-    public OffsetDateTime getTimeout() {
+    public String getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(OffsetDateTime timeout) {
+    public void setTimeout(String timeout) {
         this.timeout = timeout;
     }
 

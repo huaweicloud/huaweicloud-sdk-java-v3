@@ -39,7 +39,7 @@ public class BatchDeletePublicipTagsRequest  {
 
 
     /**
-     * Get publicipId
+     * 资源ID
      * @return publicipId
      */
     public String getPublicipId() {

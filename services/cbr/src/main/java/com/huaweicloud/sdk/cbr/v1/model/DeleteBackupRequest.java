@@ -32,7 +32,7 @@ public class DeleteBackupRequest  {
 
 
     /**
-     * Get backupId
+     * 指定删除的备份ID
      * @return backupId
      */
     public String getBackupId() {

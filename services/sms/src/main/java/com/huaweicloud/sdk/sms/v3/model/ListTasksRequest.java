@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListTasksRequest  {
 
     /**
-     * Gets or Sets state
+     * 迁移任务状态
      */
     public static final class StateEnum {
 
@@ -198,7 +198,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get state
+     * 迁移任务状态
      * @return state
      */
     public StateEnum getState() {
@@ -220,7 +220,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get name
+     * 任务的名称
      * @return name
      */
     public String getName() {
@@ -242,7 +242,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get id
+     * 任务的ID
      * @return id
      */
     public String getId() {
@@ -264,7 +264,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get sourceServerId
+     * 源端服务器的ID
      * @return sourceServerId
      */
     public String getSourceServerId() {
@@ -286,7 +286,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get limit
+     * 每一页记录的任务数量
      * minimum: 0
      * maximum: 200
      * @return limit
@@ -310,7 +310,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -334,7 +334,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 需要查询的企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

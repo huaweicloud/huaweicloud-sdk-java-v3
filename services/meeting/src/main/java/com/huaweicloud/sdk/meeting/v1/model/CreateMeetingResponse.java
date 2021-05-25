@@ -24,42 +24,42 @@ public class CreateMeetingResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
+    @JsonProperty(value="data")
     
-    private List<ConferenceInfo> body = null;
+    private List<ConferenceInfo> data = null;
     
-    public CreateMeetingResponse withBody(List<ConferenceInfo> body) {
-        this.body = body;
+    public CreateMeetingResponse withData(List<ConferenceInfo> data) {
+        this.data = data;
         return this;
     }
 
     
-    public CreateMeetingResponse addBodyItem(ConferenceInfo bodyItem) {
-        if(this.body == null) {
-            this.body = new ArrayList<>();
+    public CreateMeetingResponse addDataItem(ConferenceInfo dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
         }
-        this.body.add(bodyItem);
+        this.data.add(dataItem);
         return this;
     }
 
-    public CreateMeetingResponse withBody(Consumer<List<ConferenceInfo>> bodySetter) {
-        if(this.body == null) {
-            this.body = new ArrayList<>();
+    public CreateMeetingResponse withData(Consumer<List<ConferenceInfo>> dataSetter) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
         }
-        bodySetter.accept(this.body);
+        dataSetter.accept(this.data);
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 会议信息
+     * @return data
      */
-    public List<ConferenceInfo> getBody() {
-        return body;
+    public List<ConferenceInfo> getData() {
+        return data;
     }
 
-    public void setBody(List<ConferenceInfo> body) {
-        this.body = body;
+    public void setData(List<ConferenceInfo> data) {
+        this.data = data;
     }
 
     
@@ -73,17 +73,17 @@ public class CreateMeetingResponse extends SdkResponse {
             return false;
         }
         CreateMeetingResponse createMeetingResponse = (CreateMeetingResponse) o;
-        return Objects.equals(this.body, createMeetingResponse.body);
+        return Objects.equals(this.data, createMeetingResponse.data);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(data);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMeetingResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

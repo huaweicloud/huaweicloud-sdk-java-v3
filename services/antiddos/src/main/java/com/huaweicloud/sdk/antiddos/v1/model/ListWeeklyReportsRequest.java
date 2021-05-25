@@ -32,7 +32,7 @@ public class ListWeeklyReportsRequest  {
 
 
     /**
-     * Get periodStartDate
+     * 每周的起始时间
      * @return periodStartDate
      */
     public String getPeriodStartDate() {

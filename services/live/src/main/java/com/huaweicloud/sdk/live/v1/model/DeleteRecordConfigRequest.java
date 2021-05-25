@@ -38,7 +38,7 @@ public class DeleteRecordConfigRequest  {
 
 
     /**
-     * Get domain
+     * 直播播放域名
      * @return domain
      */
     public String getDomain() {
@@ -60,7 +60,7 @@ public class DeleteRecordConfigRequest  {
 
 
     /**
-     * Get appName
+     * 流应用名称
      * @return appName
      */
     public String getAppName() {

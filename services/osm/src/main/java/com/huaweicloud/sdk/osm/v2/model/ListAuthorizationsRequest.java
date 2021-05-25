@@ -86,7 +86,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get subCustomerName
+     * 子用户名称
      * @return subCustomerName
      */
     public String getSubCustomerName() {
@@ -108,7 +108,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get incidentId
+     * 工单id
      * @return incidentId
      */
     public String getIncidentId() {
@@ -130,7 +130,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get status
+     * 授权状态
      * minimum: 0
      * maximum: 10
      * @return status
@@ -154,7 +154,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get simpleDescription
+     * 简要描述
      * @return simpleDescription
      */
     public String getSimpleDescription() {
@@ -176,7 +176,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -200,7 +200,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get limit
+     * 查询限制条数
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -224,7 +224,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get groupId
+     * 组id
      * @return groupId
      */
     public String getGroupId() {
@@ -246,7 +246,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get xSite
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
      * minimum: 0
      * maximum: 1
      * @return xSite
@@ -272,7 +272,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -296,7 +296,7 @@ public class ListAuthorizationsRequest  {
 
 
     /**
-     * Get xTimeZone
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

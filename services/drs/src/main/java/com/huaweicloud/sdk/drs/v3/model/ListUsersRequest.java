@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListUsersRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型
      */
     public static final class XLanguageEnum {
 
@@ -126,7 +126,7 @@ public class ListUsersRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -150,7 +150,7 @@ public class ListUsersRequest  {
 
 
     /**
-     * Get projectId
+     * 租户在某一Region下的Project&nbsp;ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -172,7 +172,7 @@ public class ListUsersRequest  {
 
 
     /**
-     * Get jobId
+     * 任务ID
      * @return jobId
      */
     public String getJobId() {

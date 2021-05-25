@@ -39,7 +39,7 @@ public class CreateRecordSetRequest  {
 
 
     /**
-     * Get zoneId
+     * 所属zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

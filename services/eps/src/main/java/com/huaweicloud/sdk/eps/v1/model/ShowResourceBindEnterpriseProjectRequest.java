@@ -39,7 +39,7 @@ public class ShowResourceBindEnterpriseProjectRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

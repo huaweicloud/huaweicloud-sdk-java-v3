@@ -39,7 +39,7 @@ public class UpdateFirewallRuleRequest  {
 
 
     /**
-     * Get firewallId
+     * 网络ACL ID
      * @return firewallId
      */
     public String getFirewallId() {

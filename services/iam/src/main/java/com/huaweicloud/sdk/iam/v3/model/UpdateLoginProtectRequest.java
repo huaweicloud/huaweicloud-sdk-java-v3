@@ -39,7 +39,7 @@ public class UpdateLoginProtectRequest  {
 
 
     /**
-     * Get userId
+     * 待修改登录保护状态信息的IAM用户ID。
      * @return userId
      */
     public String getUserId() {

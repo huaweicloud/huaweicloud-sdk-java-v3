@@ -21,22 +21,22 @@ public class KafkaClient {
      * 批量添加或删除实例标签
      * 批量添加或删除实例标签。
      *
-     * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
-     * @return BatchCreateOrDeleteInstanceTagResponse
+     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @return BatchCreateOrDeleteKafkaTagResponse
      */
-    public BatchCreateOrDeleteInstanceTagResponse batchCreateOrDeleteInstanceTag(BatchCreateOrDeleteInstanceTagRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.batchCreateOrDeleteInstanceTag);
+    public BatchCreateOrDeleteKafkaTagResponse batchCreateOrDeleteKafkaTag(BatchCreateOrDeleteKafkaTagRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.batchCreateOrDeleteKafkaTag);
     }
 
     /**
      * 批量添加或删除实例标签
      * 批量添加或删除实例标签。
      *
-     * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
-     * @return SyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse>
+     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @return SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>
      */
-    public SyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> batchCreateOrDeleteInstanceTagInvoker(BatchCreateOrDeleteInstanceTagRequest request) {
-        return new SyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse>(request, KafkaMeta.batchCreateOrDeleteInstanceTag, hcClient);
+    public SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTagInvoker(BatchCreateOrDeleteKafkaTagRequest request) {
+        return new SyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>(request, KafkaMeta.batchCreateOrDeleteKafkaTag, hcClient);
     }
 
     /**
@@ -59,6 +59,28 @@ public class KafkaClient {
      */
     public SyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopicInvoker(BatchDeleteInstanceTopicRequest request) {
         return new SyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>(request, KafkaMeta.batchDeleteInstanceTopic, hcClient);
+    }
+
+    /**
+     * 批量删除用户
+     * 批量删除Kafka实例的用户
+     *
+     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @return BatchDeleteInstanceUsersResponse
+     */
+    public BatchDeleteInstanceUsersResponse batchDeleteInstanceUsers(BatchDeleteInstanceUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.batchDeleteInstanceUsers);
+    }
+
+    /**
+     * 批量删除用户
+     * 批量删除Kafka实例的用户
+     *
+     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @return SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>
+     */
+    public SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsersInvoker(BatchDeleteInstanceUsersRequest request) {
+        return new SyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>(request, KafkaMeta.batchDeleteInstanceUsers, hcClient);
     }
 
     /**
@@ -125,6 +147,28 @@ public class KafkaClient {
      */
     public SyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopicInvoker(CreateInstanceTopicRequest request) {
         return new SyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>(request, KafkaMeta.createInstanceTopic, hcClient);
+    }
+
+    /**
+     * 创建用户
+     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
+     *
+     * @param CreateInstanceUserRequest 请求对象
+     * @return CreateInstanceUserResponse
+     */
+    public CreateInstanceUserResponse createInstanceUser(CreateInstanceUserRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.createInstanceUser);
+    }
+
+    /**
+     * 创建用户
+     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
+     *
+     * @param CreateInstanceUserRequest 请求对象
+     * @return SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>
+     */
+    public SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUserInvoker(CreateInstanceUserRequest request) {
+        return new SyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>(request, KafkaMeta.createInstanceUser, hcClient);
     }
 
     /**
@@ -458,6 +502,28 @@ public class KafkaClient {
     }
 
     /**
+     * 重置用户密码
+     * 重置用户密码
+     *
+     * @param ResetUserPasswrodRequest 请求对象
+     * @return ResetUserPasswrodResponse
+     */
+    public ResetUserPasswrodResponse resetUserPasswrod(ResetUserPasswrodRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.resetUserPasswrod);
+    }
+
+    /**
+     * 重置用户密码
+     * 重置用户密码
+     *
+     * @param ResetUserPasswrodRequest 请求对象
+     * @return SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>
+     */
+    public SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrodInvoker(ResetUserPasswrodRequest request) {
+        return new SyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>(request, KafkaMeta.resetUserPasswrod, hcClient);
+    }
+
+    /**
      * 实例规格变更
      * 实例规格变更。
      *
@@ -656,25 +722,25 @@ public class KafkaClient {
     }
 
     /**
-     * 查询实例标签
-     * 查询实例标签。
+     * 查询消息
+     * 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
-     * @param ShowInstanceTagsRequest 请求对象
-     * @return ShowInstanceTagsResponse
+     * @param ShowInstanceMessagesRequest 请求对象
+     * @return ShowInstanceMessagesResponse
      */
-    public ShowInstanceTagsResponse showInstanceTags(ShowInstanceTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceTags);
+    public ShowInstanceMessagesResponse showInstanceMessages(ShowInstanceMessagesRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceMessages);
     }
 
     /**
-     * 查询实例标签
-     * 查询实例标签。
+     * 查询消息
+     * 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
-     * @param ShowInstanceTagsRequest 请求对象
-     * @return SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>
+     * @param ShowInstanceMessagesRequest 请求对象
+     * @return SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>
      */
-    public SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTagsInvoker(ShowInstanceTagsRequest request) {
-        return new SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>(request, KafkaMeta.showInstanceTags, hcClient);
+    public SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessagesInvoker(ShowInstanceMessagesRequest request) {
+        return new SyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>(request, KafkaMeta.showInstanceMessages, hcClient);
     }
 
     /**
@@ -697,6 +763,94 @@ public class KafkaClient {
      */
     public SyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetailInvoker(ShowInstanceTopicDetailRequest request) {
         return new SyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>(request, KafkaMeta.showInstanceTopicDetail, hcClient);
+    }
+
+    /**
+     * 查询用户列表
+     * 查询用户列表。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowInstanceUsersRequest 请求对象
+     * @return ShowInstanceUsersResponse
+     */
+    public ShowInstanceUsersResponse showInstanceUsers(ShowInstanceUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showInstanceUsers);
+    }
+
+    /**
+     * 查询用户列表
+     * 查询用户列表。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowInstanceUsersRequest 请求对象
+     * @return SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>
+     */
+    public SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsersInvoker(ShowInstanceUsersRequest request) {
+        return new SyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>(request, KafkaMeta.showInstanceUsers, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @return ShowKafkaProjectTagsResponse
+     */
+    public ShowKafkaProjectTagsResponse showKafkaProjectTags(ShowKafkaProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showKafkaProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @return SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>
+     */
+    public SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTagsInvoker(ShowKafkaProjectTagsRequest request) {
+        return new SyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>(request, KafkaMeta.showKafkaProjectTags, hcClient);
+    }
+
+    /**
+     * 查询实例标签
+     * 查询实例标签。
+     *
+     * @param ShowKafkaTagsRequest 请求对象
+     * @return ShowKafkaTagsResponse
+     */
+    public ShowKafkaTagsResponse showKafkaTags(ShowKafkaTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showKafkaTags);
+    }
+
+    /**
+     * 查询实例标签
+     * 查询实例标签。
+     *
+     * @param ShowKafkaTagsRequest 请求对象
+     * @return SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>
+     */
+    public SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTagsInvoker(ShowKafkaTagsRequest request) {
+        return new SyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>(request, KafkaMeta.showKafkaTags, hcClient);
+    }
+
+    /**
+     * 查询topic的磁盘存储情况
+     * 查询topic在Broker上磁盘占用情况。
+     *
+     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @return ShowKafkaTopicPartitionDiskusageResponse
+     */
+    public ShowKafkaTopicPartitionDiskusageResponse showKafkaTopicPartitionDiskusage(ShowKafkaTopicPartitionDiskusageRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showKafkaTopicPartitionDiskusage);
+    }
+
+    /**
+     * 查询topic的磁盘存储情况
+     * 查询topic在Broker上磁盘占用情况。
+     *
+     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @return SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>
+     */
+    public SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageInvoker(ShowKafkaTopicPartitionDiskusageRequest request) {
+        return new SyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>(request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
     }
 
     /**
@@ -744,8 +898,8 @@ public class KafkaClient {
     }
 
     /**
-     * 查询分区最新消息的位置
-     * 查询分区最新消息的位置。
+     * 查询分区最早消息的位置
+     * 查询分区最早消息的位置。
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return ShowPartitionBeginningMessageResponse
@@ -755,8 +909,8 @@ public class KafkaClient {
     }
 
     /**
-     * 查询分区最新消息的位置
-     * 查询分区最新消息的位置。
+     * 查询分区最早消息的位置
+     * 查询分区最早消息的位置。
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>
@@ -766,8 +920,8 @@ public class KafkaClient {
     }
 
     /**
-     * 查询分区最早消息的位置
-     * 查询分区最早消息的位置。
+     * 查询分区最新消息的位置
+     * 查询分区最新消息的位置。
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return ShowPartitionEndMessageResponse
@@ -777,8 +931,8 @@ public class KafkaClient {
     }
 
     /**
-     * 查询分区最早消息的位置
-     * 查询分区最早消息的位置。
+     * 查询分区最新消息的位置
+     * 查询分区最新消息的位置。
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return SyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>
@@ -810,28 +964,6 @@ public class KafkaClient {
     }
 
     /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return ShowProjectTagsResponse
-     */
-    public ShowProjectTagsResponse showProjectTags(ShowProjectTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, KafkaMeta.showProjectTags);
-    }
-
-    /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>
-     */
-    public SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTagsInvoker(ShowProjectTagsRequest request) {
-        return new SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>(request, KafkaMeta.showProjectTags, hcClient);
-    }
-
-    /**
      * 查询单个转储任务
      * 查询单个转储任务。
      *
@@ -851,6 +983,28 @@ public class KafkaClient {
      */
     public SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetailInvoker(ShowSinkTaskDetailRequest request) {
         return new SyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>(request, KafkaMeta.showSinkTaskDetail, hcClient);
+    }
+
+    /**
+     * 查询用户权限
+     * 查询用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @return ShowTopicAccessPolicyResponse
+     */
+    public ShowTopicAccessPolicyResponse showTopicAccessPolicy(ShowTopicAccessPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.showTopicAccessPolicy);
+    }
+
+    /**
+     * 查询用户权限
+     * 查询用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @return SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>
+     */
+    public SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicyInvoker(ShowTopicAccessPolicyRequest request) {
+        return new SyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>(request, KafkaMeta.showTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -961,6 +1115,28 @@ public class KafkaClient {
      */
     public SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaInvoker(UpdateSinkTaskQuotaRequest request) {
         return new SyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>(request, KafkaMeta.updateSinkTaskQuota, hcClient);
+    }
+
+    /**
+     * 设置用户权限
+     * 设置用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @return UpdateTopicAccessPolicyResponse
+     */
+    public UpdateTopicAccessPolicyResponse updateTopicAccessPolicy(UpdateTopicAccessPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KafkaMeta.updateTopicAccessPolicy);
+    }
+
+    /**
+     * 设置用户权限
+     * 设置用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
+     */
+    public SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyInvoker(UpdateTopicAccessPolicyRequest request) {
+        return new SyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>(request, KafkaMeta.updateTopicAccessPolicy, hcClient);
     }
 
     /**

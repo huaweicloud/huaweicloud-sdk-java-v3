@@ -51,7 +51,7 @@ public class ListMetadataLocksRequest  {
     
     private String table;
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -144,7 +144,7 @@ public class ListMetadataLocksRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -166,7 +166,7 @@ public class ListMetadataLocksRequest  {
 
 
     /**
-     * Get dbUserId
+     * 数据库用户ID
      * @return dbUserId
      */
     public String getDbUserId() {
@@ -188,7 +188,7 @@ public class ListMetadataLocksRequest  {
 
 
     /**
-     * Get threadId
+     * 会话ID
      * @return threadId
      */
     public String getThreadId() {
@@ -210,7 +210,7 @@ public class ListMetadataLocksRequest  {
 
 
     /**
-     * Get database
+     * 数据库名称
      * @return database
      */
     public String getDatabase() {
@@ -232,7 +232,7 @@ public class ListMetadataLocksRequest  {
 
 
     /**
-     * Get table
+     * 表名
      * @return table
      */
     public String getTable() {
@@ -254,7 +254,7 @@ public class ListMetadataLocksRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

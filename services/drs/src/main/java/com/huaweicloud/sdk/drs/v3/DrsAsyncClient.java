@@ -285,7 +285,7 @@ public class DrsAsyncClient {
 
     /**
      * 批量续传/重试
-     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。批量续传/重试任务
+     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。
      *
      * @param BatchRestoreTaskRequest 请求对象
      * @return CompletableFuture<BatchRestoreTaskResponse>
@@ -296,7 +296,7 @@ public class DrsAsyncClient {
 
     /**
      * 批量续传/重试
-     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。批量续传/重试任务
+     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。
      *
      * @param BatchRestoreTaskRequest 请求对象
      * @return AsyncInvoker<BatchRestoreTaskRequest, BatchRestoreTaskResponse>
@@ -655,6 +655,28 @@ public class DrsAsyncClient {
      */
     public AsyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse> showMonitoringDataAsyncInvoker(ShowMonitoringDataRequest request) {
         return new AsyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse>(request, DrsMeta.showMonitoringData, hcClient);
+    }
+
+    /**
+     * 查询配额
+     * 查询单租户在DRS服务下的配额信息。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return CompletableFuture<ShowQuotasResponse>
+     */
+    public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     * 查询单租户在DRS服务下的配额信息。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DrsMeta.showQuotas, hcClient);
     }
 
     /**

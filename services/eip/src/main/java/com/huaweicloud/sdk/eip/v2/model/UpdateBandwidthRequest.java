@@ -39,7 +39,7 @@ public class UpdateBandwidthRequest  {
 
 
     /**
-     * Get bandwidthId
+     * 带宽唯一标识
      * @return bandwidthId
      */
     public String getBandwidthId() {

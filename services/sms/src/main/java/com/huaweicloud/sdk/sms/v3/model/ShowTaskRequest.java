@@ -32,7 +32,7 @@ public class ShowTaskRequest  {
 
 
     /**
-     * Get taskId
+     * 迁移任务id
      * @return taskId
      */
     public String getTaskId() {

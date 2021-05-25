@@ -41,7 +41,7 @@ public class ListResizeFlavorsRequest  {
     
     private String marker;
     /**
-     * Gets or Sets sortDir
+     * 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
      */
     public static final class SortDirEnum {
 
@@ -125,7 +125,7 @@ public class ListResizeFlavorsRequest  {
     
     private SortDirEnum sortDir;
     /**
-     * Gets or Sets sortKey
+     * 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
      */
     public static final class SortKeyEnum {
 
@@ -254,7 +254,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get instanceUuid
+     * 进行规格切换的云服务器ID，UUID格式。
      * @return instanceUuid
      */
     public String getInstanceUuid() {
@@ -276,7 +276,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get limit
+     * 单页面可显示的flavor条数最大值，默认是1000。
      * @return limit
      */
     public Integer getLimit() {
@@ -298,7 +298,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get marker
+     * 以单页最后一条flavor的ID作为分页标记。
      * @return marker
      */
     public String getMarker() {
@@ -320,7 +320,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get sortDir
+     * 升序/降序排序，默认值为：asc。  取值范围：  - asc：表示升序。 - desc：表示降序
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -342,7 +342,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get sortKey
+     * 排序字段。  key的取值范围：  - flavorid：表示规格ID。 - sort_key的默认值为“flavorid”。 - name：表示规格名称。 - memory_mb：表示内存大小。 - vcpus：表示CPU大小。 - root_gb：表示系统盘大小。
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -364,7 +364,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get sourceFlavorId
+     * 进行规格切换的云服务器源规格ID。
      * @return sourceFlavorId
      */
     public String getSourceFlavorId() {
@@ -386,7 +386,7 @@ public class ListResizeFlavorsRequest  {
 
 
     /**
-     * Get sourceFlavorName
+     * 进行规格切换的云服务器源规格名称。
      * @return sourceFlavorName
      */
     public String getSourceFlavorName() {

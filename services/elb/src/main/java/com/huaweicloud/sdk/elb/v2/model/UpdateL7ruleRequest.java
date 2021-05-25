@@ -45,7 +45,7 @@ public class UpdateL7ruleRequest  {
 
 
     /**
-     * Get l7policyId
+     * 待更新的转发规则所在的转发策略id
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -67,7 +67,7 @@ public class UpdateL7ruleRequest  {
 
 
     /**
-     * Get l7ruleId
+     * 待更新的转发规则id
      * @return l7ruleId
      */
     public String getL7ruleId() {

@@ -56,6 +56,8 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
 
     /**
      * 总记录数。
+     * minimum: 0
+     * maximum: 32768
      * @return totalNumber
      */
     public Integer getTotalNumber() {

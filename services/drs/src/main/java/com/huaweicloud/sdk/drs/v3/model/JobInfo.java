@@ -458,7 +458,7 @@ public class JobInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="billing_tag")
     
-    private String billingTag;
+    private Boolean billingTag;
     /**
      * 迁移方向
      */
@@ -890,7 +890,7 @@ public class JobInfo  {
 
     
 
-    public JobInfo withBillingTag(String billingTag) {
+    public JobInfo withBillingTag(Boolean billingTag) {
         this.billingTag = billingTag;
         return this;
     }
@@ -902,11 +902,11 @@ public class JobInfo  {
      * 计费字段
      * @return billingTag
      */
-    public String getBillingTag() {
+    public Boolean getBillingTag() {
         return billingTag;
     }
 
-    public void setBillingTag(String billingTag) {
+    public void setBillingTag(Boolean billingTag) {
         this.billingTag = billingTag;
     }
 

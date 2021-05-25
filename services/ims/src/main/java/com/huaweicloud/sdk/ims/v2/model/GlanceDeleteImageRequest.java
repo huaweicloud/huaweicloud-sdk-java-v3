@@ -39,7 +39,7 @@ public class GlanceDeleteImageRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像ID
      * @return imageId
      */
     public String getImageId() {

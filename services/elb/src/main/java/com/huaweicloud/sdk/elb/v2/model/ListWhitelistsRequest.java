@@ -68,7 +68,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询中每页的白名单个数
      * minimum: 0
      * maximum: -1
      * @return limit
@@ -92,7 +92,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的白名单的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -114,7 +114,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -136,7 +136,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get id
+     * 白名单ID。
      * @return id
      */
     public String getId() {
@@ -158,7 +158,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get enableWhitelist
+     * 是否开启访问控制开关。true：打开false：关闭
      * @return enableWhitelist
      */
     public Boolean getEnableWhitelist() {
@@ -180,7 +180,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get listenerId
+     * 白名单关联的监听器ID。
      * @return listenerId
      */
     public String getListenerId() {
@@ -202,7 +202,7 @@ public class ListWhitelistsRequest  {
 
 
     /**
-     * Get whitelist
+     * 白名单IP的字符串。
      * @return whitelist
      */
     public String getWhitelist() {

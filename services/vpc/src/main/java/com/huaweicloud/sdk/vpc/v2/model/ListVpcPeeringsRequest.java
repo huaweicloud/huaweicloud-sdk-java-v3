@@ -45,7 +45,7 @@ public class ListVpcPeeringsRequest  {
     
     private String name;
     /**
-     * Gets or Sets status
+     * 根据status进行过滤  - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
      */
     public static final class StatusEnum {
 
@@ -168,7 +168,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -190,7 +190,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -212,7 +212,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get id
+     * 按照peering_id过滤查询
      * @return id
      */
     public String getId() {
@@ -234,7 +234,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get name
+     * 功能说明：按照peering_name过查询  取值范围：最大长度不超过64
      * @return name
      */
     public String getName() {
@@ -256,7 +256,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get status
+     * 根据status进行过滤  - PENDING_ACCEPTANCE：等待接受 - REJECTED：已拒绝。 - EXPIRED：已过期。 - DELETED：已删除。 - ACTIVE：活动的。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -278,7 +278,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get tenantId
+     * 按照项目ID过滤查询
      * @return tenantId
      */
     public String getTenantId() {
@@ -300,7 +300,7 @@ public class ListVpcPeeringsRequest  {
 
 
     /**
-     * Get vpcId
+     * 根据vpc ID过滤查询
      * @return vpcId
      */
     public String getVpcId() {

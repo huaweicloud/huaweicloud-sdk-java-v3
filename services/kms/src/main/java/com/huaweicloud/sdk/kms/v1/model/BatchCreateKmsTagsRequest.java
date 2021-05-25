@@ -45,7 +45,7 @@ public class BatchCreateKmsTagsRequest  {
 
 
     /**
-     * Get keyId
+     * 密钥ID
      * @return keyId
      */
     public String getKeyId() {
@@ -67,7 +67,7 @@ public class BatchCreateKmsTagsRequest  {
 
 
     /**
-     * Get versionId
+     * API版本号
      * @return versionId
      */
     public String getVersionId() {

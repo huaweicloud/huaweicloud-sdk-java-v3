@@ -82,7 +82,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回个数 取值范围：0-2000
      * @return limit
      */
     public Integer getLimit() {
@@ -104,7 +104,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -140,7 +140,7 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     /**
-     * Get id
+     * 功能说明：安全组规则ID，支持多个ID过滤
      * @return id
      */
     public List<String> getId() {
@@ -176,7 +176,7 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     /**
-     * Get securityGroupId
+     * 功能说明：安全组规则所属安全组ID，支持多个ID过滤
      * @return securityGroupId
      */
     public List<String> getSecurityGroupId() {
@@ -212,7 +212,7 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     /**
-     * Get protocol
+     * 功能说明：安全组规则协议，支持多条过滤
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -248,7 +248,7 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     /**
-     * Get description
+     * 功能说明：安全组规则的描述，支持多个描述同时过滤
      * @return description
      */
     public List<String> getDescription() {
@@ -284,7 +284,7 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     /**
-     * Get remoteGroupId
+     * 功能说明：远端安全组ID，支持多ID过滤
      * @return remoteGroupId
      */
     public List<String> getRemoteGroupId() {
@@ -306,7 +306,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get direction
+     * 功能说明：安全组规则方向
      * @return direction
      */
     public String getDirection() {
@@ -328,7 +328,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get action
+     * 功能说明：安全组规则生效策略
      * @return action
      */
     public String getAction() {

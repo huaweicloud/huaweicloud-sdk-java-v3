@@ -38,7 +38,7 @@ public class ShowInstanceStatusRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ShowInstanceStatusRequest  {
 
 
     /**
-     * Get taskId
+     * 实例ID
      * @return taskId
      */
     public String getTaskId() {

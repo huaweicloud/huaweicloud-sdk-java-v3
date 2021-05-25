@@ -28,7 +28,7 @@ public class ImportMqsInstanceTopicRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets mode
+     * 导入topic的模式。 - AddNew：全量新增导入。 - Merge：合并导入。  默认为AddNew模式。
      */
     public static final class ModeEnum {
 
@@ -133,7 +133,7 @@ public class ImportMqsInstanceTopicRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -155,7 +155,7 @@ public class ImportMqsInstanceTopicRequest  {
 
 
     /**
-     * Get mode
+     * 导入topic的模式。 - AddNew：全量新增导入。 - Merge：合并导入。  默认为AddNew模式。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -177,7 +177,7 @@ public class ImportMqsInstanceTopicRequest  {
 
 
     /**
-     * Get prefix
+     * App应用的前缀。  若加上前缀，导入Topic时会拼接前缀和已有的App应用，形成新的App应用名称，再根据新的App应用名称导入Topic。
      * @return prefix
      */
     public String getPrefix() {

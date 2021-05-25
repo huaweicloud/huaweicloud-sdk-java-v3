@@ -39,7 +39,7 @@ public class UpdatePolicyRequest  {
 
 
     /**
-     * Get policyId
+     * 策略ID
      * @return policyId
      */
     public String getPolicyId() {

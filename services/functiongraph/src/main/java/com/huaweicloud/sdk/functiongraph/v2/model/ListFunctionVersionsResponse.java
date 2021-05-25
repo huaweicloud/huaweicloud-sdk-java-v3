@@ -34,6 +34,12 @@ public class ListFunctionVersionsResponse extends SdkResponse {
     
     private Long nextMarker;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Long count;
+
     public ListFunctionVersionsResponse withVersions(List<ListFunctionVersionResult> versions) {
         this.versions = versions;
         return this;
@@ -92,6 +98,28 @@ public class ListFunctionVersionsResponse extends SdkResponse {
 
     
 
+    public ListFunctionVersionsResponse withCount(Long count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 函数版本总数
+     * @return count
+     */
+    public Long getCount() {
+        return count;
+    }
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -102,11 +130,12 @@ public class ListFunctionVersionsResponse extends SdkResponse {
         }
         ListFunctionVersionsResponse listFunctionVersionsResponse = (ListFunctionVersionsResponse) o;
         return Objects.equals(this.versions, listFunctionVersionsResponse.versions) &&
-            Objects.equals(this.nextMarker, listFunctionVersionsResponse.nextMarker);
+            Objects.equals(this.nextMarker, listFunctionVersionsResponse.nextMarker) &&
+            Objects.equals(this.count, listFunctionVersionsResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(versions, nextMarker);
+        return Objects.hash(versions, nextMarker, count);
     }
     @Override
     public String toString() {
@@ -114,6 +143,7 @@ public class ListFunctionVersionsResponse extends SdkResponse {
         sb.append("class ListFunctionVersionsResponse {\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

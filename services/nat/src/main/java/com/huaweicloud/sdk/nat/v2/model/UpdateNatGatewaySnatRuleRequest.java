@@ -39,7 +39,7 @@ public class UpdateNatGatewaySnatRuleRequest  {
 
 
     /**
-     * Get snatRuleId
+     * SNAT规则的ID。
      * @return snatRuleId
      */
     public String getSnatRuleId() {

@@ -45,7 +45,7 @@ public class UpdateTopicReplicaRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateTopicReplicaRequest  {
 
 
     /**
-     * Get topic
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {

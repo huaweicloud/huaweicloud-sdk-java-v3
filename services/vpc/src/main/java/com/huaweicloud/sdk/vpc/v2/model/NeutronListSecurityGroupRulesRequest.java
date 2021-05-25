@@ -104,7 +104,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -126,7 +126,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -148,7 +148,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get id
+     * 按照安全组规则对应的id过滤查询结果
      * @return id
      */
     public String getId() {
@@ -170,7 +170,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get direction
+     * 按照安全组规则的方向过滤查询结果，支持ingress和egress进行过滤
      * @return direction
      */
     public String getDirection() {
@@ -192,7 +192,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get protocol
+     * 按照安全组规则的IP协议过滤查询结果
      * @return protocol
      */
     public String getProtocol() {
@@ -214,7 +214,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get ethertype
+     * 按照网络类型过滤查询结果，支持IPv4或者IPv6
      * @return ethertype
      */
     public String getEthertype() {
@@ -236,7 +236,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get description
+     * 按照安全组规则的描述过滤查询结果
      * @return description
      */
     public String getDescription() {
@@ -258,7 +258,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get remoteIpPrefix
+     * 按照与此安全组规则匹配的远端IP网段过滤查询结果
      * @return remoteIpPrefix
      */
     public String getRemoteIpPrefix() {
@@ -280,7 +280,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get remoteGroupId
+     * 按照与此安全组规则关联的远端安全组ID过滤查询结果
      * @return remoteGroupId
      */
     public String getRemoteGroupId() {
@@ -302,7 +302,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 按照与此安全组规则所属的安全组ID过滤查询结果
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -324,7 +324,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get portRangeMax
+     * 按照最大端口过滤查询结果
      * @return portRangeMax
      */
     public String getPortRangeMax() {
@@ -346,7 +346,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get portRangeMin
+     * 按照最小端口过滤查询结果
      * @return portRangeMin
      */
     public String getPortRangeMin() {
@@ -368,7 +368,7 @@ public class NeutronListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get tenantId
+     * 按照安全组规则所属的项目ID过滤查询结果
      * @return tenantId
      */
     public String getTenantId() {

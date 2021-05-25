@@ -38,7 +38,7 @@ public class ShowLifeCycleHookRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组标识。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -60,7 +60,7 @@ public class ShowLifeCycleHookRequest  {
 
 
     /**
-     * Get lifecycleHookName
+     * 生命周期挂钩标识。
      * @return lifecycleHookName
      */
     public String getLifecycleHookName() {

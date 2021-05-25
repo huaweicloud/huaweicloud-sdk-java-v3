@@ -84,7 +84,7 @@ public class ListFlavorsRequest  {
     }
 
     /**
-     * Get id
+     * 规格ID。
      * @return id
      */
     public List<String> getId() {
@@ -106,7 +106,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -130,7 +130,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -166,7 +166,7 @@ public class ListFlavorsRequest  {
     }
 
     /**
-     * Get name
+     * 规格名称。
      * @return name
      */
     public List<String> getName() {
@@ -188,7 +188,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -210,7 +210,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get shared
+     * 是否共享。
      * @return shared
      */
     public Boolean getShared() {
@@ -246,7 +246,7 @@ public class ListFlavorsRequest  {
     }
 
     /**
-     * Get type
+     * L4和L7 分别表示四层和七层flavor，查询支持按type过滤。
      * @return type
      */
     public List<String> getType() {

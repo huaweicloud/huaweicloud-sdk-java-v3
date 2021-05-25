@@ -32,7 +32,7 @@ public class DeletePostalRequest  {
 
 
     /**
-     * Get addressId
+     * 收件人邮寄地址ID。
      * @return addressId
      */
     public String getAddressId() {

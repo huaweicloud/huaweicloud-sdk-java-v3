@@ -209,7 +209,7 @@ public class InstInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private Integer startTime;
+    private String startTime;
     /**
      * 迁移实例的状态
      */
@@ -389,7 +389,7 @@ public class InstInfo  {
 
     
 
-    public InstInfo withStartTime(Integer startTime) {
+    public InstInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -401,11 +401,11 @@ public class InstInfo  {
      * 迁移实例任务定时启动时间
      * @return startTime
      */
-    public Integer getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 

@@ -44,7 +44,7 @@ public class DeleteTagRequest  {
 
 
     /**
-     * Get resourceType
+     * 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。  
      * @return resourceType
      */
     public String getResourceType() {
@@ -66,7 +66,7 @@ public class DeleteTagRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源id。  
      * @return resourceId
      */
     public String getResourceId() {
@@ -88,7 +88,7 @@ public class DeleteTagRequest  {
 
 
     /**
-     * Get key
+     * 标签key。  标签key不能为空或者空字符串。
      * @return key
      */
     public String getKey() {

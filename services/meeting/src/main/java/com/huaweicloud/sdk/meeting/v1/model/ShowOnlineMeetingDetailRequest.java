@@ -80,7 +80,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -102,7 +102,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get offset
+     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -124,7 +124,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get limit
+     * 指定返回的记录数。
      * @return limit
      */
     public Integer getLimit() {
@@ -146,7 +146,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get searchKey
+     * 用来作关键词查询的字符串。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -168,7 +168,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get userUUID
+     * 用户的UUID（已在USG注册过的）。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -190,7 +190,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get xType
+     * 默认值为0。 - 0: 不区分终端和与会人。 - 1: 分页查询区分终端和与会人，结果合并返回。 - 2: 单独查询终端和与会人，结果单独返回。
      * @return xType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -214,7 +214,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get xQueryType
+     * 当X-Type为2时，该字段有效。默认值为0。 - 0: 查询与会人。 - 1: 查询终端。
      * @return xQueryType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -238,7 +238,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get xAuthorizationType
+     * 标识是否为第三方portal过来的请求。
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -262,7 +262,7 @@ public class ShowOnlineMeetingDetailRequest  {
 
 
     /**
-     * Get xSiteId
+     * 用于区分到哪个HCSO站点鉴权。
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

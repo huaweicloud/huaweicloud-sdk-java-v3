@@ -138,7 +138,7 @@ public class ListCasesRequest  {
     }
 
     /**
-     * Get searchKey
+     * 关键字查询，支持多个空格隔开
      * @return searchKey
      */
     public List<String> getSearchKey() {
@@ -174,7 +174,7 @@ public class ListCasesRequest  {
     }
 
     /**
-     * Get labelIdList
+     * 标签列表，最多支持5个
      * @return labelIdList
      */
     public List<String> getLabelIdList() {
@@ -196,7 +196,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get appKey
+     * app关键字查询
      * @return appKey
      */
     public String getAppKey() {
@@ -218,7 +218,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get incidentId
+     * 工单id
      * @return incidentId
      */
     public String getIncidentId() {
@@ -240,7 +240,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get queryStartTime
+     * 查询开始时间
      * @return queryStartTime
      */
     public String getQueryStartTime() {
@@ -262,7 +262,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get queryEndTime
+     * 查询结束时间
      * @return queryEndTime
      */
     public String getQueryEndTime() {
@@ -284,7 +284,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get status
+     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
      * minimum: 0
      * maximum: 20
      * @return status
@@ -308,7 +308,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get incidentStatus
+     * 状态列表
      * @return incidentStatus
      */
     public String getIncidentStatus() {
@@ -330,7 +330,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get xCustomerId
+     * 子用户id
      * @return xCustomerId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -354,7 +354,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get xCustomerName
+     * 子用户名称
      * @return xCustomerName
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -378,7 +378,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get groupId
+     * 组id
      * @return groupId
      */
     public String getGroupId() {
@@ -400,7 +400,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -424,7 +424,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get limit
+     * 查询限制数量
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -448,7 +448,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get xSite
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
      * minimum: 0
      * maximum: 1
      * @return xSite
@@ -474,7 +474,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -498,7 +498,7 @@ public class ListCasesRequest  {
 
 
     /**
-     * Get xTimeZone
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -32,7 +32,7 @@ public class DeleteResetTracksTaskRequest  {
 
 
     /**
-     * Get taskId
+     * 任务ID 
      * @return taskId
      */
     public String getTaskId() {

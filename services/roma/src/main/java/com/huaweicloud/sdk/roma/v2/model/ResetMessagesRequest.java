@@ -28,7 +28,7 @@ public class ResetMessagesRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets actionId
+     * 重发类型。当前只支持“resend”。
      */
     public static final class ActionIdEnum {
 
@@ -121,7 +121,7 @@ public class ResetMessagesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -143,7 +143,7 @@ public class ResetMessagesRequest  {
 
 
     /**
-     * Get actionId
+     * 重发类型。当前只支持“resend”。
      * @return actionId
      */
     public ActionIdEnum getActionId() {

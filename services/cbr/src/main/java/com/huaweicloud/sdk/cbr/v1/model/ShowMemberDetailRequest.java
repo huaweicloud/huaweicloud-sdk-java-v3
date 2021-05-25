@@ -38,7 +38,7 @@ public class ShowMemberDetailRequest  {
 
 
     /**
-     * Get backupId
+     * 备份副本id
      * @return backupId
      */
     public String getBackupId() {
@@ -60,7 +60,7 @@ public class ShowMemberDetailRequest  {
 
 
     /**
-     * Get memberId
+     * 成员id
      * @return memberId
      */
     public String getMemberId() {

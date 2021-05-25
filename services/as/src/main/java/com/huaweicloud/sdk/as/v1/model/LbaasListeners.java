@@ -90,7 +90,7 @@ public class LbaasListeners  {
 
 
     /**
-     * 权重，指后端云服务器经分发得到的请求数量比例，取值范围[0,1]，默认为1。
+     * 权重，指后端云服务器经分发得到的请求数量比例，取值范围[0,1]。
      * @return weight
      */
     public Integer getWeight() {

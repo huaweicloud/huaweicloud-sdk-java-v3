@@ -38,7 +38,7 @@ public class DeletePublicipTagRequest  {
 
 
     /**
-     * Get publicipId
+     * 弹性公网IP的id
      * @return publicipId
      */
     public String getPublicipId() {
@@ -60,7 +60,7 @@ public class DeletePublicipTagRequest  {
 
 
     /**
-     * Get key
+     * 标签的键
      * @return key
      */
     public String getKey() {

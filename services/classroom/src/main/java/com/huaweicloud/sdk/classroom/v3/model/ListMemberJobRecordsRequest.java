@@ -56,7 +56,7 @@ public class ListMemberJobRecordsRequest  {
 
 
     /**
-     * Get jobId
+     * 作业ID
      * @return jobId
      */
     public String getJobId() {
@@ -78,7 +78,7 @@ public class ListMemberJobRecordsRequest  {
 
 
     /**
-     * Get exerciseId
+     * 习题ID
      * @return exerciseId
      */
     public String getExerciseId() {
@@ -100,7 +100,7 @@ public class ListMemberJobRecordsRequest  {
 
 
     /**
-     * Get memberId
+     * 用户ID
      * @return memberId
      */
     public String getMemberId() {
@@ -122,7 +122,7 @@ public class ListMemberJobRecordsRequest  {
 
 
     /**
-     * Get offset
+     * 信息记录的起始编号
      * minimum: 1
      * maximum: 1000
      * @return offset
@@ -146,7 +146,7 @@ public class ListMemberJobRecordsRequest  {
 
 
     /**
-     * Get limit
+     * 每页包含的信息记录数
      * minimum: 1
      * maximum: 100
      * @return limit

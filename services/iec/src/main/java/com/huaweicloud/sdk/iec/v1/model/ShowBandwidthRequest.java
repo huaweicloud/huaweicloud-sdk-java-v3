@@ -32,7 +32,7 @@ public class ShowBandwidthRequest  {
 
 
     /**
-     * Get bandwidthId
+     * 带宽ID。
      * @return bandwidthId
      */
     public String getBandwidthId() {

@@ -74,7 +74,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,7 +98,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -120,7 +120,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量，若超过最大数量，则返回最后一页。
      * @return offset
      */
     public Integer getOffset() {
@@ -142,7 +142,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -166,7 +166,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件。支持名称、SN模糊查询。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -188,7 +188,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get model
+     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。 maxLength：128 minLength：0
      * @return model
      */
     public String getModel() {
@@ -210,7 +210,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get deptCode
+     * 部门编号，默认为根部门 默认值：1 maxLength：32 minLength：0
      * @return deptCode
      */
     public String getDeptCode() {
@@ -232,7 +232,7 @@ public class SearchDevicesRequest  {
 
 
     /**
-     * Get enableSubDept
+     * 是否查询子部门 默认值：true 
      * @return enableSubDept
      */
     public Boolean getEnableSubDept() {

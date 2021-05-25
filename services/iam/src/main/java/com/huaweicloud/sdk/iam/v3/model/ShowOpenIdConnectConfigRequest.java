@@ -32,7 +32,7 @@ public class ShowOpenIdConnectConfigRequest  {
 
 
     /**
-     * Get idpId
+     * 身份提供商ID
      * @return idpId
      */
     public String getIdpId() {

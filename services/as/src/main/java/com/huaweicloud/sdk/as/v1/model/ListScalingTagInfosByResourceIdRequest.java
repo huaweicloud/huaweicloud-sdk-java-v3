@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListScalingTagInfosByResourceIdRequest  {
 
     /**
-     * Gets or Sets resourceType
+     * 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
      */
     public static final class ResourceTypeEnum {
 
@@ -114,7 +114,7 @@ public class ListScalingTagInfosByResourceIdRequest  {
 
 
     /**
-     * Get resourceType
+     * 资源类型，枚举类：scaling_group_tag。scaling_group_tag表示资源类型为伸缩组。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -136,7 +136,7 @@ public class ListScalingTagInfosByResourceIdRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {

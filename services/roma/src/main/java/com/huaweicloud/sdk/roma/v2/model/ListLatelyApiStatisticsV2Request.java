@@ -44,7 +44,7 @@ public class ListLatelyApiStatisticsV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class ListLatelyApiStatisticsV2Request  {
 
 
     /**
-     * Get apiId
+     * API的编号
      * @return apiId
      */
     public String getApiId() {
@@ -88,7 +88,7 @@ public class ListLatelyApiStatisticsV2Request  {
 
 
     /**
-     * Get duration
+     * 最近统计时长，单位必须为h和m，比如1h和1m，分别代表最近1小时和最近1分钟
      * @return duration
      */
     public String getDuration() {

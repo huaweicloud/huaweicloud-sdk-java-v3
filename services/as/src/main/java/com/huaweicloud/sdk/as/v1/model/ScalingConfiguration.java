@@ -49,6 +49,12 @@ public class ScalingConfiguration  {
     
     private OffsetDateTime createTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="scaling_group_id")
+    
+    private String scalingGroupId;
+
     public ScalingConfiguration withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
         return this;
@@ -166,6 +172,28 @@ public class ScalingConfiguration  {
 
     
 
+    public ScalingConfiguration withScalingGroupId(String scalingGroupId) {
+        this.scalingGroupId = scalingGroupId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 绑定该伸缩配置的伸缩组ID
+     * @return scalingGroupId
+     */
+    public String getScalingGroupId() {
+        return scalingGroupId;
+    }
+
+    public void setScalingGroupId(String scalingGroupId) {
+        this.scalingGroupId = scalingGroupId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,11 +207,12 @@ public class ScalingConfiguration  {
             Objects.equals(this.tenant, scalingConfiguration.tenant) &&
             Objects.equals(this.scalingConfigurationName, scalingConfiguration.scalingConfigurationName) &&
             Objects.equals(this.instanceConfig, scalingConfiguration.instanceConfig) &&
-            Objects.equals(this.createTime, scalingConfiguration.createTime);
+            Objects.equals(this.createTime, scalingConfiguration.createTime) &&
+            Objects.equals(this.scalingGroupId, scalingConfiguration.scalingGroupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingConfigurationId, tenant, scalingConfigurationName, instanceConfig, createTime);
+        return Objects.hash(scalingConfigurationId, tenant, scalingConfigurationName, instanceConfig, createTime, scalingGroupId);
     }
     @Override
     public String toString() {
@@ -194,6 +223,7 @@ public class ScalingConfiguration  {
         sb.append("    scalingConfigurationName: ").append(toIndentedString(scalingConfigurationName)).append("\n");
         sb.append("    instanceConfig: ").append(toIndentedString(instanceConfig)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

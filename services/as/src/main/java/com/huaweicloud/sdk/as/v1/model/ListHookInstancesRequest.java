@@ -38,7 +38,7 @@ public class ListHookInstancesRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -60,7 +60,7 @@ public class ListHookInstancesRequest  {
 
 
     /**
-     * Get instanceId
+     * 伸缩实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

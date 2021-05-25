@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.sms.v3.model.CloneServer;
-import com.huaweicloud.sdk.sms.v3.model.PostSourceServerBody;
+import com.huaweicloud.sdk.sms.v3.model.SourceServer;
 import com.huaweicloud.sdk.sms.v3.model.SubTask;
-import com.huaweicloud.sdk.sms.v3.model.TargetServer;
+import com.huaweicloud.sdk.sms.v3.model.TaskTargetServer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,7 +37,7 @@ public class ShowTaskResponse extends SdkResponse {
     
     private String name;
     /**
-     * 任务类型，创建时必选，更新时可选 
+     * 任务类型，创建时必选，更新时可选
      */
     public static final class TypeEnum {
 
@@ -269,13 +269,13 @@ public class ShowTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_server")
     
-    private PostSourceServerBody sourceServer;
+    private SourceServer sourceServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="target_server")
     
-    private TargetServer targetServer;
+    private TaskTargetServer targetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -392,7 +392,7 @@ public class ShowTaskResponse extends SdkResponse {
 
 
     /**
-     * 任务类型，创建时必选，更新时可选 
+     * 任务类型，创建时必选，更新时可选
      * @return type
      */
     public TypeEnum getType() {
@@ -458,7 +458,7 @@ public class ShowTaskResponse extends SdkResponse {
 
 
     /**
-     * 进程优先级  0：低  1：标准（默认）  2：高 
+     * 进程优先级  0：低  1：标准（默认）  2：高
      * minimum: 0
      * maximum: 2
      * @return priority
@@ -504,7 +504,7 @@ public class ShowTaskResponse extends SdkResponse {
 
 
     /**
-     * 迁移完成后是否启动目的端服务器  true：启动  false：停止 
+     * 迁移完成后是否启动目的端服务器  true：启动  false：停止
      * @return startTargetServer
      */
     public Boolean getStartTargetServer() {
@@ -548,7 +548,7 @@ public class ShowTaskResponse extends SdkResponse {
 
 
     /**
-     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址 
+     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址
      * @return migrationIp
      */
     public String getMigrationIp() {
@@ -649,14 +649,14 @@ public class ShowTaskResponse extends SdkResponse {
 
     
 
-    public ShowTaskResponse withSourceServer(PostSourceServerBody sourceServer) {
+    public ShowTaskResponse withSourceServer(SourceServer sourceServer) {
         this.sourceServer = sourceServer;
         return this;
     }
 
-    public ShowTaskResponse withSourceServer(Consumer<PostSourceServerBody> sourceServerSetter) {
+    public ShowTaskResponse withSourceServer(Consumer<SourceServer> sourceServerSetter) {
         if(this.sourceServer == null ){
-            this.sourceServer = new PostSourceServerBody();
+            this.sourceServer = new SourceServer();
             sourceServerSetter.accept(this.sourceServer);
         }
         
@@ -668,24 +668,24 @@ public class ShowTaskResponse extends SdkResponse {
      * Get sourceServer
      * @return sourceServer
      */
-    public PostSourceServerBody getSourceServer() {
+    public SourceServer getSourceServer() {
         return sourceServer;
     }
 
-    public void setSourceServer(PostSourceServerBody sourceServer) {
+    public void setSourceServer(SourceServer sourceServer) {
         this.sourceServer = sourceServer;
     }
 
     
 
-    public ShowTaskResponse withTargetServer(TargetServer targetServer) {
+    public ShowTaskResponse withTargetServer(TaskTargetServer targetServer) {
         this.targetServer = targetServer;
         return this;
     }
 
-    public ShowTaskResponse withTargetServer(Consumer<TargetServer> targetServerSetter) {
+    public ShowTaskResponse withTargetServer(Consumer<TaskTargetServer> targetServerSetter) {
         if(this.targetServer == null ){
-            this.targetServer = new TargetServer();
+            this.targetServer = new TaskTargetServer();
             targetServerSetter.accept(this.targetServer);
         }
         
@@ -697,11 +697,11 @@ public class ShowTaskResponse extends SdkResponse {
      * Get targetServer
      * @return targetServer
      */
-    public TargetServer getTargetServer() {
+    public TaskTargetServer getTargetServer() {
         return targetServer;
     }
 
-    public void setTargetServer(TargetServer targetServer) {
+    public void setTargetServer(TaskTargetServer targetServer) {
         this.targetServer = targetServer;
     }
 

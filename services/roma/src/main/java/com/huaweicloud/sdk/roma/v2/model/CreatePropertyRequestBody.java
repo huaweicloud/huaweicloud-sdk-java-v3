@@ -376,7 +376,7 @@ public class CreatePropertyRequestBody  {
 
 
     /**
-     * 最小值，当data_type为integer或number时必填
+     * 最大值，当data_type为integer或number时必填
      * @return max
      */
     public String getMax() {

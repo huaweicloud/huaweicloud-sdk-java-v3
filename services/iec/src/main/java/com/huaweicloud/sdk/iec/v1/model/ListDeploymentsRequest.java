@@ -56,7 +56,7 @@ public class ListDeploymentsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。 当前偏移量，默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -78,7 +78,7 @@ public class ListDeploymentsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回部署计划列表当前页面的数量。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -102,7 +102,7 @@ public class ListDeploymentsRequest  {
 
 
     /**
-     * Get status
+     * 查询条件，部署计划状态，现只包含如下值： - open:部署计划处于未执行状态，可执行部署计划进行部署 - closed:部署计划已关闭，不可部署。
      * @return status
      */
     public String getStatus() {
@@ -124,7 +124,7 @@ public class ListDeploymentsRequest  {
 
 
     /**
-     * Get id
+     * 查询条件，部署计划ID。
      * @return id
      */
     public String getId() {
@@ -146,7 +146,7 @@ public class ListDeploymentsRequest  {
 
 
     /**
-     * Get edgecloudId
+     * 查询条件，边缘业务ID。
      * @return edgecloudId
      */
     public String getEdgecloudId() {

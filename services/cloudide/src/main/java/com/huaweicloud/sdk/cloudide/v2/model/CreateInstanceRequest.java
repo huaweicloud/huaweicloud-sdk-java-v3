@@ -39,7 +39,7 @@ public class CreateInstanceRequest  {
 
 
     /**
-     * Get orgId
+     * 组织id（对应华为云帐号的domainId）
      * @return orgId
      */
     public String getOrgId() {

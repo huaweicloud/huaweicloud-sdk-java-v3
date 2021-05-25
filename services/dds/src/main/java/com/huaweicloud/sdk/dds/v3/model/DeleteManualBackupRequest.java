@@ -32,7 +32,7 @@ public class DeleteManualBackupRequest  {
 
 
     /**
-     * Get backupId
+     * 备份文件ID。
      * @return backupId
      */
     public String getBackupId() {

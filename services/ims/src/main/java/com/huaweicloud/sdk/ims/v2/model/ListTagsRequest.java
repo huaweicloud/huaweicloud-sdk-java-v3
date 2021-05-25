@@ -43,7 +43,7 @@ public class ListTagsRequest  {
     
     private Integer page;
     /**
-     * Gets or Sets imagetype
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
      */
     public static final class ImagetypeEnum {
 
@@ -139,7 +139,7 @@ public class ListTagsRequest  {
     
     private String id;
     /**
-     * Gets or Sets status
+     * 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
      */
     public static final class StatusEnum {
 
@@ -259,7 +259,7 @@ public class ListTagsRequest  {
     
     private String platform;
     /**
-     * Gets or Sets osType
+     * 镜像系统类型，取值如下：Linux,Windows,Other
      */
     public static final class OsTypeEnum {
 
@@ -349,7 +349,7 @@ public class ListTagsRequest  {
     
     private OsTypeEnum osType;
     /**
-     * Gets or Sets memberStatus
+     * 成员状态。目前取值有accepted、rejected、pending。
      */
     public static final class MemberStatusEnum {
 
@@ -439,7 +439,7 @@ public class ListTagsRequest  {
     
     private MemberStatusEnum memberStatus;
     /**
-     * Gets or Sets virtualEnvType
+     * 镜像使用环境类型：FusionCompute、Ironic、DataImage。
      */
     public static final class VirtualEnvTypeEnum {
 
@@ -535,7 +535,7 @@ public class ListTagsRequest  {
     
     private String enterpriseProjectId;
     /**
-     * Gets or Sets architecture
+     * 镜像架构类型。取值包括：x86，arm
      */
     public static final class ArchitectureEnum {
 
@@ -640,7 +640,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get limit
+     * 用于分页，表示查询几条记录，取值为整数，默认为所有。
      * @return limit
      */
     public Integer getLimit() {
@@ -662,7 +662,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get page
+     * 页码，表示需要查询第几页的数据。默认值为1。
      * @return page
      */
     public Integer getPage() {
@@ -684,7 +684,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get imagetype
+     * 镜像类型，目前支持以下类型：公共镜像：gold私有镜像：private共享镜像：shared
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -708,7 +708,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get id
+     * 镜像ID。
      * @return id
      */
     public String getId() {
@@ -730,7 +730,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get status
+     * 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -752,7 +752,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get name
+     * 镜像名称。
      * @return name
      */
     public String getName() {
@@ -774,7 +774,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get minDisk
+     * 镜像运行需要的最小磁盘，单位为GB 。
      * @return minDisk
      */
     public Integer getMinDisk() {
@@ -796,7 +796,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get platform
+     * 镜像平台分类。
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -820,7 +820,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get osType
+     * 镜像系统类型，取值如下：Linux,Windows,Other
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -844,7 +844,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get memberStatus
+     * 成员状态。目前取值有accepted、rejected、pending。
      * @return memberStatus
      */
     public MemberStatusEnum getMemberStatus() {
@@ -866,7 +866,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get virtualEnvType
+     * 镜像使用环境类型：FusionCompute、Ironic、DataImage。
      * @return virtualEnvType
      */
     public VirtualEnvTypeEnum getVirtualEnvType() {
@@ -888,7 +888,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 表示查询某个企业项目下的镜像。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -910,7 +910,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get architecture
+     * 镜像架构类型。取值包括：x86，arm
      * @return architecture
      */
     public ArchitectureEnum getArchitecture() {
@@ -932,7 +932,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get createdAt
+     * 镜像创建时间。支持按照时间点过滤查询，取值格式为“操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： created_at=gt:2018-10-28T10:00:00Z
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -954,7 +954,7 @@ public class ListTagsRequest  {
 
 
     /**
-     * Get updatedAt
+     * 镜像修改时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： updated_at=gt:2018-10-28T10:00:00Z
      * @return updatedAt
      */
     public String getUpdatedAt() {

@@ -32,7 +32,7 @@ public class ListApiGroupsQuantitiesV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {

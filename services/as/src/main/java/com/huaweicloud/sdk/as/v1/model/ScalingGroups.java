@@ -9,15 +9,13 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.as.v1.model.LbaasListenersResult;
-import com.huaweicloud.sdk.as.v1.model.Networks;
+import com.huaweicloud.sdk.as.v1.model.NetworksResult;
 import com.huaweicloud.sdk.as.v1.model.SecurityGroupsResult;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -211,7 +209,7 @@ public class ScalingGroups  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="networks")
     
-    private List<Networks> networks = null;
+    private List<NetworksResult> networks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -326,114 +324,12 @@ public class ScalingGroups  {
     @JsonProperty(value="health_periodic_audit_method")
     
     private HealthPeriodicAuditMethodEnum healthPeriodicAuditMethod;
-    /**
-     * 健康检查的间隔时间。
-     */
-    public static final class HealthPeriodicAuditTimeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final HealthPeriodicAuditTimeEnum NUMBER_0 = new HealthPeriodicAuditTimeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final HealthPeriodicAuditTimeEnum NUMBER_1 = new HealthPeriodicAuditTimeEnum(1);
-        
-        /**
-         * Enum NUMBER_5 for value: 5
-         */
-        public static final HealthPeriodicAuditTimeEnum NUMBER_5 = new HealthPeriodicAuditTimeEnum(5);
-        
-        /**
-         * Enum NUMBER_15 for value: 15
-         */
-        public static final HealthPeriodicAuditTimeEnum NUMBER_15 = new HealthPeriodicAuditTimeEnum(15);
-        
-        /**
-         * Enum NUMBER_60 for value: 60
-         */
-        public static final HealthPeriodicAuditTimeEnum NUMBER_60 = new HealthPeriodicAuditTimeEnum(60);
-        
-        /**
-         * Enum NUMBER_180 for value: 180
-         */
-        public static final HealthPeriodicAuditTimeEnum NUMBER_180 = new HealthPeriodicAuditTimeEnum(180);
-        
-
-        private static final Map<Integer, HealthPeriodicAuditTimeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, HealthPeriodicAuditTimeEnum> createStaticFields() {
-            Map<Integer, HealthPeriodicAuditTimeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(5, NUMBER_5);
-            map.put(15, NUMBER_15);
-            map.put(60, NUMBER_60);
-            map.put(180, NUMBER_180);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        HealthPeriodicAuditTimeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static HealthPeriodicAuditTimeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            HealthPeriodicAuditTimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthPeriodicAuditTimeEnum(value);
-            }
-            return result;
-        }
-
-        public static HealthPeriodicAuditTimeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            HealthPeriodicAuditTimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HealthPeriodicAuditTimeEnum) {
-                return this.value.equals(((HealthPeriodicAuditTimeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="health_periodic_audit_time")
     
-    private HealthPeriodicAuditTimeEnum healthPeriodicAuditTime;
+    private Integer healthPeriodicAuditTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -551,6 +447,12 @@ public class ScalingGroups  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="delete_volume")
+    
+    private Boolean deleteVolume;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cloud_location_id")
     
     private String cloudLocationId;
@@ -560,6 +462,18 @@ public class ScalingGroups  {
     @JsonProperty(value="enterprise_project_id")
     
     private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="activity_type")
+    
+    private String activityType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="multi_az_priority_policy")
+    
+    private String multiAzPriorityPolicy;
 
     public ScalingGroups withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
@@ -875,13 +789,13 @@ public class ScalingGroups  {
 
     
 
-    public ScalingGroups withNetworks(List<Networks> networks) {
+    public ScalingGroups withNetworks(List<NetworksResult> networks) {
         this.networks = networks;
         return this;
     }
 
     
-    public ScalingGroups addNetworksItem(Networks networksItem) {
+    public ScalingGroups addNetworksItem(NetworksResult networksItem) {
         if(this.networks == null) {
             this.networks = new ArrayList<>();
         }
@@ -889,7 +803,7 @@ public class ScalingGroups  {
         return this;
     }
 
-    public ScalingGroups withNetworks(Consumer<List<Networks>> networksSetter) {
+    public ScalingGroups withNetworks(Consumer<List<NetworksResult>> networksSetter) {
         if(this.networks == null) {
             this.networks = new ArrayList<>();
         }
@@ -901,11 +815,11 @@ public class ScalingGroups  {
      * 网络信息
      * @return networks
      */
-    public List<Networks> getNetworks() {
+    public List<NetworksResult> getNetworks() {
         return networks;
     }
 
-    public void setNetworks(List<Networks> networks) {
+    public void setNetworks(List<NetworksResult> networks) {
         this.networks = networks;
     }
 
@@ -1057,7 +971,7 @@ public class ScalingGroups  {
 
     
 
-    public ScalingGroups withHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
+    public ScalingGroups withHealthPeriodicAuditTime(Integer healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
         return this;
     }
@@ -1069,11 +983,11 @@ public class ScalingGroups  {
      * 健康检查的间隔时间。
      * @return healthPeriodicAuditTime
      */
-    public HealthPeriodicAuditTimeEnum getHealthPeriodicAuditTime() {
+    public Integer getHealthPeriodicAuditTime() {
         return healthPeriodicAuditTime;
     }
 
-    public void setHealthPeriodicAuditTime(HealthPeriodicAuditTimeEnum healthPeriodicAuditTime) {
+    public void setHealthPeriodicAuditTime(Integer healthPeriodicAuditTime) {
         this.healthPeriodicAuditTime = healthPeriodicAuditTime;
     }
 
@@ -1089,7 +1003,6 @@ public class ScalingGroups  {
 
     /**
      * 健康状况检查宽限期。
-     * minimum: 0
      * maximum: 86400
      * @return healthPeriodicAuditGracePeriod
      */
@@ -1183,6 +1096,28 @@ public class ScalingGroups  {
 
     
 
+    public ScalingGroups withDeleteVolume(Boolean deleteVolume) {
+        this.deleteVolume = deleteVolume;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 删除云服务器是否删除云服务器绑定的数据盘
+     * @return deleteVolume
+     */
+    public Boolean getDeleteVolume() {
+        return deleteVolume;
+    }
+
+    public void setDeleteVolume(Boolean deleteVolume) {
+        this.deleteVolume = deleteVolume;
+    }
+
+    
+
     public ScalingGroups withCloudLocationId(String cloudLocationId) {
         this.cloudLocationId = cloudLocationId;
         return this;
@@ -1227,6 +1162,50 @@ public class ScalingGroups  {
 
     
 
+    public ScalingGroups withActivityType(String activityType) {
+        this.activityType = activityType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩组活动类型
+     * @return activityType
+     */
+    public String getActivityType() {
+        return activityType;
+    }
+
+    public void setActivityType(String activityType) {
+        this.activityType = activityType;
+    }
+
+    
+
+    public ScalingGroups withMultiAzPriorityPolicy(String multiAzPriorityPolicy) {
+        this.multiAzPriorityPolicy = multiAzPriorityPolicy;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩组扩缩容时目标AZ选择的优先级策略
+     * @return multiAzPriorityPolicy
+     */
+    public String getMultiAzPriorityPolicy() {
+        return multiAzPriorityPolicy;
+    }
+
+    public void setMultiAzPriorityPolicy(String multiAzPriorityPolicy) {
+        this.multiAzPriorityPolicy = multiAzPriorityPolicy;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1261,12 +1240,15 @@ public class ScalingGroups  {
             Objects.equals(this.instanceTerminatePolicy, scalingGroups.instanceTerminatePolicy) &&
             Objects.equals(this.notifications, scalingGroups.notifications) &&
             Objects.equals(this.deletePublicip, scalingGroups.deletePublicip) &&
+            Objects.equals(this.deleteVolume, scalingGroups.deleteVolume) &&
             Objects.equals(this.cloudLocationId, scalingGroups.cloudLocationId) &&
-            Objects.equals(this.enterpriseProjectId, scalingGroups.enterpriseProjectId);
+            Objects.equals(this.enterpriseProjectId, scalingGroups.enterpriseProjectId) &&
+            Objects.equals(this.activityType, scalingGroups.activityType) &&
+            Objects.equals(this.multiAzPriorityPolicy, scalingGroups.multiAzPriorityPolicy);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupName, scalingGroupId, scalingGroupStatus, scalingConfigurationId, scalingConfigurationName, currentInstanceNumber, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, lbListenerId, lbaasListeners, availableZones, networks, securityGroups, createTime, vpcId, detail, isScaling, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, notifications, deletePublicip, cloudLocationId, enterpriseProjectId);
+        return Objects.hash(scalingGroupName, scalingGroupId, scalingGroupStatus, scalingConfigurationId, scalingConfigurationName, currentInstanceNumber, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, lbListenerId, lbaasListeners, availableZones, networks, securityGroups, createTime, vpcId, detail, isScaling, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, notifications, deletePublicip, deleteVolume, cloudLocationId, enterpriseProjectId, activityType, multiAzPriorityPolicy);
     }
     @Override
     public String toString() {
@@ -1297,8 +1279,11 @@ public class ScalingGroups  {
         sb.append("    instanceTerminatePolicy: ").append(toIndentedString(instanceTerminatePolicy)).append("\n");
         sb.append("    notifications: ").append(toIndentedString(notifications)).append("\n");
         sb.append("    deletePublicip: ").append(toIndentedString(deletePublicip)).append("\n");
+        sb.append("    deleteVolume: ").append(toIndentedString(deleteVolume)).append("\n");
         sb.append("    cloudLocationId: ").append(toIndentedString(cloudLocationId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    activityType: ").append(toIndentedString(activityType)).append("\n");
+        sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

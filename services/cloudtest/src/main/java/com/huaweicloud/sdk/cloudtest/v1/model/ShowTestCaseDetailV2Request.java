@@ -44,7 +44,7 @@ public class ShowTestCaseDetailV2Request  {
 
 
     /**
-     * Get projectId
+     * 项目唯一标识，固定长度32位字符
      * @return projectId
      */
     public String getProjectId() {
@@ -66,7 +66,7 @@ public class ShowTestCaseDetailV2Request  {
 
 
     /**
-     * Get testcaseNumber
+     * 用例编号，长度为[3-128]位字符
      * @return testcaseNumber
      */
     public String getTestcaseNumber() {
@@ -88,7 +88,7 @@ public class ShowTestCaseDetailV2Request  {
 
 
     /**
-     * Get testcaseId
+     * 测试用例唯一标识，固定长度32位字符
      * @return testcaseId
      */
     public String getTestcaseId() {

@@ -39,7 +39,7 @@ public class UpdatePermanentAccessKeyRequest  {
 
 
     /**
-     * Get accessKey
+     * 待修改的指定AK。
      * @return accessKey
      */
     public String getAccessKey() {

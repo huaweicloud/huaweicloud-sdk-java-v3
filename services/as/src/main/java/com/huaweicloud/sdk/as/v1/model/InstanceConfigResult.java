@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.Disk;
-import com.huaweicloud.sdk.as.v1.model.MetaData;
-import com.huaweicloud.sdk.as.v1.model.Personality;
-import com.huaweicloud.sdk.as.v1.model.PublicIp;
+import com.huaweicloud.sdk.as.v1.model.DiskResult;
+import com.huaweicloud.sdk.as.v1.model.PersonalityResult;
+import com.huaweicloud.sdk.as.v1.model.PublicipResult;
 import com.huaweicloud.sdk.as.v1.model.SecurityGroups;
+import com.huaweicloud.sdk.as.v1.model.VmMetaData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -40,13 +40,19 @@ public class InstanceConfigResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk")
     
-    private List<Disk> disk = null;
+    private List<DiskResult> disk = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_name")
     
     private String keyName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="key_fingerprint")
+    
+    private String keyFingerprint;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -70,13 +76,13 @@ public class InstanceConfigResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="personality")
     
-    private Personality personality;
+    private PersonalityResult personality;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
     
-    private PublicIp publicIp;
+    private PublicipResult publicIp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,7 +94,7 @@ public class InstanceConfigResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata;
+    private VmMetaData metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -113,6 +119,18 @@ public class InstanceConfigResult  {
     @JsonProperty(value="dedicated_host_id")
     
     private String dedicatedHostId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="market_type")
+    
+    private String marketType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="multi_flavor_priority_policy")
+    
+    private String multiFlavorPriorityPolicy;
 
     public InstanceConfigResult withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
@@ -158,13 +176,13 @@ public class InstanceConfigResult  {
 
     
 
-    public InstanceConfigResult withDisk(List<Disk> disk) {
+    public InstanceConfigResult withDisk(List<DiskResult> disk) {
         this.disk = disk;
         return this;
     }
 
     
-    public InstanceConfigResult addDiskItem(Disk diskItem) {
+    public InstanceConfigResult addDiskItem(DiskResult diskItem) {
         if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
@@ -172,7 +190,7 @@ public class InstanceConfigResult  {
         return this;
     }
 
-    public InstanceConfigResult withDisk(Consumer<List<Disk>> diskSetter) {
+    public InstanceConfigResult withDisk(Consumer<List<DiskResult>> diskSetter) {
         if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
@@ -184,11 +202,11 @@ public class InstanceConfigResult  {
      * 磁盘组信息。
      * @return disk
      */
-    public List<Disk> getDisk() {
+    public List<DiskResult> getDisk() {
         return disk;
     }
 
-    public void setDisk(List<Disk> disk) {
+    public void setDisk(List<DiskResult> disk) {
         this.disk = disk;
     }
 
@@ -212,6 +230,28 @@ public class InstanceConfigResult  {
 
     public void setKeyName(String keyName) {
         this.keyName = keyName;
+    }
+
+    
+
+    public InstanceConfigResult withKeyFingerprint(String keyFingerprint) {
+        this.keyFingerprint = keyFingerprint;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 登录云服务器的SSH密钥指纹。
+     * @return keyFingerprint
+     */
+    public String getKeyFingerprint() {
+        return keyFingerprint;
+    }
+
+    public void setKeyFingerprint(String keyFingerprint) {
+        this.keyFingerprint = keyFingerprint;
     }
 
     
@@ -282,14 +322,14 @@ public class InstanceConfigResult  {
 
     
 
-    public InstanceConfigResult withPersonality(Personality personality) {
+    public InstanceConfigResult withPersonality(PersonalityResult personality) {
         this.personality = personality;
         return this;
     }
 
-    public InstanceConfigResult withPersonality(Consumer<Personality> personalitySetter) {
+    public InstanceConfigResult withPersonality(Consumer<PersonalityResult> personalitySetter) {
         if(this.personality == null ){
-            this.personality = new Personality();
+            this.personality = new PersonalityResult();
             personalitySetter.accept(this.personality);
         }
         
@@ -301,24 +341,24 @@ public class InstanceConfigResult  {
      * Get personality
      * @return personality
      */
-    public Personality getPersonality() {
+    public PersonalityResult getPersonality() {
         return personality;
     }
 
-    public void setPersonality(Personality personality) {
+    public void setPersonality(PersonalityResult personality) {
         this.personality = personality;
     }
 
     
 
-    public InstanceConfigResult withPublicIp(PublicIp publicIp) {
+    public InstanceConfigResult withPublicIp(PublicipResult publicIp) {
         this.publicIp = publicIp;
         return this;
     }
 
-    public InstanceConfigResult withPublicIp(Consumer<PublicIp> publicIpSetter) {
+    public InstanceConfigResult withPublicIp(Consumer<PublicipResult> publicIpSetter) {
         if(this.publicIp == null ){
-            this.publicIp = new PublicIp();
+            this.publicIp = new PublicipResult();
             publicIpSetter.accept(this.publicIp);
         }
         
@@ -330,11 +370,11 @@ public class InstanceConfigResult  {
      * Get publicIp
      * @return publicIp
      */
-    public PublicIp getPublicIp() {
+    public PublicipResult getPublicIp() {
         return publicIp;
     }
 
-    public void setPublicIp(PublicIp publicIp) {
+    public void setPublicIp(PublicipResult publicIp) {
         this.publicIp = publicIp;
     }
 
@@ -362,14 +402,14 @@ public class InstanceConfigResult  {
 
     
 
-    public InstanceConfigResult withMetadata(MetaData metadata) {
+    public InstanceConfigResult withMetadata(VmMetaData metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public InstanceConfigResult withMetadata(Consumer<MetaData> metadataSetter) {
+    public InstanceConfigResult withMetadata(Consumer<VmMetaData> metadataSetter) {
         if(this.metadata == null ){
-            this.metadata = new MetaData();
+            this.metadata = new VmMetaData();
             metadataSetter.accept(this.metadata);
         }
         
@@ -381,11 +421,11 @@ public class InstanceConfigResult  {
      * Get metadata
      * @return metadata
      */
-    public MetaData getMetadata() {
+    public VmMetaData getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(MetaData metadata) {
+    public void setMetadata(VmMetaData metadata) {
         this.metadata = metadata;
     }
 
@@ -493,6 +533,50 @@ public class InstanceConfigResult  {
 
     
 
+    public InstanceConfigResult withMarketType(String marketType) {
+        this.marketType = marketType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 云服务器的计费模式，可以选择竞价计费或按需计费。
+     * @return marketType
+     */
+    public String getMarketType() {
+        return marketType;
+    }
+
+    public void setMarketType(String marketType) {
+        this.marketType = marketType;
+    }
+
+    
+
+    public InstanceConfigResult withMultiFlavorPriorityPolicy(String multiFlavorPriorityPolicy) {
+        this.multiFlavorPriorityPolicy = multiFlavorPriorityPolicy;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用伸缩配置创建云主机的时候，多规格使用的优先级策略。
+     * @return multiFlavorPriorityPolicy
+     */
+    public String getMultiFlavorPriorityPolicy() {
+        return multiFlavorPriorityPolicy;
+    }
+
+    public void setMultiFlavorPriorityPolicy(String multiFlavorPriorityPolicy) {
+        this.multiFlavorPriorityPolicy = multiFlavorPriorityPolicy;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -506,6 +590,7 @@ public class InstanceConfigResult  {
             Objects.equals(this.imageRef, instanceConfigResult.imageRef) &&
             Objects.equals(this.disk, instanceConfigResult.disk) &&
             Objects.equals(this.keyName, instanceConfigResult.keyName) &&
+            Objects.equals(this.keyFingerprint, instanceConfigResult.keyFingerprint) &&
             Objects.equals(this.instanceName, instanceConfigResult.instanceName) &&
             Objects.equals(this.instanceId, instanceConfigResult.instanceId) &&
             Objects.equals(this.adminPass, instanceConfigResult.adminPass) &&
@@ -516,11 +601,13 @@ public class InstanceConfigResult  {
             Objects.equals(this.securityGroups, instanceConfigResult.securityGroups) &&
             Objects.equals(this.serverGroupId, instanceConfigResult.serverGroupId) &&
             Objects.equals(this.tenancy, instanceConfigResult.tenancy) &&
-            Objects.equals(this.dedicatedHostId, instanceConfigResult.dedicatedHostId);
+            Objects.equals(this.dedicatedHostId, instanceConfigResult.dedicatedHostId) &&
+            Objects.equals(this.marketType, instanceConfigResult.marketType) &&
+            Objects.equals(this.multiFlavorPriorityPolicy, instanceConfigResult.multiFlavorPriorityPolicy);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, imageRef, disk, keyName, instanceName, instanceId, adminPass, personality, publicIp, userData, metadata, securityGroups, serverGroupId, tenancy, dedicatedHostId);
+        return Objects.hash(flavorRef, imageRef, disk, keyName, keyFingerprint, instanceName, instanceId, adminPass, personality, publicIp, userData, metadata, securityGroups, serverGroupId, tenancy, dedicatedHostId, marketType, multiFlavorPriorityPolicy);
     }
     @Override
     public String toString() {
@@ -530,6 +617,7 @@ public class InstanceConfigResult  {
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
         sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    keyFingerprint: ").append(toIndentedString(keyFingerprint)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");
@@ -541,6 +629,8 @@ public class InstanceConfigResult  {
         sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
         sb.append("    tenancy: ").append(toIndentedString(tenancy)).append("\n");
         sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
+        sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
+        sb.append("    multiFlavorPriorityPolicy: ").append(toIndentedString(multiFlavorPriorityPolicy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

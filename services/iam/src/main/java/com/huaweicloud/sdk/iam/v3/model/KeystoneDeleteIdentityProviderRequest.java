@@ -32,7 +32,7 @@ public class KeystoneDeleteIdentityProviderRequest  {
 
 
     /**
-     * Get id
+     * 待删除的身份提供商ID。
      * @return id
      */
     public String getId() {

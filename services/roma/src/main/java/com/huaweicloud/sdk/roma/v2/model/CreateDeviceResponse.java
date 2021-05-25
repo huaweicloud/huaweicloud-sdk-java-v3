@@ -325,6 +325,18 @@ public class CreateDeviceResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ipv6_connect_address")
+    
+    private String ipv6ConnectAddress;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ipv6_ssl_connect_address")
+    
+    private String ipv6SslConnectAddress;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_login_datetime")
     
     private Long lastLoginDatetime;
@@ -1067,6 +1079,50 @@ public class CreateDeviceResponse extends SdkResponse {
 
     
 
+    public CreateDeviceResponse withIpv6ConnectAddress(String ipv6ConnectAddress) {
+        this.ipv6ConnectAddress = ipv6ConnectAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备接入IPV6地址
+     * @return ipv6ConnectAddress
+     */
+    public String getIpv6ConnectAddress() {
+        return ipv6ConnectAddress;
+    }
+
+    public void setIpv6ConnectAddress(String ipv6ConnectAddress) {
+        this.ipv6ConnectAddress = ipv6ConnectAddress;
+    }
+
+    
+
+    public CreateDeviceResponse withIpv6SslConnectAddress(String ipv6SslConnectAddress) {
+        this.ipv6SslConnectAddress = ipv6SslConnectAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备接入IPV6 SSL地址
+     * @return ipv6SslConnectAddress
+     */
+    public String getIpv6SslConnectAddress() {
+        return ipv6SslConnectAddress;
+    }
+
+    public void setIpv6SslConnectAddress(String ipv6SslConnectAddress) {
+        this.ipv6SslConnectAddress = ipv6SslConnectAddress;
+    }
+
+    
+
     public CreateDeviceResponse withLastLoginDatetime(Long lastLoginDatetime) {
         this.lastLoginDatetime = lastLoginDatetime;
         return this;
@@ -1299,6 +1355,8 @@ public class CreateDeviceResponse extends SdkResponse {
             Objects.equals(this.lastUpdatedDatetime, createDeviceResponse.lastUpdatedDatetime) &&
             Objects.equals(this.connectAddress, createDeviceResponse.connectAddress) &&
             Objects.equals(this.sslConnectAddress, createDeviceResponse.sslConnectAddress) &&
+            Objects.equals(this.ipv6ConnectAddress, createDeviceResponse.ipv6ConnectAddress) &&
+            Objects.equals(this.ipv6SslConnectAddress, createDeviceResponse.ipv6SslConnectAddress) &&
             Objects.equals(this.lastLoginDatetime, createDeviceResponse.lastLoginDatetime) &&
             Objects.equals(this.nodeType, createDeviceResponse.nodeType) &&
             Objects.equals(this.deviceType, createDeviceResponse.deviceType) &&
@@ -1311,7 +1369,7 @@ public class CreateDeviceResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(permissions, id, parentDeviceId, parentDeviceName, product, deviceName, instanceId, clientId, nodeId, appName, status, onlineStatus, description, authentication, createdUser, lastUpdatedUser, tags, createdDatetime, lastUpdatedDatetime, connectAddress, sslConnectAddress, lastLoginDatetime, nodeType, deviceType, clientIp, keepAlive, lastActiveTime, version, pluginId, appId);
+        return Objects.hash(permissions, id, parentDeviceId, parentDeviceName, product, deviceName, instanceId, clientId, nodeId, appName, status, onlineStatus, description, authentication, createdUser, lastUpdatedUser, tags, createdDatetime, lastUpdatedDatetime, connectAddress, sslConnectAddress, ipv6ConnectAddress, ipv6SslConnectAddress, lastLoginDatetime, nodeType, deviceType, clientIp, keepAlive, lastActiveTime, version, pluginId, appId);
     }
     @Override
     public String toString() {
@@ -1338,6 +1396,8 @@ public class CreateDeviceResponse extends SdkResponse {
         sb.append("    lastUpdatedDatetime: ").append(toIndentedString(lastUpdatedDatetime)).append("\n");
         sb.append("    connectAddress: ").append(toIndentedString(connectAddress)).append("\n");
         sb.append("    sslConnectAddress: ").append(toIndentedString(sslConnectAddress)).append("\n");
+        sb.append("    ipv6ConnectAddress: ").append(toIndentedString(ipv6ConnectAddress)).append("\n");
+        sb.append("    ipv6SslConnectAddress: ").append(toIndentedString(ipv6SslConnectAddress)).append("\n");
         sb.append("    lastLoginDatetime: ").append(toIndentedString(lastLoginDatetime)).append("\n");
         sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");

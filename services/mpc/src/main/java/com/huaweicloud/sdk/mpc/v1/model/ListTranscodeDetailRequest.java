@@ -48,7 +48,7 @@ public class ListTranscodeDetailRequest  {
     }
 
     /**
-     * Get taskId
+     * 转码服务接受任务后产生的任务ID。一次最多10个 
      * @return taskId
      */
     public List<String> getTaskId() {

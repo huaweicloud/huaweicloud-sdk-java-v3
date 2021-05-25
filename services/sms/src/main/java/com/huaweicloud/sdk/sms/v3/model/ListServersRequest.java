@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListServersRequest  {
 
     /**
-     * Gets or Sets state
+     * 源端服务器状态
      */
     public static final class StateEnum {
 
@@ -228,7 +228,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get state
+     * 源端服务器状态
      * @return state
      */
     public StateEnum getState() {
@@ -250,7 +250,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get name
+     * 源端服务器名称
      * @return name
      */
     public String getName() {
@@ -272,7 +272,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get id
+     * 源端服务器ID
      * @return id
      */
     public String getId() {
@@ -294,7 +294,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get ip
+     * 源端服务器IP地址
      * @return ip
      */
     public String getIp() {
@@ -316,7 +316,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get migproject
+     * 迁移项目id，填写该参数将查询迁移项目下的所有虚拟机
      * @return migproject
      */
     public String getMigproject() {
@@ -338,7 +338,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get limit
+     * 每一页记录的源端服务器数量，0表示用默认值 200
      * minimum: 0
      * maximum: 200
      * @return limit
@@ -362,7 +362,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，默认值0
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -386,7 +386,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get migrationCycle
+     * 根据迁移周期查询
      * @return migrationCycle
      */
     public String getMigrationCycle() {
@@ -408,7 +408,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get connected
+     * 查询失去连接的源端
      * @return connected
      */
     public Boolean getConnected() {
@@ -430,7 +430,7 @@ public class ListServersRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 需要查询的企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

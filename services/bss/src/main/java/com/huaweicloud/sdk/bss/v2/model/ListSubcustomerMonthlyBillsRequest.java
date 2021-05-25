@@ -74,7 +74,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get customerId
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -96,7 +96,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get cycle
+     * 消费时间。 格式固定为YYYY-MM。 示例：2018-08
      * @return cycle
      */
     public String getCycle() {
@@ -118,7 +118,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get cloudServiceType
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -140,7 +140,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get chargeMode
+     * 计费模式。 1：包年/包月3：按需
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -162,7 +162,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -186,7 +186,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get limit
+     * 每页个数。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -210,7 +210,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get billType
+     * 账单类型。 0：消费1：退订2：华为核销
      * @return billType
      */
     public String getBillType() {
@@ -232,7 +232,7 @@ public class ListSubcustomerMonthlyBillsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

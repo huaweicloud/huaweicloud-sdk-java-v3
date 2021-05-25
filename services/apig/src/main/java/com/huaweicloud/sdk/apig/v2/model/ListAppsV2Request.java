@@ -80,7 +80,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -102,7 +102,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get id
+     * APP编号
      * @return id
      */
     public String getId() {
@@ -124,7 +124,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get name
+     * APP名称
      * @return name
      */
     public String getName() {
@@ -146,7 +146,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get status
+     * APP状态
      * @return status
      */
     public Integer getStatus() {
@@ -168,7 +168,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get appKey
+     * APP的KEY
      * @return appKey
      */
     public String getAppKey() {
@@ -190,7 +190,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get creator
+     * APP的创建者。 - USER：用户自行创建 - MARKET：云市场分配
      * @return creator
      */
     public String getCreator() {
@@ -212,7 +212,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -234,7 +234,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -258,7 +258,7 @@ public class ListAppsV2Request  {
 
 
     /**
-     * Get preciseSearch
+     * 指定需要精确匹配查找的参数名称，目前仅支持name
      * @return preciseSearch
      */
     public String getPreciseSearch() {

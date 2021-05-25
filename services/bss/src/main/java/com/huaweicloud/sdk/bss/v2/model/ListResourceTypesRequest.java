@@ -38,7 +38,7 @@ public class ListResourceTypesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。zh_CN：中文en_US：英文缺省为zh_CN。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ListResourceTypesRequest  {
 
 
     /**
-     * Get resourceTypeCode
+     * 资源类型编码。例如ECS的VM为“hws.resource.type.vm”。
      * @return resourceTypeCode
      */
     public String getResourceTypeCode() {

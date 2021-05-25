@@ -47,7 +47,7 @@ public class ListBackupsRequest  {
     
     private String endTime;
     /**
-     * Gets or Sets imageType
+     * 备份类型
      */
     public static final class ImageTypeEnum {
 
@@ -173,7 +173,7 @@ public class ListBackupsRequest  {
     
     private String resourceName;
     /**
-     * Gets or Sets resourceType
+     * 资源类型
      */
     public static final class ResourceTypeEnum {
 
@@ -269,7 +269,7 @@ public class ListBackupsRequest  {
     
     private String startTime;
     /**
-     * Gets or Sets status
+     * 状态
      */
     public static final class StatusEnum {
 
@@ -401,7 +401,7 @@ public class ListBackupsRequest  {
     
     private String enterpriseProjectId;
     /**
-     * Gets or Sets ownType
+     * 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
      */
     public static final class OwnTypeEnum {
 
@@ -491,7 +491,7 @@ public class ListBackupsRequest  {
     
     private OwnTypeEnum ownType;
     /**
-     * Gets or Sets memberStatus
+     * 共享状态
      */
     public static final class MemberStatusEnum {
 
@@ -602,7 +602,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get checkpointId
+     * 还原点ID
      * @return checkpointId
      */
     public String getCheckpointId() {
@@ -624,7 +624,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get dec
+     * 专属云
      * @return dec
      */
     public Boolean getDec() {
@@ -646,7 +646,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get endTime
+     * 备份产生时间范围的结束时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
      * @return endTime
      */
     public String getEndTime() {
@@ -668,7 +668,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get imageType
+     * 备份类型
      * @return imageType
      */
     public ImageTypeEnum getImageType() {
@@ -690,7 +690,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量，正整数
      * @return limit
      */
     public Integer getLimit() {
@@ -712,7 +712,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get marker
+     * 上一次查询最后一条的id
      * @return marker
      */
     public String getMarker() {
@@ -734,7 +734,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get name
+     * 名称
      * @return name
      */
     public String getName() {
@@ -756,7 +756,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移值，正整数
      * @return offset
      */
     public Integer getOffset() {
@@ -778,7 +778,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get resourceAz
+     * 支持按az来过滤
      * @return resourceAz
      */
     public String getResourceAz() {
@@ -800,7 +800,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -822,7 +822,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get resourceName
+     * 资源名称
      * @return resourceName
      */
     public String getResourceName() {
@@ -844,7 +844,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get resourceType
+     * 资源类型
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -866,7 +866,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get sort
+     * sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。key取值范围:[created_at，updated_at，name，status，protected_at，id]
      * @return sort
      */
     public String getSort() {
@@ -888,7 +888,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get startTime
+     * 备份产生时间范围的开始时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
      * @return startTime
      */
     public String getStartTime() {
@@ -910,7 +910,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get status
+     * 状态
      * @return status
      */
     public StatusEnum getStatus() {
@@ -932,7 +932,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get vaultId
+     * 存储库ID
      * @return vaultId
      */
     public String getVaultId() {
@@ -954,7 +954,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -976,7 +976,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get ownType
+     * 持有类型，私有的private/共享的shared/全部all_granted，默认只查询private。
      * @return ownType
      */
     public OwnTypeEnum getOwnType() {
@@ -998,7 +998,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get memberStatus
+     * 共享状态
      * @return memberStatus
      */
     public MemberStatusEnum getMemberStatus() {
@@ -1020,7 +1020,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get parentId
+     * 父备份ID
      * @return parentId
      */
     public String getParentId() {
@@ -1042,7 +1042,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get usedPercent
+     * 根据存储库使用率过滤备份，取值范围 [1, 100]，含1和100。例如，used_percent=80，表示筛选所属存储库使用率大于等于80%的所有备份。
      * @return usedPercent
      */
     public String getUsedPercent() {

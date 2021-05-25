@@ -27,7 +27,7 @@ public class ListFlavorsRequest  {
     
     private String region;
     /**
-     * Gets or Sets engineName
+     * 数据库版本类型。取值为“DDS-Community”。
      */
     public static final class EngineNameEnum {
 
@@ -120,7 +120,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get region
+     * 实例所在区域。
      * @return region
      */
     public String getRegion() {
@@ -142,7 +142,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get engineName
+     * 数据库版本类型。取值为“DDS-Community”。
      * @return engineName
      */
     public EngineNameEnum getEngineName() {

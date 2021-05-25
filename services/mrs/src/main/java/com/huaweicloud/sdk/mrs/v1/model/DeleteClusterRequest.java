@@ -32,7 +32,7 @@ public class DeleteClusterRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群ID。获取方法，请参见[获取集群ID](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html#mrs_02_9001__section177891315153619)。
      * @return clusterId
      */
     public String getClusterId() {

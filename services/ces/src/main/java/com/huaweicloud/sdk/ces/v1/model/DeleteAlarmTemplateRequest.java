@@ -32,7 +32,7 @@ public class DeleteAlarmTemplateRequest  {
 
 
     /**
-     * Get templateId
+     * 需要删除的自定义告警模板ID。
      * @return templateId
      */
     public String getTemplateId() {

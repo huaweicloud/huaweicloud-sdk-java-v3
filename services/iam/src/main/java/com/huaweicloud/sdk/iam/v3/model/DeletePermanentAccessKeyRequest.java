@@ -32,7 +32,7 @@ public class DeletePermanentAccessKeyRequest  {
 
 
     /**
-     * Get accessKey
+     * 待删除的指定AK。
      * @return accessKey
      */
     public String getAccessKey() {

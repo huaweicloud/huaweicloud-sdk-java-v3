@@ -27,7 +27,7 @@ public class ShowProtectableRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets protectableType
+     * 可保护性类型
      */
     public static final class ProtectableTypeEnum {
 
@@ -120,7 +120,7 @@ public class ShowProtectableRequest  {
 
 
     /**
-     * Get instanceId
+     * 资源ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -142,7 +142,7 @@ public class ShowProtectableRequest  {
 
 
     /**
-     * Get protectableType
+     * 可保护性类型
      * @return protectableType
      */
     public ProtectableTypeEnum getProtectableType() {

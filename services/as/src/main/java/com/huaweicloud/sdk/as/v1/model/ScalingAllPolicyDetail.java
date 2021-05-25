@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.MeteData;
 import com.huaweicloud.sdk.as.v1.model.ScalingPolicyActionV2;
+import com.huaweicloud.sdk.as.v1.model.ScalingPolicyV2MetaData;
 import com.huaweicloud.sdk.as.v1.model.ScheduledPolicy;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
@@ -345,7 +345,7 @@ public class ScalingAllPolicyDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="meta_data")
     
-    private MeteData metaData;
+    private ScalingPolicyV2MetaData metaData;
 
     public ScalingAllPolicyDetail withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
@@ -603,14 +603,14 @@ public class ScalingAllPolicyDetail  {
 
     
 
-    public ScalingAllPolicyDetail withMetaData(MeteData metaData) {
+    public ScalingAllPolicyDetail withMetaData(ScalingPolicyV2MetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ScalingAllPolicyDetail withMetaData(Consumer<MeteData> metaDataSetter) {
+    public ScalingAllPolicyDetail withMetaData(Consumer<ScalingPolicyV2MetaData> metaDataSetter) {
         if(this.metaData == null ){
-            this.metaData = new MeteData();
+            this.metaData = new ScalingPolicyV2MetaData();
             metaDataSetter.accept(this.metaData);
         }
         
@@ -622,11 +622,11 @@ public class ScalingAllPolicyDetail  {
      * Get metaData
      * @return metaData
      */
-    public MeteData getMetaData() {
+    public ScalingPolicyV2MetaData getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MeteData metaData) {
+    public void setMetaData(ScalingPolicyV2MetaData metaData) {
         this.metaData = metaData;
     }
 

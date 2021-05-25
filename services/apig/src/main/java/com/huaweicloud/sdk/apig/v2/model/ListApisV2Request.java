@@ -104,7 +104,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -126,7 +126,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get id
+     * API编号
      * @return id
      */
     public String getId() {
@@ -148,7 +148,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get name
+     * API名称
      * @return name
      */
     public String getName() {
@@ -170,7 +170,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get groupId
+     * API分组编号
      * @return groupId
      */
     public String getGroupId() {
@@ -192,7 +192,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get reqProtocol
+     * 请求协议
      * @return reqProtocol
      */
     public String getReqProtocol() {
@@ -214,7 +214,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get reqMethod
+     * 请求方法
      * @return reqMethod
      */
     public String getReqMethod() {
@@ -236,7 +236,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get reqUri
+     * 请求路径
      * @return reqUri
      */
     public String getReqUri() {
@@ -258,7 +258,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get authType
+     * 授权类型
      * @return authType
      */
     public String getAuthType() {
@@ -280,7 +280,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get envId
+     * 发布的环境编号
      * @return envId
      */
     public String getEnvId() {
@@ -302,7 +302,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get type
+     * API类型
      * @return type
      */
     public Integer getType() {
@@ -324,7 +324,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -346,7 +346,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -370,7 +370,7 @@ public class ListApisV2Request  {
 
 
     /**
-     * Get preciseSearch
+     * 指定需要精确匹配查找的参数名称，目前仅支持name、req_uri
      * @return preciseSearch
      */
     public String getPreciseSearch() {

@@ -38,7 +38,7 @@ public class DeleteApplicationConfigurationRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -60,7 +60,7 @@ public class DeleteApplicationConfigurationRequest  {
 
 
     /**
-     * Get environmentId
+     * 环境ID。
      * @return environmentId
      */
     public String getEnvironmentId() {

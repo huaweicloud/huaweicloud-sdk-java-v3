@@ -29,7 +29,7 @@ public class ListStatisticsApiRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets mode
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主账号权限 * APP：指定集成应用 * API: 指定API * INSTANCE：实例，默认值
      */
     public static final class ModeEnum {
 
@@ -137,7 +137,7 @@ public class ListStatisticsApiRequest  {
     
     private String apiId;
     /**
-     * Gets or Sets cycle
+     * 查询统计周期 * minute：分钟 * hour：小时 * day：天
      */
     public static final class CycleEnum {
 
@@ -254,7 +254,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -276,7 +276,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get mode
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主账号权限 * APP：指定集成应用 * API: 指定API * INSTANCE：实例，默认值
      * @return mode
      */
     public ModeEnum getMode() {
@@ -298,7 +298,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get romaAppId
+     * 集成应用编号，查询模式为APP时必填
      * @return romaAppId
      */
     public String getRomaAppId() {
@@ -320,7 +320,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get apiId
+     * API编号，查询模式为API时必填
      * @return apiId
      */
     public String getApiId() {
@@ -342,7 +342,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get cycle
+     * 查询统计周期 * minute：分钟 * hour：小时 * day：天
      * @return cycle
      */
     public CycleEnum getCycle() {
@@ -364,7 +364,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get startTime
+     * 开始时间，格式：2020-06-18 10:00:01
      * @return startTime
      */
     public String getStartTime() {
@@ -386,7 +386,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间，格式：2020-06-18 23:00:00
      * @return endTime
      */
     public String getEndTime() {
@@ -408,7 +408,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * Get duration
+     * 统计时长格式：整数+单位（m、h），m：分钟，h：小时，可支持小时与分钟的组合。例如：1h或2h45m * 同时给定start_time和end_time优先查询[start_time, end_time] * start_time不存在，end_time和duration存在且合法，则查询区间为[end_time - duration, end_time] * start_time和end_time不存在，duration存在且合法，令end_time=now，则查询区间为[end_time - duration, end_time]
      * @return duration
      */
     public String getDuration() {

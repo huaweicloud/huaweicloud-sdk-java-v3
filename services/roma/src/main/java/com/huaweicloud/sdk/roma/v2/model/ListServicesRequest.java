@@ -86,7 +86,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -108,7 +108,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -132,7 +132,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * minimum: 1
      * maximum: 999999999999999999
      * @return serviceId
@@ -156,7 +156,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get serviceName
+     * 服务名称
      * @return serviceName
      */
     public String getServiceName() {
@@ -178,7 +178,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get productTemplateId
+     * 归属产品模板ID，product_template_id和product_id二选一
      * minimum: 1
      * maximum: 999999999999999999
      * @return productTemplateId
@@ -202,7 +202,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get productId
+     * 归属产品ID，product_template_id和product_id二选一
      * minimum: 1
      * maximum: 999999999999999999
      * @return productId
@@ -226,7 +226,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get createdUserName
+     * 创建用户名
      * @return createdUserName
      */
     public String getCreatedUserName() {
@@ -248,7 +248,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get createdDateStart
+     * 创建时间起始，格式timestamp(ms)，使用UTC时区
      * minimum: 1
      * maximum: 999999999999999999
      * @return createdDateStart
@@ -272,7 +272,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get createdDateEnd
+     * 创建时间截止，格式timestamp(ms)。使用UTC时区
      * minimum: 1
      * maximum: 999999999999999999
      * @return createdDateEnd
@@ -296,7 +296,7 @@ public class ListServicesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

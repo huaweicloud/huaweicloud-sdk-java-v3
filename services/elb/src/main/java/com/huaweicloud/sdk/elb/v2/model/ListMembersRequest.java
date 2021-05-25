@@ -92,7 +92,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get poolId
+     * 后端云服务器组id
      * @return poolId
      */
     public String getPoolId() {
@@ -114,7 +114,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询中每页的监听器个数
      * minimum: 0
      * maximum: 9223372036854775807
      * @return limit
@@ -138,7 +138,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -160,7 +160,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -182,7 +182,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get id
+     * 后端云服务器的ID。
      * @return id
      */
     public String getId() {
@@ -204,7 +204,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get name
+     * 后端云服务器的名称。
      * @return name
      */
     public String getName() {
@@ -226,7 +226,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get address
+     * 后端云服务器对应的IP地址。
      * @return address
      */
     public String getAddress() {
@@ -248,7 +248,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get protocolPort
+     * 后端云服务器后端端口的协议号。
      * @return protocolPort
      */
     public Integer getProtocolPort() {
@@ -270,7 +270,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get subnetId
+     * 后端云服务器所在的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -292,7 +292,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 后端云服务器的管理状态。取值范围：true/false。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -314,7 +314,7 @@ public class ListMembersRequest  {
 
 
     /**
-     * Get weight
+     * 后端云服务器的权重。
      * @return weight
      */
     public Integer getWeight() {

@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespDimensions;
+import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespGroups;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespInstanceIds;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespNodes;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespQueues;
@@ -53,7 +54,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="groups")
     
-    private List<String> groups = null;
+    private List<ShowCeshierarchyRespGroups> groups = null;
     
     public ShowCesHierarchyResponse withDimensions(List<ShowCeshierarchyRespDimensions> dimensions) {
         this.dimensions = dimensions;
@@ -199,13 +200,13 @@ public class ShowCesHierarchyResponse extends SdkResponse {
 
     
 
-    public ShowCesHierarchyResponse withGroups(List<String> groups) {
+    public ShowCesHierarchyResponse withGroups(List<ShowCeshierarchyRespGroups> groups) {
         this.groups = groups;
         return this;
     }
 
     
-    public ShowCesHierarchyResponse addGroupsItem(String groupsItem) {
+    public ShowCesHierarchyResponse addGroupsItem(ShowCeshierarchyRespGroups groupsItem) {
         if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -213,7 +214,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    public ShowCesHierarchyResponse withGroups(Consumer<List<String>> groupsSetter) {
+    public ShowCesHierarchyResponse withGroups(Consumer<List<ShowCeshierarchyRespGroups>> groupsSetter) {
         if(this.groups == null) {
             this.groups = new ArrayList<>();
         }
@@ -225,11 +226,11 @@ public class ShowCesHierarchyResponse extends SdkResponse {
      * 消费组信息。
      * @return groups
      */
-    public List<String> getGroups() {
+    public List<ShowCeshierarchyRespGroups> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<String> groups) {
+    public void setGroups(List<ShowCeshierarchyRespGroups> groups) {
         this.groups = groups;
     }
 

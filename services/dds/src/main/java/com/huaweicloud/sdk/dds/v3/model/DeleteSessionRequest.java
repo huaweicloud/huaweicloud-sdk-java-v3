@@ -39,7 +39,7 @@ public class DeleteSessionRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID。允许查询的节点如下： 集群下面的 mongos节点以及 副本集、单节点实例下面的所有节点。
      * @return nodeId
      */
     public String getNodeId() {

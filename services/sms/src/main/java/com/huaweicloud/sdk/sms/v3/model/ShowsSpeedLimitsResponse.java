@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.SpeedLimit;
+import com.huaweicloud.sdk.sms.v3.model.SpeedLimitlJson;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -24,42 +24,42 @@ public class ShowsSpeedLimitsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
+    @JsonProperty(value="speed_limit")
     
-    private List<SpeedLimit> body = null;
+    private List<SpeedLimitlJson> speedLimit = null;
     
-    public ShowsSpeedLimitsResponse withBody(List<SpeedLimit> body) {
-        this.body = body;
+    public ShowsSpeedLimitsResponse withSpeedLimit(List<SpeedLimitlJson> speedLimit) {
+        this.speedLimit = speedLimit;
         return this;
     }
 
     
-    public ShowsSpeedLimitsResponse addBodyItem(SpeedLimit bodyItem) {
-        if(this.body == null) {
-            this.body = new ArrayList<>();
+    public ShowsSpeedLimitsResponse addSpeedLimitItem(SpeedLimitlJson speedLimitItem) {
+        if(this.speedLimit == null) {
+            this.speedLimit = new ArrayList<>();
         }
-        this.body.add(bodyItem);
+        this.speedLimit.add(speedLimitItem);
         return this;
     }
 
-    public ShowsSpeedLimitsResponse withBody(Consumer<List<SpeedLimit>> bodySetter) {
-        if(this.body == null) {
-            this.body = new ArrayList<>();
+    public ShowsSpeedLimitsResponse withSpeedLimit(Consumer<List<SpeedLimitlJson>> speedLimitSetter) {
+        if(this.speedLimit == null) {
+            this.speedLimit = new ArrayList<>();
         }
-        bodySetter.accept(this.body);
+        speedLimitSetter.accept(this.speedLimit);
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 按时间段限速信息
+     * @return speedLimit
      */
-    public List<SpeedLimit> getBody() {
-        return body;
+    public List<SpeedLimitlJson> getSpeedLimit() {
+        return speedLimit;
     }
 
-    public void setBody(List<SpeedLimit> body) {
-        this.body = body;
+    public void setSpeedLimit(List<SpeedLimitlJson> speedLimit) {
+        this.speedLimit = speedLimit;
     }
 
     
@@ -73,17 +73,17 @@ public class ShowsSpeedLimitsResponse extends SdkResponse {
             return false;
         }
         ShowsSpeedLimitsResponse showsSpeedLimitsResponse = (ShowsSpeedLimitsResponse) o;
-        return Objects.equals(this.body, showsSpeedLimitsResponse.body);
+        return Objects.equals(this.speedLimit, showsSpeedLimitsResponse.speedLimit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(speedLimit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowsSpeedLimitsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

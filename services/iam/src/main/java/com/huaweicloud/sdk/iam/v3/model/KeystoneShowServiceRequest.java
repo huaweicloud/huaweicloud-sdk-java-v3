@@ -32,7 +32,7 @@ public class KeystoneShowServiceRequest  {
 
 
     /**
-     * Get serviceId
+     * 待查询的服务ID。
      * @return serviceId
      */
     public String getServiceId() {

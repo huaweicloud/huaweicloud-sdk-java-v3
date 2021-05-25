@@ -283,7 +283,7 @@ public class DrsClient {
 
     /**
      * 批量续传/重试
-     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。批量续传/重试任务
+     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。
      *
      * @param BatchRestoreTaskRequest 请求对象
      * @return BatchRestoreTaskResponse
@@ -294,7 +294,7 @@ public class DrsClient {
 
     /**
      * 批量续传/重试
-     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。批量续传/重试任务
+     * 在迁移过程中由于不确定因素导致迁移任务失败，可通过重试功能，重新提交迁移任务。
      *
      * @param BatchRestoreTaskRequest 请求对象
      * @return SyncInvoker<BatchRestoreTaskRequest, BatchRestoreTaskResponse>
@@ -653,6 +653,28 @@ public class DrsClient {
      */
     public SyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse> showMonitoringDataInvoker(ShowMonitoringDataRequest request) {
         return new SyncInvoker<ShowMonitoringDataRequest, ShowMonitoringDataResponse>(request, DrsMeta.showMonitoringData, hcClient);
+    }
+
+    /**
+     * 查询配额
+     * 查询单租户在DRS服务下的配额信息。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return ShowQuotasResponse
+     */
+    public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     * 查询单租户在DRS服务下的配额信息。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
+        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DrsMeta.showQuotas, hcClient);
     }
 
     /**

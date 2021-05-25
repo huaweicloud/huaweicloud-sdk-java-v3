@@ -32,7 +32,7 @@ public class DeleteSharedBandwidthRequest  {
 
 
     /**
-     * Get bandwidthId
+     * 带宽唯一标识  约束： 当前仅支持删除共享带宽
      * @return bandwidthId
      */
     public String getBandwidthId() {

@@ -39,7 +39,7 @@ public class ListVpcRoutesRequest  {
     
     private String id;
     /**
-     * Gets or Sets type
+     * 功能说明：按照路由类型过滤查询  取值范围：peering
      */
     public static final class TypeEnum {
 
@@ -144,7 +144,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -166,7 +166,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -188,7 +188,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get id
+     * 按照routes_id过滤查询
      * @return id
      */
     public String getId() {
@@ -210,7 +210,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get type
+     * 功能说明：按照路由类型过滤查询  取值范围：peering
      * @return type
      */
     public TypeEnum getType() {
@@ -232,7 +232,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get vpcId
+     * 按照vpc_id过滤查询
      * @return vpcId
      */
     public String getVpcId() {
@@ -254,7 +254,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get destination
+     * 按照路由目的地址CIDR过滤查询
      * @return destination
      */
     public String getDestination() {
@@ -276,7 +276,7 @@ public class ListVpcRoutesRequest  {
 
 
     /**
-     * Get tenantId
+     * 按照项目ID过滤查询
      * @return tenantId
      */
     public String getTenantId() {

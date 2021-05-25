@@ -62,7 +62,7 @@ public class ListDictionaryRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ListDictionaryRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，大于等于0
      * @return offset
      */
     public String getOffset() {
@@ -106,7 +106,7 @@ public class ListDictionaryRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * @return limit
      */
     public String getLimit() {
@@ -128,7 +128,7 @@ public class ListDictionaryRequest  {
 
 
     /**
-     * Get parentCode
+     * 指定父字典编码，返回子字典列表信息，未指定时查询顶级字典列表信息
      * @return parentCode
      */
     public String getParentCode() {
@@ -150,7 +150,7 @@ public class ListDictionaryRequest  {
 
 
     /**
-     * Get code
+     * 通过code进行模糊匹配查询
      * @return code
      */
     public String getCode() {
@@ -172,7 +172,7 @@ public class ListDictionaryRequest  {
 
 
     /**
-     * Get name
+     * 通过name进行模糊匹配查询
      * @return name
      */
     public String getName() {

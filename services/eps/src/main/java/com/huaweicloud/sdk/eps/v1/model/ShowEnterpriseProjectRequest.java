@@ -32,7 +32,7 @@ public class ShowEnterpriseProjectRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。 可以通过查询企业项目列表接口获取。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -39,7 +39,7 @@ public class DownloadBlockchainSdkConfigRequest  {
 
 
     /**
-     * Get blockchainId
+     * blockchainID
      * @return blockchainId
      */
     public String getBlockchainId() {

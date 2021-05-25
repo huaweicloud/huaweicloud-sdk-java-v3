@@ -237,7 +237,7 @@ public class ObsDestinationDescriptor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deliver_time_interval")
     
-    private String deliverTimeInterval;
+    private Integer deliverTimeInterval;
 
     public ObsDestinationDescriptor withTopics(String topics) {
         this.topics = topics;
@@ -459,7 +459,7 @@ public class ObsDestinationDescriptor  {
 
     
 
-    public ObsDestinationDescriptor withDeliverTimeInterval(String deliverTimeInterval) {
+    public ObsDestinationDescriptor withDeliverTimeInterval(Integer deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
         return this;
     }
@@ -471,11 +471,11 @@ public class ObsDestinationDescriptor  {
      * 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。 
      * @return deliverTimeInterval
      */
-    public String getDeliverTimeInterval() {
+    public Integer getDeliverTimeInterval() {
         return deliverTimeInterval;
     }
 
-    public void setDeliverTimeInterval(String deliverTimeInterval) {
+    public void setDeliverTimeInterval(Integer deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
     }
 

@@ -38,7 +38,7 @@ public class GlanceDeleteTagRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像id
      * @return imageId
      */
     public String getImageId() {
@@ -60,7 +60,7 @@ public class GlanceDeleteTagRequest  {
 
 
     /**
-     * Get tag
+     * 新增的tag。字符串中不能包含“=”和“.”。
      * @return tag
      */
     public String getTag() {

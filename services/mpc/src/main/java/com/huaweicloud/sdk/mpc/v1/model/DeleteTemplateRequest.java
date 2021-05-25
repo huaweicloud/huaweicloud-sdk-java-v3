@@ -32,7 +32,7 @@ public class DeleteTemplateRequest  {
 
 
     /**
-     * Get templateId
+     * 自定义转码模板ID 
      * minimum: 0
      * maximum: 2147483647
      * @return templateId

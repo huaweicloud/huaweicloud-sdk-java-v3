@@ -62,7 +62,7 @@ public class ListEnterpriseSubCustomersRequest  {
 
 
     /**
-     * Get subCustomerAccountName
+     * 企业子账号的账号名。根据fuzzy_query取值决定是否按模糊查询。
      * @return subCustomerAccountName
      */
     public String getSubCustomerAccountName() {
@@ -84,7 +84,7 @@ public class ListEnterpriseSubCustomersRequest  {
 
 
     /**
-     * Get subCustomerDisplayName
+     * 企业子账号的显示名称。不限制特殊字符。根据fuzzy_query取值决定是否按模糊查询。
      * @return subCustomerDisplayName
      */
     public String getSubCustomerDisplayName() {
@@ -106,7 +106,7 @@ public class ListEnterpriseSubCustomersRequest  {
 
 
     /**
-     * Get fuzzyQuery
+     * 企业子账号的显示名称、用户名是否按模糊查询。0：不按模糊查询1：按模糊查询默认值为0。
      * minimum: 0
      * maximum: 1
      * @return fuzzyQuery
@@ -130,7 +130,7 @@ public class ListEnterpriseSubCustomersRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始，默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -154,7 +154,7 @@ public class ListEnterpriseSubCustomersRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询记录数，默认值为10。
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -178,7 +178,7 @@ public class ListEnterpriseSubCustomersRequest  {
 
 
     /**
-     * Get orgId
+     * 子账号归属的组织单元ID。
      * @return orgId
      */
     public String getOrgId() {

@@ -1,0 +1,117 @@
+package com.huaweicloud.sdk.meeting.v1.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * 会中修改配置项
+ */
+public class UpdateStartedConfigReqBody  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="lockSharing")
+    
+    private Integer lockSharing;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="callInRestriction")
+    
+    private Integer callInRestriction;
+
+    public UpdateStartedConfigReqBody withLockSharing(Integer lockSharing) {
+        this.lockSharing = lockSharing;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 锁定共享标志位 0:不锁定  1:锁定
+     * minimum: 0
+     * maximum: 1
+     * @return lockSharing
+     */
+    public Integer getLockSharing() {
+        return lockSharing;
+    }
+
+    public void setLockSharing(Integer lockSharing) {
+        this.lockSharing = lockSharing;
+    }
+
+    
+
+    public UpdateStartedConfigReqBody withCallInRestriction(Integer callInRestriction) {
+        this.callInRestriction = callInRestriction;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 允许呼入的范围 0：所有用户  2：企业内用户  3：被邀请用户
+     * minimum: 0
+     * maximum: 3
+     * @return callInRestriction
+     */
+    public Integer getCallInRestriction() {
+        return callInRestriction;
+    }
+
+    public void setCallInRestriction(Integer callInRestriction) {
+        this.callInRestriction = callInRestriction;
+    }
+
+    
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        UpdateStartedConfigReqBody updateStartedConfigReqBody = (UpdateStartedConfigReqBody) o;
+        return Objects.equals(this.lockSharing, updateStartedConfigReqBody.lockSharing) &&
+            Objects.equals(this.callInRestriction, updateStartedConfigReqBody.callInRestriction);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(lockSharing, callInRestriction);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateStartedConfigReqBody {\n");
+        sb.append("    lockSharing: ").append(toIndentedString(lockSharing)).append("\n");
+        sb.append("    callInRestriction: ").append(toIndentedString(callInRestriction)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

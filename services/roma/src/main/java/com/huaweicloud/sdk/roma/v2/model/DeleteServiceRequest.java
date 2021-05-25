@@ -38,7 +38,7 @@ public class DeleteServiceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteServiceRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * @return serviceId
      */
     public String getServiceId() {

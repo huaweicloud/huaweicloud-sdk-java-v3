@@ -67,6 +67,8 @@ public class ModSubCustomerBudgetReq  {
 
     /**
      * |参数名称：调整的目标金额，可精确至小数点后面2位。| |参数的约束及描述：调整的目标金额，可精确至小数点后面2位。|
+     * minimum: 0
+     * maximum: 2147483647
      * @return budgetAmount
      */
     public Double getBudgetAmount() {

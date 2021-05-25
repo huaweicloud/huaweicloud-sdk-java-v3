@@ -32,7 +32,7 @@ public class ShowDomainRequest  {
 
 
     /**
-     * Get domain
+     * 直播域名，如果不设置此字段，则返回租户所有的域名信息
      * @return domain
      */
     public String getDomain() {

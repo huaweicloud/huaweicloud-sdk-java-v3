@@ -56,7 +56,7 @@ public class ListBackupRecordsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListBackupRecordsRequest  {
 
 
     /**
-     * Get beginTime
+     * 查询开始时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20170718235959。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -100,7 +100,7 @@ public class ListBackupRecordsRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20170718235959。
      * @return endTime
      */
     public String getEndTime() {
@@ -122,7 +122,7 @@ public class ListBackupRecordsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量。
      * @return limit
      */
     public Integer getLimit() {
@@ -144,7 +144,7 @@ public class ListBackupRecordsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
      * @return offset
      */
     public Integer getOffset() {

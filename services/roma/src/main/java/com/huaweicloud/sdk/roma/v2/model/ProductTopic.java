@@ -31,7 +31,7 @@ public class ProductTopic  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topic_id")
     
-    private Integer topicId;
+    private String topicId;
     /**
      * 主题权限 0-发布 1-订阅
      */
@@ -157,7 +157,7 @@ public class ProductTopic  {
 
     
 
-    public ProductTopic withTopicId(Integer topicId) {
+    public ProductTopic withTopicId(String topicId) {
         this.topicId = topicId;
         return this;
     }
@@ -169,11 +169,11 @@ public class ProductTopic  {
      * 产品主题ID
      * @return topicId
      */
-    public Integer getTopicId() {
+    public String getTopicId() {
         return topicId;
     }
 
-    public void setTopicId(Integer topicId) {
+    public void setTopicId(String topicId) {
         this.topicId = topicId;
     }
 

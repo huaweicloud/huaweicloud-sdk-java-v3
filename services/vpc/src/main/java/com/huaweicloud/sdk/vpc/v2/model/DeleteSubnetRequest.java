@@ -38,7 +38,7 @@ public class DeleteSubnetRequest  {
 
 
     /**
-     * Get vpcId
+     * 子网对应的vpc_id
      * @return vpcId
      */
     public String getVpcId() {
@@ -60,7 +60,7 @@ public class DeleteSubnetRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网ID
      * @return subnetId
      */
     public String getSubnetId() {

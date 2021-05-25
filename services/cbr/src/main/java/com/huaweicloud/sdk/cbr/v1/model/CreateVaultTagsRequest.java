@@ -39,7 +39,7 @@ public class CreateVaultTagsRequest  {
 
 
     /**
-     * Get vaultId
+     * 资源id
      * @return vaultId
      */
     public String getVaultId() {

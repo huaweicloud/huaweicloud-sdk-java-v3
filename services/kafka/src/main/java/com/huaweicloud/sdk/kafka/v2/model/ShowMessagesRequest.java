@@ -68,7 +68,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -90,7 +90,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get topic
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {
@@ -112,7 +112,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get startTime
+     * 查询起始时间，为unix时间戳格式，默认值为0。
      * @return startTime
      */
     public String getStartTime() {
@@ -134,7 +134,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，为unix时间戳格式，默认值为系统当前时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -156,7 +156,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get limit
+     * 单页返回消息数，默认值为10。
      * @return limit
      */
     public Integer getLimit() {
@@ -178,7 +178,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get offset
+     * 查询的页码，默认值为1。
      * @return offset
      */
     public Integer getOffset() {
@@ -200,7 +200,7 @@ public class ShowMessagesRequest  {
 
 
     /**
-     * Get partition
+     * 分区编号，默认值为-1，若传入值为-1，则查询所有分区。
      * @return partition
      */
     public String getPartition() {

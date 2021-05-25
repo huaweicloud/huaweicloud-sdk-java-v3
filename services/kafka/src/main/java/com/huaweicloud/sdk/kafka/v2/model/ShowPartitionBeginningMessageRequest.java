@@ -44,7 +44,7 @@ public class ShowPartitionBeginningMessageRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class ShowPartitionBeginningMessageRequest  {
 
 
     /**
-     * Get topic
+     * Topic名称。
      * @return topic
      */
     public String getTopic() {
@@ -88,7 +88,7 @@ public class ShowPartitionBeginningMessageRequest  {
 
 
     /**
-     * Get partition
+     * 分区编号。
      * @return partition
      */
     public Integer getPartition() {

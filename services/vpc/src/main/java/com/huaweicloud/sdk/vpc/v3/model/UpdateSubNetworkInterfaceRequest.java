@@ -39,7 +39,7 @@ public class UpdateSubNetworkInterfaceRequest  {
 
 
     /**
-     * Get subNetworkInterfaceId
+     * 辅助弹性网卡的唯一标识
      * @return subNetworkInterfaceId
      */
     public String getSubNetworkInterfaceId() {

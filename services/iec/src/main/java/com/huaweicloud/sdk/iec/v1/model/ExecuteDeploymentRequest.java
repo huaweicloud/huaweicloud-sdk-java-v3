@@ -32,7 +32,7 @@ public class ExecuteDeploymentRequest  {
 
 
     /**
-     * Get deploymentId
+     * 部署计划ID。  约束： - 该接口只能执行指定名称（name）创建的部署计划。
      * @return deploymentId
      */
     public String getDeploymentId() {

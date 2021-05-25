@@ -44,7 +44,7 @@ public class ListRestoreTimesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class ListRestoreTimesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -90,7 +90,7 @@ public class ListRestoreTimesRequest  {
 
 
     /**
-     * Get date
+     * 所需查询的日期，为yyyy-mm-dd字符串格式，时区为UTC。
      * @return date
      */
     public String getDate() {

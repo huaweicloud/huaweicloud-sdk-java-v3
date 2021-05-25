@@ -44,7 +44,7 @@ public class ShowSyncJobRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -66,7 +66,7 @@ public class ShowSyncJobRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {
@@ -88,7 +88,7 @@ public class ShowSyncJobRequest  {
 
 
     /**
-     * Get filter
+     * 应填写 limit::{limit}|offset::{offset}|order::{order} ,其中{limit}为返回条数,{offset}为起始索引,{order}为排序类型，可设置为desc（降序）、asc（升序）
      * @return filter
      */
     public String getFilter() {

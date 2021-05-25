@@ -39,7 +39,7 @@ public class DeleteClusterRequest  {
 
 
     /**
-     * Get clusterId
+     * 指定待删除集群的ID。
      * @return clusterId
      */
     public String getClusterId() {

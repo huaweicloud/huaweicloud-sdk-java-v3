@@ -284,28 +284,6 @@ public class DmsAsyncClient {
     }
 
     /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return CompletableFuture<ShowProjectTagsResponse>
-     */
-    public CompletableFuture<ShowProjectTagsResponse> showProjectTagsAsync(ShowProjectTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DmsMeta.showProjectTags);
-    }
-
-    /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return AsyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>
-     */
-    public AsyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTagsAsyncInvoker(ShowProjectTagsRequest request) {
-        return new AsyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>(request, DmsMeta.showProjectTags, hcClient);
-    }
-
-    /**
      * 查看指定队列
      * 查看指定的队列。
      *
@@ -325,6 +303,28 @@ public class DmsAsyncClient {
      */
     public AsyncInvoker<ShowQueueRequest, ShowQueueResponse> showQueueAsyncInvoker(ShowQueueRequest request) {
         return new AsyncInvoker<ShowQueueRequest, ShowQueueResponse>(request, DmsMeta.showQueue, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowQueueProjectTagsRequest 请求对象
+     * @return CompletableFuture<ShowQueueProjectTagsResponse>
+     */
+    public CompletableFuture<ShowQueueProjectTagsResponse> showQueueProjectTagsAsync(ShowQueueProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DmsMeta.showQueueProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowQueueProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse>
+     */
+    public AsyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> showQueueProjectTagsAsyncInvoker(ShowQueueProjectTagsRequest request) {
+        return new AsyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse>(request, DmsMeta.showQueueProjectTags, hcClient);
     }
 
     /**

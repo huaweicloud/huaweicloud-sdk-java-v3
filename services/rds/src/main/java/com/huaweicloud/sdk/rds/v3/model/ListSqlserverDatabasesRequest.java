@@ -56,7 +56,7 @@ public class ListSqlserverDatabasesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,7 +80,7 @@ public class ListSqlserverDatabasesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -102,7 +102,7 @@ public class ListSqlserverDatabasesRequest  {
 
 
     /**
-     * Get page
+     * 分页页码，从1开始。
      * @return page
      */
     public Integer getPage() {
@@ -124,7 +124,7 @@ public class ListSqlserverDatabasesRequest  {
 
 
     /**
-     * Get limit
+     * 每页数据条数。取值范围[1, 100]。
      * @return limit
      */
     public Integer getLimit() {
@@ -146,7 +146,7 @@ public class ListSqlserverDatabasesRequest  {
 
 
     /**
-     * Get dbName
+     * 数据库名。当指定该参数时，page和limit参数需要传入但不生效。
      * @return dbName
      */
     public String getDbName() {

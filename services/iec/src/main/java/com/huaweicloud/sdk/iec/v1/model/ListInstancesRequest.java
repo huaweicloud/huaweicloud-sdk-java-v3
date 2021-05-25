@@ -80,7 +80,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get offset
+     * 页码。 当前页面数，默认为0。 取值大于等于0，取值为0时返回第1页
      * @return offset
      */
     public Integer getOffset() {
@@ -102,7 +102,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘实例列表当前页面的数量。 每页默认值是25，最多返回1000台边缘实例的信息，如果数据量过大建议设置成100。
      * @return limit
      */
     public Integer getLimit() {
@@ -124,7 +124,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get status
+     * 边缘实例的状态。 取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE。  非上面范围的status字段将返回空列表。 > 当边缘实例处于中间状态时，查询范围如下： - ACTIVE，查询范围：ACTIVE，REBOOT，HARD_REBOOT，REBUILD，MIGRATING - SHUTOFF，查询范围：SHUTOFF，RESIZE，REBUILD - ERROR，查询范围：ERROR，REBUILD - VERIFY_RESIZE，查询范围：VERIFY_RESIZE，REVERT_RESIZE
      * @return status
      */
     public String getStatus() {
@@ -146,7 +146,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get name
+     * 查询条件，边缘实例名称。
      * @return name
      */
     public String getName() {
@@ -168,7 +168,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get area
+     * 边缘实例所在大区。
      * @return area
      */
     public String getArea() {
@@ -190,7 +190,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get province
+     * 边缘实例所在省份。
      * @return province
      */
     public String getProvince() {
@@ -212,7 +212,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get city
+     * 边缘实例所在城市。
      * @return city
      */
     public String getCity() {
@@ -234,7 +234,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get edgecloudId
+     * 边缘业务ID。
      * @return edgecloudId
      */
     public String getEdgecloudId() {
@@ -256,7 +256,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get siteId
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {

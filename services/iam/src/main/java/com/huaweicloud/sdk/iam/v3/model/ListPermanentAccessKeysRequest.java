@@ -32,7 +32,7 @@ public class ListPermanentAccessKeysRequest  {
 
 
     /**
-     * Get userId
+     * 待查询的IAM用户ID。
      * @return userId
      */
     public String getUserId() {

@@ -28,7 +28,7 @@ public class CreateNodeRequest  {
     
     private String clusterId;
     /**
-     * Gets or Sets nodepoolScaleUp
+     * 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
      */
     public static final class NodepoolScaleUpEnum {
 
@@ -121,7 +121,7 @@ public class CreateNodeRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
      * @return clusterId
      */
     public String getClusterId() {
@@ -143,7 +143,7 @@ public class CreateNodeRequest  {
 
 
     /**
-     * Get nodepoolScaleUp
+     * 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
      * @return nodepoolScaleUp
      */
     public NodepoolScaleUpEnum getNodepoolScaleUp() {

@@ -74,7 +74,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get type
+     * 待查询的zone的类型。  取值范围：private。
      * @return type
      */
     public String getType() {
@@ -96,7 +96,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的资源个数，取值范围：0~500
      * @return limit
      */
     public Integer getLimit() {
@@ -118,7 +118,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时为查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -140,7 +140,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get offset
+     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询
      * @return offset
      */
     public Integer getOffset() {
@@ -162,7 +162,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get tags
+     * 资源标签。
      * @return tags
      */
     public String getTags() {
@@ -184,7 +184,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get name
+     * zone名称。
      * @return name
      */
     public String getName() {
@@ -206,7 +206,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get status
+     * 资源状态。
      * @return status
      */
     public String getStatus() {
@@ -228,7 +228,7 @@ public class ListPrivateZonesRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

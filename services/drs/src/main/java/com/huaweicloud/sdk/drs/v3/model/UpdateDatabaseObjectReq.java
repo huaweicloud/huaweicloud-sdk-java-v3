@@ -133,7 +133,7 @@ public class UpdateDatabaseObjectReq  {
     }
 
     /**
-     * 数据对象选择信息
+     * 数据对象选择信息，selected为true时必填。
      * @return job
      */
     public List<DatabaseInfo> getJob() {

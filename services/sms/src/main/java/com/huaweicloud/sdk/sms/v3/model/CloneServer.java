@@ -25,6 +25,12 @@ public class CloneServer  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clone_error")
     
     private String cloneError;
@@ -40,12 +46,6 @@ public class CloneServer  {
     @JsonProperty(value="error_msg")
     
     private String errorMsg;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
 
     public CloneServer withVmId(String vmId) {
         this.vmId = vmId;
@@ -65,6 +65,28 @@ public class CloneServer  {
 
     public void setVmId(String vmId) {
         this.vmId = vmId;
+    }
+
+    
+
+    public CloneServer withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 克隆虚拟机的名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     
@@ -135,28 +157,6 @@ public class CloneServer  {
 
     
 
-    public CloneServer withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 克隆虚拟机的名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -167,24 +167,24 @@ public class CloneServer  {
         }
         CloneServer cloneServer = (CloneServer) o;
         return Objects.equals(this.vmId, cloneServer.vmId) &&
+            Objects.equals(this.name, cloneServer.name) &&
             Objects.equals(this.cloneError, cloneServer.cloneError) &&
             Objects.equals(this.cloneState, cloneServer.cloneState) &&
-            Objects.equals(this.errorMsg, cloneServer.errorMsg) &&
-            Objects.equals(this.name, cloneServer.name);
+            Objects.equals(this.errorMsg, cloneServer.errorMsg);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(vmId, cloneError, cloneState, errorMsg, name);
+        return Objects.hash(vmId, name, cloneError, cloneState, errorMsg);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CloneServer {\n");
         sb.append("    vmId: ").append(toIndentedString(vmId)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    cloneError: ").append(toIndentedString(cloneError)).append("\n");
         sb.append("    cloneState: ").append(toIndentedString(cloneState)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

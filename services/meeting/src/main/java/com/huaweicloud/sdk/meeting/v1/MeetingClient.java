@@ -150,7 +150,7 @@ public class MeetingClient {
     }
 
     /**
-     * 分配企业资源
+     * SP管理员分配企业资源
      * 企业新增资源发放。优化适配，该接口同时支持修改，带resourceId后会判断该资源是否存在，存在即修改（支持修改的参数见修改接口），否则按新增处理
      *
      * @param AddResourceRequest 请求对象
@@ -161,7 +161,7 @@ public class MeetingClient {
     }
 
     /**
-     * 分配企业资源
+     * SP管理员分配企业资源
      * 企业新增资源发放。优化适配，该接口同时支持修改，带resourceId后会判断该资源是否存在，存在即修改（支持修改的参数见修改接口），否则按新增处理
      *
      * @param AddResourceRequest 请求对象
@@ -678,6 +678,28 @@ public class MeetingClient {
     }
 
     /**
+     * 获取websocket鉴权token
+     * 获取websocket鉴权token。
+     *
+     * @param CreateWebSocketTokenRequest 请求对象
+     * @return CreateWebSocketTokenResponse
+     */
+    public CreateWebSocketTokenResponse createWebSocketToken(CreateWebSocketTokenRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createWebSocketToken);
+    }
+
+    /**
+     * 获取websocket鉴权token
+     * 获取websocket鉴权token。
+     *
+     * @param CreateWebSocketTokenRequest 请求对象
+     * @return SyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>
+     */
+    public SyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> createWebSocketTokenInvoker(CreateWebSocketTokenRequest request) {
+        return new SyncInvoker<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse>(request, MeetingMeta.createWebSocketToken, hcClient);
+    }
+
+    /**
      * 删除与会者
      * 删除与会者。
      *
@@ -788,7 +810,7 @@ public class MeetingClient {
     }
 
     /**
-     * 删除企业资源
+     * SP管理员根据删除企业资源
      * 企业删除资源项，删除资源项后，企业资源总数会自动减少
      *
      * @param DeleteResourceRequest 请求对象
@@ -799,7 +821,7 @@ public class MeetingClient {
     }
 
     /**
-     * 删除企业资源
+     * SP管理员根据删除企业资源
      * 企业删除资源项，删除资源项后，企业资源总数会自动减少
      *
      * @param DeleteResourceRequest 请求对象
@@ -917,6 +939,28 @@ public class MeetingClient {
      */
     public SyncInvoker<InviteParticipantRequest, InviteParticipantResponse> inviteParticipantInvoker(InviteParticipantRequest request) {
         return new SyncInvoker<InviteParticipantRequest, InviteParticipantResponse>(request, MeetingMeta.inviteParticipant, hcClient);
+    }
+
+    /**
+     * 邀请用户
+     * 通过手机号码或者邮箱地址邀请用户加入企业。 * 若被邀请用户在华为云会议系统中不存在，则：   - 华为云会议免费版和华为云会议标准版发送短信/邮件邀请用户完成注册后加入企业。用户注册成功后，加入该企业。   - 华为云会议旗舰版在企业内直接添加该用户。用户会收到华为云会议的初始密码，用户第一次以手机号或者邮箱登录时，需要修改密码。 * 若被邀请用户在华为云会议系统中存在，则该用户会收到短信或者邮件确认。确认完成后改用户加入企业内。该用户的密码保持原来的密码不变。 
+     *
+     * @param InviteUserRequest 请求对象
+     * @return InviteUserResponse
+     */
+    public InviteUserResponse inviteUser(InviteUserRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.inviteUser);
+    }
+
+    /**
+     * 邀请用户
+     * 通过手机号码或者邮箱地址邀请用户加入企业。 * 若被邀请用户在华为云会议系统中不存在，则：   - 华为云会议免费版和华为云会议标准版发送短信/邮件邀请用户完成注册后加入企业。用户注册成功后，加入该企业。   - 华为云会议旗舰版在企业内直接添加该用户。用户会收到华为云会议的初始密码，用户第一次以手机号或者邮箱登录时，需要修改密码。 * 若被邀请用户在华为云会议系统中存在，则该用户会收到短信或者邮件确认。确认完成后改用户加入企业内。该用户的密码保持原来的密码不变。 
+     *
+     * @param InviteUserRequest 请求对象
+     * @return SyncInvoker<InviteUserRequest, InviteUserResponse>
+     */
+    public SyncInvoker<InviteUserRequest, InviteUserResponse> inviteUserInvoker(InviteUserRequest request) {
+        return new SyncInvoker<InviteUserRequest, InviteUserResponse>(request, MeetingMeta.inviteUser, hcClient);
     }
 
     /**
@@ -1118,7 +1162,7 @@ public class MeetingClient {
     }
 
     /**
-     * 重置激活码
+     * 企业管理员重置硬终端激活码
      * 当硬终端激活码失效时，企业管理员可以通过该接口重置激活码，使用重新获取的激活码激活终端，每24小时可重新激活5次。
      *
      * @param ResetActivecodeRequest 请求对象
@@ -1129,7 +1173,7 @@ public class MeetingClient {
     }
 
     /**
-     * 重置激活码
+     * 企业管理员重置硬终端激活码
      * 当硬终端激活码失效时，企业管理员可以通过该接口重置激活码，使用重新获取的激活码激活终端，每24小时可重新激活5次。
      *
      * @param ResetActivecodeRequest 请求对象
@@ -1514,6 +1558,28 @@ public class MeetingClient {
     }
 
     /**
+     * 查询用户VMR列表
+     * 查询用户VMR列表。
+     *
+     * @param SearchMemberVmrByCloudLinkRequest 请求对象
+     * @return SearchMemberVmrByCloudLinkResponse
+     */
+    public SearchMemberVmrByCloudLinkResponse searchMemberVmrByCloudLink(SearchMemberVmrByCloudLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchMemberVmrByCloudLink);
+    }
+
+    /**
+     * 查询用户VMR列表
+     * 查询用户VMR列表。
+     *
+     * @param SearchMemberVmrByCloudLinkRequest 请求对象
+     * @return SyncInvoker<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse>
+     */
+    public SyncInvoker<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> searchMemberVmrByCloudLinkInvoker(SearchMemberVmrByCloudLinkRequest request) {
+        return new SyncInvoker<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse>(request, MeetingMeta.searchMemberVmrByCloudLink, hcClient);
+    }
+
+    /**
      * 查询在线会议列表
      * 管理员可以查询管理权限域内所有在线会议，普通用户仅能查询当前自己帐号管理的在线会议。不带查询参数时，默认查询权限范围内的在线会议，按开始时间升序排列。
      *
@@ -1602,8 +1668,8 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询企业资源
-     * sp根据条件查询企业的资源项
+     * SP管理员根据分页查询企业资源
+     * SP根据条件查询企业的资源项
      *
      * @param SearchResourceRequest 请求对象
      * @return SearchResourceResponse
@@ -1613,8 +1679,8 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询企业资源
-     * sp根据条件查询企业的资源项
+     * SP管理员根据分页查询企业资源
+     * SP根据条件查询企业的资源项
      *
      * @param SearchResourceRequest 请求对象
      * @return SyncInvoker<SearchResourceRequest, SearchResourceResponse>
@@ -1624,8 +1690,8 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询企业资源操作记录
-     * sp根据条件查询企业的资源操作记录，支持根据resourceId模糊搜索
+     * SP管理员根据分页查询企业资源操作记录
+     * SP根据根据条件查询企业的资源操作记录，支持根据resourceId模糊搜索
      *
      * @param SearchResourceOpRecordRequest 请求对象
      * @return SearchResourceOpRecordResponse
@@ -1635,8 +1701,8 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询企业资源操作记录
-     * sp根据条件查询企业的资源操作记录，支持根据resourceId模糊搜索
+     * SP管理员根据分页查询企业资源操作记录
+     * SP根据根据条件查询企业的资源操作记录，支持根据resourceId模糊搜索
      *
      * @param SearchResourceOpRecordRequest 请求对象
      * @return SyncInvoker<SearchResourceOpRecordRequest, SearchResourceOpRecordResponse>
@@ -2306,6 +2372,28 @@ public class MeetingClient {
     }
 
     /**
+     * 查询录制文件下载链接
+     * 查询某个录制文件下载链接。
+     *
+     * @param ShowRecordingFileDownloadUrlsRequest 请求对象
+     * @return ShowRecordingFileDownloadUrlsResponse
+     */
+    public ShowRecordingFileDownloadUrlsResponse showRecordingFileDownloadUrls(ShowRecordingFileDownloadUrlsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showRecordingFileDownloadUrls);
+    }
+
+    /**
+     * 查询录制文件下载链接
+     * 查询某个录制文件下载链接。
+     *
+     * @param ShowRecordingFileDownloadUrlsRequest 请求对象
+     * @return SyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>
+     */
+    public SyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> showRecordingFileDownloadUrlsInvoker(ShowRecordingFileDownloadUrlsRequest request) {
+        return new SyncInvoker<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse>(request, MeetingMeta.showRecordingFileDownloadUrls, hcClient);
+    }
+
+    /**
      * 查询会议所在区域信息
      * 查询会议所在区域信息，如果会议不存在或者会议未召开，返回对应的错误码。
      *
@@ -2351,7 +2439,7 @@ public class MeetingClient {
 
     /**
      * SP管理员查询资源信息
-     * sp管理员查询sp的所有资源，包括已使用的资源
+     * SP管理员查询SP的所有资源，包括已使用的资源
      *
      * @param ShowSpResourceRequest 请求对象
      * @return ShowSpResourceResponse
@@ -2362,7 +2450,7 @@ public class MeetingClient {
 
     /**
      * SP管理员查询资源信息
-     * sp管理员查询sp的所有资源，包括已使用的资源
+     * SP管理员查询SP的所有资源，包括已使用的资源
      *
      * @param ShowSpResourceRequest 请求对象
      * @return SyncInvoker<ShowSpResourceRequest, ShowSpResourceResponse>
@@ -2702,7 +2790,7 @@ public class MeetingClient {
     }
 
     /**
-     * 修改企业资源
+     * SP管理员根据修改企业资源
      * 企业修改资源的过期时间、停用状态
      *
      * @param UpdateResourceRequest 请求对象
@@ -2713,7 +2801,7 @@ public class MeetingClient {
     }
 
     /**
-     * 修改企业资源
+     * SP管理员根据修改企业资源
      * 企业修改资源的过期时间、停用状态
      *
      * @param UpdateResourceRequest 请求对象
@@ -2721,6 +2809,28 @@ public class MeetingClient {
      */
     public SyncInvoker<UpdateResourceRequest, UpdateResourceResponse> updateResourceInvoker(UpdateResourceRequest request) {
         return new SyncInvoker<UpdateResourceRequest, UpdateResourceResponse>(request, MeetingMeta.updateResource, hcClient);
+    }
+
+    /**
+     * 会中修改配置
+     * 会中修改配置。
+     *
+     * @param UpdateStartedConfConfigRequest 请求对象
+     * @return UpdateStartedConfConfigResponse
+     */
+    public UpdateStartedConfConfigResponse updateStartedConfConfig(UpdateStartedConfConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateStartedConfConfig);
+    }
+
+    /**
+     * 会中修改配置
+     * 会中修改配置。
+     *
+     * @param UpdateStartedConfConfigRequest 请求对象
+     * @return SyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>
+     */
+    public SyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> updateStartedConfConfigInvoker(UpdateStartedConfConfigRequest request) {
+        return new SyncInvoker<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse>(request, MeetingMeta.updateStartedConfConfig, hcClient);
     }
 
     /**
@@ -2765,6 +2875,94 @@ public class MeetingClient {
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
         return new SyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, MeetingMeta.updateUser, hcClient);
+    }
+
+    /**
+     * 查询QoS历史会议列表
+     * * 查询企业内QoS历史会议列表。 * 支持按照时间范围查询，可查询最近3个月内数据。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosHistoryMeetingsRequest 请求对象
+     * @return SearchQosHistoryMeetingsResponse
+     */
+    public SearchQosHistoryMeetingsResponse searchQosHistoryMeetings(SearchQosHistoryMeetingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchQosHistoryMeetings);
+    }
+
+    /**
+     * 查询QoS历史会议列表
+     * * 查询企业内QoS历史会议列表。 * 支持按照时间范围查询，可查询最近3个月内数据。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosHistoryMeetingsRequest 请求对象
+     * @return SyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>
+     */
+    public SyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> searchQosHistoryMeetingsInvoker(SearchQosHistoryMeetingsRequest request) {
+        return new SyncInvoker<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse>(request, MeetingMeta.searchQosHistoryMeetings, hcClient);
+    }
+
+    /**
+     * 查询QoS在线会议列表
+     * * 查询企业内QoS在线会议列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosOnlineMeetingsRequest 请求对象
+     * @return SearchQosOnlineMeetingsResponse
+     */
+    public SearchQosOnlineMeetingsResponse searchQosOnlineMeetings(SearchQosOnlineMeetingsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchQosOnlineMeetings);
+    }
+
+    /**
+     * 查询QoS在线会议列表
+     * * 查询企业内QoS在线会议列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosOnlineMeetingsRequest 请求对象
+     * @return SyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>
+     */
+    public SyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> searchQosOnlineMeetingsInvoker(SearchQosOnlineMeetingsRequest request) {
+        return new SyncInvoker<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse>(request, MeetingMeta.searchQosOnlineMeetings, hcClient);
+    }
+
+    /**
+     * 查询与会者的QoS数据
+     * * 查询企业内指定与会者的QoS数据，按照音频，视频，屏幕共享，CPU分类查询QoS数据。 * QoS数据的打点周期为5秒。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosParticipantDetailRequest 请求对象
+     * @return SearchQosParticipantDetailResponse
+     */
+    public SearchQosParticipantDetailResponse searchQosParticipantDetail(SearchQosParticipantDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchQosParticipantDetail);
+    }
+
+    /**
+     * 查询与会者的QoS数据
+     * * 查询企业内指定与会者的QoS数据，按照音频，视频，屏幕共享，CPU分类查询QoS数据。 * QoS数据的打点周期为5秒。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosParticipantDetailRequest 请求对象
+     * @return SyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>
+     */
+    public SyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> searchQosParticipantDetailInvoker(SearchQosParticipantDetailRequest request) {
+        return new SyncInvoker<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse>(request, MeetingMeta.searchQosParticipantDetail, hcClient);
+    }
+
+    /**
+     * 查询QoS会议与会者列表
+     * * 查询企业内QoS会议与会者列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosParticipantsRequest 请求对象
+     * @return SearchQosParticipantsResponse
+     */
+    public SearchQosParticipantsResponse searchQosParticipants(SearchQosParticipantsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchQosParticipants);
+    }
+
+    /**
+     * 查询QoS会议与会者列表
+     * * 查询企业内QoS会议与会者列表。 * 权限角色&#x3D;旗舰版企业 + 管理员。
+     *
+     * @param SearchQosParticipantsRequest 请求对象
+     * @return SyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>
+     */
+    public SyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse> searchQosParticipantsInvoker(SearchQosParticipantsRequest request) {
+        return new SyncInvoker<SearchQosParticipantsRequest, SearchQosParticipantsResponse>(request, MeetingMeta.searchQosParticipants, hcClient);
     }
 
 }

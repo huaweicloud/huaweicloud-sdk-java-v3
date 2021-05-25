@@ -123,7 +123,7 @@ public class OrderLineItemEntityV2  {
 
 
     /**
-     * 订单项Id。
+     * 订单项ID。
      * @return orderLineItemId
      */
     public String getOrderLineItemId() {

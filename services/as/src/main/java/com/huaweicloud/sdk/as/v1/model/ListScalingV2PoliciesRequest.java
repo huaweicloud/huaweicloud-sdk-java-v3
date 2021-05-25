@@ -62,7 +62,7 @@ public class ListScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingResourceId
+     * 伸缩组ID。
      * @return scalingResourceId
      */
     public String getScalingResourceId() {
@@ -84,7 +84,7 @@ public class ListScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyName
+     * 伸缩策略名称。
      * @return scalingPolicyName
      */
     public String getScalingPolicyName() {
@@ -106,7 +106,7 @@ public class ListScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyType
+     * 策略类型。
      * @return scalingPolicyType
      */
     public String getScalingPolicyType() {
@@ -128,7 +128,7 @@ public class ListScalingV2PoliciesRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩策略ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {
@@ -150,7 +150,7 @@ public class ListScalingV2PoliciesRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -172,7 +172,7 @@ public class ListScalingV2PoliciesRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数，默认20，最大100。
      * minimum: 0
      * maximum: 100
      * @return limit

@@ -45,7 +45,7 @@ public class UpdateRuleRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateRuleRequest  {
 
 
     /**
-     * Get ruleId
+     * 规则ID
      * @return ruleId
      */
     public String getRuleId() {

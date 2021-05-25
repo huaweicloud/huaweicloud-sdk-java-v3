@@ -22,7 +22,7 @@ import java.util.Objects;
 public class BatchCheckJobsRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型
      */
     public static final class XLanguageEnum {
 
@@ -121,7 +121,7 @@ public class BatchCheckJobsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

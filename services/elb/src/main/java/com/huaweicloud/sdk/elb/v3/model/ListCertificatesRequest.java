@@ -82,7 +82,7 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * SSL证书的管理状态；暂不支持。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -118,7 +118,7 @@ public class ListCertificatesRequest  {
     }
 
     /**
-     * Get description
+     * SSL证书的描述。
      * @return description
      */
     public List<String> getDescription() {
@@ -154,7 +154,7 @@ public class ListCertificatesRequest  {
     }
 
     /**
-     * Get domain
+     * 服务器证书所签域名。该字段仅type为server时有效。
      * @return domain
      */
     public List<String> getDomain() {
@@ -190,7 +190,7 @@ public class ListCertificatesRequest  {
     }
 
     /**
-     * Get id
+     * 证书ID。
      * @return id
      */
     public List<String> getId() {
@@ -212,7 +212,7 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -236,7 +236,7 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -272,7 +272,7 @@ public class ListCertificatesRequest  {
     }
 
     /**
-     * Get name
+     * SSL证书的名称。
      * @return name
      */
     public List<String> getName() {
@@ -294,7 +294,7 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -330,7 +330,7 @@ public class ListCertificatesRequest  {
     }
 
     /**
-     * Get type
+     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。
      * @return type
      */
     public List<String> getType() {

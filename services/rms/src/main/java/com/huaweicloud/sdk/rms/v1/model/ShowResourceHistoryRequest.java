@@ -51,7 +51,7 @@ public class ShowResourceHistoryRequest  {
     
     private Long laterTime;
     /**
-     * Gets or Sets chronologicalOrder
+     * 指定返回数据的时间顺序，默认为倒序
      */
     public static final class ChronologicalOrderEnum {
 
@@ -144,7 +144,7 @@ public class ShowResourceHistoryRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -166,7 +166,7 @@ public class ShowResourceHistoryRequest  {
 
 
     /**
-     * Get marker
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
      * @return marker
      */
     public String getMarker() {
@@ -188,7 +188,7 @@ public class ShowResourceHistoryRequest  {
 
 
     /**
-     * Get limit
+     * 最大的返回数量
      * minimum: 1
      * maximum: 200
      * @return limit
@@ -212,7 +212,7 @@ public class ShowResourceHistoryRequest  {
 
 
     /**
-     * Get earlierTime
+     * 指定查询范围的起始时间点，如果不设置此参数，默认为最早的时间
      * @return earlierTime
      */
     public Long getEarlierTime() {
@@ -234,7 +234,7 @@ public class ShowResourceHistoryRequest  {
 
 
     /**
-     * Get laterTime
+     * 指定查询范围的结束时间点，如果不设置此参数，默认为当前时间
      * @return laterTime
      */
     public Long getLaterTime() {
@@ -256,7 +256,7 @@ public class ShowResourceHistoryRequest  {
 
 
     /**
-     * Get chronologicalOrder
+     * 指定返回数据的时间顺序，默认为倒序
      * @return chronologicalOrder
      */
     public ChronologicalOrderEnum getChronologicalOrder() {

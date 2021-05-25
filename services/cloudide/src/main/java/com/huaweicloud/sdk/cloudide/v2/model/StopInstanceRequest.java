@@ -32,7 +32,7 @@ public class StopInstanceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例id
      * @return instanceId
      */
     public String getInstanceId() {

@@ -50,7 +50,7 @@ public class ListTreesRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListTreesRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {
@@ -96,7 +96,7 @@ public class ListTreesRequest  {
 
 
     /**
-     * Get project
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
      * @return project
      */
     public String getProject() {
@@ -118,7 +118,7 @@ public class ListTreesRequest  {
 
 
     /**
-     * Get ref
+     * 分支名称或者tag标签名称或者commit sha。
      * @return ref
      */
     public String getRef() {

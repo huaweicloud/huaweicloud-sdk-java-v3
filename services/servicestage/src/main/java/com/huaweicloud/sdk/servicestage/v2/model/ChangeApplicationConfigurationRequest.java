@@ -39,7 +39,7 @@ public class ChangeApplicationConfigurationRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {

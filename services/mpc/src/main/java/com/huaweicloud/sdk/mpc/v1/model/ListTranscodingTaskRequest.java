@@ -70,7 +70,7 @@ public class ListTranscodingTaskRequest  {
 
 
     /**
-     * Get xLanguage
+     * 客户端语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -108,7 +108,7 @@ public class ListTranscodingTaskRequest  {
     }
 
     /**
-     * Get taskId
+     * 转码服务接受任务后产生的任务ID。一次最多10个 
      * @return taskId
      */
     public List<Long> getTaskId() {
@@ -130,7 +130,7 @@ public class ListTranscodingTaskRequest  {
 
 
     /**
-     * Get status
+     * 任务执行状态。  取值如下： - WAITING：等待启动 - TRANSCODING：转码中 - SUCCEEDED：转码成功 - FAILED：转码失败 - CANCELED：已删除 - NEED_TO_BE_AUDIT：片源待审核 
      * @return status
      */
     public String getStatus() {
@@ -152,7 +152,7 @@ public class ListTranscodingTaskRequest  {
 
 
     /**
-     * Get startTime
+     * 起始时间  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
      * @return startTime
      */
     public String getStartTime() {
@@ -174,7 +174,7 @@ public class ListTranscodingTaskRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
      * @return endTime
      */
     public String getEndTime() {
@@ -196,7 +196,7 @@ public class ListTranscodingTaskRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
      * minimum: 0
      * maximum: 50000
      * @return page
@@ -220,7 +220,7 @@ public class ListTranscodingTaskRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
      * minimum: 1
      * maximum: 100
      * @return size

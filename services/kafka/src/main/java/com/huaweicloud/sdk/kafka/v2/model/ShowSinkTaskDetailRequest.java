@@ -38,7 +38,7 @@ public class ShowSinkTaskDetailRequest  {
 
 
     /**
-     * Get connectorId
+     * 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
      * @return connectorId
      */
     public String getConnectorId() {
@@ -60,7 +60,7 @@ public class ShowSinkTaskDetailRequest  {
 
 
     /**
-     * Get taskId
+     * 转储任务ID。
      * @return taskId
      */
     public String getTaskId() {

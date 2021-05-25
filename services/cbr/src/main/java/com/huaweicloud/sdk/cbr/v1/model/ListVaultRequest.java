@@ -41,7 +41,7 @@ public class ListVaultRequest  {
     
     private Integer offset;
     /**
-     * Gets or Sets cloudType
+     * 云类型
      */
     public static final class CloudTypeEnum {
 
@@ -125,7 +125,7 @@ public class ListVaultRequest  {
     
     private CloudTypeEnum cloudType;
     /**
-     * Gets or Sets protectType
+     * 保护类型
      */
     public static final class ProtectTypeEnum {
 
@@ -254,7 +254,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数，正整数
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -278,7 +278,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get name
+     * 存储库名称
      * @return name
      */
     public String getName() {
@@ -300,7 +300,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get offset
+     * 偏移值,正整数
      * @return offset
      */
     public Integer getOffset() {
@@ -322,7 +322,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get cloudType
+     * 云类型
      * @return cloudType
      */
     public CloudTypeEnum getCloudType() {
@@ -344,7 +344,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get protectType
+     * 保护类型
      * @return protectType
      */
     public ProtectTypeEnum getProtectType() {
@@ -366,7 +366,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get objectType
+     * 资源类型
      * @return objectType
      */
     public String getObjectType() {
@@ -388,7 +388,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -410,7 +410,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get id
+     * 存储库ID
      * @return id
      */
     public String getId() {
@@ -432,7 +432,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get policyId
+     * 策略ID
      * @return policyId
      */
     public String getPolicyId() {
@@ -454,7 +454,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get status
+     * 状态
      * @return status
      */
     public String getStatus() {
@@ -476,7 +476,7 @@ public class ListVaultRequest  {
 
 
     /**
-     * Get resourceIds
+     * 资源id
      * @return resourceIds
      */
     public String getResourceIds() {

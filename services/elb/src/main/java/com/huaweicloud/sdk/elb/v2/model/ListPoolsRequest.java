@@ -104,7 +104,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询中每页的监听器个数
      * minimum: 0
      * maximum: 2147483647
      * @return limit
@@ -128,7 +128,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -150,7 +150,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -172,7 +172,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get id
+     * 后端云服务器组ID。
      * @return id
      */
     public String getId() {
@@ -194,7 +194,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get name
+     * 后端云服务器组名称。
      * @return name
      */
     public String getName() {
@@ -216,7 +216,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get description
+     * 后端云服务器组的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -238,7 +238,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get healthmonitorId
+     * 后端云服务器组关联的健康检查的ID。
      * @return healthmonitorId
      */
     public String getHealthmonitorId() {
@@ -260,7 +260,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 后端云服务器组关联的负载均衡器ID。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -282,7 +282,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get protocol
+     * 后端云服务器组的后端协议。支持TCP、UDP和HTTP。
      * @return protocol
      */
     public String getProtocol() {
@@ -304,7 +304,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get lbAlgorithm
+     * 后端云服务器组的负载均衡算法。取值范围：ROUND_ROBIN：加权轮询算法。LEAST_CONNECTIONS：加权最少连接算法。SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -326,7 +326,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get memberAddress
+     * 后端云服务器组关联的后端云服务器IP。
      * @return memberAddress
      */
     public String getMemberAddress() {
@@ -348,7 +348,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get memberDeviceId
+     * 后端云服务器组关联的后端云服务器对应的弹性云服务器的ID。
      * @return memberDeviceId
      */
     public String getMemberDeviceId() {
@@ -370,7 +370,7 @@ public class ListPoolsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID，仅用于基于企业项目的细粒度鉴权使用；如果参数中传递了loadbalancer_id，则用该负载均衡器对应企业项目ID鉴权；如果参数中没有传递loadbalancer_id，而传递了healthmonitor_id，则使用健康检查器对应的企业项目id鉴权。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

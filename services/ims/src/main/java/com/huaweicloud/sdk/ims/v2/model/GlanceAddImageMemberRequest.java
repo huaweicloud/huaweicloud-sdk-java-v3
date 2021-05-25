@@ -39,7 +39,7 @@ public class GlanceAddImageMemberRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像id
      * @return imageId
      */
     public String getImageId() {

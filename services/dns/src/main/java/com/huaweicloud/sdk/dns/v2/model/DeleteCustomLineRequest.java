@@ -32,7 +32,7 @@ public class DeleteCustomLineRequest  {
 
 
     /**
-     * Get lineId
+     * 解析线路ID。
      * @return lineId
      */
     public String getLineId() {

@@ -35,7 +35,7 @@ public class ListInstancesRequest  {
     
     private String name;
     /**
-     * Gets or Sets mode
+     * 实例类型。 - 取值为“Sharding”，表示集群实例。 - 取值为“ReplicaSet”，表示副本集实例。 - 取值为“Single”，表示单节点实例。
      */
     public static final class ModeEnum {
 
@@ -125,7 +125,7 @@ public class ListInstancesRequest  {
     
     private ModeEnum mode;
     /**
-     * Gets or Sets datastoreType
+     * 数据库版本类型。取值为“DDS-Community”。
      */
     public static final class DatastoreTypeEnum {
 
@@ -242,7 +242,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get id
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @return id
      */
     public String getId() {
@@ -264,7 +264,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get name
+     * 实例名称。 如果name以“*”起始，表示按照“*”后面的值模糊匹配，否则，按照实际填写的name精确匹配查询。 - “*”为系统保留字符，不能只传入该字符。
      * @return name
      */
     public String getName() {
@@ -286,7 +286,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get mode
+     * 实例类型。 - 取值为“Sharding”，表示集群实例。 - 取值为“ReplicaSet”，表示副本集实例。 - 取值为“Single”，表示单节点实例。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -308,7 +308,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get datastoreType
+     * 数据库版本类型。取值为“DDS-Community”。
      * @return datastoreType
      */
     public DatastoreTypeEnum getDatastoreType() {
@@ -330,7 +330,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get vpcId
+     * 虚拟私有云ID。可登录虚拟私有云控制台界面，获取DDS实例所在虚拟私有云的ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -352,7 +352,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网的网络ID。可登录虚拟私有云控制台界面，获取DDS实例所在虚拟私有云下子网的网络ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -374,7 +374,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。
      * @return offset
      */
     public Integer getOffset() {
@@ -396,7 +396,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get limit
+     * 查询实例个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
      * @return limit
      */
     public Integer getLimit() {

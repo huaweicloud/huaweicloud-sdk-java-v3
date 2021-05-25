@@ -50,7 +50,7 @@ public class ShowCorpAdminRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ShowCorpAdminRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -96,7 +96,7 @@ public class ShowCorpAdminRequest  {
 
 
     /**
-     * Get account
+     * 企业用户账号。
      * @return account
      */
     public String getAccount() {
@@ -118,7 +118,7 @@ public class ShowCorpAdminRequest  {
 
 
     /**
-     * Get accountType
+     * 账号类型 * 0：会议账号 * 1：第三方账号。 默认0 
      * minimum: 0
      * maximum: 1
      * @return accountType

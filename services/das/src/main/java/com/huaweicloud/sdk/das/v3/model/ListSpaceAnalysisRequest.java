@@ -35,7 +35,7 @@ public class ListSpaceAnalysisRequest  {
     
     private String xLanguage;
     /**
-     * Gets or Sets objectType
+     * 对象类型
      */
     public static final class ObjectTypeEnum {
 
@@ -143,7 +143,7 @@ public class ListSpaceAnalysisRequest  {
     
     private Boolean showInstanceInfo;
     /**
-     * Gets or Sets datastoreType
+     * 引擎类型
      */
     public static final class DatastoreTypeEnum {
 
@@ -236,7 +236,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -258,7 +258,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -282,7 +282,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get objectType
+     * 对象类型
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {
@@ -304,7 +304,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get databaseId
+     * 数据库ID
      * @return databaseId
      */
     public String getDatabaseId() {
@@ -326,7 +326,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。offset必须是limit的整数倍。
      * @return offset
      */
     public String getOffset() {
@@ -348,7 +348,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
      * @return limit
      */
     public String getLimit() {
@@ -370,7 +370,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get showInstanceInfo
+     * 是否返回实例级别数据
      * @return showInstanceInfo
      */
     public Boolean getShowInstanceInfo() {
@@ -392,7 +392,7 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * Get datastoreType
+     * 引擎类型
      * @return datastoreType
      */
     public DatastoreTypeEnum getDatastoreType() {

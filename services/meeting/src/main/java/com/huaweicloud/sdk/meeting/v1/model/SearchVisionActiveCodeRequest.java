@@ -62,7 +62,7 @@ public class SearchVisionActiveCodeRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -86,7 +86,7 @@ public class SearchVisionActiveCodeRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -108,7 +108,7 @@ public class SearchVisionActiveCodeRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
      * minimum: 0
      * @return offset
      */
@@ -131,7 +131,7 @@ public class SearchVisionActiveCodeRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -155,7 +155,7 @@ public class SearchVisionActiveCodeRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件,支持激活码、终端名称模糊搜索。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -177,7 +177,7 @@ public class SearchVisionActiveCodeRequest  {
 
 
     /**
-     * Get devType
+     * 终端类型 - idea-hub:智能协作大屏 - huawei-vision:智慧屏TV - welink-desktop(iwb):电子白板 
      * @return devType
      */
     public String getDevType() {

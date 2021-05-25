@@ -50,7 +50,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get groupId
+     * 迁移任务组group_id
      * @return groupId
      */
     public String getGroupId() {
@@ -72,7 +72,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回迁移任务列表当前页面的数量，默认查询10条。 最多返回100条迁移任务信息。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -96,7 +96,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get offset
+     * 起始的任务序号，默认为0。 取值大于等于0，取值为0时从第一条开始查询。
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -120,7 +120,7 @@ public class ListTasksRequest  {
 
 
     /**
-     * Get status
+     * 迁移任务状态（无该参数时代表查询所有状态的任务）： 1：等待调度 2：正在执行 3：停止 4：失败 5：成功
      * minimum: 1
      * maximum: 5
      * @return status

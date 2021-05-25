@@ -32,7 +32,7 @@ public class ShowL7policyRequest  {
 
 
     /**
-     * Get l7policyId
+     * 转发策略id
      * @return l7policyId
      */
     public String getL7policyId() {

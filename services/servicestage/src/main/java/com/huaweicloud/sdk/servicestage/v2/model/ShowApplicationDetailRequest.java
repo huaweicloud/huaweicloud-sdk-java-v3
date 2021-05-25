@@ -32,7 +32,7 @@ public class ShowApplicationDetailRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {

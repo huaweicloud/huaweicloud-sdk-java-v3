@@ -39,7 +39,7 @@ public class BatchCreateAndDeleteVaultTagsRequest  {
 
 
     /**
-     * Get vaultId
+     * 资源id
      * @return vaultId
      */
     public String getVaultId() {

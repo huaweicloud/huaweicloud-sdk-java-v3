@@ -14,10 +14,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.CloneServer;
-import com.huaweicloud.sdk.sms.v3.model.PostSourceServerBody;
-import com.huaweicloud.sdk.sms.v3.model.TargetServer;
+import com.huaweicloud.sdk.sms.v3.model.CloneServerBrief;
+import com.huaweicloud.sdk.sms.v3.model.SourceServerAssociatedWithTask;
+import com.huaweicloud.sdk.sms.v3.model.SubTaskAssociatedWithTask;
+import com.huaweicloud.sdk.sms.v3.model.TargetServerAssociatedWithTask;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -27,6 +30,12 @@ import java.util.Objects;
  */
 public class TasksResponseBody  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -204,42 +213,6 @@ public class TasksResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
-    private Integer priority;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
-    
-    private Boolean startTargetServer;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_ip")
-    
-    private String migrationIp;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_server")
-    
-    private PostSourceServerBody sourceServer;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_server")
-    
-    private TargetServer targetServer;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="state")
     
     private String state;
@@ -252,21 +225,33 @@ public class TasksResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connected")
-    
-    private Boolean connected;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_date")
     
     private Long createDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="priority")
+    
+    private Integer priority;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="speed_limit")
+    
+    private Integer speedLimit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="migrate_speed")
     
     private Double migrateSpeed;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="start_target_server")
+    
+    private Boolean startTargetServer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -282,11 +267,35 @@ public class TasksResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clone_server")
+    @JsonProperty(value="migration_ip")
     
-    private CloneServer cloneServer;
+    private String migrationIp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="sub_tasks")
+    
+    private List<SubTaskAssociatedWithTask> subTasks = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="source_server")
+    
+    private SourceServerAssociatedWithTask sourceServer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="target_server")
+    
+    private TargetServerAssociatedWithTask targetServer;
     /**
-     * 日志收集状态 
+     * 日志收集状态
      */
     public static final class LogCollectStatusEnum {
 
@@ -418,6 +427,40 @@ public class TasksResponseBody  {
     
     private LogCollectStatusEnum logCollectStatus;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="clone_server")
+    
+    private CloneServerBrief cloneServer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="syncing")
+    
+    private Boolean syncing;
+
+    public TasksResponseBody withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移任务id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
+
     public TasksResponseBody withName(String name) {
         this.name = name;
         return this;
@@ -484,154 +527,6 @@ public class TasksResponseBody  {
 
     
 
-    public TasksResponseBody withPriority(Integer priority) {
-        this.priority = priority;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 进程优先级 0：低 1：标准 2：高 
-     * minimum: 0
-     * maximum: 2
-     * @return priority
-     */
-    public Integer getPriority() {
-        return priority;
-    }
-
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
-    
-
-    public TasksResponseBody withStartTargetServer(Boolean startTargetServer) {
-        this.startTargetServer = startTargetServer;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 迁移完成后是否启动目的端服务器 true：启动 false：停止 
-     * @return startTargetServer
-     */
-    public Boolean getStartTargetServer() {
-        return startTargetServer;
-    }
-
-    public void setStartTargetServer(Boolean startTargetServer) {
-        this.startTargetServer = startTargetServer;
-    }
-
-    
-
-    public TasksResponseBody withMigrationIp(String migrationIp) {
-        this.migrationIp = migrationIp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址 
-     * @return migrationIp
-     */
-    public String getMigrationIp() {
-        return migrationIp;
-    }
-
-    public void setMigrationIp(String migrationIp) {
-        this.migrationIp = migrationIp;
-    }
-
-    
-
-    public TasksResponseBody withSourceServer(PostSourceServerBody sourceServer) {
-        this.sourceServer = sourceServer;
-        return this;
-    }
-
-    public TasksResponseBody withSourceServer(Consumer<PostSourceServerBody> sourceServerSetter) {
-        if(this.sourceServer == null ){
-            this.sourceServer = new PostSourceServerBody();
-            sourceServerSetter.accept(this.sourceServer);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get sourceServer
-     * @return sourceServer
-     */
-    public PostSourceServerBody getSourceServer() {
-        return sourceServer;
-    }
-
-    public void setSourceServer(PostSourceServerBody sourceServer) {
-        this.sourceServer = sourceServer;
-    }
-
-    
-
-    public TasksResponseBody withTargetServer(TargetServer targetServer) {
-        this.targetServer = targetServer;
-        return this;
-    }
-
-    public TasksResponseBody withTargetServer(Consumer<TargetServer> targetServerSetter) {
-        if(this.targetServer == null ){
-            this.targetServer = new TargetServer();
-            targetServerSetter.accept(this.targetServer);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get targetServer
-     * @return targetServer
-     */
-    public TargetServer getTargetServer() {
-        return targetServer;
-    }
-
-    public void setTargetServer(TargetServer targetServer) {
-        this.targetServer = targetServer;
-    }
-
-    
-
-    public TasksResponseBody withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 迁移任务id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    
-
     public TasksResponseBody withState(String state) {
         this.state = state;
         return this;
@@ -678,28 +573,6 @@ public class TasksResponseBody  {
 
     
 
-    public TasksResponseBody withConnected(Boolean connected) {
-        this.connected = connected;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 连接状态
-     * @return connected
-     */
-    public Boolean getConnected() {
-        return connected;
-    }
-
-    public void setConnected(Boolean connected) {
-        this.connected = connected;
-    }
-
-    
-
     public TasksResponseBody withCreateDate(Long createDate) {
         this.createDate = createDate;
         return this;
@@ -724,6 +597,52 @@ public class TasksResponseBody  {
 
     
 
+    public TasksResponseBody withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 进程优先级 0：低 1：标准 2：高
+     * minimum: 0
+     * maximum: 2
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    
+
+    public TasksResponseBody withSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移限速
+     * @return speedLimit
+     */
+    public Integer getSpeedLimit() {
+        return speedLimit;
+    }
+
+    public void setSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
+    }
+
+    
+
     public TasksResponseBody withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
@@ -744,6 +663,28 @@ public class TasksResponseBody  {
 
     public void setMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
+    }
+
+    
+
+    public TasksResponseBody withStartTargetServer(Boolean startTargetServer) {
+        this.startTargetServer = startTargetServer;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移完成后是否启动目的端服务器 true：启动 false：停止
+     * @return startTargetServer
+     */
+    public Boolean getStartTargetServer() {
+        return startTargetServer;
+    }
+
+    public void setStartTargetServer(Boolean startTargetServer) {
+        this.startTargetServer = startTargetServer;
     }
 
     
@@ -794,15 +735,73 @@ public class TasksResponseBody  {
 
     
 
-    public TasksResponseBody withCloneServer(CloneServer cloneServer) {
-        this.cloneServer = cloneServer;
+    public TasksResponseBody withMigrationIp(String migrationIp) {
+        this.migrationIp = migrationIp;
         return this;
     }
 
-    public TasksResponseBody withCloneServer(Consumer<CloneServer> cloneServerSetter) {
-        if(this.cloneServer == null ){
-            this.cloneServer = new CloneServer();
-            cloneServerSetter.accept(this.cloneServer);
+    
+
+
+    /**
+     * 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
+     * @return migrationIp
+     */
+    public String getMigrationIp() {
+        return migrationIp;
+    }
+
+    public void setMigrationIp(String migrationIp) {
+        this.migrationIp = migrationIp;
+    }
+
+    
+
+    public TasksResponseBody withSubTasks(List<SubTaskAssociatedWithTask> subTasks) {
+        this.subTasks = subTasks;
+        return this;
+    }
+
+    
+    public TasksResponseBody addSubTasksItem(SubTaskAssociatedWithTask subTasksItem) {
+        if(this.subTasks == null) {
+            this.subTasks = new ArrayList<>();
+        }
+        this.subTasks.add(subTasksItem);
+        return this;
+    }
+
+    public TasksResponseBody withSubTasks(Consumer<List<SubTaskAssociatedWithTask>> subTasksSetter) {
+        if(this.subTasks == null) {
+            this.subTasks = new ArrayList<>();
+        }
+        subTasksSetter.accept(this.subTasks);
+        return this;
+    }
+
+    /**
+     * 任务关联的子任务信息
+     * @return subTasks
+     */
+    public List<SubTaskAssociatedWithTask> getSubTasks() {
+        return subTasks;
+    }
+
+    public void setSubTasks(List<SubTaskAssociatedWithTask> subTasks) {
+        this.subTasks = subTasks;
+    }
+
+    
+
+    public TasksResponseBody withSourceServer(SourceServerAssociatedWithTask sourceServer) {
+        this.sourceServer = sourceServer;
+        return this;
+    }
+
+    public TasksResponseBody withSourceServer(Consumer<SourceServerAssociatedWithTask> sourceServerSetter) {
+        if(this.sourceServer == null ){
+            this.sourceServer = new SourceServerAssociatedWithTask();
+            sourceServerSetter.accept(this.sourceServer);
         }
         
         return this;
@@ -810,15 +809,66 @@ public class TasksResponseBody  {
 
 
     /**
-     * Get cloneServer
-     * @return cloneServer
+     * Get sourceServer
+     * @return sourceServer
      */
-    public CloneServer getCloneServer() {
-        return cloneServer;
+    public SourceServerAssociatedWithTask getSourceServer() {
+        return sourceServer;
     }
 
-    public void setCloneServer(CloneServer cloneServer) {
-        this.cloneServer = cloneServer;
+    public void setSourceServer(SourceServerAssociatedWithTask sourceServer) {
+        this.sourceServer = sourceServer;
+    }
+
+    
+
+    public TasksResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 迁移项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    
+
+    public TasksResponseBody withTargetServer(TargetServerAssociatedWithTask targetServer) {
+        this.targetServer = targetServer;
+        return this;
+    }
+
+    public TasksResponseBody withTargetServer(Consumer<TargetServerAssociatedWithTask> targetServerSetter) {
+        if(this.targetServer == null ){
+            this.targetServer = new TargetServerAssociatedWithTask();
+            targetServerSetter.accept(this.targetServer);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get targetServer
+     * @return targetServer
+     */
+    public TargetServerAssociatedWithTask getTargetServer() {
+        return targetServer;
+    }
+
+    public void setTargetServer(TargetServerAssociatedWithTask targetServer) {
+        this.targetServer = targetServer;
     }
 
     
@@ -832,7 +882,7 @@ public class TasksResponseBody  {
 
 
     /**
-     * 日志收集状态 
+     * 日志收集状态
      * @return logCollectStatus
      */
     public LogCollectStatusEnum getLogCollectStatus() {
@@ -841,6 +891,57 @@ public class TasksResponseBody  {
 
     public void setLogCollectStatus(LogCollectStatusEnum logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
+    }
+
+    
+
+    public TasksResponseBody withCloneServer(CloneServerBrief cloneServer) {
+        this.cloneServer = cloneServer;
+        return this;
+    }
+
+    public TasksResponseBody withCloneServer(Consumer<CloneServerBrief> cloneServerSetter) {
+        if(this.cloneServer == null ){
+            this.cloneServer = new CloneServerBrief();
+            cloneServerSetter.accept(this.cloneServer);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get cloneServer
+     * @return cloneServer
+     */
+    public CloneServerBrief getCloneServer() {
+        return cloneServer;
+    }
+
+    public void setCloneServer(CloneServerBrief cloneServer) {
+        this.cloneServer = cloneServer;
+    }
+
+    
+
+    public TasksResponseBody withSyncing(Boolean syncing) {
+        this.syncing = syncing;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否同步
+     * @return syncing
+     */
+    public Boolean getSyncing() {
+        return syncing;
+    }
+
+    public void setSyncing(Boolean syncing) {
+        this.syncing = syncing;
     }
 
     
@@ -854,51 +955,57 @@ public class TasksResponseBody  {
             return false;
         }
         TasksResponseBody tasksResponseBody = (TasksResponseBody) o;
-        return Objects.equals(this.name, tasksResponseBody.name) &&
+        return Objects.equals(this.id, tasksResponseBody.id) &&
+            Objects.equals(this.name, tasksResponseBody.name) &&
             Objects.equals(this.type, tasksResponseBody.type) &&
             Objects.equals(this.osType, tasksResponseBody.osType) &&
-            Objects.equals(this.priority, tasksResponseBody.priority) &&
-            Objects.equals(this.startTargetServer, tasksResponseBody.startTargetServer) &&
-            Objects.equals(this.migrationIp, tasksResponseBody.migrationIp) &&
-            Objects.equals(this.sourceServer, tasksResponseBody.sourceServer) &&
-            Objects.equals(this.targetServer, tasksResponseBody.targetServer) &&
-            Objects.equals(this.id, tasksResponseBody.id) &&
             Objects.equals(this.state, tasksResponseBody.state) &&
             Objects.equals(this.estimateCompleteTime, tasksResponseBody.estimateCompleteTime) &&
-            Objects.equals(this.connected, tasksResponseBody.connected) &&
             Objects.equals(this.createDate, tasksResponseBody.createDate) &&
+            Objects.equals(this.priority, tasksResponseBody.priority) &&
+            Objects.equals(this.speedLimit, tasksResponseBody.speedLimit) &&
             Objects.equals(this.migrateSpeed, tasksResponseBody.migrateSpeed) &&
+            Objects.equals(this.startTargetServer, tasksResponseBody.startTargetServer) &&
             Objects.equals(this.errorJson, tasksResponseBody.errorJson) &&
             Objects.equals(this.totalTime, tasksResponseBody.totalTime) &&
+            Objects.equals(this.migrationIp, tasksResponseBody.migrationIp) &&
+            Objects.equals(this.subTasks, tasksResponseBody.subTasks) &&
+            Objects.equals(this.sourceServer, tasksResponseBody.sourceServer) &&
+            Objects.equals(this.enterpriseProjectId, tasksResponseBody.enterpriseProjectId) &&
+            Objects.equals(this.targetServer, tasksResponseBody.targetServer) &&
+            Objects.equals(this.logCollectStatus, tasksResponseBody.logCollectStatus) &&
             Objects.equals(this.cloneServer, tasksResponseBody.cloneServer) &&
-            Objects.equals(this.logCollectStatus, tasksResponseBody.logCollectStatus);
+            Objects.equals(this.syncing, tasksResponseBody.syncing);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, osType, priority, startTargetServer, migrationIp, sourceServer, targetServer, id, state, estimateCompleteTime, connected, createDate, migrateSpeed, errorJson, totalTime, cloneServer, logCollectStatus);
+        return Objects.hash(id, name, type, osType, state, estimateCompleteTime, createDate, priority, speedLimit, migrateSpeed, startTargetServer, errorJson, totalTime, migrationIp, subTasks, sourceServer, enterpriseProjectId, targetServer, logCollectStatus, cloneServer, syncing);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class TasksResponseBody {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-        sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
-        sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
-        sb.append("    sourceServer: ").append(toIndentedString(sourceServer)).append("\n");
-        sb.append("    targetServer: ").append(toIndentedString(targetServer)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    estimateCompleteTime: ").append(toIndentedString(estimateCompleteTime)).append("\n");
-        sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
         sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
+        sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    errorJson: ").append(toIndentedString(errorJson)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");
-        sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
+        sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
+        sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
+        sb.append("    sourceServer: ").append(toIndentedString(sourceServer)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    targetServer: ").append(toIndentedString(targetServer)).append("\n");
         sb.append("    logCollectStatus: ").append(toIndentedString(logCollectStatus)).append("\n");
+        sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
+        sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("}");
         return sb.toString();
     }

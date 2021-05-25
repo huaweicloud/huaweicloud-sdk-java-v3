@@ -57,7 +57,7 @@ public class CreateTagRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -81,7 +81,7 @@ public class CreateTagRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {
@@ -103,7 +103,7 @@ public class CreateTagRequest  {
 
 
     /**
-     * Get project
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
      * @return project
      */
     public String getProject() {
@@ -125,7 +125,7 @@ public class CreateTagRequest  {
 
 
     /**
-     * Get ref
+     * 分支名称或者tag标签名称或者commit sha。
      * @return ref
      */
     public String getRef() {

@@ -50,7 +50,7 @@ public class ListScalingConfigsRequest  {
 
 
     /**
-     * Get scalingConfigurationName
+     * 伸缩配置名称。
      * @return scalingConfigurationName
      */
     public String getScalingConfigurationName() {
@@ -72,7 +72,7 @@ public class ListScalingConfigsRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像ID，同imageRef。
      * @return imageId
      */
     public String getImageId() {
@@ -94,7 +94,7 @@ public class ListScalingConfigsRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -116,7 +116,7 @@ public class ListScalingConfigsRequest  {
 
 
     /**
-     * Get limit
+     * 查询的记录条数，默认为20。
      * @return limit
      */
     public Integer getLimit() {

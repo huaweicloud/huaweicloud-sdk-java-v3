@@ -510,73 +510,30 @@ public class CloudPipelineMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartPipelineRequest, StartPipelineResponse> startPipeline = genForstartPipeline();
+    public static final HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> stopPipelineNew = genForstopPipelineNew();
 
-    private static HttpRequestDef<StartPipelineRequest, StartPipelineResponse> genForstartPipeline() {
+    private static HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> genForstopPipelineNew() {
         // basic
-        HttpRequestDef.Builder<StartPipelineRequest, StartPipelineResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StartPipelineRequest.class, StartPipelineResponse.class)
-                .withName("StartPipeline")
-                .withUri("/v3/pipelines/start")
+        HttpRequestDef.Builder<StopPipelineNewRequest, StopPipelineNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopPipelineNewRequest.class, StopPipelineNewResponse.class)
+                .withName("StopPipelineNew")
+                .withUri("/v3/pipelines/{pipeline_id}/stop")
                 .withContentType("application/json");
 
         // requests
         builder.withRequestField("pipeline_id",
-            LocationType.Query,
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(StartPipelineRequest::getPipelineId, (req, v) -> {
-                req.setPipelineId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(StartPipelineRequest::getXLanguage, (req, v) -> {
-                req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            StartPipelineParameters.class,
-            f -> f.withMarshaller(StartPipelineRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<StopPipelineRequest, StopPipelineResponse> stopPipeline = genForstopPipeline();
-
-    private static HttpRequestDef<StopPipelineRequest, StopPipelineResponse> genForstopPipeline() {
-        // basic
-        HttpRequestDef.Builder<StopPipelineRequest, StopPipelineResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StopPipelineRequest.class, StopPipelineResponse.class)
-                .withName("StopPipeline")
-                .withUri("/v3/pipelines/stop")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("pipeline_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(StopPipelineRequest::getPipelineId, (req, v) -> {
+            f -> f.withMarshaller(StopPipelineNewRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
             })
         );
         builder.withRequestField("build_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(StopPipelineRequest::getBuildId, (req, v) -> {
+            f -> f.withMarshaller(StopPipelineNewRequest::getBuildId, (req, v) -> {
                 req.setBuildId(v);
             })
         );
@@ -584,7 +541,7 @@ public class CloudPipelineMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(StopPipelineRequest::getXLanguage, (req, v) -> {
+            f -> f.withMarshaller(StopPipelineNewRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

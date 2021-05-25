@@ -39,7 +39,7 @@ public class UpdateSubnetRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网ID。
      * @return subnetId
      */
     public String getSubnetId() {

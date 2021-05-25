@@ -159,7 +159,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * 重用周期，只有quotaReuseMode为可重用，该字段才有意义。 1：小时2：天3：周4：月5：年
+     * 重用周期，只有quota_reuse_mode为可重用，该字段才有意义。 1：小时2：天3：周4：月5：年
      * @return quotaReuseCycle
      */
     public Integer getQuotaReuseCycle() {
@@ -181,7 +181,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * 重用周期类别，只有quotaReuseMode为可重用，该字段才有意义。 1：按自然周期重用是指重置周期是按照自然月/年来重置，例如如果周期是月，按自然周期重置，表示每个月的1号重置。 2：按订购周期重用。是指重置周期是按照订购时间来重置，例如如果周期是月，按订购周期重置，15号订购了该套餐，表示每个月的15号重置。
+     * 重用周期类别，只有quota_reuse_mode为可重用，该字段才有意义。 1：按自然周期重用是指重置周期是按照自然月/年来重置，例如如果周期是月，按自然周期重置，表示每个月的1号重置。 2：按订购周期重用。是指重置周期是按照订购时间来重置，例如如果周期是月，按订购周期重置，15号订购了该套餐，表示每个月的15号重置。
      * @return quotaReuseCycleType
      */
     public Integer getQuotaReuseCycleType() {
@@ -203,7 +203,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * 开始时间，格式UTC。 如果quotaReuseMode为可重用，则此时间为当前时间所在的重用周期的开始时间。如果quotaReuseMode为不可重用，则此时间为订购实例的生效时间。
+     * 开始时间，格式UTC。 如果quota_reuse_mode为可重用，则此时间为当前时间所在的重用周期的开始时间。如果quota_reuse_mode为不可重用，则此时间为订购实例的生效时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -225,7 +225,7 @@ public class PackageUsageInfo  {
 
 
     /**
-     * 结束时间，格式UTC。 如果quotaReuseMode为可重用，则此时间为当前时间所在的重用周期的结束时间。如果quotaReuseMode为不可重用，则此时间为订购实例的失效时间。
+     * 结束时间，格式UTC。 如果quota_reuse_mode为可重用，则此时间为当前时间所在的重用周期的结束时间。如果quota_reuse_mode为不可重用，则此时间为订购实例的失效时间。
      * @return endTime
      */
     public String getEndTime() {

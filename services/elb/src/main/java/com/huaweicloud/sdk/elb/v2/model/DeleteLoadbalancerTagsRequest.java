@@ -38,7 +38,7 @@ public class DeleteLoadbalancerTagsRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 负载均衡器ID。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -60,7 +60,7 @@ public class DeleteLoadbalancerTagsRequest  {
 
 
     /**
-     * Get key
+     * 待删除标签的key值
      * @return key
      */
     public String getKey() {

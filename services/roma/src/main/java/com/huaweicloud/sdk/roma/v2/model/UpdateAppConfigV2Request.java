@@ -51,7 +51,7 @@ public class UpdateAppConfigV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class UpdateAppConfigV2Request  {
 
 
     /**
-     * Get appId
+     * 应用编号
      * @return appId
      */
     public String getAppId() {
@@ -95,7 +95,7 @@ public class UpdateAppConfigV2Request  {
 
 
     /**
-     * Get appConfigId
+     * 应用配置的ID
      * @return appConfigId
      */
     public String getAppConfigId() {

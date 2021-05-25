@@ -38,7 +38,7 @@ public class BatchShowPipelinesStatusRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class BatchShowPipelinesStatusRequest  {
 
 
     /**
-     * Get pipelineIds
+     * 要获取状态的流水线ID，用逗号隔开
      * @return pipelineIds
      */
     public String getPipelineIds() {

@@ -57,7 +57,7 @@ public class ListSlowLogsRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets type
+     * 语句类型，取空值，表示查询所有语句类型。
      */
     public static final class TypeEnum {
 
@@ -168,7 +168,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -192,7 +192,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -214,7 +214,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get startDate
+     * 开始日期，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
      * @return startDate
      */
     public String getStartDate() {
@@ -236,7 +236,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get endDate
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。
      * @return endDate
      */
     public String getEndDate() {
@@ -258,7 +258,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get offset
+     * 页数偏移量，如1、2、3、4等，不填时默认为1。
      * @return offset
      */
     public Integer getOffset() {
@@ -280,7 +280,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get limit
+     * 每页多少条记录，取值范围是1~100，不填时默认为10。
      * @return limit
      */
     public Integer getLimit() {
@@ -302,7 +302,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get type
+     * 语句类型，取空值，表示查询所有语句类型。
      * @return type
      */
     public TypeEnum getType() {

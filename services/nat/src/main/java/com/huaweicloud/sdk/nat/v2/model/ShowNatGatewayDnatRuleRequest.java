@@ -32,7 +32,7 @@ public class ShowNatGatewayDnatRuleRequest  {
 
 
     /**
-     * Get dnatRuleId
+     * DNAT规则的ID。
      * @return dnatRuleId
      */
     public String getDnatRuleId() {

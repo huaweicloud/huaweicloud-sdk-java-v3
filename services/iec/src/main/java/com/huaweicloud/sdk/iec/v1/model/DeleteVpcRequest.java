@@ -32,7 +32,7 @@ public class DeleteVpcRequest  {
 
 
     /**
-     * Get vpcId
+     * 虚拟私有云ID。
      * @return vpcId
      */
     public String getVpcId() {

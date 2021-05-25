@@ -530,25 +530,6 @@ public class DmsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTags = genForshowProjectTags();
-
-    private static HttpRequestDef<ShowProjectTagsRequest, ShowProjectTagsResponse> genForshowProjectTags() {
-        // basic
-        HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
-                .withName("ShowProjectTags")
-                .withUri("/v2/{project_id}/queue/tags")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowQueueRequest, ShowQueueResponse> showQueue = genForshowQueue();
 
     private static HttpRequestDef<ShowQueueRequest, ShowQueueResponse> genForshowQueue() {
@@ -576,6 +557,25 @@ public class DmsMeta {
                 req.setIncludeDeadletter(v);
             })
         );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> showQueueProjectTags = genForshowQueueProjectTags();
+
+    private static HttpRequestDef<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> genForshowQueueProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQueueProjectTagsRequest.class, ShowQueueProjectTagsResponse.class)
+                .withName("ShowQueueProjectTags")
+                .withUri("/v2/{project_id}/queue/tags")
+                .withContentType("application/json");
+
+        // requests
 
         // response
         

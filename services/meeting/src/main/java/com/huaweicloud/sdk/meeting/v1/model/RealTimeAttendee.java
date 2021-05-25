@@ -62,7 +62,7 @@ public class RealTimeAttendee  {
 
 
     /**
-     * 与会者帐号。
+     * 与会者帐号（AAPID用户，代表第三方账号）。
      * @return accountID
      */
     public String getAccountID() {

@@ -39,7 +39,7 @@ public class UpdateServiceRequest  {
 
 
     /**
-     * Get serviceId
+     * 注册服务唯一标识，该值由注册接口返回
      * @return serviceId
      */
     public Integer getServiceId() {

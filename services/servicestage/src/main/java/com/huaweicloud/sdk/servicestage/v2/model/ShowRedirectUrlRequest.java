@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ShowRedirectUrlRequest  {
 
     /**
-     * Gets or Sets repoType
+     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
      */
     public static final class RepoTypeEnum {
 
@@ -132,7 +132,7 @@ public class ShowRedirectUrlRequest  {
 
 
     /**
-     * Get repoType
+     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
      * @return repoType
      */
     public RepoTypeEnum getRepoType() {
@@ -154,7 +154,7 @@ public class ShowRedirectUrlRequest  {
 
 
     /**
-     * Get tag
+     * 站点标签。 比如国际站的，?tag=intl。 默认为空。
      * @return tag
      */
     public String getTag() {

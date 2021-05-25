@@ -45,7 +45,7 @@ public class CreateProjectRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class CreateProjectRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {

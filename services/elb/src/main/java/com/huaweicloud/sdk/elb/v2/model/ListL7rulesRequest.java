@@ -98,7 +98,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询中每页的转发规则个数
      * minimum: 0
      * maximum: 9223372036854775807
      * @return limit
@@ -122,7 +122,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的转发规则的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -144,7 +144,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -166,7 +166,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get l7policyId
+     * 转发策略id
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -188,7 +188,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get id
+     * 转发规则ID。
      * @return id
      */
     public String getId() {
@@ -210,7 +210,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 转发规则的管理状态；取值范围： true/false。该字段为预留字段，暂未启用。默认为true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -232,7 +232,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get type
+     * 转发规则的匹配类型。取值范围：HOST_NAME：匹配请求中的域名；PATH：匹配请求中的路径；同一个转发策略下转发规则的type不能重复。
      * @return type
      */
     public String getType() {
@@ -254,7 +254,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get compareType
+     * 转发匹配方式： type为HOST_NAME时，取值范围：EQUAL_TO：精确匹配； type为PATH时，取值范围：REGEX：正则匹配；STARTS_WITH：前缀匹配；EQUAL_TO：精确匹配。
      * @return compareType
      */
     public String getCompareType() {
@@ -276,7 +276,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get invert
+     * 是否反向匹配；取值范围：true/false。默认值：false；该字段为预留字段，暂未启用。
      * @return invert
      */
     public Boolean getInvert() {
@@ -298,7 +298,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get key
+     * 匹配内容的键值。默认为null。该字段为预留字段，暂未启用。
      * @return key
      */
     public String getKey() {
@@ -320,7 +320,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get value
+     * 匹配内容的值。 当type为HOST_NAME时，取值范围：String (100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。 当type为PATH时，取值范围：String (128)。当转发规则的compare_type为STARTS_WITH、EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
      * @return value
      */
     public String getValue() {
@@ -342,7 +342,7 @@ public class ListL7rulesRequest  {
 
 
     /**
-     * Get provisioningStatus
+     * 转发规则的配置状态，可以为ACTIVE、PENDING_CREATE 或者ERROR。默认值：ACTIVE；该字段为预留字段，暂未启用。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {

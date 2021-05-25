@@ -39,7 +39,7 @@ public class KeystoneUpdateMappingRequest  {
 
 
     /**
-     * Get id
+     * 待更新的映射ID。
      * @return id
      */
     public String getId() {

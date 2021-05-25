@@ -293,7 +293,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get tenantId
+     * 项目的ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -315,7 +315,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get id
+     * 公网NAT网关实例的ID。
      * @return id
      */
     public String getId() {
@@ -337,7 +337,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。创建公网NAT网关实例时，关联的企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -359,7 +359,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get description
+     * 公网NAT网关实例的描述，长度限制为255。
      * @return description
      */
     public String getDescription() {
@@ -381,7 +381,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get createdAt
+     * 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -403,7 +403,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get name
+     * 公网NAT网关实例的名字，长度限制为64。 公网NAT网关实例的名字仅支持数字、字母、_（下划线）、-（中划线）、中文
      * @return name
      */
     public String getName() {
@@ -439,7 +439,7 @@ public class ListNatGatewaysRequest  {
     }
 
     /**
-     * Get status
+     * 公网NAT网关实例的状态。
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -475,7 +475,7 @@ public class ListNatGatewaysRequest  {
     }
 
     /**
-     * Get spec
+     * 公网NAT网关实例的规格。 取值为： \"1\"：小型，SNAT最大连接数10000 \"2\"：中型，SNAT最大连接数50000 \"3\"：大型，SNAT最大连接数200000 \"4\"：超大型，SNAT最大连接数1000000 
      * @return spec
      */
     public List<SpecEnum> getSpec() {
@@ -497,7 +497,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 解冻/冻结状态。 取值范围： \"true\"：解冻 \"false\"：冻结
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -519,7 +519,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get internalNetworkId
+     * 公网NAT网关下行口（DVR的下一跳）所属的network id。
      * @return internalNetworkId
      */
     public String getInternalNetworkId() {
@@ -541,7 +541,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get routerId
+     * VPC的id。
      * @return routerId
      */
     public String getRouterId() {
@@ -563,7 +563,7 @@ public class ListNatGatewaysRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit

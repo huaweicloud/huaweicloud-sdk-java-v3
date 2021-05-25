@@ -39,7 +39,7 @@ public class AttachEipRequest  {
 
 
     /**
-     * Get nodeId
+     * 需要绑定公网IP的节点ID。集群实例选择mongos节点，副本集实例选择primary或者secondary节点，单节点实例选择primary节点。
      * @return nodeId
      */
     public String getNodeId() {

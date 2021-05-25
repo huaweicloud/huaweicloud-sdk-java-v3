@@ -32,7 +32,7 @@ public class ListVersionRequest  {
 
 
     /**
-     * Get apiVersion
+     * 待查询版本号。当前仅支持v2。
      * @return apiVersion
      */
     public String getApiVersion() {

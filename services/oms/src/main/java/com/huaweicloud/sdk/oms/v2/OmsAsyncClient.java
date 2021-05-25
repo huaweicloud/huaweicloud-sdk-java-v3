@@ -20,6 +20,28 @@ public class OmsAsyncClient {
 
 
     /**
+     * 创建同步事件
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
+     *
+     * @param CreateSyncEventsRequest 请求对象
+     * @return CompletableFuture<CreateSyncEventsResponse>
+     */
+    public CompletableFuture<CreateSyncEventsResponse> createSyncEventsAsync(CreateSyncEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.createSyncEvents);
+    }
+
+    /**
+     * 创建同步事件
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
+     *
+     * @param CreateSyncEventsRequest 请求对象
+     * @return AsyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>
+     */
+    public AsyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEventsAsyncInvoker(CreateSyncEventsRequest request) {
+        return new AsyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>(request, OmsMeta.createSyncEvents, hcClient);
+    }
+
+    /**
      * 创建迁移任务
      * 创建迁移任务，创建成功后，任务会被自动启动，不需要额外调用启动任务命令。
      *
@@ -215,28 +237,6 @@ public class OmsAsyncClient {
      */
     public AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfoAsyncInvoker(ShowApiInfoRequest request) {
         return new AsyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, OmsMeta.showApiInfo, hcClient);
-    }
-
-    /**
-     * 创建同步事件
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
-     *
-     * @param CreateSyncEventsRequest 请求对象
-     * @return CompletableFuture<CreateSyncEventsResponse>
-     */
-    public CompletableFuture<CreateSyncEventsResponse> createSyncEventsAsync(CreateSyncEventsRequest request) {
-        return hcClient.asyncInvokeHttp(request, OmsMeta.createSyncEvents);
-    }
-
-    /**
-     * 创建同步事件
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
-     *
-     * @param CreateSyncEventsRequest 请求对象
-     * @return AsyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>
-     */
-    public AsyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEventsAsyncInvoker(CreateSyncEventsRequest request) {
-        return new AsyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>(request, OmsMeta.createSyncEvents, hcClient);
     }
 
 }

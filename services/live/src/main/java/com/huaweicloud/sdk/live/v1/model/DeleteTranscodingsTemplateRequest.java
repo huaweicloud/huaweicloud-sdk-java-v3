@@ -38,7 +38,7 @@ public class DeleteTranscodingsTemplateRequest  {
 
 
     /**
-     * Get domain
+     * 播放域名
      * @return domain
      */
     public String getDomain() {
@@ -60,7 +60,7 @@ public class DeleteTranscodingsTemplateRequest  {
 
 
     /**
-     * Get appName
+     * 应用名称
      * @return appName
      */
     public String getAppName() {

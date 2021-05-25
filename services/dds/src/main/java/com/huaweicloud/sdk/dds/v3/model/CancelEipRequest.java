@@ -32,7 +32,7 @@ public class CancelEipRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID。
      * @return nodeId
      */
     public String getNodeId() {

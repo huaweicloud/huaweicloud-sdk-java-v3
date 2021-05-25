@@ -32,7 +32,7 @@ public class ListClusterDetailsRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群ID
      * @return clusterId
      */
     public String getClusterId() {

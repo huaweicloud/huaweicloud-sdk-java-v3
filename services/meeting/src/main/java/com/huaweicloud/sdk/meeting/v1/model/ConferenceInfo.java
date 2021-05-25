@@ -3,6 +3,10 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +17,9 @@ import com.huaweicloud.sdk.meeting.v1.model.PartAttendee;
 import com.huaweicloud.sdk.meeting.v1.model.PasswordEntry;
 import com.huaweicloud.sdk.meeting.v1.model.RestConfConfigDTO;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -244,12 +250,210 @@ public class ConferenceInfo  {
     @JsonProperty(value="vmrID")
     
     private String vmrID;
+    /**
+     * 会议角色
+     */
+    public static final class RoleEnum {
+
+        
+        /**
+         * Enum CHAIR for value: "chair"
+         */
+        public static final RoleEnum CHAIR = new RoleEnum("chair");
+        
+        /**
+         * Enum GENERAL for value: "general"
+         */
+        public static final RoleEnum GENERAL = new RoleEnum("general");
+        
+        /**
+         * Enum AUDIENCE for value: "audience"
+         */
+        public static final RoleEnum AUDIENCE = new RoleEnum("audience");
+        
+
+        private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RoleEnum> createStaticFields() {
+            Map<String, RoleEnum> map = new HashMap<>();
+            map.put("chair", CHAIR);
+            map.put("general", GENERAL);
+            map.put("audience", AUDIENCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RoleEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RoleEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            RoleEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new RoleEnum(value);
+            }
+            return result;
+        }
+
+        public static RoleEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            RoleEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof RoleEnum) {
+                return this.value.equals(((RoleEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="role")
+    
+    private RoleEnum role;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="webinar")
+    
+    private Boolean webinar;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="multiStreamFlag")
+    
+    private Integer multiStreamFlag;
+    /**
+     * 会议类型
+     */
+    public static final class ConfModeEnum {
+
+        
+        /**
+         * Enum COMMON for value: "COMMON"
+         */
+        public static final ConfModeEnum COMMON = new ConfModeEnum("COMMON");
+        
+        /**
+         * Enum RTC for value: "RTC"
+         */
+        public static final ConfModeEnum RTC = new ConfModeEnum("RTC");
+        
+
+        private static final Map<String, ConfModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConfModeEnum> createStaticFields() {
+            Map<String, ConfModeEnum> map = new HashMap<>();
+            map.put("COMMON", COMMON);
+            map.put("RTC", RTC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConfModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConfModeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ConfModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ConfModeEnum(value);
+            }
+            return result;
+        }
+
+        public static ConfModeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ConfModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ConfModeEnum) {
+                return this.value.equals(((ConfModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="confMode")
+    
+    private ConfModeEnum confMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="scheduleVmr")
+    
+    private Boolean scheduleVmr;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="concurrentParticipants")
     
     private Integer concurrentParticipants;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="picDisplay")
+    
+    private Object picDisplay;
 
     public ConferenceInfo withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
@@ -1107,6 +1311,118 @@ public class ConferenceInfo  {
 
     
 
+    public ConferenceInfo withRole(RoleEnum role) {
+        this.role = role;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议角色
+     * @return role
+     */
+    public RoleEnum getRole() {
+        return role;
+    }
+
+    public void setRole(RoleEnum role) {
+        this.role = role;
+    }
+
+    
+
+    public ConferenceInfo withWebinar(Boolean webinar) {
+        this.webinar = webinar;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否网络研讨会
+     * @return webinar
+     */
+    public Boolean getWebinar() {
+        return webinar;
+    }
+
+    public void setWebinar(Boolean webinar) {
+        this.webinar = webinar;
+    }
+
+    
+
+    public ConferenceInfo withMultiStreamFlag(Integer multiStreamFlag) {
+        this.multiStreamFlag = multiStreamFlag;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 标识是否为多流视频会议。 枚举值如下 1：多流会议
+     * minimum: 1
+     * maximum: 1
+     * @return multiStreamFlag
+     */
+    public Integer getMultiStreamFlag() {
+        return multiStreamFlag;
+    }
+
+    public void setMultiStreamFlag(Integer multiStreamFlag) {
+        this.multiStreamFlag = multiStreamFlag;
+    }
+
+    
+
+    public ConferenceInfo withConfMode(ConfModeEnum confMode) {
+        this.confMode = confMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 会议类型
+     * @return confMode
+     */
+    public ConfModeEnum getConfMode() {
+        return confMode;
+    }
+
+    public void setConfMode(ConfModeEnum confMode) {
+        this.confMode = confMode;
+    }
+
+    
+
+    public ConferenceInfo withScheduleVmr(Boolean scheduleVmr) {
+        this.scheduleVmr = scheduleVmr;
+        return this;
+    }
+
+    
+
+
+    /**
+     * True: VMR预约记录（如果为true则该记录不支持根据会议ID查询会议详情） False：普通会议
+     * @return scheduleVmr
+     */
+    public Boolean getScheduleVmr() {
+        return scheduleVmr;
+    }
+
+    public void setScheduleVmr(Boolean scheduleVmr) {
+        this.scheduleVmr = scheduleVmr;
+    }
+
+    
+
     public ConferenceInfo withConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
         return this;
@@ -1125,6 +1441,28 @@ public class ConferenceInfo  {
 
     public void setConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
+    }
+
+    
+
+    public ConferenceInfo withPicDisplay(Object picDisplay) {
+        this.picDisplay = picDisplay;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前多画面信息。
+     * @return picDisplay
+     */
+    public Object getPicDisplay() {
+        return picDisplay;
+    }
+
+    public void setPicDisplay(Object picDisplay) {
+        this.picDisplay = picDisplay;
     }
 
     
@@ -1175,11 +1513,17 @@ public class ConferenceInfo  {
             Objects.equals(this.normalCount, conferenceInfo.normalCount) &&
             Objects.equals(this.deptName, conferenceInfo.deptName) &&
             Objects.equals(this.vmrID, conferenceInfo.vmrID) &&
-            Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants);
+            Objects.equals(this.role, conferenceInfo.role) &&
+            Objects.equals(this.webinar, conferenceInfo.webinar) &&
+            Objects.equals(this.multiStreamFlag, conferenceInfo.multiStreamFlag) &&
+            Objects.equals(this.confMode, conferenceInfo.confMode) &&
+            Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr) &&
+            Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants) &&
+            Objects.equals(this.picDisplay, conferenceInfo.picDisplay);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceID, subject, size, timeZoneID, startTime, endTime, mediaTypes, conferenceState, language, accessNumber, passwordEntry, userUUID, scheduserName, conferenceType, confType, cycleParams, isAutoMute, isAutoRecord, chairJoinUri, guestJoinUri, audienceJoinUri, recordType, auxAddress, liveAddress, recordAuxStream, recordAuthType, liveUrl, confConfigInfo, vmrFlag, isHasRecordFile, vmrConferenceID, confUUID, partAttendeeInfo, terminlCount, normalCount, deptName, vmrID, concurrentParticipants);
+        return Objects.hash(conferenceID, subject, size, timeZoneID, startTime, endTime, mediaTypes, conferenceState, language, accessNumber, passwordEntry, userUUID, scheduserName, conferenceType, confType, cycleParams, isAutoMute, isAutoRecord, chairJoinUri, guestJoinUri, audienceJoinUri, recordType, auxAddress, liveAddress, recordAuxStream, recordAuthType, liveUrl, confConfigInfo, vmrFlag, isHasRecordFile, vmrConferenceID, confUUID, partAttendeeInfo, terminlCount, normalCount, deptName, vmrID, role, webinar, multiStreamFlag, confMode, scheduleVmr, concurrentParticipants, picDisplay);
     }
     @Override
     public String toString() {
@@ -1222,7 +1566,13 @@ public class ConferenceInfo  {
         sb.append("    normalCount: ").append(toIndentedString(normalCount)).append("\n");
         sb.append("    deptName: ").append(toIndentedString(deptName)).append("\n");
         sb.append("    vmrID: ").append(toIndentedString(vmrID)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
+        sb.append("    webinar: ").append(toIndentedString(webinar)).append("\n");
+        sb.append("    multiStreamFlag: ").append(toIndentedString(multiStreamFlag)).append("\n");
+        sb.append("    confMode: ").append(toIndentedString(confMode)).append("\n");
+        sb.append("    scheduleVmr: ").append(toIndentedString(scheduleVmr)).append("\n");
         sb.append("    concurrentParticipants: ").append(toIndentedString(concurrentParticipants)).append("\n");
+        sb.append("    picDisplay: ").append(toIndentedString(picDisplay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

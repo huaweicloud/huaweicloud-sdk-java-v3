@@ -38,7 +38,7 @@ public class ShowAgentStatusRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ShowAgentStatusRequest  {
 
 
     /**
-     * Get agentId
+     * AgentID
      * @return agentId
      */
     public String getAgentId() {

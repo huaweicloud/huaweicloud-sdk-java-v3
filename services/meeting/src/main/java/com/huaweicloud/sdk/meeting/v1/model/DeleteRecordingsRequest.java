@@ -50,7 +50,7 @@ public class DeleteRecordingsRequest  {
 
 
     /**
-     * Get confUUIDs
+     * 会议UUID列表，多个会议UUID之间以英文逗号隔开。
      * @return confUUIDs
      */
     public String getConfUUIDs() {
@@ -72,7 +72,7 @@ public class DeleteRecordingsRequest  {
 
 
     /**
-     * Get userUUID
+     * 用户的UUID（已在USG注册过的）。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -94,7 +94,7 @@ public class DeleteRecordingsRequest  {
 
 
     /**
-     * Get xAuthorizationType
+     * 标识是否为第三方portal过来的请求。
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,7 +118,7 @@ public class DeleteRecordingsRequest  {
 
 
     /**
-     * Get xSiteId
+     * 用于区分到哪个HCSO站点鉴权。
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

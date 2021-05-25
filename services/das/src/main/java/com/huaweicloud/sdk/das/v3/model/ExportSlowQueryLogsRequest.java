@@ -57,7 +57,7 @@ public class ExportSlowQueryLogsRequest  {
     
     private String marker;
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型。
      */
     public static final class XLanguageEnum {
 
@@ -144,7 +144,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -166,7 +166,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get datastoreType
+     * 数据库类型。支持MySQL、GaussDB(for MySQL)、PostgreSQL。
      * @return datastoreType
      */
     public String getDatastoreType() {
@@ -188,7 +188,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get startAt
+     * 开始时间（Unix timestamp），单位：毫秒。
      * @return startAt
      */
     public Long getStartAt() {
@@ -210,7 +210,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get endAt
+     * 结束时间（Unix timestamp），单位：毫秒。
      * @return endAt
      */
     public Long getEndAt() {
@@ -232,7 +232,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get limit
+     * 每页记录数。最大为2000。
      * @return limit
      */
     public Integer getLimit() {
@@ -254,7 +254,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get marker
+     * 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
      * @return marker
      */
     public String getMarker() {
@@ -276,7 +276,7 @@ public class ExportSlowQueryLogsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

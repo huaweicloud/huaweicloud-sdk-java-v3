@@ -27,7 +27,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
     
     private String domainId;
     /**
-     * Gets or Sets option
+     * 查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
      */
     public static final class OptionEnum {
 
@@ -120,7 +120,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
 
 
     /**
-     * Get domainId
+     * 待查询的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return domainId
      */
     public String getDomainId() {
@@ -142,7 +142,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
 
 
     /**
-     * Get option
+     * 查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
      * @return option
      */
     public OptionEnum getOption() {

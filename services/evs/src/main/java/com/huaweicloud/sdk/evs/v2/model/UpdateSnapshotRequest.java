@@ -39,7 +39,7 @@ public class UpdateSnapshotRequest  {
 
 
     /**
-     * Get snapshotId
+     * 快照ID
      * @return snapshotId
      */
     public String getSnapshotId() {

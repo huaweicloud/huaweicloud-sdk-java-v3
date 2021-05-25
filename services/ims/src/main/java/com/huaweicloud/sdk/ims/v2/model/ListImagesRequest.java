@@ -45,7 +45,7 @@ import java.util.Objects;
 public class ListImagesRequest  {
 
     /**
-     * Gets or Sets imagetype
+     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
      */
     public static final class ImagetypeEnum {
 
@@ -135,7 +135,7 @@ public class ListImagesRequest  {
     
     private ImagetypeEnum imagetype;
     /**
-     * Gets or Sets isregistered
+     * 镜像是否可用，取值为true，扩展接口会默认为true，普通用户只能查询取值为true的镜像。
      */
     public static final class IsregisteredEnum {
 
@@ -219,7 +219,7 @@ public class ListImagesRequest  {
     
     private IsregisteredEnum isregistered;
     /**
-     * Gets or Sets osBit
+     * 操作系统位数，一般取值为32或者64。
      */
     public static final class OsBitEnum {
 
@@ -303,7 +303,7 @@ public class ListImagesRequest  {
     
     private OsBitEnum osBit;
     /**
-     * Gets or Sets osType
+     * 镜像系统类型，取值为Linux，Windows，Other。
      */
     public static final class OsTypeEnum {
 
@@ -393,7 +393,7 @@ public class ListImagesRequest  {
     
     private OsTypeEnum osType;
     /**
-     * Gets or Sets platform
+     * 镜像平台分类
      */
     public static final class PlatformEnum {
 
@@ -597,7 +597,7 @@ public class ListImagesRequest  {
     
     private String containerFormat;
     /**
-     * Gets or Sets diskFormat
+     * 镜像格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
      */
     public static final class DiskFormatEnum {
 
@@ -723,7 +723,7 @@ public class ListImagesRequest  {
     
     private String marker;
     /**
-     * Gets or Sets memberStatus
+     * 成员状态。目前取值有accepted、rejected、pending。accepted表示已经接受共享的镜像，rejected表示已经拒绝了其他用户共享的镜像，pending表示需要确认的其他用户的共享镜像。需要在查询时设置“visibility”参数为“shared”。
      */
     public static final class MemberStatusEnum {
 
@@ -843,7 +843,7 @@ public class ListImagesRequest  {
     
     private Boolean _protected;
     /**
-     * Gets or Sets sortDir
+     * 用于排序，表示升序还是降序，取值为asc和desc。与sort_key一起组合使用，默认为降序desc。
      */
     public static final class SortDirEnum {
 
@@ -927,7 +927,7 @@ public class ListImagesRequest  {
     
     private SortDirEnum sortDir;
     /**
-     * Gets or Sets sortKey
+     * 用于排序，表示按照哪个字段排序。取值为镜像属性name，container_format，disk_format，status ，id，size字段，默认为创建时间。
      */
     public static final class SortKeyEnum {
 
@@ -1041,7 +1041,7 @@ public class ListImagesRequest  {
     
     private SortKeyEnum sortKey;
     /**
-     * Gets or Sets status
+     * 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
      */
     public static final class StatusEnum {
 
@@ -1149,7 +1149,7 @@ public class ListImagesRequest  {
     
     private String tag;
     /**
-     * Gets or Sets virtualEnvType
+     * 镜像使用环境类型：FusionCompute，Ironic，DataImage。如果弹性云服务器镜像，则取值为FusionCompute，如果是数据卷镜像则取值是DataImage，如果是裸金属服务器镜像，则取值是Ironic。
      */
     public static final class VirtualEnvTypeEnum {
 
@@ -1239,7 +1239,7 @@ public class ListImagesRequest  {
     
     private VirtualEnvTypeEnum virtualEnvType;
     /**
-     * Gets or Sets visibility
+     * 是否被其他租户可见，取值为public或private
      */
     public static final class VisibilityEnum {
 
@@ -1347,7 +1347,7 @@ public class ListImagesRequest  {
     
     private String updatedAt;
     /**
-     * Gets or Sets architecture
+     * 镜像架构类型。取值包括： x86 arm
      */
     public static final class ArchitectureEnum {
 
@@ -1440,7 +1440,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get imagetype
+     * 镜像类型，目前支持以下类型： 公共镜像：gold 私有镜像：private 共享镜像：shared
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1464,7 +1464,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get isregistered
+     * 镜像是否可用，取值为true，扩展接口会默认为true，普通用户只能查询取值为true的镜像。
      * @return isregistered
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1488,7 +1488,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get osBit
+     * 操作系统位数，一般取值为32或者64。
      * @return osBit
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1512,7 +1512,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get osType
+     * 镜像系统类型，取值为Linux，Windows，Other。
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1536,7 +1536,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get platform
+     * 镜像平台分类
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1560,7 +1560,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportDiskintensive
+     * 表示该镜像支持密集存储。如果镜像支持密集存储性能，则值为true，否则无需增加该属性。
      * @return supportDiskintensive
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1584,7 +1584,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportHighperformance
+     * 表示该镜像支持高计算性能。如果镜像支持高计算性能，则值为true，否则无需增加该属性。
      * @return supportHighperformance
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1608,7 +1608,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvm
+     * 如果镜像支持KVM，取值为true，否则无需增加该属性。
      * @return supportKvm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1632,7 +1632,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvmGpuType
+     * 表示该镜像是支持KVM虚拟化平台下的GPU类型，如果不支持KVM虚拟机下GPU类型，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
      * @return supportKvmGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1656,7 +1656,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvmInfiniband
+     * 如果镜像支持KVM虚拟化下Infiniband网卡类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”属性不共存。
      * @return supportKvmInfiniband
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1680,7 +1680,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportLargememory
+     * 表示该镜像支持超大内存。如果镜像支持超大内存，取值为true，否则无需增加该属性。
      * @return supportLargememory
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1704,7 +1704,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportXen
+     * 如果镜像支持XEN，取值为true，否则无需增加该属性。
      * @return supportXen
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1728,7 +1728,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportXenGpuType
+     * 表示该镜像是支持XEN虚拟化平台下的GPU优化类型，如果不支持XEN虚拟化下GPU类型，无需添加该属性 。该属性与“__support_xen”和“__support_kvm”属性不共存。
      * @return supportXenGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1752,7 +1752,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportXenHana
+     * 如果镜像支持XEN虚拟化下HANA类型，取值为true。否则，无需添加该属性。该属性与“__support_xen”和“__support_kvm”属性不共存。
      * @return supportXenHana
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1776,7 +1776,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get containerFormat
+     * 容器类型
      * @return containerFormat
      */
     public String getContainerFormat() {
@@ -1798,7 +1798,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get diskFormat
+     * 镜像格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
      * @return diskFormat
      */
     public DiskFormatEnum getDiskFormat() {
@@ -1820,7 +1820,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 表示查询某个企业项目下的镜像。 取值为0，表示查询属于default企业项目下的镜像。 取值为UUID，表示查询属于该UUID对应的企业项目下的镜像。取值为all_granted_eps，表示查询当前用户所有企业项目下的镜像。 关于企业项目ID的获取及企业项目特性的详细信息，请参考《企业管理用户指南》。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -1842,7 +1842,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get id
+     * 镜像ID
      * @return id
      */
     public String getId() {
@@ -1864,7 +1864,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get limit
+     * 用于分页，表示查询几条镜像记录，取值为整数，默认取值为500。
      * @return limit
      */
     public Integer getLimit() {
@@ -1886,7 +1886,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get marker
+     * 用于分页，表示从哪个镜像开始查询，取值为镜像ID。
      * @return marker
      */
     public String getMarker() {
@@ -1908,7 +1908,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get memberStatus
+     * 成员状态。目前取值有accepted、rejected、pending。accepted表示已经接受共享的镜像，rejected表示已经拒绝了其他用户共享的镜像，pending表示需要确认的其他用户的共享镜像。需要在查询时设置“visibility”参数为“shared”。
      * @return memberStatus
      */
     public MemberStatusEnum getMemberStatus() {
@@ -1930,7 +1930,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get minDisk
+     * 镜像运行需要的最小磁盘，单位为GB 。取值为40～1024GB。
      * minimum: 40
      * maximum: 1024
      * @return minDisk
@@ -1954,7 +1954,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get minRam
+     * 镜像运行需要的最小内存，单位为MB。参数取值依据弹性云服务器的规格限制，一般设置为0。
      * @return minRam
      */
     public Integer getMinRam() {
@@ -1976,7 +1976,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get name
+     * 镜像名称
      * @return name
      */
     public String getName() {
@@ -1998,7 +1998,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get owner
+     * 镜像属于哪个租户
      * @return owner
      */
     public String getOwner() {
@@ -2020,7 +2020,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get _protected
+     * 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
      * @return _protected
      */
     public Boolean getProtected() {
@@ -2042,7 +2042,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get sortDir
+     * 用于排序，表示升序还是降序，取值为asc和desc。与sort_key一起组合使用，默认为降序desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -2064,7 +2064,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get sortKey
+     * 用于排序，表示按照哪个字段排序。取值为镜像属性name，container_format，disk_format，status ，id，size字段，默认为创建时间。
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -2086,7 +2086,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get status
+     * 镜像状态。取值如下： queued：表示镜像元数据已经创建成功，等待上传镜像文件。 saving：表示镜像正在上传文件到后端存储。 deleted：表示镜像已经删除。 killed：表示镜像上传错误。 active：表示镜像可以正常使用。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -2108,7 +2108,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get tag
+     * 标签，用户为镜像增加自定义标签后可以通过该参数过滤查询。
      * @return tag
      */
     public String getTag() {
@@ -2130,7 +2130,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get virtualEnvType
+     * 镜像使用环境类型：FusionCompute，Ironic，DataImage。如果弹性云服务器镜像，则取值为FusionCompute，如果是数据卷镜像则取值是DataImage，如果是裸金属服务器镜像，则取值是Ironic。
      * @return virtualEnvType
      */
     public VirtualEnvTypeEnum getVirtualEnvType() {
@@ -2152,7 +2152,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get visibility
+     * 是否被其他租户可见，取值为public或private
      * @return visibility
      */
     public VisibilityEnum getVisibility() {
@@ -2174,7 +2174,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get xSdkDate
+     * 请求的发生时间,格式为YYYYMMDDTHHMMSSZ。取值为当前系统的GMT时间。使用AK/SK认证时该字段必选
      * @return xSdkDate
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2198,7 +2198,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get flavorId
+     * 用于通过云服务器规格过滤出可用公共镜像，取值为规格ID。 当前仅支持通过单个规格进行过滤。
      * @return flavorId
      */
     public String getFlavorId() {
@@ -2220,7 +2220,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get createdAt
+     * 镜像创建时间。支持按照时间点过滤查询，取值格式为“操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询创建时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： created_at=gt:2018-10-28T10:00:00Z
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -2242,7 +2242,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get updatedAt
+     * 镜像修改时间。支持按照时间点过滤查询，取值格式为“ 操作符:UTC时间”。 其中操作符支持如下几种： gt：大于 gte：大于等于 lt：小于 lte：小于等于 eq：等于 neq：不等于 时间格式支持：yyyy-MM-ddThh:mm:ssZ或者yyyy-MM-dd hh:mm:ss 例如，查询修改时间在2018-10-28 10:00:00之前的镜像，可以通过如下条件过滤： updated_at=gt:2018-10-28T10:00:00Z
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -2264,7 +2264,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get architecture
+     * 镜像架构类型。取值包括： x86 arm
      * @return architecture
      */
     public ArchitectureEnum getArchitecture() {

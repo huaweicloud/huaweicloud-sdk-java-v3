@@ -74,7 +74,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,7 +98,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get templateType
+     * 模板类型
      * @return templateType
      */
     public String getTemplateType() {
@@ -120,7 +120,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get isBuildIn
+     * 是否内置模板
      * @return isBuildIn
      */
     public String getIsBuildIn() {
@@ -142,7 +142,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量,表示从此偏移量开始查询,offset大于等于0
      * minimum: 0
      * maximum: 100
      * @return offset
@@ -166,7 +166,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -190,7 +190,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get name
+     * 模板名称，匹配规则为模糊匹配
      * @return name
      */
     public String getName() {
@@ -212,7 +212,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get sort
+     * 排序字段
      * @return sort
      */
     public String getSort() {
@@ -234,7 +234,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get asc
+     * 是否正序
      * @return asc
      */
     public String getAsc() {

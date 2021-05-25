@@ -39,7 +39,7 @@ public class CreateL7RuleRequest  {
 
 
     /**
-     * Get l7policyId
+     * 转发策略ID。
      * @return l7policyId
      */
     public String getL7policyId() {

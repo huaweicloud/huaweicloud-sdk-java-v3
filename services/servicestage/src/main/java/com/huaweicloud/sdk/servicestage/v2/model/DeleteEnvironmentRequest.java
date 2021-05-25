@@ -32,7 +32,7 @@ public class DeleteEnvironmentRequest  {
 
 
     /**
-     * Get environmentId
+     * 环境ID。
      * @return environmentId
      */
     public String getEnvironmentId() {

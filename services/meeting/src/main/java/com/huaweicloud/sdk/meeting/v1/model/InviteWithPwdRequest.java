@@ -39,7 +39,7 @@ public class InviteWithPwdRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID
      * @return conferenceID
      */
     public String getConferenceID() {

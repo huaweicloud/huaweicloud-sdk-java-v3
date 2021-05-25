@@ -44,7 +44,7 @@ public class DeleteIpFromDomainNameRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class DeleteIpFromDomainNameRequest  {
 
 
     /**
-     * Get groupId
+     * 分片ID。
      * @return groupId
      */
     public String getGroupId() {
@@ -88,7 +88,7 @@ public class DeleteIpFromDomainNameRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID。
      * @return nodeId
      */
     public String getNodeId() {

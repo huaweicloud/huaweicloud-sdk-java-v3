@@ -38,7 +38,7 @@ public class ListChildIssuesV4Request  {
 
 
     /**
-     * Get projectId
+     * 项目id
      * @return projectId
      */
     public String getProjectId() {
@@ -60,7 +60,7 @@ public class ListChildIssuesV4Request  {
 
 
     /**
-     * Get issueId
+     * 工作项id
      * @return issueId
      */
     public Integer getIssueId() {

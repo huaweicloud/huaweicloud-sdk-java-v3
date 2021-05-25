@@ -62,7 +62,7 @@ public class ListResourcesRequest  {
 
 
     /**
-     * Get provider
+     * 云服务英文简写
      * @return provider
      */
     public String getProvider() {
@@ -84,7 +84,7 @@ public class ListResourcesRequest  {
 
 
     /**
-     * Get type
+     * 云服务资源类型名称
      * @return type
      */
     public String getType() {
@@ -106,7 +106,7 @@ public class ListResourcesRequest  {
 
 
     /**
-     * Get regionId
+     * 区域ID
      * @return regionId
      */
     public String getRegionId() {
@@ -128,7 +128,7 @@ public class ListResourcesRequest  {
 
 
     /**
-     * Get epId
+     * 企业项目ID
      * @return epId
      */
     public String getEpId() {
@@ -150,7 +150,7 @@ public class ListResourcesRequest  {
 
 
     /**
-     * Get limit
+     * 最大的返回数量
      * minimum: 1
      * maximum: 200
      * @return limit
@@ -174,7 +174,7 @@ public class ListResourcesRequest  {
 
 
     /**
-     * Get marker
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
      * @return marker
      */
     public String getMarker() {

@@ -38,7 +38,7 @@ public class DownloadKeystoreRequest  {
 
 
     /**
-     * Get fileName
+     * 下载的文件名称
      * @return fileName
      */
     public String getFileName() {
@@ -60,7 +60,7 @@ public class DownloadKeystoreRequest  {
 
 
     /**
-     * Get domainId
+     * 租户ID。32位数字、小写字母组合
      * @return domainId
      */
     public String getDomainId() {

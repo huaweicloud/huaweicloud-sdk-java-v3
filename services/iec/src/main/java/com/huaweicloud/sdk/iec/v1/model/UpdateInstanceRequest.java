@@ -39,7 +39,7 @@ public class UpdateInstanceRequest  {
 
 
     /**
-     * Get serverId
+     * 边缘实例ID。
      * @return serverId
      */
     public String getServerId() {

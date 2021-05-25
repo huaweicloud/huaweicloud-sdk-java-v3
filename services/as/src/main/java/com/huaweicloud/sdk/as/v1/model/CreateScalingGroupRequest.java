@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.CreateScalingGroupRequestBody;
+import com.huaweicloud.sdk.as.v1.model.CreateScalingGroupOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateScalingGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateScalingGroupRequestBody body;
+    private CreateScalingGroupOption body;
 
-    public CreateScalingGroupRequest withBody(CreateScalingGroupRequestBody body) {
+    public CreateScalingGroupRequest withBody(CreateScalingGroupOption body) {
         this.body = body;
         return this;
     }
 
-    public CreateScalingGroupRequest withBody(Consumer<CreateScalingGroupRequestBody> bodySetter) {
+    public CreateScalingGroupRequest withBody(Consumer<CreateScalingGroupOption> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateScalingGroupRequestBody();
+            this.body = new CreateScalingGroupOption();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class CreateScalingGroupRequest  {
      * Get body
      * @return body
      */
-    public CreateScalingGroupRequestBody getBody() {
+    public CreateScalingGroupOption getBody() {
         return body;
     }
 
-    public void setBody(CreateScalingGroupRequestBody body) {
+    public void setBody(CreateScalingGroupOption body) {
         this.body = body;
     }
 

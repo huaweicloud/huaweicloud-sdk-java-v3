@@ -26,7 +26,7 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="success")
     
-    private String success;
+    private Boolean success;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,7 +34,7 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
     
     private List<UpdateInstanceCrossVpcIpRespResults> results = null;
     
-    public UpdateInstanceCrossVpcIpResponse withSuccess(String success) {
+    public UpdateInstanceCrossVpcIpResponse withSuccess(Boolean success) {
         this.success = success;
         return this;
     }
@@ -46,11 +46,11 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
      * 修改跨VPC访问结果。
      * @return success
      */
-    public String getSuccess() {
+    public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess(String success) {
+    public void setSuccess(Boolean success) {
         this.success = success;
     }
 

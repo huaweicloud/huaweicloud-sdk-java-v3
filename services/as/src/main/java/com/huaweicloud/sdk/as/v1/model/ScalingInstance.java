@@ -41,6 +41,12 @@ public class ScalingInstance  {
     
     private String failedDetails;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_config")
+    
+    private String instanceConfig;
+
     public ScalingInstance withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
@@ -129,6 +135,28 @@ public class ScalingInstance  {
 
     
 
+    public ScalingInstance withInstanceConfig(String instanceConfig) {
+        this.instanceConfig = instanceConfig;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例配置信息。
+     * @return instanceConfig
+     */
+    public String getInstanceConfig() {
+        return instanceConfig;
+    }
+
+    public void setInstanceConfig(String instanceConfig) {
+        this.instanceConfig = instanceConfig;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -141,11 +169,12 @@ public class ScalingInstance  {
         return Objects.equals(this.instanceName, scalingInstance.instanceName) &&
             Objects.equals(this.instanceId, scalingInstance.instanceId) &&
             Objects.equals(this.failedReason, scalingInstance.failedReason) &&
-            Objects.equals(this.failedDetails, scalingInstance.failedDetails);
+            Objects.equals(this.failedDetails, scalingInstance.failedDetails) &&
+            Objects.equals(this.instanceConfig, scalingInstance.instanceConfig);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceName, instanceId, failedReason, failedDetails);
+        return Objects.hash(instanceName, instanceId, failedReason, failedDetails, instanceConfig);
     }
     @Override
     public String toString() {
@@ -155,6 +184,7 @@ public class ScalingInstance  {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    failedDetails: ").append(toIndentedString(failedDetails)).append("\n");
+        sb.append("    instanceConfig: ").append(toIndentedString(instanceConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

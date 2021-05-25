@@ -27,28 +27,28 @@ public class DeleteScalingGroupRequest  {
     
     private String scalingGroupId;
     /**
-     * Gets or Sets forceDelete
+     * 是否强制删除伸缩组。默认为no；可选值为yes或no。
      */
     public static final class ForceDeleteEnum {
 
         
         /**
-         * Enum TRUE for value: "true"
+         * Enum YES for value: "yes"
          */
-        public static final ForceDeleteEnum TRUE = new ForceDeleteEnum("true");
+        public static final ForceDeleteEnum YES = new ForceDeleteEnum("yes");
         
         /**
-         * Enum FALSE for value: "false"
+         * Enum NO for value: "no"
          */
-        public static final ForceDeleteEnum FALSE = new ForceDeleteEnum("false");
+        public static final ForceDeleteEnum NO = new ForceDeleteEnum("no");
         
 
         private static final Map<String, ForceDeleteEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ForceDeleteEnum> createStaticFields() {
             Map<String, ForceDeleteEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
+            map.put("yes", YES);
+            map.put("no", NO);
             return Collections.unmodifiableMap(map);
         }
 
@@ -120,7 +120,7 @@ public class DeleteScalingGroupRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -142,7 +142,7 @@ public class DeleteScalingGroupRequest  {
 
 
     /**
-     * Get forceDelete
+     * 是否强制删除伸缩组。默认为no；可选值为yes或no。
      * @return forceDelete
      */
     public ForceDeleteEnum getForceDelete() {

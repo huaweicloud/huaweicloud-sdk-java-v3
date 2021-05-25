@@ -32,7 +32,7 @@ public class ShowIpGroupRequest  {
 
 
     /**
-     * Get ipgroupId
+     * IP地址组id
      * @return ipgroupId
      */
     public String getIpgroupId() {

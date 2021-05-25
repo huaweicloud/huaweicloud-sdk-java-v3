@@ -1,293 +1,489 @@
+# 3.0.45 2021-05-25
+
+### HuaweiCloud SDK AS
+
+- _新增特性_
+    - 新增支持接口：
+        - `ListApiVersions`
+        - `ShowApiVersion`
+        - `BatchProtectScalingInstances`
+        - `BatchRemoveScalingInstances`
+        - `CreateScalingTagInfo`
+        - `BatchResumeScalingPolicies`
+        - `BatchPauseScalingPolicies`
+        - `PauseScalingGroup`
+        - `BatchSetScalingInstancesStandby`
+        - `BatchUnsetScalingInstancesStandby`
+        - `ResumeScalingPolicy`
+        - `PauseScalingPolicy`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口名称调整：
+        - `ExecuteScalingPolicies` -> `BatchDeleteScalingPolicies`
+        - `EnableOrDisableScalingGroup` -> `ResumeScalingGroup`
+        - `UpdateScalingGroupInstance` -> `BatchAddScalingInstances`
+        - `CompleteLifecycleAction` -> `AttachCallbackInstanceLifeCycleHook`
+    - 移除接口：
+        - `DeleteScalingTags`
+    - `ListScalingGroups` 接口新增参数 `enterprise_project_id`
+    - `ListScalingActivityV2Logs` 接口新增参数 `log_id`
+
+### HuaweiCloud SDK BSS
+
+- _新增特性_
+    - 新增支持接口：
+        - 查询月度成本 `ListCustomerBillsMonthlyBreakDown`
+        - 查询订单可用折扣 `ListOrderDiscounts`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 查询客户消费记录接口 `ListSubCustomerResFeeRecords` 增加 query 参数：bill_date_begin 和 bill_date_end
+
+### HuaweiCloud SDK CloudPipeline
+
+- _新增特性_
+    - 新增支持接口：停止流水线 `StopPipelineNew`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 移除接口 `StartPipeline`、`StopPipeline`
+
+### HuaweiCloud SDK DMS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口名称调整：（查询项目标签）ShowProjectTags -> ShowQueueProjectTags
+
+### HuaweiCloud SDK DRS
+
+- _新增特性_
+    - 新增支持接口`ShowQuotas`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`BatchUpdateUser`的响应参数`all_counts`类型调整： String -> Integer
+    - 接口`BatchCreateJobs`的请求参数`ssl_link`类型调整: String -> Boolean
+    - 接口`ShowMonitoringData`的响应参数`start_time`类型调整: Integer -> String
+    - 接口`ShowJobList`的响应参数`billing_tag`类型调整: String -> Boolean
+    - 接口`CreateJob`新增响应参数`child_ids`
+    - 接口`BatchListJobDetails`新增响应参数`incre_start_position`
+    - 接口`BatchListJobDetails`移除响应参数`issue_coupon`
+
+### HuaweiCloud SDK EPS
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`ListEnterpriseProject`的请求参数`offset`从必填改为非必填
+
+### HuaweiCloud SDK FunctionGraph
+
+- _新增特性_
+    - 新增支持接口：
+        - `ListFunctionAsyncInvokeConfig`
+        - `ShowFunctionAsyncInvokeConfig`
+        - `DeleteFunctionAsyncInvokeConfig`
+        - `UpdateFunctionAsyncInvokeConfig`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`DeleteVersionAlias`、`UpdateVersionAlias`、`ShowVersionAlias`的请求参数名称调整：`name` -> `alias_name`
+    - 接口`DeleteFunctionTrigger`、`UpdateTrigger`、`ShowFunctionTrigger`的请求参数名称调整：`triggerId` -> `trigger_id`
+
+### HuaweiCloud SDK IAM
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口 `CreateUsers` 新增请求体参数和响应体参数 _access_mode_
+    - 接口 `DeleteBindingDevice` 将请求体参数 _authentication_code_ 设置为必填参数
+
+### HuaweiCloud SDK Kafka
+
+- _新增特性_
+    - 新增支持接口：
+        - `CreateInstanceUser`
+        - `BatchDeleteInstanceUsers`
+        - `ShowInstanceUsers`
+        - `ShowTopicAccessPolicy`
+        - `UpdateTopicAccessPolicy`
+        - `ShowKafkaTopicPartitionDiskusage`
+        - `ShowInstanceMessages`
+        - `ResetUserPassword`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口名称调整：
+        - `ShowInstanceTags` -> `ShowKafkaTags`
+        - `ShowProjectTags` -> `ShowKafkaProjectTags`
+        - `BatchCreateOrDeleteInstanceTag` -> `BatchCreateOrDeleteKafkaTag`
+    - 接口 `BatchCreateOrDeleteInstanceTag` 请求体名称调整：`BatchCreateOrDeleteInstanceTagRequestBody`
+      -> `BatchCreateOrDeleteKafkaTagRequestBody`
+    - 接口 `UpdateSinkTaskQuota` 请求体 `UpdateSinkTaskQuotaReq` 的请求参数 `sink_max_tasks` 数据类型调整：String → Integer
+
+### HuaweiCloud SDK Meeting
+
+- _新增特性_
+    - 新增支持接口：
+        - `ShowRecordingFileDownloadUrls`
+        - `SearchQosParticipantDetail`
+        - `SearchMemberVmrByCloudLink`
+        - `SearchQosHistoryMeetings`
+        - `UpdateStartedConfConfig`
+        - `SearchQosParticipants`
+        - `InviteUser`
+        - `CreateWebSocketToken`
+        - `CreateAppIdToken`
+        - `SearchQosOnlineMeetings`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口 `CreateConfToken` 修改请求参数 `X-Login-Type` 的数据类型：Integer -> String
+    - 接口 `UpdateResource`, `DeleteResource` 删除请求参数 `forceEditFlag`
+    - 接口 `DeleteCorp` 删除请求参数 `forceDelete`
+
+### HuaweiCloud SDK RabbitMQ
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口名称调整：
+        - `BatchCreateOrDeleteInstanceTag` -> `BatchCreateOrDeleteRabbitMqTag`
+        - `ShowProjectTags` -> `ShowRabbitMqProjectTags`
+        - `ShowInstanceTags` -> `ShowRabbitMqTags`
+    - 接口 `BatchCreateOrDeleteInstanceTag` 请求体名称调整：`BatchCreateOrDeleteInstanceTagRequestBody` ->
+      `BatchCreateOrDeleteRabbitMqTagRequestBody`
+
+### HuaweiCloud SDK ROMA
+
+- _新增特性_
+    - 无
+- _解决问题_
+    - 无
+- _特性变更_
+    - 接口`CreateProduct`新增请求参数`data_format`
+    - 接口`ListTopics`新增请求参数`name`、`topic_permission`、`topic_type`、`is_private`
+    - 接口`DownloadProducts`的请求参数名称调整：`product_id` -> `product_ids`
+    - 接口`ListDevices`新增响应参数`ipv6_connect_address`、`ipv6_ssl_connect_address`、`items`
+    - 接口`ListSubsets`新增响应参数`total`、`size`
+    - 接口`UploadProduct`新增响应参数`succ_num`、`fail_num`、`fail_objects_ids`
+    - 接口`ListSubsets`的响应体名称调整：`ListDevicesResponseBody` -> `ListSubDevicesResponseBody`
+
+### HuaweiCloud SDK SMS
+
+- _新增特性_
+    - 新增支持接口：
+        - `UpdateTask`
+        - `ShowOverview`
+        - `UpdateCopyState`
+- _解决问题_
+    - 无
+- _特性变更_
+    - 移除支持接口：
+        - `CheckTarget`
+    - 修改接口 `CreateMigproject` 请求体 `PostMigProjectBody` 中参数 `start_target_server` 的数据类型：String -> Boolean
+
 # 3.0.43-rc 2021-05-14
 
 ### HuaweiCloud SDK ECS
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 解决了使用接口`NovaShowKeypair`获取秘钥，结果解析异常的问题
+    - 解决了使用接口`NovaShowKeypair`获取秘钥，结果解析异常的问题
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK RDS
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 接口`ListInstances`的响应字段`type`新增结果值: `CLOUDSSD`、`LOCALSSD`
-  - 接口`ListBackups`新增可选的请求参数`complete_version`
-  - 将接口`ListSlowlogStatistics`的请求参数`type`从非必填改为必填
+    - 接口`ListInstances`的响应字段`type`新增结果值: `CLOUDSSD`、`LOCALSSD`
+    - 接口`ListBackups`新增可选的请求参数`complete_version`
+    - 将接口`ListSlowlogStatistics`的请求参数`type`从非必填改为必填
 
 # 3.0.42-rc 2021-05-10
 
 ### HuaweiCloud SDK BMS
 
 - _新增特性_
-  - 新增支持接口`BatchCreateBaremetalServerTags`
+    - 新增支持接口`BatchCreateBaremetalServerTags`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK DDS
 
 - _新增特性_
-  - 新增支持接口`MigrateAz`、`ListAz2Migrate`
+    - 新增支持接口`MigrateAz`、`ListAz2Migrate`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK EPS
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/17): 修复`EpDetailType`枚举定义错误的问题
+    - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/17): 修复`EpDetailType`枚举定义错误的问题
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK IEC
 
 - _新增特性_
-  - 支持IEC智能边缘云服务
+    - 支持IEC智能边缘云服务
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK KPS
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - [Issue 19](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/19): 修复`ListKeypairs`响应体类型的问题
+    - [Issue 19](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/19): 修复`ListKeypairs`响应体类型的问题
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK MRS
 
 - _新增特性_
-  - 新增支持相关接口：
-    - `BatchDeleteClusterTags`
-    - `CreateClusterTag`
-    - `DeleteClusterTag`
-    - `ListClusterTags`
-    - `ListAllTags`
-    - `BatchCreateClusterTags`
-    - `ListClustersByTags`
+    - 新增支持相关接口：
+        - `BatchDeleteClusterTags`
+        - `CreateClusterTag`
+        - `DeleteClusterTag`
+        - `ListClusterTags`
+        - `ListAllTags`
+        - `BatchCreateClusterTags`
+        - `ListClustersByTags`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK RDS
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 接口`ListOffSiteInstances`的响应体名称调整：`OffSiteInstanceListResponse` -> `OffSiteInstanceListResponseBody`
-  - 接口`ListOffSiteInstances`的响应字段名称调整：`offsite_backup_instances` -> `offsite_backup_instance`
+    - 接口`ListOffSiteInstances`的响应体名称调整：`OffSiteInstanceListResponse` -> `OffSiteInstanceListResponseBody`
+    - 接口`ListOffSiteInstances`的响应字段名称调整：`offsite_backup_instances` -> `offsite_backup_instance`
 
 # 3.0.41-rc 2021-04-30
 
 ### HuaweiCloud SDK Core
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 解决了`Content-Type`为`multipart/form-data`时, AK/SK校验不通过的问题
+    - 解决了`Content-Type`为`multipart/form-data`时, AK/SK校验不通过的问题
 - _特性变更_
-  - 移除Maven依赖`validation-api`
+    - 移除Maven依赖`validation-api`
 
 ### HuaweiCloud SDK BCS
 
 - _新增特性_
-  - 新增支持查询异步操作结果的接口`ListOpRecord`
+    - 新增支持查询异步操作结果的接口`ListOpRecord`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK DDS
 
 - _新增特性_
-  - 新增支持的接口
-    - 查询集群均衡设置 `ShowShardingBalancer`
-    - 设置集群均衡开关 `SetBalancerSwitch`
-    - 设置集群均衡活动时间窗 `SetBalancerWindow`
+    - 新增支持的接口
+        - 查询集群均衡设置 `ShowShardingBalancer`
+        - 设置集群均衡开关 `SetBalancerSwitch`
+        - 设置集群均衡活动时间窗 `SetBalancerWindow`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK HSS
 
 - _新增特性_
-  - 新增支持查询弹性云服务器状态列表的接口`ListHosts`
+    - 新增支持查询弹性云服务器状态列表的接口`ListHosts`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK IAM
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 查询账号配额接口`ShowDomainQuota`的请求参数`type`增加可选值：
-    - `assigment_group_mp`
-    - `assigment_agency_mp`
-    - `assigment_group_ep`
-    - `assigment_user_ep`
+    - 查询账号配额接口`ShowDomainQuota`的请求参数`type`增加可选值：
+        - `assigment_group_mp`
+        - `assigment_agency_mp`
+        - `assigment_group_ep`
+        - `assigment_user_ep`
 
 ### HuaweiCloud SDK IoTDA
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 下线订阅管理相关接口：
-    - `ListSubscriptions`
-    - `CreateSubscription`
-    - `UpdateSubscription`
-    - `ShowSubscription`
-    - `DeleteSubscription`
+    - 下线订阅管理相关接口：
+        - `ListSubscriptions`
+        - `CreateSubscription`
+        - `UpdateSubscription`
+        - `ShowSubscription`
+        - `DeleteSubscription`
 
 ### HuaweiCloud SDK MPC
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 接口`CreateMpeCallBack`新增请求参数`language`、`sky_switch`
-  - 接口`CreateTranscodingTask`的请求参数`subtitle_type`可选值调整为`0`、`1`、`2`
+    - 接口`CreateMpeCallBack`新增请求参数`language`、`sky_switch`
+    - 接口`CreateTranscodingTask`的请求参数`subtitle_type`可选值调整为`0`、`1`、`2`
 
 ### HuaweiCloud SDK ProjectMan
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 获取项目详情接口`ShowProjectInfoV4`的响应体新增字段`project_code`
+    - 获取项目详情接口`ShowProjectInfoV4`的响应体新增字段`project_code`
 
 # 3.0.40-rc 2021-04-15
 
 ### HuaweiCloud SDK Core
 
 - _新增特性_
-  - 支持仅引入 `huaweicloud-sdk-all` 依赖包，即可使用所有服务
-  - 支持独立引入 `huaweicloud-sdk-bundle` 依赖包以解决三方库依赖冲突的问题
+    - 支持仅引入 `huaweicloud-sdk-all` 依赖包，即可使用所有服务
+    - 支持独立引入 `huaweicloud-sdk-bundle` 依赖包以解决三方库依赖冲突的问题
 - _解决问题_
-  - 修复使用数组类型属性的add{Property}Item方法报错空指针的问题
+    - 修复使用数组类型属性的add{Property}Item方法报错空指针的问题
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK RDS
 
 - _新增特性_
-  - 新增支持管理数据库的接口
-    - `CreateSqlserverDatabase`
-    - `DeleteSqlserverDatabase`
-    - `ListSqlserverDatabases`
-  - 新增支持管理用户的接口
-    - `CreateSqlserverDbUser`
-    - `ListSqlserverDbUsers`
-    - `ListAuthorizedSqlserverDbUsers`
-    - `DeleteSqlserverDbUser`
-    - `AllowSqlserverDbUserPrivilege`
-    - `RevokeSqlserverDbUserPrivilege`
+    - 新增支持管理数据库的接口
+        - `CreateSqlserverDatabase`
+        - `DeleteSqlserverDatabase`
+        - `ListSqlserverDatabases`
+    - 新增支持管理用户的接口
+        - `CreateSqlserverDbUser`
+        - `ListSqlserverDbUsers`
+        - `ListAuthorizedSqlserverDbUsers`
+        - `DeleteSqlserverDbUser`
+        - `AllowSqlserverDbUserPrivilege`
+        - `RevokeSqlserverDbUserPrivilege`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK DDS
 
 - _新增特性_
-  - 新增支持接口`DeleteDatabaseUser`、`DeleteDatabaseRole`、`ShowConnectionStatistics`
+    - 新增支持接口`DeleteDatabaseUser`、`DeleteDatabaseRole`、`ShowConnectionStatistics`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK ProjectMan
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 接口`ListIssuesV4`, `ListChildIssuesV4`响应体新增字段`closed_time` 、`id` 、`created_time`
+    - 接口`ListIssuesV4`, `ListChildIssuesV4`响应体新增字段`closed_time` 、`id` 、`created_time`
 
 ### HuaweiCloud SDK AOM
 
 - _新增特性_
-  - 服务新增接口`ListSeries`
+    - 服务新增接口`ListSeries`
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK VPC
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 修复问题，开放vpc和子网的标签
+    - 修复问题，开放vpc和子网的标签
 - _特性变更_
-  - 无
+    - 无
 
 # 3.0.39-rc 2021-03-30
 
 ### HuaweiCloud SDK Kafka
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 修复查询消息接口没有时间戳字段的问题
+    - 修复查询消息接口没有时间戳字段的问题
 - _特性变更_
-  - 无
+    - 无
 
 ### HuaweiCloud SDK Moderation
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 接口`RunImageModeration `增加请求参数`moderation_rule `、`ad_glossaries `
-  - 接口`RunTextModeration `修改参数`category_suggestion `为`category_suggestions`
-  - 修改接口`RunImageModeration `中响应参数`confidence`为`object`类型
+    - 接口`RunImageModeration `增加请求参数`moderation_rule `、`ad_glossaries `
+    - 接口`RunTextModeration `修改参数`category_suggestion `为`category_suggestions`
+    - 修改接口`RunImageModeration `中响应参数`confidence`为`object`类型
 
 ### HuaweiCloud SDK ProjectMan
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 接口`ShowIssueV4`、`UpdateIssueV4`的响应体 `IssueResponseV4`增加`name`属性
-  - 将接口`ShowProjectWorkHours`、`ListProjectWorkHours`的响应体`ShowProjectWorkHoursResponseBody`下的属性`work_time`修改为`work_date`
+    - 接口`ShowIssueV4`、`UpdateIssueV4`的响应体 `IssueResponseV4`增加`name`属性
+    - 将接口`ShowProjectWorkHours`、`ListProjectWorkHours`的响应体`ShowProjectWorkHoursResponseBody`下的属性`work_time`
+      修改为`work_date`
 
 ### HuaweiCloud SDK SMN
 
 - _新增特性_
-  - 无
+    - 无
 - _解决问题_
-  - 无
+    - 无
 - _特性变更_
-  - 将接口`PublishMessage`的请求参数`protocol`从必填改为非必填
-  - 将接口 `PublishMessage` 请求体的 `PublishMessageRequestBody` 类属性 `subject` 由必填改为非必填
+    - 将接口`PublishMessage`的请求参数`protocol`从必填改为非必填
+    - 将接口 `PublishMessage` 请求体的 `PublishMessageRequestBody` 类属性 `subject` 由必填改为非必填
 
 # 3.0.38-rc 2021-03-26
 

@@ -32,7 +32,7 @@ public class ShowCommandRequest  {
 
 
     /**
-     * Get serverId
+     * 命令对应的服务器id
      * @return serverId
      */
     public String getServerId() {

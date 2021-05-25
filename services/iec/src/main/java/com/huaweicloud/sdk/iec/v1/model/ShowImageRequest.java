@@ -32,7 +32,7 @@ public class ShowImageRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像ID。
      * @return imageId
      */
     public String getImageId() {

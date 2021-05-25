@@ -22,7 +22,7 @@ import java.util.Objects;
 public class CreateInstanceRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -121,7 +121,7 @@ public class CreateInstanceRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

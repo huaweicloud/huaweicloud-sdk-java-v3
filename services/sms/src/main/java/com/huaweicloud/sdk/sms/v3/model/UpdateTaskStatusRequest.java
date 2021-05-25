@@ -39,7 +39,7 @@ public class UpdateTaskStatusRequest  {
 
 
     /**
-     * Get taskId
+     * 迁移任务ID
      * @return taskId
      */
     public String getTaskId() {

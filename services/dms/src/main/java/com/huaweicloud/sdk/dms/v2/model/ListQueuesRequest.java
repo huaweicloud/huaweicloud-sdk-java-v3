@@ -32,7 +32,7 @@ public class ListQueuesRequest  {
 
 
     /**
-     * Get includeDeadletter
+     * 是否包含死信信息。  支持的值如下：  - true：包含死信消息。 - false：不包含死信消息。  默认值为：false。  Kafka队列没有死信功能，该参数对于Kafka队列无效。
      * @return includeDeadletter
      */
     public Boolean getIncludeDeadletter() {

@@ -208,7 +208,7 @@ public class ListLoadBalancersRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 负载均衡器的管理状态。只支持设定为true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -244,7 +244,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get availabilityZoneList
+     * 可用区。 注： 可用AZ的查询方式可用通过调用nova接口查询 /v2/{project_id}/os-availability-zone
      * @return availabilityZoneList
      */
     public List<String> getAvailabilityZoneList() {
@@ -280,7 +280,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get billingInfo
+     * 预留资源账单信息，默认为空表示按需计费， 非空为包周期。admin权限才能更新此字段。
      * @return billingInfo
      */
     public List<String> getBillingInfo() {
@@ -302,7 +302,7 @@ public class ListLoadBalancersRequest  {
 
 
     /**
-     * Get deletionProtectionEnable
+     * 是否开启删除保护，false不开启，默认为空都查询
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -338,7 +338,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get description
+     * 负载均衡器的描述信息。
      * @return description
      */
     public List<String> getDescription() {
@@ -374,7 +374,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get eips
+     * 公网ELB实例绑定EIP。 示例如下：  \"eips\": [             {                 \"eip_id\": \"a6ded276-c88a-4c58-95e0-5b6d1d2297b3\",                 \"eip_address\": \"2001:db8:a583:86:cf24:5cc5:8117:6eaa\",                 \"ip_version\": 6             }         ] 查询时指定：eips=eip_id=XXXX
      * @return eips
      */
     public List<String> getEips() {
@@ -410,7 +410,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -432,7 +432,7 @@ public class ListLoadBalancersRequest  {
 
 
     /**
-     * Get guaranteed
+     * 共享型：false 性能保障型：true
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -468,7 +468,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get id
+     * 负载均衡器ID。
      * @return id
      */
     public List<String> getId() {
@@ -504,7 +504,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get ipVersion
+     * IP版本信息。 取值范围：4和6 4：IPv4 6：IPv6
      * @return ipVersion
      */
     public List<Integer> getIpVersion() {
@@ -540,7 +540,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get ipv6VipAddress
+     * 双栈实例对应v6的ip地址。
      * @return ipv6VipAddress
      */
     public List<String> getIpv6VipAddress() {
@@ -576,7 +576,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get ipv6VipPortId
+     * 双栈实例对应v6的端口。
      * @return ipv6VipPortId
      */
     public List<String> getIpv6VipPortId() {
@@ -612,7 +612,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get ipv6VipVirsubnetId
+     * 双栈实例对应v6的网络id 。 说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空。
      * @return ipv6VipVirsubnetId
      */
     public List<String> getIpv6VipVirsubnetId() {
@@ -648,7 +648,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get l4FlavorId
+     * 四层Flavor， 按需计费不填， 包周期由用户设置。
      * @return l4FlavorId
      */
     public List<String> getL4FlavorId() {
@@ -684,7 +684,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get l4ScaleFlavorId
+     * 预留弹性flavor。
      * @return l4ScaleFlavorId
      */
     public List<String> getL4ScaleFlavorId() {
@@ -720,7 +720,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get l7FlavorId
+     * 七层Flavor， 按需计费不填， 包周期由用户设置。
      * @return l7FlavorId
      */
     public List<String> getL7FlavorId() {
@@ -756,7 +756,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get l7ScaleFlavorId
+     * 预留弹性flavor。
      * @return l7ScaleFlavorId
      */
     public List<String> getL7ScaleFlavorId() {
@@ -778,7 +778,7 @@ public class ListLoadBalancersRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -802,7 +802,7 @@ public class ListLoadBalancersRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -838,7 +838,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get memberAddress
+     * 后端云服务器的IP地址。
      * @return memberAddress
      */
     public List<String> getMemberAddress() {
@@ -874,7 +874,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get memberDeviceId
+     * 后端云服务器对应的弹性云服务器的ID。
      * @return memberDeviceId
      */
     public List<String> getMemberDeviceId() {
@@ -910,7 +910,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get name
+     * 负载均衡器名称。
      * @return name
      */
     public List<String> getName() {
@@ -946,7 +946,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get operatingStatus
+     * 负载均衡器的操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 说明 该字段为预留字段，暂未启用。
      * @return operatingStatus
      */
     public List<String> getOperatingStatus() {
@@ -968,7 +968,7 @@ public class ListLoadBalancersRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -1004,7 +1004,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get provisioningStatus
+     * 负载均衡器的配置状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。 说明 该字段为预留字段，暂未启用。
      * @return provisioningStatus
      */
     public List<String> getProvisioningStatus() {
@@ -1040,7 +1040,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get publicips
+     * 公网IP 示例如下：  \"publicips\": [             {                 \"publicip_id\": \"a6ded276-c88a-4c58-95e0-5b6d1d2297b3\",                 \"publicip_address\": \"2001:db8:a583:86:cf24:5cc5:8117:6eaa\",                 \"publicip_ip_version\": 6             }         ] 查询时指定：publicips=publicip_id=XXXX,YYYY
      * @return publicips
      */
     public List<String> getPublicips() {
@@ -1076,7 +1076,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get vipAddress
+     * 负载均衡器的虚拟IP。
      * @return vipAddress
      */
     public List<String> getVipAddress() {
@@ -1112,7 +1112,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get vipPortId
+     * 负载均衡器虚拟IP对应的端口ID。
      * @return vipPortId
      */
     public List<String> getVipPortId() {
@@ -1148,7 +1148,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get vipSubnetCidrId
+     * 负载均衡器所在的子网ID，仅支持内网类型。 说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空。
      * @return vipSubnetCidrId
      */
     public List<String> getVipSubnetCidrId() {
@@ -1184,7 +1184,7 @@ public class ListLoadBalancersRequest  {
     }
 
     /**
-     * Get vpcId
+     * 实例对应的vpc属性。 若无，则从vip_subnet_cidr_id获取。  说明：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空。
      * @return vpcId
      */
     public List<String> getVpcId() {

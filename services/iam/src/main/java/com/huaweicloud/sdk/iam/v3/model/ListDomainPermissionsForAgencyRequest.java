@@ -38,7 +38,7 @@ public class ListDomainPermissionsForAgencyRequest  {
 
 
     /**
-     * Get domainId
+     * 委托方账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return domainId
      */
     public String getDomainId() {
@@ -60,7 +60,7 @@ public class ListDomainPermissionsForAgencyRequest  {
 
 
     /**
-     * Get agencyId
+     * 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return agencyId
      */
     public String getAgencyId() {

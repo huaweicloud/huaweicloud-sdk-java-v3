@@ -35,12 +35,6 @@ public class DeleteCorpRequest  {
     
     private String id;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="forceDelete")
-    
-    private Boolean forceDelete;
-
     public DeleteCorpRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -50,7 +44,7 @@ public class DeleteCorpRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +68,7 @@ public class DeleteCorpRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -96,7 +90,7 @@ public class DeleteCorpRequest  {
 
 
     /**
-     * Get id
+     * 企业id
      * @return id
      */
     public String getId() {
@@ -105,28 +99,6 @@ public class DeleteCorpRequest  {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    
-
-    public DeleteCorpRequest withForceDelete(Boolean forceDelete) {
-        this.forceDelete = forceDelete;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get forceDelete
-     * @return forceDelete
-     */
-    public Boolean getForceDelete() {
-        return forceDelete;
-    }
-
-    public void setForceDelete(Boolean forceDelete) {
-        this.forceDelete = forceDelete;
     }
 
     
@@ -142,12 +114,11 @@ public class DeleteCorpRequest  {
         DeleteCorpRequest deleteCorpRequest = (DeleteCorpRequest) o;
         return Objects.equals(this.xRequestId, deleteCorpRequest.xRequestId) &&
             Objects.equals(this.acceptLanguage, deleteCorpRequest.acceptLanguage) &&
-            Objects.equals(this.id, deleteCorpRequest.id) &&
-            Objects.equals(this.forceDelete, deleteCorpRequest.forceDelete);
+            Objects.equals(this.id, deleteCorpRequest.id);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, id, forceDelete);
+        return Objects.hash(xRequestId, acceptLanguage, id);
     }
     @Override
     public String toString() {
@@ -156,7 +127,6 @@ public class DeleteCorpRequest  {
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

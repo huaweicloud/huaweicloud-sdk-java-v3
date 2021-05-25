@@ -39,7 +39,7 @@ public class ListBandwidthsRequest  {
     
     private String enterpriseProjectId;
     /**
-     * Gets or Sets shareType
+     * 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
      */
     public static final class ShareTypeEnum {
 
@@ -132,7 +132,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get marker
+     * 取值为上一页数据的最后一条记录的id，为空时为查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -154,7 +154,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回的个数  取值范围：0~intmax
      * minimum: 0
      * @return limit
      */
@@ -177,7 +177,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的虚拟私有云。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的虚拟私有云，请传参all_granted_eps。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -199,7 +199,7 @@ public class ListBandwidthsRequest  {
 
 
     /**
-     * Get shareType
+     * 功能说明：带宽类型，标识是否是共享带宽 取值范围：WHOLE，PER WHOLE表示共享带宽；PER，表示独享带宽
      * @return shareType
      */
     public ShareTypeEnum getShareType() {

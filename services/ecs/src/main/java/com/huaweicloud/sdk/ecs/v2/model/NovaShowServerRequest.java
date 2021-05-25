@@ -38,7 +38,7 @@ public class NovaShowServerRequest  {
 
 
     /**
-     * Get serverId
+     * 云服务器ID。
      * @return serverId
      */
     public String getServerId() {
@@ -60,7 +60,7 @@ public class NovaShowServerRequest  {
 
 
     /**
-     * Get openStackAPIVersion
+     * 微版本头
      * @return openStackAPIVersion
      */
     public String getOpenStackAPIVersion() {

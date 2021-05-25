@@ -32,7 +32,7 @@ public class ShowNetworkIpAvailabilitiesRequest  {
 
 
     /**
-     * Get networkId
+     * 网络ID
      * @return networkId
      */
     public String getNetworkId() {

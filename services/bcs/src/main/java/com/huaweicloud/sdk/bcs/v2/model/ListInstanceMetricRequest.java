@@ -39,7 +39,7 @@ public class ListInstanceMetricRequest  {
 
 
     /**
-     * Get blockchainId
+     * 区块链服务id。
      * @return blockchainId
      */
     public String getBlockchainId() {

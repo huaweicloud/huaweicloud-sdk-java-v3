@@ -35,7 +35,7 @@ public class ListBackupsRequest  {
     
     private String backupId;
     /**
-     * Gets or Sets backupType
+     * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
      */
     public static final class BackupTypeEnum {
 
@@ -149,7 +149,7 @@ public class ListBackupsRequest  {
     
     private String endTime;
     /**
-     * Gets or Sets mode
+     * 实例模式。 取值： - Sharding - ReplicaSet - Single
      */
     public static final class ModeEnum {
 
@@ -248,7 +248,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -270,7 +270,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get backupId
+     * 备份ID。 - 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。
      * @return backupId
      */
     public String getBackupId() {
@@ -292,7 +292,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get backupType
+     * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
      * @return backupType
      */
     public BackupTypeEnum getBackupType() {
@@ -314,7 +314,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。
      * minimum: 0
      * @return offset
      */
@@ -337,7 +337,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get limit
+     * 查询备份个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -361,7 +361,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get beginTime
+     * 查询开始时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 “end_time”有值时，“begin_time”必选。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -383,7 +383,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 “begin_time”有值时，“end_time”必选。
      * @return endTime
      */
     public String getEndTime() {
@@ -405,7 +405,7 @@ public class ListBackupsRequest  {
 
 
     /**
-     * Get mode
+     * 实例模式。 取值： - Sharding - ReplicaSet - Single
      * @return mode
      */
     public ModeEnum getMode() {

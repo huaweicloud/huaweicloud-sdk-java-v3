@@ -41,7 +41,7 @@ public class CreateSourceRequestBody  {
     
     private String topic;
     /**
-     * 是否payload使用base64
+     * 是否payload使用base64，0-是 1-否
      */
     public static final class IsBase64Enum {
 
@@ -125,7 +125,7 @@ public class CreateSourceRequestBody  {
     
     private IsBase64Enum isBase64;
     /**
-     * 是否包含设备信息
+     * 是否包含设备信息是否包含设备信息，0-是 1-否
      */
     public static final class ContainDeviceInfoEnum {
 
@@ -284,7 +284,7 @@ public class CreateSourceRequestBody  {
 
 
     /**
-     * 是否payload使用base64
+     * 是否payload使用base64，0-是 1-否
      * @return isBase64
      */
     public IsBase64Enum getIsBase64() {
@@ -306,7 +306,7 @@ public class CreateSourceRequestBody  {
 
 
     /**
-     * 是否包含设备信息
+     * 是否包含设备信息是否包含设备信息，0-是 1-否
      * @return containDeviceInfo
      */
     public ContainDeviceInfoEnum getContainDeviceInfo() {

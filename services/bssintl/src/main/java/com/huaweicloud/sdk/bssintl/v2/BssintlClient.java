@@ -414,6 +414,28 @@ public class BssintlClient {
     }
 
     /**
+     * 查询订单可用折扣
+     * 功能描述：功能介绍客户在伙伴销售平台支付待支付订单时，查询可使用的折扣。只返回商务合同折扣和伙伴授权折扣客户在客户自建平台查看订单可用的优惠券列表。
+     *
+     * @param ListOrderDiscountsRequest 请求对象
+     * @return ListOrderDiscountsResponse
+     */
+    public ListOrderDiscountsResponse listOrderDiscounts(ListOrderDiscountsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listOrderDiscounts);
+    }
+
+    /**
+     * 查询订单可用折扣
+     * 功能描述：功能介绍客户在伙伴销售平台支付待支付订单时，查询可使用的折扣。只返回商务合同折扣和伙伴授权折扣客户在客户自建平台查看订单可用的优惠券列表。
+     *
+     * @param ListOrderDiscountsRequest 请求对象
+     * @return SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>
+     */
+    public SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse> listOrderDiscountsInvoker(ListOrderDiscountsRequest request) {
+        return new SyncInvoker<ListOrderDiscountsRequest, ListOrderDiscountsResponse>(request, BssintlMeta.listOrderDiscounts, hcClient);
+    }
+
+    /**
      * 查询客户包年/包月资源列表
      * 功能描述：客户在客户自建平台查询某个或所有的包年/包月资源
      *

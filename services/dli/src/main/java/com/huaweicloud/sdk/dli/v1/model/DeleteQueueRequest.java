@@ -32,7 +32,7 @@ public class DeleteQueueRequest  {
 
 
     /**
-     * Get queueName
+     * 指定删除的队列名称。
      * @return queueName
      */
     public String getQueueName() {

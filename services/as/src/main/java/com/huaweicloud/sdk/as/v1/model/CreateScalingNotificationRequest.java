@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.CreateNotificationRequestBody;
+import com.huaweicloud.sdk.as.v1.model.CreateNotificationOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class CreateScalingNotificationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateNotificationRequestBody body;
+    private CreateNotificationOption body;
 
     public CreateScalingNotificationRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -39,7 +39,7 @@ public class CreateScalingNotificationRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组标识。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -52,14 +52,14 @@ public class CreateScalingNotificationRequest  {
 
     
 
-    public CreateScalingNotificationRequest withBody(CreateNotificationRequestBody body) {
+    public CreateScalingNotificationRequest withBody(CreateNotificationOption body) {
         this.body = body;
         return this;
     }
 
-    public CreateScalingNotificationRequest withBody(Consumer<CreateNotificationRequestBody> bodySetter) {
+    public CreateScalingNotificationRequest withBody(Consumer<CreateNotificationOption> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateNotificationRequestBody();
+            this.body = new CreateNotificationOption();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class CreateScalingNotificationRequest  {
      * Get body
      * @return body
      */
-    public CreateNotificationRequestBody getBody() {
+    public CreateNotificationOption getBody() {
         return body;
     }
 
-    public void setBody(CreateNotificationRequestBody body) {
+    public void setBody(CreateNotificationOption body) {
         this.body = body;
     }
 

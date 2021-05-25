@@ -57,7 +57,7 @@ public class ListMetricsRequest  {
     
     private String namespace;
     /**
-     * Gets or Sets order
+     * 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
      */
     public static final class OrderEnum {
 
@@ -156,7 +156,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get dim0
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return dim0
      */
     public String getDim0() {
@@ -178,7 +178,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get dim1
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：dim.1=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return dim1
      */
     public String getDim1() {
@@ -200,7 +200,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get dim2
+     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：dim.2=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的指标维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return dim2
      */
     public String getDim2() {
@@ -222,7 +222,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get limit
+     * 取值范围(0,1000]，默认值为1000。  用于限制结果数据条数。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -246,7 +246,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get metricName
+     * 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return metricName
      */
     public String getMetricName() {
@@ -268,7 +268,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get namespace
+     * 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务的命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return namespace
      */
     public String getNamespace() {
@@ -290,7 +290,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get order
+     * 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
      * @return order
      */
     public OrderEnum getOrder() {
@@ -312,7 +312,7 @@ public class ListMetricsRequest  {
 
 
     /**
-     * Get start
+     * 分页起始值，格式为：namespace.metric_name.key:value 例如：start=SYS.ECS.cpu_util.instance_id:d9112af5-6913-4f3b-bd0a-3f96711e004d
      * @return start
      */
     public String getStart() {

@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ListDependenciesRequest  {
 
     /**
-     * Gets or Sets dependencyType
+     * 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
      */
     public static final class DependencyTypeEnum {
 
@@ -113,7 +113,7 @@ public class ListDependenciesRequest  {
     
     private DependencyTypeEnum dependencyType;
     /**
-     * Gets or Sets runtime
+     * 运行时语言
      */
     public static final class RuntimeEnum {
 
@@ -284,7 +284,7 @@ public class ListDependenciesRequest  {
 
 
     /**
-     * Get dependencyType
+     * 依赖包类型public：公开,private:私有，all：全部。缺省时查询全量。
      * @return dependencyType
      */
     public DependencyTypeEnum getDependencyType() {
@@ -306,7 +306,7 @@ public class ListDependenciesRequest  {
 
 
     /**
-     * Get runtime
+     * 运行时语言
      * @return runtime
      */
     public RuntimeEnum getRuntime() {
@@ -328,7 +328,7 @@ public class ListDependenciesRequest  {
 
 
     /**
-     * Get name
+     * 依赖包名称。
      * @return name
      */
     public String getName() {
@@ -350,7 +350,7 @@ public class ListDependenciesRequest  {
 
 
     /**
-     * Get marker
+     * 上一次查询依赖包的最后记录位置，默认为\"0\"。
      * @return marker
      */
     public String getMarker() {
@@ -372,7 +372,7 @@ public class ListDependenciesRequest  {
 
 
     /**
-     * Get limit
+     * 本次查询可获取的依赖包的最大数目，默认为\"400\"。
      * @return limit
      */
     public String getLimit() {

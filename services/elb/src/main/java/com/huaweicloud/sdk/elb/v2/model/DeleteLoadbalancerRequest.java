@@ -38,7 +38,7 @@ public class DeleteLoadbalancerRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 负载均衡器id
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -60,7 +60,7 @@ public class DeleteLoadbalancerRequest  {
 
 
     /**
-     * Get cascade
+     * （不再支持）级联删除负载均衡器
      * @return cascade
      */
     public Boolean getCascade() {

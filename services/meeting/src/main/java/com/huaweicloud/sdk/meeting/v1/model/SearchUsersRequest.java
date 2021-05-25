@@ -77,7 +77,7 @@ public class SearchUsersRequest  {
     
     private Boolean enableSubDept;
     /**
-     * Gets or Sets adminType
+     * 根据管理员类型查询 * 1：普通管理员； * 2：非管理员。 
      */
     public static final class AdminTypeEnum {
 
@@ -194,7 +194,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -218,7 +218,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -240,7 +240,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量,若超过最大数量，则返回最后一页
      * @return offset
      */
     public Integer getOffset() {
@@ -262,7 +262,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -286,7 +286,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件，支持姓名、手机、邮箱、账号、第三方账号模糊搜索。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -308,7 +308,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get sortField
+     * 排序字段名称  约束 - 长度范围为0到64个字符  支持的取值 - userType - adminType - ldapAccount - deptCode - status - sortLevel
      * @return sortField
      */
     public String getSortField() {
@@ -330,7 +330,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get isAsc
+     * 是否按升序排序
      * @return isAsc
      */
     public Boolean getIsAsc() {
@@ -352,7 +352,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get deptCode
+     * 部门编码，不带则查询所有。
      * @return deptCode
      */
     public String getDeptCode() {
@@ -374,7 +374,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get enableSubDept
+     * 是否查询子部门 默认值: true 
      * @return enableSubDept
      */
     public Boolean getEnableSubDept() {
@@ -396,7 +396,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get adminType
+     * 根据管理员类型查询 * 1：普通管理员； * 2：非管理员。 
      * @return adminType
      */
     public AdminTypeEnum getAdminType() {
@@ -418,7 +418,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get enableRoom
+     * 是否开启智能协同白板功能功能位，不带则搜索所有。
      * @return enableRoom
      */
     public Boolean getEnableRoom() {
@@ -454,7 +454,7 @@ public class SearchUsersRequest  {
     }
 
     /**
-     * Get userType
+     * 用户类型 * 2：普通用户； * 12：智慧屏用户； * 13：ideaHub用户； * 若不携带，则默认查询普通用户。 
      * @return userType
      */
     public List<Integer> getUserType() {
@@ -476,7 +476,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get status
+     * 用户状态 * 0：正常； * 1：停用。不带则查询所有 
      * @return status
      */
     public Integer getStatus() {
@@ -498,7 +498,7 @@ public class SearchUsersRequest  {
 
 
     /**
-     * Get containsUnActive
+     * 是否查询未激活的终端 默认值: false 
      * @return containsUnActive
      */
     public Boolean getContainsUnActive() {

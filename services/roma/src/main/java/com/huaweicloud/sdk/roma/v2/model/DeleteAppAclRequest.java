@@ -38,7 +38,7 @@ public class DeleteAppAclRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteAppAclRequest  {
 
 
     /**
-     * Get appId
+     * 应用编号
      * @return appId
      */
     public String getAppId() {

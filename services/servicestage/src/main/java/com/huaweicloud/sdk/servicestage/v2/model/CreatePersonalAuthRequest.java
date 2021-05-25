@@ -22,7 +22,7 @@ import java.util.Objects;
 public class CreatePersonalAuthRequest  {
 
     /**
-     * Gets or Sets repoType
+     * 仓库类型。 支持私人令牌授权的仓库类型有：github、gitlab、gitee。
      */
     public static final class RepoTypeEnum {
 
@@ -127,7 +127,7 @@ public class CreatePersonalAuthRequest  {
 
 
     /**
-     * Get repoType
+     * 仓库类型。 支持私人令牌授权的仓库类型有：github、gitlab、gitee。
      * @return repoType
      */
     public RepoTypeEnum getRepoType() {

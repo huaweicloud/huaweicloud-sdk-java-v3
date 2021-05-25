@@ -36,18 +36,6 @@ public class ListSubsetsResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connect_address")
-    
-    private String connectAddress;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_connect_address")
-    
-    private String sslConnectAddress;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
     
     private List<Device> items = null;
@@ -92,50 +80,6 @@ public class ListSubsetsResponse extends SdkResponse {
 
     public void setSize(Integer size) {
         this.size = size;
-    }
-
-    
-
-    public ListSubsetsResponse withConnectAddress(String connectAddress) {
-        this.connectAddress = connectAddress;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 设备接入地址
-     * @return connectAddress
-     */
-    public String getConnectAddress() {
-        return connectAddress;
-    }
-
-    public void setConnectAddress(String connectAddress) {
-        this.connectAddress = connectAddress;
-    }
-
-    
-
-    public ListSubsetsResponse withSslConnectAddress(String sslConnectAddress) {
-        this.sslConnectAddress = sslConnectAddress;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 设备接入SSL地址
-     * @return sslConnectAddress
-     */
-    public String getSslConnectAddress() {
-        return sslConnectAddress;
-    }
-
-    public void setSslConnectAddress(String sslConnectAddress) {
-        this.sslConnectAddress = sslConnectAddress;
     }
 
     
@@ -187,13 +131,11 @@ public class ListSubsetsResponse extends SdkResponse {
         ListSubsetsResponse listSubsetsResponse = (ListSubsetsResponse) o;
         return Objects.equals(this.total, listSubsetsResponse.total) &&
             Objects.equals(this.size, listSubsetsResponse.size) &&
-            Objects.equals(this.connectAddress, listSubsetsResponse.connectAddress) &&
-            Objects.equals(this.sslConnectAddress, listSubsetsResponse.sslConnectAddress) &&
             Objects.equals(this.items, listSubsetsResponse.items);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, connectAddress, sslConnectAddress, items);
+        return Objects.hash(total, size, items);
     }
     @Override
     public String toString() {
@@ -201,8 +143,6 @@ public class ListSubsetsResponse extends SdkResponse {
         sb.append("class ListSubsetsResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    connectAddress: ").append(toIndentedString(connectAddress)).append("\n");
-        sb.append("    sslConnectAddress: ").append(toIndentedString(sslConnectAddress)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -51,7 +51,7 @@ public class UpdatePropertyRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class UpdatePropertyRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * @return serviceId
      */
     public String getServiceId() {
@@ -95,7 +95,7 @@ public class UpdatePropertyRequest  {
 
 
     /**
-     * Get propertyId
+     * 属性/请求属性/响应属性ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return propertyId

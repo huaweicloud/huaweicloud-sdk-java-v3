@@ -44,7 +44,7 @@ public class ListLiveDataDataSourcesV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class ListLiveDataDataSourcesV2Request  {
 
 
     /**
-     * Get appId
+     * 应用编号
      * @return appId
      */
     public String getAppId() {
@@ -88,7 +88,7 @@ public class ListLiveDataDataSourcesV2Request  {
 
 
     /**
-     * Get name
+     * 数据源名称
      * @return name
      */
     public String getName() {

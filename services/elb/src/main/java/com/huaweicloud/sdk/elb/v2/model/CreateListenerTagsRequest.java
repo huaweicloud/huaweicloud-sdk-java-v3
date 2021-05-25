@@ -39,7 +39,7 @@ public class CreateListenerTagsRequest  {
 
 
     /**
-     * Get listenerId
+     * 监听器ID。
      * @return listenerId
      */
     public String getListenerId() {

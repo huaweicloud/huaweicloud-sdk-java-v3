@@ -39,7 +39,7 @@ public class BatchDeleteVpcTagsRequest  {
 
 
     /**
-     * Get vpcId
+     * 功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在
      * @return vpcId
      */
     public String getVpcId() {

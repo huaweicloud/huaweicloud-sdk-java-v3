@@ -32,7 +32,7 @@ public class ShowTemplateRequest  {
 
 
     /**
-     * Get id
+     * 需要查询的模板信息的id
      * @return id
      */
     public String getId() {

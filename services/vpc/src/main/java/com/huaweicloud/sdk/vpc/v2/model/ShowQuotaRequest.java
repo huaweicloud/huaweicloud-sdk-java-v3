@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ShowQuotaRequest  {
 
     /**
-     * Gets or Sets type
+     * 功能说明：根据type过滤查询指定类型的配额 取值范围：vpc，subnet，securityGroup，securityGroupRule，publicIp，vpn，vpngw，vpcPeer，firewall，shareBandwidth，shareBandwidthIP，loadbalancer，listener，physicalConnect，virtualInterface，vpcContainRoutetable，routetableContainRoutes
      */
     public static final class TypeEnum {
 
@@ -204,7 +204,7 @@ public class ShowQuotaRequest  {
 
 
     /**
-     * Get type
+     * 功能说明：根据type过滤查询指定类型的配额 取值范围：vpc，subnet，securityGroup，securityGroupRule，publicIp，vpn，vpngw，vpcPeer，firewall，shareBandwidth，shareBandwidthIP，loadbalancer，listener，physicalConnect，virtualInterface，vpcContainRoutetable，routetableContainRoutes
      * @return type
      */
     public TypeEnum getType() {

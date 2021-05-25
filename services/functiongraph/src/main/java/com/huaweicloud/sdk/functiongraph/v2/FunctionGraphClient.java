@@ -216,6 +216,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 删除函数异步配置信息。
+     * 删除函数异步配置信息。
+     *
+     * @param DeleteFunctionAsyncInvokeConfigRequest 请求对象
+     * @return DeleteFunctionAsyncInvokeConfigResponse
+     */
+    public DeleteFunctionAsyncInvokeConfigResponse deleteFunctionAsyncInvokeConfig(DeleteFunctionAsyncInvokeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteFunctionAsyncInvokeConfig);
+    }
+
+    /**
+     * 删除函数异步配置信息。
+     * 删除函数异步配置信息。
+     *
+     * @param DeleteFunctionAsyncInvokeConfigRequest 请求对象
+     * @return SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>
+     */
+    public SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse> deleteFunctionAsyncInvokeConfigInvoker(DeleteFunctionAsyncInvokeConfigRequest request) {
+        return new SyncInvoker<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse>(request, FunctionGraphMeta.deleteFunctionAsyncInvokeConfig, hcClient);
+    }
+
+    /**
      * 删除函数版本别名。
      * 删除函数版本别名。
      *
@@ -301,6 +323,28 @@ public class FunctionGraphClient {
      */
     public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
         return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, FunctionGraphMeta.listEvents, hcClient);
+    }
+
+    /**
+     * 获取函数异步配置列表
+     * 获取函数异步配置列表。
+     *
+     * @param ListFunctionAsyncInvokeConfigRequest 请求对象
+     * @return ListFunctionAsyncInvokeConfigResponse
+     */
+    public ListFunctionAsyncInvokeConfigResponse listFunctionAsyncInvokeConfig(ListFunctionAsyncInvokeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.listFunctionAsyncInvokeConfig);
+    }
+
+    /**
+     * 获取函数异步配置列表
+     * 获取函数异步配置列表。
+     *
+     * @param ListFunctionAsyncInvokeConfigRequest 请求对象
+     * @return SyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse>
+     */
+    public SyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse> listFunctionAsyncInvokeConfigInvoker(ListFunctionAsyncInvokeConfigRequest request) {
+        return new SyncInvoker<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse>(request, FunctionGraphMeta.listFunctionAsyncInvokeConfig, hcClient);
     }
 
     /**
@@ -480,6 +524,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 获取函数异步配置信息。
+     * 获取函数异步配置信息。
+     *
+     * @param ShowFunctionAsyncInvokeConfigRequest 请求对象
+     * @return ShowFunctionAsyncInvokeConfigResponse
+     */
+    public ShowFunctionAsyncInvokeConfigResponse showFunctionAsyncInvokeConfig(ShowFunctionAsyncInvokeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showFunctionAsyncInvokeConfig);
+    }
+
+    /**
+     * 获取函数异步配置信息。
+     * 获取函数异步配置信息。
+     *
+     * @param ShowFunctionAsyncInvokeConfigRequest 请求对象
+     * @return SyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse>
+     */
+    public SyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse> showFunctionAsyncInvokeConfigInvoker(ShowFunctionAsyncInvokeConfigRequest request) {
+        return new SyncInvoker<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse>(request, FunctionGraphMeta.showFunctionAsyncInvokeConfig, hcClient);
+    }
+
+    /**
      * 获取指定函数代码。
      * 获取指定函数的代码。
      *
@@ -587,6 +653,28 @@ public class FunctionGraphClient {
      */
     public SyncInvoker<UpdateEventRequest, UpdateEventResponse> updateEventInvoker(UpdateEventRequest request) {
         return new SyncInvoker<UpdateEventRequest, UpdateEventResponse>(request, FunctionGraphMeta.updateEvent, hcClient);
+    }
+
+    /**
+     * 设置函数异步配置信息。
+     * 设置函数异步配置信息。
+     *
+     * @param UpdateFunctionAsyncInvokeConfigRequest 请求对象
+     * @return UpdateFunctionAsyncInvokeConfigResponse
+     */
+    public UpdateFunctionAsyncInvokeConfigResponse updateFunctionAsyncInvokeConfig(UpdateFunctionAsyncInvokeConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.updateFunctionAsyncInvokeConfig);
+    }
+
+    /**
+     * 设置函数异步配置信息。
+     * 设置函数异步配置信息。
+     *
+     * @param UpdateFunctionAsyncInvokeConfigRequest 请求对象
+     * @return SyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse>
+     */
+    public SyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse> updateFunctionAsyncInvokeConfigInvoker(UpdateFunctionAsyncInvokeConfigRequest request) {
+        return new SyncInvoker<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse>(request, FunctionGraphMeta.updateFunctionAsyncInvokeConfig, hcClient);
     }
 
     /**

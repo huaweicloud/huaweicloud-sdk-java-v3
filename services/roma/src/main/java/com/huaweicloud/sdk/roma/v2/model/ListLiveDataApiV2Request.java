@@ -80,7 +80,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -102,7 +102,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get appId
+     * 后端API归属的集成应用编号
      * @return appId
      */
     public String getAppId() {
@@ -124,7 +124,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get appName
+     * 后端API归属的集成应用名称
      * @return appName
      */
     public String getAppName() {
@@ -146,7 +146,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get name
+     * 后端API名称
      * @return name
      */
     public String getName() {
@@ -168,7 +168,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get status
+     * 后端API状态，支持1，3，4，分别表示待开发，开发中和已部署状态
      * @return status
      */
     public String getStatus() {
@@ -190,7 +190,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get path
+     * 后端API请求路径
      * @return path
      */
     public String getPath() {
@@ -212,7 +212,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get preciseSearch
+     * 指明需要精准查询的参数，支持name、path、status
      * @return preciseSearch
      */
     public String getPreciseSearch() {
@@ -234,7 +234,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -256,7 +256,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

@@ -50,7 +50,7 @@ public class RestorePoint  {
 
 
     /**
-     * 实例ID。当type为“backup”，为非必选。当type为“timestamp”，为必选。
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。当type为“backup”，为非必选。当type为“timestamp”，为必选。
      * @return instanceId
      */
     public String getInstanceId() {

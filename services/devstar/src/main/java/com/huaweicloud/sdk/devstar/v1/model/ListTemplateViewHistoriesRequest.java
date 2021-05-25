@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ListTemplateViewHistoriesRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      */
     public static final class XLanguageEnum {
 
@@ -107,7 +107,7 @@ public class ListTemplateViewHistoriesRequest  {
     
     private XLanguageEnum xLanguage;
     /**
-     * Gets or Sets platformSource
+     * 平台来源： - 0：查询CodeLabs中用户浏览过的模板。 - 1：查询DevStar中用户浏览过的模板。 
      */
     public static final class PlatformSourceEnum {
 
@@ -200,7 +200,7 @@ public class ListTemplateViewHistoriesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -224,7 +224,7 @@ public class ListTemplateViewHistoriesRequest  {
 
 
     /**
-     * Get platformSource
+     * 平台来源： - 0：查询CodeLabs中用户浏览过的模板。 - 1：查询DevStar中用户浏览过的模板。 
      * minimum: 0
      * maximum: 1
      * @return platformSource

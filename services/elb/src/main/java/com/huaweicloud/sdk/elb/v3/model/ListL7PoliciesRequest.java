@@ -138,7 +138,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get action
+     * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
      * @return action
      */
     public List<String> getAction() {
@@ -160,7 +160,7 @@ public class ListL7PoliciesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -196,7 +196,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get description
+     * 转发策略额描述信息。
      * @return description
      */
     public List<String> getDescription() {
@@ -218,7 +218,7 @@ public class ListL7PoliciesRequest  {
 
 
     /**
-     * Get displayAllRules
+     * true:显示policy下面的rule的所有信息，false：只显示policy下面的rule的id信息
      * @return displayAllRules
      */
     public Boolean getDisplayAllRules() {
@@ -254,7 +254,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -290,7 +290,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get id
+     * 转发策略ID
      * @return id
      */
     public List<String> getId() {
@@ -312,7 +312,7 @@ public class ListL7PoliciesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -350,7 +350,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get listenerId
+     * 转发策略对应的监听器ID。当action为REDIRECT_TO_POOL时，只支持创建在PROTOCOL为HTTP或TERMINATED_HTTPS的listener上。 当action为REDIRECT_TO_LISTENER时，只支持创建在PROTOCOL为HTTP的listener上。
      * @return listenerId
      */
     public List<String> getListenerId() {
@@ -372,7 +372,7 @@ public class ListL7PoliciesRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -408,7 +408,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get name
+     * 转发策略名称。
      * @return name
      */
     public List<String> getName() {
@@ -430,7 +430,7 @@ public class ListL7PoliciesRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -466,7 +466,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get position
+     * 转发策略的优先级，从1递增，最高100。该字段为预留字段，暂未启用。
      * @return position
      */
     public List<Integer> getPosition() {
@@ -502,7 +502,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get provisioningStatus
+     * 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
      * @return provisioningStatus
      */
     public List<String> getProvisioningStatus() {
@@ -538,7 +538,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get redirectListenerId
+     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。当action为REDIRECT_TO_LISTENER时必选
      * @return redirectListenerId
      */
     public List<String> getRedirectListenerId() {
@@ -574,7 +574,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get redirectPoolId
+     * 转发到pool的ID。转发到pool的ID。当action为REDIRECT_TO_POOL时生效。当action为REDIRECT_TO_POOL时必选。
      * @return redirectPoolId
      */
     public List<String> getRedirectPoolId() {
@@ -610,7 +610,7 @@ public class ListL7PoliciesRequest  {
     }
 
     /**
-     * Get redirectUrl
+     * 转发到的url。该字段未启用。
      * @return redirectUrl
      */
     public List<String> getRedirectUrl() {

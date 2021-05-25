@@ -32,7 +32,7 @@ public class DeleteTaskRequest  {
 
 
     /**
-     * Get taskId
+     * 要删除的迁移任务id
      * @return taskId
      */
     public String getTaskId() {

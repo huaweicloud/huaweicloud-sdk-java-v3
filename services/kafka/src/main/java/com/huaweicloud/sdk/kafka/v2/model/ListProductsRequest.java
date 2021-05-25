@@ -3,15 +3,11 @@ package com.huaweicloud.sdk.kafka.v2.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -20,86 +16,14 @@ import java.util.Objects;
  */
 public class ListProductsRequest  {
 
-    /**
-     * Gets or Sets engine
-     */
-    public static final class EngineEnum {
-
-        
-        /**
-         * Enum KAFKA for value: "kafka"
-         */
-        public static final EngineEnum KAFKA = new EngineEnum("kafka");
-        
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("kafka", KAFKA);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine")
     
-    private EngineEnum engine;
+    private String engine;
 
-    public ListProductsRequest withEngine(EngineEnum engine) {
+    public ListProductsRequest withEngine(String engine) {
         this.engine = engine;
         return this;
     }
@@ -108,14 +32,14 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get engine
+     * 消息引擎的类型。当前只支持kafka类型。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 

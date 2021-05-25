@@ -32,7 +32,7 @@ public class DeleteResourceRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源id.
      * @return resourceId
      */
     public String getResourceId() {

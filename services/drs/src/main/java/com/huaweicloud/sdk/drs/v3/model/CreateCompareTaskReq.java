@@ -34,16 +34,16 @@ public class CreateCompareTaskReq  {
 
         
         /**
-         * Enum OBJECTS_ for value: "objects-对象对比"
+         * Enum OBJECTS for value: "objects"
          */
-        public static final ObjectLevelCompareTypeEnum OBJECTS_ = new ObjectLevelCompareTypeEnum("objects-对象对比");
+        public static final ObjectLevelCompareTypeEnum OBJECTS = new ObjectLevelCompareTypeEnum("objects");
         
 
         private static final Map<String, ObjectLevelCompareTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectLevelCompareTypeEnum> createStaticFields() {
             Map<String, ObjectLevelCompareTypeEnum> map = new HashMap<>();
-            map.put("objects-对象对比", OBJECTS_);
+            map.put("objects", OBJECTS);
             return Collections.unmodifiableMap(map);
         }
 

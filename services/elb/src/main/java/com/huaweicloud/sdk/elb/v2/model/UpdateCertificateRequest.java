@@ -39,7 +39,7 @@ public class UpdateCertificateRequest  {
 
 
     /**
-     * Get certificateId
+     * SSL证书ID
      * @return certificateId
      */
     public String getCertificateId() {

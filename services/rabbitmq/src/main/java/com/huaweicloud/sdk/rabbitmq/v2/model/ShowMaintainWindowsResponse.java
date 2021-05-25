@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rabbitmq.v2.model.MaintainWindowsEntity;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRespMaintainWindows;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,15 +26,15 @@ public class ShowMaintainWindowsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="maintain_windows")
     
-    private List<MaintainWindowsEntity> maintainWindows = null;
+    private List<ShowMaintainWindowsRespMaintainWindows> maintainWindows = null;
     
-    public ShowMaintainWindowsResponse withMaintainWindows(List<MaintainWindowsEntity> maintainWindows) {
+    public ShowMaintainWindowsResponse withMaintainWindows(List<ShowMaintainWindowsRespMaintainWindows> maintainWindows) {
         this.maintainWindows = maintainWindows;
         return this;
     }
 
     
-    public ShowMaintainWindowsResponse addMaintainWindowsItem(MaintainWindowsEntity maintainWindowsItem) {
+    public ShowMaintainWindowsResponse addMaintainWindowsItem(ShowMaintainWindowsRespMaintainWindows maintainWindowsItem) {
         if(this.maintainWindows == null) {
             this.maintainWindows = new ArrayList<>();
         }
@@ -42,7 +42,7 @@ public class ShowMaintainWindowsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowMaintainWindowsResponse withMaintainWindows(Consumer<List<MaintainWindowsEntity>> maintainWindowsSetter) {
+    public ShowMaintainWindowsResponse withMaintainWindows(Consumer<List<ShowMaintainWindowsRespMaintainWindows>> maintainWindowsSetter) {
         if(this.maintainWindows == null) {
             this.maintainWindows = new ArrayList<>();
         }
@@ -54,11 +54,11 @@ public class ShowMaintainWindowsResponse extends SdkResponse {
      * 支持的维护时间窗列表。
      * @return maintainWindows
      */
-    public List<MaintainWindowsEntity> getMaintainWindows() {
+    public List<ShowMaintainWindowsRespMaintainWindows> getMaintainWindows() {
         return maintainWindows;
     }
 
-    public void setMaintainWindows(List<MaintainWindowsEntity> maintainWindows) {
+    public void setMaintainWindows(List<ShowMaintainWindowsRespMaintainWindows> maintainWindows) {
         this.maintainWindows = maintainWindows;
     }
 

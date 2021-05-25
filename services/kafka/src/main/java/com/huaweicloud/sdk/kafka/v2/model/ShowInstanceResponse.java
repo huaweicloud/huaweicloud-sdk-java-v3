@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRespTags;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +62,7 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="partition_num")
     
-    private Integer partitionNum;
+    private String partitionNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -543,6 +544,12 @@ public class ShowInstanceResponse extends SdkResponse {
     
     private String cesVersion;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private List<ListInstancesRespTags> tags = null;
+    
     public ShowInstanceResponse withName(String name) {
         this.name = name;
         return this;
@@ -653,7 +660,7 @@ public class ShowInstanceResponse extends SdkResponse {
 
     
 
-    public ShowInstanceResponse withPartitionNum(Integer partitionNum) {
+    public ShowInstanceResponse withPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
         return this;
     }
@@ -662,14 +669,14 @@ public class ShowInstanceResponse extends SdkResponse {
 
 
     /**
-     * Kafka实例的最大topic数。
+     * Kafka实例的分区数量。
      * @return partitionNum
      */
-    public Integer getPartitionNum() {
+    public String getPartitionNum() {
         return partitionNum;
     }
 
-    public void setPartitionNum(Integer partitionNum) {
+    public void setPartitionNum(String partitionNum) {
         this.partitionNum = partitionNum;
     }
 
@@ -1891,6 +1898,42 @@ public class ShowInstanceResponse extends SdkResponse {
 
     
 
+    public ShowInstanceResponse withTags(List<ListInstancesRespTags> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public ShowInstanceResponse addTagsItem(ListInstancesRespTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withTags(Consumer<List<ListInstancesRespTags>> tagsSetter) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<ListInstancesRespTags> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ListInstancesRespTags> tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1959,11 +2002,12 @@ public class ShowInstanceResponse extends SdkResponse {
             Objects.equals(this.podConnectAddress, showInstanceResponse.podConnectAddress) &&
             Objects.equals(this.diskEncrypted, showInstanceResponse.diskEncrypted) &&
             Objects.equals(this.kafkaPrivateConnectAddress, showInstanceResponse.kafkaPrivateConnectAddress) &&
-            Objects.equals(this.cesVersion, showInstanceResponse.cesVersion);
+            Objects.equals(this.cesVersion, showInstanceResponse.cesVersion) &&
+            Objects.equals(this.tags, showInstanceResponse.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, engine, engineVersion, specification, storageSpace, partitionNum, usedStorageSpace, connectAddress, port, status, instanceId, resourceSpecCode, chargingMode, vpcId, vpcName, createdAt, userId, userName, orderId, maintainBegin, maintainEnd, enablePublicip, managementConnectAddress, sslEnable, enterpriseProjectId, isLogicalVolume, extendTimes, enableAutoTopic, type, productId, securityGroupId, securityGroupName, subnetId, availableZones, totalStorageSpace, publicConnectAddress, storageResourceId, storageSpecCode, serviceType, storageType, retentionPolicy, kafkaPublicStatus, publicBandwidth, kafkaManagerUser, enableLogCollection, crossVpcInfo, ipv6Enable, ipv6ConnectAddresses, connectorEnable, connectorId, restEnable, restConnectAddress, messageQueryInstEnable, vpcClientPlain, supportFeatures, traceEnable, podConnectAddress, diskEncrypted, kafkaPrivateConnectAddress, cesVersion);
+        return Objects.hash(name, engine, engineVersion, specification, storageSpace, partitionNum, usedStorageSpace, connectAddress, port, status, instanceId, resourceSpecCode, chargingMode, vpcId, vpcName, createdAt, userId, userName, orderId, maintainBegin, maintainEnd, enablePublicip, managementConnectAddress, sslEnable, enterpriseProjectId, isLogicalVolume, extendTimes, enableAutoTopic, type, productId, securityGroupId, securityGroupName, subnetId, availableZones, totalStorageSpace, publicConnectAddress, storageResourceId, storageSpecCode, serviceType, storageType, retentionPolicy, kafkaPublicStatus, publicBandwidth, kafkaManagerUser, enableLogCollection, crossVpcInfo, ipv6Enable, ipv6ConnectAddresses, connectorEnable, connectorId, restEnable, restConnectAddress, messageQueryInstEnable, vpcClientPlain, supportFeatures, traceEnable, podConnectAddress, diskEncrypted, kafkaPrivateConnectAddress, cesVersion, tags);
     }
     @Override
     public String toString() {
@@ -2029,6 +2073,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

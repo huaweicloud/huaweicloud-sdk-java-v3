@@ -80,7 +80,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get userUUID
+     * 待查询的会议预定者的uuid 仅管理员有权限查询权限范围内的所有账号；普通账号该字段无效，只能查询自己的。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -102,7 +102,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get offset
+     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -124,7 +124,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get limit
+     * 指定返回的记录数，默认值由会议AS定义，默认是20，最大500条。
      * minimum: 0
      * maximum: 500
      * @return limit
@@ -148,7 +148,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get queryAll
+     * 指定是否查询企业下所有用户的会议记录。 如果登录帐号不是企业管理员，则该字段无效。 如果该字段为true，则userUUID字段无效。 default : false
      * @return queryAll
      */
     public Boolean getQueryAll() {
@@ -170,7 +170,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get searchKey
+     * 查询用来当作关键词的字符串。长度限制为1-128个字符。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -192,7 +192,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get queryConfMode
+     * - ADAY:  一天。 - AWEEK:  一周。 - AMONTH:  一个月。 - ALL:  查询所有。
      * @return queryConfMode
      */
     public String getQueryConfMode() {
@@ -214,7 +214,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get sortType
+     * - ASC_StartTIME:  按会议开始时间升序排序。 - DSC_StartTIME:  按会议开始时间降序排序。
      * @return sortType
      */
     public String getSortType() {
@@ -236,7 +236,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get xAuthorizationType
+     * 标识是否为第三方portal过来的请求。
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -260,7 +260,7 @@ public class SearchMeetingsRequest  {
 
 
     /**
-     * Get xSiteId
+     * 用于区分到哪个HCSO站点鉴权。
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

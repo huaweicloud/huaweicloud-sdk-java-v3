@@ -45,7 +45,7 @@ public class UpdateMemberStatusRequest  {
 
 
     /**
-     * Get memberId
+     * 成员id，成员id与项目id为同一个。
      * @return memberId
      */
     public String getMemberId() {
@@ -67,7 +67,7 @@ public class UpdateMemberStatusRequest  {
 
 
     /**
-     * Get backupId
+     * 备份副本id
      * @return backupId
      */
     public String getBackupId() {

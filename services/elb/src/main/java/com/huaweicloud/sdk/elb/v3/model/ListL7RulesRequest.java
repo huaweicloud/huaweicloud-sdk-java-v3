@@ -106,7 +106,7 @@ public class ListL7RulesRequest  {
 
 
     /**
-     * Get l7policyId
+     * 策略ID。
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -128,7 +128,7 @@ public class ListL7RulesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -164,7 +164,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get compareType
+     * 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
      * @return compareType
      */
     public List<String> getCompareType() {
@@ -200,7 +200,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -236,7 +236,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get id
+     * 转发规则ID。
      * @return id
      */
     public List<String> getId() {
@@ -258,7 +258,7 @@ public class ListL7RulesRequest  {
 
 
     /**
-     * Get invert
+     * 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
      * @return invert
      */
     public Boolean getInvert() {
@@ -294,7 +294,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get key
+     * 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
      * @return key
      */
     public List<String> getKey() {
@@ -316,7 +316,7 @@ public class ListL7RulesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -340,7 +340,7 @@ public class ListL7RulesRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -362,7 +362,7 @@ public class ListL7RulesRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -398,7 +398,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get provisioningStatus
+     * 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
      * @return provisioningStatus
      */
     public List<String> getProvisioningStatus() {
@@ -434,7 +434,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get type
+     * 一个l7policy下创建的l7rule的type不能重复。 匹配内容：可以为HOST_NAME，PATH。
      * @return type
      */
     public List<String> getType() {
@@ -470,7 +470,7 @@ public class ListL7RulesRequest  {
     }
 
     /**
-     * Get value
+     * 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
      * @return value
      */
     public List<String> getValue() {

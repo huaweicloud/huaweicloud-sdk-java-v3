@@ -41,7 +41,7 @@ public class GlanceUpdateImageRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像ID
      * @return imageId
      */
     public String getImageId() {

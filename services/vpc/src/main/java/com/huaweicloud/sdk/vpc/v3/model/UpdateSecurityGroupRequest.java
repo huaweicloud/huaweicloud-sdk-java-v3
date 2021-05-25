@@ -39,7 +39,7 @@ public class UpdateSecurityGroupRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 安全组ID
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

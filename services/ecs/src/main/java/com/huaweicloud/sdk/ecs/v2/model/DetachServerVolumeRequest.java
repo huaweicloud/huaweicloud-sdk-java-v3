@@ -33,7 +33,7 @@ public class DetachServerVolumeRequest  {
     
     private String volumeId;
     /**
-     * Gets or Sets deleteFlag
+     * 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
      */
     public static final class DeleteFlagEnum {
 
@@ -126,7 +126,7 @@ public class DetachServerVolumeRequest  {
 
 
     /**
-     * Get serverId
+     * 云服务器ID。
      * @return serverId
      */
     public String getServerId() {
@@ -148,7 +148,7 @@ public class DetachServerVolumeRequest  {
 
 
     /**
-     * Get volumeId
+     * 磁盘ID。
      * @return volumeId
      */
     public String getVolumeId() {
@@ -170,7 +170,7 @@ public class DetachServerVolumeRequest  {
 
 
     /**
-     * Get deleteFlag
+     * 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
      * @return deleteFlag
      */
     public DeleteFlagEnum getDeleteFlag() {

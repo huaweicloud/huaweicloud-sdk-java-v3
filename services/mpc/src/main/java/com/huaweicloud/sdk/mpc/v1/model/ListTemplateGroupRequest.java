@@ -66,7 +66,7 @@ public class ListTemplateGroupRequest  {
     }
 
     /**
-     * Get groupId
+     * 转码模板组ID，最多10个 
      * @return groupId
      */
     public List<String> getGroupId() {
@@ -102,7 +102,7 @@ public class ListTemplateGroupRequest  {
     }
 
     /**
-     * Get groupName
+     * 转码模板组名，最多10个 
      * @return groupName
      */
     public List<String> getGroupName() {
@@ -124,7 +124,7 @@ public class ListTemplateGroupRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。查询指定“group_id”时，该参数无效。  默认值：0。 
      * minimum: 0
      * maximum: 50000
      * @return page
@@ -148,7 +148,7 @@ public class ListTemplateGroupRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。取值范围：[1,100]，指定group_id时该参数无效。 
      * minimum: 1
      * maximum: 1000
      * @return size

@@ -45,7 +45,7 @@ public class ListFlavorsRequest  {
     
     private String engineVersion;
     /**
-     * Gets or Sets cpuType
+     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 
      */
     public static final class CpuTypeEnum {
 
@@ -144,7 +144,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get specCode
+     * 产品规格编码。
      * @return specCode
      */
     public String getSpecCode() {
@@ -166,7 +166,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get cacheMode
+     * 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 
      * @return cacheMode
      */
     public String getCacheMode() {
@@ -188,7 +188,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get engine
+     * 缓存引擎类型。取值范围如下： - Redis - Memcached 
      * @return engine
      */
     public String getEngine() {
@@ -210,7 +210,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get engineVersion
+     * 缓存版本，当缓存引擎为Redis时，取值范围如下： - 3.0 - 4.0 - 5.0 
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -232,7 +232,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get cpuType
+     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64：ARM架构 
      * @return cpuType
      */
     public CpuTypeEnum getCpuType() {
@@ -254,7 +254,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get capacity
+     * 缓存容量（G Byte）。 - Redis3.0：单机和主备类型实例取值：2、4、8、16、32、64。Proxy集群实例规格支持64、128、256、512和1024。 - Redis4.0和Redis5.0：单机和主备类型实例取值：0.125、0.25、0.5、1、2、4、8、16、32、64。Cluster集群实例规格支持24、32、48、64、96、128、192、256、384、512、768、1024。 - Memcached：单机和主备类型实例取值：2、4、8、16、32、64。 
      * @return capacity
      */
     public String getCapacity() {

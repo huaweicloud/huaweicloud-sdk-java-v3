@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingConfigsRequestBody;
+import com.huaweicloud.sdk.as.v1.model.BatchDeleteScalingConfigOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class BatchDeleteScalingConfigsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BatchDeleteScalingConfigsRequestBody body;
+    private BatchDeleteScalingConfigOption body;
 
-    public BatchDeleteScalingConfigsRequest withBody(BatchDeleteScalingConfigsRequestBody body) {
+    public BatchDeleteScalingConfigsRequest withBody(BatchDeleteScalingConfigOption body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteScalingConfigsRequest withBody(Consumer<BatchDeleteScalingConfigsRequestBody> bodySetter) {
+    public BatchDeleteScalingConfigsRequest withBody(Consumer<BatchDeleteScalingConfigOption> bodySetter) {
         if(this.body == null ){
-            this.body = new BatchDeleteScalingConfigsRequestBody();
+            this.body = new BatchDeleteScalingConfigOption();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class BatchDeleteScalingConfigsRequest  {
      * Get body
      * @return body
      */
-    public BatchDeleteScalingConfigsRequestBody getBody() {
+    public BatchDeleteScalingConfigOption getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteScalingConfigsRequestBody body) {
+    public void setBody(BatchDeleteScalingConfigOption body) {
         this.body = body;
     }
 

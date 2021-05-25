@@ -32,7 +32,7 @@ public class ShowMigrationTaskRequest  {
 
 
     /**
-     * Get taskId
+     * 任务ID。
      * @return taskId
      */
     public String getTaskId() {

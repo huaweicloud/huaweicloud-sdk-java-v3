@@ -45,7 +45,7 @@ public class ListSeriesRequest  {
 
 
     /**
-     * Get limit
+     * 取值范围(0,1000]，默认值为1000。用于限制本次返回的结果数据条数。
      * @return limit
      */
     public String getLimit() {
@@ -67,7 +67,7 @@ public class ListSeriesRequest  {
 
 
     /**
-     * Get offset
+     * 分页查询起始位置，为非负整数。
      * @return offset
      */
     public String getOffset() {

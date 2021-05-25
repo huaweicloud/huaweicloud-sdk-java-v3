@@ -9,8 +9,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,84 +24,12 @@ import java.util.Objects;
  */
 public class ListInstancesRequest  {
 
-    /**
-     * Gets or Sets engine
-     */
-    public static final class EngineEnum {
-
-        
-        /**
-         * Enum KAFKA for value: "kafka"
-         */
-        public static final EngineEnum KAFKA = new EngineEnum("kafka");
-        
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("kafka", KAFKA);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="engine")
     
-    private EngineEnum engine;
+    private String engine;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -117,7 +43,7 @@ public class ListInstancesRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets status
+     * 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
      */
     public static final class StatusEnum {
 
@@ -231,7 +157,7 @@ public class ListInstancesRequest  {
     
     private StatusEnum status;
     /**
-     * Gets or Sets includeFailure
+     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
      */
     public static final class IncludeFailureEnum {
 
@@ -315,7 +241,7 @@ public class ListInstancesRequest  {
     
     private IncludeFailureEnum includeFailure;
     /**
-     * Gets or Sets exactMatchName
+     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
      */
     public static final class ExactMatchNameEnum {
 
@@ -405,7 +331,7 @@ public class ListInstancesRequest  {
     
     private String enterpriseProjectId;
 
-    public ListInstancesRequest withEngine(EngineEnum engine) {
+    public ListInstancesRequest withEngine(String engine) {
         this.engine = engine;
         return this;
     }
@@ -414,14 +340,14 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get engine
+     * 消息引擎：kafka。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 
@@ -436,7 +362,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get name
+     * 实例名称。
      * @return name
      */
     public String getName() {
@@ -458,7 +384,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -480,7 +406,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get status
+     * 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -502,7 +428,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get includeFailure
+     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
      * @return includeFailure
      */
     public IncludeFailureEnum getIncludeFailure() {
@@ -524,7 +450,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get exactMatchName
+     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
      * @return exactMatchName
      */
     public ExactMatchNameEnum getExactMatchName() {
@@ -546,7 +472,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

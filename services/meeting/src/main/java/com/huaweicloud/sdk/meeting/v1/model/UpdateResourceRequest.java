@@ -40,12 +40,6 @@ public class UpdateResourceRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="forceEditFlag")
-    
-    private Boolean forceEditFlag;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private List<ModResourceDTO> body = null;
@@ -59,7 +53,7 @@ public class UpdateResourceRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -83,7 +77,7 @@ public class UpdateResourceRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -105,7 +99,7 @@ public class UpdateResourceRequest  {
 
 
     /**
-     * Get corpId
+     * 企业id
      * @return corpId
      */
     public String getCorpId() {
@@ -114,28 +108,6 @@ public class UpdateResourceRequest  {
 
     public void setCorpId(String corpId) {
         this.corpId = corpId;
-    }
-
-    
-
-    public UpdateResourceRequest withForceEditFlag(Boolean forceEditFlag) {
-        this.forceEditFlag = forceEditFlag;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get forceEditFlag
-     * @return forceEditFlag
-     */
-    public Boolean getForceEditFlag() {
-        return forceEditFlag;
-    }
-
-    public void setForceEditFlag(Boolean forceEditFlag) {
-        this.forceEditFlag = forceEditFlag;
     }
 
     
@@ -188,12 +160,11 @@ public class UpdateResourceRequest  {
         return Objects.equals(this.xRequestId, updateResourceRequest.xRequestId) &&
             Objects.equals(this.acceptLanguage, updateResourceRequest.acceptLanguage) &&
             Objects.equals(this.corpId, updateResourceRequest.corpId) &&
-            Objects.equals(this.forceEditFlag, updateResourceRequest.forceEditFlag) &&
             Objects.equals(this.body, updateResourceRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, corpId, forceEditFlag, body);
+        return Objects.hash(xRequestId, acceptLanguage, corpId, body);
     }
     @Override
     public String toString() {
@@ -202,7 +173,6 @@ public class UpdateResourceRequest  {
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
         sb.append("    corpId: ").append(toIndentedString(corpId)).append("\n");
-        sb.append("    forceEditFlag: ").append(toIndentedString(forceEditFlag)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

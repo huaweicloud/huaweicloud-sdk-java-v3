@@ -33,7 +33,7 @@ public class ListProvidersRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets xLanguage
+     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
      */
     public static final class XLanguageEnum {
 
@@ -126,7 +126,7 @@ public class ListProvidersRequest  {
 
 
     /**
-     * Get offset
+     * 分页偏移
      * minimum: 1
      * maximum: 1000
      * @return offset
@@ -150,7 +150,7 @@ public class ListProvidersRequest  {
 
 
     /**
-     * Get limit
+     * 最大的返回数量
      * minimum: 1
      * maximum: 200
      * @return limit
@@ -174,7 +174,7 @@ public class ListProvidersRequest  {
 
 
     /**
-     * Get xLanguage
+     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -44,7 +44,7 @@ public class DeleteDomainMappingRequest  {
 
 
     /**
-     * Get specifyProject
+     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
      * @return specifyProject
      */
     public String getSpecifyProject() {
@@ -66,7 +66,7 @@ public class DeleteDomainMappingRequest  {
 
 
     /**
-     * Get pullDomain
+     * 直播播放域名
      * @return pullDomain
      */
     public String getPullDomain() {
@@ -88,7 +88,7 @@ public class DeleteDomainMappingRequest  {
 
 
     /**
-     * Get pushDomain
+     * 直播推流域名
      * @return pushDomain
      */
     public String getPushDomain() {

@@ -44,7 +44,7 @@ public class ListAlarmsRequest  {
 
 
     /**
-     * Get limit
+     * 取值范围(0,100]，默认值为100  用于限制结果数据条数。
      * @return limit
      */
     public Integer getLimit() {
@@ -66,7 +66,7 @@ public class ListAlarmsRequest  {
 
 
     /**
-     * Get order
+     * 用于标识结果排序方法。  取值说明，默认值为desc。  asc：升序 desc：降序
      * @return order
      */
     public String getOrder() {
@@ -88,7 +88,7 @@ public class ListAlarmsRequest  {
 
 
     /**
-     * Get start
+     * 分页起始值，内容为alarm_id。
      * @return start
      */
     public String getStart() {

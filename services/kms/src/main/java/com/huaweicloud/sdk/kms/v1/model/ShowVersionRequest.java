@@ -32,7 +32,7 @@ public class ShowVersionRequest  {
 
 
     /**
-     * Get versionId
+     * API版本号
      * @return versionId
      */
     public String getVersionId() {

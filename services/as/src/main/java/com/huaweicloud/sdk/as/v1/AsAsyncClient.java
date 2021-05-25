@@ -20,6 +20,50 @@ public class AsAsyncClient {
 
 
     /**
+     * 伸缩实例生命周期回调
+     * 通过生命周期操作令牌或者通过实例ID和生命周期挂钩名称对伸缩实例指定的挂钩进行回调操作。如果在超时时间结束前已完成自定义操作，选择终止或继续完成生命周期操作。如果需要更多时间完成自定义操作，选择延长超时时间，实例保持等待状态的时间将增加1小时。只有实例的生命周期挂钩状态为 HANGING 时才可以进行回调操作。
+     *
+     * @param AttachCallbackInstanceLifeCycleHookRequest 请求对象
+     * @return CompletableFuture<AttachCallbackInstanceLifeCycleHookResponse>
+     */
+    public CompletableFuture<AttachCallbackInstanceLifeCycleHookResponse> attachCallbackInstanceLifeCycleHookAsync(AttachCallbackInstanceLifeCycleHookRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.attachCallbackInstanceLifeCycleHook);
+    }
+
+    /**
+     * 伸缩实例生命周期回调
+     * 通过生命周期操作令牌或者通过实例ID和生命周期挂钩名称对伸缩实例指定的挂钩进行回调操作。如果在超时时间结束前已完成自定义操作，选择终止或继续完成生命周期操作。如果需要更多时间完成自定义操作，选择延长超时时间，实例保持等待状态的时间将增加1小时。只有实例的生命周期挂钩状态为 HANGING 时才可以进行回调操作。
+     *
+     * @param AttachCallbackInstanceLifeCycleHookRequest 请求对象
+     * @return AsyncInvoker<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse>
+     */
+    public AsyncInvoker<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse> attachCallbackInstanceLifeCycleHookAsyncInvoker(AttachCallbackInstanceLifeCycleHookRequest request) {
+        return new AsyncInvoker<AttachCallbackInstanceLifeCycleHookRequest, AttachCallbackInstanceLifeCycleHookResponse>(request, AsMeta.attachCallbackInstanceLifeCycleHook, hcClient);
+    }
+
+    /**
+     * 批量添加实例
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchAddScalingInstancesRequest 请求对象
+     * @return CompletableFuture<BatchAddScalingInstancesResponse>
+     */
+    public CompletableFuture<BatchAddScalingInstancesResponse> batchAddScalingInstancesAsync(BatchAddScalingInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchAddScalingInstances);
+    }
+
+    /**
+     * 批量添加实例
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchAddScalingInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse>
+     */
+    public AsyncInvoker<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse> batchAddScalingInstancesAsyncInvoker(BatchAddScalingInstancesRequest request) {
+        return new AsyncInvoker<BatchAddScalingInstancesRequest, BatchAddScalingInstancesResponse>(request, AsMeta.batchAddScalingInstances, hcClient);
+    }
+
+    /**
      * 批量删除弹性伸缩配置
      * 批量删除指定弹性伸缩配置。被伸缩组使用的伸缩配置不能被删除。单次最多删除伸缩配置个数为50。
      *
@@ -42,25 +86,179 @@ public class AsAsyncClient {
     }
 
     /**
-     * 伸缩实例生命周期回调
-     * 通过生命周期操作令牌或者通过实例ID和生命周期挂钩名称对伸缩实例指定的挂钩进行回调操作。如果在超时时间结束前已完成自定义操作，选择终止或继续完成生命周期操作。如果需要更多时间完成自定义操作，选择延长超时时间，实例保持等待状态的时间将增加1小时。只有实例的生命周期挂钩状态为 HANGING 时才可以进行回调操作。
+     * 批量删除弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
      *
-     * @param CompleteLifecycleActionRequest 请求对象
-     * @return CompletableFuture<CompleteLifecycleActionResponse>
+     * @param BatchDeleteScalingPoliciesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteScalingPoliciesResponse>
      */
-    public CompletableFuture<CompleteLifecycleActionResponse> completeLifecycleActionAsync(CompleteLifecycleActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.completeLifecycleAction);
+    public CompletableFuture<BatchDeleteScalingPoliciesResponse> batchDeleteScalingPoliciesAsync(BatchDeleteScalingPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchDeleteScalingPolicies);
     }
 
     /**
-     * 伸缩实例生命周期回调
-     * 通过生命周期操作令牌或者通过实例ID和生命周期挂钩名称对伸缩实例指定的挂钩进行回调操作。如果在超时时间结束前已完成自定义操作，选择终止或继续完成生命周期操作。如果需要更多时间完成自定义操作，选择延长超时时间，实例保持等待状态的时间将增加1小时。只有实例的生命周期挂钩状态为 HANGING 时才可以进行回调操作。
+     * 批量删除弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
      *
-     * @param CompleteLifecycleActionRequest 请求对象
-     * @return AsyncInvoker<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse>
+     * @param BatchDeleteScalingPoliciesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse>
      */
-    public AsyncInvoker<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse> completeLifecycleActionAsyncInvoker(CompleteLifecycleActionRequest request) {
-        return new AsyncInvoker<CompleteLifecycleActionRequest, CompleteLifecycleActionResponse>(request, AsMeta.completeLifecycleAction, hcClient);
+    public AsyncInvoker<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse> batchDeleteScalingPoliciesAsyncInvoker(BatchDeleteScalingPoliciesRequest request) {
+        return new AsyncInvoker<BatchDeleteScalingPoliciesRequest, BatchDeleteScalingPoliciesResponse>(request, AsMeta.batchDeleteScalingPolicies, hcClient);
+    }
+
+    /**
+     * 批量停用弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
+     *
+     * @param BatchPauseScalingPoliciesRequest 请求对象
+     * @return CompletableFuture<BatchPauseScalingPoliciesResponse>
+     */
+    public CompletableFuture<BatchPauseScalingPoliciesResponse> batchPauseScalingPoliciesAsync(BatchPauseScalingPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchPauseScalingPolicies);
+    }
+
+    /**
+     * 批量停用弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
+     *
+     * @param BatchPauseScalingPoliciesRequest 请求对象
+     * @return AsyncInvoker<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse>
+     */
+    public AsyncInvoker<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse> batchPauseScalingPoliciesAsyncInvoker(BatchPauseScalingPoliciesRequest request) {
+        return new AsyncInvoker<BatchPauseScalingPoliciesRequest, BatchPauseScalingPoliciesResponse>(request, AsMeta.batchPauseScalingPolicies, hcClient);
+    }
+
+    /**
+     * 批量设置实例保护
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchProtectScalingInstancesRequest 请求对象
+     * @return CompletableFuture<BatchProtectScalingInstancesResponse>
+     */
+    public CompletableFuture<BatchProtectScalingInstancesResponse> batchProtectScalingInstancesAsync(BatchProtectScalingInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchProtectScalingInstances);
+    }
+
+    /**
+     * 批量设置实例保护
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchProtectScalingInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse>
+     */
+    public AsyncInvoker<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse> batchProtectScalingInstancesAsyncInvoker(BatchProtectScalingInstancesRequest request) {
+        return new AsyncInvoker<BatchProtectScalingInstancesRequest, BatchProtectScalingInstancesResponse>(request, AsMeta.batchProtectScalingInstances, hcClient);
+    }
+
+    /**
+     * 批量移除实例
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchRemoveScalingInstancesRequest 请求对象
+     * @return CompletableFuture<BatchRemoveScalingInstancesResponse>
+     */
+    public CompletableFuture<BatchRemoveScalingInstancesResponse> batchRemoveScalingInstancesAsync(BatchRemoveScalingInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchRemoveScalingInstances);
+    }
+
+    /**
+     * 批量移除实例
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchRemoveScalingInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse>
+     */
+    public AsyncInvoker<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse> batchRemoveScalingInstancesAsyncInvoker(BatchRemoveScalingInstancesRequest request) {
+        return new AsyncInvoker<BatchRemoveScalingInstancesRequest, BatchRemoveScalingInstancesResponse>(request, AsMeta.batchRemoveScalingInstances, hcClient);
+    }
+
+    /**
+     * 批量启用弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
+     *
+     * @param BatchResumeScalingPoliciesRequest 请求对象
+     * @return CompletableFuture<BatchResumeScalingPoliciesResponse>
+     */
+    public CompletableFuture<BatchResumeScalingPoliciesResponse> batchResumeScalingPoliciesAsync(BatchResumeScalingPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchResumeScalingPolicies);
+    }
+
+    /**
+     * 批量启用弹性伸缩策略。
+     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
+     *
+     * @param BatchResumeScalingPoliciesRequest 请求对象
+     * @return AsyncInvoker<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse>
+     */
+    public AsyncInvoker<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse> batchResumeScalingPoliciesAsyncInvoker(BatchResumeScalingPoliciesRequest request) {
+        return new AsyncInvoker<BatchResumeScalingPoliciesRequest, BatchResumeScalingPoliciesResponse>(request, AsMeta.batchResumeScalingPolicies, hcClient);
+    }
+
+    /**
+     * 批量将实例转为备用状态
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchSetScalingInstancesStandbyRequest 请求对象
+     * @return CompletableFuture<BatchSetScalingInstancesStandbyResponse>
+     */
+    public CompletableFuture<BatchSetScalingInstancesStandbyResponse> batchSetScalingInstancesStandbyAsync(BatchSetScalingInstancesStandbyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchSetScalingInstancesStandby);
+    }
+
+    /**
+     * 批量将实例转为备用状态
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchSetScalingInstancesStandbyRequest 请求对象
+     * @return AsyncInvoker<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse>
+     */
+    public AsyncInvoker<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse> batchSetScalingInstancesStandbyAsyncInvoker(BatchSetScalingInstancesStandbyRequest request) {
+        return new AsyncInvoker<BatchSetScalingInstancesStandbyRequest, BatchSetScalingInstancesStandbyResponse>(request, AsMeta.batchSetScalingInstancesStandby, hcClient);
+    }
+
+    /**
+     * 批量取消实例保护
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchUnprotectScalingInstancesRequest 请求对象
+     * @return CompletableFuture<BatchUnprotectScalingInstancesResponse>
+     */
+    public CompletableFuture<BatchUnprotectScalingInstancesResponse> batchUnprotectScalingInstancesAsync(BatchUnprotectScalingInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchUnprotectScalingInstances);
+    }
+
+    /**
+     * 批量取消实例保护
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchUnprotectScalingInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse>
+     */
+    public AsyncInvoker<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse> batchUnprotectScalingInstancesAsyncInvoker(BatchUnprotectScalingInstancesRequest request) {
+        return new AsyncInvoker<BatchUnprotectScalingInstancesRequest, BatchUnprotectScalingInstancesResponse>(request, AsMeta.batchUnprotectScalingInstances, hcClient);
+    }
+
+    /**
+     * 批量将实例移出备用状态
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchUnsetScalingInstancesStandbyRequest 请求对象
+     * @return CompletableFuture<BatchUnsetScalingInstancesStandbyResponse>
+     */
+    public CompletableFuture<BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandbyAsync(BatchUnsetScalingInstancesStandbyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchUnsetScalingInstancesStandby);
+    }
+
+    /**
+     * 批量将实例移出备用状态
+     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
+     *
+     * @param BatchUnsetScalingInstancesStandbyRequest 请求对象
+     * @return AsyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse>
+     */
+    public AsyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandbyAsyncInvoker(BatchUnsetScalingInstancesStandbyRequest request) {
+        return new AsyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse>(request, AsMeta.batchUnsetScalingInstancesStandby, hcClient);
     }
 
     /**
@@ -177,22 +375,22 @@ public class AsAsyncClient {
      * 创建标签
      * 创建或删除指定资源的标签。每个伸缩组最多添加10个标签。
      *
-     * @param CreateScalingTagsRequest 请求对象
-     * @return CompletableFuture<CreateScalingTagsResponse>
+     * @param CreateScalingTagInfoRequest 请求对象
+     * @return CompletableFuture<CreateScalingTagInfoResponse>
      */
-    public CompletableFuture<CreateScalingTagsResponse> createScalingTagsAsync(CreateScalingTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.createScalingTags);
+    public CompletableFuture<CreateScalingTagInfoResponse> createScalingTagInfoAsync(CreateScalingTagInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.createScalingTagInfo);
     }
 
     /**
      * 创建标签
      * 创建或删除指定资源的标签。每个伸缩组最多添加10个标签。
      *
-     * @param CreateScalingTagsRequest 请求对象
-     * @return AsyncInvoker<CreateScalingTagsRequest, CreateScalingTagsResponse>
+     * @param CreateScalingTagInfoRequest 请求对象
+     * @return AsyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse>
      */
-    public AsyncInvoker<CreateScalingTagsRequest, CreateScalingTagsResponse> createScalingTagsAsyncInvoker(CreateScalingTagsRequest request) {
-        return new AsyncInvoker<CreateScalingTagsRequest, CreateScalingTagsResponse>(request, AsMeta.createScalingTags, hcClient);
+    public AsyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse> createScalingTagInfoAsyncInvoker(CreateScalingTagInfoRequest request) {
+        return new AsyncInvoker<CreateScalingTagInfoRequest, CreateScalingTagInfoResponse>(request, AsMeta.createScalingTagInfo, hcClient);
     }
 
     /**
@@ -331,70 +529,26 @@ public class AsAsyncClient {
      * 删除标签
      * 创建或删除指定资源的标签。每个伸缩组最多添加10个标签。
      *
-     * @param DeleteScalingTagsRequest 请求对象
-     * @return CompletableFuture<DeleteScalingTagsResponse>
+     * @param DeleteScalingTagInfoRequest 请求对象
+     * @return CompletableFuture<DeleteScalingTagInfoResponse>
      */
-    public CompletableFuture<DeleteScalingTagsResponse> deleteScalingTagsAsync(DeleteScalingTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.deleteScalingTags);
+    public CompletableFuture<DeleteScalingTagInfoResponse> deleteScalingTagInfoAsync(DeleteScalingTagInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.deleteScalingTagInfo);
     }
 
     /**
      * 删除标签
      * 创建或删除指定资源的标签。每个伸缩组最多添加10个标签。
      *
-     * @param DeleteScalingTagsRequest 请求对象
-     * @return AsyncInvoker<DeleteScalingTagsRequest, DeleteScalingTagsResponse>
+     * @param DeleteScalingTagInfoRequest 请求对象
+     * @return AsyncInvoker<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse>
      */
-    public AsyncInvoker<DeleteScalingTagsRequest, DeleteScalingTagsResponse> deleteScalingTagsAsyncInvoker(DeleteScalingTagsRequest request) {
-        return new AsyncInvoker<DeleteScalingTagsRequest, DeleteScalingTagsResponse>(request, AsMeta.deleteScalingTags, hcClient);
+    public AsyncInvoker<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse> deleteScalingTagInfoAsyncInvoker(DeleteScalingTagInfoRequest request) {
+        return new AsyncInvoker<DeleteScalingTagInfoRequest, DeleteScalingTagInfoResponse>(request, AsMeta.deleteScalingTagInfo, hcClient);
     }
 
     /**
-     * 启用或停止弹性伸缩组
-     * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
-     *
-     * @param EnableOrDisableScalingGroupRequest 请求对象
-     * @return CompletableFuture<EnableOrDisableScalingGroupResponse>
-     */
-    public CompletableFuture<EnableOrDisableScalingGroupResponse> enableOrDisableScalingGroupAsync(EnableOrDisableScalingGroupRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.enableOrDisableScalingGroup);
-    }
-
-    /**
-     * 启用或停止弹性伸缩组
-     * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
-     *
-     * @param EnableOrDisableScalingGroupRequest 请求对象
-     * @return AsyncInvoker<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse>
-     */
-    public AsyncInvoker<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse> enableOrDisableScalingGroupAsyncInvoker(EnableOrDisableScalingGroupRequest request) {
-        return new AsyncInvoker<EnableOrDisableScalingGroupRequest, EnableOrDisableScalingGroupResponse>(request, AsMeta.enableOrDisableScalingGroup, hcClient);
-    }
-
-    /**
-     * 批量操作弹性伸缩策略。
-     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
-     *
-     * @param ExecuteScalingPoliciesRequest 请求对象
-     * @return CompletableFuture<ExecuteScalingPoliciesResponse>
-     */
-    public CompletableFuture<ExecuteScalingPoliciesResponse> executeScalingPoliciesAsync(ExecuteScalingPoliciesRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.executeScalingPolicies);
-    }
-
-    /**
-     * 批量操作弹性伸缩策略。
-     * 批量启用、停用或者删除弹性伸缩策略。单次最多批量操作伸缩策略个数为20。
-     *
-     * @param ExecuteScalingPoliciesRequest 请求对象
-     * @return AsyncInvoker<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse>
-     */
-    public AsyncInvoker<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse> executeScalingPoliciesAsyncInvoker(ExecuteScalingPoliciesRequest request) {
-        return new AsyncInvoker<ExecuteScalingPoliciesRequest, ExecuteScalingPoliciesResponse>(request, AsMeta.executeScalingPolicies, hcClient);
-    }
-
-    /**
-     * 执行或启用或停止弹性伸缩策略。
+     * 执行弹性伸缩策略。
      * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
      *
      * @param ExecuteScalingPolicyRequest 请求对象
@@ -405,7 +559,7 @@ public class AsAsyncClient {
     }
 
     /**
-     * 执行或启用或停止弹性伸缩策略。
+     * 执行弹性伸缩策略。
      * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
      *
      * @param ExecuteScalingPolicyRequest 请求对象
@@ -702,6 +856,94 @@ public class AsAsyncClient {
     }
 
     /**
+     * 停止弹性伸缩组
+     * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
+     *
+     * @param PauseScalingGroupRequest 请求对象
+     * @return CompletableFuture<PauseScalingGroupResponse>
+     */
+    public CompletableFuture<PauseScalingGroupResponse> pauseScalingGroupAsync(PauseScalingGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.pauseScalingGroup);
+    }
+
+    /**
+     * 停止弹性伸缩组
+     * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
+     *
+     * @param PauseScalingGroupRequest 请求对象
+     * @return AsyncInvoker<PauseScalingGroupRequest, PauseScalingGroupResponse>
+     */
+    public AsyncInvoker<PauseScalingGroupRequest, PauseScalingGroupResponse> pauseScalingGroupAsyncInvoker(PauseScalingGroupRequest request) {
+        return new AsyncInvoker<PauseScalingGroupRequest, PauseScalingGroupResponse>(request, AsMeta.pauseScalingGroup, hcClient);
+    }
+
+    /**
+     * 停止弹性伸缩策略。
+     * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
+     *
+     * @param PauseScalingPolicyRequest 请求对象
+     * @return CompletableFuture<PauseScalingPolicyResponse>
+     */
+    public CompletableFuture<PauseScalingPolicyResponse> pauseScalingPolicyAsync(PauseScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.pauseScalingPolicy);
+    }
+
+    /**
+     * 停止弹性伸缩策略。
+     * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
+     *
+     * @param PauseScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse>
+     */
+    public AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse> pauseScalingPolicyAsyncInvoker(PauseScalingPolicyRequest request) {
+        return new AsyncInvoker<PauseScalingPolicyRequest, PauseScalingPolicyResponse>(request, AsMeta.pauseScalingPolicy, hcClient);
+    }
+
+    /**
+     * 启用弹性伸缩组
+     * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
+     *
+     * @param ResumeScalingGroupRequest 请求对象
+     * @return CompletableFuture<ResumeScalingGroupResponse>
+     */
+    public CompletableFuture<ResumeScalingGroupResponse> resumeScalingGroupAsync(ResumeScalingGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.resumeScalingGroup);
+    }
+
+    /**
+     * 启用弹性伸缩组
+     * 启用或停止一个指定弹性伸缩组。已停用状态的伸缩组，不会自动触发任何伸缩活动。当伸缩组正在进行伸缩活动，即使停用，正在进行的伸缩活动也不会立即停止。
+     *
+     * @param ResumeScalingGroupRequest 请求对象
+     * @return AsyncInvoker<ResumeScalingGroupRequest, ResumeScalingGroupResponse>
+     */
+    public AsyncInvoker<ResumeScalingGroupRequest, ResumeScalingGroupResponse> resumeScalingGroupAsyncInvoker(ResumeScalingGroupRequest request) {
+        return new AsyncInvoker<ResumeScalingGroupRequest, ResumeScalingGroupResponse>(request, AsMeta.resumeScalingGroup, hcClient);
+    }
+
+    /**
+     * 启用弹性伸缩策略。
+     * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
+     *
+     * @param ResumeScalingPolicyRequest 请求对象
+     * @return CompletableFuture<ResumeScalingPolicyResponse>
+     */
+    public CompletableFuture<ResumeScalingPolicyResponse> resumeScalingPolicyAsync(ResumeScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.resumeScalingPolicy);
+    }
+
+    /**
+     * 启用弹性伸缩策略。
+     * 立即执行或启用或停止一个指定弹性伸缩策略。当伸缩组、伸缩策略状态处于INSERVICE时，伸缩策略才能被正确执行，否则会执行失败。
+     *
+     * @param ResumeScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse>
+     */
+    public AsyncInvoker<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse> resumeScalingPolicyAsyncInvoker(ResumeScalingPolicyRequest request) {
+        return new AsyncInvoker<ResumeScalingPolicyRequest, ResumeScalingPolicyResponse>(request, AsMeta.resumeScalingPolicy, hcClient);
+    }
+
+    /**
      * 查询生命周期挂钩详情
      * 根据伸缩组ID及生命周期挂钩名称查询指定的生命周期挂钩详情。
      *
@@ -878,28 +1120,6 @@ public class AsAsyncClient {
     }
 
     /**
-     * 批量操作实例
-     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
-     *
-     * @param UpdateScalingGroupInstanceRequest 请求对象
-     * @return CompletableFuture<UpdateScalingGroupInstanceResponse>
-     */
-    public CompletableFuture<UpdateScalingGroupInstanceResponse> updateScalingGroupInstanceAsync(UpdateScalingGroupInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.updateScalingGroupInstance);
-    }
-
-    /**
-     * 批量操作实例
-     * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
-     *
-     * @param UpdateScalingGroupInstanceRequest 请求对象
-     * @return AsyncInvoker<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse>
-     */
-    public AsyncInvoker<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse> updateScalingGroupInstanceAsyncInvoker(UpdateScalingGroupInstanceRequest request) {
-        return new AsyncInvoker<UpdateScalingGroupInstanceRequest, UpdateScalingGroupInstanceResponse>(request, AsMeta.updateScalingGroupInstance, hcClient);
-    }
-
-    /**
      * 修改弹性伸缩策略
      * 修改指定弹性伸缩策略。
      *
@@ -919,6 +1139,50 @@ public class AsAsyncClient {
      */
     public AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse> updateScalingPolicyAsyncInvoker(UpdateScalingPolicyRequest request) {
         return new AsyncInvoker<UpdateScalingPolicyRequest, UpdateScalingPolicyResponse>(request, AsMeta.updateScalingPolicy, hcClient);
+    }
+
+    /**
+     * 查询弹性伸缩API所有版本信息
+     * 查询弹性伸缩API所有版本信息
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return CompletableFuture<ListApiVersionsResponse>
+     */
+    public CompletableFuture<ListApiVersionsResponse> listApiVersionsAsync(ListApiVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.listApiVersions);
+    }
+
+    /**
+     * 查询弹性伸缩API所有版本信息
+     * 查询弹性伸缩API所有版本信息
+     *
+     * @param ListApiVersionsRequest 请求对象
+     * @return AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>
+     */
+    public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(ListApiVersionsRequest request) {
+        return new AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse>(request, AsMeta.listApiVersions, hcClient);
+    }
+
+    /**
+     * 查询弹性伸缩API指定版本信息
+     * 根据租户id和资源id查询指定资源类型的标签列表
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return CompletableFuture<ShowApiVersionResponse>
+     */
+    public CompletableFuture<ShowApiVersionResponse> showApiVersionAsync(ShowApiVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.showApiVersion);
+    }
+
+    /**
+     * 查询弹性伸缩API指定版本信息
+     * 根据租户id和资源id查询指定资源类型的标签列表
+     *
+     * @param ShowApiVersionRequest 请求对象
+     * @return AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>
+     */
+    public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(ShowApiVersionRequest request) {
+        return new AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse>(request, AsMeta.showApiVersion, hcClient);
     }
 
     /**

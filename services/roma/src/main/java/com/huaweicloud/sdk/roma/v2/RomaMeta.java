@@ -2813,12 +2813,12 @@ public class RomaMeta {
                 req.setInstanceId(v);
             })
         );
-        builder.withRequestField("product_id",
+        builder.withRequestField("product_ids",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
-            f -> f.withMarshaller(DownloadProductsRequest::getProductId, (req, v) -> {
-                req.setProductId(v);
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(DownloadProductsRequest::getProductIds, (req, v) -> {
+                req.setProductIds(v);
             })
         );
 
@@ -4607,6 +4607,14 @@ public class RomaMeta {
                 req.setAppId(v);
             })
         );
+        builder.withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProductsRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
         builder.withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4647,6 +4655,22 @@ public class RomaMeta {
                 req.setDeviceType(v);
             })
         );
+        builder.withRequestField("product_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListProductsRequest.ProductTypeEnum.class,
+            f -> f.withMarshaller(ListProductsRequest::getProductType, (req, v) -> {
+                req.setProductType(v);
+            })
+        );
+        builder.withRequestField("protocol_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            ListProductsRequest.ProtocolTypeEnum.class,
+            f -> f.withMarshaller(ListProductsRequest::getProtocolType, (req, v) -> {
+                req.setProtocolType(v);
+            })
+        );
         builder.withRequestField("created_user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4677,6 +4701,22 @@ public class RomaMeta {
             Integer.class,
             f -> f.withMarshaller(ListProductsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            })
+        );
+        builder.withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProductsRequest::getAppName, (req, v) -> {
+                req.setAppName(v);
+            })
+        );
+        builder.withRequestField("product_serial",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListProductsRequest::getProductSerial, (req, v) -> {
+                req.setProductSerial(v);
             })
         );
 
@@ -5718,6 +5758,38 @@ public class RomaMeta {
             Integer.class,
             f -> f.withMarshaller(ListTopicsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTopicsRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("topic_permission",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListTopicsRequest::getTopicPermission, (req, v) -> {
+                req.setTopicPermission(v);
+            })
+        );
+        builder.withRequestField("topic_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListTopicsRequest::getTopicType, (req, v) -> {
+                req.setTopicType(v);
+            })
+        );
+        builder.withRequestField("is_private",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListTopicsRequest::getIsPrivate, (req, v) -> {
+                req.setIsPrivate(v);
             })
         );
 

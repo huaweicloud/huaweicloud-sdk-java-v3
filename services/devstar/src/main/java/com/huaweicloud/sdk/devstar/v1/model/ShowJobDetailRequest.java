@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ShowJobDetailRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      */
     public static final class XLanguageEnum {
 
@@ -120,7 +120,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -144,7 +144,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get jobId
+     * 任务id。
      * @return jobId
      */
     public String getJobId() {

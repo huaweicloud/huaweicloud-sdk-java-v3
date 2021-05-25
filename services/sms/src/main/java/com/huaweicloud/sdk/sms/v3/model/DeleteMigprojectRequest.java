@@ -32,7 +32,7 @@ public class DeleteMigprojectRequest  {
 
 
     /**
-     * Get migProjectId
+     * 需要删除的迁移项目的id
      * @return migProjectId
      */
     public String getMigProjectId() {

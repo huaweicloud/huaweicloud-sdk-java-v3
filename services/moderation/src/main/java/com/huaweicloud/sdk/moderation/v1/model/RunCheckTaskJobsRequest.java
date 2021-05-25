@@ -21,7 +21,7 @@ import java.util.Objects;
 public class RunCheckTaskJobsRequest  {
 
     /**
-     * Gets or Sets status
+     * 图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 
      */
     public static final class StatusEnum {
 
@@ -126,7 +126,7 @@ public class RunCheckTaskJobsRequest  {
 
 
     /**
-     * Get status
+     * 图像内容审核任务处理状态如下：  - created 已创建  - running 正在处理  - finish 已完成  - failed 处理失败 
      * @return status
      */
     public StatusEnum getStatus() {

@@ -39,7 +39,7 @@ public class KeystoneCreateMappingRequest  {
 
 
     /**
-     * Get id
+     * 待注册的映射ID。
      * @return id
      */
     public String getId() {

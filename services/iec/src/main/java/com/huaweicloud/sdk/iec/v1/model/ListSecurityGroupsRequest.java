@@ -38,7 +38,7 @@ public class ListSecurityGroupsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘安全组列表数量。取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -62,7 +62,7 @@ public class ListSecurityGroupsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {

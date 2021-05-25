@@ -45,7 +45,7 @@ public class CreateKmsTagRequest  {
 
 
     /**
-     * Get versionId
+     * API版本号
      * @return versionId
      */
     public String getVersionId() {
@@ -67,7 +67,7 @@ public class CreateKmsTagRequest  {
 
 
     /**
-     * Get keyId
+     * 密钥ID
      * @return keyId
      */
     public String getKeyId() {

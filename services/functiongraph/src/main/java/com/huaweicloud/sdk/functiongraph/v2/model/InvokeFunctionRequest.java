@@ -53,7 +53,7 @@ public class InvokeFunctionRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -75,7 +75,7 @@ public class InvokeFunctionRequest  {
 
 
     /**
-     * Get xCffLogType
+     * 取值为：tail（返回函数执行后的4K日志），或者为空（不返回日志）。
      * @return xCffLogType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -99,7 +99,7 @@ public class InvokeFunctionRequest  {
 
 
     /**
-     * Get xCFFRequestVersion
+     * 返回体格式，取值v0,v1。
      * @return xCFFRequestVersion
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

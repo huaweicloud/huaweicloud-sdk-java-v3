@@ -32,7 +32,7 @@ public class DeletePolicyRequest  {
 
 
     /**
-     * Get policyId
+     * 策略ID
      * @return policyId
      */
     public String getPolicyId() {

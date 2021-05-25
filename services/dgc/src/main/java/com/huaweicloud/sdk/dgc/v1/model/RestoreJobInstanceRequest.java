@@ -38,7 +38,7 @@ public class RestoreJobInstanceRequest  {
 
 
     /**
-     * Get jobName
+     * 作业名称.
      * @return jobName
      */
     public String getJobName() {
@@ -60,7 +60,7 @@ public class RestoreJobInstanceRequest  {
 
 
     /**
-     * Get instanceId
+     * 作业实例id.
      * @return instanceId
      */
     public String getInstanceId() {

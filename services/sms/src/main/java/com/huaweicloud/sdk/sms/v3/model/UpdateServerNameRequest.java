@@ -39,7 +39,7 @@ public class UpdateServerNameRequest  {
 
 
     /**
-     * Get sourceId
+     * 源端服务器在主机迁移服务中的id
      * @return sourceId
      */
     public String getSourceId() {

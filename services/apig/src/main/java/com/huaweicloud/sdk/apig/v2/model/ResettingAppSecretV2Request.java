@@ -45,7 +45,7 @@ public class ResettingAppSecretV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class ResettingAppSecretV2Request  {
 
 
     /**
-     * Get appId
+     * APP的编号，可通过查询APP列表获取
      * @return appId
      */
     public String getAppId() {

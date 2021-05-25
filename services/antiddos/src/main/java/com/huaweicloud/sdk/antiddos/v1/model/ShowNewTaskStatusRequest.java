@@ -32,7 +32,7 @@ public class ShowNewTaskStatusRequest  {
 
 
     /**
-     * Get taskId
+     * 任务ID（非负整数）的字符串
      * @return taskId
      */
     public String getTaskId() {

@@ -47,7 +47,7 @@ public class ListEnterpriseProjectRequest  {
     
     private Integer offset;
     /**
-     * Gets or Sets sortDir
+     * 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
      */
     public static final class SortDirEnum {
 
@@ -131,7 +131,7 @@ public class ListEnterpriseProjectRequest  {
     
     private SortDirEnum sortDir;
     /**
-     * Gets or Sets sortKey
+     * 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
      */
     public static final class SortKeyEnum {
 
@@ -230,7 +230,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get id
+     * 企业项目ID，0表示默认企业项目
      * @return id
      */
     public String getId() {
@@ -252,7 +252,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数默认为1000，limit最多为1000, 最小值为1
      * @return limit
      */
     public Integer getLimit() {
@@ -274,7 +274,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get name
+     * 企业项目名称，支持模糊搜索
      * @return name
      */
     public String getName() {
@@ -296,7 +296,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置，从offset指定的下一条数据开始查询，必须为数字，不能为负数，默认为0
      * @return offset
      */
     public Integer getOffset() {
@@ -318,7 +318,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get sortDir
+     * 降序或升序,默认为“desc” 。desc表示降序 。asc 表示升序
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -340,7 +340,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get sortKey
+     * 返回结果按该关键字排序（支持updated_at等关键字，默认为“created_at”）
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -362,7 +362,7 @@ public class ListEnterpriseProjectRequest  {
 
 
     /**
-     * Get status
+     * 企业项目状态。 1--启用，2--停用
      * @return status
      */
     public Integer getStatus() {

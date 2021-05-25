@@ -56,7 +56,7 @@ public class CancelMeetingRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -78,7 +78,7 @@ public class CancelMeetingRequest  {
 
 
     /**
-     * Get userUUID
+     * 用户的UUID（已在USG注册过的）
      * @return userUUID
      */
     public String getUserUUID() {
@@ -100,7 +100,7 @@ public class CancelMeetingRequest  {
 
 
     /**
-     * Get type
+     * 取消会议操作类型，1表示需要结束在线会议。
      * @return type
      */
     public Integer getType() {
@@ -122,7 +122,7 @@ public class CancelMeetingRequest  {
 
 
     /**
-     * Get xAuthorizationType
+     * 标识是否为第三方portal过来的请求。
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -146,7 +146,7 @@ public class CancelMeetingRequest  {
 
 
     /**
-     * Get xSiteId
+     * 用于区分到哪个HCSO站点鉴权。
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

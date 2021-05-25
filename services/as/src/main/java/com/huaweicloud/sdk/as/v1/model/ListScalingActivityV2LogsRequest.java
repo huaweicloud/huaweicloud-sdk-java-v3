@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -32,15 +31,21 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="log_id")
+    
+    private String logId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private OffsetDateTime startTime;
+    private String startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private OffsetDateTime endTime;
+    private String endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -54,7 +59,7 @@ public class ListScalingActivityV2LogsRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets type
+     * 查询的伸缩活动类型（查询多类型使用逗号分隔）：NORMAL：普通伸缩活动；MANNUAL_REMOVE：从伸缩组手动移除实例；MANNUAL_DELETE：从伸缩组手动移除实例并删除实例；ELB_CHECK_DELETE：ELB检查移除并删除实例；DIFF：期望实例数与实际实例 不一致；MODIFY_ELB：LB迁移
      */
     public static final class TypeEnum {
 
@@ -168,7 +173,7 @@ public class ListScalingActivityV2LogsRequest  {
     
     private TypeEnum type;
     /**
-     * Gets or Sets status
+     * 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
      */
     public static final class StatusEnum {
 
@@ -267,7 +272,7 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID。
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -280,7 +285,29 @@ public class ListScalingActivityV2LogsRequest  {
 
     
 
-    public ListScalingActivityV2LogsRequest withStartTime(OffsetDateTime startTime) {
+    public ListScalingActivityV2LogsRequest withLogId(String logId) {
+        this.logId = logId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩活动日志ID
+     * @return logId
+     */
+    public String getLogId() {
+        return logId;
+    }
+
+    public void setLogId(String logId) {
+        this.logId = logId;
+    }
+
+    
+
+    public ListScalingActivityV2LogsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -289,20 +316,20 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get startTime
+     * 查询的起始时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
      * @return startTime
      */
-    public OffsetDateTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(OffsetDateTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
     
 
-    public ListScalingActivityV2LogsRequest withEndTime(OffsetDateTime endTime) {
+    public ListScalingActivityV2LogsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -311,14 +338,14 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get endTime
+     * 查询的截止时间，格式是“yyyy-MM-ddThh:mm:ssZ”。
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -333,8 +360,7 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get startNumber
-     * minimum: 0
+     * 查询的起始行号，默认为0。
      * maximum: 32768
      * @return startNumber
      */
@@ -357,8 +383,7 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get limit
-     * minimum: 0
+     * 查询记录数，默认20，最大100。
      * maximum: 100
      * @return limit
      */
@@ -381,7 +406,7 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get type
+     * 查询的伸缩活动类型（查询多类型使用逗号分隔）：NORMAL：普通伸缩活动；MANNUAL_REMOVE：从伸缩组手动移除实例；MANNUAL_DELETE：从伸缩组手动移除实例并删除实例；ELB_CHECK_DELETE：ELB检查移除并删除实例；DIFF：期望实例数与实际实例 不一致；MODIFY_ELB：LB迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -403,7 +428,7 @@ public class ListScalingActivityV2LogsRequest  {
 
 
     /**
-     * Get status
+     * 查询的伸缩活动状态：SUCCESS：成功；FAIL：失败；DOING：伸缩中
      * @return status
      */
     public StatusEnum getStatus() {
@@ -426,6 +451,7 @@ public class ListScalingActivityV2LogsRequest  {
         }
         ListScalingActivityV2LogsRequest listScalingActivityV2LogsRequest = (ListScalingActivityV2LogsRequest) o;
         return Objects.equals(this.scalingGroupId, listScalingActivityV2LogsRequest.scalingGroupId) &&
+            Objects.equals(this.logId, listScalingActivityV2LogsRequest.logId) &&
             Objects.equals(this.startTime, listScalingActivityV2LogsRequest.startTime) &&
             Objects.equals(this.endTime, listScalingActivityV2LogsRequest.endTime) &&
             Objects.equals(this.startNumber, listScalingActivityV2LogsRequest.startNumber) &&
@@ -435,13 +461,14 @@ public class ListScalingActivityV2LogsRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupId, startTime, endTime, startNumber, limit, type, status);
+        return Objects.hash(scalingGroupId, logId, startTime, endTime, startNumber, limit, type, status);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScalingActivityV2LogsRequest {\n");
         sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
+        sb.append("    logId: ").append(toIndentedString(logId)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");

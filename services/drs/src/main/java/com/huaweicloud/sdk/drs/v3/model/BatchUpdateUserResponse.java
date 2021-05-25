@@ -26,7 +26,7 @@ public class BatchUpdateUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="all_counts")
     
-    private String allCounts;
+    private Integer allCounts;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,7 +34,7 @@ public class BatchUpdateUserResponse extends SdkResponse {
     
     private List<QueryUserResp> results = null;
     
-    public BatchUpdateUserResponse withAllCounts(String allCounts) {
+    public BatchUpdateUserResponse withAllCounts(Integer allCounts) {
         this.allCounts = allCounts;
         return this;
     }
@@ -46,11 +46,11 @@ public class BatchUpdateUserResponse extends SdkResponse {
      * 总数
      * @return allCounts
      */
-    public String getAllCounts() {
+    public Integer getAllCounts() {
         return allCounts;
     }
 
-    public void setAllCounts(String allCounts) {
+    public void setAllCounts(Integer allCounts) {
         this.allCounts = allCounts;
     }
 

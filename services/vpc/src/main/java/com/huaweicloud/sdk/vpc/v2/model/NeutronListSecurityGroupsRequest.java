@@ -62,7 +62,7 @@ public class NeutronListSecurityGroupsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -84,7 +84,7 @@ public class NeutronListSecurityGroupsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -106,7 +106,7 @@ public class NeutronListSecurityGroupsRequest  {
 
 
     /**
-     * Get id
+     * 按照安全组对应的ID过滤查询
      * @return id
      */
     public String getId() {
@@ -128,7 +128,7 @@ public class NeutronListSecurityGroupsRequest  {
 
 
     /**
-     * Get name
+     * 按照安全组的名称过滤查询
      * @return name
      */
     public String getName() {
@@ -150,7 +150,7 @@ public class NeutronListSecurityGroupsRequest  {
 
 
     /**
-     * Get description
+     * 按照安全组的描述过滤查询
      * @return description
      */
     public String getDescription() {
@@ -172,7 +172,7 @@ public class NeutronListSecurityGroupsRequest  {
 
 
     /**
-     * Get tenantId
+     * 按照安全组所属的项目ID过滤查询
      * @return tenantId
      */
     public String getTenantId() {

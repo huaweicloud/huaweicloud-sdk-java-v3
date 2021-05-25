@@ -86,7 +86,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -108,7 +108,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get topic
+     * topic名称。
      * @return topic
      */
     public String getTopic() {
@@ -130,7 +130,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get asc
+     * 是否按照时间排序。
      * @return asc
      */
     public Boolean getAsc() {
@@ -152,7 +152,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get startTime
+     * 开始时间。Unix毫秒时间戳。
      * @return startTime
      */
     public String getStartTime() {
@@ -174,7 +174,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get endTime
+     * 开始时间。Unix毫秒时间戳。
      * @return endTime
      */
     public String getEndTime() {
@@ -196,7 +196,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get limit
+     * 查询消息的数量。
      * @return limit
      */
     public String getLimit() {
@@ -218,7 +218,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public String getOffset() {
@@ -240,7 +240,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get download
+     * 是否下载。
      * @return download
      */
     public Boolean getDownload() {
@@ -262,7 +262,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get messageOffset
+     * 消息偏移量。
      * @return messageOffset
      */
     public String getMessageOffset() {
@@ -284,7 +284,7 @@ public class ShowMqsInstanceMessagesRequest  {
 
 
     /**
-     * Get partition
+     * 分区。
      * @return partition
      */
     public String getPartition() {

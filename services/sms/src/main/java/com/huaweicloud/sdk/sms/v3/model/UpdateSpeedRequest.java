@@ -39,7 +39,7 @@ public class UpdateSpeedRequest  {
 
 
     /**
-     * Get taskId
+     * 主机迁移任务的id
      * @return taskId
      */
     public String getTaskId() {

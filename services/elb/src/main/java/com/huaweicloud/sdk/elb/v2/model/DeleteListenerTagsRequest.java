@@ -38,7 +38,7 @@ public class DeleteListenerTagsRequest  {
 
 
     /**
-     * Get listenerId
+     * 监听器ID
      * @return listenerId
      */
     public String getListenerId() {
@@ -60,7 +60,7 @@ public class DeleteListenerTagsRequest  {
 
 
     /**
-     * Get key
+     * 待删除标签的key值。
      * @return key
      */
     public String getKey() {

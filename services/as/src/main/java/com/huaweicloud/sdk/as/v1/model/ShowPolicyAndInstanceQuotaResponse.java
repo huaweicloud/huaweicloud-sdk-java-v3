@@ -22,19 +22,19 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="AllQuotas")
+    @JsonProperty(value="quotas")
     
-    private PolicyInstanceQuotas allQuotas;
+    private PolicyInstanceQuotas quotas;
 
-    public ShowPolicyAndInstanceQuotaResponse withAllQuotas(PolicyInstanceQuotas allQuotas) {
-        this.allQuotas = allQuotas;
+    public ShowPolicyAndInstanceQuotaResponse withQuotas(PolicyInstanceQuotas quotas) {
+        this.quotas = quotas;
         return this;
     }
 
-    public ShowPolicyAndInstanceQuotaResponse withAllQuotas(Consumer<PolicyInstanceQuotas> allQuotasSetter) {
-        if(this.allQuotas == null ){
-            this.allQuotas = new PolicyInstanceQuotas();
-            allQuotasSetter.accept(this.allQuotas);
+    public ShowPolicyAndInstanceQuotaResponse withQuotas(Consumer<PolicyInstanceQuotas> quotasSetter) {
+        if(this.quotas == null ){
+            this.quotas = new PolicyInstanceQuotas();
+            quotasSetter.accept(this.quotas);
         }
         
         return this;
@@ -42,15 +42,15 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
 
 
     /**
-     * Get allQuotas
-     * @return allQuotas
+     * Get quotas
+     * @return quotas
      */
-    public PolicyInstanceQuotas getAllQuotas() {
-        return allQuotas;
+    public PolicyInstanceQuotas getQuotas() {
+        return quotas;
     }
 
-    public void setAllQuotas(PolicyInstanceQuotas allQuotas) {
-        this.allQuotas = allQuotas;
+    public void setQuotas(PolicyInstanceQuotas quotas) {
+        this.quotas = quotas;
     }
 
     
@@ -64,17 +64,17 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
             return false;
         }
         ShowPolicyAndInstanceQuotaResponse showPolicyAndInstanceQuotaResponse = (ShowPolicyAndInstanceQuotaResponse) o;
-        return Objects.equals(this.allQuotas, showPolicyAndInstanceQuotaResponse.allQuotas);
+        return Objects.equals(this.quotas, showPolicyAndInstanceQuotaResponse.quotas);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(allQuotas);
+        return Objects.hash(quotas);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPolicyAndInstanceQuotaResponse {\n");
-        sb.append("    allQuotas: ").append(toIndentedString(allQuotas)).append("\n");
+        sb.append("    quotas: ").append(toIndentedString(quotas)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -27,7 +27,7 @@ public class DeleteTrackerRequest  {
     
     private String trackerName;
     /**
-     * Gets or Sets trackerType
+     * 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\"data\"。
      */
     public static final class TrackerTypeEnum {
 
@@ -114,7 +114,7 @@ public class DeleteTrackerRequest  {
 
 
     /**
-     * Get trackerName
+     * 标识追踪器名称。 在不传入该字段的情况下，将删除当前租户所有的数据类追踪器。
      * @return trackerName
      */
     public String getTrackerName() {
@@ -136,7 +136,7 @@ public class DeleteTrackerRequest  {
 
 
     /**
-     * Get trackerType
+     * 标识追踪器类型。 目前仅支持数据类追踪器（data）的删除，默认值为\"data\"。
      * @return trackerType
      */
     public TrackerTypeEnum getTrackerType() {

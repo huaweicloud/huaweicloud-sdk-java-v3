@@ -68,7 +68,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量 10/15/30
      * minimum: 10
      * maximum: 30
      * @return limit
@@ -92,7 +92,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询
      * minimum: 0
      * maximum: 999
      * @return offset
@@ -116,7 +116,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get isTemporary
+     * 是否页面显示（以标签配置为准）
      * @return isTemporary
      */
     public Boolean getIsTemporary() {
@@ -138,7 +138,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get label
+     * 标签
      * @return label
      */
     public String getLabel() {
@@ -160,7 +160,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get search
+     * 关键字查询(根据实例名，描述模糊查询)
      * @return search
      */
     public String getSearch() {
@@ -182,7 +182,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get sortDir
+     * 排序方式 asc/desc
      * @return sortDir
      */
     public String getSortDir() {
@@ -204,7 +204,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get sortKey
+     * 排序字段。 display_name 实例名、status状态、pvc_quantity 存储容量、created_time 创建时间、stack_id 技术栈
      * @return sortKey
      */
     public String getSortKey() {

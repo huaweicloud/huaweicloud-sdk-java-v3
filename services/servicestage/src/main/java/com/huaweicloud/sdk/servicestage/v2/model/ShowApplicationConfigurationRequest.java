@@ -38,7 +38,7 @@ public class ShowApplicationConfigurationRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -60,7 +60,7 @@ public class ShowApplicationConfigurationRequest  {
 
 
     /**
-     * Get environmentId
+     * 环境ID，如果未提供，查询所有环境。
      * @return environmentId
      */
     public String getEnvironmentId() {

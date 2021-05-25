@@ -50,7 +50,7 @@ public class ListHistoryStreamsRequest  {
 
 
     /**
-     * Get domain
+     * 推流域名。 
      * @return domain
      */
     public String getDomain() {
@@ -72,7 +72,7 @@ public class ListHistoryStreamsRequest  {
 
 
     /**
-     * Get app
+     * 应用名称。
      * @return app
      */
     public String getApp() {
@@ -94,7 +94,7 @@ public class ListHistoryStreamsRequest  {
 
 
     /**
-     * Get offset
+     * 分页编号，默认为0
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -118,7 +118,7 @@ public class ListHistoryStreamsRequest  {
 
 
     /**
-     * Get limit
+     * 每页记录数。  取值范围：[1,100]  默认值：10。 
      * minimum: 1
      * maximum: 100
      * @return limit

@@ -47,7 +47,7 @@ public class ListSubsetsRequest  {
     
     private String deviceName;
     /**
-     * Gets or Sets status
+     * 设备状态 0-启动 1-停用
      */
     public static final class StatusEnum {
 
@@ -131,7 +131,7 @@ public class ListSubsetsRequest  {
     
     private StatusEnum status;
     /**
-     * Gets or Sets onlineStatus
+     * 设备状态 0-未连接 1-在线 2-离线
      */
     public static final class OnlineStatusEnum {
 
@@ -236,7 +236,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -258,7 +258,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get deviceId
+     * 设备ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return deviceId
@@ -282,7 +282,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -306,7 +306,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get deviceName
+     * 设备名称
      * @return deviceName
      */
     public String getDeviceName() {
@@ -328,7 +328,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get status
+     * 设备状态 0-启动 1-停用
      * minimum: 0
      * maximum: 10
      * @return status
@@ -352,7 +352,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get onlineStatus
+     * 设备状态 0-未连接 1-在线 2-离线
      * minimum: 0
      * maximum: 10
      * @return onlineStatus
@@ -376,7 +376,7 @@ public class ListSubsetsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

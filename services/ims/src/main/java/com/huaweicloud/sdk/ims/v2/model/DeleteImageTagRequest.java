@@ -38,7 +38,7 @@ public class DeleteImageTagRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像ID。
      * @return imageId
      */
     public String getImageId() {
@@ -60,7 +60,7 @@ public class DeleteImageTagRequest  {
 
 
     /**
-     * Get key
+     * 要删除的标签的键。
      * @return key
      */
     public String getKey() {

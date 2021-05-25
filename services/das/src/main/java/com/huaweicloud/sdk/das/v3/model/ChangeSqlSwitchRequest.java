@@ -28,7 +28,7 @@ public class ChangeSqlSwitchRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型。
      */
     public static final class XLanguageEnum {
 
@@ -121,7 +121,7 @@ public class ChangeSqlSwitchRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -143,7 +143,7 @@ public class ChangeSqlSwitchRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

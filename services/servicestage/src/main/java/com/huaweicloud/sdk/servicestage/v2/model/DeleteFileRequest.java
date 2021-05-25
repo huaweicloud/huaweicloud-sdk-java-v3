@@ -68,7 +68,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -92,7 +92,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {
@@ -114,7 +114,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get project
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
      * @return project
      */
     public String getProject() {
@@ -136,7 +136,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get path
+     * 文件路径，需要将“/”替换为“:”。
      * @return path
      */
     public String getPath() {
@@ -158,7 +158,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get ref
+     * 分支名称或者tag标签名称或者commit sha。
      * @return ref
      */
     public String getRef() {
@@ -180,7 +180,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get message
+     * 提交描述。
      * @return message
      */
     public String getMessage() {
@@ -202,7 +202,7 @@ public class DeleteFileRequest  {
 
 
     /**
-     * Get sha
+     * 最后一次提交的commit sha值。
      * @return sha
      */
     public String getSha() {

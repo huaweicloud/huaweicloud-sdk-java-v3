@@ -32,7 +32,7 @@ public class ShowBlockchainStatusRequest  {
 
 
     /**
-     * Get blockchainId
+     * blockchainID
      * @return blockchainId
      */
     public String getBlockchainId() {

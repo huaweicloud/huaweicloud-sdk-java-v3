@@ -32,7 +32,7 @@ public class DeleteWatermarkTemplateRequest  {
 
 
     /**
-     * Get templateId
+     * 水印模板ID 
      * minimum: 0
      * maximum: 2147483647
      * @return templateId

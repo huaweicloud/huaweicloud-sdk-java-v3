@@ -32,7 +32,7 @@ public class DeleteSecurityGroupRuleRequest  {
 
 
     /**
-     * Get securityGroupRuleId
+     * 安全组规则ID
      * @return securityGroupRuleId
      */
     public String getSecurityGroupRuleId() {

@@ -12,13 +12,13 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class KafkaMeta {
 
-    public static final HttpRequestDef<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> batchCreateOrDeleteInstanceTag = genForbatchCreateOrDeleteInstanceTag();
+    public static final HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTag = genForbatchCreateOrDeleteKafkaTag();
 
-    private static HttpRequestDef<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> genForbatchCreateOrDeleteInstanceTag() {
+    private static HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> genForbatchCreateOrDeleteKafkaTag() {
         // basic
-        HttpRequestDef.Builder<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteInstanceTagRequest.class, BatchCreateOrDeleteInstanceTagResponse.class)
-                .withName("BatchCreateOrDeleteInstanceTag")
+        HttpRequestDef.Builder<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteKafkaTagRequest.class, BatchCreateOrDeleteKafkaTagResponse.class)
+                .withName("BatchCreateOrDeleteKafkaTag")
                 .withUri("/v2/{project_id}/kafka/{instance_id}/tags/action")
                 .withContentType("application/json");
 
@@ -27,7 +27,7 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
             })
         );
@@ -35,7 +35,7 @@ public class KafkaMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchCreateOrDeleteTagReq.class,
-            f -> f.withMarshaller(BatchCreateOrDeleteInstanceTagRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -71,6 +71,41 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchDeleteInstanceTopicReq.class,
             f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsers = genForbatchDeleteInstanceUsers();
+
+    private static HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> genForbatchDeleteInstanceUsers() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteInstanceUsersRequest.class, BatchDeleteInstanceUsersResponse.class)
+                .withName("BatchDeleteInstanceUsers")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BatchDeleteInstanceUsersReq.class,
+            f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -168,6 +203,41 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             CreateInstanceTopicReq.class,
             f -> f.withMarshaller(CreateInstanceTopicRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUser = genForcreateInstanceUser();
+
+    private static HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> genForcreateInstanceUser() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceUserRequest, CreateInstanceUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceUserRequest.class, CreateInstanceUserResponse.class)
+                .withName("CreateInstanceUser")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateInstanceUserRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateInstanceUserReq.class,
+            f -> f.withMarshaller(CreateInstanceUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -499,8 +569,8 @@ public class KafkaMeta {
         // requests
         builder.withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ListInstancesRequest.EngineEnum.class,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(ListInstancesRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             })
@@ -575,7 +645,7 @@ public class KafkaMeta {
         builder.withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListProductsRequest.EngineEnum.class,
+            String.class,
             f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             })
@@ -717,6 +787,49 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ResetPasswordReq.class,
             f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrod = genForresetUserPasswrod();
+
+    private static HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> genForresetUserPasswrod() {
+        // basic
+        HttpRequestDef.Builder<ResetUserPasswrodRequest, ResetUserPasswrodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetUserPasswrodRequest.class, ResetUserPasswrodResponse.class)
+                .withName("ResetUserPasswrod")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetUserPasswrodRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResetUserPasswrodRequest::getUserName, (req, v) -> {
+                req.setUserName(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResetUserPasswrodReq.class,
+            f -> f.withMarshaller(ResetUserPasswrodRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -997,8 +1110,8 @@ public class KafkaMeta {
         );
         builder.withRequestField("engine",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ShowInstanceExtendProductInfoRequest.EngineEnum.class,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
             })
@@ -1011,14 +1124,14 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTags = genForshowInstanceTags();
+    public static final HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessages = genForshowInstanceMessages();
 
-    private static HttpRequestDef<ShowInstanceTagsRequest, ShowInstanceTagsResponse> genForshowInstanceTags() {
+    private static HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> genForshowInstanceMessages() {
         // basic
-        HttpRequestDef.Builder<ShowInstanceTagsRequest, ShowInstanceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTagsRequest.class, ShowInstanceTagsResponse.class)
-                .withName("ShowInstanceTags")
-                .withUri("/v2/{project_id}/kafka/{instance_id}/tags")
+        HttpRequestDef.Builder<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceMessagesRequest.class, ShowInstanceMessagesResponse.class)
+                .withName("ShowInstanceMessages")
+                .withUri("/v2/{project_id}/instances/{instance_id}/messages")
                 .withContentType("application/json");
 
         // requests
@@ -1026,8 +1139,80 @@ public class KafkaMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowInstanceTagsRequest::getInstanceId, (req, v) -> {
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("topic",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getTopic, (req, v) -> {
+                req.setTopic(v);
+            })
+        );
+        builder.withRequestField("asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getAsc, (req, v) -> {
+                req.setAsc(v);
+            })
+        );
+        builder.withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("download",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getDownload, (req, v) -> {
+                req.setDownload(v);
+            })
+        );
+        builder.withRequestField("message_offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getMessageOffset, (req, v) -> {
+                req.setMessageOffset(v);
+            })
+        );
+        builder.withRequestField("partition",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getPartition, (req, v) -> {
+                req.setPartition(v);
             })
         );
 
@@ -1063,6 +1248,130 @@ public class KafkaMeta {
             String.class,
             f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsers = genForshowInstanceUsers();
+
+    private static HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> genForshowInstanceUsers() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceUsersRequest, ShowInstanceUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceUsersRequest.class, ShowInstanceUsersResponse.class)
+                .withName("ShowInstanceUsers")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowInstanceUsersRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTags = genForshowKafkaProjectTags();
+
+    private static HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> genForshowKafkaProjectTags() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaProjectTagsRequest.class, ShowKafkaProjectTagsResponse.class)
+                .withName("ShowKafkaProjectTags")
+                .withUri("/v2/{project_id}/kafka/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTags = genForshowKafkaTags();
+
+    private static HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> genForshowKafkaTags() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaTagsRequest, ShowKafkaTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaTagsRequest.class, ShowKafkaTagsResponse.class)
+                .withName("ShowKafkaTags")
+                .withUri("/v2/{project_id}/kafka/{instance_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowKafkaTagsRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusage = genForshowKafkaTopicPartitionDiskusage();
+
+    private static HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> genForshowKafkaTopicPartitionDiskusage() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaTopicPartitionDiskusageRequest.class, ShowKafkaTopicPartitionDiskusageResponse.class)
+                .withName("ShowKafkaTopicPartitionDiskusage")
+                .withUri("/v2/{project_id}/instances/{instance_id}/topics/diskusage")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("minSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getMinSize, (req, v) -> {
+                req.setMinSize(v);
+            })
+        );
+        builder.withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getTop, (req, v) -> {
+                req.setTop(v);
+            })
+        );
+        builder.withRequestField("percentage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getPercentage, (req, v) -> {
+                req.setPercentage(v);
             })
         );
 
@@ -1304,25 +1613,6 @@ public class KafkaMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTags = genForshowProjectTags();
-
-    private static HttpRequestDef<ShowProjectTagsRequest, ShowProjectTagsResponse> genForshowProjectTags() {
-        // basic
-        HttpRequestDef.Builder<ShowProjectTagsRequest, ShowProjectTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowProjectTagsRequest.class, ShowProjectTagsResponse.class)
-                .withName("ShowProjectTags")
-                .withUri("/v2/{project_id}/kafka/tags")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetail = genForshowSinkTaskDetail();
 
     private static HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> genForshowSinkTaskDetail() {
@@ -1348,6 +1638,41 @@ public class KafkaMeta {
             String.class,
             f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicy = genForshowTopicAccessPolicy();
+
+    private static HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> genForshowTopicAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTopicAccessPolicyRequest.class, ShowTopicAccessPolicyResponse.class)
+                .withName("ShowTopicAccessPolicy")
+                .withUri("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("topic_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getTopicName, (req, v) -> {
+                req.setTopicName(v);
             })
         );
 
@@ -1522,6 +1847,41 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateSinkTaskQuotaReq.class,
             f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicy = genForupdateTopicAccessPolicy();
+
+    private static HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> genForupdateTopicAccessPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateTopicAccessPolicyRequest.class, UpdateTopicAccessPolicyResponse.class)
+                .withName("UpdateTopicAccessPolicy")
+                .withUri("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateTopicAccessPolicyReq.class,
+            f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

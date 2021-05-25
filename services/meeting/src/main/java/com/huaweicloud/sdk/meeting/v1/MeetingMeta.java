@@ -297,14 +297,6 @@ public class MeetingMeta {
                 req.setCorpId(v);
             })
         );
-        builder.withRequestField("forceEditFlag",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Boolean.class,
-            f -> f.withMarshaller(AddResourceRequest::getForceEditFlag, (req, v) -> {
-                req.setForceEditFlag(v);
-            })
-        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1256,7 +1248,7 @@ public class MeetingMeta {
         builder.withRequestField("X-Login-Type",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            String.class,
             f -> f.withMarshaller(CreateConfTokenRequest::getXLoginType, (req, v) -> {
                 req.setXLoginType(v);
             })
@@ -1323,15 +1315,6 @@ public class MeetingMeta {
 
         // response
         
-        builder.withResponseField(
-            "body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            List.class,
-            f -> f.withMarshaller(CreateMeetingResponse::getBody, (response, data)->{
-                response.setBody(data);
-            }).withInnerContainerType(ConferenceInfo.class)
-        );
 
 
         return builder.build();
@@ -1415,6 +1398,41 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> createWebSocketToken = genForcreateWebSocketToken();
+
+    private static HttpRequestDef<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> genForcreateWebSocketToken() {
+        // basic
+        HttpRequestDef.Builder<CreateWebSocketTokenRequest, CreateWebSocketTokenResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CreateWebSocketTokenRequest.class, CreateWebSocketTokenResponse.class)
+                .withName("CreateWebSocketToken")
+                .withUri("/v1/mmc/control/conferences/wsToken")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateWebSocketTokenRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+        builder.withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateWebSocketTokenRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> deleteAttendees = genFordeleteAttendees();
 
     private static HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> genFordeleteAttendees() {
@@ -1475,14 +1493,6 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(DeleteCorpRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("forceDelete",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Boolean.class,
-            f -> f.withMarshaller(DeleteCorpRequest::getForceDelete, (req, v) -> {
-                req.setForceDelete(v);
             })
         );
         builder.withRequestField("X-Request-Id",
@@ -1663,14 +1673,6 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(DeleteResourceRequest::getCorpId, (req, v) -> {
                 req.setCorpId(v);
-            })
-        );
-        builder.withRequestField("forceEditFlag",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Boolean.class,
-            f -> f.withMarshaller(DeleteResourceRequest::getForceEditFlag, (req, v) -> {
-                req.setForceEditFlag(v);
             })
         );
         builder.withRequestField("X-Request-Id",
@@ -1933,6 +1935,49 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             RestInviteReqBody.class,
             f -> f.withMarshaller(InviteParticipantRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InviteUserRequest, InviteUserResponse> inviteUser = genForinviteUser();
+
+    private static HttpRequestDef<InviteUserRequest, InviteUserResponse> genForinviteUser() {
+        // basic
+        HttpRequestDef.Builder<InviteUserRequest, InviteUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InviteUserRequest.class, InviteUserResponse.class)
+                .withName("InviteUser")
+                .withUri("/v1/usg/dcs/corp/member/add")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(InviteUserRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(InviteUserRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            AddUserRequestBody.class,
+            f -> f.withMarshaller(InviteUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -3506,6 +3551,41 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> searchMemberVmrByCloudLink = genForsearchMemberVmrByCloudLink();
+
+    private static HttpRequestDef<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> genForsearchMemberVmrByCloudLink() {
+        // basic
+        HttpRequestDef.Builder<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchMemberVmrByCloudLinkRequest.class, SearchMemberVmrByCloudLinkResponse.class)
+                .withName("SearchMemberVmrByCloudLink")
+                .withUri("/v1/usg/dcs/member/vmrinfo")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMemberVmrByCloudLinkRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchMemberVmrByCloudLinkRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> searchOnlineMeetings = genForsearchOnlineMeetings();
 
     private static HttpRequestDef<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> genForsearchOnlineMeetings() {
@@ -4362,7 +4442,7 @@ public class MeetingMeta {
         HttpRequestDef.Builder<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetCustomMultiPictureRequest.class, SetCustomMultiPictureResponse.class)
                 .withName("SetCustomMultiPicture")
-                .withUri("/v1/mmc/control/conferences/display/customMultiPicture")
+                .withUri("/v1/mmc/control/conferences/display/")
                 .withContentType("application/json");
 
         // requests
@@ -5544,6 +5624,49 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> showRecordingFileDownloadUrls = genForshowRecordingFileDownloadUrls();
+
+    private static HttpRequestDef<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> genForshowRecordingFileDownloadUrls() {
+        // basic
+        HttpRequestDef.Builder<ShowRecordingFileDownloadUrlsRequest, ShowRecordingFileDownloadUrlsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecordingFileDownloadUrlsRequest.class, ShowRecordingFileDownloadUrlsResponse.class)
+                .withName("ShowRecordingFileDownloadUrls")
+                .withUri("/v1/mmc/management/record/downloadurls")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("confUUID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getConfUUID, (req, v) -> {
+                req.setConfUUID(v);
+            })
+        );
+        builder.withRequestField("X-Authorization-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getXAuthorizationType, (req, v) -> {
+                req.setXAuthorizationType(v);
+            })
+        );
+        builder.withRequestField("X-Site-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getXSiteId, (req, v) -> {
+                req.setXSiteId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> showRegionInfoOfMeeting = genForshowRegionInfoOfMeeting();
 
     private static HttpRequestDef<ShowRegionInfoOfMeetingRequest, ShowRegionInfoOfMeetingResponse> genForshowRegionInfoOfMeeting() {
@@ -6369,14 +6492,6 @@ public class MeetingMeta {
                 req.setCorpId(v);
             })
         );
-        builder.withRequestField("forceEditFlag",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Boolean.class,
-            f -> f.withMarshaller(UpdateResourceRequest::getForceEditFlag, (req, v) -> {
-                req.setForceEditFlag(v);
-            })
-        );
         builder.withRequestField("X-Request-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -6400,6 +6515,49 @@ public class MeetingMeta {
             f -> f.withMarshaller(UpdateResourceRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }).withInnerContainerType(ModResourceDTO.class)
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> updateStartedConfConfig = genForupdateStartedConfConfig();
+
+    private static HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> genForupdateStartedConfConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateStartedConfConfigRequest.class, UpdateStartedConfConfigResponse.class)
+                .withName("UpdateStartedConfConfig")
+                .withUri("/v1/mmc/control/conferences/updateStartedConfConfig")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+        builder.withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateStartedConfigReqBody.class,
+            f -> f.withMarshaller(UpdateStartedConfConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
         );
 
         // response
@@ -6493,6 +6651,218 @@ public class MeetingMeta {
             ModUserDTO.class,
             f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> searchQosHistoryMeetings = genForsearchQosHistoryMeetings();
+
+    private static HttpRequestDef<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> genForsearchQosHistoryMeetings() {
+        // basic
+        HttpRequestDef.Builder<SearchQosHistoryMeetingsRequest, SearchQosHistoryMeetingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchQosHistoryMeetingsRequest.class, SearchQosHistoryMeetingsResponse.class)
+                .withName("SearchQosHistoryMeetings")
+                .withUri("/v1/metrics/conferences/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("startDate",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getStartDate, (req, v) -> {
+                req.setStartDate(v);
+            })
+        );
+        builder.withRequestField("endDate",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getEndDate, (req, v) -> {
+                req.setEndDate(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchQosHistoryMeetingsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> searchQosOnlineMeetings = genForsearchQosOnlineMeetings();
+
+    private static HttpRequestDef<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> genForsearchQosOnlineMeetings() {
+        // basic
+        HttpRequestDef.Builder<SearchQosOnlineMeetingsRequest, SearchQosOnlineMeetingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchQosOnlineMeetingsRequest.class, SearchQosOnlineMeetingsResponse.class)
+                .withName("SearchQosOnlineMeetings")
+                .withUri("/v1/metrics/conferences/online")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchQosOnlineMeetingsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> searchQosParticipantDetail = genForsearchQosParticipantDetail();
+
+    private static HttpRequestDef<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> genForsearchQosParticipantDetail() {
+        // basic
+        HttpRequestDef.Builder<SearchQosParticipantDetailRequest, SearchQosParticipantDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchQosParticipantDetailRequest.class, SearchQosParticipantDetailResponse.class)
+                .withName("SearchQosParticipantDetail")
+                .withUri("/v1/metrics/conference/participant/qos")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("confUUID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getConfUUID, (req, v) -> {
+                req.setConfUUID(v);
+            })
+        );
+        builder.withRequestField("confType",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SearchQosParticipantDetailRequest.ConfTypeEnum.class,
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getConfType, (req, v) -> {
+                req.setConfType(v);
+            })
+        );
+        builder.withRequestField("participantID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getParticipantID, (req, v) -> {
+                req.setParticipantID(v);
+            })
+        );
+        builder.withRequestField("qosType",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SearchQosParticipantDetailRequest.QosTypeEnum.class,
+            f -> f.withMarshaller(SearchQosParticipantDetailRequest::getQosType, (req, v) -> {
+                req.setQosType(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchQosParticipantsRequest, SearchQosParticipantsResponse> searchQosParticipants = genForsearchQosParticipants();
+
+    private static HttpRequestDef<SearchQosParticipantsRequest, SearchQosParticipantsResponse> genForsearchQosParticipants() {
+        // basic
+        HttpRequestDef.Builder<SearchQosParticipantsRequest, SearchQosParticipantsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchQosParticipantsRequest.class, SearchQosParticipantsResponse.class)
+                .withName("SearchQosParticipants")
+                .withUri("/v1/metrics/conference/participants")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("confUUID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getConfUUID, (req, v) -> {
+                req.setConfUUID(v);
+            })
+        );
+        builder.withRequestField("confType",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            SearchQosParticipantsRequest.ConfTypeEnum.class,
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getConfType, (req, v) -> {
+                req.setConfType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchQosParticipantsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
             })
         );
 

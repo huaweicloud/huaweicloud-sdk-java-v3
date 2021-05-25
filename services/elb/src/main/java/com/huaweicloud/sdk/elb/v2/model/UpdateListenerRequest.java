@@ -39,7 +39,7 @@ public class UpdateListenerRequest  {
 
 
     /**
-     * Get listenerId
+     * 监听器id
      * @return listenerId
      */
     public String getListenerId() {

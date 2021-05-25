@@ -45,7 +45,7 @@ public class UpdateDictionaryRequest  {
 
 
     /**
-     * Get dictId
+     * 字典ID
      * @return dictId
      */
     public String getDictId() {
@@ -67,7 +67,7 @@ public class UpdateDictionaryRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {

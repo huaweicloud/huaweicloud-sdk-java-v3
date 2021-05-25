@@ -62,7 +62,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * Get appId
+     * 应用编号
      * @return appId
      */
     public String getAppId() {
@@ -106,7 +106,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * Get configName
+     * 应用配置名称
      * @return configName
      */
     public String getConfigName() {
@@ -128,7 +128,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * Get romaAppName
+     * 应用名称
      * @return romaAppName
      */
     public String getRomaAppName() {
@@ -150,7 +150,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -172,7 +172,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

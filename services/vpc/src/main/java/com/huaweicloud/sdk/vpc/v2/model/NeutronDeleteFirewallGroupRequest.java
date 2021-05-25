@@ -32,7 +32,7 @@ public class NeutronDeleteFirewallGroupRequest  {
 
 
     /**
-     * Get firewallGroupId
+     * 网络ACL防火墙组ID
      * @return firewallGroupId
      */
     public String getFirewallGroupId() {

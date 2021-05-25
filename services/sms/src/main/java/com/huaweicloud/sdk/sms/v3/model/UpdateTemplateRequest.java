@@ -39,7 +39,7 @@ public class UpdateTemplateRequest  {
 
 
     /**
-     * Get id
+     * 需要修改信息的模板的id
      * @return id
      */
     public String getId() {

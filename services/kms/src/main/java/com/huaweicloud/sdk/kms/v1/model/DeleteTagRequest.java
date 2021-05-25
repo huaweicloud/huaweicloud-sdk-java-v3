@@ -44,7 +44,7 @@ public class DeleteTagRequest  {
 
 
     /**
-     * Get keyId
+     * 密钥ID
      * @return keyId
      */
     public String getKeyId() {
@@ -66,7 +66,7 @@ public class DeleteTagRequest  {
 
 
     /**
-     * Get key
+     * 标签键的值
      * @return key
      */
     public String getKey() {
@@ -88,7 +88,7 @@ public class DeleteTagRequest  {
 
 
     /**
-     * Get versionId
+     * API版本号
      * @return versionId
      */
     public String getVersionId() {

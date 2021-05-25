@@ -35,7 +35,7 @@ public class ListThumbnailsTaskRequest  {
     
     private List<String> taskId = null;
         /**
-     * Gets or Sets status
+     * 任务状态。  取值如下： - WAITING: 等待启动 - PROCESSING：截图中 - SUCCEEDED：截图成功 - FAILED：截图失败 - CANCELED：已删除 
      */
     public static final class StatusEnum {
 
@@ -170,7 +170,7 @@ public class ListThumbnailsTaskRequest  {
 
 
     /**
-     * Get xLanguage
+     * 客户端语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -208,7 +208,7 @@ public class ListThumbnailsTaskRequest  {
     }
 
     /**
-     * Get taskId
+     * 截图服务接受任务后产生的任务ID。一次最多10个 
      * @return taskId
      */
     public List<String> getTaskId() {
@@ -230,7 +230,7 @@ public class ListThumbnailsTaskRequest  {
 
 
     /**
-     * Get status
+     * 任务状态。  取值如下： - WAITING: 等待启动 - PROCESSING：截图中 - SUCCEEDED：截图成功 - FAILED：截图失败 - CANCELED：已删除 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -252,7 +252,7 @@ public class ListThumbnailsTaskRequest  {
 
 
     /**
-     * Get startTime
+     * 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
      * @return startTime
      */
     public String getStartTime() {
@@ -274,7 +274,7 @@ public class ListThumbnailsTaskRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
      * @return endTime
      */
     public String getEndTime() {
@@ -296,7 +296,7 @@ public class ListThumbnailsTaskRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
      * minimum: 0
      * maximum: 50000
      * @return page
@@ -320,7 +320,7 @@ public class ListThumbnailsTaskRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
      * minimum: 1
      * maximum: 100
      * @return size

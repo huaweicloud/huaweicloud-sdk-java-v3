@@ -44,7 +44,7 @@ public class DeleteComponentRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -66,7 +66,7 @@ public class DeleteComponentRequest  {
 
 
     /**
-     * Get componentId
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {
@@ -88,7 +88,7 @@ public class DeleteComponentRequest  {
 
 
     /**
-     * Get force
+     * 是否强制删除。
      * @return force
      */
     public Boolean getForce() {

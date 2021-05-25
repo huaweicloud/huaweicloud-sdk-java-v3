@@ -84,7 +84,7 @@ public class ListDomainBandwidthPeakRequest  {
     }
 
     /**
-     * Get playDomains
+     * 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。 
      * @return playDomains
      */
     public List<String> getPlayDomains() {
@@ -106,7 +106,7 @@ public class ListDomainBandwidthPeakRequest  {
 
 
     /**
-     * Get app
+     * 应用名称。
      * @return app
      */
     public String getApp() {
@@ -128,7 +128,7 @@ public class ListDomainBandwidthPeakRequest  {
 
 
     /**
-     * Get stream
+     * 流名。
      * @return stream
      */
     public String getStream() {
@@ -164,7 +164,7 @@ public class ListDomainBandwidthPeakRequest  {
     }
 
     /**
-     * Get region
+     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
      * @return region
      */
     public List<String> getRegion() {
@@ -200,7 +200,7 @@ public class ListDomainBandwidthPeakRequest  {
     }
 
     /**
-     * Get isp
+     * 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\"  不填写查询所有运营商。 
      * @return isp
      */
     public List<String> getIsp() {
@@ -222,7 +222,7 @@ public class ListDomainBandwidthPeakRequest  {
 
 
     /**
-     * Get startTime
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。  若参数为空，默认查询7天数据。 
      * @return startTime
      */
     public String getStartTime() {
@@ -244,7 +244,7 @@ public class ListDomainBandwidthPeakRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
      * @return endTime
      */
     public String getEndTime() {

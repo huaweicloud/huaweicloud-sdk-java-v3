@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupRequestBody;
+import com.huaweicloud.sdk.as.v1.model.UpdateScalingGroupOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class UpdateScalingGroupRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateScalingGroupRequestBody body;
+    private UpdateScalingGroupOption body;
 
     public UpdateScalingGroupRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
@@ -39,7 +39,7 @@ public class UpdateScalingGroupRequest  {
 
 
     /**
-     * Get scalingGroupId
+     * 伸缩组ID
      * @return scalingGroupId
      */
     public String getScalingGroupId() {
@@ -52,14 +52,14 @@ public class UpdateScalingGroupRequest  {
 
     
 
-    public UpdateScalingGroupRequest withBody(UpdateScalingGroupRequestBody body) {
+    public UpdateScalingGroupRequest withBody(UpdateScalingGroupOption body) {
         this.body = body;
         return this;
     }
 
-    public UpdateScalingGroupRequest withBody(Consumer<UpdateScalingGroupRequestBody> bodySetter) {
+    public UpdateScalingGroupRequest withBody(Consumer<UpdateScalingGroupOption> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateScalingGroupRequestBody();
+            this.body = new UpdateScalingGroupOption();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class UpdateScalingGroupRequest  {
      * Get body
      * @return body
      */
-    public UpdateScalingGroupRequestBody getBody() {
+    public UpdateScalingGroupOption getBody() {
         return body;
     }
 
-    public void setBody(UpdateScalingGroupRequestBody body) {
+    public void setBody(UpdateScalingGroupOption body) {
         this.body = body;
     }
 

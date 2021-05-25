@@ -32,7 +32,7 @@ public class ShowVpcRouteRequest  {
 
 
     /**
-     * Get routeId
+     * 路由ID
      * @return routeId
      */
     public String getRouteId() {

@@ -45,7 +45,7 @@ public class CreateEipRecordSetRequest  {
 
 
     /**
-     * Get region
+     * 租户的区域信息。
      * @return region
      */
     public String getRegion() {
@@ -67,7 +67,7 @@ public class CreateEipRecordSetRequest  {
 
 
     /**
-     * Get floatingipId
+     * 弹性IP的ID。
      * @return floatingipId
      */
     public String getFloatingipId() {

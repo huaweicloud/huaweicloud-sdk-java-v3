@@ -21,7 +21,7 @@ import java.util.Objects;
 public class KeystoneListEndpointsRequest  {
 
     /**
-     * Gets or Sets _interface
+     * 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
      */
     public static final class InterfaceEnum {
 
@@ -126,7 +126,7 @@ public class KeystoneListEndpointsRequest  {
 
 
     /**
-     * Get _interface
+     * 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
      * @return _interface
      */
     public InterfaceEnum getInterface() {
@@ -148,7 +148,7 @@ public class KeystoneListEndpointsRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID。
      * @return serviceId
      */
     public String getServiceId() {

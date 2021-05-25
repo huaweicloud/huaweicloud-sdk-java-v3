@@ -295,6 +295,33 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse> deleteFunctionAsyncInvokeConfig = genFordeleteFunctionAsyncInvokeConfig();
+
+    private static HttpRequestDef<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse> genFordeleteFunctionAsyncInvokeConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteFunctionAsyncInvokeConfigRequest, DeleteFunctionAsyncInvokeConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionAsyncInvokeConfigRequest.class, DeleteFunctionAsyncInvokeConfigResponse.class)
+                .withName("DeleteFunctionAsyncInvokeConfig")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteFunctionAsyncInvokeConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAlias = genFordeleteVersionAlias();
 
     private static HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> genFordeleteVersionAlias() {
@@ -302,7 +329,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<DeleteVersionAliasRequest, DeleteVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteVersionAliasRequest.class, DeleteVersionAliasResponse.class)
                 .withName("DeleteVersionAlias")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}")
                 .withContentType("application/json");
 
         // requests
@@ -314,12 +341,12 @@ public class FunctionGraphMeta {
                 req.setFunctionUrn(v);
             })
         );
-        builder.withRequestField("name",
+        builder.withRequestField("alias_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(DeleteVersionAliasRequest::getName, (req, v) -> {
-                req.setName(v);
+            f -> f.withMarshaller(DeleteVersionAliasRequest::getAliasName, (req, v) -> {
+                req.setAliasName(v);
             })
         );
 
@@ -457,6 +484,49 @@ public class FunctionGraphMeta {
             String.class,
             f -> f.withMarshaller(ListEventsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse> listFunctionAsyncInvokeConfig = genForlistFunctionAsyncInvokeConfig();
+
+    private static HttpRequestDef<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse> genForlistFunctionAsyncInvokeConfig() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionAsyncInvokeConfigRequest, ListFunctionAsyncInvokeConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFunctionAsyncInvokeConfigRequest.class, ListFunctionAsyncInvokeConfigResponse.class)
+                .withName("ListFunctionAsyncInvokeConfig")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListFunctionAsyncInvokeConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+        builder.withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionAsyncInvokeConfigRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionAsyncInvokeConfigRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -740,6 +810,33 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse> showFunctionAsyncInvokeConfig = genForshowFunctionAsyncInvokeConfig();
+
+    private static HttpRequestDef<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse> genForshowFunctionAsyncInvokeConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowFunctionAsyncInvokeConfigRequest, ShowFunctionAsyncInvokeConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFunctionAsyncInvokeConfigRequest.class, ShowFunctionAsyncInvokeConfigResponse.class)
+                .withName("ShowFunctionAsyncInvokeConfig")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowFunctionAsyncInvokeConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowFunctionCodeRequest, ShowFunctionCodeResponse> showFunctionCode = genForshowFunctionCode();
 
     private static HttpRequestDef<ShowFunctionCodeRequest, ShowFunctionCodeResponse> genForshowFunctionCode() {
@@ -801,7 +898,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<ShowVersionAliasRequest, ShowVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowVersionAliasRequest.class, ShowVersionAliasResponse.class)
                 .withName("ShowVersionAlias")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}")
                 .withContentType("application/json");
 
         // requests
@@ -813,12 +910,12 @@ public class FunctionGraphMeta {
                 req.setFunctionUrn(v);
             })
         );
-        builder.withRequestField("name",
+        builder.withRequestField("alias_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowVersionAliasRequest::getName, (req, v) -> {
-                req.setName(v);
+            f -> f.withMarshaller(ShowVersionAliasRequest::getAliasName, (req, v) -> {
+                req.setAliasName(v);
             })
         );
 
@@ -896,6 +993,41 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             UpdateEventRequestBody.class,
             f -> f.withMarshaller(UpdateEventRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse> updateFunctionAsyncInvokeConfig = genForupdateFunctionAsyncInvokeConfig();
+
+    private static HttpRequestDef<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse> genForupdateFunctionAsyncInvokeConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateFunctionAsyncInvokeConfigRequest, UpdateFunctionAsyncInvokeConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateFunctionAsyncInvokeConfigRequest.class, UpdateFunctionAsyncInvokeConfigResponse.class)
+                .withName("UpdateFunctionAsyncInvokeConfig")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/async-invoke-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateFunctionAsyncInvokeConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UpdateFunctionAsyncInvokeConfigRequestBody.class,
+            f -> f.withMarshaller(UpdateFunctionAsyncInvokeConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1019,7 +1151,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<UpdateVersionAliasRequest, UpdateVersionAliasResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateVersionAliasRequest.class, UpdateVersionAliasResponse.class)
                 .withName("UpdateVersionAlias")
-                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{name}")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/aliases/{alias_name}")
                 .withContentType("application/json");
 
         // requests
@@ -1031,12 +1163,12 @@ public class FunctionGraphMeta {
                 req.setFunctionUrn(v);
             })
         );
-        builder.withRequestField("name",
+        builder.withRequestField("alias_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateVersionAliasRequest::getName, (req, v) -> {
-                req.setName(v);
+            f -> f.withMarshaller(UpdateVersionAliasRequest::getAliasName, (req, v) -> {
+                req.setAliasName(v);
             })
         );
         builder.withRequestField("body",
@@ -1124,7 +1256,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<DeleteFunctionTriggerRequest, DeleteFunctionTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionTriggerRequest.class, DeleteFunctionTriggerResponse.class)
                 .withName("DeleteFunctionTrigger")
-                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
+                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1144,7 +1276,7 @@ public class FunctionGraphMeta {
                 req.setTriggerTypeCode(v);
             })
         );
-        builder.withRequestField("triggerId",
+        builder.withRequestField("trigger_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
@@ -1203,7 +1335,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<ShowFunctionTriggerRequest, ShowFunctionTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowFunctionTriggerRequest.class, ShowFunctionTriggerResponse.class)
                 .withName("ShowFunctionTrigger")
-                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
+                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1223,7 +1355,7 @@ public class FunctionGraphMeta {
                 req.setTriggerTypeCode(v);
             })
         );
-        builder.withRequestField("triggerId",
+        builder.withRequestField("trigger_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
@@ -1246,7 +1378,7 @@ public class FunctionGraphMeta {
         HttpRequestDef.Builder<UpdateTriggerRequest, UpdateTriggerResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateTriggerRequest.class, UpdateTriggerResponse.class)
                 .withName("UpdateTrigger")
-                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{triggerId}")
+                .withUri("/v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1266,7 +1398,7 @@ public class FunctionGraphMeta {
                 req.setTriggerTypeCode(v);
             })
         );
-        builder.withRequestField("triggerId",
+        builder.withRequestField("trigger_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,

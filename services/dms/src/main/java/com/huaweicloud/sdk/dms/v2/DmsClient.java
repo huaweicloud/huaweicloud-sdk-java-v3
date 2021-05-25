@@ -282,28 +282,6 @@ public class DmsClient {
     }
 
     /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return ShowProjectTagsResponse
-     */
-    public ShowProjectTagsResponse showProjectTags(ShowProjectTagsRequest request) {
-        return hcClient.syncInvokeHttp(request, DmsMeta.showProjectTags);
-    }
-
-    /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>
-     */
-    public SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTagsInvoker(ShowProjectTagsRequest request) {
-        return new SyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>(request, DmsMeta.showProjectTags, hcClient);
-    }
-
-    /**
      * 查看指定队列
      * 查看指定的队列。
      *
@@ -323,6 +301,28 @@ public class DmsClient {
      */
     public SyncInvoker<ShowQueueRequest, ShowQueueResponse> showQueueInvoker(ShowQueueRequest request) {
         return new SyncInvoker<ShowQueueRequest, ShowQueueResponse>(request, DmsMeta.showQueue, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowQueueProjectTagsRequest 请求对象
+     * @return ShowQueueProjectTagsResponse
+     */
+    public ShowQueueProjectTagsResponse showQueueProjectTags(ShowQueueProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, DmsMeta.showQueueProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowQueueProjectTagsRequest 请求对象
+     * @return SyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse>
+     */
+    public SyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> showQueueProjectTagsInvoker(ShowQueueProjectTagsRequest request) {
+        return new SyncInvoker<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse>(request, DmsMeta.showQueueProjectTags, hcClient);
     }
 
     /**

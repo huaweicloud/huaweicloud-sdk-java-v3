@@ -64,18 +64,6 @@ public class ShowCorpAdminResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="menuTemplateId")
-    
-    private String menuTemplateId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="menuTemplateName")
-    
-    private String menuTemplateName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dept")
     
     private DeptBasicDTO dept;
@@ -234,50 +222,6 @@ public class ShowCorpAdminResponse extends SdkResponse {
 
     
 
-    public ShowCorpAdminResponse withMenuTemplateId(String menuTemplateId) {
-        this.menuTemplateId = menuTemplateId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 菜单模板id
-     * @return menuTemplateId
-     */
-    public String getMenuTemplateId() {
-        return menuTemplateId;
-    }
-
-    public void setMenuTemplateId(String menuTemplateId) {
-        this.menuTemplateId = menuTemplateId;
-    }
-
-    
-
-    public ShowCorpAdminResponse withMenuTemplateName(String menuTemplateName) {
-        this.menuTemplateName = menuTemplateName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 菜单模板名称
-     * @return menuTemplateName
-     */
-    public String getMenuTemplateName() {
-        return menuTemplateName;
-    }
-
-    public void setMenuTemplateName(String menuTemplateName) {
-        this.menuTemplateName = menuTemplateName;
-    }
-
-    
-
     public ShowCorpAdminResponse withDept(DeptBasicDTO dept) {
         this.dept = dept;
         return this;
@@ -323,13 +267,11 @@ public class ShowCorpAdminResponse extends SdkResponse {
             Objects.equals(this.email, showCorpAdminResponse.email) &&
             Objects.equals(this.phone, showCorpAdminResponse.phone) &&
             Objects.equals(this.country, showCorpAdminResponse.country) &&
-            Objects.equals(this.menuTemplateId, showCorpAdminResponse.menuTemplateId) &&
-            Objects.equals(this.menuTemplateName, showCorpAdminResponse.menuTemplateName) &&
             Objects.equals(this.dept, showCorpAdminResponse.dept);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, account, name, adminType, email, phone, country, menuTemplateId, menuTemplateName, dept);
+        return Objects.hash(id, account, name, adminType, email, phone, country, dept);
     }
     @Override
     public String toString() {
@@ -342,8 +284,6 @@ public class ShowCorpAdminResponse extends SdkResponse {
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
-        sb.append("    menuTemplateId: ").append(toIndentedString(menuTemplateId)).append("\n");
-        sb.append("    menuTemplateName: ").append(toIndentedString(menuTemplateName)).append("\n");
         sb.append("    dept: ").append(toIndentedString(dept)).append("\n");
         sb.append("}");
         return sb.toString();

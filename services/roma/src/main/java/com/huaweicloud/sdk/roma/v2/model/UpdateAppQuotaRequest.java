@@ -45,7 +45,7 @@ public class UpdateAppQuotaRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateAppQuotaRequest  {
 
 
     /**
-     * Get appQuotaId
+     * 客户端配额编号
      * @return appQuotaId
      */
     public String getAppQuotaId() {

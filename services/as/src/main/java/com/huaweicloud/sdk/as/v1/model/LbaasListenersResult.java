@@ -19,9 +19,9 @@ public class LbaasListenersResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listeners_id")
+    @JsonProperty(value="listener_id")
     
-    private String listenersId;
+    private String listenerId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,8 +41,8 @@ public class LbaasListenersResult  {
     
     private Integer weight;
 
-    public LbaasListenersResult withListenersId(String listenersId) {
-        this.listenersId = listenersId;
+    public LbaasListenersResult withListenerId(String listenerId) {
+        this.listenerId = listenerId;
         return this;
     }
 
@@ -51,14 +51,14 @@ public class LbaasListenersResult  {
 
     /**
      * 监听器ID
-     * @return listenersId
+     * @return listenerId
      */
-    public String getListenersId() {
-        return listenersId;
+    public String getListenerId() {
+        return listenerId;
     }
 
-    public void setListenersId(String listenersId) {
-        this.listenersId = listenersId;
+    public void setListenerId(String listenerId) {
+        this.listenerId = listenerId;
     }
 
     
@@ -140,20 +140,20 @@ public class LbaasListenersResult  {
             return false;
         }
         LbaasListenersResult lbaasListenersResult = (LbaasListenersResult) o;
-        return Objects.equals(this.listenersId, lbaasListenersResult.listenersId) &&
+        return Objects.equals(this.listenerId, lbaasListenersResult.listenerId) &&
             Objects.equals(this.poolId, lbaasListenersResult.poolId) &&
             Objects.equals(this.protocolPort, lbaasListenersResult.protocolPort) &&
             Objects.equals(this.weight, lbaasListenersResult.weight);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(listenersId, poolId, protocolPort, weight);
+        return Objects.hash(listenerId, poolId, protocolPort, weight);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LbaasListenersResult {\n");
-        sb.append("    listenersId: ").append(toIndentedString(listenersId)).append("\n");
+        sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");

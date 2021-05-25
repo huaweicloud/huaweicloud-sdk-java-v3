@@ -50,7 +50,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get orderId
+     * |参数名称：订单ID。| |参数的约束及描述：|
      * @return orderId
      */
     public String getOrderId() {
@@ -72,7 +72,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get limit
+     * |参数名称：每次查询的大小，默认为10| |参数的约束及描述：|
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -96,7 +96,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get offset
+     * |参数名称：偏移量，从0开始，默认为0| |参数的约束及描述：|
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -120,7 +120,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * |参数名称：二级经销商ID，只有伙伴用自身token调用的时候，该字段才有含义。| |参数的约束及描述：|
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

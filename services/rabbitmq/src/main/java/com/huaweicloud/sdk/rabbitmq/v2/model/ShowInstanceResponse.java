@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListInstancesRespTags;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -342,6 +343,12 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value="ipv6_connect_addresses")
     
     private List<String> ipv6ConnectAddresses = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private List<ListInstancesRespTags> tags = null;
     
     public ShowInstanceResponse withName(String name) {
         this.name = name;
@@ -1251,6 +1258,42 @@ public class ShowInstanceResponse extends SdkResponse {
 
     
 
+    public ShowInstanceResponse withTags(List<ListInstancesRespTags> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public ShowInstanceResponse addTagsItem(ListInstancesRespTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withTags(Consumer<List<ListInstancesRespTags>> tagsSetter) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<ListInstancesRespTags> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ListInstancesRespTags> tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1299,11 +1342,12 @@ public class ShowInstanceResponse extends SdkResponse {
             Objects.equals(this.storageResourceId, showInstanceResponse.storageResourceId) &&
             Objects.equals(this.storageSpecCode, showInstanceResponse.storageSpecCode) &&
             Objects.equals(this.ipv6Enable, showInstanceResponse.ipv6Enable) &&
-            Objects.equals(this.ipv6ConnectAddresses, showInstanceResponse.ipv6ConnectAddresses);
+            Objects.equals(this.ipv6ConnectAddresses, showInstanceResponse.ipv6ConnectAddresses) &&
+            Objects.equals(this.tags, showInstanceResponse.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, engine, engineVersion, specification, storageSpace, usedStorageSpace, connectAddress, port, status, description, instanceId, resourceSpecCode, chargingMode, vpcId, vpcName, createdAt, userId, userName, orderId, maintainBegin, maintainEnd, enablePublicip, publicipAddress, publicipId, managementConnectAddress, sslEnable, enterpriseProjectId, isLogicalVolume, extendTimes, type, productId, securityGroupId, securityGroupName, subnetId, availableZones, totalStorageSpace, storageResourceId, storageSpecCode, ipv6Enable, ipv6ConnectAddresses);
+        return Objects.hash(name, engine, engineVersion, specification, storageSpace, usedStorageSpace, connectAddress, port, status, description, instanceId, resourceSpecCode, chargingMode, vpcId, vpcName, createdAt, userId, userName, orderId, maintainBegin, maintainEnd, enablePublicip, publicipAddress, publicipId, managementConnectAddress, sslEnable, enterpriseProjectId, isLogicalVolume, extendTimes, type, productId, securityGroupId, securityGroupName, subnetId, availableZones, totalStorageSpace, storageResourceId, storageSpecCode, ipv6Enable, ipv6ConnectAddresses, tags);
     }
     @Override
     public String toString() {
@@ -1349,6 +1393,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6ConnectAddresses: ").append(toIndentedString(ipv6ConnectAddresses)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

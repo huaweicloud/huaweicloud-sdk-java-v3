@@ -38,7 +38,7 @@ public class ListFunctionStatisticsRequest  {
 
 
     /**
-     * Get funcUrn
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
      * @return funcUrn
      */
     public String getFuncUrn() {
@@ -60,7 +60,7 @@ public class ListFunctionStatisticsRequest  {
 
 
     /**
-     * Get period
+     * 获取最近多少分钟内函数执行的指标。
      * @return period
      */
     public String getPeriod() {

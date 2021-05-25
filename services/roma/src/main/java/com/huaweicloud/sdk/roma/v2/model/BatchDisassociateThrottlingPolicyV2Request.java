@@ -45,7 +45,7 @@ public class BatchDisassociateThrottlingPolicyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class BatchDisassociateThrottlingPolicyV2Request  {
 
 
     /**
-     * Get action
+     * 必须为delete
      * @return action
      */
     public String getAction() {

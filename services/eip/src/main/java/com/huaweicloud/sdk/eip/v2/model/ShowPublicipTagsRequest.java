@@ -32,7 +32,7 @@ public class ShowPublicipTagsRequest  {
 
 
     /**
-     * Get publicipId
+     * 资源ID
      * @return publicipId
      */
     public String getPublicipId() {

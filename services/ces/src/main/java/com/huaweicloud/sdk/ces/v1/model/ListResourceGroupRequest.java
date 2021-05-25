@@ -56,7 +56,7 @@ public class ListResourceGroupRequest  {
 
 
     /**
-     * Get groupName
+     * 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
      * @return groupName
      */
     public String getGroupName() {
@@ -78,7 +78,7 @@ public class ListResourceGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 资源分组的ID，长度为1-128，只能包含0-9/a-z/A-Z；如：rg16063743652226ew93e64p。
      * @return groupId
      */
     public String getGroupId() {
@@ -100,7 +100,7 @@ public class ListResourceGroupRequest  {
 
 
     /**
-     * Get status
+     * 资源分组健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，
      * @return status
      */
     public String getStatus() {
@@ -122,7 +122,7 @@ public class ListResourceGroupRequest  {
 
 
     /**
-     * Get start
+     * 分页起始值，类型为integer，默认值为0。
      * @return start
      */
     public Integer getStart() {
@@ -144,7 +144,7 @@ public class ListResourceGroupRequest  {
 
 
     /**
-     * Get limit
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
      * @return limit
      */
     public Integer getLimit() {

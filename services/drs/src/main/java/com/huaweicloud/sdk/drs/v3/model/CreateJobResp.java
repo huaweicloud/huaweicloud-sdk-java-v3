@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -53,6 +55,12 @@ public class CreateJobResp  {
     
     private String errorMsg;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="child_ids")
+    
+    private List<String> childIds = null;
+    
     public CreateJobResp withId(String id) {
         this.id = id;
         return this;
@@ -185,6 +193,42 @@ public class CreateJobResp  {
 
     
 
+    public CreateJobResp withChildIds(List<String> childIds) {
+        this.childIds = childIds;
+        return this;
+    }
+
+    
+    public CreateJobResp addChildIdsItem(String childIdsItem) {
+        if(this.childIds == null) {
+            this.childIds = new ArrayList<>();
+        }
+        this.childIds.add(childIdsItem);
+        return this;
+    }
+
+    public CreateJobResp withChildIds(Consumer<List<String>> childIdsSetter) {
+        if(this.childIds == null) {
+            this.childIds = new ArrayList<>();
+        }
+        childIdsSetter.accept(this.childIds);
+        return this;
+    }
+
+    /**
+     * 子任务ID，有子任务时返回该字段。
+     * @return childIds
+     */
+    public List<String> getChildIds() {
+        return childIds;
+    }
+
+    public void setChildIds(List<String> childIds) {
+        this.childIds = childIds;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -199,11 +243,12 @@ public class CreateJobResp  {
             Objects.equals(this.status, createJobResp.status) &&
             Objects.equals(this.createTime, createJobResp.createTime) &&
             Objects.equals(this.errorCode, createJobResp.errorCode) &&
-            Objects.equals(this.errorMsg, createJobResp.errorMsg);
+            Objects.equals(this.errorMsg, createJobResp.errorMsg) &&
+            Objects.equals(this.childIds, createJobResp.childIds);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, createTime, errorCode, errorMsg);
+        return Objects.hash(id, name, status, createTime, errorCode, errorMsg, childIds);
     }
     @Override
     public String toString() {
@@ -215,6 +260,7 @@ public class CreateJobResp  {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    childIds: ").append(toIndentedString(childIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

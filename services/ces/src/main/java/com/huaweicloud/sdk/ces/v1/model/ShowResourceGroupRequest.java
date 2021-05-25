@@ -62,7 +62,7 @@ public class ShowResourceGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 资源分组ID。
      * @return groupId
      */
     public String getGroupId() {
@@ -84,7 +84,7 @@ public class ShowResourceGroupRequest  {
 
 
     /**
-     * Get status
+     * 资源健康状态，值可为health、unhealth、no_alarm_rule；health表示健康，
      * @return status
      */
     public String getStatus() {
@@ -106,7 +106,7 @@ public class ShowResourceGroupRequest  {
 
 
     /**
-     * Get namespace
+     * 资源类型，即命名空间，如弹性云服务器的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return namespace
      */
     public String getNamespace() {
@@ -128,7 +128,7 @@ public class ShowResourceGroupRequest  {
 
 
     /**
-     * Get dname
+     * 资源维度，如：弹性云服务器，则维度为instance_id，各资源的监控维度名称可查看：“[服务指标维度](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return dname
      */
     public String getDname() {
@@ -150,7 +150,7 @@ public class ShowResourceGroupRequest  {
 
 
     /**
-     * Get start
+     * 分页起始值，类型为integer，默认值为0。
      * @return start
      */
     public String getStart() {
@@ -172,7 +172,7 @@ public class ShowResourceGroupRequest  {
 
 
     /**
-     * Get limit
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
      * @return limit
      */
     public String getLimit() {

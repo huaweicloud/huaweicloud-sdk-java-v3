@@ -32,7 +32,7 @@ public class StopTaskRequest  {
 
 
     /**
-     * Get taskId
+     * 迁移任务ID。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return taskId

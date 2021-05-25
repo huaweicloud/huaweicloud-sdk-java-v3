@@ -38,7 +38,7 @@ public class DeleteEnvironmentV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteEnvironmentV2Request  {
 
 
     /**
-     * Get envId
+     * 环境的ID
      * @return envId
      */
     public String getEnvId() {

@@ -20,6 +20,12 @@ public class UpdateUserResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="access_mode")
+    
+    private String accessMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="pwd_status")
     
     private Boolean pwdStatus;
@@ -95,6 +101,28 @@ public class UpdateUserResult  {
     @JsonProperty(value="password_expires_at")
     
     private String passwordExpiresAt;
+
+    public UpdateUserResult withAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+     * @return accessMode
+     */
+    public String getAccessMode() {
+        return accessMode;
+    }
+
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
+
+    
 
     public UpdateUserResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
@@ -398,7 +426,8 @@ public class UpdateUserResult  {
             return false;
         }
         UpdateUserResult updateUserResult = (UpdateUserResult) o;
-        return Objects.equals(this.pwdStatus, updateUserResult.pwdStatus) &&
+        return Objects.equals(this.accessMode, updateUserResult.accessMode) &&
+            Objects.equals(this.pwdStatus, updateUserResult.pwdStatus) &&
             Objects.equals(this.xuserId, updateUserResult.xuserId) &&
             Objects.equals(this.xuserType, updateUserResult.xuserType) &&
             Objects.equals(this.description, updateUserResult.description) &&
@@ -414,12 +443,13 @@ public class UpdateUserResult  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(pwdStatus, xuserId, xuserType, description, name, phone, domainId, enabled, areacode, email, id, links, passwordExpiresAt);
+        return Objects.hash(accessMode, pwdStatus, xuserId, xuserType, description, name, phone, domainId, enabled, areacode, email, id, links, passwordExpiresAt);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateUserResult {\n");
+        sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    xuserId: ").append(toIndentedString(xuserId)).append("\n");
         sb.append("    xuserType: ").append(toIndentedString(xuserType)).append("\n");

@@ -50,7 +50,7 @@ public class ListJobInfoDetailRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListJobInfoDetailRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -96,7 +96,7 @@ public class ListJobInfoDetailRequest  {
 
 
     /**
-     * Get startTime
+     * 开始时间，格式为UTC时间戳。
      * @return startTime
      */
     public String getStartTime() {
@@ -118,7 +118,7 @@ public class ListJobInfoDetailRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间，格式为UTC时间戳。
      * @return endTime
      */
     public String getEndTime() {

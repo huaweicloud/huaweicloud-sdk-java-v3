@@ -39,7 +39,7 @@ public class UpdateL7policiesRequest  {
 
 
     /**
-     * Get l7policyId
+     * 待更新的转发策略id
      * @return l7policyId
      */
     public String getL7policyId() {

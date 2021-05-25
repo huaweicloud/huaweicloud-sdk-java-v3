@@ -38,7 +38,7 @@ public class ListSubCustomerDiscountsRequest  {
 
 
     /**
-     * Get customerId
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
      * @return customerId
      */
     public String getCustomerId() {
@@ -60,7 +60,7 @@ public class ListSubCustomerDiscountsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

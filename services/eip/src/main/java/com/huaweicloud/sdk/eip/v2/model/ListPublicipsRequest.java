@@ -35,7 +35,7 @@ public class ListPublicipsRequest  {
     
     private Integer limit;
     /**
-     * Gets or Sets ipVersion
+     * IP地址版本信息  4：IPv4  6：IPv6
      */
     public static final class IpVersionEnum {
 
@@ -158,7 +158,7 @@ public class ListPublicipsRequest  {
 
 
     /**
-     * Get marker
+     * 取值为上一页数据的最后一条记录的id，为空时为查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -180,7 +180,7 @@ public class ListPublicipsRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回的个数  取值范围：0~intmax
      * minimum: 0
      * @return limit
      */
@@ -203,7 +203,7 @@ public class ListPublicipsRequest  {
 
 
     /**
-     * Get ipVersion
+     * IP地址版本信息  4：IPv4  6：IPv6
      * @return ipVersion
      */
     public IpVersionEnum getIpVersion() {
@@ -225,7 +225,7 @@ public class ListPublicipsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 功能说明：企业项目ID。可以使用该字段过滤某个企业项目下的弹性IP弹性公网IP。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。若需要查询当前用户所有企业项目绑定的弹性公网IP，请传参all_granted_eps。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -261,7 +261,7 @@ public class ListPublicipsRequest  {
     }
 
     /**
-     * Get portId
+     * 绑定弹性公网IP的端口id
      * @return portId
      */
     public List<String> getPortId() {
@@ -297,7 +297,7 @@ public class ListPublicipsRequest  {
     }
 
     /**
-     * Get publicIpAddress
+     * IPv4时是申请到的弹性公网IP地址，IPv6时是IPv6地址对应的IPv4地址
      * @return publicIpAddress
      */
     public List<String> getPublicIpAddress() {
@@ -333,7 +333,7 @@ public class ListPublicipsRequest  {
     }
 
     /**
-     * Get privateIpAddress
+     * 关联端口的私有IP地址
      * @return privateIpAddress
      */
     public List<String> getPrivateIpAddress() {
@@ -369,7 +369,7 @@ public class ListPublicipsRequest  {
     }
 
     /**
-     * Get id
+     * 弹性公网IP唯一标识
      * @return id
      */
     public List<String> getId() {

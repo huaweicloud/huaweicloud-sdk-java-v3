@@ -22,7 +22,7 @@ import java.util.Objects;
 public class BatchSetSpeedRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型
      */
     public static final class XLanguageEnum {
 
@@ -121,7 +121,7 @@ public class BatchSetSpeedRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

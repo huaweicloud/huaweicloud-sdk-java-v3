@@ -122,7 +122,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询中每页的监听器个数
      * minimum: 0
      * maximum: 9223372036854775807
      * @return limit
@@ -146,7 +146,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询的起始的资源id，表示上一页最后一条查询记录的负载均衡器的id。不指定时表示查询第一页。
      * @return marker
      */
     public String getMarker() {
@@ -168,7 +168,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -190,7 +190,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get id
+     * 监听器ID。
      * @return id
      */
     public String getId() {
@@ -212,7 +212,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get name
+     * 监听器名称。
      * @return name
      */
     public String getName() {
@@ -234,7 +234,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get description
+     * 监听器的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -256,7 +256,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get defaultPoolId
+     * 监听器的默认后端云服务器组ID。
      * @return defaultPoolId
      */
     public String getDefaultPoolId() {
@@ -278,7 +278,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get defaultTlsContainerRef
+     * 监听器使用的服务器证书ID。
      * @return defaultTlsContainerRef
      */
     public String getDefaultTlsContainerRef() {
@@ -300,7 +300,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get clientCaTlsContainerRef
+     * 监听器使用的CA证书ID。
      * @return clientCaTlsContainerRef
      */
     public String getClientCaTlsContainerRef() {
@@ -322,7 +322,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get protocol
+     * 监听器的监听协议。取值范围：TCP、HTTP、UDP、TERMINATED_HTTPS。
      * @return protocol
      */
     public String getProtocol() {
@@ -344,7 +344,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get protocolPort
+     * 监听器的监听端口。
      * @return protocolPort
      */
     public Integer getProtocolPort() {
@@ -366,7 +366,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get tlsCiphersPolicy
+     * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict四种安全策略。
      * @return tlsCiphersPolicy
      */
     public String getTlsCiphersPolicy() {
@@ -388,7 +388,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get memberTimeout
+     * 等待后端服务器请求超时时间，协议为HTTP， TERMINATED_HTTPS时才有意义。取值范围 1-300
      * @return memberTimeout
      */
     public Integer getMemberTimeout() {
@@ -410,7 +410,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get clientTimeout
+     * 等待客户端请求超时时间，协议为HTTP， TERMINATED_HTTPS的监听器才有意义。取值范围 1-60
      * @return clientTimeout
      */
     public Integer getClientTimeout() {
@@ -432,7 +432,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get keepaliveTimeout
+     * TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，HTTP/TERMINATED_HTTPS监听器为客户端连接空闲超时时间，取值范围为（1-300s）默认值为15s。 UDP此字段无意义
      * @return keepaliveTimeout
      */
     public Integer getKeepaliveTimeout() {
@@ -454,7 +454,7 @@ public class ListListenersRequest  {
 
 
     /**
-     * Get tlsContainerId
+     * 查询证书所关联的监听器
      * @return tlsContainerId
      */
     public String getTlsContainerId() {

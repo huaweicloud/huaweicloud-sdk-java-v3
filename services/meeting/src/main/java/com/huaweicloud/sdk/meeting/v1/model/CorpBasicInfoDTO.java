@@ -89,6 +89,12 @@ public class CorpBasicInfoDTO  {
     
     private Boolean autoUserCreate;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="corpType")
+    
+    private Integer corpType;
+
     public CorpBasicInfoDTO withId(String id) {
         this.id = id;
         return this;
@@ -353,6 +359,28 @@ public class CorpBasicInfoDTO  {
 
     
 
+    public CorpBasicInfoDTO withCorpType(Integer corpType) {
+        this.corpType = corpType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业类型
+     * @return corpType
+     */
+    public Integer getCorpType() {
+        return corpType;
+    }
+
+    public void setCorpType(Integer corpType) {
+        this.corpType = corpType;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -373,11 +401,12 @@ public class CorpBasicInfoDTO  {
             Objects.equals(this.enableSMS, corpBasicInfoDTO.enableSMS) &&
             Objects.equals(this.enableCloudDisk, corpBasicInfoDTO.enableCloudDisk) &&
             Objects.equals(this.enablePstn, corpBasicInfoDTO.enablePstn) &&
-            Objects.equals(this.autoUserCreate, corpBasicInfoDTO.autoUserCreate);
+            Objects.equals(this.autoUserCreate, corpBasicInfoDTO.autoUserCreate) &&
+            Objects.equals(this.corpType, corpBasicInfoDTO.corpType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, adminName, account, phone, country, email, enableSMS, enableCloudDisk, enablePstn, autoUserCreate);
+        return Objects.hash(id, name, address, adminName, account, phone, country, email, enableSMS, enableCloudDisk, enablePstn, autoUserCreate, corpType);
     }
     @Override
     public String toString() {
@@ -395,6 +424,7 @@ public class CorpBasicInfoDTO  {
         sb.append("    enableCloudDisk: ").append(toIndentedString(enableCloudDisk)).append("\n");
         sb.append("    enablePstn: ").append(toIndentedString(enablePstn)).append("\n");
         sb.append("    autoUserCreate: ").append(toIndentedString(autoUserCreate)).append("\n");
+        sb.append("    corpType: ").append(toIndentedString(corpType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

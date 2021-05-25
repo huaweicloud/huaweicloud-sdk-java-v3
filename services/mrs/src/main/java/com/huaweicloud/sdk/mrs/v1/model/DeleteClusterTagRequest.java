@@ -38,7 +38,7 @@ public class DeleteClusterTagRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群ID。
      * @return clusterId
      */
     public String getClusterId() {
@@ -60,7 +60,7 @@ public class DeleteClusterTagRequest  {
 
 
     /**
-     * Get key
+     * 键。标签的key值
      * @return key
      */
     public String getKey() {

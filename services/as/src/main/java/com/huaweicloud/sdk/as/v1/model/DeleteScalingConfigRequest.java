@@ -32,7 +32,7 @@ public class DeleteScalingConfigRequest  {
 
 
     /**
-     * Get scalingConfigurationId
+     * 伸缩配置ID。
      * @return scalingConfigurationId
      */
     public String getScalingConfigurationId() {

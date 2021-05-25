@@ -39,7 +39,7 @@ public class BatchCreateLoadbalancerTagsRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 负载均衡器ID。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

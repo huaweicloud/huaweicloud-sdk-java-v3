@@ -38,7 +38,7 @@ public class ListConversionsRequest  {
 
 
     /**
-     * Get xLanguage
+     * |忽略大小写，默认 zh_CN：中文 en_US：英文|
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ListConversionsRequest  {
 
 
     /**
-     * Get measureType
+     * |参数名称：度量类型| |参数的约束及描述：|
      * @return measureType
      */
     public Integer getMeasureType() {

@@ -25,7 +25,7 @@ import java.util.Objects;
 public class ListInstancesRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言
      */
     public static final class XLanguageEnum {
 
@@ -121,7 +121,7 @@ public class ListInstancesRequest  {
     
     private String name;
     /**
-     * Gets or Sets type
+     * 按照实例类型查询。取值Single、Ha、Replica，分别对应于单实例、主备实例和只读实例。
      */
     public static final class TypeEnum {
 
@@ -211,7 +211,7 @@ public class ListInstancesRequest  {
     
     private TypeEnum type;
     /**
-     * Gets or Sets datastoreType
+     * 数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer
      */
     public static final class DatastoreTypeEnum {
 
@@ -340,7 +340,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -364,7 +364,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get id
+     * 实例ID。  “\\*”为系统保留字符，如果id是以“\\*”起始，表示按照\\*后面的值模糊匹配，否则，按照id精确匹配查询。不能只传入“\\*”。
      * @return id
      */
     public String getId() {
@@ -386,7 +386,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get name
+     * 实例名称。  “\\*”为系统保留字符，如果name是以“\\*”起始，表示按照\\*后面的值模糊匹配，否则，按照name精确匹配查询。不能只传入“\\*”。
      * @return name
      */
     public String getName() {
@@ -408,7 +408,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get type
+     * 按照实例类型查询。取值Single、Ha、Replica，分别对应于单实例、主备实例和只读实例。
      * @return type
      */
     public TypeEnum getType() {
@@ -430,7 +430,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get datastoreType
+     * 数据库类型，区分大小写。  - MySQL - PostgreSQL - SQLServer
      * @return datastoreType
      */
     public DatastoreTypeEnum getDatastoreType() {
@@ -452,7 +452,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get vpcId
+     * 虚拟私有云ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -474,7 +474,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -496,7 +496,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * @return offset
      */
     public Integer getOffset() {
@@ -518,7 +518,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
      * @return limit
      */
     public Integer getLimit() {
@@ -540,7 +540,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * Get tags
+     * 根据实例标签键值对进行查询。{key}表示标签键，{value}表示标签值，最多包含10组。key不可以为空或重复，value可以为空。如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。
      * @return tags
      */
     public String getTags() {

@@ -33,7 +33,7 @@ public class ListScalingGroupsRequest  {
     
     private String scalingConfigurationId;
     /**
-     * Gets or Sets scalingGroupStatus
+     * 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
      */
     public static final class ScalingGroupStatusEnum {
 
@@ -141,6 +141,12 @@ public class ListScalingGroupsRequest  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
     public ListScalingGroupsRequest withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -150,7 +156,7 @@ public class ListScalingGroupsRequest  {
 
 
     /**
-     * Get scalingGroupName
+     * 伸缩组名称
      * @return scalingGroupName
      */
     public String getScalingGroupName() {
@@ -172,7 +178,7 @@ public class ListScalingGroupsRequest  {
 
 
     /**
-     * Get scalingConfigurationId
+     * 伸缩配置ID，通过查询弹性伸缩配置列表接口获取，详见查询弹性伸缩配置列表。
      * @return scalingConfigurationId
      */
     public String getScalingConfigurationId() {
@@ -194,7 +200,7 @@ public class ListScalingGroupsRequest  {
 
 
     /**
-     * Get scalingGroupStatus
+     * 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
      * @return scalingGroupStatus
      */
     public ScalingGroupStatusEnum getScalingGroupStatus() {
@@ -216,7 +222,7 @@ public class ListScalingGroupsRequest  {
 
 
     /**
-     * Get startNumber
+     * 查询的起始行号，默认为0。
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -238,7 +244,7 @@ public class ListScalingGroupsRequest  {
 
 
     /**
-     * Get limit
+     * 查询的记录条数，默认为20。
      * @return limit
      */
     public Integer getLimit() {
@@ -247,6 +253,28 @@ public class ListScalingGroupsRequest  {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    
+
+    public ListScalingGroupsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     
@@ -264,11 +292,12 @@ public class ListScalingGroupsRequest  {
             Objects.equals(this.scalingConfigurationId, listScalingGroupsRequest.scalingConfigurationId) &&
             Objects.equals(this.scalingGroupStatus, listScalingGroupsRequest.scalingGroupStatus) &&
             Objects.equals(this.startNumber, listScalingGroupsRequest.startNumber) &&
-            Objects.equals(this.limit, listScalingGroupsRequest.limit);
+            Objects.equals(this.limit, listScalingGroupsRequest.limit) &&
+            Objects.equals(this.enterpriseProjectId, listScalingGroupsRequest.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupName, scalingConfigurationId, scalingGroupStatus, startNumber, limit);
+        return Objects.hash(scalingGroupName, scalingConfigurationId, scalingGroupStatus, startNumber, limit, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -279,6 +308,7 @@ public class ListScalingGroupsRequest  {
         sb.append("    scalingGroupStatus: ").append(toIndentedString(scalingGroupStatus)).append("\n");
         sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

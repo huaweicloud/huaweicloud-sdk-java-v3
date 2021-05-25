@@ -86,7 +86,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量。
      * @return limit
      */
     public String getLimit() {
@@ -108,7 +108,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get marker
+     * 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
      * @return marker
      */
     public String getMarker() {
@@ -130,7 +130,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get pageReverse
+     * False/True，是否设置分页的顺序。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -152,7 +152,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get id
+     * 浮动IP的id。
      * @return id
      */
     public String getId() {
@@ -174,7 +174,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get floatingIpAddress
+     * 浮动IP地址。
      * @return floatingIpAddress
      */
     public String getFloatingIpAddress() {
@@ -196,7 +196,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get routerId
+     * 所属路由器id。
      * @return routerId
      */
     public String getRouterId() {
@@ -218,7 +218,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get portId
+     * 端口id。
      * @return portId
      */
     public String getPortId() {
@@ -240,7 +240,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get fixedIpAddress
+     * 关联端口的私有IP地址。
      * @return fixedIpAddress
      */
     public String getFixedIpAddress() {
@@ -262,7 +262,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get tenantId
+     * 项目ID。
      * @return tenantId
      */
     public String getTenantId() {
@@ -284,7 +284,7 @@ public class NeutronListFloatingIpsRequest  {
 
 
     /**
-     * Get floatingNetworkId
+     * 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET /v2.0/networks?name={floating_network}或neutron net-external-list方式查询
      * @return floatingNetworkId
      */
     public String getFloatingNetworkId() {

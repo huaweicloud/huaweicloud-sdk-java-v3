@@ -74,7 +74,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。 为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。 默认查询所有精英服务商的代金券额度发放回收记录。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {
@@ -96,7 +96,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get quotaId
+     * 精英服务商的代金券额度ID。 即华为云伙伴能力中心给精英服务商发放代金券额度时，产生的精英服务商的代金券额度ID，或者从精英服务商回收代金券额度时，精英服务商的代金券额度ID。
      * @return quotaId
      */
     public String getQuotaId() {
@@ -118,7 +118,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get operationTimeBegin
+     * 查询条件：操作起始时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * @return operationTimeBegin
      */
     public String getOperationTimeBegin() {
@@ -140,7 +140,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get operationTimeEnd
+     * 查询条件：操作截止时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * @return operationTimeEnd
      */
     public String getOperationTimeEnd() {
@@ -162,7 +162,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get parentQuotaId
+     * 父额度ID。 这即华为云伙伴能力中心给精英服务商发放代金券额度时，华为云伙伴能力中心的额度ID，或者从精英服务商回收代金券额度时，回收的华为云伙伴能力中心的额度ID。
      * @return parentQuotaId
      */
     public String getParentQuotaId() {
@@ -184,7 +184,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get operationType
+     * 操作类型。 10：发放额度11：回收额度
      * @return operationType
      */
     public String getOperationType() {
@@ -206,7 +206,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始，默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -230,7 +230,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的数目。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit

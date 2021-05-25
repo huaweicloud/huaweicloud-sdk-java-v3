@@ -60,7 +60,7 @@ public class BatchDeleteInstanceTopicRespTopics  {
 
 
     /**
-     * topic名称。
+     * 是否删除成功。
      * @return success
      */
     public Boolean getSuccess() {

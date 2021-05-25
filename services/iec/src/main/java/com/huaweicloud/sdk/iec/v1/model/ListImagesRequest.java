@@ -35,7 +35,7 @@ public class ListImagesRequest  {
     
     private String imagetype;
     /**
-     * Gets or Sets _protected
+     * 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
      */
     public static final class ProtectedEnum {
 
@@ -149,7 +149,7 @@ public class ListImagesRequest  {
     
     private String osType;
     /**
-     * Gets or Sets virtualEnvType
+     * 镜像使用环境类型。  目前仅支持系统盘镜像，取值为：FusionCompute
      */
     public static final class VirtualEnvTypeEnum {
 
@@ -227,7 +227,7 @@ public class ListImagesRequest  {
     
     private VirtualEnvTypeEnum virtualEnvType;
     /**
-     * Gets or Sets isregistered
+     * 镜像是否可用，取值为true/false。 > 查询公共镜像时，该参数无效。
      */
     public static final class IsregisteredEnum {
 
@@ -323,7 +323,7 @@ public class ListImagesRequest  {
     
     private Integer offset;
     /**
-     * Gets or Sets sortKey
+     * 用于排序，表示按照哪个字段排序，取值为镜像属性name、status、disk_format、created_at，默认取值为created_at。
      */
     public static final class SortKeyEnum {
 
@@ -419,7 +419,7 @@ public class ListImagesRequest  {
     
     private SortKeyEnum sortKey;
     /**
-     * Gets or Sets sortDir
+     * 用于排序，表示升序还是降序，取值为asc和desc，与sort_key一起组合使用，默认为降序desc。
      */
     public static final class SortDirEnum {
 
@@ -548,7 +548,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get imagetype
+     * 镜像类型，目前支持以下类型：  - 公共镜像：gold  - 私有镜像：private
      * @return imagetype
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -572,7 +572,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get _protected
+     * 镜像是否是受保护，取值为true/false，一般查询公共镜像时候取值为true，查询私有镜像可以不指定。
      * @return _protected
      */
     public ProtectedEnum getProtected() {
@@ -594,7 +594,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get id
+     * 镜像ID，精确匹配。
      * @return id
      */
     public String getId() {
@@ -616,7 +616,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get visibility
+     * 是否被其他租户可见，取值如下：  - public：公共镜像  - private：私有镜像
      * @return visibility
      */
     public String getVisibility() {
@@ -638,7 +638,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get status
+     * 镜像状态。取值如下：  - saving：表示镜像正在上传文件到后端存储  - deleted：表示镜像已经删除  - killed：表示镜像上传错误  - active：表示镜像可以正常使用
      * @return status
      */
     public String getStatus() {
@@ -660,7 +660,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get name
+     * 镜像名称，匹配规则为精确匹配。
      * @return name
      */
     public String getName() {
@@ -682,7 +682,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get osType
+     * 镜像系统类型，取值如下：  - Linux - Windows - Other
      * @return osType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -706,7 +706,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get virtualEnvType
+     * 镜像使用环境类型。  目前仅支持系统盘镜像，取值为：FusionCompute
      * @return virtualEnvType
      */
     public VirtualEnvTypeEnum getVirtualEnvType() {
@@ -728,7 +728,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get isregistered
+     * 镜像是否可用，取值为true/false。 > 查询公共镜像时，该参数无效。
      * @return isregistered
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -752,7 +752,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get limit
+     * 用于分页，表示查询几条镜像记录，取值为正整数，最大（默认）取值为500
      * minimum: 0
      * maximum: 500
      * @return limit
@@ -776,7 +776,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get offset
+     * 用于分页，表示查询偏移量，表示从整个列表查询结果中的该位置向后进行查询，并非页数偏移，默认取值为0，表示查询第一页。
      * @return offset
      */
     public Integer getOffset() {
@@ -798,7 +798,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get sortKey
+     * 用于排序，表示按照哪个字段排序，取值为镜像属性name、status、disk_format、created_at，默认取值为created_at。
      * @return sortKey
      */
     public SortKeyEnum getSortKey() {
@@ -820,7 +820,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get sortDir
+     * 用于排序，表示升序还是降序，取值为asc和desc，与sort_key一起组合使用，默认为降序desc。
      * @return sortDir
      */
     public SortDirEnum getSortDir() {
@@ -842,7 +842,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvm
+     * 如果镜像支持KVM，取值为true，否则无该属性。
      * @return supportKvm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -866,7 +866,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvmGpuType
+     * 如果镜像是支持KVM虚拟化平台下的GPU类型，取值为“V100_vGPU”或者“RTX5000”，否则无该属性。
      * @return supportKvmGpuType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -890,7 +890,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvmAscend310
+     * 如果镜像支持AI加速，取值为true，否则无该属性。
      * @return supportKvmAscend310
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -914,7 +914,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportKvmHi1822Hiovs
+     * 如果镜像支持计算增强，取值为true，否则无该属性。
      * @return supportKvmHi1822Hiovs
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -938,7 +938,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportArm
+     * 如果镜像为ARM架构类型，取值为true，否则无该属性。
      * @return supportArm
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -962,7 +962,7 @@ public class ListImagesRequest  {
 
 
     /**
-     * Get supportGpuT4
+     * 如果镜像支持GPU T4，取值为true，否则无该属性。
      * @return supportGpuT4
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

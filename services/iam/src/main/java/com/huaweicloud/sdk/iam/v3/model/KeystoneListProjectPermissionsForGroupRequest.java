@@ -38,7 +38,7 @@ public class KeystoneListProjectPermissionsForGroupRequest  {
 
 
     /**
-     * Get projectId
+     * 项目ID，获取方式请参见：[获取项目名称、项目ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return projectId
      */
     public String getProjectId() {
@@ -60,7 +60,7 @@ public class KeystoneListProjectPermissionsForGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return groupId
      */
     public String getGroupId() {

@@ -50,7 +50,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get orderId
+     * 订单ID。 查询订单列表时系统会返回订单ID。
      * @return orderId
      */
     public String getOrderId() {
@@ -72,7 +72,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get limit
+     * 每页大小。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -96,7 +96,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -120,7 +120,7 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）查询精英服务商的客户订单详情时，需要携带该参数；否则只能查询自己客户的订单详情。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -56,7 +56,7 @@ public class SearchCorpRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -80,7 +80,7 @@ public class SearchCorpRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -102,7 +102,7 @@ public class SearchCorpRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
      * minimum: 0
      * @return offset
      */
@@ -125,7 +125,7 @@ public class SearchCorpRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -149,7 +149,7 @@ public class SearchCorpRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件
      * @return searchKey
      */
     public String getSearchKey() {

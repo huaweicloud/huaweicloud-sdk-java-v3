@@ -38,7 +38,7 @@ public class ListMigprojectsRequest  {
 
 
     /**
-     * Get limit
+     * 每一页记录的迁移项目
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -62,7 +62,7 @@ public class ListMigprojectsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量
      * minimum: 0
      * maximum: 65535
      * @return offset

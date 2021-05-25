@@ -3,11 +3,17 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 
 
+import java.util.Collections;
+
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,6 +40,12 @@ public class ListProductsRequest  {
     @JsonProperty(value="app_id")
     
     private String appId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -64,6 +76,180 @@ public class ListProductsRequest  {
     @JsonProperty(value="device_type")
     
     private String deviceType;
+    /**
+     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     */
+    public static final class ProductTypeEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ProductTypeEnum NUMBER_0 = new ProductTypeEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ProductTypeEnum NUMBER_1 = new ProductTypeEnum(1);
+        
+
+        private static final Map<Integer, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ProductTypeEnum> createStaticFields() {
+            Map<Integer, ProductTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ProductTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProductTypeEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ProductTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProductTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ProductTypeEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ProductTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ProductTypeEnum) {
+                return this.value.equals(((ProductTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="product_type")
+    
+    private ProductTypeEnum productType;
+    /**
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     */
+    public static final class ProtocolTypeEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
+        
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
+        
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final ProtocolTypeEnum NUMBER_4 = new ProtocolTypeEnum(4);
+        
+
+        private static final Map<Integer, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ProtocolTypeEnum> createStaticFields() {
+            Map<Integer, ProtocolTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(2, NUMBER_2);
+            map.put(4, NUMBER_4);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ProtocolTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtocolTypeEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ProtocolTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ProtocolTypeEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ProtocolTypeEnum) {
+                return this.value.equals(((ProtocolTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="protocol_type")
+    
+    private ProtocolTypeEnum protocolType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,6 +275,18 @@ public class ListProductsRequest  {
     
     private Integer offset;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="app_name")
+    
+    private String appName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="product_serial")
+    
+    private String productSerial;
+
     public ListProductsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -98,7 +296,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -120,7 +318,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -144,7 +342,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get appId
+     * 应用ID
      * @return appId
      */
     public String getAppId() {
@@ -153,6 +351,28 @@ public class ListProductsRequest  {
 
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    
+
+    public ListProductsRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 产品ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     
@@ -166,7 +386,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get name
+     * 产品名称
      * @return name
      */
     public String getName() {
@@ -188,7 +408,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get manufacturerId
+     * 厂商ID
      * @return manufacturerId
      */
     public String getManufacturerId() {
@@ -210,7 +430,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get manufacturerName
+     * 厂商名称
      * @return manufacturerName
      */
     public String getManufacturerName() {
@@ -232,7 +452,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get model
+     * 型号
      * @return model
      */
     public String getModel() {
@@ -254,7 +474,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get deviceType
+     * 产品的设备类型，默认Default
      * @return deviceType
      */
     public String getDeviceType() {
@@ -263,6 +483,54 @@ public class ListProductsRequest  {
 
     public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
+    }
+
+    
+
+    public ListProductsRequest withProductType(ProductTypeEnum productType) {
+        this.productType = productType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     * minimum: 0
+     * maximum: 10
+     * @return productType
+     */
+    public ProductTypeEnum getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductTypeEnum productType) {
+        this.productType = productType;
+    }
+
+    
+
+    public ListProductsRequest withProtocolType(ProtocolTypeEnum protocolType) {
+        this.protocolType = protocolType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     * minimum: 0
+     * maximum: 10
+     * @return protocolType
+     */
+    public ProtocolTypeEnum getProtocolType() {
+        return protocolType;
+    }
+
+    public void setProtocolType(ProtocolTypeEnum protocolType) {
+        this.protocolType = protocolType;
     }
 
     
@@ -276,7 +544,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get createdUserName
+     * 创建用户
      * @return createdUserName
      */
     public String getCreatedUserName() {
@@ -298,9 +566,9 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get createdDateStart
+     * 创建时间起始，格式timestamp(ms)，使用UTC时区
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return createdDateStart
      */
     public Long getCreatedDateStart() {
@@ -322,9 +590,9 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get createdDateEnd
+     * 创建时间截止，格式timestamp(ms)，使用UTC时区
      * minimum: 1
-     * maximum: 999999999999999999
+     * maximum: 99999999999999999
      * @return createdDateEnd
      */
     public Long getCreatedDateEnd() {
@@ -346,7 +614,7 @@ public class ListProductsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset
@@ -357,6 +625,50 @@ public class ListProductsRequest  {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    
+
+    public ListProductsRequest withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用名称
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    
+
+    public ListProductsRequest withProductSerial(String productSerial) {
+        this.productSerial = productSerial;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
+     * @return productSerial
+     */
+    public String getProductSerial() {
+        return productSerial;
+    }
+
+    public void setProductSerial(String productSerial) {
+        this.productSerial = productSerial;
     }
 
     
@@ -373,19 +685,24 @@ public class ListProductsRequest  {
         return Objects.equals(this.instanceId, listProductsRequest.instanceId) &&
             Objects.equals(this.limit, listProductsRequest.limit) &&
             Objects.equals(this.appId, listProductsRequest.appId) &&
+            Objects.equals(this.id, listProductsRequest.id) &&
             Objects.equals(this.name, listProductsRequest.name) &&
             Objects.equals(this.manufacturerId, listProductsRequest.manufacturerId) &&
             Objects.equals(this.manufacturerName, listProductsRequest.manufacturerName) &&
             Objects.equals(this.model, listProductsRequest.model) &&
             Objects.equals(this.deviceType, listProductsRequest.deviceType) &&
+            Objects.equals(this.productType, listProductsRequest.productType) &&
+            Objects.equals(this.protocolType, listProductsRequest.protocolType) &&
             Objects.equals(this.createdUserName, listProductsRequest.createdUserName) &&
             Objects.equals(this.createdDateStart, listProductsRequest.createdDateStart) &&
             Objects.equals(this.createdDateEnd, listProductsRequest.createdDateEnd) &&
-            Objects.equals(this.offset, listProductsRequest.offset);
+            Objects.equals(this.offset, listProductsRequest.offset) &&
+            Objects.equals(this.appName, listProductsRequest.appName) &&
+            Objects.equals(this.productSerial, listProductsRequest.productSerial);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, appId, name, manufacturerId, manufacturerName, model, deviceType, createdUserName, createdDateStart, createdDateEnd, offset);
+        return Objects.hash(instanceId, limit, appId, id, name, manufacturerId, manufacturerName, model, deviceType, productType, protocolType, createdUserName, createdDateStart, createdDateEnd, offset, appName, productSerial);
     }
     @Override
     public String toString() {
@@ -394,15 +711,20 @@ public class ListProductsRequest  {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    manufacturerId: ").append(toIndentedString(manufacturerId)).append("\n");
         sb.append("    manufacturerName: ").append(toIndentedString(manufacturerName)).append("\n");
         sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("    deviceType: ").append(toIndentedString(deviceType)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
+        sb.append("    protocolType: ").append(toIndentedString(protocolType)).append("\n");
         sb.append("    createdUserName: ").append(toIndentedString(createdUserName)).append("\n");
         sb.append("    createdDateStart: ").append(toIndentedString(createdDateStart)).append("\n");
         sb.append("    createdDateEnd: ").append(toIndentedString(createdDateEnd)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
+        sb.append("    productSerial: ").append(toIndentedString(productSerial)).append("\n");
         sb.append("}");
         return sb.toString();
     }

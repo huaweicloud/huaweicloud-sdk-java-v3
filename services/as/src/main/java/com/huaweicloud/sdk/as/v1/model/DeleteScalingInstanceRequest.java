@@ -27,7 +27,7 @@ public class DeleteScalingInstanceRequest  {
     
     private String instanceId;
     /**
-     * Gets or Sets instanceDelete
+     * 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
      */
     public static final class InstanceDeleteEnum {
 
@@ -120,7 +120,7 @@ public class DeleteScalingInstanceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -142,7 +142,7 @@ public class DeleteScalingInstanceRequest  {
 
 
     /**
-     * Get instanceDelete
+     * 实例移出伸缩组，是否删除云服务器实例。默认为no；可选值为yes或no。
      * @return instanceDelete
      */
     public InstanceDeleteEnum getInstanceDelete() {

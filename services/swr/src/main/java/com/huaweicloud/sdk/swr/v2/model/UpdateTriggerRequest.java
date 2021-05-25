@@ -51,7 +51,7 @@ public class UpdateTriggerRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -73,7 +73,7 @@ public class UpdateTriggerRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {
@@ -95,7 +95,7 @@ public class UpdateTriggerRequest  {
 
 
     /**
-     * Get trigger
+     * 触发器名称
      * @return trigger
      */
     public String getTrigger() {

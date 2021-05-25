@@ -51,7 +51,7 @@ public class ShowClusterRespClusterBrokers  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="register_time")
     
-    private String registerTime;
+    private Long registerTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -169,7 +169,7 @@ public class ShowClusterRespClusterBrokers  {
 
     
 
-    public ShowClusterRespClusterBrokers withRegisterTime(String registerTime) {
+    public ShowClusterRespClusterBrokers withRegisterTime(Long registerTime) {
         this.registerTime = registerTime;
         return this;
     }
@@ -181,11 +181,11 @@ public class ShowClusterRespClusterBrokers  {
      * broker注册时间，为unix时间戳格式。
      * @return registerTime
      */
-    public String getRegisterTime() {
+    public Long getRegisterTime() {
         return registerTime;
     }
 
-    public void setRegisterTime(String registerTime) {
+    public void setRegisterTime(Long registerTime) {
         this.registerTime = registerTime;
     }
 

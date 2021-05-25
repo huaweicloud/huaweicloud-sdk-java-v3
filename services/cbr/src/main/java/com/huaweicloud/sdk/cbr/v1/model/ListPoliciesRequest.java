@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListPoliciesRequest  {
 
     /**
-     * Gets or Sets operationType
+     * 策略类型：备份（backup）、复制(replication)
      */
     public static final class OperationTypeEnum {
 
@@ -120,7 +120,7 @@ public class ListPoliciesRequest  {
 
 
     /**
-     * Get operationType
+     * 策略类型：备份（backup）、复制(replication)
      * @return operationType
      */
     public OperationTypeEnum getOperationType() {
@@ -142,7 +142,7 @@ public class ListPoliciesRequest  {
 
 
     /**
-     * Get vaultId
+     * 存储库ID
      * @return vaultId
      */
     public String getVaultId() {

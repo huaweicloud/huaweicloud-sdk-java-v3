@@ -44,7 +44,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get marker
+     * 功能说明：分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -66,7 +66,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -88,7 +88,7 @@ public class ListSecurityGroupRulesRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 安全组ID
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

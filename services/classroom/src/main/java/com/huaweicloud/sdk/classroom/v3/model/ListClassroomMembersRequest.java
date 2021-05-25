@@ -50,7 +50,7 @@ public class ListClassroomMembersRequest  {
 
 
     /**
-     * Get classroomId
+     * 课堂ID
      * @return classroomId
      */
     public String getClassroomId() {
@@ -72,7 +72,7 @@ public class ListClassroomMembersRequest  {
 
 
     /**
-     * Get offset
+     * 信息记录的起始编号
      * minimum: 1
      * maximum: 1000
      * @return offset
@@ -96,7 +96,7 @@ public class ListClassroomMembersRequest  {
 
 
     /**
-     * Get limit
+     * 每页包含的信息记录数
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -120,7 +120,7 @@ public class ListClassroomMembersRequest  {
 
 
     /**
-     * Get filter
+     * 按照条件搜索学生，搜索字段会同时匹配姓名，学号，用户名，班级
      * @return filter
      */
     public String getFilter() {

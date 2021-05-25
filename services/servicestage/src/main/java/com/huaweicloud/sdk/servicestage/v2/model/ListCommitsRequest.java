@@ -50,7 +50,7 @@ public class ListCommitsRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListCommitsRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {
@@ -96,7 +96,7 @@ public class ListCommitsRequest  {
 
 
     /**
-     * Get project
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
      * @return project
      */
     public String getProject() {
@@ -118,7 +118,7 @@ public class ListCommitsRequest  {
 
 
     /**
-     * Get ref
+     * 分支名称或者tag名称，如果没有提供，使用默认分支。
      * @return ref
      */
     public String getRef() {

@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRespTags;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -541,6 +542,12 @@ public class ListInstancesRespInstances  {
     
     private String cesVersion;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tags")
+    
+    private List<ListInstancesRespTags> tags = null;
+    
     public ListInstancesRespInstances withName(String name) {
         this.name = name;
         return this;
@@ -660,7 +667,7 @@ public class ListInstancesRespInstances  {
 
 
     /**
-     * Kafka实例的最大topic数。
+     * Kafka实例的分区数量。
      * @return partitionNum
      */
     public String getPartitionNum() {
@@ -1889,6 +1896,42 @@ public class ListInstancesRespInstances  {
 
     
 
+    public ListInstancesRespInstances withTags(List<ListInstancesRespTags> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    
+    public ListInstancesRespInstances addTagsItem(ListInstancesRespTags tagsItem) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ListInstancesRespInstances withTags(Consumer<List<ListInstancesRespTags>> tagsSetter) {
+        if(this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<ListInstancesRespTags> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ListInstancesRespTags> tags) {
+        this.tags = tags;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1957,11 +2000,12 @@ public class ListInstancesRespInstances  {
             Objects.equals(this.podConnectAddress, listInstancesRespInstances.podConnectAddress) &&
             Objects.equals(this.diskEncrypted, listInstancesRespInstances.diskEncrypted) &&
             Objects.equals(this.kafkaPrivateConnectAddress, listInstancesRespInstances.kafkaPrivateConnectAddress) &&
-            Objects.equals(this.cesVersion, listInstancesRespInstances.cesVersion);
+            Objects.equals(this.cesVersion, listInstancesRespInstances.cesVersion) &&
+            Objects.equals(this.tags, listInstancesRespInstances.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, engine, engineVersion, specification, storageSpace, partitionNum, usedStorageSpace, connectAddress, port, status, instanceId, resourceSpecCode, chargingMode, vpcId, vpcName, createdAt, userId, userName, orderId, maintainBegin, maintainEnd, enablePublicip, managementConnectAddress, sslEnable, enterpriseProjectId, isLogicalVolume, extendTimes, enableAutoTopic, type, productId, securityGroupId, securityGroupName, subnetId, availableZones, totalStorageSpace, publicConnectAddress, storageResourceId, storageSpecCode, serviceType, storageType, retentionPolicy, kafkaPublicStatus, publicBandwidth, kafkaManagerUser, enableLogCollection, crossVpcInfo, ipv6Enable, ipv6ConnectAddresses, connectorEnable, connectorId, restEnable, restConnectAddress, messageQueryInstEnable, vpcClientPlain, supportFeatures, traceEnable, podConnectAddress, diskEncrypted, kafkaPrivateConnectAddress, cesVersion);
+        return Objects.hash(name, engine, engineVersion, specification, storageSpace, partitionNum, usedStorageSpace, connectAddress, port, status, instanceId, resourceSpecCode, chargingMode, vpcId, vpcName, createdAt, userId, userName, orderId, maintainBegin, maintainEnd, enablePublicip, managementConnectAddress, sslEnable, enterpriseProjectId, isLogicalVolume, extendTimes, enableAutoTopic, type, productId, securityGroupId, securityGroupName, subnetId, availableZones, totalStorageSpace, publicConnectAddress, storageResourceId, storageSpecCode, serviceType, storageType, retentionPolicy, kafkaPublicStatus, publicBandwidth, kafkaManagerUser, enableLogCollection, crossVpcInfo, ipv6Enable, ipv6ConnectAddresses, connectorEnable, connectorId, restEnable, restConnectAddress, messageQueryInstEnable, vpcClientPlain, supportFeatures, traceEnable, podConnectAddress, diskEncrypted, kafkaPrivateConnectAddress, cesVersion, tags);
     }
     @Override
     public String toString() {
@@ -2027,6 +2071,7 @@ public class ListInstancesRespInstances  {
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

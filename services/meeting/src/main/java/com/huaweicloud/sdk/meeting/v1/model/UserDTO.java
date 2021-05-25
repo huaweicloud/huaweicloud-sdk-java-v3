@@ -112,7 +112,7 @@ public class UserDTO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hidePhone")
     
-    private String hidePhone;
+    private Boolean hidePhone;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -450,7 +450,7 @@ public class UserDTO  {
 
     
 
-    public UserDTO withHidePhone(String hidePhone) {
+    public UserDTO withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
     }
@@ -462,11 +462,11 @@ public class UserDTO  {
      * 是否隐藏手机号（如果为true，其他人查询该用户时，不会返回该用户的手机号。自己查自己是可见的）
      * @return hidePhone
      */
-    public String getHidePhone() {
+    public Boolean getHidePhone() {
         return hidePhone;
     }
 
-    public void setHidePhone(String hidePhone) {
+    public void setHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
     }
 

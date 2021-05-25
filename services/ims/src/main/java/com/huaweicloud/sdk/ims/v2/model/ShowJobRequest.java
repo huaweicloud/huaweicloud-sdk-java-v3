@@ -32,7 +32,7 @@ public class ShowJobRequest  {
 
 
     /**
-     * Get jobId
+     * 异步任务ID
      * @return jobId
      */
     public String getJobId() {

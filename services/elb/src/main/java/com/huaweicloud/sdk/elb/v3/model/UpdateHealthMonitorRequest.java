@@ -39,7 +39,7 @@ public class UpdateHealthMonitorRequest  {
 
 
     /**
-     * Get healthmonitorId
+     * 健康检查ID
      * @return healthmonitorId
      */
     public String getHealthmonitorId() {

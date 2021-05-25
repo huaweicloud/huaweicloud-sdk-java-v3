@@ -39,7 +39,7 @@ public class CreateVersionAliasRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN。
      * @return functionUrn
      */
     public String getFunctionUrn() {

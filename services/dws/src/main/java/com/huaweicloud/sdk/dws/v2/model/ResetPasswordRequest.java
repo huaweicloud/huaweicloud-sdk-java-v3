@@ -39,7 +39,7 @@ public class ResetPasswordRequest  {
 
 
     /**
-     * Get clusterId
+     * 指定待重置密码集群的ID
      * @return clusterId
      */
     public String getClusterId() {

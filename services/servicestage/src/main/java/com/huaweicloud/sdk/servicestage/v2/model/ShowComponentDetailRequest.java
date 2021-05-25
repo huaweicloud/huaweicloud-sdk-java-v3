@@ -38,7 +38,7 @@ public class ShowComponentDetailRequest  {
 
 
     /**
-     * Get applicationId
+     * 应用ID。
      * @return applicationId
      */
     public String getApplicationId() {
@@ -60,7 +60,7 @@ public class ShowComponentDetailRequest  {
 
 
     /**
-     * Get componentId
+     * 组件ID。
      * @return componentId
      */
     public String getComponentId() {

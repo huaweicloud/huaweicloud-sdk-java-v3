@@ -39,7 +39,7 @@ public class CopyBackupRequest  {
 
 
     /**
-     * Get backupId
+     * 复制的备份ID
      * @return backupId
      */
     public String getBackupId() {

@@ -50,7 +50,7 @@ public class DeleteHookRequest  {
 
 
     /**
-     * Get xRepoAuth
+     * 授权名称。
      * @return xRepoAuth
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class DeleteHookRequest  {
 
 
     /**
-     * Get namespace
+     * 组织ID。
      * @return namespace
      */
     public String getNamespace() {
@@ -96,7 +96,7 @@ public class DeleteHookRequest  {
 
 
     /**
-     * Get project
+     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
      * @return project
      */
     public String getProject() {
@@ -118,7 +118,7 @@ public class DeleteHookRequest  {
 
 
     /**
-     * Get hookId
+     * hook ID。
      * @return hookId
      */
     public String getHookId() {

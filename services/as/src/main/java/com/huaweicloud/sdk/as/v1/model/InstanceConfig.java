@@ -14,11 +14,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.Disk;
-import com.huaweicloud.sdk.as.v1.model.MetaData;
-import com.huaweicloud.sdk.as.v1.model.Personality;
+import com.huaweicloud.sdk.as.v1.model.DiskInfo;
+import com.huaweicloud.sdk.as.v1.model.PersonalityInfo;
 import com.huaweicloud.sdk.as.v1.model.PublicIp;
 import com.huaweicloud.sdk.as.v1.model.SecurityGroups;
+import com.huaweicloud.sdk.as.v1.model.VmMetaData;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +54,7 @@ public class InstanceConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk")
     
-    private List<Disk> disk = null;
+    private List<DiskInfo> disk = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -66,7 +66,7 @@ public class InstanceConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="personality")
     
-    private List<Personality> personality = null;
+    private List<PersonalityInfo> personality = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -84,7 +84,7 @@ public class InstanceConfig  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private MetaData metadata;
+    private VmMetaData metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -410,13 +410,13 @@ public class InstanceConfig  {
 
     
 
-    public InstanceConfig withDisk(List<Disk> disk) {
+    public InstanceConfig withDisk(List<DiskInfo> disk) {
         this.disk = disk;
         return this;
     }
 
     
-    public InstanceConfig addDiskItem(Disk diskItem) {
+    public InstanceConfig addDiskItem(DiskInfo diskItem) {
         if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
@@ -424,7 +424,7 @@ public class InstanceConfig  {
         return this;
     }
 
-    public InstanceConfig withDisk(Consumer<List<Disk>> diskSetter) {
+    public InstanceConfig withDisk(Consumer<List<DiskInfo>> diskSetter) {
         if(this.disk == null) {
             this.disk = new ArrayList<>();
         }
@@ -436,11 +436,11 @@ public class InstanceConfig  {
      * 磁盘组信息，系统盘必选，数据盘可选。
      * @return disk
      */
-    public List<Disk> getDisk() {
+    public List<DiskInfo> getDisk() {
         return disk;
     }
 
-    public void setDisk(List<Disk> disk) {
+    public void setDisk(List<DiskInfo> disk) {
         this.disk = disk;
     }
 
@@ -468,13 +468,13 @@ public class InstanceConfig  {
 
     
 
-    public InstanceConfig withPersonality(List<Personality> personality) {
+    public InstanceConfig withPersonality(List<PersonalityInfo> personality) {
         this.personality = personality;
         return this;
     }
 
     
-    public InstanceConfig addPersonalityItem(Personality personalityItem) {
+    public InstanceConfig addPersonalityItem(PersonalityInfo personalityItem) {
         if(this.personality == null) {
             this.personality = new ArrayList<>();
         }
@@ -482,7 +482,7 @@ public class InstanceConfig  {
         return this;
     }
 
-    public InstanceConfig withPersonality(Consumer<List<Personality>> personalitySetter) {
+    public InstanceConfig withPersonality(Consumer<List<PersonalityInfo>> personalitySetter) {
         if(this.personality == null) {
             this.personality = new ArrayList<>();
         }
@@ -494,11 +494,11 @@ public class InstanceConfig  {
      * 注入文件信息。仅支持注入文本文件，最大支持注入5个文件，每个文件最大1KB。
      * @return personality
      */
-    public List<Personality> getPersonality() {
+    public List<PersonalityInfo> getPersonality() {
         return personality;
     }
 
-    public void setPersonality(List<Personality> personality) {
+    public void setPersonality(List<PersonalityInfo> personality) {
         this.personality = personality;
     }
 
@@ -555,14 +555,14 @@ public class InstanceConfig  {
 
     
 
-    public InstanceConfig withMetadata(MetaData metadata) {
+    public InstanceConfig withMetadata(VmMetaData metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public InstanceConfig withMetadata(Consumer<MetaData> metadataSetter) {
+    public InstanceConfig withMetadata(Consumer<VmMetaData> metadataSetter) {
         if(this.metadata == null ){
-            this.metadata = new MetaData();
+            this.metadata = new VmMetaData();
             metadataSetter.accept(this.metadata);
         }
         
@@ -574,11 +574,11 @@ public class InstanceConfig  {
      * Get metadata
      * @return metadata
      */
-    public MetaData getMetadata() {
+    public VmMetaData getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(MetaData metadata) {
+    public void setMetadata(VmMetaData metadata) {
         this.metadata = metadata;
     }
 

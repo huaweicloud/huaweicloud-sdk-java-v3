@@ -45,7 +45,7 @@ public class StartNewPipelineRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class StartNewPipelineRequest  {
 
 
     /**
-     * Get pipelineId
+     * 流水线ID
      * @return pipelineId
      */
     public String getPipelineId() {

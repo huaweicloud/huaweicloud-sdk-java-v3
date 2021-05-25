@@ -86,7 +86,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get userUUID
+     * 待查询的会议预定者的用户UUID。仅管理员有权限查询权限范围内的所有录制，普通帐号仅能查询自己的。 默认是登录帐号。
      * @return userUUID
      */
     public String getUserUUID() {
@@ -108,7 +108,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get offset
+     * 指定返回的页面索引。该值必须大于0。 default: 0
      * @return offset
      */
     public Integer getOffset() {
@@ -130,7 +130,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get limit
+     * 指定返回的记录数。默认值为20，最大值为100。
      * @return limit
      */
     public Integer getLimit() {
@@ -152,7 +152,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get queryAll
+     * 指定是否查询企业下所有用户的会议录制。 - 如果登录帐号不是企业管理员，则该字段无效。 - 如果该字段为true，则userUUID字段无效。
      * @return queryAll
      */
     public Boolean getQueryAll() {
@@ -174,7 +174,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get searchKey
+     * 会议主题，预定人或会议id可作为搜索词，查询录制。
      * @return searchKey
      */
     public String getSearchKey() {
@@ -196,7 +196,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get startDate
+     * 查询的起始日期毫秒数。
      * @return startDate
      */
     public Long getStartDate() {
@@ -218,7 +218,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get endDate
+     * 查询的截止日期毫秒数。
      * @return endDate
      */
     public Long getEndDate() {
@@ -240,7 +240,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get sortType
+     * - ASC_StartTIME：按录制开始时间升序排序。 - DSC_StartTIME：按录制开始时间降序排序。
      * @return sortType
      */
     public String getSortType() {
@@ -262,7 +262,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get xAuthorizationType
+     * 标识是否为第三方portal过来的请求。
      * @return xAuthorizationType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -286,7 +286,7 @@ public class SearchRecordingsRequest  {
 
 
     /**
-     * Get xSiteId
+     * 用于区分到哪个HCSO站点鉴权。
      * @return xSiteId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -32,7 +32,7 @@ public class ShowRefundOrderDetailsRequest  {
 
 
     /**
-     * Get orderId
+     * 退订订单或者降配订单的ID。
      * @return orderId
      */
     public String getOrderId() {

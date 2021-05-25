@@ -74,7 +74,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get customerId
+     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。为空表示查询所有的调账记录。不为空表示仅查询与该客户相关的调账记录。默认查询所有客户的调账记录。 说明： 此处的客户包含伙伴的子客户，以及华为云伙伴能力中心关联的精英服务商（二级经销商）。
      * @return customerId
      */
     public String getCustomerId() {
@@ -96,7 +96,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get operationType
+     * 操作类型。SOURCE_OPERATION_BEADJUST：拨款SOURCE_OPERATION_BERETRIEVE：回收SOURCE_OPERATION_BEUNBIND：解绑回收不传递默认查询所有类型。
      * @return operationType
      */
     public String getOperationType() {
@@ -118,7 +118,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get operationTimeBegin
+     * 调账起始时间。UTC时间，格式为：2016-03-28T14:45:38Z
      * @return operationTimeBegin
      */
     public String getOperationTimeBegin() {
@@ -140,7 +140,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get operationTimeEnd
+     * 调账截止时间。UTC时间，格式为：2016-03-28T14:45:38Z
      * @return operationTimeEnd
      */
     public String getOperationTimeEnd() {
@@ -162,7 +162,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get transId
+     * 事务ID。
      * @return transId
      */
     public String getTransId() {
@@ -184,7 +184,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -208,7 +208,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get limit
+     * 每页的显示条数。默认值为10。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -232,7 +232,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * 精英服务商ID。华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）的子客户调账记录时，需携带此参数；否则只能查询自己的子客户调账记录。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

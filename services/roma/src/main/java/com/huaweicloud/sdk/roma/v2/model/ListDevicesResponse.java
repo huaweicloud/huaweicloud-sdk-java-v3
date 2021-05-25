@@ -48,6 +48,18 @@ public class ListDevicesResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ipv6_connect_address")
+    
+    private String ipv6ConnectAddress;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="ipv6_ssl_connect_address")
+    
+    private String ipv6SslConnectAddress;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
     
     private List<Device> items = null;
@@ -140,6 +152,50 @@ public class ListDevicesResponse extends SdkResponse {
 
     
 
+    public ListDevicesResponse withIpv6ConnectAddress(String ipv6ConnectAddress) {
+        this.ipv6ConnectAddress = ipv6ConnectAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备接入IPV6地址
+     * @return ipv6ConnectAddress
+     */
+    public String getIpv6ConnectAddress() {
+        return ipv6ConnectAddress;
+    }
+
+    public void setIpv6ConnectAddress(String ipv6ConnectAddress) {
+        this.ipv6ConnectAddress = ipv6ConnectAddress;
+    }
+
+    
+
+    public ListDevicesResponse withIpv6SslConnectAddress(String ipv6SslConnectAddress) {
+        this.ipv6SslConnectAddress = ipv6SslConnectAddress;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备接入IPV6 SSL地址
+     * @return ipv6SslConnectAddress
+     */
+    public String getIpv6SslConnectAddress() {
+        return ipv6SslConnectAddress;
+    }
+
+    public void setIpv6SslConnectAddress(String ipv6SslConnectAddress) {
+        this.ipv6SslConnectAddress = ipv6SslConnectAddress;
+    }
+
+    
+
     public ListDevicesResponse withItems(List<Device> items) {
         this.items = items;
         return this;
@@ -189,11 +245,13 @@ public class ListDevicesResponse extends SdkResponse {
             Objects.equals(this.size, listDevicesResponse.size) &&
             Objects.equals(this.connectAddress, listDevicesResponse.connectAddress) &&
             Objects.equals(this.sslConnectAddress, listDevicesResponse.sslConnectAddress) &&
+            Objects.equals(this.ipv6ConnectAddress, listDevicesResponse.ipv6ConnectAddress) &&
+            Objects.equals(this.ipv6SslConnectAddress, listDevicesResponse.ipv6SslConnectAddress) &&
             Objects.equals(this.items, listDevicesResponse.items);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, connectAddress, sslConnectAddress, items);
+        return Objects.hash(total, size, connectAddress, sslConnectAddress, ipv6ConnectAddress, ipv6SslConnectAddress, items);
     }
     @Override
     public String toString() {
@@ -203,6 +261,8 @@ public class ListDevicesResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    connectAddress: ").append(toIndentedString(connectAddress)).append("\n");
         sb.append("    sslConnectAddress: ").append(toIndentedString(sslConnectAddress)).append("\n");
+        sb.append("    ipv6ConnectAddress: ").append(toIndentedString(ipv6ConnectAddress)).append("\n");
+        sb.append("    ipv6SslConnectAddress: ").append(toIndentedString(ipv6SslConnectAddress)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");
         return sb.toString();

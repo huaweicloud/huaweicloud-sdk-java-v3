@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpResDTO;
 import com.huaweicloud.sdk.meeting.v1.model.AdminDTO;
 import com.huaweicloud.sdk.meeting.v1.model.CorpBasicDTO;
+import com.huaweicloud.sdk.meeting.v1.model.OrgPropertyDTO;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,6 +47,12 @@ public class AddCorpDTO  {
     
     private String groupId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="propertyInfo")
+    
+    private List<OrgPropertyDTO> propertyInfo = null;
+    
     public AddCorpDTO withBasicInfo(CorpBasicDTO basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -153,6 +162,42 @@ public class AddCorpDTO  {
 
     
 
+    public AddCorpDTO withPropertyInfo(List<OrgPropertyDTO> propertyInfo) {
+        this.propertyInfo = propertyInfo;
+        return this;
+    }
+
+    
+    public AddCorpDTO addPropertyInfoItem(OrgPropertyDTO propertyInfoItem) {
+        if(this.propertyInfo == null) {
+            this.propertyInfo = new ArrayList<>();
+        }
+        this.propertyInfo.add(propertyInfoItem);
+        return this;
+    }
+
+    public AddCorpDTO withPropertyInfo(Consumer<List<OrgPropertyDTO>> propertyInfoSetter) {
+        if(this.propertyInfo == null) {
+            this.propertyInfo = new ArrayList<>();
+        }
+        propertyInfoSetter.accept(this.propertyInfo);
+        return this;
+    }
+
+    /**
+     * 可配置项信息。
+     * @return propertyInfo
+     */
+    public List<OrgPropertyDTO> getPropertyInfo() {
+        return propertyInfo;
+    }
+
+    public void setPropertyInfo(List<OrgPropertyDTO> propertyInfo) {
+        this.propertyInfo = propertyInfo;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -165,11 +210,12 @@ public class AddCorpDTO  {
         return Objects.equals(this.basicInfo, addCorpDTO.basicInfo) &&
             Objects.equals(this.adminInfo, addCorpDTO.adminInfo) &&
             Objects.equals(this.resInfo, addCorpDTO.resInfo) &&
-            Objects.equals(this.groupId, addCorpDTO.groupId);
+            Objects.equals(this.groupId, addCorpDTO.groupId) &&
+            Objects.equals(this.propertyInfo, addCorpDTO.propertyInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, adminInfo, resInfo, groupId);
+        return Objects.hash(basicInfo, adminInfo, resInfo, groupId, propertyInfo);
     }
     @Override
     public String toString() {
@@ -179,6 +225,7 @@ public class AddCorpDTO  {
         sb.append("    adminInfo: ").append(toIndentedString(adminInfo)).append("\n");
         sb.append("    resInfo: ").append(toIndentedString(resInfo)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    propertyInfo: ").append(toIndentedString(propertyInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

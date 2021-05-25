@@ -38,7 +38,7 @@ public class ListServiceTypesRequest  {
 
 
     /**
-     * Get xLanguage
+     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -62,7 +62,7 @@ public class ListServiceTypesRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * |参数名称：云服务类型编码| |参数的约束及描述：云服务类型编码,最大长度64|
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {

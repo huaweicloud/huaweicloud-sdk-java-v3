@@ -132,7 +132,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get address
+     * 后端云服务器的对应的IP地址，这个IP必须在subnet_cidr_id字段的子网网段中，例如：192.168.3.11。只能指定为主网卡的IP。
      * @return address
      */
     public List<String> getAddress() {
@@ -154,7 +154,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 后端云服务器的管理状态。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -190,7 +190,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -226,7 +226,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get id
+     * 后端云服务器ID。
      * @return id
      */
     public List<String> getId() {
@@ -248,7 +248,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get ipVersion
+     * IP版本，取值v4、v6
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -270,7 +270,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数。
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -294,7 +294,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * member所属的负载均衡器ID
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -316,7 +316,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get marker
+     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
      * @return marker
      */
     public String getMarker() {
@@ -352,7 +352,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get name
+     * 后端云服务器名称。
      * @return name
      */
     public List<String> getName() {
@@ -388,7 +388,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get operatingStatus
+     * 后端云服务器的健康状态，可以为ONLINE，NO_MONITOR，OFFLINE。
      * @return operatingStatus
      */
     public List<String> getOperatingStatus() {
@@ -410,7 +410,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get pageReverse
+     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。  使用说明：必须与limit一起使用。
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -432,7 +432,7 @@ public class ListAllMembersRequest  {
 
 
     /**
-     * Get poolId
+     * member所属的服务器组ID
      * @return poolId
      */
     public String getPoolId() {
@@ -468,7 +468,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get protocolPort
+     * 后端端口和协议号。
      * @return protocolPort
      */
     public List<Integer> getProtocolPort() {
@@ -504,7 +504,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get subnetCidrId
+     * 后端云服务器所在的子网ID。该子网和后端云服务器关联的负载均衡器的子网必须在同一VPC下。只支持指定IPv4的子网ID。暂不支持IPv6。
      * @return subnetCidrId
      */
     public List<String> getSubnetCidrId() {
@@ -540,7 +540,7 @@ public class ListAllMembersRequest  {
     }
 
     /**
-     * Get weight
+     * 后端云服务器的权重，请求按权重在同一后端云服务器组下的后端云服务器间分发。权重为0的后端不再接受新的请求。当后端云服务器所在的后端云服务器组的lb_algorithm的取值为SOURCE_IP时，该字段无效。
      * @return weight
      */
     public List<Integer> getWeight() {

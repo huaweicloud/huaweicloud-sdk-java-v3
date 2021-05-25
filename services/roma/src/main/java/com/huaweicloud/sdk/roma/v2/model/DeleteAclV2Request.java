@@ -38,7 +38,7 @@ public class DeleteAclV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteAclV2Request  {
 
 
     /**
-     * Get aclId
+     * 需要删除的ACL ID
      * @return aclId
      */
     public String getAclId() {

@@ -32,7 +32,7 @@ public class DeleteTemplateGroupRequest  {
 
 
     /**
-     * Get groupId
+     * 模板组id 
      * @return groupId
      */
     public String getGroupId() {

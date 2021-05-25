@@ -38,7 +38,7 @@ public class ShowDetailsOfEnvironmentVariableV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ShowDetailsOfEnvironmentVariableV2Request  {
 
 
     /**
-     * Get envVariableId
+     * 环境变量的编号
      * @return envVariableId
      */
     public String getEnvVariableId() {

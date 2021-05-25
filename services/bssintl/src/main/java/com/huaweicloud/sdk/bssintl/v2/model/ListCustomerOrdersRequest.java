@@ -104,7 +104,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get orderId
+     * |参数名称：订单ID。| |参数的约束及描述：|
      * @return orderId
      */
     public String getOrderId() {
@@ -126,7 +126,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get customerId
+     * |参数名称：客户账号ID。| |参数的约束及描述：|
      * @return customerId
      */
     public String getCustomerId() {
@@ -148,7 +148,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get createTimeBegin
+     * |参数名称：订单创建开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2020-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
      * @return createTimeBegin
      */
     public String getCreateTimeBegin() {
@@ -170,7 +170,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get createTimeEnd
+     * |参数名称：订单创建结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2020-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
      * @return createTimeEnd
      */
     public String getCreateTimeEnd() {
@@ -192,7 +192,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数的约束及描述：|
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -214,7 +214,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get status
+     * |参数名称：订单状态。1：待审核3：处理中4：已取消5：已完成6：待支付9：待确认| |参数的约束及描述：|
      * minimum: 1
      * maximum: 9
      * @return status
@@ -238,7 +238,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get orderType
+     * |参数名称：订单类型。1：开通2：续订3：变更4：退订10：包周期转按需11：按需转包周期12：赠送13：试用14：转商用15：费用调整| |参数的约束及描述：|
      * @return orderType
      */
     public String getOrderType() {
@@ -260,7 +260,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get limit
+     * |参数名称：每次查询的大小，默认为10| |参数的约束及描述：最大值100|
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -284,7 +284,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get offset
+     * |参数名称：偏移量，从0开始，默认为0| |参数的约束及描述：|
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -308,7 +308,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get orderBy
+     * |参数名称：查询的订单列表排序。支持3中多个响应参数进行排序，但每次只能用一个。缺省或者带+为升序，带-表示倒序。例如：按照创建时间升序排序表示为+createTime| |参数的约束及描述：|
      * @return orderBy
      */
     public String getOrderBy() {
@@ -330,7 +330,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get paymentTimeBegin
+     * |参数名称：订单支付开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
      * @return paymentTimeBegin
      */
     public String getPaymentTimeBegin() {
@@ -352,7 +352,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get paymentTimeEnd
+     * |参数名称：订单支付结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数的约束及描述：|
      * @return paymentTimeEnd
      */
     public String getPaymentTimeEnd() {
@@ -374,7 +374,7 @@ public class ListCustomerOrdersRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * |参数名称：二级经销商ID，只有伙伴用自身token调用的时候，该字段才有含义。| |参数的约束及描述：|
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

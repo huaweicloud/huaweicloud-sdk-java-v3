@@ -32,7 +32,7 @@ public class DeleteKeypairRequest  {
 
 
     /**
-     * Get keypairName
+     * 密钥对名称
      * @return keypairName
      */
     public String getKeypairName() {

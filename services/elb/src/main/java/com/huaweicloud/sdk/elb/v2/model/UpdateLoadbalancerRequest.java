@@ -39,7 +39,7 @@ public class UpdateLoadbalancerRequest  {
 
 
     /**
-     * Get loadbalancerId
+     * 待更新的负载均衡器id
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

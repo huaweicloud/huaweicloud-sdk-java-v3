@@ -32,7 +32,7 @@ public class RunCheckResultRequest  {
 
 
     /**
-     * Get jobId
+     * 任务标识。
      * @return jobId
      */
     public String getJobId() {

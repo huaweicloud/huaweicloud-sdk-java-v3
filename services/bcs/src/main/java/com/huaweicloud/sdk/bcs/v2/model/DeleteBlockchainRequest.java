@@ -50,7 +50,7 @@ public class DeleteBlockchainRequest  {
 
 
     /**
-     * Get blockchainId
+     * bcs 服务id
      * @return blockchainId
      */
     public String getBlockchainId() {
@@ -72,7 +72,7 @@ public class DeleteBlockchainRequest  {
 
 
     /**
-     * Get isDeleteStorage
+     * [是否删除存储，IEF模式下不用填写](tag:online)[是否删除存储](tag:hcs)
      * @return isDeleteStorage
      */
     public Boolean getIsDeleteStorage() {
@@ -94,7 +94,7 @@ public class DeleteBlockchainRequest  {
 
 
     /**
-     * Get isDeleteObs
+     * [是否删除obs，IEF模式下不用填写](tag:online)[是否删除obs](tag:hcs)
      * @return isDeleteObs
      */
     public Boolean getIsDeleteObs() {
@@ -116,7 +116,7 @@ public class DeleteBlockchainRequest  {
 
 
     /**
-     * Get isDeleteResource
+     * 是否删除底层CCE资源
      * @return isDeleteResource
      */
     public Boolean getIsDeleteResource() {

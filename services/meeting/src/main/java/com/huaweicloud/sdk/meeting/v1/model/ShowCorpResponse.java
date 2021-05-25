@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.meeting.v1.model.OrgGroupDTO;
 import com.huaweicloud.sdk.meeting.v1.model.QueryAdminResultDTO;
 import com.huaweicloud.sdk.meeting.v1.model.QueryCorpBasicResultDTO;
 import com.huaweicloud.sdk.meeting.v1.model.QueryCorpResResultDTO;
@@ -39,6 +40,12 @@ public class ShowCorpResponse extends SdkResponse {
     @JsonProperty(value="resInfo")
     
     private QueryCorpResResultDTO resInfo;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="groupDTO")
+    
+    private OrgGroupDTO groupDTO;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -133,6 +140,35 @@ public class ShowCorpResponse extends SdkResponse {
 
     
 
+    public ShowCorpResponse withGroupDTO(OrgGroupDTO groupDTO) {
+        this.groupDTO = groupDTO;
+        return this;
+    }
+
+    public ShowCorpResponse withGroupDTO(Consumer<OrgGroupDTO> groupDTOSetter) {
+        if(this.groupDTO == null ){
+            this.groupDTO = new OrgGroupDTO();
+            groupDTOSetter.accept(this.groupDTO);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get groupDTO
+     * @return groupDTO
+     */
+    public OrgGroupDTO getGroupDTO() {
+        return groupDTO;
+    }
+
+    public void setGroupDTO(OrgGroupDTO groupDTO) {
+        this.groupDTO = groupDTO;
+    }
+
+    
+
     public ShowCorpResponse withId(String id) {
         this.id = id;
         return this;
@@ -167,11 +203,12 @@ public class ShowCorpResponse extends SdkResponse {
         return Objects.equals(this.basicInfo, showCorpResponse.basicInfo) &&
             Objects.equals(this.adminInfo, showCorpResponse.adminInfo) &&
             Objects.equals(this.resInfo, showCorpResponse.resInfo) &&
+            Objects.equals(this.groupDTO, showCorpResponse.groupDTO) &&
             Objects.equals(this.id, showCorpResponse.id);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, adminInfo, resInfo, id);
+        return Objects.hash(basicInfo, adminInfo, resInfo, groupDTO, id);
     }
     @Override
     public String toString() {
@@ -180,6 +217,7 @@ public class ShowCorpResponse extends SdkResponse {
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    adminInfo: ").append(toIndentedString(adminInfo)).append("\n");
         sb.append("    resInfo: ").append(toIndentedString(resInfo)).append("\n");
+        sb.append("    groupDTO: ").append(toIndentedString(groupDTO)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();

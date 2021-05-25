@@ -44,7 +44,7 @@ public class AssociateAgencyWithProjectPermissionRequest  {
 
 
     /**
-     * Get projectId
+     * 委托方的项目ID，获取方式请参见：[获取项目名称、项目ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return projectId
      */
     public String getProjectId() {
@@ -66,7 +66,7 @@ public class AssociateAgencyWithProjectPermissionRequest  {
 
 
     /**
-     * Get agencyId
+     * 委托ID，获取方式请参见：[获取委托名、委托ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
      * @return agencyId
      */
     public String getAgencyId() {
@@ -88,7 +88,7 @@ public class AssociateAgencyWithProjectPermissionRequest  {
 
 
     /**
-     * Get roleId
+     * 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
      * @return roleId
      */
     public String getRoleId() {

@@ -38,7 +38,7 @@ public class KeystoneDeleteProtocolRequest  {
 
 
     /**
-     * Get idpId
+     * 身份提供商ID。
      * @return idpId
      */
     public String getIdpId() {
@@ -60,7 +60,7 @@ public class KeystoneDeleteProtocolRequest  {
 
 
     /**
-     * Get protocolId
+     * 待删除的协议ID。
      * @return protocolId
      */
     public String getProtocolId() {

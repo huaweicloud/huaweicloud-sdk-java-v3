@@ -39,7 +39,7 @@ public class CreateSyncEventsRequest  {
 
 
     /**
-     * Get syncTaskId
+     * 同步任务ID
      * @return syncTaskId
      */
     public String getSyncTaskId() {

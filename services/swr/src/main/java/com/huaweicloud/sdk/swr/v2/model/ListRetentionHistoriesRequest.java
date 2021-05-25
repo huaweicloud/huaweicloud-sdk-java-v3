@@ -50,7 +50,7 @@ public class ListRetentionHistoriesRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -72,7 +72,7 @@ public class ListRetentionHistoriesRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {
@@ -94,7 +94,7 @@ public class ListRetentionHistoriesRequest  {
 
 
     /**
-     * Get offset
+     * 起始索引。**注意：offset和limit参数需要配套使用** 
      * @return offset
      */
     public String getOffset() {
@@ -116,7 +116,7 @@ public class ListRetentionHistoriesRequest  {
 
 
     /**
-     * Get limit
+     * 返回条数。**注意：offset和limit参数需要配套使用** 
      * @return limit
      */
     public String getLimit() {

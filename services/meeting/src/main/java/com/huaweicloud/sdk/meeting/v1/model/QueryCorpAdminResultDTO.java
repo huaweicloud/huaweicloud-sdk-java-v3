@@ -62,18 +62,6 @@ public class QueryCorpAdminResultDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="menuTemplateId")
-    
-    private String menuTemplateId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="menuTemplateName")
-    
-    private String menuTemplateName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dept")
     
     private DeptBasicDTO dept;
@@ -232,50 +220,6 @@ public class QueryCorpAdminResultDTO  {
 
     
 
-    public QueryCorpAdminResultDTO withMenuTemplateId(String menuTemplateId) {
-        this.menuTemplateId = menuTemplateId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 菜单模板id
-     * @return menuTemplateId
-     */
-    public String getMenuTemplateId() {
-        return menuTemplateId;
-    }
-
-    public void setMenuTemplateId(String menuTemplateId) {
-        this.menuTemplateId = menuTemplateId;
-    }
-
-    
-
-    public QueryCorpAdminResultDTO withMenuTemplateName(String menuTemplateName) {
-        this.menuTemplateName = menuTemplateName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 菜单模板名称
-     * @return menuTemplateName
-     */
-    public String getMenuTemplateName() {
-        return menuTemplateName;
-    }
-
-    public void setMenuTemplateName(String menuTemplateName) {
-        this.menuTemplateName = menuTemplateName;
-    }
-
-    
-
     public QueryCorpAdminResultDTO withDept(DeptBasicDTO dept) {
         this.dept = dept;
         return this;
@@ -321,13 +265,11 @@ public class QueryCorpAdminResultDTO  {
             Objects.equals(this.email, queryCorpAdminResultDTO.email) &&
             Objects.equals(this.phone, queryCorpAdminResultDTO.phone) &&
             Objects.equals(this.country, queryCorpAdminResultDTO.country) &&
-            Objects.equals(this.menuTemplateId, queryCorpAdminResultDTO.menuTemplateId) &&
-            Objects.equals(this.menuTemplateName, queryCorpAdminResultDTO.menuTemplateName) &&
             Objects.equals(this.dept, queryCorpAdminResultDTO.dept);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, account, name, adminType, email, phone, country, menuTemplateId, menuTemplateName, dept);
+        return Objects.hash(id, account, name, adminType, email, phone, country, dept);
     }
     @Override
     public String toString() {
@@ -340,8 +282,6 @@ public class QueryCorpAdminResultDTO  {
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
-        sb.append("    menuTemplateId: ").append(toIndentedString(menuTemplateId)).append("\n");
-        sb.append("    menuTemplateName: ").append(toIndentedString(menuTemplateName)).append("\n");
         sb.append("    dept: ").append(toIndentedString(dept)).append("\n");
         sb.append("}");
         return sb.toString();

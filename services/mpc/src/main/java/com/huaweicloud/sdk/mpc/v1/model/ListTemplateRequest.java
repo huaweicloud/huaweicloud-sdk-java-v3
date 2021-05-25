@@ -60,7 +60,7 @@ public class ListTemplateRequest  {
     }
 
     /**
-     * Get templateId
+     * 自定义转码模板ID，最多10个 
      * @return templateId
      */
     public List<Integer> getTemplateId() {
@@ -82,7 +82,7 @@ public class ListTemplateRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
      * minimum: 0
      * maximum: 50000
      * @return page
@@ -106,7 +106,7 @@ public class ListTemplateRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。取值范围：[1,100]，指定template_id时该参数无效 
      * minimum: 1
      * maximum: 1000
      * @return size

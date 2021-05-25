@@ -39,7 +39,7 @@ public class ShowSqlSwitchStatusRequest  {
     
     private String datastoreType;
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型。
      */
     public static final class XLanguageEnum {
 
@@ -126,7 +126,7 @@ public class ShowSqlSwitchStatusRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -148,7 +148,7 @@ public class ShowSqlSwitchStatusRequest  {
 
 
     /**
-     * Get type
+     * 开关类型。取值DAS SQL Explorer和DAS Slow Query Log，分别表示DAS收集全量SQL开关和DAS收集慢SQL开关。
      * @return type
      */
     public String getType() {
@@ -170,7 +170,7 @@ public class ShowSqlSwitchStatusRequest  {
 
 
     /**
-     * Get datastoreType
+     * 数据库类型。当前全量SQL支持的数据库类型包括MySQL和GaussDB(for MySQL)，慢SQL支持的类型：MySQL、GaussDB(for MySQL)、PostgreSQL。
      * @return datastoreType
      */
     public String getDatastoreType() {
@@ -192,7 +192,7 @@ public class ShowSqlSwitchStatusRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

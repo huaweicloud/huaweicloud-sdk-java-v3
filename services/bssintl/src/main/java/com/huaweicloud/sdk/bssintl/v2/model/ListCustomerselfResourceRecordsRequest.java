@@ -122,7 +122,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get xLanguage
+     * |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US。缺省为zh_CN|
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -146,7 +146,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get cycle
+     * |参数名称：开始时间，格式：yyyy-MM| |参数的约束及描述：|
      * @return cycle
      */
     public String getCycle() {
@@ -168,7 +168,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get cloudServiceType
+     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数的约束及描述：|
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -190,7 +190,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get region
+     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数的约束及描述：|
      * @return region
      */
     public String getRegion() {
@@ -212,7 +212,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get chargeMode
+     * |参数名称：支付方式。1 : 包周期；3: 按需。10: 预留实例。| |参数的约束及描述：|
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -234,7 +234,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get billType
+     * |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费 15消费-税金 16：调账-扣费  17：消费-保底差额 100：退款-退订税金 101：调账-补偿税金 102：调账-扣费税金| |参数的约束及描述：|
      * minimum: 0
      * maximum: 127
      * @return billType
@@ -258,7 +258,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get offset
+     * |参数名称：偏移量，从0开始| |参数的约束及描述：|
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -282,7 +282,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get limit
+     * |参数名称：每次查询的限制| |参数的约束及描述：|
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -306,7 +306,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get resourceId
+     * |参数名称：资源ID。| |参数的约束及描述：|
      * @return resourceId
      */
     public String getResourceId() {
@@ -328,7 +328,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * |参数名称：企业项目ID。| |参数的约束及描述：|
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -350,7 +350,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get includeZeroRecord
+     * |参数名称：返回是否包含应付金额为0的记录。| |参数的约束及描述：|
      * @return includeZeroRecord
      */
     public Boolean getIncludeZeroRecord() {
@@ -372,7 +372,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get method
+     * |参数名称：查询方式。oneself：自身sub_customer: 企业子客户all:自己和企业子客户| |参数的约束及描述：oneself：自身sub_customer: 企业子客户all:自己和企业子客户|
      * @return method
      */
     public String getMethod() {
@@ -394,7 +394,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get subCustomerId
+     * |参数名称：企业子账号ID。| |参数的约束及描述：注意：method不等于sub_customer的时候，该参数无效，如果method等于sub_customer，该参数不能为空|
      * @return subCustomerId
      */
     public String getSubCustomerId() {
@@ -416,7 +416,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get tradeId
+     * |参数名称：订单ID 或 交易ID1，2，3，4，8时为订单ID，其它场景下为： 交易ID(非月末扣费：应收ID；月末扣费：账单ID)，扣费维度的唯一标识| |参数的约束及描述：|
      * @return tradeId
      */
     public String getTradeId() {
@@ -438,7 +438,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get billDateBegin
+     * |参数名称：计费日期，格式为YYYY-MM-DD| |参数的约束及描述：必须和cycle，即资源的消费账期在同一个月。|
      * @return billDateBegin
      */
     public String getBillDateBegin() {
@@ -460,7 +460,7 @@ public class ListCustomerselfResourceRecordsRequest  {
 
 
     /**
-     * Get billDateEnd
+     * |参数名称：计费日期，格式为YYYY-MM-DD| |参数的约束及描述：必须和cycle，即资源的消费账期在同一个月。 begin和end必须同时出现，否则忽略这两个参数。仅仅按照cycle进行查询。|
      * @return billDateEnd
      */
     public String getBillDateEnd() {

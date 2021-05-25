@@ -38,7 +38,7 @@ public class ListPostalAddressRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。默认值为0。
      * minimum: 0
      * maximum: 21474836476
      * @return offset
@@ -62,7 +62,7 @@ public class ListPostalAddressRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的个数。默认值为10。
      * minimum: 1
      * maximum: 1000
      * @return limit

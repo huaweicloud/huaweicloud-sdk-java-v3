@@ -41,7 +41,7 @@ public class ListOpLogsRequest  {
     
     private Integer offset;
     /**
-     * Gets or Sets operationType
+     * 任务类型
      */
     public static final class OperationTypeEnum {
 
@@ -185,7 +185,7 @@ public class ListOpLogsRequest  {
     
     private String startTime;
     /**
-     * Gets or Sets status
+     * 任务状态
      */
     public static final class StatusEnum {
 
@@ -320,7 +320,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get endTime
+     * 任务结束时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-02-01T12:00:00Z
      * @return endTime
      */
     public String getEndTime() {
@@ -342,7 +342,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量，正整数
      * minimum: 1
      * @return limit
      */
@@ -365,7 +365,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移值，正整数
      * minimum: 1
      * @return offset
      */
@@ -388,7 +388,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get operationType
+     * 任务类型
      * @return operationType
      */
     public OperationTypeEnum getOperationType() {
@@ -410,7 +410,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get providerId
+     * 备份提供商ID
      * @return providerId
      */
     public String getProviderId() {
@@ -432,7 +432,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get resourceId
+     * 该任务操作的资源ID
      * @return resourceId
      */
     public String getResourceId() {
@@ -454,7 +454,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get resourceName
+     * 该任务操作的资源名称
      * @return resourceName
      */
     public String getResourceName() {
@@ -476,7 +476,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get startTime
+     * 任务开始时间，格式为%YYYY-%mm-%ddT%HH:%MM:%SSZ，例如2018-01-01T12:00:00Z
      * @return startTime
      */
     public String getStartTime() {
@@ -498,7 +498,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get status
+     * 任务状态
      * @return status
      */
     public StatusEnum getStatus() {
@@ -520,7 +520,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get vaultId
+     * 存储库ID,该任务操作的资源所属绑定的存储库。
      * @return vaultId
      */
     public String getVaultId() {
@@ -542,7 +542,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get vaultName
+     * 存储库名称，该任务操作资源所绑定的存储库名称。
      * @return vaultName
      */
     public String getVaultName() {
@@ -564,7 +564,7 @@ public class ListOpLogsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

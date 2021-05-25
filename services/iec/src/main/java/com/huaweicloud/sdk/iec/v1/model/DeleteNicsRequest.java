@@ -39,7 +39,7 @@ public class DeleteNicsRequest  {
 
 
     /**
-     * Get instanceId
+     * 边缘实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

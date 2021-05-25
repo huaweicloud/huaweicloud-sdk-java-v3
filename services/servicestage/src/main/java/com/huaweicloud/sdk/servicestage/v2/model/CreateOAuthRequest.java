@@ -22,7 +22,7 @@ import java.util.Objects;
 public class CreateOAuthRequest  {
 
     /**
-     * Gets or Sets repoType
+     * 仓库类型。 支持OAuth授权的仓库类型有：github、gitlab、gitee、bitbucket。
      */
     public static final class RepoTypeEnum {
 
@@ -139,7 +139,7 @@ public class CreateOAuthRequest  {
 
 
     /**
-     * Get repoType
+     * 仓库类型。 支持OAuth授权的仓库类型有：github、gitlab、gitee、bitbucket。
      * @return repoType
      */
     public RepoTypeEnum getRepoType() {
@@ -161,7 +161,7 @@ public class CreateOAuthRequest  {
 
 
     /**
-     * Get tag
+     * 站点标签。 比如国际站的，?tag=intl。 默认为空。
      * @return tag
      */
     public String getTag() {

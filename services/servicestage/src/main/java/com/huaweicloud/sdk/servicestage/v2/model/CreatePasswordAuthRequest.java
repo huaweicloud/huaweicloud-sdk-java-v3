@@ -22,7 +22,7 @@ import java.util.Objects;
 public class CreatePasswordAuthRequest  {
 
     /**
-     * Gets or Sets repoType
+     * 仓库类型。 支持口令授权的仓库类型有：github、devcloud、bitbucket。
      */
     public static final class RepoTypeEnum {
 
@@ -127,7 +127,7 @@ public class CreatePasswordAuthRequest  {
 
 
     /**
-     * Get repoType
+     * 仓库类型。 支持口令授权的仓库类型有：github、devcloud、bitbucket。
      * @return repoType
      */
     public RepoTypeEnum getRepoType() {

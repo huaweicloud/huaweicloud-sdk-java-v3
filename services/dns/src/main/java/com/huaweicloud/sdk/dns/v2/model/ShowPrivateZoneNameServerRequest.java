@@ -32,7 +32,7 @@ public class ShowPrivateZoneNameServerRequest  {
 
 
     /**
-     * Get zoneId
+     * 待查询内网zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

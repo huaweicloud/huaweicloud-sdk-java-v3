@@ -38,7 +38,7 @@ public class DeleteRequestThrottlingPolicyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteRequestThrottlingPolicyV2Request  {
 
 
     /**
-     * Get throttleId
+     * 流控策略的ID
      * @return throttleId
      */
     public String getThrottleId() {

@@ -50,7 +50,7 @@ public class ListPostgresqlDatabasesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListPostgresqlDatabasesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -96,7 +96,7 @@ public class ListPostgresqlDatabasesRequest  {
 
 
     /**
-     * Get page
+     * 分页页码，从1开始。
      * @return page
      */
     public Integer getPage() {
@@ -118,7 +118,7 @@ public class ListPostgresqlDatabasesRequest  {
 
 
     /**
-     * Get limit
+     * 每页数据条数。取值范围[1, 100]。
      * @return limit
      */
     public Integer getLimit() {

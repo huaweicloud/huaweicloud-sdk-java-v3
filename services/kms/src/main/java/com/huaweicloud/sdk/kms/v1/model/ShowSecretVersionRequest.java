@@ -38,7 +38,7 @@ public class ShowSecretVersionRequest  {
 
 
     /**
-     * Get secretId
+     * 凭据的资源标识符。
      * @return secretId
      */
     public String getSecretId() {
@@ -60,7 +60,7 @@ public class ShowSecretVersionRequest  {
 
 
     /**
-     * Get versionId
+     * 凭据的版本标识符。
      * @return versionId
      */
     public String getVersionId() {

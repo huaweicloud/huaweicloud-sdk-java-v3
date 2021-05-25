@@ -39,7 +39,7 @@ public class RestoreClusterRequest  {
 
 
     /**
-     * Get snapshotId
+     * 待恢复的快照ID
      * @return snapshotId
      */
     public String getSnapshotId() {

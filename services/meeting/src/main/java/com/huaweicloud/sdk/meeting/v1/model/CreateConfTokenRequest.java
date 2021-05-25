@@ -40,7 +40,7 @@ public class CreateConfTokenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Login-Type")
     
-    private Integer xLoginType;
+    private String xLoginType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class CreateConfTokenRequest  {
 
 
     /**
-     * Get conferenceID
+     * 会议ID。
      * @return conferenceID
      */
     public String getConferenceID() {
@@ -79,7 +79,7 @@ public class CreateConfTokenRequest  {
 
 
     /**
-     * Get xConferenceAuthorization
+     * 如果携带该值，则表示是保活消息，如果会话已过期并且请求中携带了密码，则进行重新鉴权并回复新的会话标识。 该头域统一为BASE64编码。
      * @return xConferenceAuthorization
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -103,7 +103,7 @@ public class CreateConfTokenRequest  {
 
 
     /**
-     * Get xPassword
+     * 会议的主持人密码。 从创建会议的返回响应参数获取。 对于会控Token保活场景，可以不携带会议密码。
      * @return xPassword
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,7 +118,7 @@ public class CreateConfTokenRequest  {
 
     
 
-    public CreateConfTokenRequest withXLoginType(Integer xLoginType) {
+    public CreateConfTokenRequest withXLoginType(String xLoginType) {
         this.xLoginType = xLoginType;
         return this;
     }
@@ -127,16 +127,16 @@ public class CreateConfTokenRequest  {
 
 
     /**
-     * Get xLoginType
+     * 区分请求类型。 - 0: 终端请求。 - 1: CloudPortal请求。
      * @return xLoginType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Login-Type")
-    public Integer getXLoginType() {
+    public String getXLoginType() {
         return xLoginType;
     }
 
-    public void setXLoginType(Integer xLoginType) {
+    public void setXLoginType(String xLoginType) {
         this.xLoginType = xLoginType;
     }
 
@@ -151,7 +151,7 @@ public class CreateConfTokenRequest  {
 
 
     /**
-     * Get xNonce
+     * 用户临时nonce token。
      * @return xNonce
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

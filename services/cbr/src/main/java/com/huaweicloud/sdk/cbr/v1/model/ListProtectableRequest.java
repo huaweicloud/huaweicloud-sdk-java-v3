@@ -45,7 +45,7 @@ public class ListProtectableRequest  {
     
     private Integer offset;
     /**
-     * Gets or Sets protectableType
+     * 对象类型
      */
     public static final class ProtectableTypeEnum {
 
@@ -156,7 +156,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量，每页最多支持50条
      * @return limit
      */
     public Integer getLimit() {
@@ -178,7 +178,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get marker
+     * 上一次查询最后一条的ID
      * @return marker
      */
     public String getMarker() {
@@ -200,7 +200,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get name
+     * 按名称过滤
      * @return name
      */
     public String getName() {
@@ -222,7 +222,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get offset
+     * 偏移值
      * @return offset
      */
     public Integer getOffset() {
@@ -244,7 +244,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get protectableType
+     * 对象类型
      * @return protectableType
      */
     public ProtectableTypeEnum getProtectableType() {
@@ -266,7 +266,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get status
+     * 资源的状态，如available，error 等
      * @return status
      */
     public String getStatus() {
@@ -288,7 +288,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get id
+     * 根据资源id过滤
      * @return id
      */
     public String getId() {
@@ -310,7 +310,7 @@ public class ListProtectableRequest  {
 
 
     /**
-     * Get serverId
+     * 根据该id过滤属于该服务器的所有磁盘，支持企业多项目的用户才能传入此参数
      * @return serverId
      */
     public String getServerId() {

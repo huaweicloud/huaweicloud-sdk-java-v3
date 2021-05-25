@@ -32,7 +32,7 @@ public class ListVersionAliasesRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN。
      * @return functionUrn
      */
     public String getFunctionUrn() {

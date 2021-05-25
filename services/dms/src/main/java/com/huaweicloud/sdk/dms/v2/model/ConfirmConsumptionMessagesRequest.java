@@ -45,7 +45,7 @@ public class ConfirmConsumptionMessagesRequest  {
 
 
     /**
-     * Get queueId
+     * 队列ID。
      * @return queueId
      */
     public String getQueueId() {
@@ -67,7 +67,7 @@ public class ConfirmConsumptionMessagesRequest  {
 
 
     /**
-     * Get consumerGroupId
+     * 消费组ID。
      * @return consumerGroupId
      */
     public String getConsumerGroupId() {

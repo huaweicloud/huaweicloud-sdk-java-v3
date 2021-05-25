@@ -39,7 +39,7 @@ public class ListSinkTasksRespTasks  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private String createTime;
+    private Long createTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -119,7 +119,7 @@ public class ListSinkTasksRespTasks  {
 
     
 
-    public ListSinkTasksRespTasks withCreateTime(String createTime) {
+    public ListSinkTasksRespTasks withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -131,11 +131,11 @@ public class ListSinkTasksRespTasks  {
      * 转储任务创建时间戳。
      * @return createTime
      */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

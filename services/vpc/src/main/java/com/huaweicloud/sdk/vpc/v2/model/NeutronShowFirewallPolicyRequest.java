@@ -32,7 +32,7 @@ public class NeutronShowFirewallPolicyRequest  {
 
 
     /**
-     * Get firewallPolicyId
+     * 网络ACL防火墙策略ID
      * @return firewallPolicyId
      */
     public String getFirewallPolicyId() {

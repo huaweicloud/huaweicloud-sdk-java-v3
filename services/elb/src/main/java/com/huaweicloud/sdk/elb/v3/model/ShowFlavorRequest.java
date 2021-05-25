@@ -32,7 +32,7 @@ public class ShowFlavorRequest  {
 
 
     /**
-     * Get flavorId
+     * 规格ID。
      * @return flavorId
      */
     public String getFlavorId() {

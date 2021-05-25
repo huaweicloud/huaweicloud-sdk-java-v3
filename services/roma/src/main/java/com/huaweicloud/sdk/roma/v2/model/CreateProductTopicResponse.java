@@ -33,7 +33,7 @@ public class CreateProductTopicResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="topic_id")
     
-    private Integer topicId;
+    private String topicId;
     /**
      * 主题权限 0-发布 1-订阅
      */
@@ -159,7 +159,7 @@ public class CreateProductTopicResponse extends SdkResponse {
 
     
 
-    public CreateProductTopicResponse withTopicId(Integer topicId) {
+    public CreateProductTopicResponse withTopicId(String topicId) {
         this.topicId = topicId;
         return this;
     }
@@ -171,11 +171,11 @@ public class CreateProductTopicResponse extends SdkResponse {
      * 产品主题ID
      * @return topicId
      */
-    public Integer getTopicId() {
+    public String getTopicId() {
         return topicId;
     }
 
-    public void setTopicId(Integer topicId) {
+    public void setTopicId(String topicId) {
         this.topicId = topicId;
     }
 

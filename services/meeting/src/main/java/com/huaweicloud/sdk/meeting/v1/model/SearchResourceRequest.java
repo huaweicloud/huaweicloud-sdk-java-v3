@@ -92,7 +92,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get xRequestId
+     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
      * @return xRequestId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -116,7 +116,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get acceptLanguage
+     * 语言参数，默认为中文zh_CN, 英文为en_US
      * @return acceptLanguage
      */
     public String getAcceptLanguage() {
@@ -138,7 +138,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
      * minimum: 0
      * @return offset
      */
@@ -161,7 +161,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get limit
+     * 查询数量 默认值：0 
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -185,7 +185,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get searchKey
+     * 搜索条件
      * @return searchKey
      */
     public String getSearchKey() {
@@ -207,7 +207,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get corpId
+     * 企业id
      * @return corpId
      */
     public String getCorpId() {
@@ -229,7 +229,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get startExpireDate
+     * 查询过期时间在该时间戳之后的资源项
      * @return startExpireDate
      */
     public Long getStartExpireDate() {
@@ -251,7 +251,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get endExpireDate
+     * 查询过期时间在该时间戳之前的资源项
      * @return endExpireDate
      */
     public Long getEndExpireDate() {
@@ -273,7 +273,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get type
+     * 资源类型
      * @return type
      */
     public String getType() {
@@ -295,7 +295,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get typeId
+     * 资源类型Id,若想搜索5方VMR时，需携带5方vmrpkg对应的id
      * @return typeId
      */
     public String getTypeId() {
@@ -317,7 +317,7 @@ public class SearchResourceRequest  {
 
 
     /**
-     * Get status
+     * 订单状态: - 0：正常 - 1：到期，仅查询时返回 - 2：停用
      * minimum: 0
      * maximum: 2
      * @return status

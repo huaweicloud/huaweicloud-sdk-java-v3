@@ -44,7 +44,7 @@ public class ListSubscriptionsByTopicRequest  {
 
 
     /**
-     * Get topicUrn
+     * Topic的唯一的资源标识，可通过[查询主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
      * @return topicUrn
      */
     public String getTopicUrn() {
@@ -66,7 +66,7 @@ public class ListSubscriptionsByTopicRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。  偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -88,7 +88,7 @@ public class ListSubscriptionsByTopicRequest  {
 
 
     /**
-     * Get limit
+     * 查询的数量限制。  取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
      * @return limit
      */
     public Integer getLimit() {

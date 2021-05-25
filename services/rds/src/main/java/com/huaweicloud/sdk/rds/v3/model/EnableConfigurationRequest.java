@@ -45,7 +45,7 @@ public class EnableConfigurationRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class EnableConfigurationRequest  {
 
 
     /**
-     * Get configId
+     * 参数模板ID。
      * @return configId
      */
     public String getConfigId() {

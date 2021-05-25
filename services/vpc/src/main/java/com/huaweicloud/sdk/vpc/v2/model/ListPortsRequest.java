@@ -65,7 +65,7 @@ public class ListPortsRequest  {
     
     private String deviceId;
     /**
-     * Gets or Sets deviceOwner
+     * 按照device_owner过滤查询
      */
     public static final class DeviceOwnerEnum {
 
@@ -161,7 +161,7 @@ public class ListPortsRequest  {
     
     private DeviceOwnerEnum deviceOwner;
     /**
-     * Gets or Sets status
+     * 功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
      */
     public static final class StatusEnum {
 
@@ -278,7 +278,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get name
+     * 功能说明：按照name过滤查询  取值范围：最大长度不超过255
      * @return name
      */
     public String getName() {
@@ -300,7 +300,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get id
+     * 按照port_id过滤查询
      * @return id
      */
     public String getId() {
@@ -322,7 +322,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -344,7 +344,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 按照admin_state_up进行过滤
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -366,7 +366,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get networkId
+     * 按照network_id过滤查询
      * @return networkId
      */
     public String getNetworkId() {
@@ -388,7 +388,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get macAddress
+     * 按照mac_address过滤查询
      * @return macAddress
      */
     public String getMacAddress() {
@@ -410,7 +410,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get deviceId
+     * 按照device_id过滤查询
      * @return deviceId
      */
     public String getDeviceId() {
@@ -432,7 +432,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get deviceOwner
+     * 按照device_owner过滤查询
      * @return deviceOwner
      */
     public DeviceOwnerEnum getDeviceOwner() {
@@ -454,7 +454,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get status
+     * 功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
      * @return status
      */
     public StatusEnum getStatus() {
@@ -476,7 +476,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源ID，为空时查询第一页
      * @return marker
      */
     public String getMarker() {
@@ -498,7 +498,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get fixedIps
+     * 按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询
      * @return fixedIps
      */
     public String getFixedIps() {
@@ -520,7 +520,7 @@ public class ListPortsRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

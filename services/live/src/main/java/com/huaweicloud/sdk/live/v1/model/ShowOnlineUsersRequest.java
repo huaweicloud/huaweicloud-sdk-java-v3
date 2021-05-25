@@ -63,7 +63,7 @@ public class ShowOnlineUsersRequest  {
 
 
     /**
-     * Get domain
+     * 直播播放域名
      * @return domain
      */
     public String getDomain() {
@@ -85,7 +85,7 @@ public class ShowOnlineUsersRequest  {
 
 
     /**
-     * Get appName
+     * 应用名称。 默认为“live”，若您需要自定义应用名称，请先提交工单申请。 
      * @return appName
      */
     public String getAppName() {
@@ -107,7 +107,7 @@ public class ShowOnlineUsersRequest  {
 
 
     /**
-     * Get streamName
+     * 流名称
      * @return streamName
      */
     public String getStreamName() {
@@ -129,7 +129,7 @@ public class ShowOnlineUsersRequest  {
 
 
     /**
-     * Get startTime
+     * 查询开始时间，UTC时间，格式：yyyy-mm-ddThh:mm:ssZ。无开始时间表示查询最近统计周期在线人数数据
      * @return startTime
      */
     public OffsetDateTime getStartTime() {
@@ -151,7 +151,7 @@ public class ShowOnlineUsersRequest  {
 
 
     /**
-     * Get endTime
+     * 查询结束时间，UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ。  - start_time与end_time均不存在时，服务端从最近一个统计周期的数据里查询。 - start_time存在、end_time不存在时，end_time取当前时间。 - start_time不存在、end_time存在时，请求非法。 - 只能查询最近三个月内的数据，start_time和end_time的跨度不能大于30天。 
      * @return endTime
      */
     public OffsetDateTime getEndTime() {
@@ -173,7 +173,7 @@ public class ShowOnlineUsersRequest  {
 
 
     /**
-     * Get step
+     * 统计周期。 单位：分钟 
      * minimum: 1
      * maximum: 9223372036854775807
      * @return step

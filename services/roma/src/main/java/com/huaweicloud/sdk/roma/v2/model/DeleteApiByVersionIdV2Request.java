@@ -38,7 +38,7 @@ public class DeleteApiByVersionIdV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteApiByVersionIdV2Request  {
 
 
     /**
-     * Get versionId
+     * API版本的编号
      * @return versionId
      */
     public String getVersionId() {

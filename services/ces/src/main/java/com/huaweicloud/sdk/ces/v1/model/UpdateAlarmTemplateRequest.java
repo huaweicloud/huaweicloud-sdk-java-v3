@@ -39,7 +39,7 @@ public class UpdateAlarmTemplateRequest  {
 
 
     /**
-     * Get templateId
+     * 需要更新的自定义告警模板ID。
      * @return templateId
      */
     public String getTemplateId() {

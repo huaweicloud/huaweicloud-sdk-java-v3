@@ -39,7 +39,7 @@ public class RestartClusterRequest  {
 
 
     /**
-     * Get clusterId
+     * 指定待重启集群的ID。
      * @return clusterId
      */
     public String getClusterId() {

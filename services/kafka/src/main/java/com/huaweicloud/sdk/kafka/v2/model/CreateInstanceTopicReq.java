@@ -19,9 +19,9 @@ public class CreateInstanceTopicReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="id")
     
-    private String name;
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,8 +53,8 @@ public class CreateInstanceTopicReq  {
     
     private Integer retentionTime;
 
-    public CreateInstanceTopicReq withName(String name) {
-        this.name = name;
+    public CreateInstanceTopicReq withId(String id) {
+        this.id = id;
         return this;
     }
 
@@ -63,14 +63,14 @@ public class CreateInstanceTopicReq  {
 
     /**
      * topic名称，长度为4-64，以字母开头且只支持大小写字母、中横线、下划线以及数字。
-     * @return name
+     * @return id
      */
-    public String getName() {
-        return name;
+    public String getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(String id) {
+        this.id = id;
     }
 
     
@@ -128,7 +128,7 @@ public class CreateInstanceTopicReq  {
 
 
     /**
-     * topic分区数，设置消费的并发数。 取值范围：1-20。
+     * topic分区数，设置消费的并发数。 取值范围：1-50。
      * @return partition
      */
     public Integer getPartition() {
@@ -194,7 +194,7 @@ public class CreateInstanceTopicReq  {
             return false;
         }
         CreateInstanceTopicReq createInstanceTopicReq = (CreateInstanceTopicReq) o;
-        return Objects.equals(this.name, createInstanceTopicReq.name) &&
+        return Objects.equals(this.id, createInstanceTopicReq.id) &&
             Objects.equals(this.replication, createInstanceTopicReq.replication) &&
             Objects.equals(this.syncMessageFlush, createInstanceTopicReq.syncMessageFlush) &&
             Objects.equals(this.partition, createInstanceTopicReq.partition) &&
@@ -203,13 +203,13 @@ public class CreateInstanceTopicReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, replication, syncMessageFlush, partition, syncReplication, retentionTime);
+        return Objects.hash(id, replication, syncMessageFlush, partition, syncReplication, retentionTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstanceTopicReq {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    replication: ").append(toIndentedString(replication)).append("\n");
         sb.append("    syncMessageFlush: ").append(toIndentedString(syncMessageFlush)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");

@@ -32,7 +32,7 @@ public class DeleteQueueRequest  {
 
 
     /**
-     * Get queueId
+     * 待删除的队列ID
      * @return queueId
      */
     public String getQueueId() {

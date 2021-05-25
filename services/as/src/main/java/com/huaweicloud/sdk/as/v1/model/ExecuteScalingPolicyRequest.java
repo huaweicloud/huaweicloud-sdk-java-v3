@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ExecuteScalingPolicyRequestBody;
+import com.huaweicloud.sdk.as.v1.model.ExecuteScalingPolicyOption;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class ExecuteScalingPolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ExecuteScalingPolicyRequestBody body;
+    private ExecuteScalingPolicyOption body;
 
     public ExecuteScalingPolicyRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
@@ -39,7 +39,7 @@ public class ExecuteScalingPolicyRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩策略ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {
@@ -52,14 +52,14 @@ public class ExecuteScalingPolicyRequest  {
 
     
 
-    public ExecuteScalingPolicyRequest withBody(ExecuteScalingPolicyRequestBody body) {
+    public ExecuteScalingPolicyRequest withBody(ExecuteScalingPolicyOption body) {
         this.body = body;
         return this;
     }
 
-    public ExecuteScalingPolicyRequest withBody(Consumer<ExecuteScalingPolicyRequestBody> bodySetter) {
+    public ExecuteScalingPolicyRequest withBody(Consumer<ExecuteScalingPolicyOption> bodySetter) {
         if(this.body == null ){
-            this.body = new ExecuteScalingPolicyRequestBody();
+            this.body = new ExecuteScalingPolicyOption();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class ExecuteScalingPolicyRequest  {
      * Get body
      * @return body
      */
-    public ExecuteScalingPolicyRequestBody getBody() {
+    public ExecuteScalingPolicyOption getBody() {
         return body;
     }
 
-    public void setBody(ExecuteScalingPolicyRequestBody body) {
+    public void setBody(ExecuteScalingPolicyOption body) {
         this.body = body;
     }
 

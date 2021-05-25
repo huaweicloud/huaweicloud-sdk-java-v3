@@ -56,7 +56,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get name
+     * 模板名称
      * @return name
      */
     public String getName() {
@@ -78,7 +78,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get availabilityZone
+     * 可用区
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -100,7 +100,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get region
+     * Region ID
      * @return region
      */
     public String getRegion() {
@@ -122,7 +122,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get limit
+     * 分页大小，不传值默认为50
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -146,7 +146,7 @@ public class ListTemplatesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，不传值默认为0
      * minimum: 0
      * maximum: 65535
      * @return offset

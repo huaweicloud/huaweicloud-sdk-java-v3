@@ -27,7 +27,7 @@ public class UpdateInstanceTopicReqTopics  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="retention_time")
     
-    private String retentionTime;
+    private Integer retentionTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,7 +63,7 @@ public class UpdateInstanceTopicReqTopics  {
 
     
 
-    public UpdateInstanceTopicReqTopics withRetentionTime(String retentionTime) {
+    public UpdateInstanceTopicReqTopics withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
     }
@@ -75,11 +75,11 @@ public class UpdateInstanceTopicReqTopics  {
      * 老化时间，单位小时。
      * @return retentionTime
      */
-    public String getRetentionTime() {
+    public Integer getRetentionTime() {
         return retentionTime;
     }
 
-    public void setRetentionTime(String retentionTime) {
+    public void setRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
     }
 

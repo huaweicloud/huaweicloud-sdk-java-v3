@@ -39,7 +39,7 @@ public class DisassociateRouterRequest  {
 
 
     /**
-     * Get zoneId
+     * 待解关联zone的ID。
      * @return zoneId
      */
     public String getZoneId() {

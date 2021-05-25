@@ -38,7 +38,7 @@ public class KeystoneShowProtocolRequest  {
 
 
     /**
-     * Get idpId
+     * 身份提供商ID。
      * @return idpId
      */
     public String getIdpId() {
@@ -60,7 +60,7 @@ public class KeystoneShowProtocolRequest  {
 
 
     /**
-     * Get protocolId
+     * 待查询的协议ID。
      * @return protocolId
      */
     public String getProtocolId() {

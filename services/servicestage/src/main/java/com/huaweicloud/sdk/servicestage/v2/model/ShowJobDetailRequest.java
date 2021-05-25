@@ -56,7 +56,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get jobId
+     * 部署任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -78,7 +78,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get instanceId
+     * 应用组件实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -100,7 +100,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get limit
+     * 指定查询的个数，可用于分页查询。
      * @return limit
      */
     public Integer getLimit() {
@@ -122,7 +122,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get offset
+     * 指定查询的偏移量，可用于分页查询。
      * @return offset
      */
     public Integer getOffset() {
@@ -144,7 +144,7 @@ public class ShowJobDetailRequest  {
 
 
     /**
-     * Get desc
+     * 是否降序。true表示desc, false表示asc。
      * @return desc
      */
     public String getDesc() {

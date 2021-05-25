@@ -32,7 +32,7 @@ public class ShowApiVersionRequest  {
 
 
     /**
-     * Get apiVersion
+     * 版本ID（版本号），如v1.0。
      * @return apiVersion
      */
     public String getApiVersion() {

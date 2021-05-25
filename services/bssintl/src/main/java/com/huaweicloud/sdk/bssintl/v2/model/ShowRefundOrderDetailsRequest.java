@@ -32,7 +32,7 @@ public class ShowRefundOrderDetailsRequest  {
 
 
     /**
-     * Get orderId
+     * |参数名称：订单ID。| |参数的约束及描述：|
      * @return orderId
      */
     public String getOrderId() {

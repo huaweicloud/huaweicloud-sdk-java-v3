@@ -38,7 +38,7 @@ public class DetachBaremetalServerVolumeRequest  {
 
 
     /**
-     * Get serverId
+     * 裸金属服务器ID
      * @return serverId
      */
     public String getServerId() {
@@ -60,7 +60,7 @@ public class DetachBaremetalServerVolumeRequest  {
 
 
     /**
-     * Get attachmentId
+     * 裸金属服务器的云磁盘ID
      * @return attachmentId
      */
     public String getAttachmentId() {

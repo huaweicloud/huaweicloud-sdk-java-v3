@@ -32,7 +32,7 @@ public class KeystoneShowIdentityProviderRequest  {
 
 
     /**
-     * Get id
+     * 待查询的身份提供商ID。
      * @return id
      */
     public String getId() {

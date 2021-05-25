@@ -74,7 +74,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get authorizationId
+     * 授权id
      * minimum: 0
      * maximum: 9223372036854775807
      * @return authorizationId
@@ -98,7 +98,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get authorizationDetailId
+     * 授权详情id
      * minimum: 0
      * maximum: 9223372036854775807
      * @return authorizationDetailId
@@ -122,7 +122,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get groupId
+     * 组id
      * @return groupId
      */
     public String getGroupId() {
@@ -144,7 +144,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get offset
+     * 查询偏移量
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -168,7 +168,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get limit
+     * 查询限制条数
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -192,7 +192,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get xSite
+     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
      * minimum: 0
      * maximum: 1
      * @return xSite
@@ -218,7 +218,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -242,7 +242,7 @@ public class ListHistorySessionsRequest  {
 
 
     /**
-     * Get xTimeZone
+     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
      * @return xTimeZone
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

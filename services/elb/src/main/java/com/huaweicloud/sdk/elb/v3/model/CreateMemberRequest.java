@@ -39,7 +39,7 @@ public class CreateMemberRequest  {
 
 
     /**
-     * Get poolId
+     * 后端服务器组ID。
      * @return poolId
      */
     public String getPoolId() {

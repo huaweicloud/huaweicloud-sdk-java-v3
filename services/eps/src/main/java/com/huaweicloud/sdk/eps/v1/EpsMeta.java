@@ -165,7 +165,7 @@ public class EpsMeta {
         );
         builder.withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             Integer.class,
             f -> f.withMarshaller(ListEnterpriseProjectRequest::getOffset, (req, v) -> {
                 req.setOffset(v);

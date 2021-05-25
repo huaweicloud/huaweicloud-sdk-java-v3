@@ -795,7 +795,7 @@ public class CreateInstanceReq  {
 
 
     /**
-     * 企业项目ID。若为企业项目账号，该参数必填。
+     * 企业项目ID。若为企业项目帐号，该参数必填。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

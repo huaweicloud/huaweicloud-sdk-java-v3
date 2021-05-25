@@ -32,7 +32,7 @@ public class DeleteVpcPeeringRequest  {
 
 
     /**
-     * Get peeringId
+     * 对等连接ID
      * @return peeringId
      */
     public String getPeeringId() {

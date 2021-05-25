@@ -139,7 +139,7 @@ public class ListProductsRespDetail  {
 
 
     /**
-     * Kafka实例的最大Topic数。
+     * Kafka实例的分区数量。
      * @return partitionNum
      */
     public String getPartitionNum() {

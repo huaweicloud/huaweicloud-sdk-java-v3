@@ -50,7 +50,7 @@ public class DeleteStreamForbiddenRequest  {
 
 
     /**
-     * Get specifyProject
+     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
      * @return specifyProject
      */
     public String getSpecifyProject() {
@@ -72,7 +72,7 @@ public class DeleteStreamForbiddenRequest  {
 
 
     /**
-     * Get domain
+     * 播放或推流域名
      * @return domain
      */
     public String getDomain() {
@@ -94,7 +94,7 @@ public class DeleteStreamForbiddenRequest  {
 
 
     /**
-     * Get appName
+     * RTMP应用名称
      * @return appName
      */
     public String getAppName() {
@@ -116,7 +116,7 @@ public class DeleteStreamForbiddenRequest  {
 
 
     /**
-     * Get streamName
+     * 流名称
      * @return streamName
      */
     public String getStreamName() {

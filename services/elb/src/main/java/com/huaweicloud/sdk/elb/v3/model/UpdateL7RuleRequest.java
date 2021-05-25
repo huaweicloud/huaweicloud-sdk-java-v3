@@ -45,7 +45,7 @@ public class UpdateL7RuleRequest  {
 
 
     /**
-     * Get l7policyId
+     * 策略ID。
      * @return l7policyId
      */
     public String getL7policyId() {
@@ -67,7 +67,7 @@ public class UpdateL7RuleRequest  {
 
 
     /**
-     * Get l7ruleId
+     * 规则ID。
      * @return l7ruleId
      */
     public String getL7ruleId() {

@@ -32,7 +32,7 @@ public class DeleteDeploymentRequest  {
 
 
     /**
-     * Get deploymentId
+     * 部署计划ID。
      * @return deploymentId
      */
     public String getDeploymentId() {

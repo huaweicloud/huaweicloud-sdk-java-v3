@@ -20,28 +20,6 @@ public class SmsAsyncClient {
 
 
     /**
-     * 校验目的端是否能满足迁移要求
-     * 校验目的端是否满足迁移要求
-     *
-     * @param CheckTargetRequest 请求对象
-     * @return CompletableFuture<CheckTargetResponse>
-     */
-    public CompletableFuture<CheckTargetResponse> checkTargetAsync(CheckTargetRequest request) {
-        return hcClient.asyncInvokeHttp(request, SmsMeta.checkTarget);
-    }
-
-    /**
-     * 校验目的端是否能满足迁移要求
-     * 校验目的端是否满足迁移要求
-     *
-     * @param CheckTargetRequest 请求对象
-     * @return AsyncInvoker<CheckTargetRequest, CheckTargetResponse>
-     */
-    public AsyncInvoker<CheckTargetRequest, CheckTargetResponse> checkTargetAsyncInvoker(CheckTargetRequest request) {
-        return new AsyncInvoker<CheckTargetRequest, CheckTargetResponse>(request, SmsMeta.checkTarget, hcClient);
-    }
-
-    /**
      * 新建迁移项目
      * 新建迁移项目
      *
@@ -460,6 +438,28 @@ public class SmsAsyncClient {
     }
 
     /**
+     * 获取服务器总览
+     * 获取服务器总览
+     *
+     * @param ShowOverviewRequest 请求对象
+     * @return CompletableFuture<ShowOverviewResponse>
+     */
+    public CompletableFuture<ShowOverviewResponse> showOverviewAsync(ShowOverviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.showOverview);
+    }
+
+    /**
+     * 获取服务器总览
+     * 获取服务器总览
+     *
+     * @param ShowOverviewRequest 请求对象
+     * @return AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
+     */
+    public AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewAsyncInvoker(ShowOverviewRequest request) {
+        return new AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, SmsMeta.showOverview, hcClient);
+    }
+
+    /**
      * 查询指定ID的源端服务器
      * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
      *
@@ -570,6 +570,28 @@ public class SmsAsyncClient {
     }
 
     /**
+     * 更新任务对应源端复制状态
+     * 更新任务对应源端复制状态
+     *
+     * @param UpdateCopyStateRequest 请求对象
+     * @return CompletableFuture<UpdateCopyStateResponse>
+     */
+    public CompletableFuture<UpdateCopyStateResponse> updateCopyStateAsync(UpdateCopyStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.updateCopyState);
+    }
+
+    /**
+     * 更新任务对应源端复制状态
+     * 更新任务对应源端复制状态
+     *
+     * @param UpdateCopyStateRequest 请求对象
+     * @return AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>
+     */
+    public AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse> updateCopyStateAsyncInvoker(UpdateCopyStateRequest request) {
+        return new AsyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>(request, SmsMeta.updateCopyState, hcClient);
+    }
+
+    /**
      * 更新默认迁移项目
      * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
      *
@@ -677,6 +699,28 @@ public class SmsAsyncClient {
      */
     public AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse> updateSpeedAsyncInvoker(UpdateSpeedRequest request) {
         return new AsyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse>(request, SmsMeta.updateSpeed, hcClient);
+    }
+
+    /**
+     * 更新指定ID的迁移任务
+     * 更新指定ID的迁移任务
+     *
+     * @param UpdateTaskRequest 请求对象
+     * @return CompletableFuture<UpdateTaskResponse>
+     */
+    public CompletableFuture<UpdateTaskResponse> updateTaskAsync(UpdateTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmsMeta.updateTask);
+    }
+
+    /**
+     * 更新指定ID的迁移任务
+     * 更新指定ID的迁移任务
+     *
+     * @param UpdateTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
+     */
+    public AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskAsyncInvoker(UpdateTaskRequest request) {
+        return new AsyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, SmsMeta.updateTask, hcClient);
     }
 
     /**

@@ -38,7 +38,7 @@ public class DeleteSubnetTagRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网ID
      * @return subnetId
      */
     public String getSubnetId() {
@@ -60,7 +60,7 @@ public class DeleteSubnetTagRequest  {
 
 
     /**
-     * Get key
+     * 功能说明：键值
      * @return key
      */
     public String getKey() {

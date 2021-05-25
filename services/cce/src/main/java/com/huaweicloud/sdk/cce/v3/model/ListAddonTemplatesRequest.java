@@ -56,7 +56,7 @@ public class ListAddonTemplatesRequest  {
 
 
     /**
-     * Get addonTemplateName
+     * 指定的模板名称，不填写则查询列表。
      * @return addonTemplateName
      */
     public String getAddonTemplateName() {
@@ -78,7 +78,7 @@ public class ListAddonTemplatesRequest  {
 
 
     /**
-     * Get baseUpdateAddonVersion
+     * 含义：可接受的最低升级版本  属性：隐藏参数
      * @return baseUpdateAddonVersion
      */
     public String getBaseUpdateAddonVersion() {
@@ -100,7 +100,7 @@ public class ListAddonTemplatesRequest  {
 
 
     /**
-     * Get clusterId
+     * 含义：查询的集群  属性：隐藏参数
      * @return clusterId
      */
     public String getClusterId() {
@@ -122,7 +122,7 @@ public class ListAddonTemplatesRequest  {
 
 
     /**
-     * Get newest
+     * 含义：是否获取最新插件  属性：隐藏参数
      * @return newest
      */
     public String getNewest() {
@@ -144,7 +144,7 @@ public class ListAddonTemplatesRequest  {
 
 
     /**
-     * Get version
+     * 含义：筛选的插件版本  属性：隐藏参数
      * @return version
      */
     public String getVersion() {

@@ -38,7 +38,7 @@ public class GlanceDeleteImageMemberRequest  {
 
 
     /**
-     * Get imageId
+     * 镜像id
      * @return imageId
      */
     public String getImageId() {
@@ -60,7 +60,7 @@ public class GlanceDeleteImageMemberRequest  {
 
 
     /**
-     * Get memberId
+     * 成员id
      * @return memberId
      */
     public String getMemberId() {

@@ -32,7 +32,7 @@ public class DeleteTranscodingTaskRequest  {
 
 
     /**
-     * Get taskId
+     * 创建转码任务成功时返回的任务ID 
      * minimum: 0
      * maximum: 2147483647
      * @return taskId

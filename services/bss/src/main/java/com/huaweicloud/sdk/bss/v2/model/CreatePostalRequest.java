@@ -39,7 +39,7 @@ public class CreatePostalRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。 中文：zh_CN 缺省为zh_CN。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

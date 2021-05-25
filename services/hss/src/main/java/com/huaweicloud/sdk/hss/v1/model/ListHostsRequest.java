@@ -31,7 +31,7 @@ import java.util.Objects;
 public class ListHostsRequest  {
 
     /**
-     * Gets or Sets version
+     * 主机开通的版本
      */
     public static final class VersionEnum {
 
@@ -133,7 +133,7 @@ public class ListHostsRequest  {
     
     private VersionEnum version;
     /**
-     * Gets or Sets agentStatus
+     * Agent状态，未注册：uninstall；在线：online；离线：offline；
      */
     public static final class AgentStatusEnum {
 
@@ -223,7 +223,7 @@ public class ListHostsRequest  {
     
     private AgentStatusEnum agentStatus;
     /**
-     * Gets or Sets hostStatus
+     * 云主机状态：正在运行：active；关机：shutoff；创建中：building；故障：error
      */
     public static final class HostStatusEnum {
 
@@ -319,7 +319,7 @@ public class ListHostsRequest  {
     
     private HostStatusEnum hostStatus;
     /**
-     * Gets or Sets protectStatus
+     * 防护状态：closed关闭；opened开启
      */
     public static final class ProtectStatusEnum {
 
@@ -403,7 +403,7 @@ public class ListHostsRequest  {
     
     private ProtectStatusEnum protectStatus;
     /**
-     * Gets or Sets detectResult
+     * 检测结果，undetect：未检测，clean：无风险，risk：有风险
      */
     public static final class DetectResultEnum {
 
@@ -517,7 +517,7 @@ public class ListHostsRequest  {
     
     private String osType;
     /**
-     * Gets or Sets chargingMode
+     * 收费模式
      */
     public static final class ChargingModeEnum {
 
@@ -622,7 +622,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get version
+     * 主机开通的版本
      * @return version
      */
     public VersionEnum getVersion() {
@@ -644,7 +644,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get agentStatus
+     * Agent状态，未注册：uninstall；在线：online；离线：offline；
      * @return agentStatus
      */
     public AgentStatusEnum getAgentStatus() {
@@ -666,7 +666,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get hostStatus
+     * 云主机状态：正在运行：active；关机：shutoff；创建中：building；故障：error
      * @return hostStatus
      */
     public HostStatusEnum getHostStatus() {
@@ -688,7 +688,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get protectStatus
+     * 防护状态：closed关闭；opened开启
      * @return protectStatus
      */
     public ProtectStatusEnum getProtectStatus() {
@@ -710,7 +710,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get detectResult
+     * 检测结果，undetect：未检测，clean：无风险，risk：有风险
      * @return detectResult
      */
     public DetectResultEnum getDetectResult() {
@@ -732,7 +732,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get hostName
+     * 云主机名称
      * @return hostName
      */
     public String getHostName() {
@@ -754,7 +754,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get hostIp
+     * 云主机私有IP
      * @return hostIp
      */
     public String getHostIp() {
@@ -776,7 +776,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get publicIp
+     * 云主机公网IP
      * @return publicIp
      */
     public String getPublicIp() {
@@ -798,7 +798,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get osType
+     * 操作系统类型
      * @return osType
      */
     public String getOsType() {
@@ -820,7 +820,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get chargingMode
+     * 收费模式
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -842,7 +842,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get limit
+     * 默认10
      * minimum: 0
      * maximum: 10240
      * @return limit
@@ -866,7 +866,7 @@ public class ListHostsRequest  {
 
 
     /**
-     * Get offset
+     * 默认0
      * minimum: 0
      * maximum: 10240
      * @return offset

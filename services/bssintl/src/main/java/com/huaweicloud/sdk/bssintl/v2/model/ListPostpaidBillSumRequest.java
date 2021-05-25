@@ -32,7 +32,7 @@ public class ListPostpaidBillSumRequest  {
 
 
     /**
-     * Get billCycle
+     * |参数名称：账期，格式YYYY-MM示例：2020-07| |参数的约束及描述：|
      * @return billCycle
      */
     public String getBillCycle() {

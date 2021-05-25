@@ -68,7 +68,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get offset
+     * 偏移量 从0开始
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -92,7 +92,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get limit
+     * 条数 最小1条,最大1000
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -116,7 +116,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get search
+     * 模糊查询项目名称或描述,不支持通配符等高级查询
      * @return search
      */
     public String getSearch() {
@@ -138,7 +138,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get projectType
+     * 项目类型 scrum|xboard
      * @return projectType
      */
     public String getProjectType() {
@@ -160,7 +160,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get sort
+     * 排序条件 默认创建时间降序(name|created_on)(asc|desc)
      * @return sort
      */
     public String getSort() {
@@ -182,7 +182,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get archive
+     * 是否归档 true已归档|false未归档
      * @return archive
      */
     public String getArchive() {
@@ -204,7 +204,7 @@ public class ListProjectsV4Request  {
 
 
     /**
-     * Get queryType
+     * 默认返回当前用户参与的项目列表,domain_projects租户下的所有项目列表,absent返回当前用户未参与的租户项目列表
      * @return queryType
      */
     public String getQueryType() {

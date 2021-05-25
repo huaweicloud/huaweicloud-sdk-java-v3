@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListEventsRequest  {
 
     /**
-     * Gets or Sets eventType
+     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
      */
     public static final class EventTypeEnum {
 
@@ -144,7 +144,7 @@ public class ListEventsRequest  {
 
 
     /**
-     * Get eventType
+     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
      * @return eventType
      */
     public EventTypeEnum getEventType() {
@@ -166,7 +166,7 @@ public class ListEventsRequest  {
 
 
     /**
-     * Get eventName
+     * 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
      * @return eventName
      */
     public String getEventName() {
@@ -188,7 +188,7 @@ public class ListEventsRequest  {
 
 
     /**
-     * Get from
+     * 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
      * @return from
      */
     public Long getFrom() {
@@ -210,7 +210,7 @@ public class ListEventsRequest  {
 
 
     /**
-     * Get to
+     * 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
      * @return to
      */
     public Long getTo() {
@@ -232,7 +232,7 @@ public class ListEventsRequest  {
 
 
     /**
-     * Get start
+     * 分页起始值，类型为integer，默认值为0。
      * @return start
      */
     public Integer getStart() {
@@ -254,7 +254,7 @@ public class ListEventsRequest  {
 
 
     /**
-     * Get limit
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
      * @return limit
      */
     public Integer getLimit() {

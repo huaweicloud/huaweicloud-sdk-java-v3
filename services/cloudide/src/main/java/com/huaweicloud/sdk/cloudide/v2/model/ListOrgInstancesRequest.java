@@ -56,7 +56,7 @@ public class ListOrgInstancesRequest  {
 
 
     /**
-     * Get isTemporary
+     * 是否页面显示（以标签配置为准）
      * @return isTemporary
      */
     public Boolean getIsTemporary() {
@@ -78,7 +78,7 @@ public class ListOrgInstancesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量 10/15/30
      * minimum: 10
      * maximum: 30
      * @return limit
@@ -102,7 +102,7 @@ public class ListOrgInstancesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询
      * minimum: 0
      * maximum: 999
      * @return offset
@@ -126,7 +126,7 @@ public class ListOrgInstancesRequest  {
 
 
     /**
-     * Get orgId
+     * 组织id（对应华为云帐号的domainId）
      * @return orgId
      */
     public String getOrgId() {
@@ -148,7 +148,7 @@ public class ListOrgInstancesRequest  {
 
 
     /**
-     * Get search
+     * 关键字查询(根据实例名，描述模糊查询)
      * @return search
      */
     public String getSearch() {

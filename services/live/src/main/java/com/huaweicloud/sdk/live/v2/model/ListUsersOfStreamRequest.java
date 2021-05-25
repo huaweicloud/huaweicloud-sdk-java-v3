@@ -53,7 +53,7 @@ public class ListUsersOfStreamRequest  {
     
     private List<String> region = null;
         /**
-     * Gets or Sets interval
+     * 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 
      */
     public static final class IntervalEnum {
 
@@ -158,7 +158,7 @@ public class ListUsersOfStreamRequest  {
 
 
     /**
-     * Get playDomain
+     * 播放域名。 
      * @return playDomain
      */
     public String getPlayDomain() {
@@ -180,7 +180,7 @@ public class ListUsersOfStreamRequest  {
 
 
     /**
-     * Get app
+     * app名。 
      * @return app
      */
     public String getApp() {
@@ -202,7 +202,7 @@ public class ListUsersOfStreamRequest  {
 
 
     /**
-     * Get stream
+     * 流名。 
      * @return stream
      */
     public String getStream() {
@@ -238,7 +238,7 @@ public class ListUsersOfStreamRequest  {
     }
 
     /**
-     * Get isp
+     * 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\"  不填写查询所有运营商。 
      * @return isp
      */
     public List<String> getIsp() {
@@ -274,7 +274,7 @@ public class ListUsersOfStreamRequest  {
     }
 
     /**
-     * Get region
+     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
      * @return region
      */
     public List<String> getRegion() {
@@ -296,7 +296,7 @@ public class ListUsersOfStreamRequest  {
 
 
     /**
-     * Get interval
+     * 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 
      * minimum: 60
      * maximum: 300
      * @return interval
@@ -320,7 +320,7 @@ public class ListUsersOfStreamRequest  {
 
 
     /**
-     * Get startTime
+     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。  若参数为空，默认查询7天数据。 
      * @return startTime
      */
     public String getStartTime() {
@@ -342,7 +342,7 @@ public class ListUsersOfStreamRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
      * @return endTime
      */
     public String getEndTime() {

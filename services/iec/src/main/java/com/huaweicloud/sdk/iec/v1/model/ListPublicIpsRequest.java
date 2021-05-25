@@ -50,7 +50,7 @@ public class ListPublicIpsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回弹性IP列表数量。取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -74,7 +74,7 @@ public class ListPublicIpsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -96,7 +96,7 @@ public class ListPublicIpsRequest  {
 
 
     /**
-     * Get siteId
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {
@@ -118,7 +118,7 @@ public class ListPublicIpsRequest  {
 
 
     /**
-     * Get portId
+     * 端口ID
      * @return portId
      */
     public String getPortId() {

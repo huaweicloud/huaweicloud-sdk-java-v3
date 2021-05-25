@@ -212,6 +212,12 @@ public class ScalingActivityLogV2  {
     
     private List<ModifyLb> lbUnbindFailedList = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    private String type;
+
     public ScalingActivityLogV2 withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -712,6 +718,28 @@ public class ScalingActivityLogV2  {
 
     
 
+    public ScalingActivityLogV2 withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩组活动类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -737,11 +765,12 @@ public class ScalingActivityLogV2  {
             Objects.equals(this.lbBindSuccessList, scalingActivityLogV2.lbBindSuccessList) &&
             Objects.equals(this.lbBindFailedList, scalingActivityLogV2.lbBindFailedList) &&
             Objects.equals(this.lbUnbindSuccessList, scalingActivityLogV2.lbUnbindSuccessList) &&
-            Objects.equals(this.lbUnbindFailedList, scalingActivityLogV2.lbUnbindFailedList);
+            Objects.equals(this.lbUnbindFailedList, scalingActivityLogV2.lbUnbindFailedList) &&
+            Objects.equals(this.type, scalingActivityLogV2.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(status, startTime, endTime, id, instanceRemovedList, instanceDeletedList, instanceAddedList, instanceFailedList, instanceStandbyList, scalingValue, description, instanceValue, desireValue, lbBindSuccessList, lbBindFailedList, lbUnbindSuccessList, lbUnbindFailedList);
+        return Objects.hash(status, startTime, endTime, id, instanceRemovedList, instanceDeletedList, instanceAddedList, instanceFailedList, instanceStandbyList, scalingValue, description, instanceValue, desireValue, lbBindSuccessList, lbBindFailedList, lbUnbindSuccessList, lbUnbindFailedList, type);
     }
     @Override
     public String toString() {
@@ -764,6 +793,7 @@ public class ScalingActivityLogV2  {
         sb.append("    lbBindFailedList: ").append(toIndentedString(lbBindFailedList)).append("\n");
         sb.append("    lbUnbindSuccessList: ").append(toIndentedString(lbUnbindSuccessList)).append("\n");
         sb.append("    lbUnbindFailedList: ").append(toIndentedString(lbUnbindFailedList)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

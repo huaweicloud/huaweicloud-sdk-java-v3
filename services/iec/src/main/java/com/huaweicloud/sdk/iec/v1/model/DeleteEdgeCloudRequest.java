@@ -32,7 +32,7 @@ public class DeleteEdgeCloudRequest  {
 
 
     /**
-     * Get edgecloudId
+     * 边缘业务ID。
      * @return edgecloudId
      */
     public String getEdgecloudId() {

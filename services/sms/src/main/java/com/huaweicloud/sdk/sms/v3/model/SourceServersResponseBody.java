@@ -50,6 +50,12 @@ public class SourceServersResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="add_date")
     
     private Long addDate;
@@ -302,15 +308,57 @@ public class SourceServersResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="init_target_server")
+    @JsonProperty(value="cpu_quantity")
     
-    private InitTargetServer initTargetServer;
+    private Integer cpuQuantity;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="memory")
+    
+    private Long memory;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="current_task")
     
     private TaskByServerSources currentTask;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="checks")
+    
+    private List<EnvironmentCheck> checks = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="init_target_server")
+    
+    private InitTargetServer initTargetServer;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="replicatesize")
+    
+    private Long replicatesize;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="stage_action_time")
+    
+    private Long stageActionTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="totalsize")
+    
+    private Long totalsize;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="last_visit_time")
+    
+    private Long lastVisitTime;
     /**
      * 迁移周期
      */
@@ -426,48 +474,6 @@ public class SourceServersResponseBody  {
     
     private Long stateActionTime;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replicatesize")
-    
-    private Long replicatesize;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_visit_time")
-    
-    private Long lastVisitTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stage_action_time")
-    
-    private Long stageActionTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalsize")
-    
-    private Long totalsize;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu_quantity")
-    
-    private Integer cpuQuantity;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory")
-    
-    private Long memory;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="checks")
-    
-    private List<EnvironmentCheck> checks = null;
-    
     public SourceServersResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -530,6 +536,28 @@ public class SourceServersResponseBody  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public SourceServersResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     
@@ -668,31 +696,50 @@ public class SourceServersResponseBody  {
 
     
 
-    public SourceServersResponseBody withInitTargetServer(InitTargetServer initTargetServer) {
-        this.initTargetServer = initTargetServer;
+    public SourceServersResponseBody withCpuQuantity(Integer cpuQuantity) {
+        this.cpuQuantity = cpuQuantity;
         return this;
     }
 
-    public SourceServersResponseBody withInitTargetServer(Consumer<InitTargetServer> initTargetServerSetter) {
-        if(this.initTargetServer == null ){
-            this.initTargetServer = new InitTargetServer();
-            initTargetServerSetter.accept(this.initTargetServer);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get initTargetServer
-     * @return initTargetServer
+     * 源端CPU核心数
+     * minimum: 0
+     * maximum: 2147483647
+     * @return cpuQuantity
      */
-    public InitTargetServer getInitTargetServer() {
-        return initTargetServer;
+    public Integer getCpuQuantity() {
+        return cpuQuantity;
     }
 
-    public void setInitTargetServer(InitTargetServer initTargetServer) {
-        this.initTargetServer = initTargetServer;
+    public void setCpuQuantity(Integer cpuQuantity) {
+        this.cpuQuantity = cpuQuantity;
+    }
+
+    
+
+    public SourceServersResponseBody withMemory(Long memory) {
+        this.memory = memory;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 源端物理内存大小（单位：字节）
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return memory
+     */
+    public Long getMemory() {
+        return memory;
+    }
+
+    public void setMemory(Long memory) {
+        this.memory = memory;
     }
 
     
@@ -726,48 +773,67 @@ public class SourceServersResponseBody  {
 
     
 
-    public SourceServersResponseBody withMigrationCycle(MigrationCycleEnum migrationCycle) {
-        this.migrationCycle = migrationCycle;
+    public SourceServersResponseBody withChecks(List<EnvironmentCheck> checks) {
+        this.checks = checks;
         return this;
     }
 
     
-
-
-    /**
-     * 迁移周期
-     * @return migrationCycle
-     */
-    public MigrationCycleEnum getMigrationCycle() {
-        return migrationCycle;
-    }
-
-    public void setMigrationCycle(MigrationCycleEnum migrationCycle) {
-        this.migrationCycle = migrationCycle;
-    }
-
-    
-
-    public SourceServersResponseBody withStateActionTime(Long stateActionTime) {
-        this.stateActionTime = stateActionTime;
+    public SourceServersResponseBody addChecksItem(EnvironmentCheck checksItem) {
+        if(this.checks == null) {
+            this.checks = new ArrayList<>();
+        }
+        this.checks.add(checksItem);
         return this;
     }
 
+    public SourceServersResponseBody withChecks(Consumer<List<EnvironmentCheck>> checksSetter) {
+        if(this.checks == null) {
+            this.checks = new ArrayList<>();
+        }
+        checksSetter.accept(this.checks);
+        return this;
+    }
+
+    /**
+     * 源端校验检查项列表
+     * @return checks
+     */
+    public List<EnvironmentCheck> getChecks() {
+        return checks;
+    }
+
+    public void setChecks(List<EnvironmentCheck> checks) {
+        this.checks = checks;
+    }
+
     
+
+    public SourceServersResponseBody withInitTargetServer(InitTargetServer initTargetServer) {
+        this.initTargetServer = initTargetServer;
+        return this;
+    }
+
+    public SourceServersResponseBody withInitTargetServer(Consumer<InitTargetServer> initTargetServerSetter) {
+        if(this.initTargetServer == null ){
+            this.initTargetServer = new InitTargetServer();
+            initTargetServerSetter.accept(this.initTargetServer);
+        }
+        
+        return this;
+    }
 
 
     /**
-     * 源端状态（state）上次发生变化的时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return stateActionTime
+     * Get initTargetServer
+     * @return initTargetServer
      */
-    public Long getStateActionTime() {
-        return stateActionTime;
+    public InitTargetServer getInitTargetServer() {
+        return initTargetServer;
     }
 
-    public void setStateActionTime(Long stateActionTime) {
-        this.stateActionTime = stateActionTime;
+    public void setInitTargetServer(InitTargetServer initTargetServer) {
+        this.initTargetServer = initTargetServer;
     }
 
     
@@ -792,30 +858,6 @@ public class SourceServersResponseBody  {
 
     public void setReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
-    }
-
-    
-
-    public SourceServersResponseBody withLastVisitTime(Long lastVisitTime) {
-        this.lastVisitTime = lastVisitTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Agent上一次连接状态发生变化的时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return lastVisitTime
-     */
-    public Long getLastVisitTime() {
-        return lastVisitTime;
-    }
-
-    public void setLastVisitTime(Long lastVisitTime) {
-        this.lastVisitTime = lastVisitTime;
     }
 
     
@@ -868,8 +910,8 @@ public class SourceServersResponseBody  {
 
     
 
-    public SourceServersResponseBody withCpuQuantity(Integer cpuQuantity) {
-        this.cpuQuantity = cpuQuantity;
+    public SourceServersResponseBody withLastVisitTime(Long lastVisitTime) {
+        this.lastVisitTime = lastVisitTime;
         return this;
     }
 
@@ -877,77 +919,63 @@ public class SourceServersResponseBody  {
 
 
     /**
-     * 源端CPU核心数
-     * minimum: 0
-     * maximum: 2147483647
-     * @return cpuQuantity
-     */
-    public Integer getCpuQuantity() {
-        return cpuQuantity;
-    }
-
-    public void setCpuQuantity(Integer cpuQuantity) {
-        this.cpuQuantity = cpuQuantity;
-    }
-
-    
-
-    public SourceServersResponseBody withMemory(Long memory) {
-        this.memory = memory;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 源端物理内存大小（单位：字节）
+     * Agent上一次连接状态发生变化的时间
      * minimum: 0
      * maximum: 9223372036854775807
-     * @return memory
+     * @return lastVisitTime
      */
-    public Long getMemory() {
-        return memory;
+    public Long getLastVisitTime() {
+        return lastVisitTime;
     }
 
-    public void setMemory(Long memory) {
-        this.memory = memory;
+    public void setLastVisitTime(Long lastVisitTime) {
+        this.lastVisitTime = lastVisitTime;
+    }
+
+    
+
+    public SourceServersResponseBody withMigrationCycle(MigrationCycleEnum migrationCycle) {
+        this.migrationCycle = migrationCycle;
+        return this;
     }
 
     
 
-    public SourceServersResponseBody withChecks(List<EnvironmentCheck> checks) {
-        this.checks = checks;
-        return this;
-    }
-
-    
-    public SourceServersResponseBody addChecksItem(EnvironmentCheck checksItem) {
-        if(this.checks == null) {
-            this.checks = new ArrayList<>();
-        }
-        this.checks.add(checksItem);
-        return this;
-    }
-
-    public SourceServersResponseBody withChecks(Consumer<List<EnvironmentCheck>> checksSetter) {
-        if(this.checks == null) {
-            this.checks = new ArrayList<>();
-        }
-        checksSetter.accept(this.checks);
-        return this;
-    }
 
     /**
-     * 源端校验检查项列表
-     * @return checks
+     * 迁移周期
+     * @return migrationCycle
      */
-    public List<EnvironmentCheck> getChecks() {
-        return checks;
+    public MigrationCycleEnum getMigrationCycle() {
+        return migrationCycle;
     }
 
-    public void setChecks(List<EnvironmentCheck> checks) {
-        this.checks = checks;
+    public void setMigrationCycle(MigrationCycleEnum migrationCycle) {
+        this.migrationCycle = migrationCycle;
+    }
+
+    
+
+    public SourceServersResponseBody withStateActionTime(Long stateActionTime) {
+        this.stateActionTime = stateActionTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 源端状态（state）上次发生变化的时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return stateActionTime
+     */
+    public Long getStateActionTime() {
+        return stateActionTime;
+    }
+
+    public void setStateActionTime(Long stateActionTime) {
+        this.stateActionTime = stateActionTime;
     }
 
     
@@ -964,27 +992,28 @@ public class SourceServersResponseBody  {
         return Objects.equals(this.id, sourceServersResponseBody.id) &&
             Objects.equals(this.ip, sourceServersResponseBody.ip) &&
             Objects.equals(this.name, sourceServersResponseBody.name) &&
+            Objects.equals(this.enterpriseProjectId, sourceServersResponseBody.enterpriseProjectId) &&
             Objects.equals(this.addDate, sourceServersResponseBody.addDate) &&
             Objects.equals(this.osType, sourceServersResponseBody.osType) &&
             Objects.equals(this.osVersion, sourceServersResponseBody.osVersion) &&
             Objects.equals(this.oemSystem, sourceServersResponseBody.oemSystem) &&
             Objects.equals(this.state, sourceServersResponseBody.state) &&
             Objects.equals(this.connected, sourceServersResponseBody.connected) &&
-            Objects.equals(this.initTargetServer, sourceServersResponseBody.initTargetServer) &&
-            Objects.equals(this.currentTask, sourceServersResponseBody.currentTask) &&
-            Objects.equals(this.migrationCycle, sourceServersResponseBody.migrationCycle) &&
-            Objects.equals(this.stateActionTime, sourceServersResponseBody.stateActionTime) &&
-            Objects.equals(this.replicatesize, sourceServersResponseBody.replicatesize) &&
-            Objects.equals(this.lastVisitTime, sourceServersResponseBody.lastVisitTime) &&
-            Objects.equals(this.stageActionTime, sourceServersResponseBody.stageActionTime) &&
-            Objects.equals(this.totalsize, sourceServersResponseBody.totalsize) &&
             Objects.equals(this.cpuQuantity, sourceServersResponseBody.cpuQuantity) &&
             Objects.equals(this.memory, sourceServersResponseBody.memory) &&
-            Objects.equals(this.checks, sourceServersResponseBody.checks);
+            Objects.equals(this.currentTask, sourceServersResponseBody.currentTask) &&
+            Objects.equals(this.checks, sourceServersResponseBody.checks) &&
+            Objects.equals(this.initTargetServer, sourceServersResponseBody.initTargetServer) &&
+            Objects.equals(this.replicatesize, sourceServersResponseBody.replicatesize) &&
+            Objects.equals(this.stageActionTime, sourceServersResponseBody.stageActionTime) &&
+            Objects.equals(this.totalsize, sourceServersResponseBody.totalsize) &&
+            Objects.equals(this.lastVisitTime, sourceServersResponseBody.lastVisitTime) &&
+            Objects.equals(this.migrationCycle, sourceServersResponseBody.migrationCycle) &&
+            Objects.equals(this.stateActionTime, sourceServersResponseBody.stateActionTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, ip, name, addDate, osType, osVersion, oemSystem, state, connected, initTargetServer, currentTask, migrationCycle, stateActionTime, replicatesize, lastVisitTime, stageActionTime, totalsize, cpuQuantity, memory, checks);
+        return Objects.hash(id, ip, name, enterpriseProjectId, addDate, osType, osVersion, oemSystem, state, connected, cpuQuantity, memory, currentTask, checks, initTargetServer, replicatesize, stageActionTime, totalsize, lastVisitTime, migrationCycle, stateActionTime);
     }
     @Override
     public String toString() {
@@ -993,23 +1022,24 @@ public class SourceServersResponseBody  {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    addDate: ").append(toIndentedString(addDate)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
         sb.append("    oemSystem: ").append(toIndentedString(oemSystem)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
-        sb.append("    initTargetServer: ").append(toIndentedString(initTargetServer)).append("\n");
-        sb.append("    currentTask: ").append(toIndentedString(currentTask)).append("\n");
-        sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
-        sb.append("    stateActionTime: ").append(toIndentedString(stateActionTime)).append("\n");
-        sb.append("    replicatesize: ").append(toIndentedString(replicatesize)).append("\n");
-        sb.append("    lastVisitTime: ").append(toIndentedString(lastVisitTime)).append("\n");
-        sb.append("    stageActionTime: ").append(toIndentedString(stageActionTime)).append("\n");
-        sb.append("    totalsize: ").append(toIndentedString(totalsize)).append("\n");
         sb.append("    cpuQuantity: ").append(toIndentedString(cpuQuantity)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
+        sb.append("    currentTask: ").append(toIndentedString(currentTask)).append("\n");
         sb.append("    checks: ").append(toIndentedString(checks)).append("\n");
+        sb.append("    initTargetServer: ").append(toIndentedString(initTargetServer)).append("\n");
+        sb.append("    replicatesize: ").append(toIndentedString(replicatesize)).append("\n");
+        sb.append("    stageActionTime: ").append(toIndentedString(stageActionTime)).append("\n");
+        sb.append("    totalsize: ").append(toIndentedString(totalsize)).append("\n");
+        sb.append("    lastVisitTime: ").append(toIndentedString(lastVisitTime)).append("\n");
+        sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
+        sb.append("    stateActionTime: ").append(toIndentedString(stateActionTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

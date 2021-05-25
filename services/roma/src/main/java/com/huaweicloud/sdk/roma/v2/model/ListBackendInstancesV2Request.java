@@ -56,7 +56,7 @@ public class ListBackendInstancesV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListBackendInstancesV2Request  {
 
 
     /**
-     * Get vpcChannelId
+     * VPC通道的编号
      * @return vpcChannelId
      */
     public String getVpcChannelId() {
@@ -100,7 +100,7 @@ public class ListBackendInstancesV2Request  {
 
 
     /**
-     * Get name
+     * 云服务器的名称
      * @return name
      */
     public String getName() {
@@ -122,7 +122,7 @@ public class ListBackendInstancesV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条数
      * @return limit
      */
     public Integer getLimit() {
@@ -144,7 +144,7 @@ public class ListBackendInstancesV2Request  {
 
 
     /**
-     * Get offset
+     * 页码
      * @return offset
      */
     public Integer getOffset() {

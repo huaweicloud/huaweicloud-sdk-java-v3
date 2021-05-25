@@ -74,7 +74,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -96,7 +96,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get id
+     * ACL策略编号。
      * @return id
      */
     public String getId() {
@@ -118,7 +118,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get name
+     * ACL策略名称。
      * @return name
      */
     public String getName() {
@@ -140,7 +140,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get aclType
+     * 类型 - PERMIT (白名单类型) - DENY (黑名单类型)
      * @return aclType
      */
     public String getAclType() {
@@ -162,7 +162,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get entityType
+     * 作用的对象类型： - IP - DOMAIN
      * @return entityType
      */
     public String getEntityType() {
@@ -184,7 +184,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -206,7 +206,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit
@@ -230,7 +230,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * Get preciseSearch
+     * 指定需要精确匹配查找的参数名称，目前仅支持name
      * @return preciseSearch
      */
     public String getPreciseSearch() {

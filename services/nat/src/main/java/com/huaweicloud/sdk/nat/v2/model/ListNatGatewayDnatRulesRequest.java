@@ -219,7 +219,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get adminStateUp
+     * 解冻/冻结状态。 取值范围： \"true\"：解冻 \"false\"：冻结
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -241,7 +241,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get externalServicePort
+     * Floatingip对外提供服务的端口号。 取值范围：0~65535。
      * minimum: 0
      * maximum: 65535
      * @return externalServicePort
@@ -265,7 +265,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get floatingIpAddress
+     * 弹性公网的IP地址。
      * @return floatingIpAddress
      */
     public String getFloatingIpAddress() {
@@ -301,7 +301,7 @@ public class ListNatGatewayDnatRulesRequest  {
     }
 
     /**
-     * Get status
+     * Dnat规则的状态。
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -323,7 +323,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get floatingIpId
+     * 弹性公网IP的id。
      * @return floatingIpId
      */
     public String getFloatingIpId() {
@@ -345,7 +345,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get internalServicePort
+     * 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。
      * minimum: 0
      * maximum: 65535
      * @return internalServicePort
@@ -369,7 +369,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get limit
+     * 功能说明：每页返回的个数。 取值范围：0~2000。 默认值：2000。
      * minimum: 1
      * maximum: 2000
      * @return limit
@@ -393,7 +393,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get id
+     * DNAT规则的ID。
      * @return id
      */
     public String getId() {
@@ -415,7 +415,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get description
+     * DNAT规则的描述，长度限制为255。
      * @return description
      */
     public String getDescription() {
@@ -437,7 +437,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get createdAt
+     * DNAT规则的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -473,7 +473,7 @@ public class ListNatGatewayDnatRulesRequest  {
     }
 
     /**
-     * Get natGatewayId
+     * 公网NAT网关实例的ID。
      * @return natGatewayId
      */
     public List<String> getNatGatewayId() {
@@ -495,7 +495,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get portId
+     * 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
      * @return portId
      */
     public String getPortId() {
@@ -517,7 +517,7 @@ public class ListNatGatewayDnatRulesRequest  {
 
 
     /**
-     * Get privateIp
+     * 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -553,7 +553,7 @@ public class ListNatGatewayDnatRulesRequest  {
     }
 
     /**
-     * Get protocol
+     * 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
      * @return protocol
      */
     public List<String> getProtocol() {

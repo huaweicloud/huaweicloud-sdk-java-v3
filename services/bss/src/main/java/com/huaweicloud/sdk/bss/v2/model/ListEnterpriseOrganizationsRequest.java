@@ -38,7 +38,7 @@ public class ListEnterpriseOrganizationsRequest  {
 
 
     /**
-     * Get recursiveQuery
+     * 是否递归查询。0：不递归（默认）1：递归如果不递归，只返回起始节点的直接子节点。
      * minimum: 0
      * maximum: 1
      * @return recursiveQuery
@@ -62,7 +62,7 @@ public class ListEnterpriseOrganizationsRequest  {
 
 
     /**
-     * Get parentId
+     * 指定的节点ID。为空则从根节点查起。
      * @return parentId
      */
     public String getParentId() {

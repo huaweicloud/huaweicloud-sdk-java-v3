@@ -39,6 +39,12 @@ public class ShowQueueResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="created")
+    
+    private Long created;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
@@ -259,6 +265,12 @@ public class ShowQueueResponse extends SdkResponse {
     
     private String kafkaTopic;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="eff_date")
+    
+    private Long effDate;
+
     public ShowQueueResponse withId(String id) {
         this.id = id;
         return this;
@@ -299,6 +311,28 @@ public class ShowQueueResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public ShowQueueResponse withCreated(Long created) {
+        this.created = created;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建队列的时间。
+     * @return created
+     */
+    public Long getCreated() {
+        return created;
+    }
+
+    public void setCreated(Long created) {
+        this.created = created;
     }
 
     
@@ -501,6 +535,28 @@ public class ShowQueueResponse extends SdkResponse {
 
     
 
+    public ShowQueueResponse withEffDate(Long effDate) {
+        this.effDate = effDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建队列的时间。
+     * @return effDate
+     */
+    public Long getEffDate() {
+        return effDate;
+    }
+
+    public void setEffDate(Long effDate) {
+        this.effDate = effDate;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -512,6 +568,7 @@ public class ShowQueueResponse extends SdkResponse {
         ShowQueueResponse showQueueResponse = (ShowQueueResponse) o;
         return Objects.equals(this.id, showQueueResponse.id) &&
             Objects.equals(this.name, showQueueResponse.name) &&
+            Objects.equals(this.created, showQueueResponse.created) &&
             Objects.equals(this.description, showQueueResponse.description) &&
             Objects.equals(this.queueMode, showQueueResponse.queueMode) &&
             Objects.equals(this.reservation, showQueueResponse.reservation) &&
@@ -520,11 +577,12 @@ public class ShowQueueResponse extends SdkResponse {
             Objects.equals(this.redrivePolicy, showQueueResponse.redrivePolicy) &&
             Objects.equals(this.maxConsumeCount, showQueueResponse.maxConsumeCount) &&
             Objects.equals(this.groupCount, showQueueResponse.groupCount) &&
-            Objects.equals(this.kafkaTopic, showQueueResponse.kafkaTopic);
+            Objects.equals(this.kafkaTopic, showQueueResponse.kafkaTopic) &&
+            Objects.equals(this.effDate, showQueueResponse.effDate);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, queueMode, reservation, maxMsgSizeByte, producedMessages, redrivePolicy, maxConsumeCount, groupCount, kafkaTopic);
+        return Objects.hash(id, name, created, description, queueMode, reservation, maxMsgSizeByte, producedMessages, redrivePolicy, maxConsumeCount, groupCount, kafkaTopic, effDate);
     }
     @Override
     public String toString() {
@@ -532,6 +590,7 @@ public class ShowQueueResponse extends SdkResponse {
         sb.append("class ShowQueueResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    queueMode: ").append(toIndentedString(queueMode)).append("\n");
         sb.append("    reservation: ").append(toIndentedString(reservation)).append("\n");
@@ -541,6 +600,7 @@ public class ShowQueueResponse extends SdkResponse {
         sb.append("    maxConsumeCount: ").append(toIndentedString(maxConsumeCount)).append("\n");
         sb.append("    groupCount: ").append(toIndentedString(groupCount)).append("\n");
         sb.append("    kafkaTopic: ").append(toIndentedString(kafkaTopic)).append("\n");
+        sb.append("    effDate: ").append(toIndentedString(effDate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

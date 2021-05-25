@@ -32,7 +32,7 @@ public class ListMeasureUnitsRequest  {
 
 
     /**
-     * Get xLanguage
+     * |忽略大小写，默认 zh_CN en_US：英文|
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

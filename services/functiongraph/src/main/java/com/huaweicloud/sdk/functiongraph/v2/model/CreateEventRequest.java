@@ -39,7 +39,7 @@ public class CreateEventRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN（Uniform Resource Name），唯一标识函数。
      * @return functionUrn
      */
     public String getFunctionUrn() {

@@ -120,7 +120,7 @@ public class PayCustomerOrderReq  {
     }
 
     /**
-     * 折扣ID列表，目前仅支持传递一个折扣ID。 具体参见表2。
+     * 折扣ID列表，目前仅支持传递一个折扣ID。 请从“查询订单可用折扣”接口的响应参数中获取。 具体参见表2。
      * @return discountInfos
      */
     public List<DiscountSimpleInfo> getDiscountInfos() {

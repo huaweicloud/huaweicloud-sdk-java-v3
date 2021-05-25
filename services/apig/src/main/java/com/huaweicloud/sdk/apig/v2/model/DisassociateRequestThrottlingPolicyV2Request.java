@@ -38,7 +38,7 @@ public class DisassociateRequestThrottlingPolicyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DisassociateRequestThrottlingPolicyV2Request  {
 
 
     /**
-     * Get throttleBindingId
+     * API和流控策略绑定关系的ID。
      * @return throttleBindingId
      */
     public String getThrottleBindingId() {

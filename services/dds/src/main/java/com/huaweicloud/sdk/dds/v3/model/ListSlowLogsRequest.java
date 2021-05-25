@@ -45,7 +45,7 @@ public class ListSlowLogsRequest  {
     
     private String nodeId;
     /**
-     * Gets or Sets type
+     * 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型： - INSERT - QUERY - UPDATE - REMOVE - GETMORE - COMMAND - KILLCURSORS
      */
     public static final class TypeEnum {
 
@@ -180,7 +180,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -202,7 +202,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get startDate
+     * 开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
      * @return startDate
      */
     public String getStartDate() {
@@ -224,7 +224,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get endDate
+     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。注：结束时间不能晚于当前时间。
      * @return endDate
      */
     public String getEndDate() {
@@ -246,7 +246,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID，取空值，表示查询实例下所有允许查询的节点。 使用请参考《DDS API参考》的“查询实例列表”响应消息表“nodes 数据结构说明”的“id”。允许查询的节点如下： - 集群实例下面的 shard节点 - 副本集、单节点实例下面的所有节点
      * @return nodeId
      */
     public String getNodeId() {
@@ -268,7 +268,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get type
+     * 语句类型，取空值，表示查询所有语句类型，也可指定如下日志类型： - INSERT - QUERY - UPDATE - REMOVE - GETMORE - COMMAND - KILLCURSORS
      * @return type
      */
     public TypeEnum getType() {
@@ -290,7 +290,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get offset
+     * 索引位置，偏移量。取值范围为 [0, 1999]。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
      * minimum: 0
      * maximum: 1999
      * @return offset
@@ -314,7 +314,7 @@ public class ListSlowLogsRequest  {
 
 
     /**
-     * Get limit
+     * 查询记录数。取值范围[1, 100]，默认10 （表示默认返回10条数据）。 注意： limit 与 offset 的和需要满足 <= 2000的条件。
      * minimum: 1
      * maximum: 100
      * @return limit

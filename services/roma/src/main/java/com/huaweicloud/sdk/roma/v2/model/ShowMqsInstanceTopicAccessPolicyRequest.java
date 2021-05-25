@@ -50,7 +50,7 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -72,7 +72,7 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
 
 
     /**
-     * Get topicName
+     * topic名称。
      * @return topicName
      */
     public String getTopicName() {
@@ -94,7 +94,7 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
 
 
     /**
-     * Get offset
+     * 分页查询偏移量。
      * @return offset
      */
     public String getOffset() {
@@ -116,7 +116,7 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
 
 
     /**
-     * Get limit
+     * 分页查询大小。
      * @return limit
      */
     public String getLimit() {

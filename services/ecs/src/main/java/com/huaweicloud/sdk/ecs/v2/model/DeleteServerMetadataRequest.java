@@ -38,7 +38,7 @@ public class DeleteServerMetadataRequest  {
 
 
     /**
-     * Get key
+     * 待删除的云服务器metadata键值
      * @return key
      */
     public String getKey() {
@@ -60,7 +60,7 @@ public class DeleteServerMetadataRequest  {
 
 
     /**
-     * Get serverId
+     * 云服务器ID。
      * @return serverId
      */
     public String getServerId() {

@@ -23,22 +23,22 @@ public class KafkaAsyncClient {
      * 批量添加或删除实例标签
      * 批量添加或删除实例标签。
      *
-     * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
-     * @return CompletableFuture<BatchCreateOrDeleteInstanceTagResponse>
+     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @return CompletableFuture<BatchCreateOrDeleteKafkaTagResponse>
      */
-    public CompletableFuture<BatchCreateOrDeleteInstanceTagResponse> batchCreateOrDeleteInstanceTagAsync(BatchCreateOrDeleteInstanceTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.batchCreateOrDeleteInstanceTag);
+    public CompletableFuture<BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTagAsync(BatchCreateOrDeleteKafkaTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.batchCreateOrDeleteKafkaTag);
     }
 
     /**
      * 批量添加或删除实例标签
      * 批量添加或删除实例标签。
      *
-     * @param BatchCreateOrDeleteInstanceTagRequest 请求对象
-     * @return AsyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse>
+     * @param BatchCreateOrDeleteKafkaTagRequest 请求对象
+     * @return AsyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>
      */
-    public AsyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse> batchCreateOrDeleteInstanceTagAsyncInvoker(BatchCreateOrDeleteInstanceTagRequest request) {
-        return new AsyncInvoker<BatchCreateOrDeleteInstanceTagRequest, BatchCreateOrDeleteInstanceTagResponse>(request, KafkaMeta.batchCreateOrDeleteInstanceTag, hcClient);
+    public AsyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTagAsyncInvoker(BatchCreateOrDeleteKafkaTagRequest request) {
+        return new AsyncInvoker<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse>(request, KafkaMeta.batchCreateOrDeleteKafkaTag, hcClient);
     }
 
     /**
@@ -61,6 +61,28 @@ public class KafkaAsyncClient {
      */
     public AsyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopicAsyncInvoker(BatchDeleteInstanceTopicRequest request) {
         return new AsyncInvoker<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse>(request, KafkaMeta.batchDeleteInstanceTopic, hcClient);
+    }
+
+    /**
+     * 批量删除用户
+     * 批量删除Kafka实例的用户
+     *
+     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @return CompletableFuture<BatchDeleteInstanceUsersResponse>
+     */
+    public CompletableFuture<BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsersAsync(BatchDeleteInstanceUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.batchDeleteInstanceUsers);
+    }
+
+    /**
+     * 批量删除用户
+     * 批量删除Kafka实例的用户
+     *
+     * @param BatchDeleteInstanceUsersRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>
+     */
+    public AsyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsersAsyncInvoker(BatchDeleteInstanceUsersRequest request) {
+        return new AsyncInvoker<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse>(request, KafkaMeta.batchDeleteInstanceUsers, hcClient);
     }
 
     /**
@@ -127,6 +149,28 @@ public class KafkaAsyncClient {
      */
     public AsyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopicAsyncInvoker(CreateInstanceTopicRequest request) {
         return new AsyncInvoker<CreateInstanceTopicRequest, CreateInstanceTopicResponse>(request, KafkaMeta.createInstanceTopic, hcClient);
+    }
+
+    /**
+     * 创建用户
+     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
+     *
+     * @param CreateInstanceUserRequest 请求对象
+     * @return CompletableFuture<CreateInstanceUserResponse>
+     */
+    public CompletableFuture<CreateInstanceUserResponse> createInstanceUserAsync(CreateInstanceUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createInstanceUser);
+    }
+
+    /**
+     * 创建用户
+     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。
+     *
+     * @param CreateInstanceUserRequest 请求对象
+     * @return AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>
+     */
+    public AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUserAsyncInvoker(CreateInstanceUserRequest request) {
+        return new AsyncInvoker<CreateInstanceUserRequest, CreateInstanceUserResponse>(request, KafkaMeta.createInstanceUser, hcClient);
     }
 
     /**
@@ -460,6 +504,28 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 重置用户密码
+     * 重置用户密码
+     *
+     * @param ResetUserPasswrodRequest 请求对象
+     * @return CompletableFuture<ResetUserPasswrodResponse>
+     */
+    public CompletableFuture<ResetUserPasswrodResponse> resetUserPasswrodAsync(ResetUserPasswrodRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.resetUserPasswrod);
+    }
+
+    /**
+     * 重置用户密码
+     * 重置用户密码
+     *
+     * @param ResetUserPasswrodRequest 请求对象
+     * @return AsyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>
+     */
+    public AsyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrodAsyncInvoker(ResetUserPasswrodRequest request) {
+        return new AsyncInvoker<ResetUserPasswrodRequest, ResetUserPasswrodResponse>(request, KafkaMeta.resetUserPasswrod, hcClient);
+    }
+
+    /**
      * 实例规格变更
      * 实例规格变更。
      *
@@ -658,25 +724,25 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询实例标签
-     * 查询实例标签。
+     * 查询消息
+     * 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
-     * @param ShowInstanceTagsRequest 请求对象
-     * @return CompletableFuture<ShowInstanceTagsResponse>
+     * @param ShowInstanceMessagesRequest 请求对象
+     * @return CompletableFuture<ShowInstanceMessagesResponse>
      */
-    public CompletableFuture<ShowInstanceTagsResponse> showInstanceTagsAsync(ShowInstanceTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.showInstanceTags);
+    public CompletableFuture<ShowInstanceMessagesResponse> showInstanceMessagesAsync(ShowInstanceMessagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showInstanceMessages);
     }
 
     /**
-     * 查询实例标签
-     * 查询实例标签。
+     * 查询消息
+     * 查询消息的偏移量和消息内容。 先根据时间戳查询消息的偏移量，再根据偏移量查询消息内容。
      *
-     * @param ShowInstanceTagsRequest 请求对象
-     * @return AsyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>
+     * @param ShowInstanceMessagesRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>
      */
-    public AsyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTagsAsyncInvoker(ShowInstanceTagsRequest request) {
-        return new AsyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>(request, KafkaMeta.showInstanceTags, hcClient);
+    public AsyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessagesAsyncInvoker(ShowInstanceMessagesRequest request) {
+        return new AsyncInvoker<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse>(request, KafkaMeta.showInstanceMessages, hcClient);
     }
 
     /**
@@ -699,6 +765,94 @@ public class KafkaAsyncClient {
      */
     public AsyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetailAsyncInvoker(ShowInstanceTopicDetailRequest request) {
         return new AsyncInvoker<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse>(request, KafkaMeta.showInstanceTopicDetail, hcClient);
+    }
+
+    /**
+     * 查询用户列表
+     * 查询用户列表。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowInstanceUsersRequest 请求对象
+     * @return CompletableFuture<ShowInstanceUsersResponse>
+     */
+    public CompletableFuture<ShowInstanceUsersResponse> showInstanceUsersAsync(ShowInstanceUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showInstanceUsers);
+    }
+
+    /**
+     * 查询用户列表
+     * 查询用户列表。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowInstanceUsersRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>
+     */
+    public AsyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsersAsyncInvoker(ShowInstanceUsersRequest request) {
+        return new AsyncInvoker<ShowInstanceUsersRequest, ShowInstanceUsersResponse>(request, KafkaMeta.showInstanceUsers, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @return CompletableFuture<ShowKafkaProjectTagsResponse>
+     */
+    public CompletableFuture<ShowKafkaProjectTagsResponse> showKafkaProjectTagsAsync(ShowKafkaProjectTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaProjectTags);
+    }
+
+    /**
+     * 查询项目标签
+     * 查询项目标签。
+     *
+     * @param ShowKafkaProjectTagsRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>
+     */
+    public AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTagsAsyncInvoker(ShowKafkaProjectTagsRequest request) {
+        return new AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse>(request, KafkaMeta.showKafkaProjectTags, hcClient);
+    }
+
+    /**
+     * 查询实例标签
+     * 查询实例标签。
+     *
+     * @param ShowKafkaTagsRequest 请求对象
+     * @return CompletableFuture<ShowKafkaTagsResponse>
+     */
+    public CompletableFuture<ShowKafkaTagsResponse> showKafkaTagsAsync(ShowKafkaTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaTags);
+    }
+
+    /**
+     * 查询实例标签
+     * 查询实例标签。
+     *
+     * @param ShowKafkaTagsRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>
+     */
+    public AsyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTagsAsyncInvoker(ShowKafkaTagsRequest request) {
+        return new AsyncInvoker<ShowKafkaTagsRequest, ShowKafkaTagsResponse>(request, KafkaMeta.showKafkaTags, hcClient);
+    }
+
+    /**
+     * 查询topic的磁盘存储情况
+     * 查询topic在Broker上磁盘占用情况。
+     *
+     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @return CompletableFuture<ShowKafkaTopicPartitionDiskusageResponse>
+     */
+    public CompletableFuture<ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageAsync(ShowKafkaTopicPartitionDiskusageRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaTopicPartitionDiskusage);
+    }
+
+    /**
+     * 查询topic的磁盘存储情况
+     * 查询topic在Broker上磁盘占用情况。
+     *
+     * @param ShowKafkaTopicPartitionDiskusageRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>
+     */
+    public AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageAsyncInvoker(ShowKafkaTopicPartitionDiskusageRequest request) {
+        return new AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse>(request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
     }
 
     /**
@@ -746,8 +900,8 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询分区最新消息的位置
-     * 查询分区最新消息的位置。
+     * 查询分区最早消息的位置
+     * 查询分区最早消息的位置。
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return CompletableFuture<ShowPartitionBeginningMessageResponse>
@@ -757,8 +911,8 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询分区最新消息的位置
-     * 查询分区最新消息的位置。
+     * 查询分区最早消息的位置
+     * 查询分区最早消息的位置。
      *
      * @param ShowPartitionBeginningMessageRequest 请求对象
      * @return AsyncInvoker<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse>
@@ -768,8 +922,8 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询分区最早消息的位置
-     * 查询分区最早消息的位置。
+     * 查询分区最新消息的位置
+     * 查询分区最新消息的位置。
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return CompletableFuture<ShowPartitionEndMessageResponse>
@@ -779,8 +933,8 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询分区最早消息的位置
-     * 查询分区最早消息的位置。
+     * 查询分区最新消息的位置
+     * 查询分区最新消息的位置。
      *
      * @param ShowPartitionEndMessageRequest 请求对象
      * @return AsyncInvoker<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse>
@@ -812,28 +966,6 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return CompletableFuture<ShowProjectTagsResponse>
-     */
-    public CompletableFuture<ShowProjectTagsResponse> showProjectTagsAsync(ShowProjectTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, KafkaMeta.showProjectTags);
-    }
-
-    /**
-     * 查询项目标签
-     * 查询项目标签。
-     *
-     * @param ShowProjectTagsRequest 请求对象
-     * @return AsyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>
-     */
-    public AsyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse> showProjectTagsAsyncInvoker(ShowProjectTagsRequest request) {
-        return new AsyncInvoker<ShowProjectTagsRequest, ShowProjectTagsResponse>(request, KafkaMeta.showProjectTags, hcClient);
-    }
-
-    /**
      * 查询单个转储任务
      * 查询单个转储任务。
      *
@@ -853,6 +985,28 @@ public class KafkaAsyncClient {
      */
     public AsyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetailAsyncInvoker(ShowSinkTaskDetailRequest request) {
         return new AsyncInvoker<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse>(request, KafkaMeta.showSinkTaskDetail, hcClient);
+    }
+
+    /**
+     * 查询用户权限
+     * 查询用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @return CompletableFuture<ShowTopicAccessPolicyResponse>
+     */
+    public CompletableFuture<ShowTopicAccessPolicyResponse> showTopicAccessPolicyAsync(ShowTopicAccessPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showTopicAccessPolicy);
+    }
+
+    /**
+     * 查询用户权限
+     * 查询用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param ShowTopicAccessPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>
+     */
+    public AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicyAsyncInvoker(ShowTopicAccessPolicyRequest request) {
+        return new AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse>(request, KafkaMeta.showTopicAccessPolicy, hcClient);
     }
 
     /**
@@ -963,6 +1117,28 @@ public class KafkaAsyncClient {
      */
     public AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuotaAsyncInvoker(UpdateSinkTaskQuotaRequest request) {
         return new AsyncInvoker<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse>(request, KafkaMeta.updateSinkTaskQuota, hcClient);
+    }
+
+    /**
+     * 设置用户权限
+     * 设置用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateTopicAccessPolicyResponse>
+     */
+    public CompletableFuture<UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyAsync(UpdateTopicAccessPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateTopicAccessPolicy);
+    }
+
+    /**
+     * 设置用户权限
+     * 设置用户权限。 Kafka实例开启SASL功能时，才支持多用户管理的功能。
+     *
+     * @param UpdateTopicAccessPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>
+     */
+    public AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicyAsyncInvoker(UpdateTopicAccessPolicyRequest request) {
+        return new AsyncInvoker<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse>(request, KafkaMeta.updateTopicAccessPolicy, hcClient);
     }
 
     /**

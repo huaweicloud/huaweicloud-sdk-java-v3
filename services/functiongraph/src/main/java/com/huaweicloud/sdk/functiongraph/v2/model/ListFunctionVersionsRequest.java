@@ -44,7 +44,7 @@ public class ListFunctionVersionsRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -66,7 +66,7 @@ public class ListFunctionVersionsRequest  {
 
 
     /**
-     * Get marker
+     * 上一次查询到的最后的记录位置。
      * @return marker
      */
     public String getMarker() {
@@ -88,7 +88,7 @@ public class ListFunctionVersionsRequest  {
 
 
     /**
-     * Get maxitems
+     * 每次查询获取的最大函数记录数量。
      * @return maxitems
      */
     public String getMaxitems() {

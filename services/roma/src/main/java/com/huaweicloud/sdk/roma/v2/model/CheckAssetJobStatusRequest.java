@@ -38,7 +38,7 @@ public class CheckAssetJobStatusRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class CheckAssetJobStatusRequest  {
 
 
     /**
-     * Get jobId
+     * 作业ID
      * @return jobId
      */
     public String getJobId() {

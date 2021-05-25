@@ -44,7 +44,7 @@ public class DisassociateAppQuotaWithAppRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class DisassociateAppQuotaWithAppRequest  {
 
 
     /**
-     * Get appQuotaId
+     * 客户端配额编号
      * @return appQuotaId
      */
     public String getAppQuotaId() {
@@ -88,7 +88,7 @@ public class DisassociateAppQuotaWithAppRequest  {
 
 
     /**
-     * Get appId
+     * 客户端应用编号
      * @return appId
      */
     public String getAppId() {

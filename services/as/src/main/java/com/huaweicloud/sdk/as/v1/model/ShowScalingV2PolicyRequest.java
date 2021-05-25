@@ -32,7 +32,7 @@ public class ShowScalingV2PolicyRequest  {
 
 
     /**
-     * Get scalingPolicyId
+     * 伸缩组ID。
      * @return scalingPolicyId
      */
     public String getScalingPolicyId() {

@@ -18,6 +18,28 @@ public class OmsClient {
 
 
     /**
+     * 创建同步事件
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
+     *
+     * @param CreateSyncEventsRequest 请求对象
+     * @return CreateSyncEventsResponse
+     */
+    public CreateSyncEventsResponse createSyncEvents(CreateSyncEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, OmsMeta.createSyncEvents);
+    }
+
+    /**
+     * 创建同步事件
+     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
+     *
+     * @param CreateSyncEventsRequest 请求对象
+     * @return SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>
+     */
+    public SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEventsInvoker(CreateSyncEventsRequest request) {
+        return new SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>(request, OmsMeta.createSyncEvents, hcClient);
+    }
+
+    /**
      * 创建迁移任务
      * 创建迁移任务，创建成功后，任务会被自动启动，不需要额外调用启动任务命令。
      *
@@ -213,28 +235,6 @@ public class OmsClient {
      */
     public SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfoInvoker(ShowApiInfoRequest request) {
         return new SyncInvoker<ShowApiInfoRequest, ShowApiInfoResponse>(request, OmsMeta.showApiInfo, hcClient);
-    }
-
-    /**
-     * 创建同步事件
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
-     *
-     * @param CreateSyncEventsRequest 请求对象
-     * @return CreateSyncEventsResponse
-     */
-    public CreateSyncEventsResponse createSyncEvents(CreateSyncEventsRequest request) {
-        return hcClient.syncInvokeHttp(request, OmsMeta.createSyncEvents);
-    }
-
-    /**
-     * 创建同步事件
-     * 源端有对象需要进行同步时，调用该接口创建一个同步事件，系统将根据同步事件中包含的对象名称进行同步
-     *
-     * @param CreateSyncEventsRequest 请求对象
-     * @return SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>
-     */
-    public SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEventsInvoker(CreateSyncEventsRequest request) {
-        return new SyncInvoker<CreateSyncEventsRequest, CreateSyncEventsResponse>(request, OmsMeta.createSyncEvents, hcClient);
     }
 
 }

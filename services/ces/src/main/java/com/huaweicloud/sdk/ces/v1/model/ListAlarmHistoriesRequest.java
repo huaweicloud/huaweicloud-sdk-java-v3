@@ -86,7 +86,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get groupId
+     * 服务提供的资源分组功能，创建的资源分组ID，如：rg1603107497873DK4O2pXbn。
      * @return groupId
      */
     public String getGroupId() {
@@ -108,7 +108,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get alarmId
+     * 告警规则ID。如：al1603088932912v98rGl1al。
      * @return alarmId
      */
     public String getAlarmId() {
@@ -130,7 +130,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get alarmName
+     * 告警规则名称，如alarm-test01。
      * @return alarmName
      */
     public String getAlarmName() {
@@ -152,7 +152,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get alarmStatus
+     * 告警历史的状态，取值为ok，alarm，insufficient_data； ok为正常，alarm为告警，insufficient_data为数据不足。
      * @return alarmStatus
      */
     public String getAlarmStatus() {
@@ -174,7 +174,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get alarmLevel
+     * 告警历史的告警级别，值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。
      * @return alarmLevel
      */
     public String getAlarmLevel() {
@@ -196,7 +196,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get namespace
+     * 告警资源对应的命名空间，如ECS服务的资源命名空间为：SYS.ECS；各服务命名空间可查看：“[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
      * @return namespace
      */
     public String getNamespace() {
@@ -218,7 +218,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get from
+     * 查询告警历史的起始时间，UNIX时间戳，单位毫秒，如：1602501480905；from，to如果不进行赋值，则默认to是当前时间，from是当前时间减7天的时间戳。
      * @return from
      */
     public String getFrom() {
@@ -240,7 +240,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get to
+     * 查询告警历史的截止时间，UNIX时间戳，单位毫秒。from必须小于等于to，如：1603106280905；from，to如果不进行赋值，则默认to是当前时间，from是当前时间减7天的时间戳。
      * @return to
      */
     public String getTo() {
@@ -262,7 +262,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get start
+     * 分页起始值，类型为integer，默认值为0。
      * @return start
      */
     public String getStart() {
@@ -284,7 +284,7 @@ public class ListAlarmHistoriesRequest  {
 
 
     /**
-     * Get limit
+     * 单次查询的条数限制，取值范围(0,100]，默认值为100， 用于限制结果数据条数。
      * @return limit
      */
     public String getLimit() {

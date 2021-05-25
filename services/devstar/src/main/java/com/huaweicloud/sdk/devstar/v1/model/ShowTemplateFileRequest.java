@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ShowTemplateFileRequest  {
 
     /**
-     * Gets or Sets xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      */
     public static final class XLanguageEnum {
 
@@ -119,7 +119,7 @@ public class ShowTemplateFileRequest  {
     
     private String filePath;
     /**
-     * Gets or Sets type
+     * 读取文件来源，缺省值为“source-pachage”。  枚举值： - source-package: 源文件压缩包 - introduction: 说明文件 
      */
     public static final class TypeEnum {
 
@@ -212,7 +212,7 @@ public class ShowTemplateFileRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -236,7 +236,7 @@ public class ShowTemplateFileRequest  {
 
 
     /**
-     * Get templateId
+     * 模板ID，通过查询模板列表接口可获取相应的模板ID。
      * @return templateId
      */
     public String getTemplateId() {
@@ -258,7 +258,7 @@ public class ShowTemplateFileRequest  {
 
 
     /**
-     * Get filePath
+     * 文件相对路径，基于当前根目录的相对文件路径，例如获取HELP.md文件内容，则文件相对路径为“template-resources/file/HELP.md”。
      * @return filePath
      */
     public String getFilePath() {
@@ -280,7 +280,7 @@ public class ShowTemplateFileRequest  {
 
 
     /**
-     * Get type
+     * 读取文件来源，缺省值为“source-pachage”。  枚举值： - source-package: 源文件压缩包 - introduction: 说明文件 
      * @return type
      */
     public TypeEnum getType() {

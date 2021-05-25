@@ -66,7 +66,7 @@ public class UnbindMfaDevice  {
 
 
     /**
-     * 验证码。
+     * • 管理员为IAM用户解绑MFA设备：填写6位任意验证码，不做校验。 • IAM用户为自己解绑MFA设备：填写虚拟MFA验证码。
      * @return authenticationCode
      */
     public String getAuthenticationCode() {

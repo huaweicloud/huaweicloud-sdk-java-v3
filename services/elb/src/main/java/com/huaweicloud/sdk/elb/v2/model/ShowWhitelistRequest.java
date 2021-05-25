@@ -32,7 +32,7 @@ public class ShowWhitelistRequest  {
 
 
     /**
-     * Get whitelistId
+     * 白名单的id
      * @return whitelistId
      */
     public String getWhitelistId() {

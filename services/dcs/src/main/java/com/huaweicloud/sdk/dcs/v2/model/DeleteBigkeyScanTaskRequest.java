@@ -38,7 +38,7 @@ public class DeleteBigkeyScanTaskRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteBigkeyScanTaskRequest  {
 
 
     /**
-     * Get bigkeyId
+     * 大key分析任务ID。
      * @return bigkeyId
      */
     public String getBigkeyId() {

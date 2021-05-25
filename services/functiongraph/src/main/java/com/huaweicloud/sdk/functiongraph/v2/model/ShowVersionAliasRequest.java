@@ -25,9 +25,9 @@ public class ShowVersionAliasRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="alias_name")
     
-    private String name;
+    private String aliasName;
 
     public ShowVersionAliasRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -38,7 +38,7 @@ public class ShowVersionAliasRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -51,8 +51,8 @@ public class ShowVersionAliasRequest  {
 
     
 
-    public ShowVersionAliasRequest withName(String name) {
-        this.name = name;
+    public ShowVersionAliasRequest withAliasName(String aliasName) {
+        this.aliasName = aliasName;
         return this;
     }
 
@@ -60,15 +60,15 @@ public class ShowVersionAliasRequest  {
 
 
     /**
-     * Get name
-     * @return name
+     * 要查询的别名名称。
+     * @return aliasName
      */
-    public String getName() {
-        return name;
+    public String getAliasName() {
+        return aliasName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
     }
 
     
@@ -83,18 +83,18 @@ public class ShowVersionAliasRequest  {
         }
         ShowVersionAliasRequest showVersionAliasRequest = (ShowVersionAliasRequest) o;
         return Objects.equals(this.functionUrn, showVersionAliasRequest.functionUrn) &&
-            Objects.equals(this.name, showVersionAliasRequest.name);
+            Objects.equals(this.aliasName, showVersionAliasRequest.aliasName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, name);
+        return Objects.hash(functionUrn, aliasName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowVersionAliasRequest {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

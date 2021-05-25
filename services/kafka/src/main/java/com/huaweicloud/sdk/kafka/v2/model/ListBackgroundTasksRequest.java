@@ -56,7 +56,7 @@ public class ListBackgroundTasksRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListBackgroundTasksRequest  {
 
 
     /**
-     * Get start
+     * 开启查询的任务编号。
      * @return start
      */
     public Integer getStart() {
@@ -100,7 +100,7 @@ public class ListBackgroundTasksRequest  {
 
 
     /**
-     * Get limit
+     * 查询的任务个数。
      * @return limit
      */
     public Integer getLimit() {
@@ -122,7 +122,7 @@ public class ListBackgroundTasksRequest  {
 
 
     /**
-     * Get beginTime
+     * 查询任务的最小时间，格式为YYYYMMDDHHmmss。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -144,7 +144,7 @@ public class ListBackgroundTasksRequest  {
 
 
     /**
-     * Get endTime
+     * 查询任务的最大时间，格式为YYYYMMDDHHmmss。
      * @return endTime
      */
     public String getEndTime() {

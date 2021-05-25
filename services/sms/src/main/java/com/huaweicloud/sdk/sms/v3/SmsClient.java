@@ -18,28 +18,6 @@ public class SmsClient {
 
 
     /**
-     * 校验目的端是否能满足迁移要求
-     * 校验目的端是否满足迁移要求
-     *
-     * @param CheckTargetRequest 请求对象
-     * @return CheckTargetResponse
-     */
-    public CheckTargetResponse checkTarget(CheckTargetRequest request) {
-        return hcClient.syncInvokeHttp(request, SmsMeta.checkTarget);
-    }
-
-    /**
-     * 校验目的端是否能满足迁移要求
-     * 校验目的端是否满足迁移要求
-     *
-     * @param CheckTargetRequest 请求对象
-     * @return SyncInvoker<CheckTargetRequest, CheckTargetResponse>
-     */
-    public SyncInvoker<CheckTargetRequest, CheckTargetResponse> checkTargetInvoker(CheckTargetRequest request) {
-        return new SyncInvoker<CheckTargetRequest, CheckTargetResponse>(request, SmsMeta.checkTarget, hcClient);
-    }
-
-    /**
      * 新建迁移项目
      * 新建迁移项目
      *
@@ -458,6 +436,28 @@ public class SmsClient {
     }
 
     /**
+     * 获取服务器总览
+     * 获取服务器总览
+     *
+     * @param ShowOverviewRequest 请求对象
+     * @return ShowOverviewResponse
+     */
+    public ShowOverviewResponse showOverview(ShowOverviewRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.showOverview);
+    }
+
+    /**
+     * 获取服务器总览
+     * 获取服务器总览
+     *
+     * @param ShowOverviewRequest 请求对象
+     * @return SyncInvoker<ShowOverviewRequest, ShowOverviewResponse>
+     */
+    public SyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewInvoker(ShowOverviewRequest request) {
+        return new SyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, SmsMeta.showOverview, hcClient);
+    }
+
+    /**
      * 查询指定ID的源端服务器
      * 迁移Agent将源端服务器信息上报到主机迁移服务后，主机迁移服务会对迁移的可行性进行检测，该接口返回源端服务器的基本信息和检查结果。
      *
@@ -568,6 +568,28 @@ public class SmsClient {
     }
 
     /**
+     * 更新任务对应源端复制状态
+     * 更新任务对应源端复制状态
+     *
+     * @param UpdateCopyStateRequest 请求对象
+     * @return UpdateCopyStateResponse
+     */
+    public UpdateCopyStateResponse updateCopyState(UpdateCopyStateRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.updateCopyState);
+    }
+
+    /**
+     * 更新任务对应源端复制状态
+     * 更新任务对应源端复制状态
+     *
+     * @param UpdateCopyStateRequest 请求对象
+     * @return SyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>
+     */
+    public SyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse> updateCopyStateInvoker(UpdateCopyStateRequest request) {
+        return new SyncInvoker<UpdateCopyStateRequest, UpdateCopyStateResponse>(request, SmsMeta.updateCopyState, hcClient);
+    }
+
+    /**
      * 更新默认迁移项目
      * 更改默认迁移项目，注册源端会注册在当前的默认项目下。
      *
@@ -675,6 +697,28 @@ public class SmsClient {
      */
     public SyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse> updateSpeedInvoker(UpdateSpeedRequest request) {
         return new SyncInvoker<UpdateSpeedRequest, UpdateSpeedResponse>(request, SmsMeta.updateSpeed, hcClient);
+    }
+
+    /**
+     * 更新指定ID的迁移任务
+     * 更新指定ID的迁移任务
+     *
+     * @param UpdateTaskRequest 请求对象
+     * @return UpdateTaskResponse
+     */
+    public UpdateTaskResponse updateTask(UpdateTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, SmsMeta.updateTask);
+    }
+
+    /**
+     * 更新指定ID的迁移任务
+     * 更新指定ID的迁移任务
+     *
+     * @param UpdateTaskRequest 请求对象
+     * @return SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
+     */
+    public SyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskInvoker(UpdateTaskRequest request) {
+        return new SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>(request, SmsMeta.updateTask, hcClient);
     }
 
     /**

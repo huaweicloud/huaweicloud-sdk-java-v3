@@ -44,7 +44,7 @@ public class ShowPipleineStatusRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class ShowPipleineStatusRequest  {
 
 
     /**
-     * Get pipelineId
+     * 要获取状态的流水线ID
      * @return pipelineId
      */
     public String getPipelineId() {
@@ -90,7 +90,7 @@ public class ShowPipleineStatusRequest  {
 
 
     /**
-     * Get buildId
+     * 要获取状态的执行ID
      * @return buildId
      */
     public String getBuildId() {

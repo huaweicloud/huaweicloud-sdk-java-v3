@@ -54,7 +54,7 @@ public class ShowInstanceTopicDetailRespPartitions  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_update_timestamp")
     
-    private Integer lastUpdateTimestamp;
+    private Long lastUpdateTimestamp;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -172,7 +172,7 @@ public class ShowInstanceTopicDetailRespPartitions  {
 
     
 
-    public ShowInstanceTopicDetailRespPartitions withLastUpdateTimestamp(Integer lastUpdateTimestamp) {
+    public ShowInstanceTopicDetailRespPartitions withLastUpdateTimestamp(Long lastUpdateTimestamp) {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
         return this;
     }
@@ -184,11 +184,11 @@ public class ShowInstanceTopicDetailRespPartitions  {
      * 分区上次写入消息的时间。
      * @return lastUpdateTimestamp
      */
-    public Integer getLastUpdateTimestamp() {
+    public Long getLastUpdateTimestamp() {
         return lastUpdateTimestamp;
     }
 
-    public void setLastUpdateTimestamp(Integer lastUpdateTimestamp) {
+    public void setLastUpdateTimestamp(Long lastUpdateTimestamp) {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
     }
 

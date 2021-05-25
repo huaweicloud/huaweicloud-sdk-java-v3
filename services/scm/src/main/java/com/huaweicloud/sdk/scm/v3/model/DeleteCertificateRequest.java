@@ -32,7 +32,7 @@ public class DeleteCertificateRequest  {
 
 
     /**
-     * Get certificateId
+     * 证书id。
      * @return certificateId
      */
     public String getCertificateId() {

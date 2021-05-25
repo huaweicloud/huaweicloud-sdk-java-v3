@@ -50,7 +50,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get vpcId
+     * 虚拟私有云ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -72,7 +72,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘子网列表数量。取值范围：0~1000。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -96,7 +96,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -118,7 +118,7 @@ public class ListSubnetsRequest  {
 
 
     /**
-     * Get siteId
+     * 站点ID。
      * @return siteId
      */
     public String getSiteId() {

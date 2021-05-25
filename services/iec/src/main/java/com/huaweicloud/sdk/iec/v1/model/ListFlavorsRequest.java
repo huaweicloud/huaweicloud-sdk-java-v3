@@ -80,7 +80,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get offset
+     * 页码。 当前页面数，默认为1。 取值大于等于0，取值为0时返回第1页。
      * @return offset
      */
     public Integer getOffset() {
@@ -102,7 +102,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回边缘实例规格列表当前页面的数量 。 取值范围：0~1000。
      * @return limit
      */
     public Integer getLimit() {
@@ -124,7 +124,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get name
+     * 查询条件，规格的名称。
      * @return name
      */
     public String getName() {
@@ -146,7 +146,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get area
+     * 边缘规格所在大区。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
      * @return area
      */
     public String getArea() {
@@ -168,7 +168,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get province
+     * 边缘规格所在省份。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
      * @return province
      */
     public String getProvince() {
@@ -190,7 +190,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get city
+     * 边缘规格所在城市。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
      * @return city
      */
     public String getCity() {
@@ -212,7 +212,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get operator
+     * 边缘规格支持运营商。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
      * @return operator
      */
     public String getOperator() {
@@ -234,7 +234,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get id
+     * 查询条件，规格的ID。
      * @return id
      */
     public String getId() {
@@ -256,7 +256,7 @@ public class ListFlavorsRequest  {
 
 
     /**
-     * Get siteIds
+     * 查询条件，边缘规格站点列表，站点之间用“,”分隔。
      * @return siteIds
      */
     public String getSiteIds() {

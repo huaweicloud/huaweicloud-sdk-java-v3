@@ -38,7 +38,7 @@ public class DeleteApiAclBindingV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteApiAclBindingV2Request  {
 
 
     /**
-     * Get aclBindingsId
+     * 绑定关系编号
      * @return aclBindingsId
      */
     public String getAclBindingsId() {

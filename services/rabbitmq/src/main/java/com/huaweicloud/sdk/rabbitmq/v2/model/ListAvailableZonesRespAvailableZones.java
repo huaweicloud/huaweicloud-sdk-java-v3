@@ -61,6 +61,12 @@ public class ListAvailableZonesRespAvailableZones  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="remain_time")
+    
+    private Long remainTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ipv6_enable")
     
     private Boolean ipv6Enable;
@@ -219,6 +225,28 @@ public class ListAvailableZonesRespAvailableZones  {
 
     
 
+    public ListAvailableZonesRespAvailableZones withRemainTime(Long remainTime) {
+        this.remainTime = remainTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 剩余时间。
+     * @return remainTime
+     */
+    public Long getRemainTime() {
+        return remainTime;
+    }
+
+    public void setRemainTime(Long remainTime) {
+        this.remainTime = remainTime;
+    }
+
+    
+
     public ListAvailableZonesRespAvailableZones withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
@@ -257,11 +285,12 @@ public class ListAvailableZonesRespAvailableZones  {
             Objects.equals(this.port, listAvailableZonesRespAvailableZones.port) &&
             Objects.equals(this.resourceAvailability, listAvailableZonesRespAvailableZones.resourceAvailability) &&
             Objects.equals(this.defaultAz, listAvailableZonesRespAvailableZones.defaultAz) &&
+            Objects.equals(this.remainTime, listAvailableZonesRespAvailableZones.remainTime) &&
             Objects.equals(this.ipv6Enable, listAvailableZonesRespAvailableZones.ipv6Enable);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(soldOut, id, code, name, port, resourceAvailability, defaultAz, ipv6Enable);
+        return Objects.hash(soldOut, id, code, name, port, resourceAvailability, defaultAz, remainTime, ipv6Enable);
     }
     @Override
     public String toString() {
@@ -274,6 +303,7 @@ public class ListAvailableZonesRespAvailableZones  {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    resourceAvailability: ").append(toIndentedString(resourceAvailability)).append("\n");
         sb.append("    defaultAz: ").append(toIndentedString(defaultAz)).append("\n");
+        sb.append("    remainTime: ").append(toIndentedString(remainTime)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("}");
         return sb.toString();

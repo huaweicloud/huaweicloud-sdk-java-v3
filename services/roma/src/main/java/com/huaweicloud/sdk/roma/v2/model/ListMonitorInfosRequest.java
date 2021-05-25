@@ -45,7 +45,7 @@ public class ListMonitorInfosRequest  {
     
     private String taskName;
     /**
-     * Gets or Sets executeStatus
+     * 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br> 非必填参数，如果为空，搜索所有任务
      */
     public static final class ExecuteStatusEnum {
 
@@ -162,7 +162,7 @@ public class ListMonitorInfosRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -184,7 +184,7 @@ public class ListMonitorInfosRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于1
      * minimum: 1
      * maximum: 999999
      * @return offset
@@ -208,7 +208,7 @@ public class ListMonitorInfosRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -232,7 +232,7 @@ public class ListMonitorInfosRequest  {
 
 
     /**
-     * Get taskName
+     * 需要搜索的任务名称，支持模糊搜索，大小写敏感，非必填参数，如果为空，搜索所有任务
      * @return taskName
      */
     public String getTaskName() {
@@ -254,7 +254,7 @@ public class ListMonitorInfosRequest  {
 
 
     /**
-     * Get executeStatus
+     * 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br> 非必填参数，如果为空，搜索所有任务
      * @return executeStatus
      */
     public ExecuteStatusEnum getExecuteStatus() {

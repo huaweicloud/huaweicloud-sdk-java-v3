@@ -68,7 +68,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get billCycle
+     * 查询消费汇总数据所在的账期，格式为YYYY-MM。
      * @return billCycle
      */
     public String getBillCycle() {
@@ -90,7 +90,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -112,7 +112,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -134,7 +134,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -158,7 +158,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的数量。默认值为10。
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -182,7 +182,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get method
+     * 查询方式。 oneself：自身sub_customer：企业子客户all：自己和企业子客户 默认为all，如果没有企业子客户，all的时候也是查询自己的。
      * @return method
      */
     public String getMethod() {
@@ -204,7 +204,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get subCustomerId
+     * 企业子客户的账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
      * @return subCustomerId
      */
     public String getSubCustomerId() {

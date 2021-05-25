@@ -24,7 +24,7 @@ import java.util.Objects;
 public class BatchListStructDetailRequest  {
 
     /**
-     * Gets or Sets type
+     * 数据库支持迁移对象类型
      */
     public static final class TypeEnum {
 
@@ -150,7 +150,7 @@ public class BatchListStructDetailRequest  {
     
     private TypeEnum type;
     /**
-     * Gets or Sets xLanguage
+     * 请求语言类型
      */
     public static final class XLanguageEnum {
 
@@ -249,7 +249,7 @@ public class BatchListStructDetailRequest  {
 
 
     /**
-     * Get type
+     * 数据库支持迁移对象类型
      * @return type
      */
     public TypeEnum getType() {
@@ -271,7 +271,7 @@ public class BatchListStructDetailRequest  {
 
 
     /**
-     * Get xLanguage
+     * 请求语言类型
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

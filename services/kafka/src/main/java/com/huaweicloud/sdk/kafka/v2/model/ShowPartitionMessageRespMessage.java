@@ -45,7 +45,7 @@ public class ShowPartitionMessageRespMessage  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="message_offset")
     
-    private Integer messageOffset;
+    private Long messageOffset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -147,7 +147,7 @@ public class ShowPartitionMessageRespMessage  {
 
     
 
-    public ShowPartitionMessageRespMessage withMessageOffset(Integer messageOffset) {
+    public ShowPartitionMessageRespMessage withMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
@@ -159,11 +159,11 @@ public class ShowPartitionMessageRespMessage  {
      * 消息位置。
      * @return messageOffset
      */
-    public Integer getMessageOffset() {
+    public Long getMessageOffset() {
         return messageOffset;
     }
 
-    public void setMessageOffset(Integer messageOffset) {
+    public void setMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
     }
 

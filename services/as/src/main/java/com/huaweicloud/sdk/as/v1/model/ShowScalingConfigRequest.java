@@ -32,7 +32,7 @@ public class ShowScalingConfigRequest  {
 
 
     /**
-     * Get scalingConfigurationId
+     * 伸缩配置ID，查询唯一配置。
      * @return scalingConfigurationId
      */
     public String getScalingConfigurationId() {

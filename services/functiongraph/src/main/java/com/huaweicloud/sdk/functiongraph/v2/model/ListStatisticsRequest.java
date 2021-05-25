@@ -23,7 +23,7 @@ import java.util.Objects;
 public class ListStatisticsRequest  {
 
     /**
-     * Gets or Sets filter
+     * 参数过滤器。
      */
     public static final class FilterEnum {
 
@@ -113,7 +113,7 @@ public class ListStatisticsRequest  {
     
     private String period;
     /**
-     * Gets or Sets monthCode
+     * 月度统计的维度，与filter参数monthly_statistics配合使用。 \"0\":本月月度统计。 \"1\":上月月度统计。 \"2\":最近三个月月度统计。 \"3\":最近六个月月度计。 取值超出范围时默认取\"0”
      */
     public static final class MonthCodeEnum {
 
@@ -218,7 +218,7 @@ public class ListStatisticsRequest  {
 
 
     /**
-     * Get filter
+     * 参数过滤器。
      * @return filter
      */
     public FilterEnum getFilter() {
@@ -240,7 +240,7 @@ public class ListStatisticsRequest  {
 
 
     /**
-     * Get period
+     * 时间段单位为分钟，与filter参数metric配合使用。
      * @return period
      */
     public String getPeriod() {
@@ -262,7 +262,7 @@ public class ListStatisticsRequest  {
 
 
     /**
-     * Get monthCode
+     * 月度统计的维度，与filter参数monthly_statistics配合使用。 \"0\":本月月度统计。 \"1\":上月月度统计。 \"2\":最近三个月月度统计。 \"3\":最近六个月月度计。 取值超出范围时默认取\"0”
      * @return monthCode
      */
     public MonthCodeEnum getMonthCode() {

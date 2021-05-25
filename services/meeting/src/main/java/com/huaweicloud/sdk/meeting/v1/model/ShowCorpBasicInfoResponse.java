@@ -91,6 +91,12 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     
     private Boolean autoUserCreate;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="corpType")
+    
+    private Integer corpType;
+
     public ShowCorpBasicInfoResponse withId(String id) {
         this.id = id;
         return this;
@@ -355,6 +361,28 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
 
     
 
+    public ShowCorpBasicInfoResponse withCorpType(Integer corpType) {
+        this.corpType = corpType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业类型
+     * @return corpType
+     */
+    public Integer getCorpType() {
+        return corpType;
+    }
+
+    public void setCorpType(Integer corpType) {
+        this.corpType = corpType;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -375,11 +403,12 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
             Objects.equals(this.enableSMS, showCorpBasicInfoResponse.enableSMS) &&
             Objects.equals(this.enableCloudDisk, showCorpBasicInfoResponse.enableCloudDisk) &&
             Objects.equals(this.enablePstn, showCorpBasicInfoResponse.enablePstn) &&
-            Objects.equals(this.autoUserCreate, showCorpBasicInfoResponse.autoUserCreate);
+            Objects.equals(this.autoUserCreate, showCorpBasicInfoResponse.autoUserCreate) &&
+            Objects.equals(this.corpType, showCorpBasicInfoResponse.corpType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, adminName, account, phone, country, email, enableSMS, enableCloudDisk, enablePstn, autoUserCreate);
+        return Objects.hash(id, name, address, adminName, account, phone, country, email, enableSMS, enableCloudDisk, enablePstn, autoUserCreate, corpType);
     }
     @Override
     public String toString() {
@@ -397,6 +426,7 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         sb.append("    enableCloudDisk: ").append(toIndentedString(enableCloudDisk)).append("\n");
         sb.append("    enablePstn: ").append(toIndentedString(enablePstn)).append("\n");
         sb.append("    autoUserCreate: ").append(toIndentedString(autoUserCreate)).append("\n");
+        sb.append("    corpType: ").append(toIndentedString(corpType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

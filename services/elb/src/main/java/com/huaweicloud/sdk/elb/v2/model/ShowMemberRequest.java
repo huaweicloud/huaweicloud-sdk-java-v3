@@ -38,7 +38,7 @@ public class ShowMemberRequest  {
 
 
     /**
-     * Get poolId
+     * 后端云服务器组id
      * @return poolId
      */
     public String getPoolId() {
@@ -60,7 +60,7 @@ public class ShowMemberRequest  {
 
 
     /**
-     * Get memberId
+     * 后端云服务器id
      * @return memberId
      */
     public String getMemberId() {

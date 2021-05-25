@@ -44,7 +44,7 @@ public class DeleteBackendInstanceV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class DeleteBackendInstanceV2Request  {
 
 
     /**
-     * Get vpcChannelId
+     * VPC通道的编号
      * @return vpcChannelId
      */
     public String getVpcChannelId() {
@@ -88,7 +88,7 @@ public class DeleteBackendInstanceV2Request  {
 
 
     /**
-     * Get memberId
+     * 后端实例对象的编号
      * @return memberId
      */
     public String getMemberId() {

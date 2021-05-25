@@ -50,7 +50,7 @@ public class ListVpcsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回虚拟私有云列表数量。
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -74,7 +74,7 @@ public class ListVpcsRequest  {
 
 
     /**
-     * Get offset
+     * 查询的偏移量。
      * @return offset
      */
     public Integer getOffset() {
@@ -96,7 +96,7 @@ public class ListVpcsRequest  {
 
 
     /**
-     * Get id
+     * 通过ID查询
      * @return id
      */
     public String getId() {
@@ -118,7 +118,7 @@ public class ListVpcsRequest  {
 
 
     /**
-     * Get name
+     * 通过name查询
      * @return name
      */
     public String getName() {

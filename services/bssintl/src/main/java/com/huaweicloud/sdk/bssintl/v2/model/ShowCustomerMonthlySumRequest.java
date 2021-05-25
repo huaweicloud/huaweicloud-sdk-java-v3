@@ -68,7 +68,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get billCycle
+     * |参数名称：消费时间，格式：yyyy-MM| |参数的约束及描述：|
      * @return billCycle
      */
     public String getBillCycle() {
@@ -90,7 +90,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get serviceTypeCode
+     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型| |参数的约束及描述：|
      * @return serviceTypeCode
      */
     public String getServiceTypeCode() {
@@ -112,7 +112,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get enterpriseProjectId
+     * |参数名称：企业项目ID。获取方法请参见如何获取企业项目ID。| |参数的约束及描述：|
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -134,7 +134,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get offset
+     * |参数名称：偏移量，从0开始，默认为0| |参数的约束及描述：|
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -158,7 +158,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get limit
+     * |参数名称：每次查询的数量，默认为10| |参数的约束及描述：|
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -182,7 +182,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get method
+     * |参数名称：查询方式。oneself：自身sub_customer: 企业子客户all:自己和企业子客户| |参数的约束及描述：oneself：自身sub_customer: 企业子客户all:自己和企业子客户|
      * @return method
      */
     public String getMethod() {
@@ -204,7 +204,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * Get subCustomerId
+     * |参数名称：企业子账号ID。| |参数的约束及描述：注意：method不等于sub_customer的时候，该参数无效，如果method等于sub_customer，该参数不能为空|
      * @return subCustomerId
      */
     public String getSubCustomerId() {

@@ -602,7 +602,7 @@ public class DrsMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchQueryJobReq.class,
+            BatchQueryParamReq.class,
             f -> f.withMarshaller(BatchShowParamsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1033,6 +1033,33 @@ public class DrsMeta {
             BatchQueryJobReq.class,
             f -> f.withMarshaller(ShowMonitoringDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v3/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ShowQuotasRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
             })
         );
 

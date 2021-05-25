@@ -32,7 +32,7 @@ public class ShowCertificateRequest  {
 
 
     /**
-     * Get certificateId
+     * 证书ID。
      * @return certificateId
      */
     public String getCertificateId() {

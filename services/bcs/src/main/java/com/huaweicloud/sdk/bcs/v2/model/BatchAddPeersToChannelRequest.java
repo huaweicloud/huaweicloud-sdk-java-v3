@@ -39,7 +39,7 @@ public class BatchAddPeersToChannelRequest  {
 
 
     /**
-     * Get blockchainId
+     * bcs 服务id
      * @return blockchainId
      */
     public String getBlockchainId() {

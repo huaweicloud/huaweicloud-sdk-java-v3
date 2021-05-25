@@ -32,7 +32,7 @@ public class DeleteSecurityGroupRequest  {
 
 
     /**
-     * Get securityGroupId
+     * 安全组的ID。uuid
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

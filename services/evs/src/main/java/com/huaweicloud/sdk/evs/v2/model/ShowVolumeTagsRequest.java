@@ -32,7 +32,7 @@ public class ShowVolumeTagsRequest  {
 
 
     /**
-     * Get volumeId
+     * 云硬盘ID
      * @return volumeId
      */
     public String getVolumeId() {

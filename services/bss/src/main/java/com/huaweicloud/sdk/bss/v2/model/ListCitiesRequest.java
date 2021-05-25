@@ -50,7 +50,7 @@ public class ListCitiesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言。zh_CN：中文en_us：英文缺省为zh_CN。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -74,7 +74,7 @@ public class ListCitiesRequest  {
 
 
     /**
-     * Get provinceCode
+     * 省份编码。
      * @return provinceCode
      */
     public String getProvinceCode() {
@@ -96,7 +96,7 @@ public class ListCitiesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，从0开始。默认值为0。
      * minimum: 0
      * maximum: 1000
      * @return offset
@@ -120,7 +120,7 @@ public class ListCitiesRequest  {
 
 
     /**
-     * Get limit
+     * 每次查询的数量，最大1000。
      * minimum: 1
      * maximum: 1000
      * @return limit

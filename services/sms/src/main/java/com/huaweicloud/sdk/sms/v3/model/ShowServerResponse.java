@@ -17,10 +17,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.sms.v3.model.BtrfsFileSystem;
-import com.huaweicloud.sdk.sms.v3.model.Disk;
 import com.huaweicloud.sdk.sms.v3.model.EnvironmentCheck;
 import com.huaweicloud.sdk.sms.v3.model.InitTargetServer;
 import com.huaweicloud.sdk.sms.v3.model.NetWork;
+import com.huaweicloud.sdk.sms.v3.model.ServerDisk;
 import com.huaweicloud.sdk.sms.v3.model.TaskByServerSource;
 import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
 import java.util.ArrayList;
@@ -352,7 +352,7 @@ public class ShowServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disks")
     
-    private List<Disk> disks = null;
+    private List<ServerDisk> disks = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -894,13 +894,13 @@ public class ShowServerResponse extends SdkResponse {
 
     
 
-    public ShowServerResponse withDisks(List<Disk> disks) {
+    public ShowServerResponse withDisks(List<ServerDisk> disks) {
         this.disks = disks;
         return this;
     }
 
     
-    public ShowServerResponse addDisksItem(Disk disksItem) {
+    public ShowServerResponse addDisksItem(ServerDisk disksItem) {
         if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
@@ -908,7 +908,7 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    public ShowServerResponse withDisks(Consumer<List<Disk>> disksSetter) {
+    public ShowServerResponse withDisks(Consumer<List<ServerDisk>> disksSetter) {
         if(this.disks == null) {
             this.disks = new ArrayList<>();
         }
@@ -920,11 +920,11 @@ public class ShowServerResponse extends SdkResponse {
      * 源端服务器磁盘信息
      * @return disks
      */
-    public List<Disk> getDisks() {
+    public List<ServerDisk> getDisks() {
         return disks;
     }
 
-    public void setDisks(List<Disk> disks) {
+    public void setDisks(List<ServerDisk> disks) {
         this.disks = disks;
     }
 

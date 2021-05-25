@@ -39,7 +39,7 @@ public class CreateDomainMappingRequest  {
 
 
     /**
-     * Get specifyProject
+     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
      * @return specifyProject
      */
     public String getSpecifyProject() {

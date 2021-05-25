@@ -135,7 +135,7 @@ public class JobRecords  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="code")
     
-    private Integer code;
+    private String code;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -337,7 +337,7 @@ public class JobRecords  {
 
     
 
-    public JobRecords withCode(Integer code) {
+    public JobRecords withCode(String code) {
         this.code = code;
         return this;
     }
@@ -349,11 +349,11 @@ public class JobRecords  {
      * 返回码，仅当record_type为API时有效
      * @return code
      */
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

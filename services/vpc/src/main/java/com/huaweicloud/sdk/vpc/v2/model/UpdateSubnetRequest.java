@@ -45,7 +45,7 @@ public class UpdateSubnetRequest  {
 
 
     /**
-     * Get vpcId
+     * 子网对应的vpc_id
      * @return vpcId
      */
     public String getVpcId() {
@@ -67,7 +67,7 @@ public class UpdateSubnetRequest  {
 
 
     /**
-     * Get subnetId
+     * 子网ID
      * @return subnetId
      */
     public String getSubnetId() {

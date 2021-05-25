@@ -62,7 +62,7 @@ public class ListStreamForbiddenRequest  {
 
 
     /**
-     * Get specifyProject
+     * op账号需要携带的特定project_id，当使用op账号时该值为所操作租户的project_id
      * @return specifyProject
      */
     public String getSpecifyProject() {
@@ -84,7 +84,7 @@ public class ListStreamForbiddenRequest  {
 
 
     /**
-     * Get domain
+     * 播放或推流域名
      * @return domain
      */
     public String getDomain() {
@@ -106,7 +106,7 @@ public class ListStreamForbiddenRequest  {
 
 
     /**
-     * Get appName
+     * 应用名称，不指定则查询domain下所有应用的禁止直播推流信息
      * @return appName
      */
     public String getAppName() {
@@ -128,7 +128,7 @@ public class ListStreamForbiddenRequest  {
 
 
     /**
-     * Get streamName
+     * 流名称
      * @return streamName
      */
     public String getStreamName() {
@@ -150,7 +150,7 @@ public class ListStreamForbiddenRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。 默认为0。 
      * minimum: 0
      * @return page
      */
@@ -173,7 +173,7 @@ public class ListStreamForbiddenRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。  取值范围：1-100。  默认为10。 
      * minimum: 1
      * maximum: 100
      * @return size

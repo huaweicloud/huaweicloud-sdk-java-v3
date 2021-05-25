@@ -92,7 +92,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get couponId
+     * |参数名称：优惠券ID。| |参数的约束及描述：优惠券ID。|
      * @return couponId
      */
     public String getCouponId() {
@@ -114,7 +114,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get orderId
+     * |参数名称：订单ID。| |参数的约束及描述：订单ID。|
      * @return orderId
      */
     public String getOrderId() {
@@ -136,7 +136,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get promotionPlanId
+     * |参数名称：促销计划ID。| |参数的约束及描述：促销计划ID。|
      * @return promotionPlanId
      */
     public String getPromotionPlanId() {
@@ -158,7 +158,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get couponType
+     * |参数名称：优惠券类型：1：代金券；2：折扣券；3：产品券；4：现金券。| |参数的约束及描述：优惠券类型：1：代金券；2：折扣券；3：产品券；4：现金券。|
      * minimum: 1
      * maximum: 4
      * @return couponType
@@ -182,7 +182,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get status
+     * |参数名称：客户优惠券实例状态：1：未激活；2：待使用；3：已使用；4：已过期。| |参数的约束及描述：客户优惠券实例状态：1：未激活；2：待使用；3：已使用；4：已过期。|
      * minimum: 1
      * maximum: 4
      * @return status
@@ -206,7 +206,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get activeStartTime
+     * |参数名称：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数的约束及描述：激活时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
      * @return activeStartTime
      */
     public String getActiveStartTime() {
@@ -228,7 +228,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get activeEndTime
+     * |参数名称：结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ| |参数的约束及描述：结束时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ|
      * @return activeEndTime
      */
     public String getActiveEndTime() {
@@ -250,7 +250,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get offset
+     * |参数名称：偏移量，默认为0| |参数的约束及描述：偏移量，默认为0|
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -274,7 +274,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get limit
+     * |参数名称：每页数量，默认10。| |参数的约束及描述：每页数量，默认10。|
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -298,7 +298,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get sourceId
+     * |参数名称：发券来源| |参数的约束及描述：如果是合作伙伴发送的券，这个地方是伙伴ID。 如果想查询某个伙伴发放的券，可以在这里输入伙伴ID|
      * @return sourceId
      */
     public String getSourceId() {
@@ -320,7 +320,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * Get indirectPartnerId
+     * |参数名称：经营服务商（二级经销商）ID，如果要查询二级经销商名下的券，要传递该字段，否则查询的就是一级经销商自己的券列表。| |参数的约束及描述：经营服务商（二级经销商）ID，如果要查询二级经销商名下的券，要传递该字段，否则查询的就是一级经销商自己的券列表。|
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

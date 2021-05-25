@@ -51,7 +51,7 @@ public class ListRecordConfigsRequest  {
     
     private Integer size;
     /**
-     * Gets or Sets recordType
+     * 录制类型 configer_record：按照配置录制
      */
     public static final class RecordTypeEnum {
 
@@ -138,7 +138,7 @@ public class ListRecordConfigsRequest  {
 
 
     /**
-     * Get domain
+     * 直播播放域名
      * @return domain
      */
     public String getDomain() {
@@ -160,7 +160,7 @@ public class ListRecordConfigsRequest  {
 
 
     /**
-     * Get appName
+     * 流应用名称
      * @return appName
      */
     public String getAppName() {
@@ -182,7 +182,7 @@ public class ListRecordConfigsRequest  {
 
 
     /**
-     * Get streamName
+     * 流名
      * @return streamName
      */
     public String getStreamName() {
@@ -204,7 +204,7 @@ public class ListRecordConfigsRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。 默认为0。 
      * minimum: 0
      * @return page
      */
@@ -227,7 +227,7 @@ public class ListRecordConfigsRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。 取值范围：1-100。 默认为10。 
      * minimum: 1
      * maximum: 100
      * @return size
@@ -251,7 +251,7 @@ public class ListRecordConfigsRequest  {
 
 
     /**
-     * Get recordType
+     * 录制类型 configer_record：按照配置录制
      * @return recordType
      */
     public RecordTypeEnum getRecordType() {

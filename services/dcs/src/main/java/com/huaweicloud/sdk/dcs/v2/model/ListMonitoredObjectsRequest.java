@@ -44,7 +44,7 @@ public class ListMonitoredObjectsRequest  {
 
 
     /**
-     * Get dimName
+     * 主维度ID，当前支持dcs_instance_id，dcs_memcached_instance_id。
      * @return dimName
      */
     public String getDimName() {
@@ -66,7 +66,7 @@ public class ListMonitoredObjectsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0
      * @return offset
      */
     public Integer getOffset() {
@@ -88,7 +88,7 @@ public class ListMonitoredObjectsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * @return limit
      */
     public Integer getLimit() {

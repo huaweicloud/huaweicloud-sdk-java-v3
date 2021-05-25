@@ -45,7 +45,7 @@ public class UpdateTestCaseRequest  {
 
 
     /**
-     * Get projectId
+     * 项目唯一标识，固定长度32位字符
      * @return projectId
      */
     public String getProjectId() {
@@ -67,7 +67,7 @@ public class UpdateTestCaseRequest  {
 
 
     /**
-     * Get testcaseId
+     * 测试用例唯一标识，固定长度32位字符
      * @return testcaseId
      */
     public String getTestcaseId() {

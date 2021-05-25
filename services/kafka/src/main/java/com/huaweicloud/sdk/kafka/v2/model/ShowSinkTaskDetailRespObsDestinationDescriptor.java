@@ -57,13 +57,13 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="deliver_time_interval")
     
-    private String deliverTimeInterval;
+    private Integer deliverTimeInterval;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="obs_part_size")
     
-    private String obsPartSize;
+    private Long obsPartSize;
 
     public ShowSinkTaskDetailRespObsDestinationDescriptor withConsumerStrategy(String consumerStrategy) {
         this.consumerStrategy = consumerStrategy;
@@ -197,7 +197,7 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
 
     
 
-    public ShowSinkTaskDetailRespObsDestinationDescriptor withDeliverTimeInterval(String deliverTimeInterval) {
+    public ShowSinkTaskDetailRespObsDestinationDescriptor withDeliverTimeInterval(Integer deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
         return this;
     }
@@ -209,17 +209,17 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
      * 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 缺省值：300 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。 
      * @return deliverTimeInterval
      */
-    public String getDeliverTimeInterval() {
+    public Integer getDeliverTimeInterval() {
         return deliverTimeInterval;
     }
 
-    public void setDeliverTimeInterval(String deliverTimeInterval) {
+    public void setDeliverTimeInterval(Integer deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
     }
 
     
 
-    public ShowSinkTaskDetailRespObsDestinationDescriptor withObsPartSize(String obsPartSize) {
+    public ShowSinkTaskDetailRespObsDestinationDescriptor withObsPartSize(Long obsPartSize) {
         this.obsPartSize = obsPartSize;
         return this;
     }
@@ -228,14 +228,14 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor  {
 
 
     /**
-     * 每个传输文件多大后就开始上传，单位为byte。 默认值5242880。
+     * 每个传输文件多大后就开始上传，单位为byte。 默认值5242880。 
      * @return obsPartSize
      */
-    public String getObsPartSize() {
+    public Long getObsPartSize() {
         return obsPartSize;
     }
 
-    public void setObsPartSize(String obsPartSize) {
+    public void setObsPartSize(Long obsPartSize) {
         this.obsPartSize = obsPartSize;
     }
 

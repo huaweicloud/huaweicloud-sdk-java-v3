@@ -45,7 +45,7 @@ public class CreateProductTopicRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class CreateProductTopicRequest  {
 
 
     /**
-     * Get productId
+     * 产品ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return productId

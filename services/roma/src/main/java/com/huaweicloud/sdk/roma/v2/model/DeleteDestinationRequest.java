@@ -44,7 +44,7 @@ public class DeleteDestinationRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class DeleteDestinationRequest  {
 
 
     /**
-     * Get ruleId
+     * 规则ID
      * @return ruleId
      */
     public String getRuleId() {
@@ -88,7 +88,7 @@ public class DeleteDestinationRequest  {
 
 
     /**
-     * Get destinationId
+     * 目标数据源ID
      * minimum: 0
      * maximum: 200376420520689663
      * @return destinationId

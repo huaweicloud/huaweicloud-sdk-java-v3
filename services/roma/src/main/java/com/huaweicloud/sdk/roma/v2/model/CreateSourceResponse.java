@@ -61,7 +61,7 @@ public class CreateSourceResponse extends SdkResponse {
     
     private String productName;
     /**
-     * 是否payload使用base64，0-是，1-否
+     * 是否payload使用base64，0-是 1-否
      */
     public static final class IsBase64Enum {
 
@@ -370,7 +370,7 @@ public class CreateSourceResponse extends SdkResponse {
 
 
     /**
-     * 是否payload使用base64，0-是，1-否
+     * 是否payload使用base64，0-是 1-否
      * @return isBase64
      */
     public IsBase64Enum getIsBase64() {

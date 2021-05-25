@@ -1,3 +1,198 @@
+# 3.0.45 2021-05-25
+
+### HuaweiCloud SDK AS
+
+- _Features_
+    - Support more interfaces:
+        - `ListApiVersions`
+        - `ShowApiVersion`
+        - `BatchProtectScalingInstances`
+        - `BatchRemoveScalingInstances`
+        - `CreateScalingTagInfo`
+        - `BatchResumeScalingPolicies`
+        - `BatchPauseScalingPolicies`
+        - `PauseScalingGroup`
+        - `BatchSetScalingInstancesStandby`
+        - `BatchUnsetScalingInstancesStandby`
+        - `ResumeScalingPolicy`
+        - `PauseScalingPolicy`
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the operation name of the following interfaces:
+        - from `ExecuteScalingPolicies` to `BatchDeleteScalingPolicies`
+        - from `EnableOrDisableScalingGroup` to `ResumeScalingGroup`
+        - from `UpdateScalingGroupInstance` to `BatchAddScalingInstances`
+        - from `CompleteLifecycleAction` to `AttachCallbackInstanceLifeCycleHook`
+    - Remove the interface: `DeleteScalingTags`
+    - Add the parameter `enterprise_project_id` to the interface `ListScalingGroups`.
+    - Add the parameter `log_id` to the interface `ListScalingActivityV2Logs`.
+
+### HuaweiCloud SDK BSS
+
+- _Features_
+    - Support interface `ListCustomerBillsMonthlyBreakDown` and `ListOrderDiscounts`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Add query parameter _bill_date_begin_ and _bill_date_end_ to interface `ListSubCustomerResFeeRecords`.
+
+### HuaweiCloud SDK CloudPipeline
+
+- _Features_
+    - Support interface: `StopPipelineNew`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Remove interfaces `StartPipeline`, `StopPipeline`.
+
+### HuaweiCloud SDK DMS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of interface from `ShowProjectTags` to `ShowQueueProjectTags`.
+
+### HuaweiCloud SDK DRS
+
+- _Features_
+    - Support interface `ShowQuotas`.
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the type of response parameter `all_counts` of interface `BatchUpdateUser`: String -> int.
+    - Modify the type of request parameter `ssl_link` of interface `BatchCreateJobs`: String -> bool.
+    - Modify the type of response parameter `start_time` of interface `ShowMonitoringData`: int -> String.
+    - Modify the type of response parameter `billing_tag` of interface `ShowJobList`: String -> bool.
+    - Add a response parameter `child_ids` to interface `BatchListJobDetails`.
+    - Remove a response parameter `issue_coupon` to interface `BatchListJobDetails`.
+
+### HuaweiCloud SDK EPS
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Change the request parameter `offset` of interface `ListEnterpriseProject` from required to optional.
+
+### HuaweiCloud SDK FunctionGraph
+
+- _Features_
+    - Support more interfaces:
+        - `ListFunctionAsyncInvokeConfig`
+        - `ShowFunctionAsyncInvokeConfig`
+        - `DeleteFunctionAsyncInvokeConfig`
+        - `UpdateFunctionAsyncInvokeConfig`
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of request parameter of interfaces `DeleteVersionAlias`,`UpdateVersionAlias`
+      , `ShowVersionAlias`: `name` -> `alias_name`
+    - Modify the name of request parameter of interfaces `DeleteFunctionTrigger`,`UpdateTrigger`
+      ,`ShowFunctionTrigger`: `triggerId` -> `trigger_id`
+
+### HuaweiCloud SDK IAM
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add the parameter `access_mode` to interface `CreateUsers`.
+    - Change the parameter `authentication_code` of interface `DeleteBindingDevice` from required to optional.
+
+### HuaweiCloud SDK Kafka
+
+- _Features_
+    - Support more interfaces:
+        - `CreateInstanceUser`
+        - `BatchDeleteInstanceUsers`
+        - `ShowInstanceUsers`
+        - `ShowTopicAccessPolicy`
+        - `UpdateTopicAccessPolicy`
+        - `ShowKafkaTopicPartitionDiskusage`
+        - `ShowInstanceMessages`
+        - `ResetUserPassword`
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of the interface:
+        - from `ShowInstanceTags` to `ShowKafkaTags`
+        - from `ShowProjectTags` to `ShowKafkaProjectTags`
+        - from `BatchCreateOrDeleteInstanceTag` to `BatchCreateOrDeleteKafkaTag`
+    - Modify the request body name of the interface:
+        - from `BatchCreateOrDeleteInstanceTagRequestBody` to `BatchCreateOrDeleteKafkaTagRequestBody`
+    - Modify the data type of parameter `sink_max_tasks` in the request body of interface `UpdateSinkTaskQuota` from
+      String to Integer.
+
+### HuaweiCloud SDK Meeting
+
+- _Features_
+    - Support more interfaces:
+        - `ShowRecordingFileDownloadUrls`
+        - `SearchQosParticipantDetail`
+        - `SearchMemberVmrByCloudLink`
+        - `SearchQosHistoryMeetings`
+        - `UpdateStartedConfConfig`
+        - `SearchQosParticipants`
+        - `InviteUser`
+        - `CreateWebSocketToken`
+        - `CreateAppIdToken`
+        - `SearchQosOnlineMeetings`
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the data type of parameter `X-Login-Type` of interface `CreateConfToken` from Integer to String.
+    - Delete the unused parameter `forceEditFlag` of interface `UpdateResource` and `DeleteResource`.
+    - Delete the unused parameter `forceDelete` of interface `DeleteCorp`.
+
+### HuaweiCloud SDK RabbitMQ
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Modify the name of the following interfaces:
+        - from `BatchCreateOrDeleteInstanceTag` to `BatchCreateOrDeleteRabbitMqTag`;
+        - from `ShowProjectTags` to `ShowRabbitMqProjectTags`;
+        - from `ShowInstanceTags` to `ShowRabbitMqTags`.
+    - Modify the request body name of interface `BatchCreateOrDeleteInstanceTag`
+      from `BatchCreateOrDeleteInstanceTagRequestBody` to
+      `BatchCreateOrDeleteRabbitMqTagRequestBody`.
+
+### HuaweiCloud SDK ROMA
+
+- _Features_
+    - None
+- _Bug Fix_
+    - None
+- _Change_
+    - Add a request parameter `data_format` to interface `CreateProduct`.
+    - Add request parameters `name`,`topic_permission`,`topic_type`,`is_private` to interface `ListTopics`.
+    - Modify the name of request parameter of interface `DownloadProducts`: `product_id` -> `product_ids`.
+    - Add response parameters `ipv6_connect_address`,`ipv6_ssl_connect_address`,`items` to interface `ListDevices`.
+    - Add response parameters `total`,`size` to interface `ListSubsets`.
+    - Add response parameters `succ_num`,`fail_num`,`fail_objects_ids` to interface `UploadProduct`.
+    - Modify the name of response body of interface `ListSubsets`: `ListDevicesResponseBody`
+      -> `ListSubDevicesResponseBody`.
+
+### HuaweiCloud SDK SMS
+
+- _Features_
+    - Support more interfaces:
+        - `UpdateTask`
+        - `ShowOverview`
+        - `UpdateCopyState`
+- _Bug Fix_
+    - None
+- _Change_
+    - Remove the interface: `CheckTarget`
+    - Modify the data type of parameter `start_target_server` in interface `CreateMigproject` from String to Boolean.
+
 # 3.0.43-rc 2021-05-14
 
 ### HuaweiCloud SDK ECS
@@ -45,7 +240,8 @@
 - _Features_
     - None
 - _Bug Fix_
-    - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/17): Fix the issue that `EpDetailType` enum is defined incorrectly.
+    - [Issue 17](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/17): Fix the issue that `EpDetailType` enum
+      is defined incorrectly.
 - _Change_
     - None
 
@@ -63,7 +259,8 @@
 - _Features_
     - None
 - _Bug Fix_
-    - [Issue 19](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/19): Fix the issue of type of response body in `ListKeypairs`.
+    - [Issue 19](https://github.com/huaweicloud/huaweicloud-sdk-go-v3/issues/19): Fix the issue of type of response body
+      in `ListKeypairs`.
 - _Change_
     - 无
 
@@ -90,8 +287,10 @@
 - _Bug Fix_
     - None
 - _Change_
-    - Modify the name of response body of interface `ListOffSiteInstances`: `OffSiteInstanceListResponse` -> `OffSiteInstanceListResponseBody`
-    - Modify the name of response field of interface `ListOffSiteInstances`: `offsite_backup_instances` -> `offsite_backup_instance`
+    - Modify the name of response body of interface `ListOffSiteInstances`: `OffSiteInstanceListResponse`
+      -> `OffSiteInstanceListResponseBody`
+    - Modify the name of response field of interface `ListOffSiteInstances`: `offsite_backup_instances`
+      -> `offsite_backup_instance`
 
 # 3.0.41-rc 2021-04-30
 
@@ -186,9 +385,11 @@
 
 - _Features_
     - Support to import only `huaweicloud-sdk-all` dependency package to use all services in the SDK.
-    - Support to import `huaweicloud-sdk-bundle` dependency package to solve the conflict between the third-party libraries.
+    - Support to import `huaweicloud-sdk-bundle` dependency package to solve the conflict between the third-party
+      libraries.
 - _Bug Fix_
-    - Fixed an issue where a NullPointerException is thrown when the add{Property}Item method of an array attribute is used.
+    - Fixed an issue where a NullPointerException is thrown when the add{Property}Item method of an array attribute is
+      used.
 - _Change_
     - None
 
@@ -276,8 +477,10 @@
 - _Bug Fix_
     - None
 - _Change_
-    - Add the attribute `name` to the response body `IssueResponseV4` of the interfaces `ShowIssueV4` and `UpdateIssueV4`.
-    - Change the attribute `work_time` to `work_date` in `ShowProjectWorkHoursResponseBody` in the response body of the interfaces `ShowProjectWorkHours` and `ListProjectWorkHours`.
+    - Add the attribute `name` to the response body `IssueResponseV4` of the interfaces `ShowIssueV4`
+      and `UpdateIssueV4`.
+    - Change the attribute `work_time` to `work_date` in `ShowProjectWorkHoursResponseBody` in the response body of the
+      interfaces `ShowProjectWorkHours` and `ListProjectWorkHours`.
 
 ### HuaweiCloud SDK SMN
 
@@ -287,7 +490,8 @@
     - None
 - _Change_
     - Change the request parameter `protocol`  of the interface `PublishMessage`  from mandatory to optional.
-    - Change the attribute `subject`  of the class `PublishMessageRequestBody` in the request body of the interface `PublishMessage`  from mandatory to optional.
+    - Change the attribute `subject`  of the class `PublishMessageRequestBody` in the request body of the
+      interface `PublishMessage`  from mandatory to optional.
 
 # 3.0.38-rc 2021-03-26
 

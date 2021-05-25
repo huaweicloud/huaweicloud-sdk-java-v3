@@ -45,7 +45,7 @@ public class BatchPublishOrOfflineApiV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class BatchPublishOrOfflineApiV2Request  {
 
 
     /**
-     * Get action
+     * - online：发布 - offline：下线
      * @return action
      */
     public String getAction() {

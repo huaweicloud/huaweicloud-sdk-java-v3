@@ -39,7 +39,7 @@ public class UpdateSecretRequest  {
 
 
     /**
-     * Get secretId
+     * 凭据对象唯一资源标识符。
      * @return secretId
      */
     public String getSecretId() {

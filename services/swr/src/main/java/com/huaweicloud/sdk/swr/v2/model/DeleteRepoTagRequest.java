@@ -44,7 +44,7 @@ public class DeleteRepoTagRequest  {
 
 
     /**
-     * Get namespace
+     * 组织名称
      * @return namespace
      */
     public String getNamespace() {
@@ -66,7 +66,7 @@ public class DeleteRepoTagRequest  {
 
 
     /**
-     * Get repository
+     * 镜像仓库名称
      * @return repository
      */
     public String getRepository() {
@@ -88,7 +88,7 @@ public class DeleteRepoTagRequest  {
 
 
     /**
-     * Get tag
+     * 镜像版本名称
      * @return tag
      */
     public String getTag() {

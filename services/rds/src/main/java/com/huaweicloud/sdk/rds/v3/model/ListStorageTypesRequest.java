@@ -29,7 +29,7 @@ public class ListStorageTypesRequest  {
     
     private String xLanguage;
     /**
-     * Gets or Sets databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
      */
     public static final class DatabaseNameEnum {
 
@@ -125,7 +125,7 @@ public class ListStorageTypesRequest  {
     
     private String versionName;
     /**
-     * Gets or Sets haMode
+     * 主备模式： single：单机模式。 ha：主备模式。 replica：只读模式。
      */
     public static final class HaModeEnum {
 
@@ -224,7 +224,7 @@ public class ListStorageTypesRequest  {
 
 
     /**
-     * Get xLanguage
+     * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -248,7 +248,7 @@ public class ListStorageTypesRequest  {
 
 
     /**
-     * Get databaseName
+     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
      * @return databaseName
      */
     public DatabaseNameEnum getDatabaseName() {
@@ -270,7 +270,7 @@ public class ListStorageTypesRequest  {
 
 
     /**
-     * Get versionName
+     * 数据库版本号。
      * @return versionName
      */
     public String getVersionName() {
@@ -292,7 +292,7 @@ public class ListStorageTypesRequest  {
 
 
     /**
-     * Get haMode
+     * 主备模式： single：单机模式。 ha：主备模式。 replica：只读模式。
      * @return haMode
      */
     public HaModeEnum getHaMode() {

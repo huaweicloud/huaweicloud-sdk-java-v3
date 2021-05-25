@@ -44,7 +44,7 @@ public class ValidateDictionaryRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -66,7 +66,7 @@ public class ValidateDictionaryRequest  {
 
 
     /**
-     * Get name
+     * 待校验是否重复的字典名称，精确匹配
      * @return name
      */
     public String getName() {
@@ -88,7 +88,7 @@ public class ValidateDictionaryRequest  {
 
 
     /**
-     * Get code
+     * 待校验是否重复的字典编码，精确匹配
      * @return code
      */
     public String getCode() {

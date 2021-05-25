@@ -19,6 +19,12 @@ public class CreateUserOption  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="access_mode")
+    
+    private String accessMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
@@ -82,6 +88,28 @@ public class CreateUserOption  {
     @JsonProperty(value="description")
     
     private String description;
+
+    public CreateUserOption withAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+     * @return accessMode
+     */
+    public String getAccessMode() {
+        return accessMode;
+    }
+
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
+
+    
 
     public CreateUserOption withName(String name) {
         this.name = name;
@@ -334,7 +362,8 @@ public class CreateUserOption  {
             return false;
         }
         CreateUserOption createUserOption = (CreateUserOption) o;
-        return Objects.equals(this.name, createUserOption.name) &&
+        return Objects.equals(this.accessMode, createUserOption.accessMode) &&
+            Objects.equals(this.name, createUserOption.name) &&
             Objects.equals(this.domainId, createUserOption.domainId) &&
             Objects.equals(this.password, createUserOption.password) &&
             Objects.equals(this.email, createUserOption.email) &&
@@ -348,12 +377,13 @@ public class CreateUserOption  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, domainId, password, email, areacode, phone, enabled, pwdStatus, xuserType, xuserId, description);
+        return Objects.hash(accessMode, name, domainId, password, email, areacode, phone, enabled, pwdStatus, xuserType, xuserId, description);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateUserOption {\n");
+        sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");

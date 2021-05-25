@@ -38,7 +38,7 @@ public class DeleteSecretStageRequest  {
 
 
     /**
-     * Get secretId
+     * 凭据的资源标识符。
      * @return secretId
      */
     public String getSecretId() {
@@ -60,7 +60,7 @@ public class DeleteSecretStageRequest  {
 
 
     /**
-     * Get stageName
+     * 凭据版本状态的名称。
      * @return stageName
      */
     public String getStageName() {

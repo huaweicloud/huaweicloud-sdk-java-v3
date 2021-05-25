@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.as.v1.model.ScalingPolicyActionV2;
+import com.huaweicloud.sdk.as.v1.model.ScalingPolicyV2MetaData;
 import com.huaweicloud.sdk.as.v1.model.ScheduledPolicy;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
@@ -340,6 +341,12 @@ public class ScalingPoliciesV2  {
     
     private OffsetDateTime createTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="meta_data")
+    
+    private ScalingPolicyV2MetaData metaData;
+
     public ScalingPoliciesV2 withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
@@ -596,6 +603,35 @@ public class ScalingPoliciesV2  {
 
     
 
+    public ScalingPoliciesV2 withMetaData(ScalingPolicyV2MetaData metaData) {
+        this.metaData = metaData;
+        return this;
+    }
+
+    public ScalingPoliciesV2 withMetaData(Consumer<ScalingPolicyV2MetaData> metaDataSetter) {
+        if(this.metaData == null ){
+            this.metaData = new ScalingPolicyV2MetaData();
+            metaDataSetter.accept(this.metaData);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get metaData
+     * @return metaData
+     */
+    public ScalingPolicyV2MetaData getMetaData() {
+        return metaData;
+    }
+
+    public void setMetaData(ScalingPolicyV2MetaData metaData) {
+        this.metaData = metaData;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -615,11 +651,12 @@ public class ScalingPoliciesV2  {
             Objects.equals(this.scheduledPolicy, scalingPoliciesV2.scheduledPolicy) &&
             Objects.equals(this.scalingPolicyAction, scalingPoliciesV2.scalingPolicyAction) &&
             Objects.equals(this.coolDownTime, scalingPoliciesV2.coolDownTime) &&
-            Objects.equals(this.createTime, scalingPoliciesV2.createTime);
+            Objects.equals(this.createTime, scalingPoliciesV2.createTime) &&
+            Objects.equals(this.metaData, scalingPoliciesV2.metaData);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingPolicyName, scalingPolicyId, scalingResourceId, scalingResourceType, policyStatus, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime, createTime);
+        return Objects.hash(scalingPolicyName, scalingPolicyId, scalingResourceId, scalingResourceType, policyStatus, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime, createTime, metaData);
     }
     @Override
     public String toString() {
@@ -636,6 +673,7 @@ public class ScalingPoliciesV2  {
         sb.append("    scalingPolicyAction: ").append(toIndentedString(scalingPolicyAction)).append("\n");
         sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

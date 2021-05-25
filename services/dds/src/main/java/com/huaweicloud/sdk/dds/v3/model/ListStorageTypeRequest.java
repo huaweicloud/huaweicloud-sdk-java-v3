@@ -21,7 +21,7 @@ import java.util.Objects;
 public class ListStorageTypeRequest  {
 
     /**
-     * Gets or Sets engineName
+     * 数据库版本类型： - 取值为“DDS-Community”。
      */
     public static final class EngineNameEnum {
 
@@ -114,7 +114,7 @@ public class ListStorageTypeRequest  {
 
 
     /**
-     * Get engineName
+     * 数据库版本类型： - 取值为“DDS-Community”。
      * @return engineName
      */
     public EngineNameEnum getEngineName() {

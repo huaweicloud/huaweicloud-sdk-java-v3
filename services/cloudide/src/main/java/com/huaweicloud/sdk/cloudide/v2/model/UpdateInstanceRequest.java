@@ -39,7 +39,7 @@ public class UpdateInstanceRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例id
      * @return instanceId
      */
     public String getInstanceId() {

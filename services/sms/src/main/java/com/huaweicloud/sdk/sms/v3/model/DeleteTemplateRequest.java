@@ -32,7 +32,7 @@ public class DeleteTemplateRequest  {
 
 
     /**
-     * Get id
+     * 需要删除的模板的ID
      * @return id
      */
     public String getId() {

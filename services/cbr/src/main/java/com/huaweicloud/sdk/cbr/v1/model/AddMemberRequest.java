@@ -39,7 +39,7 @@ public class AddMemberRequest  {
 
 
     /**
-     * Get backupId
+     * 备份副本id
      * @return backupId
      */
     public String getBackupId() {

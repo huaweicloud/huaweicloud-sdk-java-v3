@@ -44,7 +44,7 @@ public class ListKeypairsRequest  {
 
 
     /**
-     * Get limit
+     * 查询返回keypair列表当前页面的数量。 取值范围：0~1000。
      * @return limit
      */
     public Integer getLimit() {
@@ -66,7 +66,7 @@ public class ListKeypairsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量。 当前偏移量，默认为0。
      * @return offset
      */
     public Integer getOffset() {
@@ -88,7 +88,7 @@ public class ListKeypairsRequest  {
 
 
     /**
-     * Get name
+     * 根据名称查询keypair列表。
      * @return name
      */
     public String getName() {

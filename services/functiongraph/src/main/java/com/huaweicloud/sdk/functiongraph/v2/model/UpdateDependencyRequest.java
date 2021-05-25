@@ -39,7 +39,7 @@ public class UpdateDependencyRequest  {
 
 
     /**
-     * Get dependId
+     * 依赖包的ID。
      * @return dependId
      */
     public String getDependId() {

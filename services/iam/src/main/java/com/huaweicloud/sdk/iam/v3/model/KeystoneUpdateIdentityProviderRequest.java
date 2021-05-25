@@ -39,7 +39,7 @@ public class KeystoneUpdateIdentityProviderRequest  {
 
 
     /**
-     * Get id
+     * 待更新的身份提供商ID。
      * @return id
      */
     public String getId() {

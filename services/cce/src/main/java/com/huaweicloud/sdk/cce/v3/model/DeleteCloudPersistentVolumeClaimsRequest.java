@@ -56,7 +56,7 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
 
     /**
-     * Get name
+     * 需要删除的PersistentVolumClaim的名称。 
      * @return name
      */
     public String getName() {
@@ -78,7 +78,7 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
 
     /**
-     * Get namespace
+     * 指定PersistentVolumeClaim所在的命名空间。 
      * @return namespace
      */
     public String getNamespace() {
@@ -100,7 +100,7 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
 
     /**
-     * Get deleteVolume
+     * 删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。 
      * @return deleteVolume
      */
     public String getDeleteVolume() {
@@ -122,7 +122,7 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
 
     /**
-     * Get storageType
+     * 删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。 云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。     - bs：EVS云硬盘存储     - nfs：SFS弹性文件存储     - obs：OBS对象存储     [- efs：SFS Turbo极速文件存储](tag:hws) 
      * @return storageType
      */
     public String getStorageType() {
@@ -144,7 +144,7 @@ public class DeleteCloudPersistentVolumeClaimsRequest  {
 
 
     /**
-     * Get xClusterID
+     * 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
      * @return xClusterID
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

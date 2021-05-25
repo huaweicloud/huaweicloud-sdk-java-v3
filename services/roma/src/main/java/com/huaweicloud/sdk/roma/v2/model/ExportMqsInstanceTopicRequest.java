@@ -38,7 +38,7 @@ public class ExportMqsInstanceTopicRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ExportMqsInstanceTopicRequest  {
 
 
     /**
-     * Get name
+     * 待导出的topic。多个topic以“,”分隔。默认导出所有的topic。
      * @return name
      */
     public String getName() {

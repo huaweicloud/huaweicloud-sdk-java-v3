@@ -62,7 +62,7 @@ public class ListCommandsRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ListCommandsRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * @return serviceId
      */
     public String getServiceId() {
@@ -106,7 +106,7 @@ public class ListCommandsRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -130,7 +130,7 @@ public class ListCommandsRequest  {
 
 
     /**
-     * Get commandId
+     * 命令ID
      * minimum: 1
      * maximum: 999999999999999999
      * @return commandId
@@ -154,7 +154,7 @@ public class ListCommandsRequest  {
 
 
     /**
-     * Get commandName
+     * 命令名称
      * @return commandName
      */
     public String getCommandName() {
@@ -176,7 +176,7 @@ public class ListCommandsRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

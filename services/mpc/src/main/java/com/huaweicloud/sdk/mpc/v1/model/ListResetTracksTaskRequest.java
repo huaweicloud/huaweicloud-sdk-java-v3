@@ -29,7 +29,7 @@ public class ListResetTracksTaskRequest  {
     
     private List<String> taskId = null;
         /**
-     * Gets or Sets status
+     * 任务执行状态 
      */
     public static final class StatusEnum {
 
@@ -178,7 +178,7 @@ public class ListResetTracksTaskRequest  {
     }
 
     /**
-     * Get taskId
+     * 任务ID。一次最多10个 
      * @return taskId
      */
     public List<String> getTaskId() {
@@ -200,7 +200,7 @@ public class ListResetTracksTaskRequest  {
 
 
     /**
-     * Get status
+     * 任务执行状态 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -222,7 +222,7 @@ public class ListResetTracksTaskRequest  {
 
 
     /**
-     * Get startTime
+     * 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
      * @return startTime
      */
     public String getStartTime() {
@@ -244,7 +244,7 @@ public class ListResetTracksTaskRequest  {
 
 
     /**
-     * Get endTime
+     * 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效 
      * @return endTime
      */
     public String getEndTime() {
@@ -266,7 +266,7 @@ public class ListResetTracksTaskRequest  {
 
 
     /**
-     * Get page
+     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
      * minimum: 0
      * maximum: 50000
      * @return page
@@ -290,7 +290,7 @@ public class ListResetTracksTaskRequest  {
 
 
     /**
-     * Get size
+     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
      * minimum: 1
      * maximum: 100
      * @return size

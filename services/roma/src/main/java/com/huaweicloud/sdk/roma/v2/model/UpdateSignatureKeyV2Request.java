@@ -45,7 +45,7 @@ public class UpdateSignatureKeyV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateSignatureKeyV2Request  {
 
 
     /**
-     * Get signId
+     * 签名密钥编号
      * @return signId
      */
     public String getSignId() {

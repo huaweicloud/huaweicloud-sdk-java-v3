@@ -39,7 +39,7 @@ public class UpdateResourceRequest  {
 
 
     /**
-     * Get resourceId
+     * 资源id.
      * @return resourceId
      */
     public String getResourceId() {

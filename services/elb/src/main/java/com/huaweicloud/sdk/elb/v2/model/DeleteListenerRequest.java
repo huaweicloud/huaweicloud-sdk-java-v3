@@ -38,7 +38,7 @@ public class DeleteListenerRequest  {
 
 
     /**
-     * Get cascade
+     * （不再支持）级联删除负载均衡器
      * @return cascade
      */
     public Boolean getCascade() {
@@ -60,7 +60,7 @@ public class DeleteListenerRequest  {
 
 
     /**
-     * Get listenerId
+     * 监听器id
      * @return listenerId
      */
     public String getListenerId() {

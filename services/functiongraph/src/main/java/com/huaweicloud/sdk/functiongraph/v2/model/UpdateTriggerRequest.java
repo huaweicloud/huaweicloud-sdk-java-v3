@@ -28,7 +28,7 @@ public class UpdateTriggerRequest  {
     
     private String functionUrn;
     /**
-     * Gets or Sets triggerTypeCode
+     * 触发器类型代码。
      */
     public static final class TriggerTypeCodeEnum {
 
@@ -162,7 +162,7 @@ public class UpdateTriggerRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="triggerId")
+    @JsonProperty(value="trigger_id")
     
     private String triggerId;
 
@@ -181,7 +181,7 @@ public class UpdateTriggerRequest  {
 
 
     /**
-     * Get functionUrn
+     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
      * @return functionUrn
      */
     public String getFunctionUrn() {
@@ -203,7 +203,7 @@ public class UpdateTriggerRequest  {
 
 
     /**
-     * Get triggerTypeCode
+     * 触发器类型代码。
      * @return triggerTypeCode
      */
     public TriggerTypeCodeEnum getTriggerTypeCode() {
@@ -225,7 +225,7 @@ public class UpdateTriggerRequest  {
 
 
     /**
-     * Get triggerId
+     * 触发器编码。
      * @return triggerId
      */
     public String getTriggerId() {

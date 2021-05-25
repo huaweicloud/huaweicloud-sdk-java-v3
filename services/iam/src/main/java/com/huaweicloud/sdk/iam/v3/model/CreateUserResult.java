@@ -19,6 +19,12 @@ public class CreateUserResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="access_mode")
+    
+    private String accessMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
     private Integer status;
@@ -118,6 +124,28 @@ public class CreateUserResult  {
     @JsonProperty(value="password_expires_at")
     
     private String passwordExpiresAt;
+
+    public CreateUserResult withAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+     * @return accessMode
+     */
+    public String getAccessMode() {
+        return accessMode;
+    }
+
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
+
+    
 
     public CreateUserResult withStatus(Integer status) {
         this.status = status;
@@ -502,7 +530,8 @@ public class CreateUserResult  {
             return false;
         }
         CreateUserResult createUserResult = (CreateUserResult) o;
-        return Objects.equals(this.status, createUserResult.status) &&
+        return Objects.equals(this.accessMode, createUserResult.accessMode) &&
+            Objects.equals(this.status, createUserResult.status) &&
             Objects.equals(this.pwdStatus, createUserResult.pwdStatus) &&
             Objects.equals(this.xuserId, createUserResult.xuserId) &&
             Objects.equals(this.xuserType, createUserResult.xuserType) &&
@@ -522,12 +551,13 @@ public class CreateUserResult  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(status, pwdStatus, xuserId, xuserType, description, name, phone, isDomainOwner, domainId, enabled, areacode, email, createTime, xdomainId, xdomainType, id, passwordExpiresAt);
+        return Objects.hash(accessMode, status, pwdStatus, xuserId, xuserType, description, name, phone, isDomainOwner, domainId, enabled, areacode, email, createTime, xdomainId, xdomainType, id, passwordExpiresAt);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateUserResult {\n");
+        sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    xuserId: ").append(toIndentedString(xuserId)).append("\n");

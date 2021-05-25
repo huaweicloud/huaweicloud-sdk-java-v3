@@ -32,7 +32,7 @@ public class KeystoneListServicesRequest  {
 
 
     /**
-     * Get type
+     * 服务类型。
      * @return type
      */
     public String getType() {

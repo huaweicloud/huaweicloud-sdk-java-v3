@@ -51,7 +51,7 @@ public class UpdateSlavePriorityRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class UpdateSlavePriorityRequest  {
 
 
     /**
-     * Get groupId
+     * 分片ID。
      * @return groupId
      */
     public String getGroupId() {
@@ -95,7 +95,7 @@ public class UpdateSlavePriorityRequest  {
 
 
     /**
-     * Get nodeId
+     * 节点ID。
      * @return nodeId
      */
     public String getNodeId() {

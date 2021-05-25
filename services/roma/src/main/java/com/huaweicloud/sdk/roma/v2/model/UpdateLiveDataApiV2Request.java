@@ -45,7 +45,7 @@ public class UpdateLiveDataApiV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateLiveDataApiV2Request  {
 
 
     /**
-     * Get ldApiId
+     * 后端API的编号，可通过查询API信息获取该编号。
      * @return ldApiId
      */
     public String getLdApiId() {

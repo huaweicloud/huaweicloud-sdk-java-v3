@@ -32,7 +32,7 @@ public class DeleteDomainRequest  {
 
 
     /**
-     * Get domain
+     * 直播域名
      * @return domain
      */
     public String getDomain() {

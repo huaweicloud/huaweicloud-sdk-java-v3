@@ -32,7 +32,7 @@ public class ShowIterationV4Request  {
 
 
     /**
-     * Get iterationId
+     * 迭代id
      * @return iterationId
      */
     public Integer getIterationId() {

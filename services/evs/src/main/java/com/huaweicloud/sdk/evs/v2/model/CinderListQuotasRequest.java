@@ -27,7 +27,7 @@ public class CinderListQuotasRequest  {
     
     private String targetProjectId;
     /**
-     * Gets or Sets usage
+     * 是否查询配额详细信息。当前只支持传true。
      */
     public static final class UsageEnum {
 
@@ -114,7 +114,7 @@ public class CinderListQuotasRequest  {
 
 
     /**
-     * Get targetProjectId
+     * 目标的项目ID。与project_id保持一致即可。
      * @return targetProjectId
      */
     public String getTargetProjectId() {
@@ -136,7 +136,7 @@ public class CinderListQuotasRequest  {
 
 
     /**
-     * Get usage
+     * 是否查询配额详细信息。当前只支持传true。
      * @return usage
      */
     public UsageEnum getUsage() {

@@ -74,7 +74,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -96,7 +96,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get apiId
+     * API编号
      * @return apiId
      */
     public String getApiId() {
@@ -118,7 +118,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get envId
+     * 环境编号
      * @return envId
      */
     public String getEnvId() {
@@ -140,7 +140,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get envName
+     * 环境名称
      * @return envName
      */
     public String getEnvName() {
@@ -162,7 +162,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get aclId
+     * ACL策略编号
      * @return aclId
      */
     public String getAclId() {
@@ -184,7 +184,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get aclName
+     * ACL策略名称
      * @return aclName
      */
     public String getAclName() {
@@ -206,7 +206,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
      * @return offset
      */
     public Long getOffset() {
@@ -228,7 +228,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * Get limit
+     * 每页显示的条目数量
      * minimum: 1
      * maximum: 500
      * @return limit

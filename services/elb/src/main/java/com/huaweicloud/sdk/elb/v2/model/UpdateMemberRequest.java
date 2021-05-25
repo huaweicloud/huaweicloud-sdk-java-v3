@@ -45,7 +45,7 @@ public class UpdateMemberRequest  {
 
 
     /**
-     * Get memberId
+     * 后端云服务器id
      * @return memberId
      */
     public String getMemberId() {
@@ -67,7 +67,7 @@ public class UpdateMemberRequest  {
 
 
     /**
-     * Get poolId
+     * 后端云服务器组id
      * @return poolId
      */
     public String getPoolId() {

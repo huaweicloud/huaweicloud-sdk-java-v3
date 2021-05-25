@@ -39,7 +39,7 @@ public class NovaCreateServersRequest  {
 
 
     /**
-     * Get openStackAPIVersion
+     * 微版本头
      * @return openStackAPIVersion
      */
     public String getOpenStackAPIVersion() {

@@ -51,7 +51,7 @@ public class UpdateSpecialThrottlingConfigurationV2Request  {
 
 
     /**
-     * Get instanceId
+     * 实例编号
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class UpdateSpecialThrottlingConfigurationV2Request  {
 
 
     /**
-     * Get throttleId
+     * 流控策略的ID
      * @return throttleId
      */
     public String getThrottleId() {
@@ -95,7 +95,7 @@ public class UpdateSpecialThrottlingConfigurationV2Request  {
 
 
     /**
-     * Get strategyId
+     * 特殊配置的编号
      * @return strategyId
      */
     public String getStrategyId() {

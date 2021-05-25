@@ -32,7 +32,7 @@ public class DeletePoolRequest  {
 
 
     /**
-     * Get poolId
+     * 后端服务器组ID。
      * @return poolId
      */
     public String getPoolId() {

@@ -62,7 +62,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * Get serviceId
+     * 服务ID
      * @return serviceId
      */
     public String getServiceId() {
@@ -106,7 +106,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * Get limit
+     * 每页显示条目数量，最大数量999，超过999后只返回999
      * minimum: 0
      * maximum: 999
      * @return limit
@@ -130,7 +130,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * Get propertyId
+     * 属性ID
      * minimum: 1
      * maximum: 999999999999999999
      * @return propertyId
@@ -154,7 +154,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * Get propertyName
+     * 属性名称
      * @return propertyName
      */
     public String getPropertyName() {
@@ -176,7 +176,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * Get offset
+     * 偏移量，表示从此偏移量开始查询， offset大于等于0
      * minimum: 0
      * maximum: 999999
      * @return offset

@@ -32,7 +32,7 @@ public class ListBareMetalServerDetailsRequest  {
 
 
     /**
-     * Get serverId
+     * 裸金属服务器ID
      * @return serverId
      */
     public String getServerId() {

@@ -44,7 +44,7 @@ public class ListPrivateipsRequest  {
 
 
     /**
-     * Get subnetId
+     * 私有IP所在子网的唯一标识
      * @return subnetId
      */
     public String getSubnetId() {
@@ -66,7 +66,7 @@ public class ListPrivateipsRequest  {
 
 
     /**
-     * Get limit
+     * 每页返回的个数
      * @return limit
      */
     public Integer getLimit() {
@@ -88,7 +88,7 @@ public class ListPrivateipsRequest  {
 
 
     /**
-     * Get marker
+     * 分页查询起始的资源id，为空时查询第一页
      * @return marker
      */
     public String getMarker() {

@@ -27,7 +27,7 @@ public class UpdateInstanceCrossVpcIpRespResults  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="success")
     
-    private String success;
+    private Boolean success;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -57,7 +57,7 @@ public class UpdateInstanceCrossVpcIpRespResults  {
 
     
 
-    public UpdateInstanceCrossVpcIpRespResults withSuccess(String success) {
+    public UpdateInstanceCrossVpcIpRespResults withSuccess(Boolean success) {
         this.success = success;
         return this;
     }
@@ -69,11 +69,11 @@ public class UpdateInstanceCrossVpcIpRespResults  {
      * 修改broker跨VPC访问的状态。
      * @return success
      */
-    public String getSuccess() {
+    public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess(String success) {
+    public void setSuccess(Boolean success) {
         this.success = success;
     }
 

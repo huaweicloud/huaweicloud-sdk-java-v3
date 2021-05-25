@@ -38,7 +38,7 @@ public class DeleteBackupFileRequest  {
 
 
     /**
-     * Get backupId
+     * 备份记录ID。
      * @return backupId
      */
     public String getBackupId() {
@@ -60,7 +60,7 @@ public class DeleteBackupFileRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {

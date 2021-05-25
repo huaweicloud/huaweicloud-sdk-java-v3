@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.Eip;
+import com.huaweicloud.sdk.as.v1.model.EipInfo;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class PublicIp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="eip")
     
-    private Eip eip;
+    private EipInfo eip;
 
-    public PublicIp withEip(Eip eip) {
+    public PublicIp withEip(EipInfo eip) {
         this.eip = eip;
         return this;
     }
 
-    public PublicIp withEip(Consumer<Eip> eipSetter) {
+    public PublicIp withEip(Consumer<EipInfo> eipSetter) {
         if(this.eip == null ){
-            this.eip = new Eip();
+            this.eip = new EipInfo();
             eipSetter.accept(this.eip);
         }
         
@@ -43,11 +43,11 @@ public class PublicIp  {
      * Get eip
      * @return eip
      */
-    public Eip getEip() {
+    public EipInfo getEip() {
         return eip;
     }
 
-    public void setEip(Eip eip) {
+    public void setEip(EipInfo eip) {
         this.eip = eip;
     }
 

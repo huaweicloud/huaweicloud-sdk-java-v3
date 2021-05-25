@@ -45,7 +45,7 @@ public class UpdateClusterRequest  {
 
 
     /**
-     * Get clusterId
+     * 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
      * @return clusterId
      */
     public String getClusterId() {
@@ -67,7 +67,7 @@ public class UpdateClusterRequest  {
 
 
     /**
-     * Get errorStatus
+     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
      * @return errorStatus
      */
     public String getErrorStatus() {

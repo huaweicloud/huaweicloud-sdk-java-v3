@@ -45,7 +45,7 @@ public class ResetMessageOffsetRequest  {
 
 
     /**
-     * Get instanceId
+     * 实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class ResetMessageOffsetRequest  {
 
 
     /**
-     * Get group
+     * 消费组名称。
      * @return group
      */
     public String getGroup() {
