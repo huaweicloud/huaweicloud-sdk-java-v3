@@ -63,6 +63,12 @@ public class Flavor  {
     
     private List<String> versionName = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="group_type")
+    
+    private String groupType;
+
     public Flavor withId(String id) {
         this.id = id;
         return this;
@@ -245,6 +251,28 @@ public class Flavor  {
 
     
 
+    public Flavor withGroupType(String groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 - armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。
+     * @return groupType
+     */
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -260,11 +288,12 @@ public class Flavor  {
             Objects.equals(this.specCode, flavor.specCode) &&
             Objects.equals(this.instanceMode, flavor.instanceMode) &&
             Objects.equals(this.azStatus, flavor.azStatus) &&
-            Objects.equals(this.versionName, flavor.versionName);
+            Objects.equals(this.versionName, flavor.versionName) &&
+            Objects.equals(this.groupType, flavor.groupType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, vcpus, ram, specCode, instanceMode, azStatus, versionName);
+        return Objects.hash(id, vcpus, ram, specCode, instanceMode, azStatus, versionName, groupType);
     }
     @Override
     public String toString() {
@@ -277,6 +306,7 @@ public class Flavor  {
         sb.append("    instanceMode: ").append(toIndentedString(instanceMode)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
         sb.append("    versionName: ").append(toIndentedString(versionName)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

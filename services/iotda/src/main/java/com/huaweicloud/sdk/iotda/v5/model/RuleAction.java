@@ -16,8 +16,6 @@ import com.huaweicloud.sdk.iotda.v5.model.ActionKafkaForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.ActionObsForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.ActionRomaForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.ActionSmnForwarding;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -33,12 +31,6 @@ public class RuleAction  {
     
     private String type;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addition")
-    
-    private List<String> addition = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="smn_forwarding")
@@ -96,7 +88,7 @@ public class RuleAction  {
 
 
     /**
-     * 规则动作的类型，取值范围： - DEVICE_CMD：下发设备命令消息类型。 - SMN_FORWARDING：发送SMN消息类型。 - DEVICE_ALARM：上报设备告警消息类型。当选择该类型时，condition中必须有DEVICE_DATA条件类型。该类型动作只能唯一。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - ROMA_FORWARDING：转发ROMA Connect服务消息类型。 - IoTA_FORWARDING：转发IoTA服务消息类型。 - KAFKA_FORWARDING：转发kafka消息类型。 
+     * **参数说明**：规则动作的类型。 **取值范围**： - DEVICE_CMD：下发设备命令消息类型。 - SMN_FORWARDING：发送SMN消息类型。 - DEVICE_ALARM：上报设备告警消息类型。当选择该类型时，condition中必须有DEVICE_DATA条件类型。该类型动作只能唯一。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - ROMA_FORWARDING：转发ROMA Connect服务消息类型。 - IoTA_FORWARDING：转发IoTA服务消息类型。 - KAFKA_FORWARDING：转发kafka消息类型。
      * @return type
      */
     public String getType() {
@@ -105,42 +97,6 @@ public class RuleAction  {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    
-
-    public RuleAction withAddition(List<String> addition) {
-        this.addition = addition;
-        return this;
-    }
-
-    
-    public RuleAction addAdditionItem(String additionItem) {
-        if(this.addition == null) {
-            this.addition = new ArrayList<>();
-        }
-        this.addition.add(additionItem);
-        return this;
-    }
-
-    public RuleAction withAddition(Consumer<List<String>> additionSetter) {
-        if(this.addition == null) {
-            this.addition = new ArrayList<>();
-        }
-        additionSetter.accept(this.addition);
-        return this;
-    }
-
-    /**
-     * 附加信息，在默认规则执行结果中附加额外内容，仅设备属性和消息类型数据转发规则支持，取值范围：PRODUCT_ID
-     * @return addition
-     */
-    public List<String> getAddition() {
-        return addition;
-    }
-
-    public void setAddition(List<String> addition) {
-        this.addition = addition;
     }
 
     
@@ -387,7 +343,6 @@ public class RuleAction  {
         }
         RuleAction ruleAction = (RuleAction) o;
         return Objects.equals(this.type, ruleAction.type) &&
-            Objects.equals(this.addition, ruleAction.addition) &&
             Objects.equals(this.smnForwarding, ruleAction.smnForwarding) &&
             Objects.equals(this.deviceAlarm, ruleAction.deviceAlarm) &&
             Objects.equals(this.deviceCommand, ruleAction.deviceCommand) &&
@@ -399,14 +354,13 @@ public class RuleAction  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, addition, smnForwarding, deviceAlarm, deviceCommand, disForwarding, obsForwarding, romaForwarding, iotaForwarding, kafkaForwarding);
+        return Objects.hash(type, smnForwarding, deviceAlarm, deviceCommand, disForwarding, obsForwarding, romaForwarding, iotaForwarding, kafkaForwarding);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RuleAction {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    addition: ").append(toIndentedString(addition)).append("\n");
         sb.append("    smnForwarding: ").append(toIndentedString(smnForwarding)).append("\n");
         sb.append("    deviceAlarm: ").append(toIndentedString(deviceAlarm)).append("\n");
         sb.append("    deviceCommand: ").append(toIndentedString(deviceCommand)).append("\n");

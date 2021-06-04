@@ -32,6 +32,12 @@ public class MrsKafkaForwarding  {
     
     private String topic;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="kerberos_authentication")
+    
+    private Boolean kerberosAuthentication;
+
     public MrsKafkaForwarding withAddresses(List<NetAddress> addresses) {
         this.addresses = addresses;
         return this;
@@ -55,7 +61,7 @@ public class MrsKafkaForwarding  {
     }
 
     /**
-     * 转发kafka消息对应的地址列表
+     * **参数说明**：转发kafka消息对应的地址列表
      * @return addresses
      */
     public List<NetAddress> getAddresses() {
@@ -77,7 +83,7 @@ public class MrsKafkaForwarding  {
 
 
     /**
-     * 转发kafka消息关联的topic信息。
+     * **参数说明**：转发kafka消息关联的topic信息。
      * @return topic
      */
     public String getTopic() {
@@ -86,6 +92,28 @@ public class MrsKafkaForwarding  {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    
+
+    public MrsKafkaForwarding withKerberosAuthentication(Boolean kerberosAuthentication) {
+        this.kerberosAuthentication = kerberosAuthentication;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否Kerberos认证，默认为false。
+     * @return kerberosAuthentication
+     */
+    public Boolean getKerberosAuthentication() {
+        return kerberosAuthentication;
+    }
+
+    public void setKerberosAuthentication(Boolean kerberosAuthentication) {
+        this.kerberosAuthentication = kerberosAuthentication;
     }
 
     
@@ -100,11 +128,12 @@ public class MrsKafkaForwarding  {
         }
         MrsKafkaForwarding mrsKafkaForwarding = (MrsKafkaForwarding) o;
         return Objects.equals(this.addresses, mrsKafkaForwarding.addresses) &&
-            Objects.equals(this.topic, mrsKafkaForwarding.topic);
+            Objects.equals(this.topic, mrsKafkaForwarding.topic) &&
+            Objects.equals(this.kerberosAuthentication, mrsKafkaForwarding.kerberosAuthentication);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(addresses, topic);
+        return Objects.hash(addresses, topic, kerberosAuthentication);
     }
     @Override
     public String toString() {
@@ -112,6 +141,7 @@ public class MrsKafkaForwarding  {
         sb.append("class MrsKafkaForwarding {\n");
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
         sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
+        sb.append("    kerberosAuthentication: ").append(toIndentedString(kerberosAuthentication)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,7 +38,7 @@ public class IoTAForwarding  {
 
 
     /**
-     * IoTA服务对应的数据源Id
+     * **参数说明**：IoTA服务对应的数据源Id。
      * @return dataSourceId
      */
     public String getDataSourceId() {
@@ -60,7 +60,7 @@ public class IoTAForwarding  {
 
 
     /**
-     * IoTA服务对应的projectId信息
+     * **参数说明**：IoTA服务对应的projectId信息。
      * @return projectId
      */
     public String getProjectId() {

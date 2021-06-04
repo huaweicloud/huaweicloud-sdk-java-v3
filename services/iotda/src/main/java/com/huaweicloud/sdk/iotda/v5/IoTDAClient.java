@@ -238,50 +238,6 @@ public class IoTDAClient {
     }
 
     /**
-     * 查询设备下队列中的命令
-     * 查询设备下队列中的命（处理中的命令），包含PENDING,SENT,DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。 
-     *
-     * @param ListAsyncCommandsRequest 请求对象
-     * @return ListAsyncCommandsResponse
-     */
-    public ListAsyncCommandsResponse listAsyncCommands(ListAsyncCommandsRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.listAsyncCommands);
-    }
-
-    /**
-     * 查询设备下队列中的命令
-     * 查询设备下队列中的命（处理中的命令），包含PENDING,SENT,DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。 
-     *
-     * @param ListAsyncCommandsRequest 请求对象
-     * @return SyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse>
-     */
-    public SyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse> listAsyncCommandsInvoker(ListAsyncCommandsRequest request) {
-        return new SyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse>(request, IoTDAMeta.listAsyncCommands, hcClient);
-    }
-
-    /**
-     * 查询设备下的历史命令
-     * 查询设备下发的历史异步命令。 
-     *
-     * @param ListAsyncHistoryCommandsRequest 请求对象
-     * @return ListAsyncHistoryCommandsResponse
-     */
-    public ListAsyncHistoryCommandsResponse listAsyncHistoryCommands(ListAsyncHistoryCommandsRequest request) {
-        return hcClient.syncInvokeHttp(request, IoTDAMeta.listAsyncHistoryCommands);
-    }
-
-    /**
-     * 查询设备下的历史命令
-     * 查询设备下发的历史异步命令。 
-     *
-     * @param ListAsyncHistoryCommandsRequest 请求对象
-     * @return SyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse>
-     */
-    public SyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> listAsyncHistoryCommandsInvoker(ListAsyncHistoryCommandsRequest request) {
-        return new SyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse>(request, IoTDAMeta.listAsyncHistoryCommands, hcClient);
-    }
-
-    /**
      * 查询指定id的命令
      * 物联网平台可查询指定id的命令。 
      *
@@ -525,7 +481,7 @@ public class IoTDAClient {
 
     /**
      * 下发设备命令
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时，平台超时间是25秒。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备命令下发。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时，平台超时间是20秒。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备命令下发。 
      *
      * @param CreateCommandRequest 请求对象
      * @return CreateCommandResponse
@@ -536,7 +492,7 @@ public class IoTDAClient {
 
     /**
      * 下发设备命令
-     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时，平台超时间是25秒。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备命令下发。 
+     * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发命令，以实现对设备的同步控制。平台负责将命令以同步方式发送给设备，并将设备执行命令结果同步返回, 如果设备没有响应，平台会返回给应用服务器超时，平台超时间是20秒。注意：此接口适用于MQTT设备同步命令下发，暂不支持NB-IoT设备命令下发。 
      *
      * @param CreateCommandRequest 请求对象
      * @return SyncInvoker<CreateCommandRequest, CreateCommandResponse>

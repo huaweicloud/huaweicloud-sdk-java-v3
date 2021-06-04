@@ -85,6 +85,12 @@ public class ShowDeviceResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_sdk_version")
+    
+    private String deviceSdkVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_info")
     
     private AuthInfo authInfo;
@@ -200,7 +206,7 @@ public class ShowDeviceResponse extends SdkResponse {
 
 
     /**
-     * 设备标识码，通常使用IMEI、MAC地址或Serial No作为nodeId。
+     * 设备标识码，通常使用IMEI、MAC地址或Serial No作为node_id。
      * @return nodeId
      */
     public String getNodeId() {
@@ -341,6 +347,28 @@ public class ShowDeviceResponse extends SdkResponse {
 
     public void setSwVersion(String swVersion) {
         this.swVersion = swVersion;
+    }
+
+    
+
+    public ShowDeviceResponse withDeviceSdkVersion(String deviceSdkVersion) {
+        this.deviceSdkVersion = deviceSdkVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备的sdk信息。
+     * @return deviceSdkVersion
+     */
+    public String getDeviceSdkVersion() {
+        return deviceSdkVersion;
+    }
+
+    public void setDeviceSdkVersion(String deviceSdkVersion) {
+        this.deviceSdkVersion = deviceSdkVersion;
     }
 
     
@@ -539,6 +567,7 @@ public class ShowDeviceResponse extends SdkResponse {
             Objects.equals(this.description, showDeviceResponse.description) &&
             Objects.equals(this.fwVersion, showDeviceResponse.fwVersion) &&
             Objects.equals(this.swVersion, showDeviceResponse.swVersion) &&
+            Objects.equals(this.deviceSdkVersion, showDeviceResponse.deviceSdkVersion) &&
             Objects.equals(this.authInfo, showDeviceResponse.authInfo) &&
             Objects.equals(this.productId, showDeviceResponse.productId) &&
             Objects.equals(this.productName, showDeviceResponse.productName) &&
@@ -549,7 +578,7 @@ public class ShowDeviceResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appName, deviceId, nodeId, gatewayId, deviceName, nodeType, description, fwVersion, swVersion, authInfo, productId, productName, status, createTime, tags, extensionInfo);
+        return Objects.hash(appId, appName, deviceId, nodeId, gatewayId, deviceName, nodeType, description, fwVersion, swVersion, deviceSdkVersion, authInfo, productId, productName, status, createTime, tags, extensionInfo);
     }
     @Override
     public String toString() {
@@ -565,6 +594,7 @@ public class ShowDeviceResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    fwVersion: ").append(toIndentedString(fwVersion)).append("\n");
         sb.append("    swVersion: ").append(toIndentedString(swVersion)).append("\n");
+        sb.append("    deviceSdkVersion: ").append(toIndentedString(deviceSdkVersion)).append("\n");
         sb.append("    authInfo: ").append(toIndentedString(authInfo)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");

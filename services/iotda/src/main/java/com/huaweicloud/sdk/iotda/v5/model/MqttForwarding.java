@@ -32,7 +32,7 @@ public class MqttForwarding  {
 
 
     /**
-     * 用于接收满足规则条件数据的topic。
+     * **参数说明**：用于接收满足规则条件数据的topic。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、斜杠（/）、连接符（-）的组合。
      * @return topic
      */
     public String getTopic() {

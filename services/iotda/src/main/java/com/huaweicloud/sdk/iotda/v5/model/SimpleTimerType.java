@@ -44,7 +44,7 @@ public class SimpleTimerType  {
 
 
     /**
-     * 规则触发的开始时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
+     * **参数说明**：规则触发的开始时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
      * @return startTime
      */
     public String getStartTime() {
@@ -66,7 +66,7 @@ public class SimpleTimerType  {
 
 
     /**
-     * 规则触发的重复时间间隔，单位为秒。
+     * **参数说明**：规则触发的重复时间间隔，单位为秒。
      * minimum: 1
      * maximum: 31536000
      * @return repeatInterval
@@ -90,7 +90,7 @@ public class SimpleTimerType  {
 
 
     /**
-     * 规则触发的重复次数。
+     * **参数说明**：规则触发的重复次数。
      * minimum: 1
      * maximum: 9999
      * @return repeatCount

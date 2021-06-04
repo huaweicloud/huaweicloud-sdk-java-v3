@@ -25,13 +25,6 @@ public class ListPropertiesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -51,7 +44,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * 下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。
+     * **参数说明**：下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -60,28 +53,6 @@ public class ListPropertiesRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    
-
-    public ListPropertiesRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Stage用户的Token, 仅提供给IoStage服务使用
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     
@@ -95,7 +66,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -117,7 +88,7 @@ public class ListPropertiesRequest  {
 
 
     /**
-     * 设备的服务ID，在设备关联的产品模型中定义。
+     * **参数说明**：设备的服务ID，在设备关联的产品模型中定义。
      * @return serviceId
      */
     public String getServiceId() {
@@ -140,20 +111,18 @@ public class ListPropertiesRequest  {
         }
         ListPropertiesRequest listPropertiesRequest = (ListPropertiesRequest) o;
         return Objects.equals(this.deviceId, listPropertiesRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, listPropertiesRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, listPropertiesRequest.instanceId) &&
             Objects.equals(this.serviceId, listPropertiesRequest.serviceId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, instanceId, serviceId);
+        return Objects.hash(deviceId, instanceId, serviceId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPropertiesRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
         sb.append("}");

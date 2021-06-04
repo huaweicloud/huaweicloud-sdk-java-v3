@@ -23,9 +23,9 @@ public class ShowJobStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="result")
     
-    private String result;
+    private Boolean result;
 
-    public ShowJobStatusResponse withResult(String result) {
+    public ShowJobStatusResponse withResult(Boolean result) {
         this.result = result;
         return this;
     }
@@ -37,11 +37,11 @@ public class ShowJobStatusResponse extends SdkResponse {
      * 任务运行结果
      * @return result
      */
-    public String getResult() {
+    public Boolean getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(Boolean result) {
         this.result = result;
     }
 

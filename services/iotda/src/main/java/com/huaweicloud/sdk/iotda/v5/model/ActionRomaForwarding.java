@@ -44,7 +44,7 @@ public class ActionRomaForwarding  {
 
 
     /**
-     * ROMA Connect服务对应的region区域
+     * **参数说明**：ROMA Connect服务对应的region区域。
      * @return regionName
      */
     public String getRegionName() {
@@ -66,7 +66,7 @@ public class ActionRomaForwarding  {
 
 
     /**
-     * ROMA Connect服务对应的projectId信息
+     * **参数说明**：ROMA Connect服务对应的projectId信息。
      * @return projectId
      */
     public String getProjectId() {
@@ -88,7 +88,7 @@ public class ActionRomaForwarding  {
 
 
     /**
-     * ROMA Connect服务对应参数类型
+     * **参数说明**：ROMA Connect服务对应参数类型。
      * @return romaPushType
      */
     public String getRomaPushType() {

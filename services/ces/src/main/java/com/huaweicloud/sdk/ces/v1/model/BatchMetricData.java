@@ -60,7 +60,7 @@ public class BatchMetricData  {
 
 
     /**
-     * 指标单位
+     * 指标单位。
      * @return unit
      */
     public String getUnit() {
@@ -176,7 +176,7 @@ public class BatchMetricData  {
     }
 
     /**
-     * 指标维度列表
+     * 指标维度列表。
      * @return dimensions
      */
     public List<MetricsDimension> getDimensions() {

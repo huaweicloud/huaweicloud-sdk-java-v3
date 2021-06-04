@@ -56,7 +56,7 @@ public class UpdateRuleReq  {
 
 
     /**
-     * 用户自定义的规则名称。
+     * **参数说明**：用户自定义的规则名称。
      * @return ruleName
      */
     public String getRuleName() {
@@ -78,7 +78,7 @@ public class UpdateRuleReq  {
 
 
     /**
-     * 用户自定义的规则描述。
+     * **参数说明**：用户自定义的规则描述。
      * @return description
      */
     public String getDescription() {
@@ -100,7 +100,7 @@ public class UpdateRuleReq  {
 
 
     /**
-     * 用户自定义sql select语句，最大长度500，更新sql时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
+     * **参数说明**：用户自定义sql select语句，最大长度500，更新sql时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
      * @return select
      */
     public String getSelect() {
@@ -122,7 +122,7 @@ public class UpdateRuleReq  {
 
 
     /**
-     * 用户自定义sql where语句，最大长度500，更新操作时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
+     * **参数说明**：用户自定义sql where语句，最大长度500，更新操作时，select跟where必须同时传参，如果需要清除该参数的值，输入空字符串，该参数仅供标准版和企业版用户使用。
      * @return where
      */
     public String getWhere() {
@@ -144,7 +144,7 @@ public class UpdateRuleReq  {
 
 
     /**
-     * 修改规则条件的状态是否为激活。
+     * **参数说明**：修改规则条件的状态是否为激活。
      * @return active
      */
     public Boolean getActive() {

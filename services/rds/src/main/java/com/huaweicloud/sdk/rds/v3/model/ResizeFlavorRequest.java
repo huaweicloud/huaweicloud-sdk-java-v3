@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.rds.v3.model.ResizeFlavorObject;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -19,56 +20,35 @@ public class ResizeFlavorRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
+    @JsonProperty(value="resize_flavor")
     
-    private String specCode;
+    private ResizeFlavorObject resizeFlavor;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_pay")
-    
-    private Boolean isAutoPay;
-
-    public ResizeFlavorRequest withSpecCode(String specCode) {
-        this.specCode = specCode;
+    public ResizeFlavorRequest withResizeFlavor(ResizeFlavorObject resizeFlavor) {
+        this.resizeFlavor = resizeFlavor;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源规格编码。例如：rds.mysql.m1.xlarge。其中，rds代表RDS产品，mysql代表数据库引擎，m1.xlarge代表性能规格，为高内存类型。带\"rr\"的表示只读实例规格，反之表示单实例和HA实例规格。
-     * @return specCode
-     */
-    public String getSpecCode() {
-        return specCode;
-    }
-
-    public void setSpecCode(String specCode) {
-        this.specCode = specCode;
-    }
-
-    
-
-    public ResizeFlavorRequest withIsAutoPay(Boolean isAutoPay) {
-        this.isAutoPay = isAutoPay;
+    public ResizeFlavorRequest withResizeFlavor(Consumer<ResizeFlavorObject> resizeFlavorSetter) {
+        if(this.resizeFlavor == null ){
+            this.resizeFlavor = new ResizeFlavorObject();
+            resizeFlavorSetter.accept(this.resizeFlavor);
+        }
+        
         return this;
     }
 
-    
-
 
     /**
-     * 变更包周期实例的规格时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
-     * @return isAutoPay
+     * Get resizeFlavor
+     * @return resizeFlavor
      */
-    public Boolean getIsAutoPay() {
-        return isAutoPay;
+    public ResizeFlavorObject getResizeFlavor() {
+        return resizeFlavor;
     }
 
-    public void setIsAutoPay(Boolean isAutoPay) {
-        this.isAutoPay = isAutoPay;
+    public void setResizeFlavor(ResizeFlavorObject resizeFlavor) {
+        this.resizeFlavor = resizeFlavor;
     }
 
     
@@ -82,19 +62,17 @@ public class ResizeFlavorRequest  {
             return false;
         }
         ResizeFlavorRequest resizeFlavorRequest = (ResizeFlavorRequest) o;
-        return Objects.equals(this.specCode, resizeFlavorRequest.specCode) &&
-            Objects.equals(this.isAutoPay, resizeFlavorRequest.isAutoPay);
+        return Objects.equals(this.resizeFlavor, resizeFlavorRequest.resizeFlavor);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, isAutoPay);
+        return Objects.hash(resizeFlavor);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeFlavorRequest {\n");
-        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
-        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    resizeFlavor: ").append(toIndentedString(resizeFlavor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

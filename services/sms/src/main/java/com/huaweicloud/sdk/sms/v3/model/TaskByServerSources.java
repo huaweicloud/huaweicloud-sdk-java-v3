@@ -65,7 +65,13 @@ public class TaskByServerSources  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="migrate_speed")
     
-    private Integer migrateSpeed;
+    private Double migrateSpeed;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="compress_rate")
+    
+    private Double compressRate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -293,7 +299,7 @@ public class TaskByServerSources  {
 
     
 
-    public TaskByServerSources withMigrateSpeed(Integer migrateSpeed) {
+    public TaskByServerSources withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
     }
@@ -304,15 +310,39 @@ public class TaskByServerSources  {
     /**
      * 迁移速率
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1E+4
      * @return migrateSpeed
      */
-    public Integer getMigrateSpeed() {
+    public Double getMigrateSpeed() {
         return migrateSpeed;
     }
 
-    public void setMigrateSpeed(Integer migrateSpeed) {
+    public void setMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
+    }
+
+    
+
+    public TaskByServerSources withCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 压缩率
+     * minimum: 0
+     * maximum: 1E+4
+     * @return compressRate
+     */
+    public Double getCompressRate() {
+        return compressRate;
+    }
+
+    public void setCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
     }
 
     
@@ -592,6 +622,7 @@ public class TaskByServerSources  {
             Objects.equals(this.startDate, taskByServerSources.startDate) &&
             Objects.equals(this.speedLimit, taskByServerSources.speedLimit) &&
             Objects.equals(this.migrateSpeed, taskByServerSources.migrateSpeed) &&
+            Objects.equals(this.compressRate, taskByServerSources.compressRate) &&
             Objects.equals(this.startTargetServer, taskByServerSources.startTargetServer) &&
             Objects.equals(this.vmTemplateId, taskByServerSources.vmTemplateId) &&
             Objects.equals(this.regionId, taskByServerSources.regionId) &&
@@ -606,7 +637,7 @@ public class TaskByServerSources  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, state, estimateCompleteTime, startDate, speedLimit, migrateSpeed, startTargetServer, vmTemplateId, regionId, projectName, projectId, targetServer, logCollectStatus, existServer, usePublicIp, cloneServer, remainSeconds);
+        return Objects.hash(id, name, type, state, estimateCompleteTime, startDate, speedLimit, migrateSpeed, compressRate, startTargetServer, vmTemplateId, regionId, projectName, projectId, targetServer, logCollectStatus, existServer, usePublicIp, cloneServer, remainSeconds);
     }
     @Override
     public String toString() {
@@ -620,6 +651,7 @@ public class TaskByServerSources  {
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
+        sb.append("    compressRate: ").append(toIndentedString(compressRate)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");

@@ -2139,6 +2139,25 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v3/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancer = genForshowShardingBalancer();
 
     private static HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> genForshowShardingBalancer() {

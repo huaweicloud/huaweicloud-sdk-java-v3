@@ -57,7 +57,7 @@ public class MqsForwarding  {
 
 
     /**
-     * MQS服务的URL
+     * **参数说明**：MQS服务的URL
      * @return url
      */
     public String getUrl() {
@@ -79,7 +79,7 @@ public class MqsForwarding  {
 
 
     /**
-     * 用于登录MQS的用户名
+     * **参数说明**：用于登录MQS的用户名
      * @return userName
      */
     public String getUserName() {
@@ -101,7 +101,7 @@ public class MqsForwarding  {
 
 
     /**
-     * 用于登录MQS的密码
+     * **参数说明**：用于登录MQS的密码
      * @return password
      */
     public String getPassword() {
@@ -123,7 +123,7 @@ public class MqsForwarding  {
 
 
     /**
-     * 订阅的MQS主题
+     * **参数说明**：订阅的MQS主题
      * @return topic
      */
     public String getTopic() {
@@ -145,7 +145,7 @@ public class MqsForwarding  {
 
 
     /**
-     * 是否加密传输
+     * **参数说明**：是否加密传输
      * @return encryptTransport
      */
     public Boolean getEncryptTransport() {

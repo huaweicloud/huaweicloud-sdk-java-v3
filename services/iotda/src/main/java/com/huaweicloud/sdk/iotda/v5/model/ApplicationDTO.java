@@ -41,48 +41,6 @@ public class ApplicationDTO  {
     
     private Boolean defaultApp;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
-    private String appType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="username")
-    
-    private String username;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permission")
-    
-    private String permission;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_instance_id")
-    
-    private String lastInstanceId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_instance_id")
-    
-    private String currentInstanceId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
-    private String serviceName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="freezed")
-    
-    private Boolean freezed;
-
     public ApplicationDTO withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -171,160 +129,6 @@ public class ApplicationDTO  {
 
     
 
-    public ApplicationDTO withAppType(String appType) {
-        this.appType = appType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * app的类型，标准版：Junior | 高级版：Normal
-     * @return appType
-     */
-    public String getAppType() {
-        return appType;
-    }
-
-    public void setAppType(String appType) {
-        this.appType = appType;
-    }
-
-    
-
-    public ApplicationDTO withUsername(String username) {
-        this.username = username;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 用户名。
-     * @return username
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    
-
-    public ApplicationDTO withPermission(String permission) {
-        this.permission = permission;
-        return this;
-    }
-
-    
-
-
-    /**
-     * app与用户的授权关系时，响应为：all | bind | edit | query ，其中bind权限类似于ALL权限，属于子用户权限。
-     * @return permission
-     */
-    public String getPermission() {
-        return permission;
-    }
-
-    public void setPermission(String permission) {
-        this.permission = permission;
-    }
-
-    
-
-    public ApplicationDTO withLastInstanceId(String lastInstanceId) {
-        this.lastInstanceId = lastInstanceId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 迁移前实例ID。
-     * @return lastInstanceId
-     */
-    public String getLastInstanceId() {
-        return lastInstanceId;
-    }
-
-    public void setLastInstanceId(String lastInstanceId) {
-        this.lastInstanceId = lastInstanceId;
-    }
-
-    
-
-    public ApplicationDTO withCurrentInstanceId(String currentInstanceId) {
-        this.currentInstanceId = currentInstanceId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 当前实例ID。
-     * @return currentInstanceId
-     */
-    public String getCurrentInstanceId() {
-        return currentInstanceId;
-    }
-
-    public void setCurrentInstanceId(String currentInstanceId) {
-        this.currentInstanceId = currentInstanceId;
-    }
-
-    
-
-    public ApplicationDTO withServiceName(String serviceName) {
-        this.serviceName = serviceName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 对接的服务名
-     * @return serviceName
-     */
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    
-
-    public ApplicationDTO withFreezed(Boolean freezed) {
-        this.freezed = freezed;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否冻结
-     * @return freezed
-     */
-    public Boolean getFreezed() {
-        return freezed;
-    }
-
-    public void setFreezed(Boolean freezed) {
-        this.freezed = freezed;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -337,18 +141,11 @@ public class ApplicationDTO  {
         return Objects.equals(this.appId, applicationDTO.appId) &&
             Objects.equals(this.appName, applicationDTO.appName) &&
             Objects.equals(this.createTime, applicationDTO.createTime) &&
-            Objects.equals(this.defaultApp, applicationDTO.defaultApp) &&
-            Objects.equals(this.appType, applicationDTO.appType) &&
-            Objects.equals(this.username, applicationDTO.username) &&
-            Objects.equals(this.permission, applicationDTO.permission) &&
-            Objects.equals(this.lastInstanceId, applicationDTO.lastInstanceId) &&
-            Objects.equals(this.currentInstanceId, applicationDTO.currentInstanceId) &&
-            Objects.equals(this.serviceName, applicationDTO.serviceName) &&
-            Objects.equals(this.freezed, applicationDTO.freezed);
+            Objects.equals(this.defaultApp, applicationDTO.defaultApp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appName, createTime, defaultApp, appType, username, permission, lastInstanceId, currentInstanceId, serviceName, freezed);
+        return Objects.hash(appId, appName, createTime, defaultApp);
     }
     @Override
     public String toString() {
@@ -358,13 +155,6 @@ public class ApplicationDTO  {
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    defaultApp: ").append(toIndentedString(defaultApp)).append("\n");
-        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
-        sb.append("    username: ").append(toIndentedString(username)).append("\n");
-        sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
-        sb.append("    lastInstanceId: ").append(toIndentedString(lastInstanceId)).append("\n");
-        sb.append("    currentInstanceId: ").append(toIndentedString(currentInstanceId)).append("\n");
-        sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
-        sb.append("    freezed: ").append(toIndentedString(freezed)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,7 +38,7 @@ public class DeviceMessageCondition  {
 
 
     /**
-     * 设备关联的产品ID，用于唯一标识一个产品模型，在管理门户导入产品模型后由平台分配获得。
+     * **参数说明**：设备关联的产品ID，用于唯一标识一个产品模型，在管理门户导入产品模型后由平台分配获得。
      * @return productId
      */
     public String getProductId() {
@@ -60,7 +60,7 @@ public class DeviceMessageCondition  {
 
 
     /**
-     * 产品关联的topic信息，用于过滤消息中指定topic消息。
+     * **参数说明**：产品关联的topic信息，用于过滤消息中指定topic消息。
      * @return topic
      */
     public String getTopic() {

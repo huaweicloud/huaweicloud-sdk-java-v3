@@ -33,7 +33,7 @@ public class HistoryRecord  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="build_number")
     
-    private String buildNumber;
+    private Integer buildNumber;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -97,7 +97,7 @@ public class HistoryRecord  {
 
     
 
-    public HistoryRecord withBuildNumber(String buildNumber) {
+    public HistoryRecord withBuildNumber(Integer buildNumber) {
         this.buildNumber = buildNumber;
         return this;
     }
@@ -109,11 +109,11 @@ public class HistoryRecord  {
      * 构建编号
      * @return buildNumber
      */
-    public String getBuildNumber() {
+    public Integer getBuildNumber() {
         return buildNumber;
     }
 
-    public void setBuildNumber(String buildNumber) {
+    public void setBuildNumber(Integer buildNumber) {
         this.buildNumber = buildNumber;
     }
 

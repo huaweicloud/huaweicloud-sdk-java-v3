@@ -100,6 +100,12 @@ public final class ExceptionUtils {
                 if (Objects.isNull(sdkErrorMessage.getErrorMsg()) && valueMap.containsKey(Constants.MESSAGE)) {
                     sdkErrorMessage.setErrorMsg(valueMap.get(Constants.MESSAGE).toString());
                 }
+                if (Objects.isNull(sdkErrorMessage.getErrorCode()) && valueMap.containsKey(Constants.ERROR_CODE)) {
+                    sdkErrorMessage.setErrorCode(valueMap.get(Constants.ERROR_CODE).toString());
+                }
+                if (Objects.isNull(sdkErrorMessage.getErrorMsg()) && valueMap.containsKey(Constants.ERROR_MSG)) {
+                    sdkErrorMessage.setErrorMsg(valueMap.get(Constants.ERROR_MSG).toString());
+                }
             }
         });
     }

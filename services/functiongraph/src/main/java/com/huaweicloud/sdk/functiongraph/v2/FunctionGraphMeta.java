@@ -642,6 +642,14 @@ public class FunctionGraphMeta {
                 req.setMaxitems(v);
             })
         );
+        builder.withRequestField("package_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFunctionsRequest::getPackageName, (req, v) -> {
+                req.setPackageName(v);
+            })
+        );
 
         // response
         

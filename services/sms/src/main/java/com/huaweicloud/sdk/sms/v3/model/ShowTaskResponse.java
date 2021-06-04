@@ -321,6 +321,12 @@ public class ShowTaskResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="compress_rate")
+    
+    private Double compressRate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="error_json")
     
     private String errorJson;
@@ -871,6 +877,30 @@ public class ShowTaskResponse extends SdkResponse {
 
     
 
+    public ShowTaskResponse withCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 压缩率
+     * minimum: 0
+     * maximum: 1E+4
+     * @return compressRate
+     */
+    public Double getCompressRate() {
+        return compressRate;
+    }
+
+    public void setCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+    }
+
+    
+
     public ShowTaskResponse withErrorJson(String errorJson) {
         this.errorJson = errorJson;
         return this;
@@ -1081,6 +1111,7 @@ public class ShowTaskResponse extends SdkResponse {
             Objects.equals(this.startDate, showTaskResponse.startDate) &&
             Objects.equals(this.finishDate, showTaskResponse.finishDate) &&
             Objects.equals(this.migrateSpeed, showTaskResponse.migrateSpeed) &&
+            Objects.equals(this.compressRate, showTaskResponse.compressRate) &&
             Objects.equals(this.errorJson, showTaskResponse.errorJson) &&
             Objects.equals(this.totalTime, showTaskResponse.totalTime) &&
             Objects.equals(this.floatIp, showTaskResponse.floatIp) &&
@@ -1091,7 +1122,7 @@ public class ShowTaskResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, osType, id, priority, regionId, startTargetServer, enterpriseProjectId, migrationIp, regionName, projectName, projectId, vmTemplateId, sourceServer, targetServer, state, estimateCompleteTime, connected, createDate, startDate, finishDate, migrateSpeed, errorJson, totalTime, floatIp, remainSeconds, targetSnapshotId, cloneServer, subTasks);
+        return Objects.hash(name, type, osType, id, priority, regionId, startTargetServer, enterpriseProjectId, migrationIp, regionName, projectName, projectId, vmTemplateId, sourceServer, targetServer, state, estimateCompleteTime, connected, createDate, startDate, finishDate, migrateSpeed, compressRate, errorJson, totalTime, floatIp, remainSeconds, targetSnapshotId, cloneServer, subTasks);
     }
     @Override
     public String toString() {
@@ -1119,6 +1150,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
         sb.append("    finishDate: ").append(toIndentedString(finishDate)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
+        sb.append("    compressRate: ").append(toIndentedString(compressRate)).append("\n");
         sb.append("    errorJson: ").append(toIndentedString(errorJson)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");
         sb.append("    floatIp: ").append(toIndentedString(floatIp)).append("\n");

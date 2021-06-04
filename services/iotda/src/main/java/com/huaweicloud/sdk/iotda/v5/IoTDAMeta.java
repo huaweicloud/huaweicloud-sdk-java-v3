@@ -412,204 +412,6 @@ public class IoTDAMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAsyncCommandsRequest, ListAsyncCommandsResponse> listAsyncCommands = genForlistAsyncCommands();
-
-    private static HttpRequestDef<ListAsyncCommandsRequest, ListAsyncCommandsResponse> genForlistAsyncCommands() {
-        // basic
-        HttpRequestDef.Builder<ListAsyncCommandsRequest, ListAsyncCommandsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAsyncCommandsRequest.class, ListAsyncCommandsResponse.class)
-                .withName("ListAsyncCommands")
-                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("device_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            })
-        );
-        builder.withRequestField("command_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            })
-        );
-        builder.withRequestField("command_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getCommandName, (req, v) -> {
-                req.setCommandName(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncCommandsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> listAsyncHistoryCommands = genForlistAsyncHistoryCommands();
-
-    private static HttpRequestDef<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> genForlistAsyncHistoryCommands() {
-        // basic
-        HttpRequestDef.Builder<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAsyncHistoryCommandsRequest.class, ListAsyncHistoryCommandsResponse.class)
-                .withName("ListAsyncHistoryCommands")
-                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands-history")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("device_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getDeviceId, (req, v) -> {
-                req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStatus, (req, v) -> {
-                req.setStatus(v);
-            })
-        );
-        builder.withRequestField("command_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getCommandId, (req, v) -> {
-                req.setCommandId(v);
-            })
-        );
-        builder.withRequestField("command_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getCommandName, (req, v) -> {
-                req.setCommandName(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getInstanceId, (req, v) -> {
-                req.setInstanceId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> showAsyncDeviceCommand = genForshowAsyncDeviceCommand();
 
     private static HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> genForshowAsyncDeviceCommand() {
@@ -2381,14 +2183,6 @@ public class IoTDAMeta {
                 req.setServiceId(v);
             })
         );
-        builder.withRequestField("Stage-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPropertiesRequest::getStageAuthToken, (req, v) -> {
-                req.setStageAuthToken(v);
-            })
-        );
         builder.withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2422,14 +2216,6 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(UpdatePropertiesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Stage-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdatePropertiesRequest::getStageAuthToken, (req, v) -> {
-                req.setStageAuthToken(v);
             })
         );
         builder.withRequestField("Instance-Id",
@@ -2508,14 +2294,6 @@ public class IoTDAMeta {
             String.class,
             f -> f.withMarshaller(CreateRuleActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("x-LB-Service",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateRuleActionRequest::getXLBService, (req, v) -> {
-                req.setXLBService(v);
             })
         );
         builder.withRequestField("body",

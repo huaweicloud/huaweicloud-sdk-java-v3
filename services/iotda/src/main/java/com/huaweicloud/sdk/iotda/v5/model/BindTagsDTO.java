@@ -47,7 +47,7 @@ public class BindTagsDTO  {
 
 
     /**
-     * 要绑定标签的资源类型。 - device：设备。 
+     * **参数说明**：要绑定标签的资源类型。 **取值范围**： - device：设备。
      * @return resourceType
      */
     public String getResourceType() {
@@ -69,7 +69,7 @@ public class BindTagsDTO  {
 
 
     /**
-     * 要绑定标签的资源id。例如，资源类型为device，那么对应的资源id就是device_id。
+     * **参数说明**：要绑定标签的资源id。例如，资源类型为device，那么对应的资源id就是device_id。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return resourceId
      */
     public String getResourceId() {
@@ -105,7 +105,7 @@ public class BindTagsDTO  {
     }
 
     /**
-     * 要绑定到指定资源的标签列表，标签列表中各项标签键值之间不允许重复，一个资源最多可以绑定10个标签。
+     * **参数说明**：要绑定到指定资源的标签列表，标签列表中各项标签键值之间不允许重复，一个资源最多可以绑定10个标签。
      * @return tags
      */
     public List<TagV5DTO> getTags() {

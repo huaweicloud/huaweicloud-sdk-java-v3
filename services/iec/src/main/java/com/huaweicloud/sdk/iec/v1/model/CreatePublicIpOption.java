@@ -31,9 +31,9 @@ public class CreatePublicIpOption  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
+    @JsonProperty(value="type")
     
-    private String poolId;
+    private String type;
 
     public CreatePublicIpOption withSiteId(String siteId) {
         this.siteId = siteId;
@@ -79,8 +79,8 @@ public class CreatePublicIpOption  {
 
     
 
-    public CreatePublicIpOption withPoolId(String poolId) {
-        this.poolId = poolId;
+    public CreatePublicIpOption withType(String type) {
+        this.type = type;
         return this;
     }
 
@@ -89,14 +89,14 @@ public class CreatePublicIpOption  {
 
     /**
      * 线路ID。
-     * @return poolId
+     * @return type
      */
-    public String getPoolId() {
-        return poolId;
+    public String getType() {
+        return type;
     }
 
-    public void setPoolId(String poolId) {
-        this.poolId = poolId;
+    public void setType(String type) {
+        this.type = type;
     }
 
     
@@ -112,11 +112,11 @@ public class CreatePublicIpOption  {
         CreatePublicIpOption createPublicIpOption = (CreatePublicIpOption) o;
         return Objects.equals(this.siteId, createPublicIpOption.siteId) &&
             Objects.equals(this.ipVersion, createPublicIpOption.ipVersion) &&
-            Objects.equals(this.poolId, createPublicIpOption.poolId);
+            Objects.equals(this.type, createPublicIpOption.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, ipVersion, poolId);
+        return Objects.hash(siteId, ipVersion, type);
     }
     @Override
     public String toString() {
@@ -124,7 +124,7 @@ public class CreatePublicIpOption  {
         sb.append("class CreatePublicIpOption {\n");
         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
-        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

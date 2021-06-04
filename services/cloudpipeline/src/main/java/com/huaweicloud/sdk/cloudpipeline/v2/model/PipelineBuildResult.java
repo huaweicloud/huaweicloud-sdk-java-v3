@@ -47,6 +47,24 @@ public class PipelineBuildResult  {
     
     private String pipelineId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pipeline_name")
+    
+    private String pipelineName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="start_time")
+    
+    private String startTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private String status;
+
     public PipelineBuildResult withBuildId(String buildId) {
         this.buildId = buildId;
         return this;
@@ -157,6 +175,72 @@ public class PipelineBuildResult  {
 
     
 
+    public PipelineBuildResult withPipelineName(String pipelineName) {
+        this.pipelineName = pipelineName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 流水线名称
+     * @return pipelineName
+     */
+    public String getPipelineName() {
+        return pipelineName;
+    }
+
+    public void setPipelineName(String pipelineName) {
+        this.pipelineName = pipelineName;
+    }
+
+    
+
+    public PipelineBuildResult withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 执行开始时间
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    
+
+    public PipelineBuildResult withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 运行状态
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -170,11 +254,14 @@ public class PipelineBuildResult  {
             Objects.equals(this.elapseTime, pipelineBuildResult.elapseTime) &&
             Objects.equals(this.endTime, pipelineBuildResult.endTime) &&
             Objects.equals(this.outcome, pipelineBuildResult.outcome) &&
-            Objects.equals(this.pipelineId, pipelineBuildResult.pipelineId);
+            Objects.equals(this.pipelineId, pipelineBuildResult.pipelineId) &&
+            Objects.equals(this.pipelineName, pipelineBuildResult.pipelineName) &&
+            Objects.equals(this.startTime, pipelineBuildResult.startTime) &&
+            Objects.equals(this.status, pipelineBuildResult.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(buildId, elapseTime, endTime, outcome, pipelineId);
+        return Objects.hash(buildId, elapseTime, endTime, outcome, pipelineId, pipelineName, startTime, status);
     }
     @Override
     public String toString() {
@@ -185,6 +272,9 @@ public class PipelineBuildResult  {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    outcome: ").append(toIndentedString(outcome)).append("\n");
         sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
+        sb.append("    pipelineName: ").append(toIndentedString(pipelineName)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

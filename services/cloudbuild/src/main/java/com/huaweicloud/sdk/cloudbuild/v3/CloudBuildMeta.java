@@ -12,6 +12,33 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class CloudBuildMeta {
 
+    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForcreateJob();
+
+    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForcreateJob() {
+        // basic
+        HttpRequestDef.Builder<CreateJobRequest, CreateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateJobRequest.class, CreateJobResponse.class)
+                .withName("CreateJob")
+                .withUri("/v3/jobs/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            DefaultRequestBody.class,
+            f -> f.withMarshaller(CreateJobRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> downloadKeystore = genFordownloadKeystore();
 
     private static HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> genFordownloadKeystore() {

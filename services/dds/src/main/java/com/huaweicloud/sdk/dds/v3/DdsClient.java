@@ -1184,6 +1184,28 @@ public class DdsClient {
     }
 
     /**
+     * 查询配额
+     * 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return ShowQuotasResponse
+     */
+    public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     * 查询单租户在DDS服务下的资源配额，包括单节点实例配额、副本集实例配额、集群实例配额等。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
+        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, DdsMeta.showQuotas, hcClient);
+    }
+
+    /**
      * 查询集群均衡设置
      * 查询集群均衡设置。
      *

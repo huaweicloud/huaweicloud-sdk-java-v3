@@ -51,7 +51,7 @@ public class PropertyFilter  {
 
 
     /**
-     * 设备属性的路径信息，格式：service_id/DataProperty，例如门磁状态为“DoorWindow/status”。多个属性路径之间以逗号分隔。
+     * **参数说明**：设备属性的路径信息，格式：service_id/DataProperty，例如门磁状态为“DoorWindow/status”。多个属性路径之间以逗号分隔。
      * @return path
      */
     public String getPath() {
@@ -73,7 +73,7 @@ public class PropertyFilter  {
 
 
     /**
-     * 数据比较的操作符，当前支持的操作符有：>，<，>=，<=，=和between:表示数值区间，geo.circle.in:表示圆形区域范围内，geo.circle.out:表示圆形区域范围外。
+     * **参数说明**：数据比较的操作符。 **取值范围**：当前支持的操作符有：>，<，>=，<=，=和between:表示数值区间，geo.circle.in:表示圆形区域范围内，geo.circle.out:表示圆形区域范围外。
      * @return operator
      */
     public String getOperator() {
@@ -95,7 +95,7 @@ public class PropertyFilter  {
 
 
     /**
-     * 数据比较表达式的右值。与数据比较操作符between联用时，右值表示最小值和最大值，用逗号隔开，如“20,30”表示大于等于20小于30。
+     * **参数说明**：数据比较表达式的右值。与数据比较操作符between联用时，右值表示最小值和最大值，用逗号隔开，如“20,30”表示大于等于20小于30。
      * @return value
      */
     public String getValue() {

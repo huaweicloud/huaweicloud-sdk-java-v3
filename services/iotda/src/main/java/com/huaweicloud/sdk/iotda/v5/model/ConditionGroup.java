@@ -62,7 +62,7 @@ public class ConditionGroup  {
     }
 
     /**
-     * 规则的条件列表，单个规则最多支持设置10个条件。
+     * **参数说明**：规则的条件列表，单个规则最多支持设置10个条件。
      * @return conditions
      */
     public List<RuleCondition> getConditions() {
@@ -84,7 +84,7 @@ public class ConditionGroup  {
 
 
     /**
-     * 规则条件列表中多个条件之间的逻辑关系，默认值：and。 - and：逻辑且。 - or：逻辑或。 
+     * **参数说明**：规则条件列表中多个条件之间的逻辑关系，默认值：and。 **取值范围**： - and：逻辑且。 - or：逻辑或。
      * @return logic
      */
     public String getLogic() {

@@ -38,7 +38,7 @@ public class ColumnMapping  {
 
 
     /**
-     * 数据库的列名
+     * **参数说明**：数据库的列名
      * @return columnName
      */
     public String getColumnName() {
@@ -60,7 +60,7 @@ public class ColumnMapping  {
 
 
     /**
-     * 流转数据的属性名
+     * **参数说明**：流转数据的属性名
      * @return jsonKey
      */
     public String getJsonKey() {

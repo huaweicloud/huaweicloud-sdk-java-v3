@@ -36,12 +36,6 @@ public class AddActionReq  {
     
     private ChannelDetail channelDetail;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="batch")
-    
-    private Boolean batch;
-
     public AddActionReq withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -51,7 +45,7 @@ public class AddActionReq  {
 
 
     /**
-     * 规则触发条件ID，用于唯一标识一条规则触发条件，在创建规则时由物联网平台分配获得。
+     * **参数说明**：规则触发条件ID，用于唯一标识一条规则触发条件，在创建规则时由物联网平台分配获得。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return ruleId
      */
     public String getRuleId() {
@@ -73,7 +67,7 @@ public class AddActionReq  {
 
 
     /**
-     * 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
+     * **参数说明**：规则动作的类型。 **取值范围**： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
      * @return channel
      */
     public String getChannel() {
@@ -115,28 +109,6 @@ public class AddActionReq  {
 
     
 
-    public AddActionReq withBatch(Boolean batch) {
-        this.batch = batch;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否支持批量接收推送消息。
-     * @return batch
-     */
-    public Boolean getBatch() {
-        return batch;
-    }
-
-    public void setBatch(Boolean batch) {
-        this.batch = batch;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -148,12 +120,11 @@ public class AddActionReq  {
         AddActionReq addActionReq = (AddActionReq) o;
         return Objects.equals(this.ruleId, addActionReq.ruleId) &&
             Objects.equals(this.channel, addActionReq.channel) &&
-            Objects.equals(this.channelDetail, addActionReq.channelDetail) &&
-            Objects.equals(this.batch, addActionReq.batch);
+            Objects.equals(this.channelDetail, addActionReq.channelDetail);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, channel, channelDetail, batch);
+        return Objects.hash(ruleId, channel, channelDetail);
     }
     @Override
     public String toString() {
@@ -162,7 +133,6 @@ public class AddActionReq  {
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
         sb.append("    channelDetail: ").append(toIndentedString(channelDetail)).append("\n");
-        sb.append("    batch: ").append(toIndentedString(batch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

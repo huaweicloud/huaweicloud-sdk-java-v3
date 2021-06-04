@@ -83,7 +83,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，必须携带该参数指定修改的产品属于哪个资源空间，否则接口会提示错误。如果用户存在多资源空间，同时又不想携带该参数，可以联系华为技术支持对用户数据做资源空间合并。
+     * **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，必须携带该参数指定修改的产品属于哪个资源空间，否则接口会提示错误。如果用户存在多资源空间，同时又不想携带该参数，可以联系华为技术支持对用户数据做资源空间合并。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return appId
      */
     public String getAppId() {
@@ -105,7 +105,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 产品名称。
+     * **参数说明**：产品名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return name
      */
     public String getName() {
@@ -127,7 +127,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 设备类型。
+     * **参数说明**：设备类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return deviceType
      */
     public String getDeviceType() {
@@ -149,7 +149,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA。
+     * **参数说明**：设备使用的协议类型。 **取值范围**：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF，OPC-UA，OPC-DA。
      * @return protocolType
      */
     public String getProtocolType() {
@@ -171,7 +171,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 设备上报数据的格式，取值范围：json，binary。
+     * **参数说明**：设备上报数据的格式。 **取值范围**： - json：JSON格式 - binary：二进制码流格式
      * @return dataFormat
      */
     public String getDataFormat() {
@@ -207,7 +207,7 @@ public class UpdateProduct  {
     }
 
     /**
-     * 设备的服务能力列表。
+     * **参数说明**：设备的服务能力列表。
      * @return serviceCapabilities
      */
     public List<ServiceCapability> getServiceCapabilities() {
@@ -229,7 +229,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 厂商名称。
+     * **参数说明**：厂商名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return manufacturerName
      */
     public String getManufacturerName() {
@@ -251,7 +251,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 设备所属行业。
+     * **参数说明**：设备所属行业。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return industry
      */
     public String getIndustry() {
@@ -273,7 +273,7 @@ public class UpdateProduct  {
 
 
     /**
-     * 产品的描述信息。
+     * **参数说明**：产品的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
      * @return description
      */
     public String getDescription() {

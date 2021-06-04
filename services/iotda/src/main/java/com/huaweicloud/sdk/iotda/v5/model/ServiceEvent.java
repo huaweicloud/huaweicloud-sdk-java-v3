@@ -41,7 +41,7 @@ public class ServiceEvent  {
 
 
     /**
-     * 设备事件类型。
+     * **参数说明**：设备事件类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return eventType
      */
     public String getEventType() {
@@ -77,7 +77,7 @@ public class ServiceEvent  {
     }
 
     /**
-     * 设备事件的参数列表。
+     * **参数说明**：设备事件的参数列表。
      * @return paras
      */
     public List<ServiceCommandPara> getParas() {

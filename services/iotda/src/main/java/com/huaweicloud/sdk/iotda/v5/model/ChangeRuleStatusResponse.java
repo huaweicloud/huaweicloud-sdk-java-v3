@@ -34,7 +34,7 @@ public class ChangeRuleStatusResponse extends SdkResponse {
 
 
     /**
-     * 规则的激活状态。 - active：激活。 - inactive：未激活。 
+     * **参数说明**：规则的激活状态。 **取值范围**： - active：激活。 - inactive：未激活。
      * @return status
      */
     public String getStatus() {

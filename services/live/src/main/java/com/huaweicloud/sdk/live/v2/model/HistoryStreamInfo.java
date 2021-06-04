@@ -3,15 +3,11 @@ package com.huaweicloud.sdk.live.v2.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,90 +40,12 @@ public class HistoryStreamInfo  {
     @JsonProperty(value="type")
     
     private Integer type;
-    /**
-     * 视频编码格式。
-     */
-    public static final class VideoCodecEnum {
-
-        
-        /**
-         * Enum H264 for value: "H264"
-         */
-        public static final VideoCodecEnum H264 = new VideoCodecEnum("H264");
-        
-        /**
-         * Enum H265 for value: "H265"
-         */
-        public static final VideoCodecEnum H265 = new VideoCodecEnum("H265");
-        
-
-        private static final Map<String, VideoCodecEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, VideoCodecEnum> createStaticFields() {
-            Map<String, VideoCodecEnum> map = new HashMap<>();
-            map.put("H264", H264);
-            map.put("H265", H265);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        VideoCodecEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VideoCodecEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoCodecEnum(value);
-            }
-            return result;
-        }
-
-        public static VideoCodecEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VideoCodecEnum) {
-                return this.value.equals(((VideoCodecEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="video_codec")
     
-    private VideoCodecEnum videoCodec;
+    private String videoCodec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -241,7 +159,7 @@ public class HistoryStreamInfo  {
 
     
 
-    public HistoryStreamInfo withVideoCodec(VideoCodecEnum videoCodec) {
+    public HistoryStreamInfo withVideoCodec(String videoCodec) {
         this.videoCodec = videoCodec;
         return this;
     }
@@ -253,11 +171,11 @@ public class HistoryStreamInfo  {
      * 视频编码格式。
      * @return videoCodec
      */
-    public VideoCodecEnum getVideoCodec() {
+    public String getVideoCodec() {
         return videoCodec;
     }
 
-    public void setVideoCodec(VideoCodecEnum videoCodec) {
+    public void setVideoCodec(String videoCodec) {
         this.videoCodec = videoCodec;
     }
 

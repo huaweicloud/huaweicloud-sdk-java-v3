@@ -71,18 +71,6 @@ public class UpdateRuleResponse extends SdkResponse {
     
     private String appId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_ids")
-    
-    private List<String> edgeNodeIds = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_update_time")
-    
-    private String lastUpdateTime;
-
     public UpdateRuleResponse withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
@@ -280,64 +268,6 @@ public class UpdateRuleResponse extends SdkResponse {
 
     
 
-    public UpdateRuleResponse withEdgeNodeIds(List<String> edgeNodeIds) {
-        this.edgeNodeIds = edgeNodeIds;
-        return this;
-    }
-
-    
-    public UpdateRuleResponse addEdgeNodeIdsItem(String edgeNodeIdsItem) {
-        if(this.edgeNodeIds == null) {
-            this.edgeNodeIds = new ArrayList<>();
-        }
-        this.edgeNodeIds.add(edgeNodeIdsItem);
-        return this;
-    }
-
-    public UpdateRuleResponse withEdgeNodeIds(Consumer<List<String>> edgeNodeIdsSetter) {
-        if(this.edgeNodeIds == null) {
-            this.edgeNodeIds = new ArrayList<>();
-        }
-        edgeNodeIdsSetter.accept(this.edgeNodeIds);
-        return this;
-    }
-
-    /**
-     * 归属边缘侧节点设备ID列表。
-     * @return edgeNodeIds
-     */
-    public List<String> getEdgeNodeIds() {
-        return edgeNodeIds;
-    }
-
-    public void setEdgeNodeIds(List<String> edgeNodeIds) {
-        this.edgeNodeIds = edgeNodeIds;
-    }
-
-    
-
-    public UpdateRuleResponse withLastUpdateTime(String lastUpdateTime) {
-        this.lastUpdateTime = lastUpdateTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 规则最后更新时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
-     * @return lastUpdateTime
-     */
-    public String getLastUpdateTime() {
-        return lastUpdateTime;
-    }
-
-    public void setLastUpdateTime(String lastUpdateTime) {
-        this.lastUpdateTime = lastUpdateTime;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -354,13 +284,11 @@ public class UpdateRuleResponse extends SdkResponse {
             Objects.equals(this.actions, updateRuleResponse.actions) &&
             Objects.equals(this.ruleType, updateRuleResponse.ruleType) &&
             Objects.equals(this.status, updateRuleResponse.status) &&
-            Objects.equals(this.appId, updateRuleResponse.appId) &&
-            Objects.equals(this.edgeNodeIds, updateRuleResponse.edgeNodeIds) &&
-            Objects.equals(this.lastUpdateTime, updateRuleResponse.lastUpdateTime);
+            Objects.equals(this.appId, updateRuleResponse.appId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, name, description, conditionGroup, actions, ruleType, status, appId, edgeNodeIds, lastUpdateTime);
+        return Objects.hash(ruleId, name, description, conditionGroup, actions, ruleType, status, appId);
     }
     @Override
     public String toString() {
@@ -374,8 +302,6 @@ public class UpdateRuleResponse extends SdkResponse {
         sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    edgeNodeIds: ").append(toIndentedString(edgeNodeIds)).append("\n");
-        sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

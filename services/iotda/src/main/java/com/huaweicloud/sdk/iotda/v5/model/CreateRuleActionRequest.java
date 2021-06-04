@@ -26,12 +26,6 @@ public class CreateRuleActionRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x-LB-Service")
-    
-    private String xLBService;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private AddActionReq body;
@@ -45,7 +39,7 @@ public class CreateRuleActionRequest  {
 
 
     /**
-     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -54,30 +48,6 @@ public class CreateRuleActionRequest  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    
-
-    public CreateRuleActionRequest withXLBService(String xLBService) {
-        this.xLBService = xLBService;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 此参数定义了lbservice
-     * @return xLBService
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x-LB-Service")
-    public String getXLBService() {
-        return xLBService;
-    }
-
-    public void setXLBService(String xLBService) {
-        this.xLBService = xLBService;
     }
 
     
@@ -121,19 +91,17 @@ public class CreateRuleActionRequest  {
         }
         CreateRuleActionRequest createRuleActionRequest = (CreateRuleActionRequest) o;
         return Objects.equals(this.instanceId, createRuleActionRequest.instanceId) &&
-            Objects.equals(this.xLBService, createRuleActionRequest.xLBService) &&
             Objects.equals(this.body, createRuleActionRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, xLBService, body);
+        return Objects.hash(instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateRuleActionRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    xLBService: ").append(toIndentedString(xLBService)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

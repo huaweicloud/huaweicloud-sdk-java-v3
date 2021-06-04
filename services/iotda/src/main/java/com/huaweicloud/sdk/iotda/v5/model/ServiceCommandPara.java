@@ -88,7 +88,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的名称。
+     * **参数说明**：参数的名称。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return paraName
      */
     public String getParaName() {
@@ -110,7 +110,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的数据类型。取值范围：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+     * **参数说明**：参数的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
      * @return dataType
      */
     public String getDataType() {
@@ -132,7 +132,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数是否必选。默认为false。
+     * **参数说明**：参数是否必选。默认为false。
      * @return required
      */
     public Boolean getRequired() {
@@ -168,7 +168,7 @@ public class ServiceCommandPara  {
     }
 
     /**
-     * 参数的枚举值列表。
+     * **参数说明**：参数的枚举值列表。
      * @return enumList
      */
     public List<String> getEnumList() {
@@ -190,7 +190,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的最小值。
+     * **参数说明**：参数的最小值。 **取值范围**：长度1-16。
      * @return min
      */
     public String getMin() {
@@ -212,7 +212,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的最大值。
+     * **参数说明**：参数的最大值。 **取值范围**：长度1-16。
      * @return max
      */
     public String getMax() {
@@ -234,7 +234,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的最大长度。
+     * **参数说明**：参数的最大长度。
      * @return maxLength
      */
     public Integer getMaxLength() {
@@ -256,7 +256,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的步长。
+     * **参数说明**：参数的步长。
      * @return step
      */
     public Double getStep() {
@@ -278,7 +278,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的单位。
+     * **参数说明**：参数的单位。 **取值范围**：长度不超过16。
      * @return unit
      */
     public String getUnit() {
@@ -300,7 +300,7 @@ public class ServiceCommandPara  {
 
 
     /**
-     * 参数的描述。
+     * **参数说明**：参数的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
      * @return description
      */
     public String getDescription() {

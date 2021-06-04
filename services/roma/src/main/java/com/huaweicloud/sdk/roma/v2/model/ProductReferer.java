@@ -33,7 +33,7 @@ public class ProductReferer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_name")
     
-    private Object productName;
+    private String productName;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -255,7 +255,7 @@ public class ProductReferer  {
 
     
 
-    public ProductReferer withProductName(Object productName) {
+    public ProductReferer withProductName(String productName) {
         this.productName = productName;
         return this;
     }
@@ -267,11 +267,11 @@ public class ProductReferer  {
      * 产品名称
      * @return productName
      */
-    public Object getProductName() {
+    public String getProductName() {
         return productName;
     }
 
-    public void setProductName(Object productName) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
 

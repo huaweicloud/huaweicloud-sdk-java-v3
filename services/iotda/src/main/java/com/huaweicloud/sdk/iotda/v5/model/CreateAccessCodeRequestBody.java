@@ -32,7 +32,7 @@ public class CreateAccessCodeRequestBody  {
 
 
     /**
-     * 接入凭证类型，默认为AMQP的接入凭证类型。
+     * **参数说明**：接入凭证类型，默认为AMQP的接入凭证类型。 **取值范围**： - AMQP 
      * @return type
      */
     public String getType() {

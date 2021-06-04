@@ -38,7 +38,7 @@ public class LtsForwarding  {
 
 
     /**
-     * 用于接收日志的日志组Id，通过调用LTS服务创建日志组接口获取(https://support.huaweicloud.com/api-lts/lts_api_0012.html)。
+     * **参数说明**：用于接收日志的日志组Id，通过调用LTS服务创建日志组接口获取(https://support.huaweicloud.com/api-lts/lts_api_0012.html)。
      * @return logGroupId
      */
     public String getLogGroupId() {
@@ -60,7 +60,7 @@ public class LtsForwarding  {
 
 
     /**
-     * 用于接收日志的日志流Id，通过调用LTS服务创建日志流接口获取(https://support.huaweicloud.com/api-lts/lts_api_0016.html)。
+     * **参数说明**：用于接收日志的日志流Id，通过调用LTS服务创建日志流接口获取(https://support.huaweicloud.com/api-lts/lts_api_0016.html)。
      * @return logStreamId
      */
     public String getLogStreamId() {

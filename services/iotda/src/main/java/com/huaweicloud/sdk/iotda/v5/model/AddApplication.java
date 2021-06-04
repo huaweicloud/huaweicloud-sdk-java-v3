@@ -23,24 +23,6 @@ public class AddApplication  {
     
     private String appName;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
-    private String appId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
-    private String instanceId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
-    private String serviceName;
-
     public AddApplication withAppName(String appName) {
         this.appName = appName;
         return this;
@@ -50,7 +32,7 @@ public class AddApplication  {
 
 
     /**
-     * 资源空间名称。
+     * **参数说明**：资源空间名称。 **取值范围**：长度不超过64，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return appName
      */
     public String getAppName() {
@@ -59,72 +41,6 @@ public class AddApplication  {
 
     public void setAppName(String appName) {
         this.appName = appName;
-    }
-
-    
-
-    public AddApplication withAppId(String appId) {
-        this.appId = appId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 资源空间ID。
-     * @return appId
-     */
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    
-
-    public AddApplication withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 迁移前实例ID。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    
-
-    public AddApplication withServiceName(String serviceName) {
-        this.serviceName = serviceName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 对接的服务名,IoTDA代表华为云设备接入云服务，CTNBGW代表天翼云设备接入服务
-     * @return serviceName
-     */
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
     }
 
     
@@ -138,23 +54,17 @@ public class AddApplication  {
             return false;
         }
         AddApplication addApplication = (AddApplication) o;
-        return Objects.equals(this.appName, addApplication.appName) &&
-            Objects.equals(this.appId, addApplication.appId) &&
-            Objects.equals(this.instanceId, addApplication.instanceId) &&
-            Objects.equals(this.serviceName, addApplication.serviceName);
+        return Objects.equals(this.appName, addApplication.appName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(appName, appId, instanceId, serviceName);
+        return Objects.hash(appName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddApplication {\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
-        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

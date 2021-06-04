@@ -59,7 +59,7 @@ public class TaskByServerSource  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="migrate_speed")
     
-    private Integer migrateSpeed;
+    private Double migrateSpeed;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -257,7 +257,7 @@ public class TaskByServerSource  {
 
     
 
-    public TaskByServerSource withMigrateSpeed(Integer migrateSpeed) {
+    public TaskByServerSource withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
     }
@@ -268,14 +268,14 @@ public class TaskByServerSource  {
     /**
      * 迁移速率
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1E+4
      * @return migrateSpeed
      */
-    public Integer getMigrateSpeed() {
+    public Double getMigrateSpeed() {
         return migrateSpeed;
     }
 
-    public void setMigrateSpeed(Integer migrateSpeed) {
+    public void setMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
     }
 

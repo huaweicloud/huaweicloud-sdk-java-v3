@@ -82,6 +82,12 @@ public class QueryDeviceSimplify  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="device_sdk_version")
+    
+    private String deviceSdkVersion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_id")
     
     private String productId;
@@ -179,7 +185,7 @@ public class QueryDeviceSimplify  {
 
 
     /**
-     * 设备标识码，通常使用IMEI、MAC地址或Serial No作为nodeId。
+     * 设备标识码，通常使用IMEI、MAC地址或Serial No作为node_id。
      * @return nodeId
      */
     public String getNodeId() {
@@ -324,6 +330,28 @@ public class QueryDeviceSimplify  {
 
     
 
+    public QueryDeviceSimplify withDeviceSdkVersion(String deviceSdkVersion) {
+        this.deviceSdkVersion = deviceSdkVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 设备的sdk信息。
+     * @return deviceSdkVersion
+     */
+    public String getDeviceSdkVersion() {
+        return deviceSdkVersion;
+    }
+
+    public void setDeviceSdkVersion(String deviceSdkVersion) {
+        this.deviceSdkVersion = deviceSdkVersion;
+    }
+
+    
+
     public QueryDeviceSimplify withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -445,6 +473,7 @@ public class QueryDeviceSimplify  {
             Objects.equals(this.description, queryDeviceSimplify.description) &&
             Objects.equals(this.fwVersion, queryDeviceSimplify.fwVersion) &&
             Objects.equals(this.swVersion, queryDeviceSimplify.swVersion) &&
+            Objects.equals(this.deviceSdkVersion, queryDeviceSimplify.deviceSdkVersion) &&
             Objects.equals(this.productId, queryDeviceSimplify.productId) &&
             Objects.equals(this.productName, queryDeviceSimplify.productName) &&
             Objects.equals(this.status, queryDeviceSimplify.status) &&
@@ -452,7 +481,7 @@ public class QueryDeviceSimplify  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appName, deviceId, nodeId, gatewayId, deviceName, nodeType, description, fwVersion, swVersion, productId, productName, status, tags);
+        return Objects.hash(appId, appName, deviceId, nodeId, gatewayId, deviceName, nodeType, description, fwVersion, swVersion, deviceSdkVersion, productId, productName, status, tags);
     }
     @Override
     public String toString() {
@@ -468,6 +497,7 @@ public class QueryDeviceSimplify  {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    fwVersion: ").append(toIndentedString(fwVersion)).append("\n");
         sb.append("    swVersion: ").append(toIndentedString(swVersion)).append("\n");
+        sb.append("    deviceSdkVersion: ").append(toIndentedString(deviceSdkVersion)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

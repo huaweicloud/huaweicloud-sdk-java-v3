@@ -51,7 +51,7 @@ public class CheckCertificateRequest  {
 
 
     /**
-     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -73,7 +73,7 @@ public class CheckCertificateRequest  {
 
 
     /**
-     * 设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
+     * **参数说明**：设备CA证书ID，在上传设备CA证书时由平台分配的唯一标识。
      * @return certificateId
      */
     public String getCertificateId() {
@@ -95,7 +95,7 @@ public class CheckCertificateRequest  {
 
 
     /**
-     * 对证书执行的操作，当前仅支持verify:校验证书
+     * **参数说明**：对证书执行的操作。 **取值范围**：当前仅支持verify:校验证书。
      * @return actionId
      */
     public String getActionId() {

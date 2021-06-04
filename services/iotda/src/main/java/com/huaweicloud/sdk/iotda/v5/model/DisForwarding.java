@@ -50,7 +50,7 @@ public class DisForwarding  {
 
 
     /**
-     * DIS服务对应的region区域
+     * **参数说明**：DIS服务对应的region区域
      * @return regionName
      */
     public String getRegionName() {
@@ -72,7 +72,7 @@ public class DisForwarding  {
 
 
     /**
-     * DIS服务对应的projectId信息
+     * **参数说明**：DIS服务对应的projectId信息
      * @return projectId
      */
     public String getProjectId() {
@@ -94,7 +94,7 @@ public class DisForwarding  {
 
 
     /**
-     * DIS服务对应的通道名称，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
+     * **参数说明**：DIS服务对应的通道名称，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
      * @return streamName
      */
     public String getStreamName() {
@@ -116,7 +116,7 @@ public class DisForwarding  {
 
 
     /**
-     * DIS服务对应的通道ID，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
+     * **参数说明**：DIS服务对应的通道ID，stream_id和stream_name两个参数必须携带一个，优先使用stream_id
      * @return streamId
      */
     public String getStreamId() {

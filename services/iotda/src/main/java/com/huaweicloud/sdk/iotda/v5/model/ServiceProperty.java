@@ -100,7 +100,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性名称。
+     * **参数说明**：设备属性名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return propertyName
      */
     public String getPropertyName() {
@@ -122,7 +122,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的数据类型。取值范围：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+     * **参数说明**：设备属性的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
      * @return dataType
      */
     public String getDataType() {
@@ -144,7 +144,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性是否必选。默认为false。
+     * **参数说明**：设备属性是否必选。默认为false。
      * @return required
      */
     public Boolean getRequired() {
@@ -180,7 +180,7 @@ public class ServiceProperty  {
     }
 
     /**
-     * 设备属性的枚举值列表。
+     * **参数说明**：设备属性的枚举值列表。
      * @return enumList
      */
     public List<String> getEnumList() {
@@ -202,7 +202,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的最小值。
+     * **参数说明**：设备属性的最小值。 **取值范围**：长度1-16。
      * @return min
      */
     public String getMin() {
@@ -224,7 +224,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的最大值。
+     * **参数说明**：设备属性的最大值。 **取值范围**：长度1-16。
      * @return max
      */
     public String getMax() {
@@ -246,7 +246,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的最大长度。
+     * **参数说明**：设备属性的最大长度。
      * @return maxLength
      */
     public Integer getMaxLength() {
@@ -268,7 +268,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的步长。
+     * **参数说明**：设备属性的步长。
      * @return step
      */
     public Double getStep() {
@@ -290,7 +290,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的单位。
+     * **参数说明**：设备属性的单位。 **取值范围**：长度不超过16。
      * @return unit
      */
     public String getUnit() {
@@ -312,7 +312,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的访问模式。取值范围：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件 
+     * **参数说明**：设备属性的访问模式。 **取值范围**：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件
      * @return method
      */
     public String getMethod() {
@@ -334,7 +334,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的描述。
+     * **参数说明**：设备属性的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
      * @return description
      */
     public String getDescription() {
@@ -356,7 +356,7 @@ public class ServiceProperty  {
 
 
     /**
-     * 设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
+     * **参数说明**：设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
      * @return defaultValue
      */
     public Object getDefaultValue() {

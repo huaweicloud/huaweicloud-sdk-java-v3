@@ -1076,6 +1076,28 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询配额
+     * 查询当前项目下资源配额情况。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return CompletableFuture<ShowQuotasResponse>
+     */
+    public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     * 查询当前项目下资源配额情况。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
+    }
+
+    /**
      * 手动倒换主备
      * 手动倒换主备.
      *

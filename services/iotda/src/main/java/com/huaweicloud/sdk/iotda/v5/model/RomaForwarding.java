@@ -68,7 +68,7 @@ public class RomaForwarding  {
     }
 
     /**
-     * 转发roma消息对应的地址列表
+     * **参数说明**：转发roma消息对应的地址列表
      * @return addresses
      */
     public List<NetAddress> getAddresses() {
@@ -90,7 +90,7 @@ public class RomaForwarding  {
 
 
     /**
-     * 转发roma消息关联的topic信息。
+     * **参数说明**：转发roma消息关联的topic信息。
      * @return topic
      */
     public String getTopic() {
@@ -112,7 +112,7 @@ public class RomaForwarding  {
 
 
     /**
-     * 转发roma关联的用户名信息。
+     * **参数说明**：转发roma关联的用户名信息。
      * @return username
      */
     public String getUsername() {
@@ -134,7 +134,7 @@ public class RomaForwarding  {
 
 
     /**
-     * 转发roma关联的密码信息。
+     * **参数说明**：转发roma关联的密码信息。
      * @return password
      */
     public String getPassword() {

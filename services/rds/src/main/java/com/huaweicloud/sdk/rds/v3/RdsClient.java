@@ -1074,6 +1074,28 @@ public class RdsClient {
     }
 
     /**
+     * 查询配额
+     * 查询当前项目下资源配额情况。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return ShowQuotasResponse
+     */
+    public ShowQuotasResponse showQuotas(ShowQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showQuotas);
+    }
+
+    /**
+     * 查询配额
+     * 查询当前项目下资源配额情况。
+     *
+     * @param ShowQuotasRequest 请求对象
+     * @return SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
+        return new SyncInvoker<ShowQuotasRequest, ShowQuotasResponse>(request, RdsMeta.showQuotas, hcClient);
+    }
+
+    /**
      * 手动倒换主备
      * 手动倒换主备.
      *

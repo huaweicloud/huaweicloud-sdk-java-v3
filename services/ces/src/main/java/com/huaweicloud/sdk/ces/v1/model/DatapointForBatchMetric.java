@@ -62,7 +62,7 @@ public class DatapointForBatchMetric  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的最大值。
      * @return max
      */
     public Double getMax() {
@@ -84,7 +84,7 @@ public class DatapointForBatchMetric  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的最小值。
      * @return min
      */
     public Double getMin() {
@@ -106,7 +106,7 @@ public class DatapointForBatchMetric  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的平均值。
      * @return average
      */
     public Double getAverage() {
@@ -128,7 +128,7 @@ public class DatapointForBatchMetric  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的求和值。
      * @return sum
      */
     public Double getSum() {
@@ -150,7 +150,7 @@ public class DatapointForBatchMetric  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的方差。
      * @return variance
      */
     public String getVariance() {

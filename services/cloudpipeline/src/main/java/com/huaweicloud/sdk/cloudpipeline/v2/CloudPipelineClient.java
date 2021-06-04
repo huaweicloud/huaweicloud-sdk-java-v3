@@ -18,7 +18,7 @@ public class CloudPipelineClient {
 
 
     /**
-     * 获取流水线状态
+     * 批量获取流水线状态
      * 批量获取流水线状态和阶段信息
      *
      * @param BatchShowPipelinesStatusRequest 请求对象
@@ -29,7 +29,7 @@ public class CloudPipelineClient {
     }
 
     /**
-     * 获取流水线状态
+     * 批量获取流水线状态
      * 批量获取流水线状态和阶段信息
      *
      * @param BatchShowPipelinesStatusRequest 请求对象

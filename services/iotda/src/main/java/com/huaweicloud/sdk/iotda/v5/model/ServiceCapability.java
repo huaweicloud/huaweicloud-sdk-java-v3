@@ -73,7 +73,7 @@ public class ServiceCapability  {
 
 
     /**
-     * 设备的服务ID。
+     * **参数说明**：设备的服务ID。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
      * @return serviceId
      */
     public String getServiceId() {
@@ -95,7 +95,7 @@ public class ServiceCapability  {
 
 
     /**
-     * 设备的服务类型。
+     * **参数说明**：设备的服务类型。 **取值范围**：长度不超过32，只允许中文、字母、数字、以及_?'#().,&%@!-$等字符的组合。
      * @return serviceType
      */
     public String getServiceType() {
@@ -131,7 +131,7 @@ public class ServiceCapability  {
     }
 
     /**
-     * 设备服务支持的属性列表。
+     * **参数说明**：设备服务支持的属性列表
      * @return properties
      */
     public List<ServiceProperty> getProperties() {
@@ -167,7 +167,7 @@ public class ServiceCapability  {
     }
 
     /**
-     * 设备服务支持的命令列表。
+     * **参数说明**：设备服务支持的命令列表。
      * @return commands
      */
     public List<ServiceCommand> getCommands() {
@@ -203,7 +203,7 @@ public class ServiceCapability  {
     }
 
     /**
-     * 设备服务支持的事件列表。
+     * **参数说明**：设备服务支持的事件列表。
      * @return events
      */
     public List<ServiceEvent> getEvents() {
@@ -225,7 +225,7 @@ public class ServiceCapability  {
 
 
     /**
-     * 设备服务的描述信息。
+     * **参数说明**：设备服务的描述信息。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
      * @return description
      */
     public String getDescription() {
@@ -247,7 +247,7 @@ public class ServiceCapability  {
 
 
     /**
-     * 指定设备服务是否必选。Master（主服务）, Mandatory（必选服务）, Optional（可选服务），目前本字段为非功能性字段，仅起到标识作用。默认为Optional（可选服务）。
+     * **参数说明**：指定设备服务是否必选。目前本字段为非功能性字段，仅起到标识作用。 **取值范围**： - Master：主服务 - Mandatory：必选服务 - Optional：可选服务 默认值为Optional。
      * @return option
      */
     public String getOption() {

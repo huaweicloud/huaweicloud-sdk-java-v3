@@ -57,7 +57,7 @@ public class ListUsersOfStreamResponse extends SdkResponse {
     }
 
     /**
-     * 域名对应的流量汇总列表。
+     * 观众趋势列表。
      * @return dataList
      */
     public List<V2UserData> getDataList() {

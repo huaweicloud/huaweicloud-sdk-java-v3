@@ -68,7 +68,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的最大值。
      * @return max
      */
     public Double getMax() {
@@ -90,7 +90,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的最小值。
      * @return min
      */
     public Double getMin() {
@@ -112,7 +112,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的平均值。
      * @return average
      */
     public Double getAverage() {
@@ -134,7 +134,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的求和值。
      * @return sum
      */
     public Double getSum() {
@@ -156,7 +156,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标值，该字段名称与请求参数中filter使用的查询值相同；字段名称可为：max/min/average/sum/variance。
+     * 聚合周期内指标数据的方差。
      * @return variance
      */
     public Double getVariance() {
@@ -178,7 +178,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标采集时间。
+     * 指标采集时间，UNIX时间戳，单位毫秒。
      * @return timestamp
      */
     public Long getTimestamp() {
@@ -200,7 +200,7 @@ public class Datapoint  {
 
 
     /**
-     * 指标单位
+     * 指标单位。
      * @return unit
      */
     public String getUnit() {

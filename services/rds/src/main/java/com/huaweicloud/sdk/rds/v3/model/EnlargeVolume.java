@@ -8,67 +8,47 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.rds.v3.model.EnlargeVolumeObject;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 扩容实例磁盘时必填。
+ * EnlargeVolume
  */
 public class EnlargeVolume  {
 
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
+    @JsonProperty(value="enlarge_volume")
     
-    private Integer size;
+    private EnlargeVolumeObject enlargeVolume;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_pay")
-    
-    private Boolean isAutoPay;
-
-    public EnlargeVolume withSize(Integer size) {
-        this.size = size;
+    public EnlargeVolume withEnlargeVolume(EnlargeVolumeObject enlargeVolume) {
+        this.enlargeVolume = enlargeVolume;
         return this;
     }
 
-    
-
-
-    /**
-     * 每次扩容最小容量为10GB，实例所选容量大小必须为10的整数倍，取值范围：40GB~4000GB。 - MySQL部分用户支持11GB~10000GB，如果您想开通该功能，请联系客服。 - PostgreSQL部分用户支持40GB~15000GB，如果您想开通该功能，请联系客服。
-     * @return size
-     */
-    public Integer getSize() {
-        return size;
-    }
-
-    public void setSize(Integer size) {
-        this.size = size;
-    }
-
-    
-
-    public EnlargeVolume withIsAutoPay(Boolean isAutoPay) {
-        this.isAutoPay = isAutoPay;
+    public EnlargeVolume withEnlargeVolume(Consumer<EnlargeVolumeObject> enlargeVolumeSetter) {
+        if(this.enlargeVolume == null ){
+            this.enlargeVolume = new EnlargeVolumeObject();
+            enlargeVolumeSetter.accept(this.enlargeVolume);
+        }
+        
         return this;
     }
 
-    
-
 
     /**
-     * 变更包周期实例的规格时可指定，表示是否自动从客户的账户中支付。 - true，为自动支付。 - false，为手动支付，默认该方式。
-     * @return isAutoPay
+     * Get enlargeVolume
+     * @return enlargeVolume
      */
-    public Boolean getIsAutoPay() {
-        return isAutoPay;
+    public EnlargeVolumeObject getEnlargeVolume() {
+        return enlargeVolume;
     }
 
-    public void setIsAutoPay(Boolean isAutoPay) {
-        this.isAutoPay = isAutoPay;
+    public void setEnlargeVolume(EnlargeVolumeObject enlargeVolume) {
+        this.enlargeVolume = enlargeVolume;
     }
 
     
@@ -82,19 +62,17 @@ public class EnlargeVolume  {
             return false;
         }
         EnlargeVolume enlargeVolume = (EnlargeVolume) o;
-        return Objects.equals(this.size, enlargeVolume.size) &&
-            Objects.equals(this.isAutoPay, enlargeVolume.isAutoPay);
+        return Objects.equals(this.enlargeVolume, enlargeVolume.enlargeVolume);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(size, isAutoPay);
+        return Objects.hash(enlargeVolume);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnlargeVolume {\n");
-        sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    enlargeVolume: ").append(toIndentedString(enlargeVolume)).append("\n");
         sb.append("}");
         return sb.toString();
     }

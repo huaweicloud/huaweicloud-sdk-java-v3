@@ -9,12 +9,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cce.v3.model.Login;
+import com.huaweicloud.sdk.cce.v3.model.NodeExtendParam;
 import com.huaweicloud.sdk.cce.v3.model.NodeNicSpec;
 import com.huaweicloud.sdk.cce.v3.model.Runtime;
 import com.huaweicloud.sdk.cce.v3.model.Taint;
 import com.huaweicloud.sdk.cce.v3.model.UserTag;
 import com.huaweicloud.sdk.cce.v3.model.V3NodePublicIP;
-import com.huaweicloud.sdk.cce.v3.model.V3Volume;
+import com.huaweicloud.sdk.cce.v3.model.Volume;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * V3NodeSpec
  */
 public class V3NodeSpec  {
 
@@ -56,13 +57,13 @@ public class V3NodeSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="rootVolume")
     
-    private V3Volume rootVolume;
+    private Volume rootVolume;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dataVolumes")
     
-    private List<V3Volume> dataVolumes = null;
+    private List<Volume> dataVolumes = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -140,8 +141,8 @@ public class V3NodeSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extendParam")
     
-    private Map<String, Object> extendParam = null;
-    
+    private NodeExtendParam extendParam;
+
     public V3NodeSpec withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -237,14 +238,14 @@ public class V3NodeSpec  {
 
     
 
-    public V3NodeSpec withRootVolume(V3Volume rootVolume) {
+    public V3NodeSpec withRootVolume(Volume rootVolume) {
         this.rootVolume = rootVolume;
         return this;
     }
 
-    public V3NodeSpec withRootVolume(Consumer<V3Volume> rootVolumeSetter) {
+    public V3NodeSpec withRootVolume(Consumer<Volume> rootVolumeSetter) {
         if(this.rootVolume == null ){
-            this.rootVolume = new V3Volume();
+            this.rootVolume = new Volume();
             rootVolumeSetter.accept(this.rootVolume);
         }
         
@@ -256,23 +257,23 @@ public class V3NodeSpec  {
      * Get rootVolume
      * @return rootVolume
      */
-    public V3Volume getRootVolume() {
+    public Volume getRootVolume() {
         return rootVolume;
     }
 
-    public void setRootVolume(V3Volume rootVolume) {
+    public void setRootVolume(Volume rootVolume) {
         this.rootVolume = rootVolume;
     }
 
     
 
-    public V3NodeSpec withDataVolumes(List<V3Volume> dataVolumes) {
+    public V3NodeSpec withDataVolumes(List<Volume> dataVolumes) {
         this.dataVolumes = dataVolumes;
         return this;
     }
 
     
-    public V3NodeSpec addDataVolumesItem(V3Volume dataVolumesItem) {
+    public V3NodeSpec addDataVolumesItem(Volume dataVolumesItem) {
         if(this.dataVolumes == null) {
             this.dataVolumes = new ArrayList<>();
         }
@@ -280,7 +281,7 @@ public class V3NodeSpec  {
         return this;
     }
 
-    public V3NodeSpec withDataVolumes(Consumer<List<V3Volume>> dataVolumesSetter) {
+    public V3NodeSpec withDataVolumes(Consumer<List<Volume>> dataVolumesSetter) {
         if(this.dataVolumes == null) {
             this.dataVolumes = new ArrayList<>();
         }
@@ -292,11 +293,11 @@ public class V3NodeSpec  {
      * 节点的数据盘参数（目前已支持通过控制台为CCE节点添加第二块数据盘）。  针对专属云节点，参数解释与rootVolume一致
      * @return dataVolumes
      */
-    public List<V3Volume> getDataVolumes() {
+    public List<Volume> getDataVolumes() {
         return dataVolumes;
     }
 
-    public void setDataVolumes(List<V3Volume> dataVolumes) {
+    public void setDataVolumes(List<Volume> dataVolumes) {
         this.dataVolumes = dataVolumes;
     }
 
@@ -629,37 +630,30 @@ public class V3NodeSpec  {
 
     
 
-    public V3NodeSpec withExtendParam(Map<String, Object> extendParam) {
+    public V3NodeSpec withExtendParam(NodeExtendParam extendParam) {
         this.extendParam = extendParam;
         return this;
     }
 
-    
-
-    public V3NodeSpec putExtendParamItem(String key, Object extendParamItem) {
-        if(this.extendParam == null) {
-            this.extendParam = new HashMap<>();
+    public V3NodeSpec withExtendParam(Consumer<NodeExtendParam> extendParamSetter) {
+        if(this.extendParam == null ){
+            this.extendParam = new NodeExtendParam();
+            extendParamSetter.accept(this.extendParam);
         }
-        this.extendParam.put(key, extendParamItem);
+        
         return this;
     }
 
-    public V3NodeSpec withExtendParam(Consumer<Map<String, Object>> extendParamSetter) {
-        if(this.extendParam == null) {
-            this.extendParam = new HashMap<>();
-        }
-        extendParamSetter.accept(this.extendParam);
-        return this;
-    }
+
     /**
-     * 创建节点时的扩展参数，可选参数如下： - chargingMode: 节点的计费模式。按需计费，取值为“0”，若不填，则默认为“0”。 - ecs:performancetype：云服务器规格的分类。裸金属节点无该字段。 - orderID: 订单ID，节点付费类型为自动付费包周期类型时，响应中会返回此字段。 - productID: 产品ID。 - maxPods: 节点最大允许创建的实例数(Pod)，该数量包含系统默认实例，取值范围为16~256。   该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。 - periodType:   订购周期类型，取值范围：     - month：月     - year：年   > billingMode为2（自动付费包周期）时生效，且为必选。 - periodNum:   订购周期数，取值范围：     - periodType=month（周期类型为月）时，取值为[1-9]。     - periodType=year（周期类型为年）时，取值为1。   > billingMode为2时生效，且为必选。 - isAutoRenew:   是否自动续订     - “true”：自动续订     - “false”：不自动续订   > billingMode为2时生效，且为必选。 - isAutoPay:   是否自动扣款     - “true”：自动扣款     - “false”：不自动扣款   > billingMode为2时生效，不填写此参数时默认会自动扣款。 - DockerLVMConfigOverride:   Docker数据盘配置项。默认配置示例如下：   ```   \"DockerLVMConfigOverride\":\"dockerThinpool=vgpaas/90%VG;kubernetesLV=vgpaas/10%VG;diskType=evs;lvType=linear\"   ```   包含如下字段：     - userLV：用户空间的大小，示例格式：vgpaas/20%VG     - userPath：用户空间挂载路径，示例格式：/home/wqt-test     - diskType：磁盘类型，目前只有evs、hdd和ssd三种格式     - lvType：逻辑卷的类型，目前支持linear和striped两种，示例格式：striped     - dockerThinpool：Docker盘的空间大小，示例格式：vgpaas/60%VG     - kubernetesLV：Kubelet空间大小，示例格式：vgpaas/20%VG - dockerBaseSize:   Device mapper模式下，节点上Docker单容器的可用磁盘空间大小，OverlayFS模式(CCE Turbo集群中CentOS 7.6和Ubuntu 18.04节点，以及混合集群中Ubuntu 18.04节点)下不支持此字段。Device mapper模式下建议dockerBaseSize配置不超过80G，设置过大时可能会导致docker初始化时间过长而启动失败，若对容器磁盘大小有特殊要求，可考虑使用挂载外部或本地存储方式代替。 - init-node-password: 节点初始密码 - offloadNode: 是否为CCE Turbo集群节点 - publicKey: 节点的公钥。 - alpha.cce/preInstall:   安装前执行脚本   > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。 - alpha.cce/postInstall:   安装后执行脚本   > 输入的值需要经过Base64编码，方法为echo -n \"待编码内容\" | base64。 - alpha.cce/NodeImageID: 如果创建裸金属节点，需要使用自定义镜像时用此参数。 - nicMultiqueue:   - 弹性网卡队列数配置，默认配置示例如下：   ```   \"[{\\\"queue\\\":4}]\"   ```   包含如下字段：     - queue: 弹性网卡队列数。   - 仅在turbo集群的BMS节点时，该字段才可配置。   - 当前支持可配置队列数以及弹性网卡数：{\"1\":128, \"2\":92, \"4\":92, \"8\":32, \"16\":16, \"28\":9}, 既1弹性网卡队列可绑定128张弹性网卡，2队列弹性网卡可绑定92张，以此类推。   - 弹性网卡队列数越多，性能越强，但可绑定弹性网卡数越少，请根据您的需求进行配置（创建后不可修改）。 - nicThreshold:   - 弹性网卡预绑定比例配置，默认配置示例如下：   ```   \"0.3:0.6\"   ```     - 第一位小数：预绑定低水位，弹性网卡预绑定的最低比例（最小预绑定弹性网卡数 = ⌊节点的总弹性网卡数 * 预绑定低水位⌋）     - 第二位小数：预绑定高水位，弹性网卡预绑定的最高比例（最大预绑定弹性网卡数 = ⌊节点的总弹性网卡数 * 预绑定高水位⌋）     - BMS节点上绑定的弹性网卡数：Pod正在使用的弹性网卡数 + 最小预绑定弹性网卡数 < BMS节点上绑定的弹性网卡数 < Pod正在使用的弹性网卡数 + 最大预绑定弹性网卡数     - BMS节点上当预绑定弹性网卡数 < 最小预绑定弹性网卡数时：会绑定弹性网卡，使得预绑定弹性网卡数 = 最小预绑定弹性网卡数     - BMS节点上当预绑定弹性网卡数 > 最大预绑定弹性网卡数时：会定时解绑弹性网卡（约2分钟一次），直到预绑定弹性网卡数 = 最大预绑定弹性网卡数     - 取值范围：[0.0, 1.0]; 一位小数; 低水位 <= 高水位   - 仅在turbo集群的BMS节点时，该字段才可配置。   - 弹性网卡预绑定能加快工作负载的创建，但会占用IP，请根据您的需求进行配置。 
+     * Get extendParam
      * @return extendParam
      */
-    public Map<String, Object> getExtendParam() {
+    public NodeExtendParam getExtendParam() {
         return extendParam;
     }
 
-    public void setExtendParam(Map<String, Object> extendParam) {
+    public void setExtendParam(NodeExtendParam extendParam) {
         this.extendParam = extendParam;
     }
 

@@ -62,7 +62,7 @@ public class ActionSmnForwarding  {
 
 
     /**
-     * SMN服务对应的region区域
+     * **参数说明**：SMN服务对应的region区域。
      * @return regionName
      */
     public String getRegionName() {
@@ -84,7 +84,7 @@ public class ActionSmnForwarding  {
 
 
     /**
-     * SMN服务对应的projectId信息
+     * **参数说明**：SMN服务对应的projectId信息。
      * @return projectId
      */
     public String getProjectId() {
@@ -106,7 +106,7 @@ public class ActionSmnForwarding  {
 
 
     /**
-     * SMN服务对应的主题名称
+     * **参数说明**：SMN服务对应的主题名称。
      * @return themeName
      */
     public String getThemeName() {
@@ -128,7 +128,7 @@ public class ActionSmnForwarding  {
 
 
     /**
-     * SMN服务对应的topic的主题URN
+     * **参数说明**：SMN服务对应的topic的主题URN。
      * @return topicUrn
      */
     public String getTopicUrn() {
@@ -150,7 +150,7 @@ public class ActionSmnForwarding  {
 
 
     /**
-     * 短信或邮件的内容。
+     * **参数说明**：短信或邮件的内容。。
      * @return messageContent
      */
     public String getMessageContent() {
@@ -172,7 +172,7 @@ public class ActionSmnForwarding  {
 
 
     /**
-     * 短信或邮件的主题。
+     * **参数说明**：短信或邮件的主题。。
      * @return messageTitle
      */
     public String getMessageTitle() {

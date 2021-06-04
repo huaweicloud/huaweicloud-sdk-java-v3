@@ -96,7 +96,7 @@ public class InfluxDBForwarding  {
 
 
     /**
-     * 连接InfluxDB数据库的库名,不存在会自动创建
+     * **参数说明**：连接InfluxDB数据库的库名,不存在会自动创建
      * @return dbName
      */
     public String getDbName() {
@@ -118,7 +118,7 @@ public class InfluxDBForwarding  {
 
 
     /**
-     * 连接InfluxDB数据库的用户名
+     * **参数说明**：连接InfluxDB数据库的用户名
      * @return username
      */
     public String getUsername() {
@@ -140,7 +140,7 @@ public class InfluxDBForwarding  {
 
 
     /**
-     * 连接InfluxDB数据库的密码
+     * **参数说明**：连接InfluxDB数据库的密码
      * @return password
      */
     public String getPassword() {
@@ -162,7 +162,7 @@ public class InfluxDBForwarding  {
 
 
     /**
-     * InfluxDB数据库的measurement,不存在会自动创建
+     * **参数说明**：InfluxDB数据库的measurement,不存在会自动创建
      * @return measurement
      */
     public String getMeasurement() {
@@ -198,7 +198,7 @@ public class InfluxDBForwarding  {
     }
 
     /**
-     * InfluxDB数据库和流转数据的对应关系列表。
+     * **参数说明**：InfluxDB数据库和流转数据的对应关系列表。
      * @return columnMappings
      */
     public List<ColumnMapping> getColumnMappings() {

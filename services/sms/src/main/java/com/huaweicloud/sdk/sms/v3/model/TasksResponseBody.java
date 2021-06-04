@@ -249,6 +249,12 @@ public class TasksResponseBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="compress_rate")
+    
+    private Double compressRate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_target_server")
     
     private Boolean startTargetServer;
@@ -667,6 +673,30 @@ public class TasksResponseBody  {
 
     
 
+    public TasksResponseBody withCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 压缩率
+     * minimum: 0
+     * maximum: 1E+4
+     * @return compressRate
+     */
+    public Double getCompressRate() {
+        return compressRate;
+    }
+
+    public void setCompressRate(Double compressRate) {
+        this.compressRate = compressRate;
+    }
+
+    
+
     public TasksResponseBody withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
@@ -965,6 +995,7 @@ public class TasksResponseBody  {
             Objects.equals(this.priority, tasksResponseBody.priority) &&
             Objects.equals(this.speedLimit, tasksResponseBody.speedLimit) &&
             Objects.equals(this.migrateSpeed, tasksResponseBody.migrateSpeed) &&
+            Objects.equals(this.compressRate, tasksResponseBody.compressRate) &&
             Objects.equals(this.startTargetServer, tasksResponseBody.startTargetServer) &&
             Objects.equals(this.errorJson, tasksResponseBody.errorJson) &&
             Objects.equals(this.totalTime, tasksResponseBody.totalTime) &&
@@ -979,7 +1010,7 @@ public class TasksResponseBody  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, osType, state, estimateCompleteTime, createDate, priority, speedLimit, migrateSpeed, startTargetServer, errorJson, totalTime, migrationIp, subTasks, sourceServer, enterpriseProjectId, targetServer, logCollectStatus, cloneServer, syncing);
+        return Objects.hash(id, name, type, osType, state, estimateCompleteTime, createDate, priority, speedLimit, migrateSpeed, compressRate, startTargetServer, errorJson, totalTime, migrationIp, subTasks, sourceServer, enterpriseProjectId, targetServer, logCollectStatus, cloneServer, syncing);
     }
     @Override
     public String toString() {
@@ -995,6 +1026,7 @@ public class TasksResponseBody  {
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
+        sb.append("    compressRate: ").append(toIndentedString(compressRate)).append("\n");
         sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
         sb.append("    errorJson: ").append(toIndentedString(errorJson)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");

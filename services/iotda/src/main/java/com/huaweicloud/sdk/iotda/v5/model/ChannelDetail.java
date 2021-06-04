@@ -21,6 +21,7 @@ import com.huaweicloud.sdk.iotda.v5.model.MqttForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.MrsKafkaForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.MysqlForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.ObsForwarding;
+import com.huaweicloud.sdk.iotda.v5.model.PulsarForwarding;
 import com.huaweicloud.sdk.iotda.v5.model.RomaForwarding;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -114,6 +115,12 @@ public class ChannelDetail  {
     @JsonProperty(value="mrs_kafka_forwarding")
     
     private MrsKafkaForwarding mrsKafkaForwarding;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="pulsar_forwarding")
+    
+    private PulsarForwarding pulsarForwarding;
 
     public ChannelDetail withHttpForwarding(HttpForwarding httpForwarding) {
         this.httpForwarding = httpForwarding;
@@ -521,6 +528,35 @@ public class ChannelDetail  {
 
     
 
+    public ChannelDetail withPulsarForwarding(PulsarForwarding pulsarForwarding) {
+        this.pulsarForwarding = pulsarForwarding;
+        return this;
+    }
+
+    public ChannelDetail withPulsarForwarding(Consumer<PulsarForwarding> pulsarForwardingSetter) {
+        if(this.pulsarForwarding == null ){
+            this.pulsarForwarding = new PulsarForwarding();
+            pulsarForwardingSetter.accept(this.pulsarForwarding);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get pulsarForwarding
+     * @return pulsarForwarding
+     */
+    public PulsarForwarding getPulsarForwarding() {
+        return pulsarForwarding;
+    }
+
+    public void setPulsarForwarding(PulsarForwarding pulsarForwarding) {
+        this.pulsarForwarding = pulsarForwarding;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -543,11 +579,12 @@ public class ChannelDetail  {
             Objects.equals(this.ltsForwarding, channelDetail.ltsForwarding) &&
             Objects.equals(this.influxdbForwarding, channelDetail.influxdbForwarding) &&
             Objects.equals(this.functiongraphForwarding, channelDetail.functiongraphForwarding) &&
-            Objects.equals(this.mrsKafkaForwarding, channelDetail.mrsKafkaForwarding);
+            Objects.equals(this.mrsKafkaForwarding, channelDetail.mrsKafkaForwarding) &&
+            Objects.equals(this.pulsarForwarding, channelDetail.pulsarForwarding);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(httpForwarding, disForwarding, obsForwarding, amqpForwarding, dmsKafkaForwarding, romaForwarding, iotaForwarding, mqsForwarding, mysqlForwarding, mqttForwarding, ltsForwarding, influxdbForwarding, functiongraphForwarding, mrsKafkaForwarding);
+        return Objects.hash(httpForwarding, disForwarding, obsForwarding, amqpForwarding, dmsKafkaForwarding, romaForwarding, iotaForwarding, mqsForwarding, mysqlForwarding, mqttForwarding, ltsForwarding, influxdbForwarding, functiongraphForwarding, mrsKafkaForwarding, pulsarForwarding);
     }
     @Override
     public String toString() {
@@ -567,6 +604,7 @@ public class ChannelDetail  {
         sb.append("    influxdbForwarding: ").append(toIndentedString(influxdbForwarding)).append("\n");
         sb.append("    functiongraphForwarding: ").append(toIndentedString(functiongraphForwarding)).append("\n");
         sb.append("    mrsKafkaForwarding: ").append(toIndentedString(mrsKafkaForwarding)).append("\n");
+        sb.append("    pulsarForwarding: ").append(toIndentedString(pulsarForwarding)).append("\n");
         sb.append("}");
         return sb.toString();
     }

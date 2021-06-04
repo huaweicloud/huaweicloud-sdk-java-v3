@@ -281,7 +281,7 @@ public class SourceServer  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="raw_devices")
     
-    private Boolean rawDevices;
+    private String rawDevices;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -779,7 +779,7 @@ public class SourceServer  {
 
     
 
-    public SourceServer withRawDevices(Boolean rawDevices) {
+    public SourceServer withRawDevices(String rawDevices) {
         this.rawDevices = rawDevices;
         return this;
     }
@@ -791,11 +791,11 @@ public class SourceServer  {
      * Linux必选，裸设备列表
      * @return rawDevices
      */
-    public Boolean getRawDevices() {
+    public String getRawDevices() {
         return rawDevices;
     }
 
-    public void setRawDevices(Boolean rawDevices) {
+    public void setRawDevices(String rawDevices) {
         this.rawDevices = rawDevices;
     }
 

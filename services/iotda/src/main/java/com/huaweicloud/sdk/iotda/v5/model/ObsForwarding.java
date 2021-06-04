@@ -50,7 +50,7 @@ public class ObsForwarding  {
 
 
     /**
-     * OBS服务对应的region区域
+     * **参数说明**：OBS服务对应的region区域
      * @return regionName
      */
     public String getRegionName() {
@@ -72,7 +72,7 @@ public class ObsForwarding  {
 
 
     /**
-     * OBS服务对应的projectId信息
+     * **参数说明**：OBS服务对应的projectId信息
      * @return projectId
      */
     public String getProjectId() {
@@ -94,7 +94,7 @@ public class ObsForwarding  {
 
 
     /**
-     * OBS服务对应的桶名称
+     * **参数说明**：OBS服务对应的桶名称
      * @return bucketName
      */
     public String getBucketName() {
@@ -116,7 +116,7 @@ public class ObsForwarding  {
 
 
     /**
-     * OBS服务对应桶的区域
+     * **参数说明**：OBS服务对应桶的区域
      * @return location
      */
     public String getLocation() {

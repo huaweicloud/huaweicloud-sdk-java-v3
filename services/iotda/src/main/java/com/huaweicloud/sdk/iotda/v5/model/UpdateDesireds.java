@@ -49,7 +49,7 @@ public class UpdateDesireds  {
     }
 
     /**
-     * 设备影子期望值构体。
+     * **参数说明**：设备影子期望值构体。
      * @return shadow
      */
     public List<UpdateDesired> getShadow() {

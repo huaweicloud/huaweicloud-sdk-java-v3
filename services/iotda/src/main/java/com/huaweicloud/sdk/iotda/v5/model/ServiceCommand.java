@@ -48,7 +48,7 @@ public class ServiceCommand  {
 
 
     /**
-     * 设备命令名称。
+     * **参数说明**：设备命令名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
      * @return commandName
      */
     public String getCommandName() {
@@ -84,7 +84,7 @@ public class ServiceCommand  {
     }
 
     /**
-     * 设备命令的参数列表。
+     * **参数说明**：设备命令的参数列表。
      * @return paras
      */
     public List<ServiceCommandPara> getParas() {
@@ -120,7 +120,7 @@ public class ServiceCommand  {
     }
 
     /**
-     * 设备命令的响应列表。
+     * **参数说明**：设备命令的响应列表。
      * @return responses
      */
     public List<ServiceCommandResponse> getResponses() {

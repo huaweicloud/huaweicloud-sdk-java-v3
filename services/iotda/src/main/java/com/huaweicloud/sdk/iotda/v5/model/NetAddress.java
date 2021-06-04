@@ -44,7 +44,7 @@ public class NetAddress  {
 
 
     /**
-     * 服务的对应IP
+     * **参数说明**：服务的对应IP
      * @return ip
      */
     public String getIp() {
@@ -66,7 +66,7 @@ public class NetAddress  {
 
 
     /**
-     * 服务对应端口
+     * **参数说明**：服务对应端口
      * minimum: 0
      * maximum: 65535
      * @return port
@@ -90,7 +90,7 @@ public class NetAddress  {
 
 
     /**
-     * 服务对应的域名
+     * **参数说明**：服务对应的域名
      * @return domain
      */
     public String getDomain() {

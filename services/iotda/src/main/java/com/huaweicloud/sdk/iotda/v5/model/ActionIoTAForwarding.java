@@ -38,7 +38,7 @@ public class ActionIoTAForwarding  {
 
 
     /**
-     * IoTA服务对应的region区域
+     * **参数说明**：IoTA服务对应的region区域。
      * @return regionName
      */
     public String getRegionName() {
@@ -60,7 +60,7 @@ public class ActionIoTAForwarding  {
 
 
     /**
-     * IoTA服务对应的projectId信息
+     * **参数说明**：IoTA服务对应的projectId信息。
      * @return projectId
      */
     public String getProjectId() {

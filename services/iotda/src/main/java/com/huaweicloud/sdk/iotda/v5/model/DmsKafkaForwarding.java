@@ -72,7 +72,7 @@ public class DmsKafkaForwarding  {
 
 
     /**
-     * Kafka服务对应的region区域
+     * **参数说明**：Kafka服务对应的region区域
      * @return regionName
      */
     public String getRegionName() {
@@ -94,7 +94,7 @@ public class DmsKafkaForwarding  {
 
 
     /**
-     * Kafka服务对应的projectId信息
+     * **参数说明**：Kafka服务对应的projectId信息
      * @return projectId
      */
     public String getProjectId() {
@@ -130,7 +130,7 @@ public class DmsKafkaForwarding  {
     }
 
     /**
-     * 转发kafka消息对应的地址列表
+     * **参数说明**：转发kafka消息对应的地址列表
      * @return addresses
      */
     public List<NetAddress> getAddresses() {
@@ -152,7 +152,7 @@ public class DmsKafkaForwarding  {
 
 
     /**
-     * 转发kafka消息关联的topic信息。
+     * **参数说明**：转发kafka消息关联的topic信息。
      * @return topic
      */
     public String getTopic() {
@@ -174,7 +174,7 @@ public class DmsKafkaForwarding  {
 
 
     /**
-     * 转发kafka关联的用户名信息。
+     * **参数说明**：转发kafka关联的用户名信息。
      * @return username
      */
     public String getUsername() {
@@ -196,7 +196,7 @@ public class DmsKafkaForwarding  {
 
 
     /**
-     * 转发kafka关联的密码信息。
+     * **参数说明**：转发kafka关联的密码信息。
      * @return password
      */
     public String getPassword() {
@@ -218,7 +218,7 @@ public class DmsKafkaForwarding  {
 
 
     /**
-     * 转发kafka关联的鉴权机制。 类型说明： PAAS：非SASL鉴权。 PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。 
+     * **参数说明**：转发kafka关联的鉴权机制。 **取值范围**： - PAAS：非SASL鉴权。 - PLAIN：SASL/PLAIN模式。需要填写对应的用户名密码信息。
      * @return mechanism
      */
     public String getMechanism() {

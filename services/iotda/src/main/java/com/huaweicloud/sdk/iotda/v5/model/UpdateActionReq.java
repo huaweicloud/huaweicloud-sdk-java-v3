@@ -30,12 +30,6 @@ public class UpdateActionReq  {
     
     private ChannelDetail channelDetail;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="batch")
-    
-    private Boolean batch;
-
     public UpdateActionReq withChannel(String channel) {
         this.channel = channel;
         return this;
@@ -45,7 +39,7 @@ public class UpdateActionReq  {
 
 
     /**
-     * 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
+     * **参数说明**：规则动作的类型。 **取值范围**： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
      * @return channel
      */
     public String getChannel() {
@@ -87,28 +81,6 @@ public class UpdateActionReq  {
 
     
 
-    public UpdateActionReq withBatch(Boolean batch) {
-        this.batch = batch;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否支持批量接收推送消息。
-     * @return batch
-     */
-    public Boolean getBatch() {
-        return batch;
-    }
-
-    public void setBatch(Boolean batch) {
-        this.batch = batch;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -119,12 +91,11 @@ public class UpdateActionReq  {
         }
         UpdateActionReq updateActionReq = (UpdateActionReq) o;
         return Objects.equals(this.channel, updateActionReq.channel) &&
-            Objects.equals(this.channelDetail, updateActionReq.channelDetail) &&
-            Objects.equals(this.batch, updateActionReq.batch);
+            Objects.equals(this.channelDetail, updateActionReq.channelDetail);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(channel, channelDetail, batch);
+        return Objects.hash(channel, channelDetail);
     }
     @Override
     public String toString() {
@@ -132,7 +103,6 @@ public class UpdateActionReq  {
         sb.append("class UpdateActionReq {\n");
         sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
         sb.append("    channelDetail: ").append(toIndentedString(channelDetail)).append("\n");
-        sb.append("    batch: ").append(toIndentedString(batch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

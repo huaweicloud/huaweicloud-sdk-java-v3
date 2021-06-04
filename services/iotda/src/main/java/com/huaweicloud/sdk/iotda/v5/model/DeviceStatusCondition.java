@@ -48,7 +48,7 @@ public class DeviceStatusCondition  {
     }
 
     /**
-     * 状态列表，设备状态条件携带该参数。
+     * **参数说明**：状态列表，设备状态条件携带该参数。
      * @return statusList
      */
     public List<String> getStatusList() {

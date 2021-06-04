@@ -26,13 +26,6 @@ public class UpdatePropertiesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Stage-Auth-Token")
-    @com.huaweicloud.sdk.core.json.JsonSensitive
-    
-    private String stageAuthToken;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="Instance-Id")
     
     private String instanceId;
@@ -52,7 +45,7 @@ public class UpdatePropertiesRequest  {
 
 
     /**
-     * 下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。
+     * **参数说明**：下发属性的设备ID，用于唯一标识一个设备，在注册设备时由物联网平台分配获得。 **取值范围**：长度不超过128，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -61,28 +54,6 @@ public class UpdatePropertiesRequest  {
 
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
-    }
-
-    
-
-    public UpdatePropertiesRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Stage用户的Token, 仅提供给IoStage服务使用
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     
@@ -96,7 +67,7 @@ public class UpdatePropertiesRequest  {
 
 
     /**
-     * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -148,20 +119,18 @@ public class UpdatePropertiesRequest  {
         }
         UpdatePropertiesRequest updatePropertiesRequest = (UpdatePropertiesRequest) o;
         return Objects.equals(this.deviceId, updatePropertiesRequest.deviceId) &&
-            Objects.equals(this.stageAuthToken, updatePropertiesRequest.stageAuthToken) &&
             Objects.equals(this.instanceId, updatePropertiesRequest.instanceId) &&
             Objects.equals(this.body, updatePropertiesRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, stageAuthToken, instanceId, body);
+        return Objects.hash(deviceId, instanceId, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePropertiesRequest {\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString("******")).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

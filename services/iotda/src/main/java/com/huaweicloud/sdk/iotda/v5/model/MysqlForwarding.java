@@ -96,7 +96,7 @@ public class MysqlForwarding  {
 
 
     /**
-     * 连接MYSQL数据库的库名
+     * **参数说明**：连接MYSQL数据库的库名。 **取值范围**：长度不超过64，只允许字母、数字、下划线（_）、连接符（-）的组合。
      * @return dbName
      */
     public String getDbName() {
@@ -118,7 +118,7 @@ public class MysqlForwarding  {
 
 
     /**
-     * 连接MYSQL数据库的用户名
+     * **参数说明**：连接MYSQL数据库的用户名
      * @return username
      */
     public String getUsername() {
@@ -140,7 +140,7 @@ public class MysqlForwarding  {
 
 
     /**
-     * 连接MYSQL数据库的密码
+     * **参数说明**：连接MYSQL数据库的密码
      * @return password
      */
     public String getPassword() {
@@ -162,7 +162,7 @@ public class MysqlForwarding  {
 
 
     /**
-     * MYSQL数据库的表名
+     * **参数说明**：MYSQL数据库的表名
      * @return tableName
      */
     public String getTableName() {
@@ -198,7 +198,7 @@ public class MysqlForwarding  {
     }
 
     /**
-     * MYSQL数据库的列和流转数据的对应关系列表。
+     * **参数说明**：MYSQL数据库的列和流转数据的对应关系列表。
      * @return columnMappings
      */
     public List<ColumnMapping> getColumnMappings() {

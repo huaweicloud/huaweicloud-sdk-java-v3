@@ -38,7 +38,7 @@ public class FunctionGraphForwarding  {
 
 
     /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
+     * **参数说明**：函数的URN（Uniform Resource Name），唯一标识函数。
      * @return funcUrn
      */
     public String getFuncUrn() {
@@ -60,7 +60,7 @@ public class FunctionGraphForwarding  {
 
 
     /**
-     * 函数名称。
+     * **参数说明**：函数名称。
      * @return funcName
      */
     public String getFuncName() {

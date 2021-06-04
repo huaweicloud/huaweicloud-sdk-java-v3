@@ -456,7 +456,7 @@ SDK 默认会打印访问日志，每次请求都会有一条记录：
 "{httpMethod} {uri}" {httpStatusCode} {responseContentLength} {requestId}
 ```
 
-其中 requestId 是华为云 API Gateway 返回的请求 ID ，可以用户保障或者问题跟踪。
+其中 requestId 是华为云 API Gateway 返回的请求 ID ，可以用于用户报障或者问题跟踪。
 
 可以根据项目情况在对应的日志配置文件中对访问日志进行屏蔽，或者单独打印到独立文件中。
 

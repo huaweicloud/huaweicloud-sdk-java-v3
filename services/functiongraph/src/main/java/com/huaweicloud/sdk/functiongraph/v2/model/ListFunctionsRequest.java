@@ -29,6 +29,12 @@ public class ListFunctionsRequest  {
     
     private String maxitems;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="package_name")
+    
+    private String packageName;
+
     public ListFunctionsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -73,6 +79,28 @@ public class ListFunctionsRequest  {
 
     
 
+    public ListFunctionsRequest withPackageName(String packageName) {
+        this.packageName = packageName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用名称。
+     * @return packageName
+     */
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,11 +111,12 @@ public class ListFunctionsRequest  {
         }
         ListFunctionsRequest listFunctionsRequest = (ListFunctionsRequest) o;
         return Objects.equals(this.marker, listFunctionsRequest.marker) &&
-            Objects.equals(this.maxitems, listFunctionsRequest.maxitems);
+            Objects.equals(this.maxitems, listFunctionsRequest.maxitems) &&
+            Objects.equals(this.packageName, listFunctionsRequest.packageName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(marker, maxitems);
+        return Objects.hash(marker, maxitems, packageName);
     }
     @Override
     public String toString() {
@@ -95,6 +124,7 @@ public class ListFunctionsRequest  {
         sb.append("class ListFunctionsRequest {\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    maxitems: ").append(toIndentedString(maxitems)).append("\n");
+        sb.append("    packageName: ").append(toIndentedString(packageName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
