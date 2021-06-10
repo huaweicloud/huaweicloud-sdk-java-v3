@@ -658,6 +658,50 @@ public class BssAsyncClient {
     }
 
     /**
+     * 查询资源内使用量
+     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     *
+     * @param ListFreeResourceUsagesRequest 请求对象
+     * @return CompletableFuture<ListFreeResourceUsagesResponse>
+     */
+    public CompletableFuture<ListFreeResourceUsagesResponse> listFreeResourceUsagesAsync(ListFreeResourceUsagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listFreeResourceUsages);
+    }
+
+    /**
+     * 查询资源内使用量
+     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     *
+     * @param ListFreeResourceUsagesRequest 请求对象
+     * @return AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>
+     */
+    public AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsagesAsyncInvoker(ListFreeResourceUsagesRequest request) {
+        return new AsyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request, BssMeta.listFreeResourceUsages, hcClient);
+    }
+
+    /**
+     * 查询资源包列表
+     * 功能描述：查询资源包列表
+     *
+     * @param ListFreeResourcesRequest 请求对象
+     * @return CompletableFuture<ListFreeResourcesResponse>
+     */
+    public CompletableFuture<ListFreeResourcesResponse> listFreeResourcesAsync(ListFreeResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.listFreeResources);
+    }
+
+    /**
+     * 查询资源包列表
+     * 功能描述：查询资源包列表
+     *
+     * @param ListFreeResourcesRequest 请求对象
+     * @return AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>
+     */
+    public AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResourcesAsyncInvoker(ListFreeResourcesRequest request) {
+        return new AsyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>(request, BssMeta.listFreeResources, hcClient);
+    }
+
+    /**
      * 查询精英服务商列表
      * 功能描述：华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
      *

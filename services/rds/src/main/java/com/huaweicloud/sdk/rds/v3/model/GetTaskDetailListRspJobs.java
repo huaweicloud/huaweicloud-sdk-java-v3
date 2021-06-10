@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.rds.v3.model.GetTaskDetailListRspJobsInstance;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -140,6 +141,30 @@ public class GetTaskDetailListRspJobs  {
     @JsonProperty(value="process")
     
     private String process;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="taskDetail")
+    
+    private String taskDetail;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance")
+    
+    private GetTaskDetailListRspJobsInstance instance;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="entities")
+    
+    private Object entities;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="fail_reason")
+    
+    private String failReason;
 
     public GetTaskDetailListRspJobs withId(String id) {
         this.id = id;
@@ -273,6 +298,101 @@ public class GetTaskDetailListRspJobs  {
 
     
 
+    public GetTaskDetailListRspJobs withTaskDetail(String taskDetail) {
+        this.taskDetail = taskDetail;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 任务执行的具体的参数信息，为空则不返回该字段。
+     * @return taskDetail
+     */
+    public String getTaskDetail() {
+        return taskDetail;
+    }
+
+    public void setTaskDetail(String taskDetail) {
+        this.taskDetail = taskDetail;
+    }
+
+    
+
+    public GetTaskDetailListRspJobs withInstance(GetTaskDetailListRspJobsInstance instance) {
+        this.instance = instance;
+        return this;
+    }
+
+    public GetTaskDetailListRspJobs withInstance(Consumer<GetTaskDetailListRspJobsInstance> instanceSetter) {
+        if(this.instance == null ){
+            this.instance = new GetTaskDetailListRspJobsInstance();
+            instanceSetter.accept(this.instance);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get instance
+     * @return instance
+     */
+    public GetTaskDetailListRspJobsInstance getInstance() {
+        return instance;
+    }
+
+    public void setInstance(GetTaskDetailListRspJobsInstance instance) {
+        this.instance = instance;
+    }
+
+    
+
+    public GetTaskDetailListRspJobs withEntities(Object entities) {
+        this.entities = entities;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 根据不同的任务，显示不同的内容。
+     * @return entities
+     */
+    public Object getEntities() {
+        return entities;
+    }
+
+    public void setEntities(Object entities) {
+        this.entities = entities;
+    }
+
+    
+
+    public GetTaskDetailListRspJobs withFailReason(String failReason) {
+        this.failReason = failReason;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 任务执行失败时的错误信息。
+     * @return failReason
+     */
+    public String getFailReason() {
+        return failReason;
+    }
+
+    public void setFailReason(String failReason) {
+        this.failReason = failReason;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -287,11 +407,15 @@ public class GetTaskDetailListRspJobs  {
             Objects.equals(this.status, getTaskDetailListRspJobs.status) &&
             Objects.equals(this.created, getTaskDetailListRspJobs.created) &&
             Objects.equals(this.ended, getTaskDetailListRspJobs.ended) &&
-            Objects.equals(this.process, getTaskDetailListRspJobs.process);
+            Objects.equals(this.process, getTaskDetailListRspJobs.process) &&
+            Objects.equals(this.taskDetail, getTaskDetailListRspJobs.taskDetail) &&
+            Objects.equals(this.instance, getTaskDetailListRspJobs.instance) &&
+            Objects.equals(this.entities, getTaskDetailListRspJobs.entities) &&
+            Objects.equals(this.failReason, getTaskDetailListRspJobs.failReason);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, created, ended, process);
+        return Objects.hash(id, name, status, created, ended, process, taskDetail, instance, entities, failReason);
     }
     @Override
     public String toString() {
@@ -303,6 +427,10 @@ public class GetTaskDetailListRspJobs  {
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    ended: ").append(toIndentedString(ended)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
+        sb.append("    taskDetail: ").append(toIndentedString(taskDetail)).append("\n");
+        sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
+        sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+        sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

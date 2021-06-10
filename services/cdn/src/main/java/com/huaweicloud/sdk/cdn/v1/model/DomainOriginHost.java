@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 域名回源设置信息。
+ * DomainOriginHost
  */
 public class DomainOriginHost  {
 

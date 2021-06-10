@@ -15,14 +15,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -31,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mrs.v1.model.AddJobs;
 import com.huaweicloud.sdk.mrs.v1.model.BootstrapScript;
 import com.huaweicloud.sdk.mrs.v1.model.ComponentList;
+import com.huaweicloud.sdk.mrs.v1.model.NodeGroupV11;
 import com.huaweicloud.sdk.mrs.v1.model.Tag;
 import com.huaweicloud.sdk.mrs.v1.model.TaskNodeGroups;
 import java.util.ArrayList;
@@ -57,90 +50,12 @@ public class CreateClusterReq  {
     @JsonProperty(value="cluster_name")
     
     private String clusterName;
-    /**
-     * Master节点数量。启用集群高可用功能时配置为2，不启用集群高可用功能时配置为1。
-     */
-    public static final class MasterNodeNumEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final MasterNodeNumEnum NUMBER_1 = new MasterNodeNumEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final MasterNodeNumEnum NUMBER_2 = new MasterNodeNumEnum(2);
-        
-
-        private static final Map<Integer, MasterNodeNumEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, MasterNodeNumEnum> createStaticFields() {
-            Map<Integer, MasterNodeNumEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        MasterNodeNumEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static MasterNodeNumEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            MasterNodeNumEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MasterNodeNumEnum(value);
-            }
-            return result;
-        }
-
-        public static MasterNodeNumEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            MasterNodeNumEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MasterNodeNumEnum) {
-                return this.value.equals(((MasterNodeNumEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="master_node_num")
     
-    private MasterNodeNumEnum masterNodeNum;
+    private Integer masterNodeNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -148,7 +63,7 @@ public class CreateClusterReq  {
     
     private Integer coreNodeNum;
     /**
-     * 集群的计费模式。  11：表示包年/包月。 12：表示按需计费。接口调用仅支持创建按需计费集群
+     * 集群的计费模式。   12表示按需计费。接口调用仅支持创建按需计费集群。
      */
     public static final class BillingTypeEnum {
 
@@ -298,7 +213,7 @@ public class CreateClusterReq  {
     
     private Integer volumeSize;
     /**
-     * Master和Core节点的磁盘存储类别，目前支持SATA、SAS和SSD。磁盘参数可以使用volume_type和volume_size表示，也可以使用多磁盘相关的参数表示。volume_type和volume_size这两个参数如果与多磁盘参数同时出现，系统优先读取volume_type和volume_size参数。建议使用多磁盘参数。 SATA：普通IO SAS：高IO SSD：超高IO
+     * Master和Core节点的磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。磁盘参数可以使用volume_type和volume_size表示，也可以使用多磁盘相关的参数表示。volume_type和volume_size这两个参数如果与多磁盘参数同时出现，系统优先读取volume_type和volume_size参数。建议使用多磁盘参数。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
      */
     public static final class VolumeTypeEnum {
 
@@ -318,6 +233,11 @@ public class CreateClusterReq  {
          */
         public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
         
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
+        public static final VolumeTypeEnum GPSSD = new VolumeTypeEnum("GPSSD");
+        
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -326,6 +246,7 @@ public class CreateClusterReq  {
             map.put("SATA", SATA);
             map.put("SAS", SAS);
             map.put("SSD", SSD);
+            map.put("GPSSD", GPSSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -388,7 +309,7 @@ public class CreateClusterReq  {
     
     private VolumeTypeEnum volumeType;
     /**
-     * 该参数为多磁盘参数，表示Master节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
+     * 该参数为多磁盘参数，表示Master节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
      */
     public static final class MasterDataVolumeTypeEnum {
 
@@ -408,6 +329,11 @@ public class CreateClusterReq  {
          */
         public static final MasterDataVolumeTypeEnum SSD = new MasterDataVolumeTypeEnum("SSD");
         
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
+        public static final MasterDataVolumeTypeEnum GPSSD = new MasterDataVolumeTypeEnum("GPSSD");
+        
 
         private static final Map<String, MasterDataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -416,6 +342,7 @@ public class CreateClusterReq  {
             map.put("SATA", SATA);
             map.put("SAS", SAS);
             map.put("SSD", SSD);
+            map.put("GPSSD", GPSSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -484,7 +411,7 @@ public class CreateClusterReq  {
     
     private Integer masterDataVolumeSize;
     /**
-     * 该参数为多磁盘参数，表示Master节点数据磁盘个数。 取值只能是1
+     * 该参数为多磁盘参数，表示Master节点数据磁盘个数。取值只能是1。
      */
     public static final class MasterDataVolumeCountEnum {
 
@@ -562,7 +489,7 @@ public class CreateClusterReq  {
     
     private MasterDataVolumeCountEnum masterDataVolumeCount;
     /**
-     * 该参数为多磁盘参数，表示Core节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
+     * 该参数为多磁盘参数，表示Core节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
      */
     public static final class CoreDataVolumeTypeEnum {
 
@@ -582,6 +509,11 @@ public class CreateClusterReq  {
          */
         public static final CoreDataVolumeTypeEnum SSD = new CoreDataVolumeTypeEnum("SSD");
         
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
+        public static final CoreDataVolumeTypeEnum GPSSD = new CoreDataVolumeTypeEnum("GPSSD");
+        
 
         private static final Map<String, CoreDataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -590,6 +522,7 @@ public class CreateClusterReq  {
             map.put("SATA", SATA);
             map.put("SAS", SAS);
             map.put("SSD", SSD);
+            map.put("GPSSD", GPSSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -694,7 +627,7 @@ public class CreateClusterReq  {
     
     private String clusterMasterSecret;
     /**
-     * MRS集群运行模式。 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。 说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时，请求消息体中包含cluster_admin_secret字段。 针对MRS 1.8.0及以后版本，请求消息体中包含cluster_admin_secret字段，不受参数“safe_mode”配置的影响。
+     * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。   说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时，请求消息体中包含cluster_admin_secret字段。 针对MRS 1.8.0及以后版本，请求消息体中包含cluster_admin_secret字段，不受参数“safe_mode”配置的影响。
      */
     public static final class SafeModeEnum {
 
@@ -777,265 +710,43 @@ public class CreateClusterReq  {
     @JsonProperty(value="safe_mode")
     
     private SafeModeEnum safeMode;
-    /**
-     * 集群类型。 0：分析集群 1：流式集群 默认值为0：分析集群。 说明：暂不支持通过接口方式创建混合集群。
-     */
-    public static final class ClusterTypeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ClusterTypeEnum NUMBER_0 = new ClusterTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ClusterTypeEnum NUMBER_1 = new ClusterTypeEnum(1);
-        
-
-        private static final Map<Integer, ClusterTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ClusterTypeEnum> createStaticFields() {
-            Map<Integer, ClusterTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ClusterTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ClusterTypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static ClusterTypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ClusterTypeEnum) {
-                return this.value.equals(((ClusterTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
     
-    private ClusterTypeEnum clusterType;
-    /**
-     * 集群创建失败时，是否收集失败日志。  0：不收集 1：收集 默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。
-     */
-    public static final class LogCollectionEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final LogCollectionEnum NUMBER_0 = new LogCollectionEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final LogCollectionEnum NUMBER_1 = new LogCollectionEnum(1);
-        
-
-        private static final Map<Integer, LogCollectionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, LogCollectionEnum> createStaticFields() {
-            Map<Integer, LogCollectionEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        LogCollectionEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LogCollectionEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            LogCollectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogCollectionEnum(value);
-            }
-            return result;
-        }
-
-        public static LogCollectionEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            LogCollectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LogCollectionEnum) {
-                return this.value.equals(((LogCollectionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private Integer clusterType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_collection")
     
-    private LogCollectionEnum logCollection;
+    private Integer logCollection;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enterprise_project_id")
+    
+    private String enterpriseProjectId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
     private List<Tag> tags = null;
-        /**
-     * 集群登录方式。 0：密码方式 1：密钥对方式 默认设置为1。 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。 说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。
-     */
-    public static final class LoginModeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final LoginModeEnum NUMBER_0 = new LoginModeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final LoginModeEnum NUMBER_1 = new LoginModeEnum(1);
-        
-
-        private static final Map<Integer, LoginModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, LoginModeEnum> createStaticFields() {
-            Map<Integer, LoginModeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        LoginModeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LoginModeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            LoginModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LoginModeEnum(value);
-            }
-            return result;
-        }
-
-        public static LoginModeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            LoginModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LoginModeEnum) {
-                return this.value.equals(((LoginModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_mode")
     
-    private LoginModeEnum loginMode;
+    private Integer loginMode;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="node_groups")
+    
+    private List<NodeGroupV11> nodeGroups = null;
+    
     public CreateClusterReq withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
         return this;
@@ -1045,7 +756,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群版本。 MRS目前支持MRS 1.8.10、MRS 2.0.5、MRS 2.1.0版本。默认值为当前最新版本。
+     * 集群版本。 MRS目前支持MRS 1.8.10、MRS 1.9.2、MRS 2.1.0、MRS 3.0.2版本。
      * @return clusterVersion
      */
     public String getClusterVersion() {
@@ -1080,7 +791,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withMasterNodeNum(MasterNodeNumEnum masterNodeNum) {
+    public CreateClusterReq withMasterNodeNum(Integer masterNodeNum) {
         this.masterNodeNum = masterNodeNum;
         return this;
     }
@@ -1092,11 +803,11 @@ public class CreateClusterReq  {
      * Master节点数量。启用集群高可用功能时配置为2，不启用集群高可用功能时配置为1。
      * @return masterNodeNum
      */
-    public MasterNodeNumEnum getMasterNodeNum() {
+    public Integer getMasterNodeNum() {
         return masterNodeNum;
     }
 
-    public void setMasterNodeNum(MasterNodeNumEnum masterNodeNum) {
+    public void setMasterNodeNum(Integer masterNodeNum) {
         this.masterNodeNum = masterNodeNum;
     }
 
@@ -1111,7 +822,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Core节点数量。  取值范围：[1～500]  Core节点默认的最大值为500，如果用户需要的Core节点数大于500，请申请扩大配额，具体请参考[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)
+     * Core节点数量。  取值范围：[1～500]  Core节点默认的最大值为500，如果用户需要的Core节点数大于500，请申请扩大配额。
      * minimum: 0
      * maximum: 500
      * @return coreNodeNum
@@ -1135,7 +846,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群的计费模式。  11：表示包年/包月。 12：表示按需计费。接口调用仅支持创建按需计费集群
+     * 集群的计费模式。   12表示按需计费。接口调用仅支持创建按需计费集群。
      * @return billingType
      */
     public BillingTypeEnum getBillingType() {
@@ -1157,7 +868,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群区域信息，请参见[终端节点及区域](https://developer.huaweicloud.com/endpoint?MRS)。
+     * 集群区域信息，请参见[终端节点及区域](mrs_02_0003.xml)。
      * @return dataCenter
      */
     public String getDataCenter() {
@@ -1179,7 +890,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 子网所在VPC名称。 通过VPC管理控制台获取名称： 登录管理控制台。 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 在“虚拟私有云”页面的列表中即可获取VPC名称。
+     * 子网所在VPC名称。 通过VPC管理控制台获取名称： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。  在“虚拟私有云”页面的列表中即可获取VPC名称。
      * @return vpc
      */
     public String getVpc() {
@@ -1201,7 +912,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Master节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。MRS当前支持主机规格的配型由CPU+内存+Disk共同决定。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。
+     * Master节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。MRS当前支持主机规格的配型由CPU+内存+Disk共同决定。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
      * @return masterNodeSize
      */
     public String getMasterNodeSize() {
@@ -1223,7 +934,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Core节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。
+     * Core节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
      * @return coreNodeSize
      */
     public String getCoreNodeSize() {
@@ -1259,7 +970,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 服务组件安装列表信息。参数说明请参见[表5](https://support.huaweicloud.com/api-mrs/mrs_02_0028.html#mrs_02_0028__te1288dba79844d3fa5973939a3739d34)。
+     * 服务组件安装列表信息。
      * @return componentList
      */
     public List<ComponentList> getComponentList() {
@@ -1281,7 +992,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 可用分区ID。  华北-北京一可用区1（cn-north-1a）：ae04cf9d61544df3806a3feeb401b204 华北-北京一可用区2（cn-north-1b）：d573142f24894ef3bd3664de068b44b0 华东-上海二可用区1（cn-east-2a）：72d50cedc49846b9b42c21495f38d81c 华东-上海二可用区2（cn-east-2b）：38b0f7a602344246bcb0da47b5d548e7 华东-上海二可用区3（cn-east-2c）：5547fd6bf8f84bb5a7f9db062ad3d015 华南-广州可用区1（cn-south-1a）：34f5ff4865cf4ed6b270f15382ebdec5 华南-广州可用区2（cn-south-2b）：043c7e39ecb347a08dc8fcb6c35a274e 华南-广州可用区3（cn-south-1c）：af1687643e8c4ec1b34b688e4e3b8901 华北-北京四可用区1（cn-north-4a）：effdcbc7d4d64a02aa1fa26b42f56533 华北-北京四可用区2（cn-north-4b）：a0865121f83b41cbafce65930a22a6e8 华北-北京四可用区3（cn-north-4c）：2dcb154ac2724a6d92e9bcc859657c1e
+     * 可用分区ID。  - 华北-北京一可用区1（cn-north-1a）：ae04cf9d61544df3806a3feeb401b204 - 华北-北京一可用区2（cn-north-1b）：d573142f24894ef3bd3664de068b44b0 - 华东-上海二可用区1（cn-east-2a）：72d50cedc49846b9b42c21495f38d81c - 华东-上海二可用区2（cn-east-2b）：38b0f7a602344246bcb0da47b5d548e7 - 华东-上海二可用区3（cn-east-2c）：5547fd6bf8f84bb5a7f9db062ad3d015 - 华南-广州可用区1（cn-south-1a）：34f5ff4865cf4ed6b270f15382ebdec5 - 华南-广州可用区2（cn-south-2b）：043c7e39ecb347a08dc8fcb6c35a274e - 华南-广州可用区3（cn-south-1c）：af1687643e8c4ec1b34b688e4e3b8901 - 华北-北京四可用区1（cn-north-4a）：effdcbc7d4d64a02aa1fa26b42f56533 - 华北-北京四可用区2（cn-north-4b）：a0865121f83b41cbafce65930a22a6e8 - 华北-北京四可用区3（cn-north-4c）：2dcb154ac2724a6d92e9bcc859657c1e
      * @return availableZoneId
      */
     public String getAvailableZoneId() {
@@ -1303,7 +1014,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 子网所在VPC ID。 通过VPC管理控制台获取ID： 登录管理控制台。 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 在“虚拟私有云”页面的列表中即可获取VPC ID。
+     * 子网所在VPC ID。 通过VPC管理控制台获取ID： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。   在“虚拟私有云”页面的列表中即可获取VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -1325,7 +1036,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 网络ID。 通过VPC管理控制台获取网络ID： 登录管理控制台。 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 在“虚拟私有云”页面的列表中即可获取VPC网络ID。
+     * 子网ID。通过VPC管理控制台获取子网ID： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网。 4) 单击对应子网名称，获取“网络ID”。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1347,7 +1058,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 子网名称。 通过VPC管理控制台获取子网名称： 登录管理控制台。 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 在“虚拟私有云”页面的列表中即可获取VPC子网名称。
+     * 子网名称。 通过VPC管理控制台获取子网名称： 1) 登录管理控制台。 2) 单击“虚拟私有云”，从左侧列表选择虚拟私有云。 3) 单击对应虚拟私有云所在行的“子网个数”查看子网，获取子网名称。  “subnet_id”和“subnet_name”必须至少填写一个，当这两个参数同时配置但是不匹配同一个子网时，集群会创建失败，请仔细填写参数。当仅填写“subnet_name”一个参数且VPC下存在同名子网时，创建集群时以VPC平台第一个名称的子网为准。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -1369,7 +1080,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群安全组的ID。 当该ID为空时MRS后台会自己创建安全组，自动创建的安全组名称以mrs_{cluster_name}开头。 当该ID不为空时，表示使用固定安全组来创建集群，传入的ID必须是当前租户中包含的安全组ID，且该安全组中包含一条全部协议，全部端口，源地址为指定的管理面节点IP的入方向规则。
+     * 集群安全组的ID。 - 当该ID为空时MRS后台会自己创建安全组，自动创建的安全组名称以mrs_{cluster_name}开头。 - 当该ID不为空时，表示使用固定安全组来创建集群，传入的ID必须是当前租户中包含的安全组ID，且该安全组中包含一条全部协议，全部端口，源地址为指定的管理面节点IP的入方向规则。
      * @return securityGroupsId
      */
     public String getSecurityGroupsId() {
@@ -1405,7 +1116,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 创建集群时可同时提交作业，当前版本暂时只支持新增一个作业，作业参数请参见[表6](https://support.huaweicloud.com/api-mrs/mrs_02_0028.html#mrs_02_0028__t8ded0b3ae11742cea98a467ce26fd093)。
+     * 创建集群时可同时提交作业，当前版本暂时只支持新增一个作业。
      * @return addJobs
      */
     public List<AddJobs> getAddJobs() {
@@ -1427,7 +1138,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Master和Core节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。可以根据如下应用场景合理选择磁盘存储空间大小： 数据存储和计算分离，数据存储在OBS系统中，集群费用相对较低，计算性能不高，并且集群随时可以删除，建议数据计算不频繁场景下使用。 数据存储和计算不分离，数据存储在HDFS中，集群费用相对较高，计算性能高，集群需要长期存在，建议数据计算频繁场景下使用。 取值范围：100GB～32000GB,传值只需填数字,不需要带单位GB 不建议使用该参数，详情请参考volume_type参数的说明。
+     * Master和Core节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。可以根据如下应用场景合理选择磁盘存储空间大小： - 数据存储和计算分离，数据存储在OBS系统中，集群费用相对较低，计算性能不高，并且集群随时可以删除，建议数据计算不频繁场景下使用。 - 数据存储和计算不分离，数据存储在HDFS中，集群费用相对较高，计算性能高，集群需要长期存在，建议数据计算频繁场景下使用。  取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。 不建议使用该参数，详情请参考volume_type参数的说明。
      * minimum: 100
      * maximum: 32000
      * @return volumeSize
@@ -1451,7 +1162,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * Master和Core节点的磁盘存储类别，目前支持SATA、SAS和SSD。磁盘参数可以使用volume_type和volume_size表示，也可以使用多磁盘相关的参数表示。volume_type和volume_size这两个参数如果与多磁盘参数同时出现，系统优先读取volume_type和volume_size参数。建议使用多磁盘参数。 SATA：普通IO SAS：高IO SSD：超高IO
+     * Master和Core节点的磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。磁盘参数可以使用volume_type和volume_size表示，也可以使用多磁盘相关的参数表示。volume_type和volume_size这两个参数如果与多磁盘参数同时出现，系统优先读取volume_type和volume_size参数。建议使用多磁盘参数。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
      * @return volumeType
      */
     public VolumeTypeEnum getVolumeType() {
@@ -1473,7 +1184,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 该参数为多磁盘参数，表示Master节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
+     * 该参数为多磁盘参数，表示Master节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
      * @return masterDataVolumeType
      */
     public MasterDataVolumeTypeEnum getMasterDataVolumeType() {
@@ -1495,7 +1206,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 该参数为多磁盘参数，表示Master节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。 取值范围：100GB～32000GB,传值只需填数字,不需要带单位GB
+     * 该参数为多磁盘参数，表示Master节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。  取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
      * minimum: 100
      * maximum: 32000
      * @return masterDataVolumeSize
@@ -1519,7 +1230,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 该参数为多磁盘参数，表示Master节点数据磁盘个数。 取值只能是1
+     * 该参数为多磁盘参数，表示Master节点数据磁盘个数。取值只能是1。
      * maximum: 1
      * @return masterDataVolumeCount
      */
@@ -1542,7 +1253,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 该参数为多磁盘参数，表示Core节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
+     * 该参数为多磁盘参数，表示Core节点数据磁盘存储类别，目前支持SATA、SAS、SSD和GPSSD。
      * @return coreDataVolumeType
      */
     public CoreDataVolumeTypeEnum getCoreDataVolumeType() {
@@ -1564,7 +1275,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 该参数为多磁盘参数，表示Core节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。 取值范围：100GB～32000GB,传值只需填数字,不需要带单位GB
+     * 该参数为多磁盘参数，表示Core节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。  取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
      * minimum: 100
      * maximum: 32000
      * @return coreDataVolumeSize
@@ -1626,7 +1337,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * Task节点列表信息。参数说明请参见[表4](https://support.huaweicloud.com/api-mrs/mrs_02_0028.html#mrs_02_0028__tc6bfa2a3d7a348d786a901f3a9327b50)。
+     * Task节点列表信息。
      * @return taskNodeGroups
      */
     public List<TaskNodeGroups> getTaskNodeGroups() {
@@ -1662,7 +1373,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 配置引导操作脚本信息。参数说明请参见[表13](https://support.huaweicloud.com/api-mrs/mrs_02_0028.html#mrs_02_0028__table1258382865010)。 MRS 1.7.1及以后版本支持该参数。
+     * 配置引导操作脚本信息。 MRS 1.7.2及以后版本支持该参数。
      * @return bootstrapScripts
      */
     public List<BootstrapScript> getBootstrapScripts() {
@@ -1684,7 +1395,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 密钥对名称。用户可以使用密钥对方式登录集群节点。
+     * 密钥对名称。用户可以使用密钥对方式登录集群节点。当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。
      * @return nodePublicCertName
      */
     public String getNodePublicCertName() {
@@ -1706,7 +1417,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 配置MRS Manager管理员用户的密码。 密码长度应在8～32个字符之间 必须包含如下5种中至少3种字符的组合 至少一个小写字母 至少一个大写字母 至少一个数字 至少一个特殊字符：`~!@#$%^&*()-_=+\\|[{}];:'\",<.>/? 空格 不能与用户名或者倒序用户名相同 说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时需要配置此参数。 针对MRS 1.8.0及以后版本，该参数为必选参数，不受参数“safe_mode”配置的影响。
+     * 配置MRS Manager管理员用户的密码。 - 密码长度应在8～32个字符之间 - 不能与用户名或者倒序用户名相同 - 必须包含如下4种中至少3种字符的组合     - 至少一个小写字母     - 至少一个大写字母     - 至少一个数字     - 至少一个特殊字符：`~!@#$%^&*()-_=+\\|[{}];:'\",<.>/?和空格   说明： - 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时需要配置此参数。  - 针对MRS 1.8.0及以后版本，该参数为必选参数，不受参数“safe_mode”配置的影响。
      * @return clusterAdminSecret
      */
     public String getClusterAdminSecret() {
@@ -1728,7 +1439,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * 配置访问集群节点的root密码。 密码设置约束如下： 字符串类型，可输入的字符串长度为8-26。 至少包含三种字符组合，如大写字母，小写字母，数字，特殊字符（!@$%^-_=+[{}]:,./?），但不能包含空格。 不能与用户名或者倒序用户名相同。
+     * 配置访问集群节点的root密码。当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。  密码设置约束如下： - 字符串类型，可输入的字符串长度为8-26。 - 至少包含三种字符组合，如大写字母，小写字母，数字，特殊字符（!@$%^-_=+[{}]:,./?），但不能包含空格。 - 不能与用户名或者倒序用户名相同。
      * @return clusterMasterSecret
      */
     public String getClusterMasterSecret() {
@@ -1750,7 +1461,7 @@ public class CreateClusterReq  {
 
 
     /**
-     * MRS集群运行模式。 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。 说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时，请求消息体中包含cluster_admin_secret字段。 针对MRS 1.8.0及以后版本，请求消息体中包含cluster_admin_secret字段，不受参数“safe_mode”配置的影响。
+     * MRS集群运行模式。 - 0：普通集群，表示Kerberos认证关闭，用户可使用集群提供的所有功能。 - 1：安全集群，表示Kerberos认证开启，普通用户无权限使用MRS集群的“文件管理”和“作业管理”功能，并且无法查看Hadoop、Spark的作业记录以及集群资源使用情况。如果需要使用集群更多功能，需要找MRS Manager的管理员分配权限。   说明： 针对MRS 1.8.0以前的版本，仅当“safe_mode”配置为“1”时，请求消息体中包含cluster_admin_secret字段。 针对MRS 1.8.0及以后版本，请求消息体中包含cluster_admin_secret字段，不受参数“safe_mode”配置的影响。
      * @return safeMode
      */
     public SafeModeEnum getSafeMode() {
@@ -1763,7 +1474,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withClusterType(ClusterTypeEnum clusterType) {
+    public CreateClusterReq withClusterType(Integer clusterType) {
         this.clusterType = clusterType;
         return this;
     }
@@ -1772,20 +1483,20 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群类型。 0：分析集群 1：流式集群 默认值为0：分析集群。 说明：暂不支持通过接口方式创建混合集群。
+     * 集群类型。  默认值为0：分析集群。  说明：暂不支持通过接口方式创建混合集群。
      * @return clusterType
      */
-    public ClusterTypeEnum getClusterType() {
+    public Integer getClusterType() {
         return clusterType;
     }
 
-    public void setClusterType(ClusterTypeEnum clusterType) {
+    public void setClusterType(Integer clusterType) {
         this.clusterType = clusterType;
     }
 
     
 
-    public CreateClusterReq withLogCollection(LogCollectionEnum logCollection) {
+    public CreateClusterReq withLogCollection(Integer logCollection) {
         this.logCollection = logCollection;
         return this;
     }
@@ -1794,15 +1505,37 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群创建失败时，是否收集失败日志。  0：不收集 1：收集 默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。
+     * 集群创建失败时，是否收集失败日志。  默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。
      * @return logCollection
      */
-    public LogCollectionEnum getLogCollection() {
+    public Integer getLogCollection() {
         return logCollection;
     }
 
-    public void setLogCollection(LogCollectionEnum logCollection) {
+    public void setLogCollection(Integer logCollection) {
         this.logCollection = logCollection;
+    }
+
+    
+
+    public CreateClusterReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 企业项目ID。  创建集群时，给集群绑定企业项目ID。  默认设置为0，表示为default企业项目。  获取方式请参见《企业管理API参考》的“查询企业项目列表”响应消息表“enterprise_project字段数据结构说明”的“id”。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     
@@ -1830,7 +1563,7 @@ public class CreateClusterReq  {
     }
 
     /**
-     * 集群的标签信息。 同一个集群最多能使用10个tag，tag的名称（key）不能重复 标签的键/值不能包含“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”
+     * 集群的标签信息。  同一个集群最多能使用10个tag，tag的名称（key）不能重复 标签的键/值不能包含“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
      * @return tags
      */
     public List<Tag> getTags() {
@@ -1843,7 +1576,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withLoginMode(LoginModeEnum loginMode) {
+    public CreateClusterReq withLoginMode(Integer loginMode) {
         this.loginMode = loginMode;
         return this;
     }
@@ -1852,15 +1585,51 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群登录方式。 0：密码方式 1：密钥对方式 默认设置为1。 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。 说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。
+     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。
      * @return loginMode
      */
-    public LoginModeEnum getLoginMode() {
+    public Integer getLoginMode() {
         return loginMode;
     }
 
-    public void setLoginMode(LoginModeEnum loginMode) {
+    public void setLoginMode(Integer loginMode) {
         this.loginMode = loginMode;
+    }
+
+    
+
+    public CreateClusterReq withNodeGroups(List<NodeGroupV11> nodeGroups) {
+        this.nodeGroups = nodeGroups;
+        return this;
+    }
+
+    
+    public CreateClusterReq addNodeGroupsItem(NodeGroupV11 nodeGroupsItem) {
+        if(this.nodeGroups == null) {
+            this.nodeGroups = new ArrayList<>();
+        }
+        this.nodeGroups.add(nodeGroupsItem);
+        return this;
+    }
+
+    public CreateClusterReq withNodeGroups(Consumer<List<NodeGroupV11>> nodeGroupsSetter) {
+        if(this.nodeGroups == null) {
+            this.nodeGroups = new ArrayList<>();
+        }
+        nodeGroupsSetter.accept(this.nodeGroups);
+        return this;
+    }
+
+    /**
+     * 节点列表信息。  说明：如下参数和该参数任选一组进行配置即可。  master_node_num、master_node_size、core_node_num、core_node_size、master_data_volume_type、master_data_volume_size、master_data_volume_count、core_data_volume_type、core_data_volume_size、core_data_volume_count、volume_type、volume_size、task_node_groups。
+     * @return nodeGroups
+     */
+    public List<NodeGroupV11> getNodeGroups() {
+        return nodeGroups;
+    }
+
+    public void setNodeGroups(List<NodeGroupV11> nodeGroups) {
+        this.nodeGroups = nodeGroups;
     }
 
     
@@ -1906,12 +1675,14 @@ public class CreateClusterReq  {
             Objects.equals(this.safeMode, createClusterReq.safeMode) &&
             Objects.equals(this.clusterType, createClusterReq.clusterType) &&
             Objects.equals(this.logCollection, createClusterReq.logCollection) &&
+            Objects.equals(this.enterpriseProjectId, createClusterReq.enterpriseProjectId) &&
             Objects.equals(this.tags, createClusterReq.tags) &&
-            Objects.equals(this.loginMode, createClusterReq.loginMode);
+            Objects.equals(this.loginMode, createClusterReq.loginMode) &&
+            Objects.equals(this.nodeGroups, createClusterReq.nodeGroups);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterVersion, clusterName, masterNodeNum, coreNodeNum, billingType, dataCenter, vpc, masterNodeSize, coreNodeSize, componentList, availableZoneId, vpcId, subnetId, subnetName, securityGroupsId, addJobs, volumeSize, volumeType, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, taskNodeGroups, bootstrapScripts, nodePublicCertName, clusterAdminSecret, clusterMasterSecret, safeMode, clusterType, logCollection, tags, loginMode);
+        return Objects.hash(clusterVersion, clusterName, masterNodeNum, coreNodeNum, billingType, dataCenter, vpc, masterNodeSize, coreNodeSize, componentList, availableZoneId, vpcId, subnetId, subnetName, securityGroupsId, addJobs, volumeSize, volumeType, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, taskNodeGroups, bootstrapScripts, nodePublicCertName, clusterAdminSecret, clusterMasterSecret, safeMode, clusterType, logCollection, enterpriseProjectId, tags, loginMode, nodeGroups);
     }
     @Override
     public String toString() {
@@ -1949,8 +1720,10 @@ public class CreateClusterReq  {
         sb.append("    safeMode: ").append(toIndentedString(safeMode)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    logCollection: ").append(toIndentedString(logCollection)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    loginMode: ").append(toIndentedString(loginMode)).append("\n");
+        sb.append("    nodeGroups: ").append(toIndentedString(nodeGroups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

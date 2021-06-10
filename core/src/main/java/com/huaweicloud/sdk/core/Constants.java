@@ -95,6 +95,21 @@ public final class Constants {
     public static final String DEFAULT_IAM_ENDPOINT = "https://iam.myhuaweicloud.com";
 
     /**
+     * some special status code
+     */
+    public static class StatusCode {
+        public static final int SUCCESS = 200;
+
+        public static final int CLIENT_ERROR = 400;
+
+        public static final int TOO_MANY_REQUEST = 429;
+
+        public static final int SERVER_ERROR = 500;
+
+        public static final int SERVER_ERROR_UPPER_LIMIT = 600;
+    }
+
+    /**
      * The utility class should hide the public constructor
      */
     private Constants() {

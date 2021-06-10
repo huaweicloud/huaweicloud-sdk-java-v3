@@ -277,7 +277,7 @@ public class UpdateTokenResponse extends SdkResponse {
 
 
     /**
-     * 登录帐号类型。 * 0：Web客户端类型； * 5：cloudlink pc； * 6：cloudlink mobile； * 15：硬终端; * 16：welink pc; * 17：cloudlink 大屏; * 18：welink mobile; * 20：welink 大屏; * 24：cloudlink/welink pad; * 26：智慧屏; * 50：手机客户端; * 51：PAD客户端; * 52：PC客户端; * 53：电视客户端; * 54：大屏客户端。 
+     * 登录帐号类型。 * 72：API调用类型 
      * @return clientType
      */
     public Integer getClientType() {

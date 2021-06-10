@@ -616,7 +616,7 @@ public class NvlCostAnalysedBillDetail  {
 
 
     /**
-     * 订单ID。 说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
+     * 订单ID。  说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
      * @return orderId
      */
     public String getOrderId() {
@@ -704,7 +704,7 @@ public class NvlCostAnalysedBillDetail  {
 
 
     /**
-     * 资源使用量的度量单位，您可以调用查询使用量单位列表接口获取。
+     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
      * @return usageMeasureId
      */
     public Integer getUsageMeasureId() {
@@ -748,7 +748,7 @@ public class NvlCostAnalysedBillDetail  {
 
 
     /**
-     * 套餐内使用量的度量单位，您可以调用查询使用量单位列表接口获取。
+     * 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
      * @return freeResourceMeasureId
      */
     public Integer getFreeResourceMeasureId() {
@@ -836,7 +836,7 @@ public class NvlCostAnalysedBillDetail  {
 
 
     /**
-     * 期初已分摊金额。 说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
+     * 期初已分摊金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
      * @return pastMonthsAmortizedAmount
      */
     public Double getPastMonthsAmortizedAmount() {
@@ -880,7 +880,7 @@ public class NvlCostAnalysedBillDetail  {
 
 
     /**
-     * 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。 说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
+     * 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
      * @return futureMonthsAmortizedAmount
      */
     public Double getFutureMonthsAmortizedAmount() {

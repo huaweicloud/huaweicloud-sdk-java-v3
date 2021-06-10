@@ -115,7 +115,7 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 订单对应的订单项。 具体请参见表4。
+     * 订单对应的订单项。 具体请参见表5。
      * @return orderLineItems
      */
     public List<OrderLineItemEntityV2> getOrderLineItems() {

@@ -34,28 +34,28 @@ public class Rules  {
     
     private String description;
     /**
-     * 弹性伸缩规则的调整类型，只允许以下类型：  scale_out：扩容 scale_in：缩容
+     * 弹性伸缩规则的调整类型，只允许以下类型：
      */
     public static final class AdjustmentTypeEnum {
 
         
         /**
-         * Enum SCALE_OUT for value: "scale_out"
+         * Enum SCALE_OUT_ for value: "scale_out：扩容"
          */
-        public static final AdjustmentTypeEnum SCALE_OUT = new AdjustmentTypeEnum("scale_out");
+        public static final AdjustmentTypeEnum SCALE_OUT_ = new AdjustmentTypeEnum("scale_out：扩容");
         
         /**
-         * Enum SCALE_IN for value: "scale_in"
+         * Enum SCALE_IN_ for value: "scale_in：缩容"
          */
-        public static final AdjustmentTypeEnum SCALE_IN = new AdjustmentTypeEnum("scale_in");
+        public static final AdjustmentTypeEnum SCALE_IN_ = new AdjustmentTypeEnum("scale_in：缩容");
         
 
         private static final Map<String, AdjustmentTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AdjustmentTypeEnum> createStaticFields() {
             Map<String, AdjustmentTypeEnum> map = new HashMap<>();
-            map.put("scale_out", SCALE_OUT);
-            map.put("scale_in", SCALE_IN);
+            map.put("scale_out：扩容", SCALE_OUT_);
+            map.put("scale_in：缩容", SCALE_IN_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -189,7 +189,7 @@ public class Rules  {
 
 
     /**
-     * 弹性伸缩规则的调整类型，只允许以下类型：  scale_out：扩容 scale_in：缩容
+     * 弹性伸缩规则的调整类型，只允许以下类型：
      * @return adjustmentType
      */
     public AdjustmentTypeEnum getAdjustmentType() {

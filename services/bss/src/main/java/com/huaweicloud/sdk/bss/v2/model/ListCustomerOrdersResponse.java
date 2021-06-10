@@ -43,7 +43,7 @@ public class ListCustomerOrdersResponse extends SdkResponse {
 
 
     /**
-     * 大于等于0的整数 符合条件的记录总数。
+     * 大于等于0的整数。 符合条件的记录总数。
      * @return totalCount
      */
     public Integer getTotalCount() {

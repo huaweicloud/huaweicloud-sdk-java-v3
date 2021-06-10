@@ -1288,6 +1288,22 @@ public class RdsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ListOffSiteInstancesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ListOffSiteInstancesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
         builder.withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1825,6 +1841,49 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> setBinlogClearPolicy = genForsetBinlogClearPolicy();
+
+    private static HttpRequestDef<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> genForsetBinlogClearPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetBinlogClearPolicyRequest.class, SetBinlogClearPolicyResponse.class)
+                .withName("SetBinlogClearPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(SetBinlogClearPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBinlogClearPolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            BinlogClearPolicyRequestBody.class,
+            f -> f.withMarshaller(SetBinlogClearPolicyRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> setOffSiteBackupPolicy = genForsetOffSiteBackupPolicy();
 
     private static HttpRequestDef<SetOffSiteBackupPolicyRequest, SetOffSiteBackupPolicyResponse> genForsetOffSiteBackupPolicy() {
@@ -2048,6 +2107,41 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowBackupPolicyRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse> showBinlogClearPolicy = genForshowBinlogClearPolicy();
+
+    private static HttpRequestDef<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse> genForshowBinlogClearPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBinlogClearPolicyRequest.class, ShowBinlogClearPolicyResponse.class)
+                .withName("ShowBinlogClearPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/binlog/clear-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowBinlogClearPolicyRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBinlogClearPolicyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );
@@ -3879,6 +3973,14 @@ public class RdsMeta {
             String.class,
             f -> f.withMarshaller(DeleteSqlserverDatabaseRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            DropDatabaseV3Req.class,
+            f -> f.withMarshaller(DeleteSqlserverDatabaseRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

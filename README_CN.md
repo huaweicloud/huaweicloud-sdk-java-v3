@@ -37,12 +37,12 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
-    <version>[3.0.40-rc, 3.1.0-rc)</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.40-rc, 3.1.0-rc)</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 ```
 
@@ -51,10 +51,11 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 可以只添加一个依赖包导入所有支持的服务(3.0.40-rc版本后)：
 
 ```xml
+
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>3.0.40-rc</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 ```
 
@@ -63,16 +64,15 @@ Maven 项目的 `pom.xml` 文件加入相应的依赖项即可。
 当出现第三方库冲突的时候，可以引入如下bundle包(3.0.40-rc版本后)，该包包含所有支持的服务和重定向了SDK依赖的第三方软件，避免和业务自身依赖的库产生冲突：
 
 ```xml
+
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>3.0.40-rc</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 ```
 
 常见冲突例如Jackson，okhttp3版本冲突等。
-
-
 
 ## 代码示例
 
@@ -170,6 +170,10 @@ public class Application {
 * [6. 故障处理](#6-故障处理-top)
     * [6.1 访问日志](#61-访问日志-top)
     * [6.2 HTTP 监听器](#62-http-监听器-top)
+* [7. 请求重试](#7-请求重试-top)
+    * [7.1 同步客户端请求重试](#71-同步客户端请求重试-top)
+    * [7.2 异步客户端请求重试](#72-异步客户端请求重试-top)
+    * [7.3 典型重试场景调用示例](#73-典型重试场景调用示例-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -300,7 +304,7 @@ VpcClient vpcClient = VpcClient.newBuilder()
 **说明：**
 
 - `endpoint` 是华为云各服务应用区域和各服务的终端节点，详情请查看 [地区和终端节点](https://developer.huaweicloud.com/endpoint) 。
-  
+
 - 当用户使用指定 Region 方式无法自动获取 projectId 时，可以使用当前方式调用接口。
 
 #### 3.2 指定 Region 方式 **（推荐）** [:top:](#用户手册-top)
@@ -354,7 +358,8 @@ logger.info(response.toString());
 | :---- | :---- | :---- | :---- |
 | ConnectionException | 连接类异常 | HostUnreachableException | 网络不可达、被拒绝 |
 | | | SslHandShakeException | SSL认证异常 |
-| RequestTimeoutException | 响应超时异常 | CallTimeoutException | 单次请求，服务器处理超时未返回 |
+| | | ConnectionTimeoutException | 连接超时异常 |
+| RequestTimeoutException | 响应超时异常 | CallTimeoutException | 单次请求，服务器处理超时未返回，包括读写超时等异常 |
 | | | RetryOutageException | 在重试策略消耗完成已后，仍无有效的响应 |
 | ServiceResponseException | 服务器响应异常 | ServerResponseException | 服务端内部错误，Http响应码：[500,] |
 | | | ClientRequestException | 请求参数不合法，Http响应码：[400， 500) |
@@ -498,4 +503,139 @@ VpcClient vpcClient = VpcClient.newBuilder()
     .withCredential(auth)
     .withEndpoint(endpoint)
     .build();
+```
+
+### 7. 请求重试 [:top:](#用户手册-top)
+
+当请求遇到网络异常或者流控场景的时候，通常需要对请求进行重试。Java SDK 提供了请求重试的入口，可用于请求方式为 `GET`
+的请求。重试配置支持同步客户端和异步客户端，如需使用重试，需要配置最大重试次数、重试条件和重试策略。其中，
+
+- _最大重试次数_：30 次，可设置任意不大于 30 的正整数
+- _重试条件_：lambda 函数，提供默认的重试条件，会对 ConnectionException 进行重试，关键代码如下：
+
+``` java 
+/**
+ * 默认重试条件，当请求响应状态异常，并且异常类型为 ConnectionException 及其子类时，会执行重试
+ *
+ * @param <ResT> 响应类的泛型
+ * @return BiFunction 返回值为布尔类型的 true / false
+ */
+public static <ResT> BiFunction<ResT, SdkException, Boolean> defaultRetryCondition() {
+    return (resp, exception) -> {
+        if (Objects.nonNull(exception)) {
+            return ConnectionException.class.isAssignableFrom(exception.getClass());
+        }
+        return false;
+    };
+}
+```
+
+- _重试策略_：每次重试前的等待时间，提供默认的 SdkBackoffStrategy 策略，采用(随机数 + 指数退避)的算法计算下次重试前的等待时间。
+
+以下将针对不同的场景介绍重试的具体使用。
+
+#### 7.1 同步客户端请求重试 [:top:](#用户手册-top)
+
+在同步客户端中使用重试，需要使用 {Service}Client 中提供的 invoker 方法，SDK 对连接超时类的异常提供了默认的重试条件，用户可以直接调用。
+
+以 ECS 服务的 `ShowJob` 接口为例，最多重试5次，使用默认重试条件，代码如下：
+
+``` java
+// 初始化同步客户端
+EcsClient client = EcsClient.newBuilder()
+    .withCredential(basicCredentials)
+    .withRegion(EcsRegion.CN_NORTH_4)
+    .withHttpConfig(config)
+    .build();
+
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = client.showJobInvoker(request)
+    // 请求最大重试次数
+    .retryTimes(5)
+    // 请求重试条件，默认的重试条件为网络连接异常自动重试
+    .retryCondition(BaseInvoker.defaultRetryCondition())
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
+```
+
+#### 7.2 异步客户端请求重试 [:top:](#用户手册-top)
+
+在异步客户端中使用重试，需要使用 {Service}Client 中提供的 invoker 方法，SDK 对连接超时类的异常提供了默认的重试条件，用户可以直接调用。
+
+以 ECS 服务的 `ShowJob` 接口为例，最多重试5次，使用默认重试条件，代码如下：
+
+``` java
+// 初始化异步客户端
+EcsAsyncClient asyncClient = EcsAsyncClient.newBuilder()
+    .withCredential(basicCredentials)
+    .withRegion(EcsRegion.CN_NORTH_4)
+    .withHttpConfig(config)
+    .build();
+
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = asyncClient.showJobAsyncInvoker(request)
+    // 请求最大重试次数
+    .retryTimes(5)
+    // 请求重试条件，默认的重试条件为网络连接异常自动重试
+    .retryCondition(BaseInvoker.defaultRetryCondition())
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
+```
+
+#### 7.3 典型重试场景调用示例 [:top:](#用户手册-top)
+
+**场景1**：当接口响应状态码为 500(服务器端异常) 或者 429(服务器端流控) 时，对请求进行重试。示例代码如下：
+
+``` java 
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = client.showJobInvoker(request)
+        .retryTimes(3)
+        .retryCondition(
+            (resp, ex) -> Objects.nonNull(ex) && ServiceResponseException.class.isAssignableFrom(ex.getClass())
+                && (((ServiceResponseException) ex).getHttpStatusCode() == 429
+                || ((ServiceResponseException) ex).getHttpStatusCode() == 500))
+        .invoke();
+    logger.info(response.toString());
+} catch (InterruptedException e) {
+    logger.error("InterruptedException", e);
+} catch (ExecutionException e) {
+    logger.error("ExecutionException", e);
+}
+```
+
+**场景2**：针对 job 指定状态进行重试，如 job 状态为成功时停止重试，执行下一步操作。示例代码如下：
+
+``` java
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    // 退避等待的基础时间
+    final int baseDelay = 1000;
+    // 退避等待的最长时间
+    final int maxBackoffInMilliseconds = 30000;
+    
+    ShowJobResponse response = client.showJobInvoker(request)
+    // 请求最大重试次数
+    .retryTimes(10)
+    // 请求重试条件，将重试条件设置为job状态是success的时候停止重试
+    .retryCondition((resp, ex) -> Objects.nonNull(resp) && !resp.getStatus().equals(ShowJobResponse.StatusEnum.SUCCESS))
+    // 请求退避策略，计算每次请求失败后下次的请求时间，轮询 job 状态需要设置较长的基础等待时间
+    .backoffStrategy(new SdkBackoffStrategy(baseDelay, maxBackoffInMilliseconds))
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
 ```

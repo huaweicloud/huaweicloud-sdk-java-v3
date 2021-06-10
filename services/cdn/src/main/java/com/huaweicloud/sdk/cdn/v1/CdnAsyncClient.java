@@ -196,7 +196,7 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 询缓存规则
+     * 查询缓存规则
      * 查询缓存规则。
      *
      * @param ShowCacheRulesRequest 请求对象
@@ -207,7 +207,7 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 询缓存规则
+     * 查询缓存规则
      * 查询缓存规则。
      *
      * @param ShowCacheRulesRequest 请求对象
@@ -659,7 +659,7 @@ public class CdnAsyncClient {
 
     /**
      * 修改私有桶开启关闭状态
-     * 
+     * 修改私有桶开启关闭状态。
      *
      * @param UpdatePrivateBucketAccessRequest 请求对象
      * @return CompletableFuture<UpdatePrivateBucketAccessResponse>
@@ -670,7 +670,7 @@ public class CdnAsyncClient {
 
     /**
      * 修改私有桶开启关闭状态
-     * 
+     * 修改私有桶开启关闭状态。
      *
      * @param UpdatePrivateBucketAccessRequest 请求对象
      * @return AsyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse>

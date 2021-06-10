@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.rds.v3.model.DropDatabaseV3Req;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,6 +35,12 @@ public class DeleteSqlserverDatabaseRequest  {
     @JsonProperty(value="db_name")
     
     private String dbName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="body")
+    
+    private DropDatabaseV3Req body;
 
     public DeleteSqlserverDatabaseRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -103,6 +110,35 @@ public class DeleteSqlserverDatabaseRequest  {
 
     
 
+    public DeleteSqlserverDatabaseRequest withBody(DropDatabaseV3Req body) {
+        this.body = body;
+        return this;
+    }
+
+    public DeleteSqlserverDatabaseRequest withBody(Consumer<DropDatabaseV3Req> bodySetter) {
+        if(this.body == null ){
+            this.body = new DropDatabaseV3Req();
+            bodySetter.accept(this.body);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get body
+     * @return body
+     */
+    public DropDatabaseV3Req getBody() {
+        return body;
+    }
+
+    public void setBody(DropDatabaseV3Req body) {
+        this.body = body;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -114,11 +150,12 @@ public class DeleteSqlserverDatabaseRequest  {
         DeleteSqlserverDatabaseRequest deleteSqlserverDatabaseRequest = (DeleteSqlserverDatabaseRequest) o;
         return Objects.equals(this.xLanguage, deleteSqlserverDatabaseRequest.xLanguage) &&
             Objects.equals(this.instanceId, deleteSqlserverDatabaseRequest.instanceId) &&
-            Objects.equals(this.dbName, deleteSqlserverDatabaseRequest.dbName);
+            Objects.equals(this.dbName, deleteSqlserverDatabaseRequest.dbName) &&
+            Objects.equals(this.body, deleteSqlserverDatabaseRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, dbName);
+        return Objects.hash(xLanguage, instanceId, dbName, body);
     }
     @Override
     public String toString() {
@@ -127,6 +164,7 @@ public class DeleteSqlserverDatabaseRequest  {
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

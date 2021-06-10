@@ -112,7 +112,7 @@ public class ApplicationItem  {
 
 
     /**
-     * 创建application的时间时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * 创建application的时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
      * @return createTime
      */
     public String getCreateTime() {

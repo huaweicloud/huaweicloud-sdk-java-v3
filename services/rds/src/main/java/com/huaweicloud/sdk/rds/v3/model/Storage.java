@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,12 @@ public class Storage  {
     @JsonProperty(value="az_status")
     
     private Map<String, String> azStatus = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="support_compute_group_type")
+    
+    private List<String> supportComputeGroupType = null;
     
     public Storage withName(String name) {
         this.name = name;
@@ -90,6 +97,42 @@ public class Storage  {
 
     
 
+    public Storage withSupportComputeGroupType(List<String> supportComputeGroupType) {
+        this.supportComputeGroupType = supportComputeGroupType;
+        return this;
+    }
+
+    
+    public Storage addSupportComputeGroupTypeItem(String supportComputeGroupTypeItem) {
+        if(this.supportComputeGroupType == null) {
+            this.supportComputeGroupType = new ArrayList<>();
+        }
+        this.supportComputeGroupType.add(supportComputeGroupTypeItem);
+        return this;
+    }
+
+    public Storage withSupportComputeGroupType(Consumer<List<String>> supportComputeGroupTypeSetter) {
+        if(this.supportComputeGroupType == null) {
+            this.supportComputeGroupType = new ArrayList<>();
+        }
+        supportComputeGroupTypeSetter.accept(this.supportComputeGroupType);
+        return this;
+    }
+
+    /**
+     * 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 - armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。
+     * @return supportComputeGroupType
+     */
+    public List<String> getSupportComputeGroupType() {
+        return supportComputeGroupType;
+    }
+
+    public void setSupportComputeGroupType(List<String> supportComputeGroupType) {
+        this.supportComputeGroupType = supportComputeGroupType;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -100,11 +143,12 @@ public class Storage  {
         }
         Storage storage = (Storage) o;
         return Objects.equals(this.name, storage.name) &&
-            Objects.equals(this.azStatus, storage.azStatus);
+            Objects.equals(this.azStatus, storage.azStatus) &&
+            Objects.equals(this.supportComputeGroupType, storage.supportComputeGroupType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, azStatus);
+        return Objects.hash(name, azStatus, supportComputeGroupType);
     }
     @Override
     public String toString() {
@@ -112,6 +156,7 @@ public class Storage  {
         sb.append("class Storage {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    azStatus: ").append(toIndentedString(azStatus)).append("\n");
+        sb.append("    supportComputeGroupType: ").append(toIndentedString(supportComputeGroupType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

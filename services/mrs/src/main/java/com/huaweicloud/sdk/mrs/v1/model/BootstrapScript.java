@@ -53,28 +53,28 @@ public class BootstrapScript  {
     
     private Boolean activeMaster;
     /**
-     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。 continue：继续执行后续脚本。 errorout：终止操作。 缺省值为errorout,表示终止操作。 说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。
+     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。
      */
     public static final class FailActionEnum {
 
         
         /**
-         * Enum CONTINUE for value: "continue"
+         * Enum CONTINUE_ for value: "continue：继续执行后续脚本。"
          */
-        public static final FailActionEnum CONTINUE = new FailActionEnum("continue");
+        public static final FailActionEnum CONTINUE_ = new FailActionEnum("continue：继续执行后续脚本。");
         
         /**
-         * Enum ERROROUT for value: "errorout"
+         * Enum ERROROUT_ for value: "errorout：终止操作。"
          */
-        public static final FailActionEnum ERROROUT = new FailActionEnum("errorout");
+        public static final FailActionEnum ERROROUT_ = new FailActionEnum("errorout：终止操作。");
         
 
         private static final Map<String, FailActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FailActionEnum> createStaticFields() {
             Map<String, FailActionEnum> map = new HashMap<>();
-            map.put("continue", CONTINUE);
-            map.put("errorout", ERROROUT);
+            map.put("continue：继续执行后续脚本。", CONTINUE_);
+            map.put("errorout：终止操作。", ERROROUT_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -143,6 +143,24 @@ public class BootstrapScript  {
     
     private Boolean beforeComponentStart;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="start_time")
+    
+    private String startTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="state")
+    
+    private String state;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="action_stages")
+    
+    private List<String> actionStages = null;
+    
     public BootstrapScript withName(String name) {
         this.name = name;
         return this;
@@ -174,7 +192,7 @@ public class BootstrapScript  {
 
 
     /**
-     * 引导操作脚本的路径。设置为OBS桶的路径或虚拟机本地的路径。 OBS桶的路径：直接手动输入脚本路径。例如输入MRS提供的公共样例脚本路径。示例：s3a://bootstrap/presto/presto-install.sh，其中安装dualroles时，presto-install.sh脚本参数为dualroles , 安装worker时，presto-install.sh脚本参数为worker。根据Presto使用习惯，建议您在Active Master节点上安装dualroles，在Core节点上安装worker。 虚拟机本地的路径：用户需要输入正确的脚本路径。脚本所在的路径必须以‘/’开头，以.sh结尾。
+     * 引导操作脚本的路径。设置为OBS桶的路径或虚拟机本地的路径。 - OBS桶的路径：直接手动输入脚本路径。例如输入MRS提供的公共样例脚本路径。示例：s3a://bootstrap/presto/presto-install.sh，其中安装dualroles时，presto-install.sh脚本参数为dualroles, 安装worker时，presto-install.sh脚本参数为worker。根据Presto使用习惯，建议您在Active Master节点上安装dualroles，在Core节点上安装worker。 - 虚拟机本地的路径：用户需要输入正确的脚本路径。脚本所在的路径必须以‘/’开头，以.sh结尾。
      * @return uri
      */
     public String getUri() {
@@ -276,7 +294,7 @@ public class BootstrapScript  {
 
 
     /**
-     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。 continue：继续执行后续脚本。 errorout：终止操作。 缺省值为errorout,表示终止操作。 说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。
+     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。
      * @return failAction
      */
     public FailActionEnum getFailAction() {
@@ -298,7 +316,7 @@ public class BootstrapScript  {
 
 
     /**
-     * 引导操作脚本执行的时间。目前支持“组件启动前”和“组件启动后”两种类型。 缺省值为false,表示引导操作脚本在组件启动后执行。
+     * 引导操作脚本执行的时间。目前支持“组件启动前”和“组件启动后”两种类型。 缺省值为false，表示引导操作脚本在组件启动后执行。
      * @return beforeComponentStart
      */
     public Boolean getBeforeComponentStart() {
@@ -307,6 +325,86 @@ public class BootstrapScript  {
 
     public void setBeforeComponentStart(Boolean beforeComponentStart) {
         this.beforeComponentStart = beforeComponentStart;
+    }
+
+    
+
+    public BootstrapScript withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 单个引导操作脚本的执行时间。
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    
+
+    public BootstrapScript withState(String state) {
+        this.state = state;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 单个引导操作脚本的运行状态。 - PENDING - IN_PROGRESS - SUCCESS - FAILURE
+     * @return state
+     */
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    
+
+    public BootstrapScript withActionStages(List<String> actionStages) {
+        this.actionStages = actionStages;
+        return this;
+    }
+
+    
+    public BootstrapScript addActionStagesItem(String actionStagesItem) {
+        if(this.actionStages == null) {
+            this.actionStages = new ArrayList<>();
+        }
+        this.actionStages.add(actionStagesItem);
+        return this;
+    }
+
+    public BootstrapScript withActionStages(Consumer<List<String>> actionStagesSetter) {
+        if(this.actionStages == null) {
+            this.actionStages = new ArrayList<>();
+        }
+        actionStagesSetter.accept(this.actionStages);
+        return this;
+    }
+
+    /**
+     * 选择引导操作脚本执行的时间。 - BEFORE_COMPONENT_FIRST_START: 组件首次启动后 - AFTER_COMPONENT_FIRST_START: 组件首次启动前 - BEFORE_SCALE_IN: 缩容前 - AFTER_SCALE_IN: 缩容后 - BEFORE_SCALE_OUT: 扩容前 - AFTER_SCALE_OUT: 扩容后
+     * @return actionStages
+     */
+    public List<String> getActionStages() {
+        return actionStages;
+    }
+
+    public void setActionStages(List<String> actionStages) {
+        this.actionStages = actionStages;
     }
 
     
@@ -326,11 +424,14 @@ public class BootstrapScript  {
             Objects.equals(this.nodes, bootstrapScript.nodes) &&
             Objects.equals(this.activeMaster, bootstrapScript.activeMaster) &&
             Objects.equals(this.failAction, bootstrapScript.failAction) &&
-            Objects.equals(this.beforeComponentStart, bootstrapScript.beforeComponentStart);
+            Objects.equals(this.beforeComponentStart, bootstrapScript.beforeComponentStart) &&
+            Objects.equals(this.startTime, bootstrapScript.startTime) &&
+            Objects.equals(this.state, bootstrapScript.state) &&
+            Objects.equals(this.actionStages, bootstrapScript.actionStages);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, uri, parameters, nodes, activeMaster, failAction, beforeComponentStart);
+        return Objects.hash(name, uri, parameters, nodes, activeMaster, failAction, beforeComponentStart, startTime, state, actionStages);
     }
     @Override
     public String toString() {
@@ -343,6 +444,9 @@ public class BootstrapScript  {
         sb.append("    activeMaster: ").append(toIndentedString(activeMaster)).append("\n");
         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
         sb.append("    beforeComponentStart: ").append(toIndentedString(beforeComponentStart)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    actionStages: ").append(toIndentedString(actionStages)).append("\n");
         sb.append("}");
         return sb.toString();
     }

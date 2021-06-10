@@ -331,9 +331,9 @@ public class CreateJobReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="muti_write")
+    @JsonProperty(value="multi_write")
     
-    private Boolean mutiWrite;
+    private Boolean multiWrite;
     /**
      * 网络类型
      */
@@ -631,18 +631,6 @@ public class CreateJobReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_az")
-    
-    private String masterAz;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slave_az")
-    
-    private String slaveAz;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sys_tags")
     
     private List<ResourceTag> sysTags = null;
@@ -807,8 +795,8 @@ public class CreateJobReq  {
 
     
 
-    public CreateJobReq withMutiWrite(Boolean mutiWrite) {
-        this.mutiWrite = mutiWrite;
+    public CreateJobReq withMultiWrite(Boolean multiWrite) {
+        this.multiWrite = multiWrite;
         return this;
     }
 
@@ -817,14 +805,14 @@ public class CreateJobReq  {
 
     /**
      * - db_use_type 是cloudDataGuard时，必填，灾备类型是双主灾备时 muti_write取值true, 否则为false。 - db_use_type 是其他类型时，muti_write是非必选参数
-     * @return mutiWrite
+     * @return multiWrite
      */
-    public Boolean getMutiWrite() {
-        return mutiWrite;
+    public Boolean getMultiWrite() {
+        return multiWrite;
     }
 
-    public void setMutiWrite(Boolean mutiWrite) {
-        this.mutiWrite = mutiWrite;
+    public void setMultiWrite(Boolean multiWrite) {
+        this.multiWrite = multiWrite;
     }
 
     
@@ -1057,50 +1045,6 @@ public class CreateJobReq  {
 
     
 
-    public CreateJobReq withMasterAz(String masterAz) {
-        this.masterAz = masterAz;
-        return this;
-    }
-
-    
-
-
-    /**
-     * node跨AZ任务主节点AZ
-     * @return masterAz
-     */
-    public String getMasterAz() {
-        return masterAz;
-    }
-
-    public void setMasterAz(String masterAz) {
-        this.masterAz = masterAz;
-    }
-
-    
-
-    public CreateJobReq withSlaveAz(String slaveAz) {
-        this.slaveAz = slaveAz;
-        return this;
-    }
-
-    
-
-
-    /**
-     * node跨AZ任务备节点AZ
-     * @return slaveAz
-     */
-    public String getSlaveAz() {
-        return slaveAz;
-    }
-
-    public void setSlaveAz(String slaveAz) {
-        this.slaveAz = slaveAz;
-    }
-
-    
-
     public CreateJobReq withSysTags(List<ResourceTag> sysTags) {
         this.sysTags = sysTags;
         return this;
@@ -1175,7 +1119,7 @@ public class CreateJobReq  {
             Objects.equals(this.engineType, createJobReq.engineType) &&
             Objects.equals(this.isTargetReadonly, createJobReq.isTargetReadonly) &&
             Objects.equals(this.jobDirection, createJobReq.jobDirection) &&
-            Objects.equals(this.mutiWrite, createJobReq.mutiWrite) &&
+            Objects.equals(this.multiWrite, createJobReq.multiWrite) &&
             Objects.equals(this.netType, createJobReq.netType) &&
             Objects.equals(this.nodeNum, createJobReq.nodeNum) &&
             Objects.equals(this.nodeType, createJobReq.nodeType) &&
@@ -1185,14 +1129,12 @@ public class CreateJobReq  {
             Objects.equals(this.taskType, createJobReq.taskType) &&
             Objects.equals(this.customizeSutnetId, createJobReq.customizeSutnetId) &&
             Objects.equals(this.productId, createJobReq.productId) &&
-            Objects.equals(this.masterAz, createJobReq.masterAz) &&
-            Objects.equals(this.slaveAz, createJobReq.slaveAz) &&
             Objects.equals(this.sysTags, createJobReq.sysTags) &&
             Objects.equals(this.expiredDays, createJobReq.expiredDays);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bindEip, dbUseType, name, description, engineType, isTargetReadonly, jobDirection, mutiWrite, netType, nodeNum, nodeType, sourceEndpoint, targetEndpoint, tags, taskType, customizeSutnetId, productId, masterAz, slaveAz, sysTags, expiredDays);
+        return Objects.hash(bindEip, dbUseType, name, description, engineType, isTargetReadonly, jobDirection, multiWrite, netType, nodeNum, nodeType, sourceEndpoint, targetEndpoint, tags, taskType, customizeSutnetId, productId, sysTags, expiredDays);
     }
     @Override
     public String toString() {
@@ -1205,7 +1147,7 @@ public class CreateJobReq  {
         sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    isTargetReadonly: ").append(toIndentedString(isTargetReadonly)).append("\n");
         sb.append("    jobDirection: ").append(toIndentedString(jobDirection)).append("\n");
-        sb.append("    mutiWrite: ").append(toIndentedString(mutiWrite)).append("\n");
+        sb.append("    multiWrite: ").append(toIndentedString(multiWrite)).append("\n");
         sb.append("    netType: ").append(toIndentedString(netType)).append("\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
         sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
@@ -1215,8 +1157,6 @@ public class CreateJobReq  {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    customizeSutnetId: ").append(toIndentedString(customizeSutnetId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    masterAz: ").append(toIndentedString(masterAz)).append("\n");
-        sb.append("    slaveAz: ").append(toIndentedString(slaveAz)).append("\n");
         sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("    expiredDays: ").append(toIndentedString(expiredDays)).append("\n");
         sb.append("}");

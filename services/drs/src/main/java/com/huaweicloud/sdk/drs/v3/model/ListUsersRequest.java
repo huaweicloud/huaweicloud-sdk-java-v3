@@ -107,13 +107,7 @@ public class ListUsersRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="projectId")
-    
-    private String projectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
+    @JsonProperty(value="job_id")
     
     private String jobId;
 
@@ -137,28 +131,6 @@ public class ListUsersRequest  {
 
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
-    }
-
-    
-
-    public ListUsersRequest withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 租户在某一Region下的Project&nbsp;ID。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
     }
 
     
@@ -195,19 +167,17 @@ public class ListUsersRequest  {
         }
         ListUsersRequest listUsersRequest = (ListUsersRequest) o;
         return Objects.equals(this.xLanguage, listUsersRequest.xLanguage) &&
-            Objects.equals(this.projectId, listUsersRequest.projectId) &&
             Objects.equals(this.jobId, listUsersRequest.jobId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, projectId, jobId);
+        return Objects.hash(xLanguage, jobId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListUsersRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();

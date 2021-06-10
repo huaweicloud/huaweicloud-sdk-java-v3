@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.Datastore;
+import com.huaweicloud.sdk.rds.v3.model.ParaGroupDatastore;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class ConfigurationForCreation  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore;
+    private ParaGroupDatastore datastore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -89,14 +89,14 @@ public class ConfigurationForCreation  {
 
     
 
-    public ConfigurationForCreation withDatastore(Datastore datastore) {
+    public ConfigurationForCreation withDatastore(ParaGroupDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public ConfigurationForCreation withDatastore(Consumer<Datastore> datastoreSetter) {
+    public ConfigurationForCreation withDatastore(Consumer<ParaGroupDatastore> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new Datastore();
+            this.datastore = new ParaGroupDatastore();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -108,11 +108,11 @@ public class ConfigurationForCreation  {
      * Get datastore
      * @return datastore
      */
-    public Datastore getDatastore() {
+    public ParaGroupDatastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(Datastore datastore) {
+    public void setDatastore(ParaGroupDatastore datastore) {
         this.datastore = datastore;
     }
 

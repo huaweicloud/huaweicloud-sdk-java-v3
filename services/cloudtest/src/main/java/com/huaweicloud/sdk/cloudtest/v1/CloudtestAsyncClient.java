@@ -20,6 +20,50 @@ public class CloudtestAsyncClient {
 
 
     /**
+     * 通过导入仓库中的文件生成接口测试套
+     * 通过导入仓库中的文件生成接口测试套
+     *
+     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @return CompletableFuture<CreateApiTestSuiteByRepoFileResponse>
+     */
+    public CompletableFuture<CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileAsync(CreateApiTestSuiteByRepoFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createApiTestSuiteByRepoFile);
+    }
+
+    /**
+     * 通过导入仓库中的文件生成接口测试套
+     * 通过导入仓库中的文件生成接口测试套
+     *
+     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @return AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>
+     */
+    public AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileAsyncInvoker(CreateApiTestSuiteByRepoFileRequest request) {
+        return new AsyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>(request, CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
+    }
+
+    /**
+     * 获取云测的环境参数分组列表
+     * 获取云测的环境参数分组列表
+     *
+     * @param ListEnvironmentsRequest 请求对象
+     * @return CompletableFuture<ListEnvironmentsResponse>
+     */
+    public CompletableFuture<ListEnvironmentsResponse> listEnvironmentsAsync(ListEnvironmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listEnvironments);
+    }
+
+    /**
+     * 获取云测的环境参数分组列表
+     * 获取云测的环境参数分组列表
+     *
+     * @param ListEnvironmentsRequest 请求对象
+     * @return AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
+     */
+    public AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsAsyncInvoker(ListEnvironmentsRequest request) {
+        return new AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>(request, CloudtestMeta.listEnvironments, hcClient);
+    }
+
+    /**
      * 项目下创建计划
      * 项目下创建计划
      *

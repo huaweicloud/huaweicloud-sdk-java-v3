@@ -32,7 +32,7 @@ public class ComponentList  {
 
 
     /**
-     *   组件名称  MRS 2.1.0及之后版本支持Presto、Hadoop、Spark、HBase、Hive、Tez、Hue、Loader、Flink、Impala、Kudu、Flume、Kafka和Storm组件。 MRS 2.0.5版本支持Presto、Hadoop、Spark、HBase、Hive、Tez、Hue、Loader、Flume、Kafka和Storm组件。 MRS 1.8.10版本支持Presto、Hadoop、Spark、HBase、Opentsdb、Hive、Hue、Loader、Flink、Flume、Kafka、KafkaManager和Storm组件。
+     * 组件名称
      * @return componentName
      */
     public String getComponentName() {

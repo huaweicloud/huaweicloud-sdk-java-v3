@@ -73,6 +73,12 @@ public class QueryVmrResultDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vmrMode")
+    
+    private Integer vmrMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vmrPkgId")
     
     private String vmrPkgId;
@@ -293,6 +299,28 @@ public class QueryVmrResultDTO  {
 
     
 
+    public QueryVmrResultDTO withVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * VMR模式 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会 
+     * @return vmrMode
+     */
+    public Integer getVmrMode() {
+        return vmrMode;
+    }
+
+    public void setVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+    }
+
+    
+
     public QueryVmrResultDTO withVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
         return this;
@@ -399,6 +427,7 @@ public class QueryVmrResultDTO  {
             Objects.equals(this.chairJoinUrl, queryVmrResultDTO.chairJoinUrl) &&
             Objects.equals(this.allowGustFirst, queryVmrResultDTO.allowGustFirst) &&
             Objects.equals(this.gustFirstNotice, queryVmrResultDTO.gustFirstNotice) &&
+            Objects.equals(this.vmrMode, queryVmrResultDTO.vmrMode) &&
             Objects.equals(this.vmrPkgId, queryVmrResultDTO.vmrPkgId) &&
             Objects.equals(this.vmrPkgName, queryVmrResultDTO.vmrPkgName) &&
             Objects.equals(this.vmrPkgParties, queryVmrResultDTO.vmrPkgParties) &&
@@ -406,7 +435,7 @@ public class QueryVmrResultDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, vmrId, vmrName, gustPwd, gustJoinUrl, chairPwd, chairJoinUrl, allowGustFirst, gustFirstNotice, vmrPkgId, vmrPkgName, vmrPkgParties, status);
+        return Objects.hash(id, vmrId, vmrName, gustPwd, gustJoinUrl, chairPwd, chairJoinUrl, allowGustFirst, gustFirstNotice, vmrMode, vmrPkgId, vmrPkgName, vmrPkgParties, status);
     }
     @Override
     public String toString() {
@@ -421,6 +450,7 @@ public class QueryVmrResultDTO  {
         sb.append("    chairJoinUrl: ").append(toIndentedString(chairJoinUrl)).append("\n");
         sb.append("    allowGustFirst: ").append(toIndentedString(allowGustFirst)).append("\n");
         sb.append("    gustFirstNotice: ").append(toIndentedString(gustFirstNotice)).append("\n");
+        sb.append("    vmrMode: ").append(toIndentedString(vmrMode)).append("\n");
         sb.append("    vmrPkgId: ").append(toIndentedString(vmrPkgId)).append("\n");
         sb.append("    vmrPkgName: ").append(toIndentedString(vmrPkgName)).append("\n");
         sb.append("    vmrPkgParties: ").append(toIndentedString(vmrPkgParties)).append("\n");

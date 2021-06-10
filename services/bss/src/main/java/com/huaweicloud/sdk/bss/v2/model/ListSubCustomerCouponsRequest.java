@@ -158,7 +158,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 优惠券类型： 1：代金券2：折扣券3：产品券4：现金券
+     * 优惠券类型：1：代金券2：折扣券3：产品券4：现金券
      * minimum: 1
      * maximum: 4
      * @return couponType
@@ -182,7 +182,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 客户优惠券实例状态： 1：未激活2：待使用3：已使用4：已过期
+     * 客户优惠券实例状态：1：未激活2：待使用3：已使用4：已过期
      * minimum: 1
      * maximum: 4
      * @return status
@@ -206,7 +206,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 激活时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 激活时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * @return activeStartTime
      */
     public String getActiveStartTime() {
@@ -228,7 +228,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 结束时间。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * 结束时间。UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
      * @return activeEndTime
      */
     public String getActiveEndTime() {
@@ -250,7 +250,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 偏移量，从0开始。默认值为0。
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -298,7 +298,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 发券来源，如果是合作伙伴发送的券，此处为伙伴ID。 如果需要查询某个伙伴发放的券，可以在此处输入该伙伴ID。
+     * 发券来源，如果是合作伙伴发送的券，此处为伙伴ID。如果需要查询某个伙伴发放的券，可以在此处输入该伙伴ID。
      * @return sourceId
      */
     public String getSourceId() {
@@ -320,7 +320,7 @@ public class ListSubCustomerCouponsRequest  {
 
 
     /**
-     * 精英服务商（二级经销商）ID。 华为云伙伴能力中心（一级经销商）查询精英服务商名下的优惠券时，需要携带该参数；否则只能查询自己的优惠券列表。
+     * 精英服务商（二级经销商）ID。华为云伙伴能力中心（一级经销商）查询精英服务商名下的优惠券时，需要携带该参数；否则只能查询自己的优惠券列表。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -43,6 +43,12 @@ public class QueryResourceResultDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vmrMode")
+    
+    private Integer vmrMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
     private Integer count;
@@ -52,6 +58,12 @@ public class QueryResourceResultDTO  {
     @JsonProperty(value="expireDate")
     
     private Long expireDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="orderId")
+    
+    private String orderId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,6 +165,28 @@ public class QueryResourceResultDTO  {
 
     
 
+    public QueryResourceResultDTO withVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * VMR模式. 0：个人会议ID 1：云会议室 2：网络研讨会
+     * @return vmrMode
+     */
+    public Integer getVmrMode() {
+        return vmrMode;
+    }
+
+    public void setVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+    }
+
+    
+
     public QueryResourceResultDTO withCount(Integer count) {
         this.count = count;
         return this;
@@ -193,6 +227,28 @@ public class QueryResourceResultDTO  {
 
     public void setExpireDate(Long expireDate) {
         this.expireDate = expireDate;
+    }
+
+    
+
+    public QueryResourceResultDTO withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源对应的订单id
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     
@@ -254,14 +310,16 @@ public class QueryResourceResultDTO  {
             Objects.equals(this.type, queryResourceResultDTO.type) &&
             Objects.equals(this.typeId, queryResourceResultDTO.typeId) &&
             Objects.equals(this.typeDesc, queryResourceResultDTO.typeDesc) &&
+            Objects.equals(this.vmrMode, queryResourceResultDTO.vmrMode) &&
             Objects.equals(this.count, queryResourceResultDTO.count) &&
             Objects.equals(this.expireDate, queryResourceResultDTO.expireDate) &&
+            Objects.equals(this.orderId, queryResourceResultDTO.orderId) &&
             Objects.equals(this.status, queryResourceResultDTO.status) &&
             Objects.equals(this.editable, queryResourceResultDTO.editable);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, typeId, typeDesc, count, expireDate, status, editable);
+        return Objects.hash(id, type, typeId, typeDesc, vmrMode, count, expireDate, orderId, status, editable);
     }
     @Override
     public String toString() {
@@ -271,8 +329,10 @@ public class QueryResourceResultDTO  {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
         sb.append("    typeDesc: ").append(toIndentedString(typeDesc)).append("\n");
+        sb.append("    vmrMode: ").append(toIndentedString(vmrMode)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    expireDate: ").append(toIndentedString(expireDate)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    editable: ").append(toIndentedString(editable)).append("\n");
         sb.append("}");

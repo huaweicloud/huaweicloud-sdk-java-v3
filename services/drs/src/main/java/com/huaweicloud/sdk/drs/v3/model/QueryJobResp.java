@@ -17,8 +17,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -599,34 +597,34 @@ public class QueryJobResp  {
     
     private JobDirectionEnum jobDirection;
     /**
-     * 迁移场景
+     * 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
      */
     public static final class DbUseTypeEnum {
 
         
         /**
-         * Enum MIGRATION_ for value: "migration-实时迁移"
+         * Enum MIGRATION for value: "migration"
          */
-        public static final DbUseTypeEnum MIGRATION_ = new DbUseTypeEnum("migration-实时迁移");
+        public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
         
         /**
-         * Enum SYNC_ for value: "sync-实时同步"
+         * Enum SYNC for value: "sync"
          */
-        public static final DbUseTypeEnum SYNC_ = new DbUseTypeEnum("sync-实时同步");
+        public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
         
         /**
-         * Enum CLOUDDATAGUARD_ for value: "cloudDataGuard-实时灾备"
+         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
          */
-        public static final DbUseTypeEnum CLOUDDATAGUARD_ = new DbUseTypeEnum("cloudDataGuard-实时灾备");
+        public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
         
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbUseTypeEnum> createStaticFields() {
             Map<String, DbUseTypeEnum> map = new HashMap<>();
-            map.put("migration-实时迁移", MIGRATION_);
-            map.put("sync-实时同步", SYNC_);
-            map.put("cloudDataGuard-实时灾备", CLOUDDATAGUARD_);
+            map.put("migration", MIGRATION);
+            map.put("sync", SYNC);
+            map.put("cloudDataGuard", CLOUDDATAGUARD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -701,34 +699,34 @@ public class QueryJobResp  {
     
     private Boolean isTargetReadonly;
     /**
-     * 冲突忽略策略
+     * 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
      */
     public static final class ConflictPolicyEnum {
 
         
         /**
-         * Enum STOP_ for value: "stop-冲突失败"
+         * Enum STOP for value: "stop"
          */
-        public static final ConflictPolicyEnum STOP_ = new ConflictPolicyEnum("stop-冲突失败");
+        public static final ConflictPolicyEnum STOP = new ConflictPolicyEnum("stop");
         
         /**
-         * Enum OVERWRITE_ for value: "overwrite-冲突覆盖"
+         * Enum OVERWRITE for value: "overwrite"
          */
-        public static final ConflictPolicyEnum OVERWRITE_ = new ConflictPolicyEnum("overwrite-冲突覆盖");
+        public static final ConflictPolicyEnum OVERWRITE = new ConflictPolicyEnum("overwrite");
         
         /**
-         * Enum IGNORE_ for value: "ignore-冲突忽略"
+         * Enum IGNORE for value: "ignore"
          */
-        public static final ConflictPolicyEnum IGNORE_ = new ConflictPolicyEnum("ignore-冲突忽略");
+        public static final ConflictPolicyEnum IGNORE = new ConflictPolicyEnum("ignore");
         
 
         private static final Map<String, ConflictPolicyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ConflictPolicyEnum> createStaticFields() {
             Map<String, ConflictPolicyEnum> map = new HashMap<>();
-            map.put("stop-冲突失败", STOP_);
-            map.put("overwrite-冲突覆盖", OVERWRITE_);
-            map.put("ignore-冲突忽略", IGNORE_);
+            map.put("stop", STOP);
+            map.put("overwrite", OVERWRITE);
+            map.put("ignore", IGNORE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -790,96 +788,12 @@ public class QueryJobResp  {
     @JsonProperty(value="conflict_policy")
     
     private ConflictPolicyEnum conflictPolicy;
-    /**
-     * 过滤DDL策略
-     */
-    public static final class FilterDdlPolicyEnum {
-
-        
-        /**
-         * Enum DROP_DATABASE_ for value: "drop_database-过滤"
-         */
-        public static final FilterDdlPolicyEnum DROP_DATABASE_ = new FilterDdlPolicyEnum("drop_database-过滤");
-        
-        /**
-         * Enum DROP_DATABASEFILTER_ALL_DDL for value: "drop_databasefilter_all-过滤所有ddl"
-         */
-        public static final FilterDdlPolicyEnum DROP_DATABASEFILTER_ALL_DDL = new FilterDdlPolicyEnum("drop_databasefilter_all-过滤所有ddl");
-        
-        /**
-         * Enum _ for value: "\"\"-不过滤"
-         */
-        public static final FilterDdlPolicyEnum _ = new FilterDdlPolicyEnum("\"\"-不过滤");
-        
-
-        private static final Map<String, FilterDdlPolicyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, FilterDdlPolicyEnum> createStaticFields() {
-            Map<String, FilterDdlPolicyEnum> map = new HashMap<>();
-            map.put("drop_database-过滤", DROP_DATABASE_);
-            map.put("drop_databasefilter_all-过滤所有ddl", DROP_DATABASEFILTER_ALL_DDL);
-            map.put("\"\"-不过滤", _);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        FilterDdlPolicyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static FilterDdlPolicyEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            FilterDdlPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterDdlPolicyEnum(value);
-            }
-            return result;
-        }
-
-        public static FilterDdlPolicyEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            FilterDdlPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FilterDdlPolicyEnum) {
-                return this.value.equals(((FilterDdlPolicyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="filter_ddl_policy")
     
-    private FilterDdlPolicyEnum filterDdlPolicy;
+    private String filterDdlPolicy;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -887,34 +801,34 @@ public class QueryJobResp  {
     
     private List<SpeedLimitInfo> speedLimit = null;
         /**
-     * 迁移方案
+     * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
      */
     public static final class SchemaTypeEnum {
 
         
         /**
-         * Enum REPLICATION_ for value: "Replication-主从复制"
+         * Enum REPLICATION for value: "Replication"
          */
-        public static final SchemaTypeEnum REPLICATION_ = new SchemaTypeEnum("Replication-主从复制");
+        public static final SchemaTypeEnum REPLICATION = new SchemaTypeEnum("Replication");
         
         /**
-         * Enum TUNGSTEN_ for value: "Tungsten-日志解析"
+         * Enum TUNGSTEN for value: "Tungsten"
          */
-        public static final SchemaTypeEnum TUNGSTEN_ = new SchemaTypeEnum("Tungsten-日志解析");
+        public static final SchemaTypeEnum TUNGSTEN = new SchemaTypeEnum("Tungsten");
         
         /**
-         * Enum PGBASEBACKUP_PG_ for value: "PGBaseBackup-PG备份"
+         * Enum PGBASEBACKUP for value: "PGBaseBackup"
          */
-        public static final SchemaTypeEnum PGBASEBACKUP_PG_ = new SchemaTypeEnum("PGBaseBackup-PG备份");
+        public static final SchemaTypeEnum PGBASEBACKUP = new SchemaTypeEnum("PGBaseBackup");
         
 
         private static final Map<String, SchemaTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SchemaTypeEnum> createStaticFields() {
             Map<String, SchemaTypeEnum> map = new HashMap<>();
-            map.put("Replication-主从复制", REPLICATION_);
-            map.put("Tungsten-日志解析", TUNGSTEN_);
-            map.put("PGBaseBackup-PG备份", PGBASEBACKUP_PG_);
+            map.put("Replication", REPLICATION);
+            map.put("Tungsten", TUNGSTEN);
+            map.put("PGBaseBackup", PGBASEBACKUP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -1556,7 +1470,7 @@ public class QueryJobResp  {
 
 
     /**
-     * 迁移场景
+     * 迁移场景 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备
      * @return dbUseType
      */
     public DbUseTypeEnum getDbUseType() {
@@ -1622,7 +1536,7 @@ public class QueryJobResp  {
 
 
     /**
-     * 冲突忽略策略
+     * 冲突忽略策略 - stop：冲突失败 - overwrite：冲突覆盖 - ignore：冲突忽略
      * @return conflictPolicy
      */
     public ConflictPolicyEnum getConflictPolicy() {
@@ -1635,7 +1549,7 @@ public class QueryJobResp  {
 
     
 
-    public QueryJobResp withFilterDdlPolicy(FilterDdlPolicyEnum filterDdlPolicy) {
+    public QueryJobResp withFilterDdlPolicy(String filterDdlPolicy) {
         this.filterDdlPolicy = filterDdlPolicy;
         return this;
     }
@@ -1644,14 +1558,14 @@ public class QueryJobResp  {
 
 
     /**
-     * 过滤DDL策略
+     * 过滤DDL策略 - drop_database：过滤drop_database - drop_databasefilter_all：过滤所有ddl - \"\"：不过滤
      * @return filterDdlPolicy
      */
-    public FilterDdlPolicyEnum getFilterDdlPolicy() {
+    public String getFilterDdlPolicy() {
         return filterDdlPolicy;
     }
 
-    public void setFilterDdlPolicy(FilterDdlPolicyEnum filterDdlPolicy) {
+    public void setFilterDdlPolicy(String filterDdlPolicy) {
         this.filterDdlPolicy = filterDdlPolicy;
     }
 
@@ -1702,7 +1616,7 @@ public class QueryJobResp  {
 
 
     /**
-     * 迁移方案
+     * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
      * @return schemaType
      */
     public SchemaTypeEnum getSchemaType() {

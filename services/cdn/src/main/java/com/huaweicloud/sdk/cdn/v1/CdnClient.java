@@ -194,7 +194,7 @@ public class CdnClient {
     }
 
     /**
-     * 询缓存规则
+     * 查询缓存规则
      * 查询缓存规则。
      *
      * @param ShowCacheRulesRequest 请求对象
@@ -205,7 +205,7 @@ public class CdnClient {
     }
 
     /**
-     * 询缓存规则
+     * 查询缓存规则
      * 查询缓存规则。
      *
      * @param ShowCacheRulesRequest 请求对象
@@ -657,7 +657,7 @@ public class CdnClient {
 
     /**
      * 修改私有桶开启关闭状态
-     * 
+     * 修改私有桶开启关闭状态。
      *
      * @param UpdatePrivateBucketAccessRequest 请求对象
      * @return UpdatePrivateBucketAccessResponse
@@ -668,7 +668,7 @@ public class CdnClient {
 
     /**
      * 修改私有桶开启关闭状态
-     * 
+     * 修改私有桶开启关闭状态。
      *
      * @param UpdatePrivateBucketAccessRequest 请求对象
      * @return SyncInvoker<UpdatePrivateBucketAccessRequest, UpdatePrivateBucketAccessResponse>

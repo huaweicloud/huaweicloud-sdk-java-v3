@@ -12,33 +12,6 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class MrsMeta {
 
-    public static final HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTags = genForlistClustersByTags();
-
-    private static HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> genForlistClustersByTags() {
-        // basic
-        HttpRequestDef.Builder<ListClustersByTagsRequest, ListClustersByTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListClustersByTagsRequest.class, ListClustersByTagsResponse.class)
-                .withName("ListClustersByTags")
-                .withUri("/v1.1/{project_id}/clusters/resource_instances/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            ListResourceReq.class,
-            f -> f.withMarshaller(ListClustersByTagsRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTags = genForbatchCreateClusterTags();
 
     private static HttpRequestDef<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> genForbatchCreateClusterTags() {
@@ -278,6 +251,33 @@ public class MrsMeta {
             String.class,
             f -> f.withMarshaller(ListClusterTagsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTags = genForlistClustersByTags();
+
+    private static HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> genForlistClustersByTags() {
+        // basic
+        HttpRequestDef.Builder<ListClustersByTagsRequest, ListClustersByTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListClustersByTagsRequest.class, ListClustersByTagsResponse.class)
+                .withName("ListClustersByTags")
+                .withUri("/v1.1/{project_id}/clusters/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListResourceReq.class,
+            f -> f.withMarshaller(ListClustersByTagsRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

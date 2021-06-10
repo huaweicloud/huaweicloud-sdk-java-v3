@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.GetTaskDetailListRspInstance;
+import com.huaweicloud.sdk.rds.v3.model.GetTaskDetailListRspJobsInstance;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -146,7 +146,7 @@ public class GetJobInfoResponseBodyJob  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="instance")
     
-    private GetTaskDetailListRspInstance instance;
+    private GetTaskDetailListRspJobsInstance instance;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -292,14 +292,14 @@ public class GetJobInfoResponseBodyJob  {
 
     
 
-    public GetJobInfoResponseBodyJob withInstance(GetTaskDetailListRspInstance instance) {
+    public GetJobInfoResponseBodyJob withInstance(GetTaskDetailListRspJobsInstance instance) {
         this.instance = instance;
         return this;
     }
 
-    public GetJobInfoResponseBodyJob withInstance(Consumer<GetTaskDetailListRspInstance> instanceSetter) {
+    public GetJobInfoResponseBodyJob withInstance(Consumer<GetTaskDetailListRspJobsInstance> instanceSetter) {
         if(this.instance == null ){
-            this.instance = new GetTaskDetailListRspInstance();
+            this.instance = new GetTaskDetailListRspJobsInstance();
             instanceSetter.accept(this.instance);
         }
         
@@ -311,11 +311,11 @@ public class GetJobInfoResponseBodyJob  {
      * Get instance
      * @return instance
      */
-    public GetTaskDetailListRspInstance getInstance() {
+    public GetTaskDetailListRspJobsInstance getInstance() {
         return instance;
     }
 
-    public void setInstance(GetTaskDetailListRspInstance instance) {
+    public void setInstance(GetTaskDetailListRspJobsInstance instance) {
         this.instance = instance;
     }
 

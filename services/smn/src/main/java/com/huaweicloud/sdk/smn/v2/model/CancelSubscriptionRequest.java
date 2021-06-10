@@ -32,7 +32,7 @@ public class CancelSubscriptionRequest  {
 
 
     /**
-     * Topic的唯一的资源标识，可通过[查询主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
+     * 订阅者的唯一的资源标识，可通过[查询订阅者列表](https://support.huaweicloud.com/api-smn/ListSubscriptions.html)获取该标识。
      * @return subscriptionUrn
      */
     public String getSubscriptionUrn() {

@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 回源HOST对象
+ * OriginHostRequest
  */
 public class OriginHostRequest  {
 

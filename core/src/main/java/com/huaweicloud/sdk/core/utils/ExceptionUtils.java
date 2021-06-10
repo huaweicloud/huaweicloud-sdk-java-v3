@@ -22,10 +22,13 @@
 package com.huaweicloud.sdk.core.utils;
 
 import com.huaweicloud.sdk.core.Constants;
+import com.huaweicloud.sdk.core.exception.CallTimeoutException;
+import com.huaweicloud.sdk.core.exception.ConnectionTimeoutException;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
@@ -33,6 +36,8 @@ import java.util.Objects;
  * @author HuaweiCloud_SDK
  */
 public final class ExceptionUtils {
+    private static final String CONNECT_TIMEOUT_MSG = "connect timed out";
+
     /**
      * The utility class should hide the public constructor
      */
@@ -108,5 +113,14 @@ public final class ExceptionUtils {
                 }
             }
         });
+    }
+
+    public static void mapSocketTimeoutException(String originMsg, Throwable cause) {
+        // distinguish connection timeout and other timeout, ConnectionTimeoutException should be retried
+        if (cause.getMessage().toLowerCase(Locale.ROOT).contains(CONNECT_TIMEOUT_MSG)) {
+            throw new ConnectionTimeoutException(cause);
+        }
+        // if idempotent of the interfaces has been realized, CallTimeoutException could be retried
+        throw new CallTimeoutException(originMsg, cause);
     }
 }

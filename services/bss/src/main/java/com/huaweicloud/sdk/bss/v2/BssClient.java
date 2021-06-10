@@ -656,6 +656,50 @@ public class BssClient {
     }
 
     /**
+     * 查询资源内使用量
+     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     *
+     * @param ListFreeResourceUsagesRequest 请求对象
+     * @return ListFreeResourceUsagesResponse
+     */
+    public ListFreeResourceUsagesResponse listFreeResourceUsages(ListFreeResourceUsagesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listFreeResourceUsages);
+    }
+
+    /**
+     * 查询资源内使用量
+     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     *
+     * @param ListFreeResourceUsagesRequest 请求对象
+     * @return SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>
+     */
+    public SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsagesInvoker(ListFreeResourceUsagesRequest request) {
+        return new SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request, BssMeta.listFreeResourceUsages, hcClient);
+    }
+
+    /**
+     * 查询资源包列表
+     * 功能描述：查询资源包列表
+     *
+     * @param ListFreeResourcesRequest 请求对象
+     * @return ListFreeResourcesResponse
+     */
+    public ListFreeResourcesResponse listFreeResources(ListFreeResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listFreeResources);
+    }
+
+    /**
+     * 查询资源包列表
+     * 功能描述：查询资源包列表
+     *
+     * @param ListFreeResourcesRequest 请求对象
+     * @return SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>
+     */
+    public SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResourcesInvoker(ListFreeResourcesRequest request) {
+        return new SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>(request, BssMeta.listFreeResources, hcClient);
+    }
+
+    /**
      * 查询精英服务商列表
      * 功能描述：华为云伙伴能力中心（一级经销商）可以查询精英服务商（二级经销商）列表。
      *

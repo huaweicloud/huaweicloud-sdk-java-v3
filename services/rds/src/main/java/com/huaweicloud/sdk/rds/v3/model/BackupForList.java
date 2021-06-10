@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.rds.v3.model.BackupDatabase;
-import com.huaweicloud.sdk.rds.v3.model.Datastore;
+import com.huaweicloud.sdk.rds.v3.model.BackupDatastore;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -265,7 +265,13 @@ public class BackupForList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore;
+    private BackupDatastore datastore;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="associated_with_ddm")
+    
+    private Boolean associatedWithDdm;
 
     public BackupForList withId(String id) {
         this.id = id;
@@ -479,14 +485,14 @@ public class BackupForList  {
 
     
 
-    public BackupForList withDatastore(Datastore datastore) {
+    public BackupForList withDatastore(BackupDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public BackupForList withDatastore(Consumer<Datastore> datastoreSetter) {
+    public BackupForList withDatastore(Consumer<BackupDatastore> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new Datastore();
+            this.datastore = new BackupDatastore();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -498,12 +504,34 @@ public class BackupForList  {
      * Get datastore
      * @return datastore
      */
-    public Datastore getDatastore() {
+    public BackupDatastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(Datastore datastore) {
+    public void setDatastore(BackupDatastore datastore) {
         this.datastore = datastore;
+    }
+
+    
+
+    public BackupForList withAssociatedWithDdm(Boolean associatedWithDdm) {
+        this.associatedWithDdm = associatedWithDdm;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否已被DDM实例关联。
+     * @return associatedWithDdm
+     */
+    public Boolean getAssociatedWithDdm() {
+        return associatedWithDdm;
+    }
+
+    public void setAssociatedWithDdm(Boolean associatedWithDdm) {
+        this.associatedWithDdm = associatedWithDdm;
     }
 
     
@@ -526,11 +554,12 @@ public class BackupForList  {
             Objects.equals(this.status, backupForList.status) &&
             Objects.equals(this.type, backupForList.type) &&
             Objects.equals(this.size, backupForList.size) &&
-            Objects.equals(this.datastore, backupForList.datastore);
+            Objects.equals(this.datastore, backupForList.datastore) &&
+            Objects.equals(this.associatedWithDdm, backupForList.associatedWithDdm);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, instanceId, name, databases, beginTime, endTime, status, type, size, datastore);
+        return Objects.hash(id, instanceId, name, databases, beginTime, endTime, status, type, size, datastore, associatedWithDdm);
     }
     @Override
     public String toString() {
@@ -546,6 +575,7 @@ public class BackupForList  {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    associatedWithDdm: ").append(toIndentedString(associatedWithDdm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

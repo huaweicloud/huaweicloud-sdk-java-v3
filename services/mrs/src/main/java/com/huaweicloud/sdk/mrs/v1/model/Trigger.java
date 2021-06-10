@@ -50,7 +50,7 @@ public class Trigger  {
 
 
     /**
-     * 指标名称。  该触发条件会依据该名称对应指标的值来进行判断。  最大长度为64个字符。  支持的指标名称请参考[表12](https://support.huaweicloud.com/api-mrs/mrs_02_0028.html#mrs_02_0028__t27de3279a99a48968dacb015c498d9cb)。
+     * 指标名称。  该触发条件会依据该名称对应指标的值来进行判断。  最大长度为64个字符。
      * @return metricName
      */
     public String getMetricName() {
@@ -72,7 +72,7 @@ public class Trigger  {
 
 
     /**
-     * 指标阈值。  触发该条件的指标阈值，只允许输入整数或者带两位小数的数，metric_name对应的指标数值类型和有效取值范围，请参考[表12](https://support.huaweicloud.com/api-mrs/mrs_02_0028.html#mrs_02_0028__t27de3279a99a48968dacb015c498d9cb)。
+     * 指标阈值。  触发该条件的指标阈值，只允许输入整数或者带两位小数的数。
      * @return metricValue
      */
     public String getMetricValue() {
@@ -94,7 +94,7 @@ public class Trigger  {
 
 
     /**
-     * 指标判断逻辑运算符，包括：  LT：小于 GT：大于 LTOE：小于等于 GTOE：大于等于
+     * 指标判断逻辑运算符，包括：  - LT：小于 - GT：大于 - LTOE：小于等于 - GTOE：大于等于
      * @return comparisonOperator
      */
     public String getComparisonOperator() {

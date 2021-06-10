@@ -238,7 +238,7 @@ public class MeetingClient {
     }
 
     /**
-     * 分配专用云会议室
+     * 分配云会议室
      * 企业管理员通过该接口将云会议室分配给用户、硬终端（当前仅支持分配TE10、TE20、HUAWEI Board、HUAWEI Bar 500及HUAWEI Box系列硬件终端）。云会议室分配给硬件终端后，需要重启或重新激活硬件终端。若需要管理云会议室、预约会议、录制会议或进行完整的会控操作，请同时将该云会议室分配给会议用户。
      *
      * @param AssociateVmrRequest 请求对象
@@ -249,7 +249,7 @@ public class MeetingClient {
     }
 
     /**
-     * 分配专用云会议室
+     * 分配云会议室
      * 企业管理员通过该接口将云会议室分配给用户、硬终端（当前仅支持分配TE10、TE20、HUAWEI Board、HUAWEI Bar 500及HUAWEI Box系列硬件终端）。云会议室分配给硬件终端后，需要重启或重新激活硬件终端。若需要管理云会议室、预约会议、录制会议或进行完整的会控操作，请同时将该云会议室分配给会议用户。
      *
      * @param AssociateVmrRequest 请求对象
@@ -700,6 +700,28 @@ public class MeetingClient {
     }
 
     /**
+     * 预约网络研讨会
+     * 您可根据需要预约网络研讨会。注意：暂不支持添加外部联系人作为与会嘉宾
+     *
+     * @param CreateWebinarRequest 请求对象
+     * @return CreateWebinarResponse
+     */
+    public CreateWebinarResponse createWebinar(CreateWebinarRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createWebinar);
+    }
+
+    /**
+     * 预约网络研讨会
+     * 您可根据需要预约网络研讨会。注意：暂不支持添加外部联系人作为与会嘉宾
+     *
+     * @param CreateWebinarRequest 请求对象
+     * @return SyncInvoker<CreateWebinarRequest, CreateWebinarResponse>
+     */
+    public SyncInvoker<CreateWebinarRequest, CreateWebinarResponse> createWebinarInvoker(CreateWebinarRequest request) {
+        return new SyncInvoker<CreateWebinarRequest, CreateWebinarResponse>(request, MeetingMeta.createWebinar, hcClient);
+    }
+
+    /**
      * 删除与会者
      * 删除与会者。
      *
@@ -744,8 +766,8 @@ public class MeetingClient {
     }
 
     /**
-     * 删除专用云会议室
-     * 企业管理员通过该接口删除企业的专用云会议室
+     * 删除云会议室
+     * 企业管理员通过该接口删除企业的云会议室
      *
      * @param DeleteCorpVmrRequest 请求对象
      * @return DeleteCorpVmrResponse
@@ -755,8 +777,8 @@ public class MeetingClient {
     }
 
     /**
-     * 删除专用云会议室
-     * 企业管理员通过该接口删除企业的专用云会议室
+     * 删除云会议室
+     * 企业管理员通过该接口删除企业的云会议室
      *
      * @param DeleteCorpVmrRequest 请求对象
      * @return SyncInvoker<DeleteCorpVmrRequest, DeleteCorpVmrResponse>
@@ -854,8 +876,30 @@ public class MeetingClient {
     }
 
     /**
-     * 从用户或终端回收企业专用VMR
-     * 给企业用户回收vmr，需要做好纵向越权校验，避免企业管理员给其他企业的账号分配
+     * 取消网络研讨会
+     * 您可根据需要取消网络研讨会。
+     *
+     * @param DeleteWebinarRequest 请求对象
+     * @return DeleteWebinarResponse
+     */
+    public DeleteWebinarResponse deleteWebinar(DeleteWebinarRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.deleteWebinar);
+    }
+
+    /**
+     * 取消网络研讨会
+     * 您可根据需要取消网络研讨会。
+     *
+     * @param DeleteWebinarRequest 请求对象
+     * @return SyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>
+     */
+    public SyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse> deleteWebinarInvoker(DeleteWebinarRequest request) {
+        return new SyncInvoker<DeleteWebinarRequest, DeleteWebinarResponse>(request, MeetingMeta.deleteWebinar, hcClient);
+    }
+
+    /**
+     * 回收云会议室
+     * 企业管理员通过该接口回收云会议室
      *
      * @param DisassociateVmrRequest 请求对象
      * @return DisassociateVmrResponse
@@ -865,8 +909,8 @@ public class MeetingClient {
     }
 
     /**
-     * 从用户或终端回收企业专用VMR
-     * 给企业用户回收vmr，需要做好纵向越权校验，避免企业管理员给其他企业的账号分配
+     * 回收云会议室
+     * 企业管理员通过该接口回收云会议室
      *
      * @param DisassociateVmrRequest 请求对象
      * @return SyncInvoker<DisassociateVmrRequest, DisassociateVmrResponse>
@@ -983,6 +1027,72 @@ public class MeetingClient {
      */
     public SyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse> inviteWithPwdInvoker(InviteWithPwdRequest request) {
         return new SyncInvoker<InviteWithPwdRequest, InviteWithPwdResponse>(request, MeetingMeta.inviteWithPwd, hcClient);
+    }
+
+    /**
+     * 查询历史召开的网络研讨会列表
+     * 查询历史召开的网络研讨会列表，企业管理员可查询企业内所有历史召开的网络研讨会，普通账号查询自己历史召开的网络研讨会
+     *
+     * @param ListHistoryWebinarsRequest 请求对象
+     * @return ListHistoryWebinarsResponse
+     */
+    public ListHistoryWebinarsResponse listHistoryWebinars(ListHistoryWebinarsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.listHistoryWebinars);
+    }
+
+    /**
+     * 查询历史召开的网络研讨会列表
+     * 查询历史召开的网络研讨会列表，企业管理员可查询企业内所有历史召开的网络研讨会，普通账号查询自己历史召开的网络研讨会
+     *
+     * @param ListHistoryWebinarsRequest 请求对象
+     * @return SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>
+     */
+    public SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> listHistoryWebinarsInvoker(ListHistoryWebinarsRequest request) {
+        return new SyncInvoker<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse>(request, MeetingMeta.listHistoryWebinars, hcClient);
+    }
+
+    /**
+     * 查询正在召开的网络研讨会列表
+     * 查询正在召开的网络研讨会列表：企业管理员可查询企业内所有正在召开的网络研讨会，普通账号查询自己正在召开的网络研讨会
+     *
+     * @param ListOngoingWebinarsRequest 请求对象
+     * @return ListOngoingWebinarsResponse
+     */
+    public ListOngoingWebinarsResponse listOngoingWebinars(ListOngoingWebinarsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.listOngoingWebinars);
+    }
+
+    /**
+     * 查询正在召开的网络研讨会列表
+     * 查询正在召开的网络研讨会列表：企业管理员可查询企业内所有正在召开的网络研讨会，普通账号查询自己正在召开的网络研讨会
+     *
+     * @param ListOngoingWebinarsRequest 请求对象
+     * @return SyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>
+     */
+    public SyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> listOngoingWebinarsInvoker(ListOngoingWebinarsRequest request) {
+        return new SyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse>(request, MeetingMeta.listOngoingWebinars, hcClient);
+    }
+
+    /**
+     * 查询即将召开的网络研讨会列表
+     * 查询即将召开的网络研讨会列表：企业管理员可查询企业内所有即将召开的网络研讨会，普通账号查询自己即将召开的网络研讨会
+     *
+     * @param ListUpComingWebinarsRequest 请求对象
+     * @return ListUpComingWebinarsResponse
+     */
+    public ListUpComingWebinarsResponse listUpComingWebinars(ListUpComingWebinarsRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.listUpComingWebinars);
+    }
+
+    /**
+     * 查询即将召开的网络研讨会列表
+     * 查询即将召开的网络研讨会列表：企业管理员可查询企业内所有即将召开的网络研讨会，普通账号查询自己即将召开的网络研讨会
+     *
+     * @param ListUpComingWebinarsRequest 请求对象
+     * @return SyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>
+     */
+    public SyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> listUpComingWebinarsInvoker(ListUpComingWebinarsRequest request) {
+        return new SyncInvoker<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse>(request, MeetingMeta.listUpComingWebinars, hcClient);
     }
 
     /**
@@ -1360,8 +1470,30 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询专用云会议室
-     * 企业管理员通过该接口分页查询企业的专用云会议室。
+     * 企业管理员分页查询企业资源订单列表
+     * 企业管理员根据条件查询企业资源订单列表
+     *
+     * @param SearchCorpResourcesRequest 请求对象
+     * @return SearchCorpResourcesResponse
+     */
+    public SearchCorpResourcesResponse searchCorpResources(SearchCorpResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.searchCorpResources);
+    }
+
+    /**
+     * 企业管理员分页查询企业资源订单列表
+     * 企业管理员根据条件查询企业资源订单列表
+     *
+     * @param SearchCorpResourcesRequest 请求对象
+     * @return SyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>
+     */
+    public SyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse> searchCorpResourcesInvoker(SearchCorpResourcesRequest request) {
+        return new SyncInvoker<SearchCorpResourcesRequest, SearchCorpResourcesResponse>(request, MeetingMeta.searchCorpResources, hcClient);
+    }
+
+    /**
+     * 企业管理员分页查询企业云会议室
+     * 企业管理员通过该接口分页查询企业的云会议室。
      *
      * @param SearchCorpVmrRequest 请求对象
      * @return SearchCorpVmrResponse
@@ -1371,8 +1503,8 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询专用云会议室
-     * 企业管理员通过该接口分页查询企业的专用云会议室。
+     * 企业管理员分页查询企业云会议室
+     * 企业管理员通过该接口分页查询企业的云会议室。
      *
      * @param SearchCorpVmrRequest 请求对象
      * @return SyncInvoker<SearchCorpVmrRequest, SearchCorpVmrResponse>
@@ -1536,8 +1668,8 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询用户云会议室
-     * 企业用户通过该接口查询个人已分配的云会议室，包括个人及专用两种。
+     * 普通用户分页查询云会议室及个人会议ID
+     * 企业用户通过该接口查询个人已分配的云会议室及个人会议ID。
      *
      * @param SearchMemberVmrRequest 请求对象
      * @return SearchMemberVmrResponse
@@ -1547,36 +1679,14 @@ public class MeetingClient {
     }
 
     /**
-     * 分页查询用户云会议室
-     * 企业用户通过该接口查询个人已分配的云会议室，包括个人及专用两种。
+     * 普通用户分页查询云会议室及个人会议ID
+     * 企业用户通过该接口查询个人已分配的云会议室及个人会议ID。
      *
      * @param SearchMemberVmrRequest 请求对象
      * @return SyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>
      */
     public SyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse> searchMemberVmrInvoker(SearchMemberVmrRequest request) {
         return new SyncInvoker<SearchMemberVmrRequest, SearchMemberVmrResponse>(request, MeetingMeta.searchMemberVmr, hcClient);
-    }
-
-    /**
-     * 查询用户VMR列表
-     * 查询用户VMR列表。
-     *
-     * @param SearchMemberVmrByCloudLinkRequest 请求对象
-     * @return SearchMemberVmrByCloudLinkResponse
-     */
-    public SearchMemberVmrByCloudLinkResponse searchMemberVmrByCloudLink(SearchMemberVmrByCloudLinkRequest request) {
-        return hcClient.syncInvokeHttp(request, MeetingMeta.searchMemberVmrByCloudLink);
-    }
-
-    /**
-     * 查询用户VMR列表
-     * 查询用户VMR列表。
-     *
-     * @param SearchMemberVmrByCloudLinkRequest 请求对象
-     * @return SyncInvoker<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse>
-     */
-    public SyncInvoker<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> searchMemberVmrByCloudLinkInvoker(SearchMemberVmrByCloudLinkRequest request) {
-        return new SyncInvoker<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse>(request, MeetingMeta.searchMemberVmrByCloudLink, hcClient);
     }
 
     /**
@@ -2416,6 +2526,28 @@ public class MeetingClient {
     }
 
     /**
+     * 查询直播间高级设置
+     * 查询直播间高级设置
+     *
+     * @param ShowRoomSettingRequest 请求对象
+     * @return ShowRoomSettingResponse
+     */
+    public ShowRoomSettingResponse showRoomSetting(ShowRoomSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showRoomSetting);
+    }
+
+    /**
+     * 查询直播间高级设置
+     * 查询直播间高级设置
+     *
+     * @param ShowRoomSettingRequest 请求对象
+     * @return SyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>
+     */
+    public SyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse> showRoomSettingInvoker(ShowRoomSettingRequest request) {
+        return new SyncInvoker<ShowRoomSettingRequest, ShowRoomSettingResponse>(request, MeetingMeta.showRoomSetting, hcClient);
+    }
+
+    /**
      * 查询SP的共享资源使用信息
      * SP管理查询所属SP的共享资源使用信息
      *
@@ -2479,6 +2611,28 @@ public class MeetingClient {
      */
     public SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetailInvoker(ShowUserDetailRequest request) {
         return new SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>(request, MeetingMeta.showUserDetail, hcClient);
+    }
+
+    /**
+     * 查询网络研讨会详情
+     * 根据conferenceId查询网络研讨会详情。
+     *
+     * @param ShowWebinarRequest 请求对象
+     * @return ShowWebinarResponse
+     */
+    public ShowWebinarResponse showWebinar(ShowWebinarRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showWebinar);
+    }
+
+    /**
+     * 查询网络研讨会详情
+     * 根据conferenceId查询网络研讨会详情。
+     *
+     * @param ShowWebinarRequest 请求对象
+     * @return SyncInvoker<ShowWebinarRequest, ShowWebinarResponse>
+     */
+    public SyncInvoker<ShowWebinarRequest, ShowWebinarResponse> showWebinarInvoker(ShowWebinarRequest request) {
+        return new SyncInvoker<ShowWebinarRequest, ShowWebinarResponse>(request, MeetingMeta.showWebinar, hcClient);
     }
 
     /**
@@ -2680,8 +2834,8 @@ public class MeetingClient {
     }
 
     /**
-     * 修改用户云会议室
-     * 企业用户登录后可以修改分配给用户的专用云会议室及个人云会议室。
+     * 修改用会议室及个人会议ID信息
+     * 企业用户登录后可以修改分配给用户的云会议室及个人会议ID。
      *
      * @param UpdateMemberVmrRequest 请求对象
      * @return UpdateMemberVmrResponse
@@ -2691,8 +2845,8 @@ public class MeetingClient {
     }
 
     /**
-     * 修改用户云会议室
-     * 企业用户登录后可以修改分配给用户的专用云会议室及个人云会议室。
+     * 修改用会议室及个人会议ID信息
+     * 企业用户登录后可以修改分配给用户的云会议室及个人会议ID。
      *
      * @param UpdateMemberVmrRequest 请求对象
      * @return SyncInvoker<UpdateMemberVmrRequest, UpdateMemberVmrResponse>
@@ -2812,6 +2966,28 @@ public class MeetingClient {
     }
 
     /**
+     * 高级设置 - 直播间设置
+     * 保存直播间高级设置。如有部分配置信息修改，则其他未修改的原始值也需要传入，否则部分字段会替换为默认值(即：只支持全量保存)
+     *
+     * @param UpdateRoomSettingRequest 请求对象
+     * @return UpdateRoomSettingResponse
+     */
+    public UpdateRoomSettingResponse updateRoomSetting(UpdateRoomSettingRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateRoomSetting);
+    }
+
+    /**
+     * 高级设置 - 直播间设置
+     * 保存直播间高级设置。如有部分配置信息修改，则其他未修改的原始值也需要传入，否则部分字段会替换为默认值(即：只支持全量保存)
+     *
+     * @param UpdateRoomSettingRequest 请求对象
+     * @return SyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>
+     */
+    public SyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse> updateRoomSettingInvoker(UpdateRoomSettingRequest request) {
+        return new SyncInvoker<UpdateRoomSettingRequest, UpdateRoomSettingResponse>(request, MeetingMeta.updateRoomSetting, hcClient);
+    }
+
+    /**
      * 会中修改配置
      * 会中修改配置。
      *
@@ -2875,6 +3051,50 @@ public class MeetingClient {
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
         return new SyncInvoker<UpdateUserRequest, UpdateUserResponse>(request, MeetingMeta.updateUser, hcClient);
+    }
+
+    /**
+     * 编辑网络研讨会
+     * 您可根据需要修改普通网络研讨会和周期网络研讨会。注意：暂不支持添加外部联系人作为与会嘉宾
+     *
+     * @param UpdateWebinarRequest 请求对象
+     * @return UpdateWebinarResponse
+     */
+    public UpdateWebinarResponse updateWebinar(UpdateWebinarRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateWebinar);
+    }
+
+    /**
+     * 编辑网络研讨会
+     * 您可根据需要修改普通网络研讨会和周期网络研讨会。注意：暂不支持添加外部联系人作为与会嘉宾
+     *
+     * @param UpdateWebinarRequest 请求对象
+     * @return SyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>
+     */
+    public SyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse> updateWebinarInvoker(UpdateWebinarRequest request) {
+        return new SyncInvoker<UpdateWebinarRequest, UpdateWebinarResponse>(request, MeetingMeta.updateWebinar, hcClient);
+    }
+
+    /**
+     * 开放接口 - 文件上传
+     * 文件上传的开放接口
+     *
+     * @param UploadFileRequest 请求对象
+     * @return UploadFileResponse
+     */
+    public UploadFileResponse uploadFile(UploadFileRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.uploadFile);
+    }
+
+    /**
+     * 开放接口 - 文件上传
+     * 文件上传的开放接口
+     *
+     * @param UploadFileRequest 请求对象
+     * @return SyncInvoker<UploadFileRequest, UploadFileResponse>
+     */
+    public SyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileInvoker(UploadFileRequest request) {
+        return new SyncInvoker<UploadFileRequest, UploadFileResponse>(request, MeetingMeta.uploadFile, hcClient);
     }
 
     /**

@@ -348,6 +348,50 @@ public class BssintlClient {
     }
 
     /**
+     * 查询资源内使用量
+     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     *
+     * @param ListFreeResourceUsagesRequest 请求对象
+     * @return ListFreeResourceUsagesResponse
+     */
+    public ListFreeResourceUsagesResponse listFreeResourceUsages(ListFreeResourceUsagesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listFreeResourceUsages);
+    }
+
+    /**
+     * 查询资源内使用量
+     * 功能描述：客户在自建平台查询客户自己的资源包列表
+     *
+     * @param ListFreeResourceUsagesRequest 请求对象
+     * @return SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>
+     */
+    public SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsagesInvoker(ListFreeResourceUsagesRequest request) {
+        return new SyncInvoker<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse>(request, BssintlMeta.listFreeResourceUsages, hcClient);
+    }
+
+    /**
+     * 查询资源包列表
+     * 功能描述：查询资源包列表
+     *
+     * @param ListFreeResourcesRequest 请求对象
+     * @return ListFreeResourcesResponse
+     */
+    public ListFreeResourcesResponse listFreeResources(ListFreeResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listFreeResources);
+    }
+
+    /**
+     * 查询资源包列表
+     * 功能描述：查询资源包列表
+     *
+     * @param ListFreeResourcesRequest 请求对象
+     * @return SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>
+     */
+    public SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResourcesInvoker(ListFreeResourcesRequest request) {
+        return new SyncInvoker<ListFreeResourcesRequest, ListFreeResourcesResponse>(request, BssintlMeta.listFreeResources, hcClient);
+    }
+
+    /**
      * 查询使用量单位列表
      * 功能描述：伙伴在伙伴销售平台上查询资源使用量的度量单位及名称，度量单位类型等。
      *

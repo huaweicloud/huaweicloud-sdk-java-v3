@@ -34,7 +34,7 @@ public class TaskNodeGroups  {
     
     private String nodeSize;
     /**
-     * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  SATA：普通IO SAS：高IO SSD：超高IO
+     * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
      */
     public static final class DataVolumeTypeEnum {
 
@@ -54,6 +54,11 @@ public class TaskNodeGroups  {
          */
         public static final DataVolumeTypeEnum SSD = new DataVolumeTypeEnum("SSD");
         
+        /**
+         * Enum GPSSD for value: "GPSSD"
+         */
+        public static final DataVolumeTypeEnum GPSSD = new DataVolumeTypeEnum("GPSSD");
+        
 
         private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -62,6 +67,7 @@ public class TaskNodeGroups  {
             map.put("SATA", SATA);
             map.put("SAS", SAS);
             map.put("SSD", SSD);
+            map.put("GPSSD", GPSSD);
             return Collections.unmodifiableMap(map);
         }
 
@@ -175,7 +181,7 @@ public class TaskNodeGroups  {
 
 
     /**
-     * Task节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。
+     * Task节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](mrs_01_9006.xml)和[MRS所使用的裸金属服务器规格](mrs_01_9001.xml)。
      * @return nodeSize
      */
     public String getNodeSize() {
@@ -197,7 +203,7 @@ public class TaskNodeGroups  {
 
 
     /**
-     * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  SATA：普通IO SAS：高IO SSD：超高IO
+     * Task节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
      * @return dataVolumeType
      */
     public DataVolumeTypeEnum getDataVolumeType() {
@@ -219,7 +225,7 @@ public class TaskNodeGroups  {
 
 
     /**
-     * Task节点数据磁盘存储数目  取值范围：0～10
+     * Task节点数据磁盘存储数目，取值范围：0～10。
      * minimum: 0
      * maximum: 10
      * @return dataVolumeCount
@@ -243,7 +249,7 @@ public class TaskNodeGroups  {
 
 
     /**
-     * Task节点数据磁盘存储大小  取值范围：100GB～32000GB,传值只需填数字,不需要带单位GB
+     * Task节点数据磁盘存储大小。  取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
      * minimum: 100
      * maximum: 32000
      * @return dataVolumeSize

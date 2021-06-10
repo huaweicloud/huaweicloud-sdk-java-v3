@@ -19,43 +19,21 @@ public class AddSubscriptionRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoint")
-    
-    private String endpoint;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol")
     
     private String protocol;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="endpoint")
+    
+    private String endpoint;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remark")
     
     private String remark;
-
-    public AddSubscriptionRequestBody withEndpoint(String endpoint) {
-        this.endpoint = endpoint;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 说明：http协议，接入点必须以“http://”开头。  https协议，接入点必须以“https://”开头。  email协议，接入点必须是邮件地址。  sms协议，接入点必须是一个电话号码。  functionstage协议，接入点必须是一个函数。  functiongraph协议，接入点必须是一个函数工作流。  dms协议，接入点必须是一个消息队列。  application协议，接入点必须是一个应用平台的设备终端。  callnotify协议，接入点必须是一个电话号码。
-     * @return endpoint
-     */
-    public String getEndpoint() {
-        return endpoint;
-    }
-
-    public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
-    }
-
-    
 
     public AddSubscriptionRequestBody withProtocol(String protocol) {
         this.protocol = protocol;
@@ -66,7 +44,7 @@ public class AddSubscriptionRequestBody  {
 
 
     /**
-     * 不同协议对应不同的endpoint（接受消息的接入点）。 目前支持的协议包括：  “email”：邮件传输协议，endpoint为邮箱地址。  “default”  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “functiongraph”：FunctionGraph（工作流）传输协议，endpoint为由一组函数编排成的工作流。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。  “callnotify”：语音通知传输协议，endpoint为手机号码。
+     * 不同协议对应不同的endpoint（接受消息的接入点）。 目前支持的协议包括：  “email”：邮件传输协议，endpoint为邮箱地址。  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。  “callnotify”：语音通知传输协议，endpoint为手机号码。
      * @return protocol
      */
     public String getProtocol() {
@@ -75,6 +53,28 @@ public class AddSubscriptionRequestBody  {
 
     public void setProtocol(String protocol) {
         this.protocol = protocol;
+    }
+
+    
+
+    public AddSubscriptionRequestBody withEndpoint(String endpoint) {
+        this.endpoint = endpoint;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 说明：  https协议，接入点必须以“https://”开头。  email协议，接入点必须是邮件地址。  sms协议，接入点必须是一个电话号码。  functionstage协议，接入点必须是一个函数。  dms协议，接入点必须是一个消息队列。  application协议，接入点必须是一个应用平台的设备终端。  callnotify协议，接入点必须是一个电话号码。
+     * @return endpoint
+     */
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
     }
 
     
@@ -110,20 +110,20 @@ public class AddSubscriptionRequestBody  {
             return false;
         }
         AddSubscriptionRequestBody addSubscriptionRequestBody = (AddSubscriptionRequestBody) o;
-        return Objects.equals(this.endpoint, addSubscriptionRequestBody.endpoint) &&
-            Objects.equals(this.protocol, addSubscriptionRequestBody.protocol) &&
+        return Objects.equals(this.protocol, addSubscriptionRequestBody.protocol) &&
+            Objects.equals(this.endpoint, addSubscriptionRequestBody.endpoint) &&
             Objects.equals(this.remark, addSubscriptionRequestBody.remark);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(endpoint, protocol, remark);
+        return Objects.hash(protocol, endpoint, remark);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddSubscriptionRequestBody {\n");
-        sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("}");
         return sb.toString();

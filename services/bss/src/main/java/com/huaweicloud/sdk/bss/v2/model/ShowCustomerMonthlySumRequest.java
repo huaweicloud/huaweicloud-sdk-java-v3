@@ -112,7 +112,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
+     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -134,7 +134,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * 偏移量，从0开始。默认值为0。
+     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
      * minimum: 0
      * maximum: 2147483647
      * @return offset
@@ -182,7 +182,7 @@ public class ShowCustomerMonthlySumRequest  {
 
 
     /**
-     * 查询方式。 oneself：自身sub_customer：企业子客户all：自己和企业子客户 默认为all，如果没有企业子客户，all的时候也是查询自己的。
+     * 查询方式。oneself：自身sub_customer：企业子客户all：自己和企业子客户默认为all，如果没有企业子客户，all的时候也是查询自己的。
      * @return method
      */
     public String getMethod() {

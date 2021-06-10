@@ -32,13 +32,24 @@ import java.util.concurrent.CompletableFuture;
  * @author HuaweiCloud_SDK
  */
 public class AsyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, AsyncInvoker<ReqT, ResT>> {
-
+    /**
+     * The default constructor for AsyncInvoker.
+     *
+     * @param req original request
+     * @param meta definitions for request and response used to build original HttpRequest
+     * and extract original HttpResponse
+     * @param hcClient encapsulated client before default http client
+     */
     public AsyncInvoker(ReqT req, HttpRequestDef<ReqT, ResT> meta, HcClient hcClient) {
         super(req, meta, hcClient);
     }
 
+    /**
+     * This method will invoke asynchronous request for specified interface.
+     *
+     * @return CompletableFuture
+     */
     public CompletableFuture<ResT> invoke() {
-        return this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange);
+        return retry(() -> this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange));
     }
-
 }

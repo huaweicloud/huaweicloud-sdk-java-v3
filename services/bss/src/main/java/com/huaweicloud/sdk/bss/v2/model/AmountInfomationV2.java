@@ -79,7 +79,7 @@ public class AmountInfomationV2  {
     }
 
     /**
-     * 费用项。 具体请参见表6。
+     * 费用项。 具体请参见表7。
      * @return discounts
      */
     public List<DiscountItemV2> getDiscounts() {

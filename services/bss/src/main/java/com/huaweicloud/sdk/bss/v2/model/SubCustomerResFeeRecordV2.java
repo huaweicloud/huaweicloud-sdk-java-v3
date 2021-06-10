@@ -446,7 +446,7 @@ public class SubCustomerResFeeRecordV2  {
 
 
     /**
-     * 资源的使用量单位，您可以调用查询使用量单位列表接口获取。
+     * 资源的使用量单位，您可以调用查询度量单位列表接口获取。
      * @return usageMeasureId
      */
     public Integer getUsageMeasureId() {
@@ -490,7 +490,7 @@ public class SubCustomerResFeeRecordV2  {
 
 
     /**
-     * 套餐内使用量单位，您可以调用查询使用量单位列表接口获取。
+     * 套餐内使用量单位，您可以调用查询度量单位列表接口获取。
      * @return freeResourceMeasureId
      */
     public Integer getFreeResourceMeasureId() {
@@ -1018,7 +1018,7 @@ public class SubCustomerResFeeRecordV2  {
 
 
     /**
-     * 产品实例大小的单位，仅线性产品有该字段。您可以调用查询使用量单位列表接口获取。
+     * 产品实例大小的单位，仅线性产品有该字段。您可以调用查询度量单位列表接口获取。
      * @return specSizeMeasureId
      */
     public Integer getSpecSizeMeasureId() {

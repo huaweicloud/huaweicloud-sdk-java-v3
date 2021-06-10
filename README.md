@@ -32,18 +32,19 @@ Java project.
 
 ### Individual Services
 
-You can add depenencies for the specific services only. Take using ECS and VPC SDK for example, you need to import `huaweicloud-sdk-ecs` and `huaweicloud-sdk-vpc` libraries:
+You can add depenencies for the specific services only. Take using ECS and VPC SDK for example, you need to
+import `huaweicloud-sdk-ecs` and `huaweicloud-sdk-vpc` libraries:
 
 ``` xml
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-ecs</artifactId>
-    <version>[3.0.40-rc, 3.1.0-rc)</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-vpc</artifactId>
-    <version>[3.0.40-rc, 3.1.0-rc)</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 ```
 
@@ -51,29 +52,28 @@ You can add depenencies for the specific services only. Take using ECS and VPC S
 
 You can add only one dependency library to import all supported services.(3.0.40-rc or later)：
 
-```xml
+``` xml
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-all</artifactId>
-    <version>3.0.40-rc</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 ```
 
 ### Bundle SDK
 
-If a third-party library conflict occurs, you can import a single bundle library(3.0.40-rc or later). The bundle library contains all supported services and dependent JARs with third-party libraries  relocated to different namespaces：
+If a third-party library conflict occurs, you can import a single bundle library(3.0.40-rc or later). The bundle library
+contains all supported services and dependent JARs with third-party libraries relocated to different namespaces：
 
-```xml
+``` xml
 <dependency>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-bundle</artifactId>
-    <version>3.0.40-rc</version>
+    <version>[3.0.40-rc, 3.1.0)</version>
 </dependency>
 ```
 
 Common conflicts, such as Jackson and okhttp3 version conflicts.
-
-
 
 ## Code Example
 
@@ -159,6 +159,10 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
     * [6.2 Original HTTP Listener](#62-original-http-listener-top)
+* [7. Retry For Request](#7-retry-for-request-top)
+    * [7.1 Synchronous Retry](#71-synchronous-retry-top)
+    * [7.2 Asynchronous Retry](#72-asynchronous-retry-top)
+    * [7.3 Typical Usage Scenarios](#73-typical-usage-scenarios-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
 
@@ -322,11 +326,12 @@ IamClient iamClient = IamClient.newBuilder()
 
 - If you use `region` to initialize {Service}Client, projectId/domainId supports automatic acquisition, you don't need
   to configure it when initializing Credentials.
-  
+
 - Multiple ProjectId situation is **not supported**.
 
-- Supported region list: af-south-1, ap-southeast-1, ap-southeast-2, ap-southeast-3, cn-east-2, cn-east-3,
-  cn-north-1, cn-north-4, cn-south-1, cn-southwest-2, ru-northwest-2. You may get exception such as `Unsupported regionId` if your region don't in the list above.
+- Supported region list: af-south-1, ap-southeast-1, ap-southeast-2, ap-southeast-3, cn-east-2, cn-east-3, cn-north-1,
+  cn-north-4, cn-south-1, cn-southwest-2, ru-northwest-2. You may get exception such as `Unsupported regionId` if your
+  region don't in the list above.
 
 **Comparison of the two ways:**
 
@@ -349,8 +354,9 @@ logger.info(response.toString());
 
 | Level 1 | Notice | Level 2 | Notice |
 | :---- | :---- | :---- | :---- |
-| ConnectionException | Connection error | HostUnreachableException | Host is not reachable |
+| ConnectionException | Connection error | HostUnreachableException | host is not reachable |
 | | | SslHandShakeException | SSL certification error |
+| | | ConnectionTimeoutException | connect timed out |
 | RequestTimeoutException | Request timeout | CallTimeoutException | timeout for single request |
 | | | RetryOutageException | no response after retrying |
 | ServiceResponseException | service response error | ServerResponseException | server inner error, http status code: [500,] |
@@ -503,4 +509,145 @@ VpcClient vpcClient = VpcClient.newBuilder()
     .withCredential(auth)
     .withEndpoint(endpoint)
     .build();
+```
+
+### 7. Retry For Request [:top:](#user-manual-top)
+
+When a request encounters a network exception or flow control on the interface, the request needs to be retried. The
+Java SDK provides the retry method for our users which could be used to the requests of `GET` HTTP method. The retry
+method has been supported on both synchronous client and asynchronous client, if you want to use the retry method, the
+following parameters are required: `maxRetryTimes`, `retryCondition` and `backoffStrategy`.
+
+- _maxRetryTimes_: the max value is 30, you could set to a positive integer no more than 30
+- _retryCondition_: a lambda function, which determine the condition of when to retry, the java SDK provides a default
+  condition, and its code is:
+
+``` java
+/**
+ * The default retry condition, if the exception is ConnectionException or subclass of ConnectionException, the request would be retried.
+ *
+ * @param <ResT> Generics of response classes
+ * @return BiFunction returns true or false which means whether to retry
+ */
+public static <ResT> BiFunction<ResT, SdkException, Boolean> defaultRetryCondition() {
+    return (resp, exception) -> {
+        if (Objects.nonNull(exception)) {
+            return ConnectionException.class.isAssignableFrom(exception.getClass());
+        }
+        return false;
+    };
+}
+```
+
+- _backoffStrategy_: calculate the wait duration before next retry, the java SDK provides the default strategy which
+  combines
+  `random backoff` and `exponential backoff` as the algorithm to calculate the delay time before the next retry.
+
+Now let's begin to introduce how could you use retry for different scenarios.
+
+#### 7.1 Synchronous Retry [:top:](#user-manual-top)
+
+If you want to use retry in synchronous client, you could use `invoker()` method in `{Service}Client`.
+
+Take the interface `ShowJob` of ECS service for example, assume the request would retry at most 5 times, and the retry
+condition use the default condition, the code would be like the following:
+
+``` java
+// initialize the sychronous client
+EcsClient client = EcsClient.newBuilder()
+    .withCredential(basicCredentials)
+    .withRegion(EcsRegion.CN_NORTH_4)
+    .withHttpConfig(config)
+    .build();
+
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = client.showJobInvoker(request)
+    // max retry times
+    .retryTimes(5)
+    // retry condition, which would be retried for ConnectionException
+    .retryCondition(BaseInvoker.defaultRetryCondition())
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
+```
+
+#### 7.2 Asynchronous Retry [:top:](#user-manual-top)
+
+If you want to use retry in asynchronous client, you could use `invoker()` method in `{Service}Client`.
+
+Take the interface `ShowJob` of ECS service for example, assume the request would retry at most 5 times, and the retry
+condition use the default condition, the code would be like the following:
+
+``` java
+// initialize the asychronous client
+EcsAsyncClient asyncClient = EcsAsyncClient.newBuilder()
+    .withCredential(basicCredentials)
+    .withRegion(EcsRegion.CN_NORTH_4)
+    .withHttpConfig(config)
+    .build();
+
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = asyncClient.showJobAsyncInvoker(request)
+    // max retry times
+    .retryTimes(5)
+    // retry condition, which would be retried for ConnectionException
+    .retryCondition(BaseInvoker.defaultRetryCondition())
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
+```
+
+#### 7.3 Typical Usage Scenarios [:top:](#user-manual-top)
+
+**Scenario 1**: If the response status code of the interface is 500(Server Error) or 429(Server Flow Control), retry for
+the request, and the code would be like the following:
+
+``` java 
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    ShowJobResponse response = client.showJobInvoker(request)
+        .retryTimes(3)
+        .retryCondition(
+            (resp, ex) -> Objects.nonNull(ex) && ServiceResponseException.class.isAssignableFrom(ex.getClass())
+                && (((ServiceResponseException) ex).getHttpStatusCode() == 429
+                || ((ServiceResponseException) ex).getHttpStatusCode() == 500))
+        .invoke();
+    logger.info(response.toString());
+} catch (InterruptedException e) {
+    logger.error("InterruptedException", e);
+} catch (ExecutionException e) {
+    logger.error("ExecutionException", e);
+}
+```
+
+**Scenario 2**: Retry for the specified job status, if the job status is success, then stop retry and do some other
+things, and the code would be like the following:
+
+``` java
+String jobId = "{valid job id}";
+ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
+try {
+    // base delay of retry in milliseconeds
+    final int baseDelay = 1000;
+    // max backoff time in retry
+    final int maxBackoffInMilliseconds = 30000;
+
+    ShowJobResponse response = client.showJobInvoker(request)
+    .retryTimes(10)
+    .retryCondition((resp, ex) -> Objects.nonNull(resp) && !resp.getStatus().equals(ShowJobResponse.StatusEnum.SUCCESS))
+    .backoffStrategy(new SdkBackoffStrategy(baseDelay, maxBackoffInMilliseconds))
+    .invoke();
+    logger.info(response.toString());
+} catch (SdkException e) {
+    logger.error("", e);
+}
 ```

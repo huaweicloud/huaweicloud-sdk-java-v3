@@ -73,12 +73,6 @@ public class SlowLogStatistics  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
-    private String startTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="clientIP")
     
     private String clientIP;
@@ -281,28 +275,6 @@ public class SlowLogStatistics  {
 
     
 
-    public SlowLogStatistics withStartTime(String startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 发生时间，UTC时间。
-     * @return startTime
-     */
-    public String getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    
-
     public SlowLogStatistics withClientIP(String clientIP) {
         this.clientIP = clientIP;
         return this;
@@ -343,12 +315,11 @@ public class SlowLogStatistics  {
             Objects.equals(this.users, slowLogStatistics.users) &&
             Objects.equals(this.querySample, slowLogStatistics.querySample) &&
             Objects.equals(this.type, slowLogStatistics.type) &&
-            Objects.equals(this.startTime, slowLogStatistics.startTime) &&
             Objects.equals(this.clientIP, slowLogStatistics.clientIP);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(count, time, lockTime, rowsSent, rowsExamined, database, users, querySample, type, startTime, clientIP);
+        return Objects.hash(count, time, lockTime, rowsSent, rowsExamined, database, users, querySample, type, clientIP);
     }
     @Override
     public String toString() {
@@ -363,7 +334,6 @@ public class SlowLogStatistics  {
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("    querySample: ").append(toIndentedString(querySample)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    clientIP: ").append(toIndentedString(clientIP)).append("\n");
         sb.append("}");
         return sb.toString();

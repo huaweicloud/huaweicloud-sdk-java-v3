@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.rds.v3.model.BackupDatabase;
-import com.huaweicloud.sdk.rds.v3.model.Datastore;
+import com.huaweicloud.sdk.rds.v3.model.ParaGroupDatastore;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -253,7 +253,13 @@ public class OffSiteBackupForList  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="datastore")
     
-    private Datastore datastore;
+    private ParaGroupDatastore datastore;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="associated_with_ddm")
+    
+    private Boolean associatedWithDdm;
 
     public OffSiteBackupForList withId(String id) {
         this.id = id;
@@ -467,14 +473,14 @@ public class OffSiteBackupForList  {
 
     
 
-    public OffSiteBackupForList withDatastore(Datastore datastore) {
+    public OffSiteBackupForList withDatastore(ParaGroupDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
-    public OffSiteBackupForList withDatastore(Consumer<Datastore> datastoreSetter) {
+    public OffSiteBackupForList withDatastore(Consumer<ParaGroupDatastore> datastoreSetter) {
         if(this.datastore == null ){
-            this.datastore = new Datastore();
+            this.datastore = new ParaGroupDatastore();
             datastoreSetter.accept(this.datastore);
         }
         
@@ -486,12 +492,34 @@ public class OffSiteBackupForList  {
      * Get datastore
      * @return datastore
      */
-    public Datastore getDatastore() {
+    public ParaGroupDatastore getDatastore() {
         return datastore;
     }
 
-    public void setDatastore(Datastore datastore) {
+    public void setDatastore(ParaGroupDatastore datastore) {
         this.datastore = datastore;
+    }
+
+    
+
+    public OffSiteBackupForList withAssociatedWithDdm(Boolean associatedWithDdm) {
+        this.associatedWithDdm = associatedWithDdm;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否已被DDM实例关联。
+     * @return associatedWithDdm
+     */
+    public Boolean getAssociatedWithDdm() {
+        return associatedWithDdm;
+    }
+
+    public void setAssociatedWithDdm(Boolean associatedWithDdm) {
+        this.associatedWithDdm = associatedWithDdm;
     }
 
     
@@ -514,11 +542,12 @@ public class OffSiteBackupForList  {
             Objects.equals(this.status, offSiteBackupForList.status) &&
             Objects.equals(this.type, offSiteBackupForList.type) &&
             Objects.equals(this.size, offSiteBackupForList.size) &&
-            Objects.equals(this.datastore, offSiteBackupForList.datastore);
+            Objects.equals(this.datastore, offSiteBackupForList.datastore) &&
+            Objects.equals(this.associatedWithDdm, offSiteBackupForList.associatedWithDdm);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, instanceId, name, databases, beginTime, endTime, status, type, size, datastore);
+        return Objects.hash(id, instanceId, name, databases, beginTime, endTime, status, type, size, datastore, associatedWithDdm);
     }
     @Override
     public String toString() {
@@ -534,6 +563,7 @@ public class OffSiteBackupForList  {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    associatedWithDdm: ").append(toIndentedString(associatedWithDdm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

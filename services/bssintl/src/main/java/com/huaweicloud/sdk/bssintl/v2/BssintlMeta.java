@@ -649,6 +649,76 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> listFreeResourceUsages = genForlistFreeResourceUsages();
+
+    private static HttpRequestDef<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> genForlistFreeResourceUsages() {
+        // basic
+        HttpRequestDef.Builder<ListFreeResourceUsagesRequest, ListFreeResourceUsagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListFreeResourceUsagesRequest.class, ListFreeResourceUsagesResponse.class)
+                .withName("ListFreeResourceUsages")
+                .withUri("/v2/payments/free-resources/usages/details/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFreeResourceUsagesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListFreeResourceUsagesReq.class,
+            f -> f.withMarshaller(ListFreeResourceUsagesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFreeResourcesRequest, ListFreeResourcesResponse> listFreeResources = genForlistFreeResources();
+
+    private static HttpRequestDef<ListFreeResourcesRequest, ListFreeResourcesResponse> genForlistFreeResources() {
+        // basic
+        HttpRequestDef.Builder<ListFreeResourcesRequest, ListFreeResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListFreeResourcesRequest.class, ListFreeResourcesResponse.class)
+                .withName("ListFreeResources")
+                .withUri("/v2/payments/free-resources/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListFreeResourcesRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ListFreeResourcesReq.class,
+            f -> f.withMarshaller(ListFreeResourcesRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> listMeasureUnits = genForlistMeasureUnits();
 
     private static HttpRequestDef<ListMeasureUnitsRequest, ListMeasureUnitsResponse> genForlistMeasureUnits() {

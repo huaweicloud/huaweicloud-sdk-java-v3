@@ -105,6 +105,18 @@ public class ListOffSiteInstancesRequest  {
     
     private XLanguageEnum xLanguage;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Object offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Object limit;
+
     public ListOffSiteInstancesRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -129,6 +141,50 @@ public class ListOffSiteInstancesRequest  {
 
     
 
+    public ListOffSiteInstancesRequest withOffset(Object offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * @return offset
+     */
+    public Object getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Object offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListOffSiteInstancesRequest withLimit(Object limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * @return limit
+     */
+    public Object getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Object limit) {
+        this.limit = limit;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -138,17 +194,21 @@ public class ListOffSiteInstancesRequest  {
             return false;
         }
         ListOffSiteInstancesRequest listOffSiteInstancesRequest = (ListOffSiteInstancesRequest) o;
-        return Objects.equals(this.xLanguage, listOffSiteInstancesRequest.xLanguage);
+        return Objects.equals(this.xLanguage, listOffSiteInstancesRequest.xLanguage) &&
+            Objects.equals(this.offset, listOffSiteInstancesRequest.offset) &&
+            Objects.equals(this.limit, listOffSiteInstancesRequest.limit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage);
+        return Objects.hash(xLanguage, offset, limit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOffSiteInstancesRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

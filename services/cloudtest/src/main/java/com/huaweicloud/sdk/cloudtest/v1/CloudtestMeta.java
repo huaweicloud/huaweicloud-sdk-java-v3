@@ -12,6 +12,84 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class CloudtestMeta {
 
+    public static final HttpRequestDef<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFile = genForcreateApiTestSuiteByRepoFile();
+
+    private static HttpRequestDef<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> genForcreateApiTestSuiteByRepoFile() {
+        // basic
+        HttpRequestDef.Builder<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateApiTestSuiteByRepoFileRequest.class, CreateApiTestSuiteByRepoFileResponse.class)
+                .withName("CreateApiTestSuiteByRepoFile")
+                .withUri("/v1/projects/{project_id}/repository/testsuites")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateApiTestSuiteByRepoFileRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateTestSuitByRepoFileInfo.class,
+            f -> f.withMarshaller(CreateApiTestSuiteByRepoFileRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironments = genForlistEnvironments();
+
+    private static HttpRequestDef<ListEnvironmentsRequest, ListEnvironmentsResponse> genForlistEnvironments() {
+        // basic
+        HttpRequestDef.Builder<ListEnvironmentsRequest, ListEnvironmentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEnvironmentsRequest.class, ListEnvironmentsResponse.class)
+                .withName("ListEnvironments")
+                .withUri("/v1/projects/{project_id}/environments")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListEnvironmentsRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ListEnvironmentsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ListEnvironmentsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePlanRequest, CreatePlanResponse> createPlan = genForcreatePlan();
 
     private static HttpRequestDef<CreatePlanRequest, CreatePlanResponse> genForcreatePlan() {

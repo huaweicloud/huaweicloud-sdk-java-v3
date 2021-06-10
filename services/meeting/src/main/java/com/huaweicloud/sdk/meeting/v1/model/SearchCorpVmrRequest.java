@@ -49,6 +49,12 @@ public class SearchCorpVmrRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vmrMode")
+    
+    private Integer vmrMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
     private Integer status;
@@ -168,6 +174,30 @@ public class SearchCorpVmrRequest  {
 
     
 
+    public SearchCorpVmrRequest withVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * VMR模式，不填则默认为公共云会议室。 - 1：云会议室 - 2：网络研讨会。 
+     * minimum: 1
+     * maximum: 2
+     * @return vmrMode
+     */
+    public Integer getVmrMode() {
+        return vmrMode;
+    }
+
+    public void setVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+    }
+
+    
+
     public SearchCorpVmrRequest withStatus(Integer status) {
         this.status = status;
         return this;
@@ -206,11 +236,12 @@ public class SearchCorpVmrRequest  {
             Objects.equals(this.offset, searchCorpVmrRequest.offset) &&
             Objects.equals(this.limit, searchCorpVmrRequest.limit) &&
             Objects.equals(this.searchKey, searchCorpVmrRequest.searchKey) &&
+            Objects.equals(this.vmrMode, searchCorpVmrRequest.vmrMode) &&
             Objects.equals(this.status, searchCorpVmrRequest.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, status);
+        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, vmrMode, status);
     }
     @Override
     public String toString() {
@@ -221,6 +252,7 @@ public class SearchCorpVmrRequest  {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    searchKey: ").append(toIndentedString(searchKey)).append("\n");
+        sb.append("    vmrMode: ").append(toIndentedString(vmrMode)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

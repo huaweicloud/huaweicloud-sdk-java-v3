@@ -32,7 +32,7 @@ public class BatchChangeDataResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="count")
     
-    private String count;
+    private Integer count;
 
     public BatchChangeDataResponse withResults(List<DataTransformationResp> results) {
         this.results = results;
@@ -70,7 +70,7 @@ public class BatchChangeDataResponse extends SdkResponse {
 
     
 
-    public BatchChangeDataResponse withCount(String count) {
+    public BatchChangeDataResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
@@ -82,11 +82,11 @@ public class BatchChangeDataResponse extends SdkResponse {
      * 总数
      * @return count
      */
-    public String getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 

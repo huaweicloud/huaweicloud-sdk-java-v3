@@ -31,6 +31,7 @@ import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
+import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import okhttp3.Authenticator;
@@ -57,6 +58,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.util.Collections;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -277,8 +279,10 @@ public class DefaultHttpClient implements HttpClient {
             if (throwable != null) {
                 if (throwable instanceof SSLHandshakeException) {
                     throw new SslHandShakeException("DefaultHttpClient SslHandShakeException", throwable);
-                } else if (throwable instanceof SocketTimeoutException) {
+                } else if (throwable instanceof UnknownHostException) {
                     throw new HostUnreachableException("DefaultHttpClient HostUnreachableException", throwable);
+                } else if (throwable instanceof SocketTimeoutException) {
+                    ExceptionUtils.mapSocketTimeoutException("DefaultHttpClient RequestTimeoutException", throwable);
                 } else {
                     throw new ConnectionException("DefaultHttpClient ConnectionException", throwable);
                 }
@@ -290,13 +294,15 @@ public class DefaultHttpClient implements HttpClient {
     @Override
     public HttpResponse syncInvokeHttp(HttpRequest httpRequest) throws ConnectionException {
         Request request = buildOkHttpRequest(httpRequest);
-        Response response;
+        Response response = null;
         try {
             response = client.newCall(request).execute();
         } catch (SSLHandshakeException e) {
             throw new SslHandShakeException("DefaultHttpClient SslHandShakeException", e);
-        } catch (SocketTimeoutException e) {
+        } catch (UnknownHostException e) {
             throw new HostUnreachableException("DefaultHttpClient HostUnreachableException", e);
+        } catch (SocketTimeoutException e) {
+            ExceptionUtils.mapSocketTimeoutException("DefaultHttpClient RequestTimeout", e);
         } catch (IOException e) {
             throw new ConnectionException("DefaultHttpClient ConnectionException", e);
         }

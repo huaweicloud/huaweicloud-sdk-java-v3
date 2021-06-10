@@ -8,13 +8,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.meeting.v1.model.OpenScheduleConfReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class SearchMemberVmrByCloudLinkRequest  {
+public class CreateWebinarRequest  {
 
 
 
@@ -29,7 +30,13 @@ public class SearchMemberVmrByCloudLinkRequest  {
     
     private String acceptLanguage;
 
-    public SearchMemberVmrByCloudLinkRequest withXRequestId(String xRequestId) {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="body")
+    
+    private OpenScheduleConfReq body;
+
+    public CreateWebinarRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
@@ -53,7 +60,7 @@ public class SearchMemberVmrByCloudLinkRequest  {
 
     
 
-    public SearchMemberVmrByCloudLinkRequest withAcceptLanguage(String acceptLanguage) {
+    public CreateWebinarRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
@@ -75,6 +82,35 @@ public class SearchMemberVmrByCloudLinkRequest  {
 
     
 
+    public CreateWebinarRequest withBody(OpenScheduleConfReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public CreateWebinarRequest withBody(Consumer<OpenScheduleConfReq> bodySetter) {
+        if(this.body == null ){
+            this.body = new OpenScheduleConfReq();
+            bodySetter.accept(this.body);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get body
+     * @return body
+     */
+    public OpenScheduleConfReq getBody() {
+        return body;
+    }
+
+    public void setBody(OpenScheduleConfReq body) {
+        this.body = body;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,20 +119,22 @@ public class SearchMemberVmrByCloudLinkRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SearchMemberVmrByCloudLinkRequest searchMemberVmrByCloudLinkRequest = (SearchMemberVmrByCloudLinkRequest) o;
-        return Objects.equals(this.xRequestId, searchMemberVmrByCloudLinkRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, searchMemberVmrByCloudLinkRequest.acceptLanguage);
+        CreateWebinarRequest createWebinarRequest = (CreateWebinarRequest) o;
+        return Objects.equals(this.xRequestId, createWebinarRequest.xRequestId) &&
+            Objects.equals(this.acceptLanguage, createWebinarRequest.acceptLanguage) &&
+            Objects.equals(this.body, createWebinarRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage);
+        return Objects.hash(xRequestId, acceptLanguage, body);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SearchMemberVmrByCloudLinkRequest {\n");
+        sb.append("class CreateWebinarRequest {\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("    acceptLanguage: ").append(toIndentedString(acceptLanguage)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

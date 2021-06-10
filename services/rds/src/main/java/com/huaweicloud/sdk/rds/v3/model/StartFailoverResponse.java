@@ -21,7 +21,7 @@ public class StartFailoverResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
+    @JsonProperty(value="instanceId")
     
     private String instanceId;
 

@@ -240,7 +240,7 @@ public class CreateCustomerV2Req  {
 
 
     /**
-     * 合作类型。 1：推荐。 仅仅支持1，如果不传递，默认会创建成垫付模式的客户。
+     * 合作类型。 1：推荐。 仅支持1，如果不传递，默认会创建成垫付模式的客户。
      * @return cooperationType
      */
     public String getCooperationType() {

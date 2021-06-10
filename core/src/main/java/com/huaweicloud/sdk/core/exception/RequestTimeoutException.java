@@ -38,4 +38,8 @@ public class RequestTimeoutException extends SdkException {
     public RequestTimeoutException(String message, Throwable cause) {
         super(message, cause);
     }
+
+    public RequestTimeoutException(Throwable cause) {
+        super(cause);
+    }
 }

@@ -18,6 +18,50 @@ public class CloudtestClient {
 
 
     /**
+     * 通过导入仓库中的文件生成接口测试套
+     * 通过导入仓库中的文件生成接口测试套
+     *
+     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @return CreateApiTestSuiteByRepoFileResponse
+     */
+    public CreateApiTestSuiteByRepoFileResponse createApiTestSuiteByRepoFile(CreateApiTestSuiteByRepoFileRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.createApiTestSuiteByRepoFile);
+    }
+
+    /**
+     * 通过导入仓库中的文件生成接口测试套
+     * 通过导入仓库中的文件生成接口测试套
+     *
+     * @param CreateApiTestSuiteByRepoFileRequest 请求对象
+     * @return SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>
+     */
+    public SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse> createApiTestSuiteByRepoFileInvoker(CreateApiTestSuiteByRepoFileRequest request) {
+        return new SyncInvoker<CreateApiTestSuiteByRepoFileRequest, CreateApiTestSuiteByRepoFileResponse>(request, CloudtestMeta.createApiTestSuiteByRepoFile, hcClient);
+    }
+
+    /**
+     * 获取云测的环境参数分组列表
+     * 获取云测的环境参数分组列表
+     *
+     * @param ListEnvironmentsRequest 请求对象
+     * @return ListEnvironmentsResponse
+     */
+    public ListEnvironmentsResponse listEnvironments(ListEnvironmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.listEnvironments);
+    }
+
+    /**
+     * 获取云测的环境参数分组列表
+     * 获取云测的环境参数分组列表
+     *
+     * @param ListEnvironmentsRequest 请求对象
+     * @return SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>
+     */
+    public SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsInvoker(ListEnvironmentsRequest request) {
+        return new SyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse>(request, CloudtestMeta.listEnvironments, hcClient);
+    }
+
+    /**
      * 项目下创建计划
      * 项目下创建计划
      *

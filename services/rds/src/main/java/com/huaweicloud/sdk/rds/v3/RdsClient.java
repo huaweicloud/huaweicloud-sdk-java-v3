@@ -876,6 +876,28 @@ public class RdsClient {
     }
 
     /**
+     * 设置binlog本地保留时长
+     * 修改指定实例的binlog本地保留时长。
+     *
+     * @param SetBinlogClearPolicyRequest 请求对象
+     * @return SetBinlogClearPolicyResponse
+     */
+    public SetBinlogClearPolicyResponse setBinlogClearPolicy(SetBinlogClearPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.setBinlogClearPolicy);
+    }
+
+    /**
+     * 设置binlog本地保留时长
+     * 修改指定实例的binlog本地保留时长。
+     *
+     * @param SetBinlogClearPolicyRequest 请求对象
+     * @return SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>
+     */
+    public SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse> setBinlogClearPolicyInvoker(SetBinlogClearPolicyRequest request) {
+        return new SyncInvoker<SetBinlogClearPolicyRequest, SetBinlogClearPolicyResponse>(request, RdsMeta.setBinlogClearPolicy, hcClient);
+    }
+
+    /**
      * 设置跨区域备份策略
      * 设置跨区域备份策略。
      *
@@ -1005,6 +1027,28 @@ public class RdsClient {
      */
     public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(ShowBackupPolicyRequest request) {
         return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, RdsMeta.showBackupPolicy, hcClient);
+    }
+
+    /**
+     * 获取binlog本地保留时长
+     * 查寻指定实例的binlog本地保留时长。
+     *
+     * @param ShowBinlogClearPolicyRequest 请求对象
+     * @return ShowBinlogClearPolicyResponse
+     */
+    public ShowBinlogClearPolicyResponse showBinlogClearPolicy(ShowBinlogClearPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showBinlogClearPolicy);
+    }
+
+    /**
+     * 获取binlog本地保留时长
+     * 查寻指定实例的binlog本地保留时长。
+     *
+     * @param ShowBinlogClearPolicyRequest 请求对象
+     * @return SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse>
+     */
+    public SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse> showBinlogClearPolicyInvoker(ShowBinlogClearPolicyRequest request) {
+        return new SyncInvoker<ShowBinlogClearPolicyRequest, ShowBinlogClearPolicyResponse>(request, RdsMeta.showBinlogClearPolicy, hcClient);
     }
 
     /**

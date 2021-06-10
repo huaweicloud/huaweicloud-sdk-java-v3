@@ -42,7 +42,7 @@ public class AlarmNotifyInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="alarm_to_user")
     
-    private String alarmToUser;
+    private Boolean alarmToUser;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -122,7 +122,7 @@ public class AlarmNotifyInfo  {
 
     
 
-    public AlarmNotifyInfo withAlarmToUser(String alarmToUser) {
+    public AlarmNotifyInfo withAlarmToUser(Boolean alarmToUser) {
         this.alarmToUser = alarmToUser;
         return this;
     }
@@ -134,11 +134,11 @@ public class AlarmNotifyInfo  {
      * 异常告警是否通知用户
      * @return alarmToUser
      */
-    public String getAlarmToUser() {
+    public Boolean getAlarmToUser() {
         return alarmToUser;
     }
 
-    public void setAlarmToUser(String alarmToUser) {
+    public void setAlarmToUser(Boolean alarmToUser) {
         this.alarmToUser = alarmToUser;
     }
 

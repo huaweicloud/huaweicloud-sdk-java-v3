@@ -47,6 +47,41 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunction = genForasyncInvokeReservedFunction();
+
+    private static HttpRequestDef<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> genForasyncInvokeReservedFunction() {
+        // basic
+        HttpRequestDef.Builder<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AsyncInvokeReservedFunctionRequest.class, AsyncInvokeReservedFunctionResponse.class)
+                .withName("AsyncInvokeReservedFunction")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reserved-invocations")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Map.class,
+            f -> f.withMarshaller(AsyncInvokeReservedFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }).withInnerContainerType(Object.class)
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDependencyRequest, CreateDependencyResponse> createDependency = genForcreateDependency();
 
     private static HttpRequestDef<CreateDependencyRequest, CreateDependencyResponse> genForcreateDependency() {
@@ -322,6 +357,41 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> deleteReservedInstanceById = genFordeleteReservedInstanceById();
+
+    private static HttpRequestDef<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> genFordeleteReservedInstanceById() {
+        // basic
+        HttpRequestDef.Builder<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteReservedInstanceByIdRequest.class, DeleteReservedInstanceByIdResponse.class)
+                .withName("DeleteReservedInstanceById")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/reservedinstances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteReservedInstanceByIdRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteReservedInstanceByIdRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAlias = genFordeleteVersionAlias();
 
     private static HttpRequestDef<DeleteVersionAliasRequest, DeleteVersionAliasResponse> genFordeleteVersionAlias() {
@@ -347,6 +417,68 @@ public class FunctionGraphMeta {
             String.class,
             f -> f.withMarshaller(DeleteVersionAliasRequest::getAliasName, (req, v) -> {
                 req.setAliasName(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportFunctionRequest, ExportFunctionResponse> exportFunction = genForexportFunction();
+
+    private static HttpRequestDef<ExportFunctionRequest, ExportFunctionResponse> genForexportFunction() {
+        // basic
+        HttpRequestDef.Builder<ExportFunctionRequest, ExportFunctionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportFunctionRequest.class, ExportFunctionResponse.class)
+                .withName("ExportFunction")
+                .withUri("/v2/{project_id}/fgs/functions/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("config",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ExportFunctionRequest::getConfig, (req, v) -> {
+                req.setConfig(v);
+            })
+        );
+        builder.withRequestField("code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
+            f -> f.withMarshaller(ExportFunctionRequest::getCode, (req, v) -> {
+                req.setCode(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportFunctionRequest, ImportFunctionResponse> importFunction = genForimportFunction();
+
+    private static HttpRequestDef<ImportFunctionRequest, ImportFunctionResponse> genForimportFunction() {
+        // basic
+        HttpRequestDef.Builder<ImportFunctionRequest, ImportFunctionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportFunctionRequest.class, ImportFunctionResponse.class)
+                .withName("ImportFunction")
+                .withUri("/v2/{project_id}/fgs/functions/import")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ImportFunctionRequestBody.class,
+            f -> f.withMarshaller(ImportFunctionRequest::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

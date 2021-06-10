@@ -22,7 +22,10 @@
 package com.huaweicloud.sdk.core.invoker;
 
 import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
+
+import java.util.concurrent.ExecutionException;
 
 /**
  * @param <ReqT>
@@ -30,13 +33,30 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
  * @author HuaweiCloud_SDK
  */
 public class SyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, SyncInvoker<ReqT, ResT>> {
-
+    /**
+     * The default constructor for SyncInvoker.
+     *
+     * @param req original request
+     * @param meta definitions for request and response used to build original HttpRequest
+     * and extract original HttpResponse
+     * @param hcClient encapsulated client before default http client
+     */
     public SyncInvoker(ReqT req, HttpRequestDef<ReqT, ResT> meta, HcClient hcClient) {
         super(req, meta, hcClient);
     }
 
+    /**
+     * This method will invoke synchronous request for specified interface.
+     *
+     * @return CompletableFuture
+     */
     public ResT invoke() {
-        return hcClient.preInvoke(extraHeader).syncInvokeHttp(req, meta, exchange);
+        try {
+            return retry(() -> this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange)).get();
+        } catch (ExecutionException e) {
+            throw (SdkException) e.getCause();
+        } catch (InterruptedException e) {
+            throw new SdkException(e);
+        }
     }
-
 }

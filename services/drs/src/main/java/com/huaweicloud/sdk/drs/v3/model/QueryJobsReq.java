@@ -321,6 +321,12 @@ public class QueryJobsReq  {
     @JsonProperty(value="net_type")
     
     private NetTypeEnum netType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_name")
+    
+    private String serviceName;
     /**
      * 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING: 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束
      */
@@ -688,6 +694,28 @@ public class QueryJobsReq  {
 
     
 
+    public QueryJobsReq withServiceName(String serviceName) {
+        this.serviceName = serviceName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 开启EPS时使用，值为eps
+     * @return serviceName
+     */
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    
+
     public QueryJobsReq withStatus(StatusEnum status) {
         this.status = status;
         return this;
@@ -762,12 +790,13 @@ public class QueryJobsReq  {
             Objects.equals(this.enterpriseProjectId, queryJobsReq.enterpriseProjectId) &&
             Objects.equals(this.name, queryJobsReq.name) &&
             Objects.equals(this.netType, queryJobsReq.netType) &&
+            Objects.equals(this.serviceName, queryJobsReq.serviceName) &&
             Objects.equals(this.status, queryJobsReq.status) &&
             Objects.equals(this.tags, queryJobsReq.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(curPage, perPage, dbUseType, engineType, enterpriseProjectId, name, netType, status, tags);
+        return Objects.hash(curPage, perPage, dbUseType, engineType, enterpriseProjectId, name, netType, serviceName, status, tags);
     }
     @Override
     public String toString() {
@@ -780,6 +809,7 @@ public class QueryJobsReq  {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    netType: ").append(toIndentedString(netType)).append("\n");
+        sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");

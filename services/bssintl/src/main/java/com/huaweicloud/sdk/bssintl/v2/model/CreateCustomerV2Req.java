@@ -67,12 +67,6 @@ public class CreateCustomerV2Req  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cooperation_type")
-    
-    private String cooperationType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="indirect_partner_id")
     
     private String indirectPartnerId;
@@ -259,28 +253,6 @@ public class CreateCustomerV2Req  {
 
     
 
-    public CreateCustomerV2Req withCooperationType(String cooperationType) {
-        this.cooperationType = cooperationType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * |合作类型| |参数的约束及描述：该参数选填。1：推荐。仅仅支持1|
-     * @return cooperationType
-     */
-    public String getCooperationType() {
-        return cooperationType;
-    }
-
-    public void setCooperationType(String cooperationType) {
-        this.cooperationType = cooperationType;
-    }
-
-    
-
     public CreateCustomerV2Req withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
@@ -342,13 +314,12 @@ public class CreateCustomerV2Req  {
             Objects.equals(this.xaccountType, createCustomerV2Req.xaccountType) &&
             Objects.equals(this.password, createCustomerV2Req.password) &&
             Objects.equals(this.isCloseMarketMs, createCustomerV2Req.isCloseMarketMs) &&
-            Objects.equals(this.cooperationType, createCustomerV2Req.cooperationType) &&
             Objects.equals(this.indirectPartnerId, createCustomerV2Req.indirectPartnerId) &&
             Objects.equals(this.includeAssociationResult, createCustomerV2Req.includeAssociationResult);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domainName, email, verificationCode, domainArea, xaccountId, xaccountType, password, isCloseMarketMs, cooperationType, indirectPartnerId, includeAssociationResult);
+        return Objects.hash(domainName, email, verificationCode, domainArea, xaccountId, xaccountType, password, isCloseMarketMs, indirectPartnerId, includeAssociationResult);
     }
     @Override
     public String toString() {
@@ -362,7 +333,6 @@ public class CreateCustomerV2Req  {
         sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    isCloseMarketMs: ").append(toIndentedString(isCloseMarketMs)).append("\n");
-        sb.append("    cooperationType: ").append(toIndentedString(cooperationType)).append("\n");
         sb.append("    indirectPartnerId: ").append(toIndentedString(indirectPartnerId)).append("\n");
         sb.append("    includeAssociationResult: ").append(toIndentedString(includeAssociationResult)).append("\n");
         sb.append("}");

@@ -21,6 +21,10 @@
 
 package com.huaweicloud.sdk.core.exception;
 
+import static com.huaweicloud.sdk.core.Constants.StatusCode.CLIENT_ERROR;
+import static com.huaweicloud.sdk.core.Constants.StatusCode.SERVER_ERROR;
+import static com.huaweicloud.sdk.core.Constants.StatusCode.SERVER_ERROR_UPPER_LIMIT;
+
 import java.util.Objects;
 
 /**
@@ -77,10 +81,10 @@ public class ServiceResponseException extends SdkException {
      */
     public static ServiceResponseException mapException(int httpStatusCode, String errorCode, String errorMsg,
         String requestId) {
-        if (httpStatusCode >= 400 && httpStatusCode < 499) {
+        if (httpStatusCode >= CLIENT_ERROR && httpStatusCode < SERVER_ERROR) {
             return new ClientRequestException(httpStatusCode, errorCode, errorMsg, requestId);
         }
-        if (httpStatusCode >= 500 && httpStatusCode < 600) {
+        if (httpStatusCode >= SERVER_ERROR && httpStatusCode < SERVER_ERROR_UPPER_LIMIT) {
             return new ServerResponseException(httpStatusCode, errorCode, errorMsg, requestId);
         }
 
@@ -108,8 +112,9 @@ public class ServiceResponseException extends SdkException {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.getClass().getSimpleName() + " {\n");
+        StringBuilder sb;
+        sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName()).append(" {\n");
         sb.append("    httpStatusCode: ").append(toIndentedString(httpStatusCode)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");

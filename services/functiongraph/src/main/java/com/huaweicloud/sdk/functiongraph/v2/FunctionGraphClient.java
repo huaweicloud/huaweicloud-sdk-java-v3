@@ -40,6 +40,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 函数异步执行并返回预留实例ID。
+     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常， 可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+     *
+     * @param AsyncInvokeReservedFunctionRequest 请求对象
+     * @return AsyncInvokeReservedFunctionResponse
+     */
+    public AsyncInvokeReservedFunctionResponse asyncInvokeReservedFunction(AsyncInvokeReservedFunctionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.asyncInvokeReservedFunction);
+    }
+
+    /**
+     * 函数异步执行并返回预留实例ID。
+     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常， 可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+     *
+     * @param AsyncInvokeReservedFunctionRequest 请求对象
+     * @return SyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>
+     */
+    public SyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionInvoker(AsyncInvokeReservedFunctionRequest request) {
+        return new SyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>(request, FunctionGraphMeta.asyncInvokeReservedFunction, hcClient);
+    }
+
+    /**
      * 创建依赖包
      * 创建依赖包。
      *
@@ -238,6 +260,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 根据预留实例ID删除对应预留实例
+     * 预留实例异常时，可以根据预留实例ID删除该预留实例，注意：删除成功之后重新会重新拉起一个新的预留实例，业务高峰期可以更好的工作（该接口主要针对白名单用户）
+     *
+     * @param DeleteReservedInstanceByIdRequest 请求对象
+     * @return DeleteReservedInstanceByIdResponse
+     */
+    public DeleteReservedInstanceByIdResponse deleteReservedInstanceById(DeleteReservedInstanceByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.deleteReservedInstanceById);
+    }
+
+    /**
+     * 根据预留实例ID删除对应预留实例
+     * 预留实例异常时，可以根据预留实例ID删除该预留实例，注意：删除成功之后重新会重新拉起一个新的预留实例，业务高峰期可以更好的工作（该接口主要针对白名单用户）
+     *
+     * @param DeleteReservedInstanceByIdRequest 请求对象
+     * @return SyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse>
+     */
+    public SyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> deleteReservedInstanceByIdInvoker(DeleteReservedInstanceByIdRequest request) {
+        return new SyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse>(request, FunctionGraphMeta.deleteReservedInstanceById, hcClient);
+    }
+
+    /**
      * 删除函数版本别名。
      * 删除函数版本别名。
      *
@@ -257,6 +301,50 @@ public class FunctionGraphClient {
      */
     public SyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAliasInvoker(DeleteVersionAliasRequest request) {
         return new SyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>(request, FunctionGraphMeta.deleteVersionAlias, hcClient);
+    }
+
+    /**
+     * 导出函数。
+     * 导出函数。
+     *
+     * @param ExportFunctionRequest 请求对象
+     * @return ExportFunctionResponse
+     */
+    public ExportFunctionResponse exportFunction(ExportFunctionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.exportFunction);
+    }
+
+    /**
+     * 导出函数。
+     * 导出函数。
+     *
+     * @param ExportFunctionRequest 请求对象
+     * @return SyncInvoker<ExportFunctionRequest, ExportFunctionResponse>
+     */
+    public SyncInvoker<ExportFunctionRequest, ExportFunctionResponse> exportFunctionInvoker(ExportFunctionRequest request) {
+        return new SyncInvoker<ExportFunctionRequest, ExportFunctionResponse>(request, FunctionGraphMeta.exportFunction, hcClient);
+    }
+
+    /**
+     * 导入函数。
+     * 导入函数。
+     *
+     * @param ImportFunctionRequest 请求对象
+     * @return ImportFunctionResponse
+     */
+    public ImportFunctionResponse importFunction(ImportFunctionRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.importFunction);
+    }
+
+    /**
+     * 导入函数。
+     * 导入函数。
+     *
+     * @param ImportFunctionRequest 请求对象
+     * @return SyncInvoker<ImportFunctionRequest, ImportFunctionResponse>
+     */
+    public SyncInvoker<ImportFunctionRequest, ImportFunctionResponse> importFunctionInvoker(ImportFunctionRequest request) {
+        return new SyncInvoker<ImportFunctionRequest, ImportFunctionResponse>(request, FunctionGraphMeta.importFunction, hcClient);
     }
 
     /**

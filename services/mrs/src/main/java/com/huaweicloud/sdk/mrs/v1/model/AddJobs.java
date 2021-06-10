@@ -98,7 +98,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业类型码。 1：MapReduce 2：Spark 3：Hive Script 4：HiveSQL（当前不支持） 5：DistCp，导入、导出数据，（当前不支持）。 6：Spark Script 7：Spark SQL，提交SQL语句，（当前不支持）。 说明： 只有包含Spark和Hive组件的集群才能新增Spark和Hive类型的作业。
+     * 作业类型码。 - 1：MapReduce - 2：Spark - 3：Hive Script - 4：HiveSQL（当前不支持） - 5：DistCp，导入、导出数据，（当前不支持）。 - 6：Spark Script - 7：Spark SQL，提交SQL语句，（当前不支持）。
      * @return jobType
      */
     public Integer getJobType() {
@@ -120,7 +120,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业名称。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。 说明： 不同作业的名称允许相同，但不建议设置相同。
+     * 作业名称。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。  说明： 不同作业的名称允许相同，但不建议设置相同。
      * @return jobName
      */
     public String getJobName() {
@@ -142,7 +142,7 @@ public class AddJobs  {
 
 
     /**
-     * 执行程序Jar包或sql文件地址，需要满足如下要求： 最多为1023字符，不能包含;|&>,<'$特殊字符，且不可为空或全空格。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 OBS：以“s3a://”开头。不支持KMS加密的文件或程序。 HDFS：以“/”开头。 Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。
+     * 执行程序Jar包或sql文件地址，需要满足如下要求： - 最多为1023字符，不能包含;|&>,<'$特殊字符，且不可为空或全空格。 - 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。    - OBS：以“s3a://”开头。不支持KMS加密的文件或程序。    - HDFS：以“/”开头。 - Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。
      * @return jarPath
      */
     public String getJarPath() {
@@ -186,7 +186,7 @@ public class AddJobs  {
 
 
     /**
-     * 数据输入地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 OBS：以“s3a://”开头。不支持KMS加密的文件或程序。 HDFS：以“/”开头。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
+     * 数据输入地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“s3a://”开头。不支持KMS加密的文件或程序。 - HDFS：以“/”开头。  最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
      * @return input
      */
     public String getInput() {
@@ -208,7 +208,7 @@ public class AddJobs  {
 
 
     /**
-     * 数据输出地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 OBS：以“s3a://”开头。 HDFS：以“/”开头。 如果该路径不存在，系统会自动创建。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
+     * 数据输出地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“s3a://”开头。 - HDFS：以“/”开头。  如果该路径不存在，系统会自动创建。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
      * @return output
      */
     public String getOutput() {
@@ -230,7 +230,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业日志存储地址，该日志信息记录作业运行状态。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 OBS：以“s3a://”开头。 HDFS：以“/”开头。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
+     * 作业日志存储地址，该日志信息记录作业运行状态。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“s3a://”开头。 - HDFS：以“/”开头。  最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
      * @return jobLog
      */
     public String getJobLog() {
@@ -252,7 +252,7 @@ public class AddJobs  {
 
 
     /**
-     * sql程序路径，仅Spark Script和Hive Script作业需要使用此参数。需要满足如下要求： 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 OBS：以“s3a://”开头。不支持KMS加密的文件或程序。 HDFS：以“/”开头。 需要以“.sql”结尾，sql不区分大小写。
+     * sql程序路径，仅Spark Script和Hive Script作业需要使用此参数。需要满足如下要求： - 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。 - 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。     - OBS：以“s3a://”开头。不支持KMS加密的文件或程序。     - HDFS：以“/”开头。 - 需要以“.sql”结尾，sql不区分大小写。
      * @return hiveScriptPath
      */
     public String getHiveScriptPath() {
@@ -296,7 +296,7 @@ public class AddJobs  {
 
 
     /**
-     * 作业执行完成后，是否删除集群。  true：是 false：否
+     * 作业执行完成后，是否删除集群。  - true：是  - false：否
      * @return shutdownCluster
      */
     public Boolean getShutdownCluster() {
@@ -318,7 +318,7 @@ public class AddJobs  {
 
 
     /**
-     * true：创建集群同时提交作业 false：单独提交作业 此处应设置为true。
+     * - true：创建集群同时提交作业  - false：单独提交作业  此处应设置为true。
      * @return submitJobOnceClusterRun
      */
     public Boolean getSubmitJobOnceClusterRun() {
@@ -340,7 +340,7 @@ public class AddJobs  {
 
 
     /**
-     * 数据导入导出。 import export
+     * 数据导入导出。 - import - export
      * @return fileAction
      */
     public String getFileAction() {

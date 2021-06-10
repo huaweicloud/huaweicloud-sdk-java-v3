@@ -1433,6 +1433,49 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateWebinarRequest, CreateWebinarResponse> createWebinar = genForcreateWebinar();
+
+    private static HttpRequestDef<CreateWebinarRequest, CreateWebinarResponse> genForcreateWebinar() {
+        // basic
+        HttpRequestDef.Builder<CreateWebinarRequest, CreateWebinarResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateWebinarRequest.class, CreateWebinarResponse.class)
+                .withName("CreateWebinar")
+                .withUri("/v1/wss/webinar/open/conferences")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWebinarRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWebinarRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            OpenScheduleConfReq.class,
+            f -> f.withMarshaller(CreateWebinarRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> deleteAttendees = genFordeleteAttendees();
 
     private static HttpRequestDef<DeleteAttendeesRequest, DeleteAttendeesResponse> genFordeleteAttendees() {
@@ -1750,6 +1793,49 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteWebinarRequest, DeleteWebinarResponse> deleteWebinar = genFordeleteWebinar();
+
+    private static HttpRequestDef<DeleteWebinarRequest, DeleteWebinarResponse> genFordeleteWebinar() {
+        // basic
+        HttpRequestDef.Builder<DeleteWebinarRequest, DeleteWebinarResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWebinarRequest.class, DeleteWebinarResponse.class)
+                .withName("DeleteWebinar")
+                .withUri("/v1/wss/webinar/open/conferences/{conferenceId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(DeleteWebinarRequest::getConferenceId, (req, v) -> {
+                req.setConferenceId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWebinarRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWebinarRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisassociateVmrRequest, DisassociateVmrResponse> disassociateVmr = genFordisassociateVmr();
 
     private static HttpRequestDef<DisassociateVmrRequest, DisassociateVmrResponse> genFordisassociateVmr() {
@@ -2014,6 +2100,223 @@ public class MeetingMeta {
             RestInviteWithPwdReqBody.class,
             f -> f.withMarshaller(InviteWithPwdRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> listHistoryWebinars = genForlistHistoryWebinars();
+
+    private static HttpRequestDef<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> genForlistHistoryWebinars() {
+        // basic
+        HttpRequestDef.Builder<ListHistoryWebinarsRequest, ListHistoryWebinarsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHistoryWebinarsRequest.class, ListHistoryWebinarsResponse.class)
+                .withName("ListHistoryWebinars")
+                .withUri("/v1/wss/webinar/open/conferences/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("sortType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            })
+        );
+        builder.withRequestField("startTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getStartTime, (req, v) -> {
+                req.setStartTime(v);
+            })
+        );
+        builder.withRequestField("endTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHistoryWebinarsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> listOngoingWebinars = genForlistOngoingWebinars();
+
+    private static HttpRequestDef<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> genForlistOngoingWebinars() {
+        // basic
+        HttpRequestDef.Builder<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOngoingWebinarsRequest.class, ListOngoingWebinarsResponse.class)
+                .withName("ListOngoingWebinars")
+                .withUri("/v1/wss/webinar/open/conferences/ongoing")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("sortType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListOngoingWebinarsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> listUpComingWebinars = genForlistUpComingWebinars();
+
+    private static HttpRequestDef<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> genForlistUpComingWebinars() {
+        // basic
+        HttpRequestDef.Builder<ListUpComingWebinarsRequest, ListUpComingWebinarsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUpComingWebinarsRequest.class, ListUpComingWebinarsResponse.class)
+                .withName("ListUpComingWebinars")
+                .withUri("/v1/wss/webinar/open/conferences/upcoming")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("sortType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getSortType, (req, v) -> {
+                req.setSortType(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListUpComingWebinarsRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
             })
         );
 
@@ -2899,6 +3202,121 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchCorpResourcesRequest, SearchCorpResourcesResponse> searchCorpResources = genForsearchCorpResources();
+
+    private static HttpRequestDef<SearchCorpResourcesRequest, SearchCorpResourcesResponse> genForsearchCorpResources() {
+        // basic
+        HttpRequestDef.Builder<SearchCorpResourcesRequest, SearchCorpResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SearchCorpResourcesRequest.class, SearchCorpResourcesResponse.class)
+                .withName("SearchCorpResources")
+                .withUri("/v1/usg/dcs/corp/resource-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("searchKey",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getSearchKey, (req, v) -> {
+                req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("startExpireDate",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Long.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getStartExpireDate, (req, v) -> {
+                req.setStartExpireDate(v);
+            })
+        );
+        builder.withRequestField("endExpireDate",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Long.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getEndExpireDate, (req, v) -> {
+                req.setEndExpireDate(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("vmrMode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getVmrMode, (req, v) -> {
+                req.setVmrMode(v);
+            })
+        );
+        builder.withRequestField("typeId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getTypeId, (req, v) -> {
+                req.setTypeId(v);
+            })
+        );
+        builder.withRequestField("orderId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getOrderId, (req, v) -> {
+                req.setOrderId(v);
+            })
+        );
+        builder.withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getStatus, (req, v) -> {
+                req.setStatus(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SearchCorpResourcesRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchCorpVmrRequest, SearchCorpVmrResponse> searchCorpVmr = genForsearchCorpVmr();
 
     private static HttpRequestDef<SearchCorpVmrRequest, SearchCorpVmrResponse> genForsearchCorpVmr() {
@@ -2932,6 +3350,14 @@ public class MeetingMeta {
             String.class,
             f -> f.withMarshaller(SearchCorpVmrRequest::getSearchKey, (req, v) -> {
                 req.setSearchKey(v);
+            })
+        );
+        builder.withRequestField("vmrMode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(SearchCorpVmrRequest::getVmrMode, (req, v) -> {
+                req.setVmrMode(v);
             })
         );
         builder.withRequestField("status",
@@ -3540,41 +3966,6 @@ public class MeetingMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(SearchMemberVmrRequest::getAcceptLanguage, (req, v) -> {
-                req.setAcceptLanguage(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> searchMemberVmrByCloudLink = genForsearchMemberVmrByCloudLink();
-
-    private static HttpRequestDef<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> genForsearchMemberVmrByCloudLink() {
-        // basic
-        HttpRequestDef.Builder<SearchMemberVmrByCloudLinkRequest, SearchMemberVmrByCloudLinkResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, SearchMemberVmrByCloudLinkRequest.class, SearchMemberVmrByCloudLinkResponse.class)
-                .withName("SearchMemberVmrByCloudLink")
-                .withUri("/v1/usg/dcs/member/vmrinfo")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(SearchMemberVmrByCloudLinkRequest::getXRequestId, (req, v) -> {
-                req.setXRequestId(v);
-            })
-        );
-        builder.withRequestField("Accept-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(SearchMemberVmrByCloudLinkRequest::getAcceptLanguage, (req, v) -> {
                 req.setAcceptLanguage(v);
             })
         );
@@ -4442,7 +4833,7 @@ public class MeetingMeta {
         HttpRequestDef.Builder<SetCustomMultiPictureRequest, SetCustomMultiPictureResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, SetCustomMultiPictureRequest.class, SetCustomMultiPictureResponse.class)
                 .withName("SetCustomMultiPicture")
-                .withUri("/v1/mmc/control/conferences/display/")
+                .withUri("/v1/mmc/control/conferences/display/customMultiPicture")
                 .withContentType("application/json");
 
         // requests
@@ -5694,6 +6085,49 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRoomSettingRequest, ShowRoomSettingResponse> showRoomSetting = genForshowRoomSetting();
+
+    private static HttpRequestDef<ShowRoomSettingRequest, ShowRoomSettingResponse> genForshowRoomSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowRoomSettingRequest, ShowRoomSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRoomSettingRequest.class, ShowRoomSettingResponse.class)
+                .withName("ShowRoomSetting")
+                .withUri("/v1/wss/webinar/open/room_setting/{conferenceId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowRoomSettingRequest::getConferenceId, (req, v) -> {
+                req.setConferenceId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRoomSettingRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRoomSettingRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSpResRequest, ShowSpResResponse> showSpRes = genForshowSpRes();
 
     private static HttpRequestDef<ShowSpResRequest, ShowSpResResponse> genForshowSpRes() {
@@ -5796,6 +6230,49 @@ public class MeetingMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowUserDetailRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> showWebinar = genForshowWebinar();
+
+    private static HttpRequestDef<ShowWebinarRequest, ShowWebinarResponse> genForshowWebinar() {
+        // basic
+        HttpRequestDef.Builder<ShowWebinarRequest, ShowWebinarResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWebinarRequest.class, ShowWebinarResponse.class)
+                .withName("ShowWebinar")
+                .withUri("/v1/wss/webinar/open/conferences/{conferenceId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowWebinarRequest::getConferenceId, (req, v) -> {
+                req.setConferenceId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowWebinarRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowWebinarRequest::getAcceptLanguage, (req, v) -> {
                 req.setAcceptLanguage(v);
             })
         );
@@ -6524,6 +7001,57 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateRoomSettingRequest, UpdateRoomSettingResponse> updateRoomSetting = genForupdateRoomSetting();
+
+    private static HttpRequestDef<UpdateRoomSettingRequest, UpdateRoomSettingResponse> genForupdateRoomSetting() {
+        // basic
+        HttpRequestDef.Builder<UpdateRoomSettingRequest, UpdateRoomSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateRoomSettingRequest.class, UpdateRoomSettingResponse.class)
+                .withName("UpdateRoomSetting")
+                .withUri("/v1/wss/webinar/open/room_setting/{conferenceId}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceId",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getConferenceId, (req, v) -> {
+                req.setConferenceId(v);
+            })
+        );
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            OpenRoomSettingReq.class,
+            f -> f.withMarshaller(UpdateRoomSettingRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> updateStartedConfConfig = genForupdateStartedConfConfig();
 
     private static HttpRequestDef<UpdateStartedConfConfigRequest, UpdateStartedConfConfigResponse> genForupdateStartedConfConfig() {
@@ -6650,6 +7178,92 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             ModUserDTO.class,
             f -> f.withMarshaller(UpdateUserRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWebinarRequest, UpdateWebinarResponse> updateWebinar = genForupdateWebinar();
+
+    private static HttpRequestDef<UpdateWebinarRequest, UpdateWebinarResponse> genForupdateWebinar() {
+        // basic
+        HttpRequestDef.Builder<UpdateWebinarRequest, UpdateWebinarResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWebinarRequest.class, UpdateWebinarResponse.class)
+                .withName("UpdateWebinar")
+                .withUri("/v1/wss/webinar/open/conferences")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateWebinarRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateWebinarRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            OpenEditConfReq.class,
+            f -> f.withMarshaller(UpdateWebinarRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadFileRequest, UploadFileResponse> uploadFile = genForuploadFile();
+
+    private static HttpRequestDef<UploadFileRequest, UploadFileResponse> genForuploadFile() {
+        // basic
+        HttpRequestDef.Builder<UploadFileRequest, UploadFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UploadFileRequest.class, UploadFileResponse.class)
+                .withName("UploadFile")
+                .withUri("/v1/wss/webinar/open/res/file")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadFileRequest::getXRequestId, (req, v) -> {
+                req.setXRequestId(v);
+            })
+        );
+        builder.withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadFileRequest::getAcceptLanguage, (req, v) -> {
+                req.setAcceptLanguage(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UploadFileRequestBody.class,
+            f -> f.withMarshaller(UploadFileRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

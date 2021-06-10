@@ -937,19 +937,11 @@ public class DrsMeta {
         HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
                 .withName("ListUsers")
-                .withUri("/v3/{projectId}/jobs/{jobId}/getSrcUsers")
+                .withUri("/v3/{project_id}/jobs/{job_id}/get-src-user")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("projectId",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListUsersRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("jobId",
+        builder.withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,

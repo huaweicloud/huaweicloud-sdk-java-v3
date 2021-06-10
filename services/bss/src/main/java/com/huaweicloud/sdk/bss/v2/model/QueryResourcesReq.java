@@ -100,7 +100,7 @@ public class QueryResourcesReq  {
 
 
     /**
-     * 订单号。 查询指定订单下的资源。
+     * 订单号。查询指定订单下的资源。  说明： 使用特殊字符进行查询的时候，请注意进行URL编码转换，如“%”的转码应为“%25”。
      * @return orderId
      */
     public String getOrderId() {
@@ -182,7 +182,7 @@ public class QueryResourcesReq  {
 
 
     /**
-     * 偏移量，从0开始。默认值为0。
+     * 偏移量，从0开始。默认值为0。  说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。 例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
      * minimum: 0
      * maximum: 2147483646
      * @return offset

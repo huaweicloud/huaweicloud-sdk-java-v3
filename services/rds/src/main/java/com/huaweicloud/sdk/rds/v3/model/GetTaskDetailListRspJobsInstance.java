@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 执行任务的实例信息。
  */
-public class GetTaskDetailListRspInstance  {
+public class GetTaskDetailListRspJobsInstance  {
 
 
 
@@ -29,7 +29,7 @@ public class GetTaskDetailListRspInstance  {
     
     private String name;
 
-    public GetTaskDetailListRspInstance withId(String id) {
+    public GetTaskDetailListRspJobsInstance withId(String id) {
         this.id = id;
         return this;
     }
@@ -51,7 +51,7 @@ public class GetTaskDetailListRspInstance  {
 
     
 
-    public GetTaskDetailListRspInstance withName(String name) {
+    public GetTaskDetailListRspJobsInstance withName(String name) {
         this.name = name;
         return this;
     }
@@ -81,9 +81,9 @@ public class GetTaskDetailListRspInstance  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        GetTaskDetailListRspInstance getTaskDetailListRspInstance = (GetTaskDetailListRspInstance) o;
-        return Objects.equals(this.id, getTaskDetailListRspInstance.id) &&
-            Objects.equals(this.name, getTaskDetailListRspInstance.name);
+        GetTaskDetailListRspJobsInstance getTaskDetailListRspJobsInstance = (GetTaskDetailListRspJobsInstance) o;
+        return Objects.equals(this.id, getTaskDetailListRspJobsInstance.id) &&
+            Objects.equals(this.name, getTaskDetailListRspJobsInstance.name);
     }
     @Override
     public int hashCode() {
@@ -92,7 +92,7 @@ public class GetTaskDetailListRspInstance  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GetTaskDetailListRspInstance {\n");
+        sb.append("class GetTaskDetailListRspJobsInstance {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

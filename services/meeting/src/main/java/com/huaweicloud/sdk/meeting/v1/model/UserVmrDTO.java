@@ -41,6 +41,12 @@ public class UserVmrDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="vmrMode")
+    
+    private Integer vmrMode;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vmrPkgId")
     
     private String vmrPkgId;
@@ -219,6 +225,28 @@ public class UserVmrDTO  {
 
     
 
+    public UserVmrDTO withVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * VMR模式。 - 0：个人会议ID - 1: 云会议室 - 2: 网络研讨会 
+     * @return vmrMode
+     */
+    public Integer getVmrMode() {
+        return vmrMode;
+    }
+
+    public void setVmrMode(Integer vmrMode) {
+        this.vmrMode = vmrMode;
+    }
+
+    
+
     public UserVmrDTO withVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
         return this;
@@ -341,6 +369,7 @@ public class UserVmrDTO  {
         return Objects.equals(this.id, userVmrDTO.id) &&
             Objects.equals(this.vmrId, userVmrDTO.vmrId) &&
             Objects.equals(this.vmrName, userVmrDTO.vmrName) &&
+            Objects.equals(this.vmrMode, userVmrDTO.vmrMode) &&
             Objects.equals(this.vmrPkgId, userVmrDTO.vmrPkgId) &&
             Objects.equals(this.vmrPkgName, userVmrDTO.vmrPkgName) &&
             Objects.equals(this.vmrPkgParties, userVmrDTO.vmrPkgParties) &&
@@ -349,7 +378,7 @@ public class UserVmrDTO  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, vmrId, vmrName, vmrPkgId, vmrPkgName, vmrPkgParties, vmrPkgLength, status);
+        return Objects.hash(id, vmrId, vmrName, vmrMode, vmrPkgId, vmrPkgName, vmrPkgParties, vmrPkgLength, status);
     }
     @Override
     public String toString() {
@@ -358,6 +387,7 @@ public class UserVmrDTO  {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    vmrId: ").append(toIndentedString(vmrId)).append("\n");
         sb.append("    vmrName: ").append(toIndentedString(vmrName)).append("\n");
+        sb.append("    vmrMode: ").append(toIndentedString(vmrMode)).append("\n");
         sb.append("    vmrPkgId: ").append(toIndentedString(vmrPkgId)).append("\n");
         sb.append("    vmrPkgName: ").append(toIndentedString(vmrPkgName)).append("\n");
         sb.append("    vmrPkgParties: ").append(toIndentedString(vmrPkgParties)).append("\n");

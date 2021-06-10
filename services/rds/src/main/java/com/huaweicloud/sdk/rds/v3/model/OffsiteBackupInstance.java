@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.rds.v3.model.ParaGroupDatastore;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -19,18 +20,54 @@ public class OffsiteBackupInstance  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
+    @JsonProperty(value="id")
     
-    private String offset;
+    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
+    @JsonProperty(value="name")
     
-    private String limit;
+    private String name;
 
-    public OffsiteBackupInstance withOffset(String offset) {
-        this.offset = offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="source_region")
+    
+    private String sourceRegion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="source_project_id")
+    
+    private String sourceProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="datastore")
+    
+    private ParaGroupDatastore datastore;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="destination_region")
+    
+    private String destinationRegion;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="destination_project_id")
+    
+    private String destinationProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="keep_days")
+    
+    private Long keepDays;
+
+    public OffsiteBackupInstance withId(String id) {
+        this.id = id;
         return this;
     }
 
@@ -38,21 +75,21 @@ public class OffsiteBackupInstance  {
 
 
     /**
-     * 偏移量。
-     * @return offset
+     * 实例ID。
+     * @return id
      */
-    public String getOffset() {
-        return offset;
+    public String getId() {
+        return id;
     }
 
-    public void setOffset(String offset) {
-        this.offset = offset;
+    public void setId(String id) {
+        this.id = id;
     }
 
     
 
-    public OffsiteBackupInstance withLimit(String limit) {
-        this.limit = limit;
+    public OffsiteBackupInstance withName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -60,15 +97,154 @@ public class OffsiteBackupInstance  {
 
 
     /**
-     * 查询记录数。
-     * @return limit
+     * 创建的实例名称。
+     * @return name
      */
-    public String getLimit() {
-        return limit;
+    public String getName() {
+        return name;
     }
 
-    public void setLimit(String limit) {
-        this.limit = limit;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public OffsiteBackupInstance withSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 源区域。
+     * @return sourceRegion
+     */
+    public String getSourceRegion() {
+        return sourceRegion;
+    }
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    
+
+    public OffsiteBackupInstance withSourceProjectId(String sourceProjectId) {
+        this.sourceProjectId = sourceProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 租户在源区域下的project ID。
+     * @return sourceProjectId
+     */
+    public String getSourceProjectId() {
+        return sourceProjectId;
+    }
+
+    public void setSourceProjectId(String sourceProjectId) {
+        this.sourceProjectId = sourceProjectId;
+    }
+
+    
+
+    public OffsiteBackupInstance withDatastore(ParaGroupDatastore datastore) {
+        this.datastore = datastore;
+        return this;
+    }
+
+    public OffsiteBackupInstance withDatastore(Consumer<ParaGroupDatastore> datastoreSetter) {
+        if(this.datastore == null ){
+            this.datastore = new ParaGroupDatastore();
+            datastoreSetter.accept(this.datastore);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get datastore
+     * @return datastore
+     */
+    public ParaGroupDatastore getDatastore() {
+        return datastore;
+    }
+
+    public void setDatastore(ParaGroupDatastore datastore) {
+        this.datastore = datastore;
+    }
+
+    
+
+    public OffsiteBackupInstance withDestinationRegion(String destinationRegion) {
+        this.destinationRegion = destinationRegion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 跨区域备份所在区域。
+     * @return destinationRegion
+     */
+    public String getDestinationRegion() {
+        return destinationRegion;
+    }
+
+    public void setDestinationRegion(String destinationRegion) {
+        this.destinationRegion = destinationRegion;
+    }
+
+    
+
+    public OffsiteBackupInstance withDestinationProjectId(String destinationProjectId) {
+        this.destinationProjectId = destinationProjectId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 租户在目标区域下的project ID。
+     * @return destinationProjectId
+     */
+    public String getDestinationProjectId() {
+        return destinationProjectId;
+    }
+
+    public void setDestinationProjectId(String destinationProjectId) {
+        this.destinationProjectId = destinationProjectId;
+    }
+
+    
+
+    public OffsiteBackupInstance withKeepDays(Long keepDays) {
+        this.keepDays = keepDays;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 跨区域备份保留天数。
+     * @return keepDays
+     */
+    public Long getKeepDays() {
+        return keepDays;
+    }
+
+    public void setKeepDays(Long keepDays) {
+        this.keepDays = keepDays;
     }
 
     
@@ -82,19 +258,31 @@ public class OffsiteBackupInstance  {
             return false;
         }
         OffsiteBackupInstance offsiteBackupInstance = (OffsiteBackupInstance) o;
-        return Objects.equals(this.offset, offsiteBackupInstance.offset) &&
-            Objects.equals(this.limit, offsiteBackupInstance.limit);
+        return Objects.equals(this.id, offsiteBackupInstance.id) &&
+            Objects.equals(this.name, offsiteBackupInstance.name) &&
+            Objects.equals(this.sourceRegion, offsiteBackupInstance.sourceRegion) &&
+            Objects.equals(this.sourceProjectId, offsiteBackupInstance.sourceProjectId) &&
+            Objects.equals(this.datastore, offsiteBackupInstance.datastore) &&
+            Objects.equals(this.destinationRegion, offsiteBackupInstance.destinationRegion) &&
+            Objects.equals(this.destinationProjectId, offsiteBackupInstance.destinationProjectId) &&
+            Objects.equals(this.keepDays, offsiteBackupInstance.keepDays);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit);
+        return Objects.hash(id, name, sourceRegion, sourceProjectId, datastore, destinationRegion, destinationProjectId, keepDays);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OffsiteBackupInstance {\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    sourceRegion: ").append(toIndentedString(sourceRegion)).append("\n");
+        sb.append("    sourceProjectId: ").append(toIndentedString(sourceProjectId)).append("\n");
+        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    destinationRegion: ").append(toIndentedString(destinationRegion)).append("\n");
+        sb.append("    destinationProjectId: ").append(toIndentedString(destinationProjectId)).append("\n");
+        sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

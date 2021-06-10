@@ -19,6 +19,12 @@ public class ResourceDTO  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
     private String type;
@@ -40,6 +46,28 @@ public class ResourceDTO  {
     @JsonProperty(value="expireDate")
     
     private Long expireDate;
+
+    public ResourceDTO withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 资源标识，不携带则后台自动生成
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
 
     public ResourceDTO withType(String type) {
         this.type = type;
@@ -139,19 +167,21 @@ public class ResourceDTO  {
             return false;
         }
         ResourceDTO resourceDTO = (ResourceDTO) o;
-        return Objects.equals(this.type, resourceDTO.type) &&
+        return Objects.equals(this.id, resourceDTO.id) &&
+            Objects.equals(this.type, resourceDTO.type) &&
             Objects.equals(this.typeId, resourceDTO.typeId) &&
             Objects.equals(this.count, resourceDTO.count) &&
             Objects.equals(this.expireDate, resourceDTO.expireDate);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, typeId, count, expireDate);
+        return Objects.hash(id, type, typeId, count, expireDate);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResourceDTO {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    typeId: ").append(toIndentedString(typeId)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");

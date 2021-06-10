@@ -42,6 +42,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 函数异步执行并返回预留实例ID。
+     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常， 可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+     *
+     * @param AsyncInvokeReservedFunctionRequest 请求对象
+     * @return CompletableFuture<AsyncInvokeReservedFunctionResponse>
+     */
+    public CompletableFuture<AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionAsync(AsyncInvokeReservedFunctionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.asyncInvokeReservedFunction);
+    }
+
+    /**
+     * 函数异步执行并返回预留实例ID。
+     * 函数异步执行并返回预留实例ID用于场景指客户端请求执行比较费时任务，不需要同步等待执行完成返回结果，该方法提前返回任务执行对应的预留实例ID, 如果预留实例有异常， 可以通过该实例ID把对应实例删除（该接口主要针对白名单用户）。
+     *
+     * @param AsyncInvokeReservedFunctionRequest 请求对象
+     * @return AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>
+     */
+    public AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse> asyncInvokeReservedFunctionAsyncInvoker(AsyncInvokeReservedFunctionRequest request) {
+        return new AsyncInvoker<AsyncInvokeReservedFunctionRequest, AsyncInvokeReservedFunctionResponse>(request, FunctionGraphMeta.asyncInvokeReservedFunction, hcClient);
+    }
+
+    /**
      * 创建依赖包
      * 创建依赖包。
      *
@@ -240,6 +262,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 根据预留实例ID删除对应预留实例
+     * 预留实例异常时，可以根据预留实例ID删除该预留实例，注意：删除成功之后重新会重新拉起一个新的预留实例，业务高峰期可以更好的工作（该接口主要针对白名单用户）
+     *
+     * @param DeleteReservedInstanceByIdRequest 请求对象
+     * @return CompletableFuture<DeleteReservedInstanceByIdResponse>
+     */
+    public CompletableFuture<DeleteReservedInstanceByIdResponse> deleteReservedInstanceByIdAsync(DeleteReservedInstanceByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.deleteReservedInstanceById);
+    }
+
+    /**
+     * 根据预留实例ID删除对应预留实例
+     * 预留实例异常时，可以根据预留实例ID删除该预留实例，注意：删除成功之后重新会重新拉起一个新的预留实例，业务高峰期可以更好的工作（该接口主要针对白名单用户）
+     *
+     * @param DeleteReservedInstanceByIdRequest 请求对象
+     * @return AsyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse>
+     */
+    public AsyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse> deleteReservedInstanceByIdAsyncInvoker(DeleteReservedInstanceByIdRequest request) {
+        return new AsyncInvoker<DeleteReservedInstanceByIdRequest, DeleteReservedInstanceByIdResponse>(request, FunctionGraphMeta.deleteReservedInstanceById, hcClient);
+    }
+
+    /**
      * 删除函数版本别名。
      * 删除函数版本别名。
      *
@@ -259,6 +303,50 @@ public class FunctionGraphAsyncClient {
      */
     public AsyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse> deleteVersionAliasAsyncInvoker(DeleteVersionAliasRequest request) {
         return new AsyncInvoker<DeleteVersionAliasRequest, DeleteVersionAliasResponse>(request, FunctionGraphMeta.deleteVersionAlias, hcClient);
+    }
+
+    /**
+     * 导出函数。
+     * 导出函数。
+     *
+     * @param ExportFunctionRequest 请求对象
+     * @return CompletableFuture<ExportFunctionResponse>
+     */
+    public CompletableFuture<ExportFunctionResponse> exportFunctionAsync(ExportFunctionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.exportFunction);
+    }
+
+    /**
+     * 导出函数。
+     * 导出函数。
+     *
+     * @param ExportFunctionRequest 请求对象
+     * @return AsyncInvoker<ExportFunctionRequest, ExportFunctionResponse>
+     */
+    public AsyncInvoker<ExportFunctionRequest, ExportFunctionResponse> exportFunctionAsyncInvoker(ExportFunctionRequest request) {
+        return new AsyncInvoker<ExportFunctionRequest, ExportFunctionResponse>(request, FunctionGraphMeta.exportFunction, hcClient);
+    }
+
+    /**
+     * 导入函数。
+     * 导入函数。
+     *
+     * @param ImportFunctionRequest 请求对象
+     * @return CompletableFuture<ImportFunctionResponse>
+     */
+    public CompletableFuture<ImportFunctionResponse> importFunctionAsync(ImportFunctionRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.importFunction);
+    }
+
+    /**
+     * 导入函数。
+     * 导入函数。
+     *
+     * @param ImportFunctionRequest 请求对象
+     * @return AsyncInvoker<ImportFunctionRequest, ImportFunctionResponse>
+     */
+    public AsyncInvoker<ImportFunctionRequest, ImportFunctionResponse> importFunctionAsyncInvoker(ImportFunctionRequest request) {
+        return new AsyncInvoker<ImportFunctionRequest, ImportFunctionResponse>(request, FunctionGraphMeta.importFunction, hcClient);
     }
 
     /**
