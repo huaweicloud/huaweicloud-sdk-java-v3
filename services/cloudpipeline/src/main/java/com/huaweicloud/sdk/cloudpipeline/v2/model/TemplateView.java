@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cloudpipeline.v2.model.TemplateParam;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -37,6 +39,12 @@ public class TemplateView  {
     @JsonProperty(value="template_type")
     
     private String templateType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="template_url")
+    
+    private String templateUrl;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -88,6 +96,18 @@ public class TemplateView  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
+    
+    private String createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="last_modify_time")
+    
+    private String lastModifyTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_watch")
     
     private Boolean isWatch;
@@ -108,13 +128,31 @@ public class TemplateView  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flow")
     
-    private Object flow;
-
+    private Map<String, Map<String, String>> flow = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="states")
     
-    private Object states;
+    private Map<String, Object> states = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="can_update")
+    
+    private Boolean canUpdate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="can_delete")
+    
+    private Boolean canDelete;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="need_hub")
+    
+    private Boolean needHub;
 
     public TemplateView withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -178,6 +216,28 @@ public class TemplateView  {
 
     public void setTemplateType(String templateType) {
         this.templateType = templateType;
+    }
+
+    
+
+    public TemplateView withTemplateUrl(String templateUrl) {
+        this.templateUrl = templateUrl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 模板编辑URL
+     * @return templateUrl
+     */
+    public String getTemplateUrl() {
+        return templateUrl;
+    }
+
+    public void setTemplateUrl(String templateUrl) {
+        this.templateUrl = templateUrl;
     }
 
     
@@ -301,7 +361,7 @@ public class TemplateView  {
 
 
     /**
-     * region
+     * 系统模板region为Cloud Pipeline。自定义模板region为实际region
      * @return region
      */
     public String getRegion() {
@@ -354,6 +414,50 @@ public class TemplateView  {
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
+    }
+
+    
+
+    public TemplateView withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建时间
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    
+
+    public TemplateView withLastModifyTime(String lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 修改时间
+     * @return lastModifyTime
+     */
+    public String getLastModifyTime() {
+        return lastModifyTime;
+    }
+
+    public void setLastModifyTime(String lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 
     
@@ -438,30 +542,80 @@ public class TemplateView  {
 
     
 
-    public TemplateView withFlow(Object flow) {
+    public TemplateView withFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
         return this;
     }
 
     
 
+    public TemplateView putFlowItem(String key, Map<String, String> flowItem) {
+        if(this.flow == null) {
+            this.flow = new HashMap<>();
+        }
+        this.flow.put(key, flowItem);
+        return this;
+    }
 
+    public TemplateView withFlow(Consumer<Map<String, Map<String, String>>> flowSetter) {
+        if(this.flow == null) {
+            this.flow = new HashMap<>();
+        }
+        flowSetter.accept(this.flow);
+        return this;
+    }
     /**
-     * 编排flow，map类型数据
+     * 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
      * @return flow
      */
-    public Object getFlow() {
+    public Map<String, Map<String, String>> getFlow() {
         return flow;
     }
 
-    public void setFlow(Object flow) {
+    public void setFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
     }
 
     
 
-    public TemplateView withStates(Object states) {
+    public TemplateView withStates(Map<String, Object> states) {
         this.states = states;
+        return this;
+    }
+
+    
+
+    public TemplateView putStatesItem(String key, Object statesItem) {
+        if(this.states == null) {
+            this.states = new HashMap<>();
+        }
+        this.states.put(key, statesItem);
+        return this;
+    }
+
+    public TemplateView withStates(Consumer<Map<String, Object>> statesSetter) {
+        if(this.states == null) {
+            this.states = new HashMap<>();
+        }
+        statesSetter.accept(this.states);
+        return this;
+    }
+    /**
+     * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * @return states
+     */
+    public Map<String, Object> getStates() {
+        return states;
+    }
+
+    public void setStates(Map<String, Object> states) {
+        this.states = states;
+    }
+
+    
+
+    public TemplateView withCanUpdate(Boolean canUpdate) {
+        this.canUpdate = canUpdate;
         return this;
     }
 
@@ -469,15 +623,59 @@ public class TemplateView  {
 
 
     /**
-     * 子任务states，map类型数据
-     * @return states
+     * 是否可以修改
+     * @return canUpdate
      */
-    public Object getStates() {
-        return states;
+    public Boolean getCanUpdate() {
+        return canUpdate;
     }
 
-    public void setStates(Object states) {
-        this.states = states;
+    public void setCanUpdate(Boolean canUpdate) {
+        this.canUpdate = canUpdate;
+    }
+
+    
+
+    public TemplateView withCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否可以删除
+     * @return canDelete
+     */
+    public Boolean getCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(Boolean canDelete) {
+        this.canDelete = canDelete;
+    }
+
+    
+
+    public TemplateView withNeedHub(Boolean needHub) {
+        this.needHub = needHub;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否需要代码仓库
+     * @return needHub
+     */
+    public Boolean getNeedHub() {
+        return needHub;
+    }
+
+    public void setNeedHub(Boolean needHub) {
+        this.needHub = needHub;
     }
 
     
@@ -494,6 +692,7 @@ public class TemplateView  {
         return Objects.equals(this.templateId, templateView.templateId) &&
             Objects.equals(this.templateName, templateView.templateName) &&
             Objects.equals(this.templateType, templateView.templateType) &&
+            Objects.equals(this.templateUrl, templateView.templateUrl) &&
             Objects.equals(this.userId, templateView.userId) &&
             Objects.equals(this.userName, templateView.userName) &&
             Objects.equals(this.domainId, templateView.domainId) &&
@@ -502,15 +701,20 @@ public class TemplateView  {
             Objects.equals(this.region, templateView.region) &&
             Objects.equals(this.projectId, templateView.projectId) &&
             Objects.equals(this.projectName, templateView.projectName) &&
+            Objects.equals(this.createTime, templateView.createTime) &&
+            Objects.equals(this.lastModifyTime, templateView.lastModifyTime) &&
             Objects.equals(this.isWatch, templateView.isWatch) &&
             Objects.equals(this.description, templateView.description) &&
             Objects.equals(this.parameter, templateView.parameter) &&
             Objects.equals(this.flow, templateView.flow) &&
-            Objects.equals(this.states, templateView.states);
+            Objects.equals(this.states, templateView.states) &&
+            Objects.equals(this.canUpdate, templateView.canUpdate) &&
+            Objects.equals(this.canDelete, templateView.canDelete) &&
+            Objects.equals(this.needHub, templateView.needHub);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, templateName, templateType, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, isWatch, description, parameter, flow, states);
+        return Objects.hash(templateId, templateName, templateType, templateUrl, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, createTime, lastModifyTime, isWatch, description, parameter, flow, states, canUpdate, canDelete, needHub);
     }
     @Override
     public String toString() {
@@ -519,6 +723,7 @@ public class TemplateView  {
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
+        sb.append("    templateUrl: ").append(toIndentedString(templateUrl)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
@@ -527,11 +732,16 @@ public class TemplateView  {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    lastModifyTime: ").append(toIndentedString(lastModifyTime)).append("\n");
         sb.append("    isWatch: ").append(toIndentedString(isWatch)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");
         sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
         sb.append("    states: ").append(toIndentedString(states)).append("\n");
+        sb.append("    canUpdate: ").append(toIndentedString(canUpdate)).append("\n");
+        sb.append("    canDelete: ").append(toIndentedString(canDelete)).append("\n");
+        sb.append("    needHub: ").append(toIndentedString(needHub)).append("\n");
         sb.append("}");
         return sb.toString();
     }

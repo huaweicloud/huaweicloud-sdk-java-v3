@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.RefreshPreheatingBody;
+import com.huaweicloud.sdk.cdn.v1.model.RefreshTask;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,18 +22,18 @@ public class CreateRefreshTasksResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refreshTask")
+    @JsonProperty(value="refresh_task")
     
-    private RefreshPreheatingBody refreshTask;
+    private RefreshTask refreshTask;
 
-    public CreateRefreshTasksResponse withRefreshTask(RefreshPreheatingBody refreshTask) {
+    public CreateRefreshTasksResponse withRefreshTask(RefreshTask refreshTask) {
         this.refreshTask = refreshTask;
         return this;
     }
 
-    public CreateRefreshTasksResponse withRefreshTask(Consumer<RefreshPreheatingBody> refreshTaskSetter) {
+    public CreateRefreshTasksResponse withRefreshTask(Consumer<RefreshTask> refreshTaskSetter) {
         if(this.refreshTask == null ){
-            this.refreshTask = new RefreshPreheatingBody();
+            this.refreshTask = new RefreshTask();
             refreshTaskSetter.accept(this.refreshTask);
         }
         
@@ -45,11 +45,11 @@ public class CreateRefreshTasksResponse extends SdkResponse {
      * Get refreshTask
      * @return refreshTask
      */
-    public RefreshPreheatingBody getRefreshTask() {
+    public RefreshTask getRefreshTask() {
         return refreshTask;
     }
 
-    public void setRefreshTask(RefreshPreheatingBody refreshTask) {
+    public void setRefreshTask(RefreshTask refreshTask) {
         this.refreshTask = refreshTask;
     }
 

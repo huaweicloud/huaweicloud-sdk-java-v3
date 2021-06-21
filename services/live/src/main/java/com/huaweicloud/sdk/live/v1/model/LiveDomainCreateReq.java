@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.live.v1.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -117,6 +119,96 @@ public class LiveDomainCreateReq  {
     @JsonProperty(value="region")
     
     private String region;
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     */
+    public static final class ServiceAreaEnum {
+
+        
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
+        public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
+        
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
+        public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
+        
+        /**
+         * Enum GLOBAL for value: "global"
+         */
+        public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+        
+
+        private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ServiceAreaEnum> createStaticFields() {
+            Map<String, ServiceAreaEnum> map = new HashMap<>();
+            map.put("mainland_china", MAINLAND_CHINA);
+            map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
+            map.put("global", GLOBAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ServiceAreaEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ServiceAreaEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ServiceAreaEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ServiceAreaEnum(value);
+            }
+            return result;
+        }
+
+        public static ServiceAreaEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ServiceAreaEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ServiceAreaEnum) {
+                return this.value.equals(((ServiceAreaEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_area")
+    
+    private ServiceAreaEnum serviceArea;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -190,6 +282,28 @@ public class LiveDomainCreateReq  {
 
     
 
+    public LiveDomainCreateReq withServiceArea(ServiceAreaEnum serviceArea) {
+        this.serviceArea = serviceArea;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * @return serviceArea
+     */
+    public ServiceAreaEnum getServiceArea() {
+        return serviceArea;
+    }
+
+    public void setServiceArea(ServiceAreaEnum serviceArea) {
+        this.serviceArea = serviceArea;
+    }
+
+    
+
     public LiveDomainCreateReq withDomainSource(DomainSourceInfo domainSource) {
         this.domainSource = domainSource;
         return this;
@@ -231,11 +345,12 @@ public class LiveDomainCreateReq  {
         return Objects.equals(this.domain, liveDomainCreateReq.domain) &&
             Objects.equals(this.domainType, liveDomainCreateReq.domainType) &&
             Objects.equals(this.region, liveDomainCreateReq.region) &&
+            Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea) &&
             Objects.equals(this.domainSource, liveDomainCreateReq.domainSource);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, region, domainSource);
+        return Objects.hash(domain, domainType, region, serviceArea, domainSource);
     }
     @Override
     public String toString() {
@@ -244,6 +359,7 @@ public class LiveDomainCreateReq  {
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    domainSource: ").append(toIndentedString(domainSource)).append("\n");
         sb.append("}");
         return sb.toString();

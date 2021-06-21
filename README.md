@@ -159,7 +159,7 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 * [6. Troubleshooting](#6-troubleshooting-top)
     * [6.1 Access Log](#61-access-log-top)
     * [6.2 Original HTTP Listener](#62-original-http-listener-top)
-* [7. Retry For Request (BETA)](#7-retry-for-request-beta-top)
+* [7. Retry For Request](#7-retry-for-request-top)
     * [7.1 Synchronous Retry](#71-synchronous-retry-top)
     * [7.2 Asynchronous Retry](#72-asynchronous-retry-top)
     * [7.3 Typical Usage Scenarios](#73-typical-usage-scenarios-top)
@@ -511,7 +511,7 @@ VpcClient vpcClient = VpcClient.newBuilder()
     .build();
 ```
 
-### 7. Retry For Request (BETA) [:top:](#user-manual-top)
+### 7. Retry For Request [:top:](#user-manual-top)
 
 When a request encounters a network exception or flow control on the interface, the request needs to be retried. The
 Java SDK provides the retry method for our users which could be used to the requests of `GET` HTTP method. The retry

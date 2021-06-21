@@ -44,7 +44,7 @@ public class Referer  {
 
 
     /**
-     * Referer类型。取值：0代表不设置Referer过滤；1代表黑名单；2代表白名单。
+     * Referer类型。取值：0代表不设置Referer过滤；1代表黑名单；2代表白名单。默认取值为0。
      * @return refererType
      */
     public Integer getRefererType() {
@@ -66,7 +66,7 @@ public class Referer  {
 
 
     /**
-     * 分号隔开的域名列表。
+     * referer防盗链信息（ip或者域名，以;分隔）。当设置防盗链时，此项必填。
      * @return refererList
      */
     public String getRefererList() {
@@ -88,7 +88,7 @@ public class Referer  {
 
 
     /**
-     * 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。
+     * 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认不包含。
      * @return includeEmpty
      */
     public Boolean getIncludeEmpty() {

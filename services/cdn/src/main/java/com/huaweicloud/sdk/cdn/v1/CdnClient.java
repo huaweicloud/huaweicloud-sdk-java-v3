@@ -439,22 +439,22 @@ public class CdnClient {
      * 查询Referer过滤规则
      * 查询Referer过滤规则。
      *
-     * @param ShowReferRequest 请求对象
-     * @return ShowReferResponse
+     * @param ShowRefererRequest 请求对象
+     * @return ShowRefererResponse
      */
-    public ShowReferResponse showRefer(ShowReferRequest request) {
-        return hcClient.syncInvokeHttp(request, CdnMeta.showRefer);
+    public ShowRefererResponse showReferer(ShowRefererRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showReferer);
     }
 
     /**
      * 查询Referer过滤规则
      * 查询Referer过滤规则。
      *
-     * @param ShowReferRequest 请求对象
-     * @return SyncInvoker<ShowReferRequest, ShowReferResponse>
+     * @param ShowRefererRequest 请求对象
+     * @return SyncInvoker<ShowRefererRequest, ShowRefererResponse>
      */
-    public SyncInvoker<ShowReferRequest, ShowReferResponse> showReferInvoker(ShowReferRequest request) {
-        return new SyncInvoker<ShowReferRequest, ShowReferResponse>(request, CdnMeta.showRefer, hcClient);
+    public SyncInvoker<ShowRefererRequest, ShowRefererResponse> showRefererInvoker(ShowRefererRequest request) {
+        return new SyncInvoker<ShowRefererRequest, ShowRefererResponse>(request, CdnMeta.showReferer, hcClient);
     }
 
     /**

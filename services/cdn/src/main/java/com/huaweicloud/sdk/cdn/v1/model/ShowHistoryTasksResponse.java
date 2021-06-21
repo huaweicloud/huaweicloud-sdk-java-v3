@@ -43,7 +43,7 @@ public class ShowHistoryTasksResponse extends SdkResponse {
 
 
     /**
-     * 总数。
+     * 总共的任务个数。
      * @return total
      */
     public Integer getTotal() {

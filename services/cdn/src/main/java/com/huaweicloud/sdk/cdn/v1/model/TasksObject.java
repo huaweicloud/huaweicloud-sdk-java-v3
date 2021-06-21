@@ -388,7 +388,7 @@ public class TasksObject  {
 
 
     /**
-     * 总共的任务个数。
+     * url总数。
      * @return total
      */
     public Integer getTotal() {

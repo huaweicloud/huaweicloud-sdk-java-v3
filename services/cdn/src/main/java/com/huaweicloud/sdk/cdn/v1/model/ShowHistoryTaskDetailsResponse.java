@@ -119,7 +119,7 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
 
 
     /**
-     * 刷新的类型， 其值可以为refresh或preheating。
+     * 任务的类型， 其值可以为refresh或preheating。
      * @return taskType
      */
     public String getTaskType() {
@@ -141,7 +141,7 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
 
 
     /**
-     * 刷新结果。task_done表示刷新成功，task_inprocess表示刷新中。
+     * 任务执行结果。task_done表示成功，task_inprocess表示处理中。
      * @return status
      */
     public String getStatus() {
@@ -177,7 +177,7 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 本次刷新时提交的URL列表。
+     * 本次提交的url列表。
      * @return urls
      */
     public List<UrlObject> getUrls() {

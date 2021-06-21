@@ -30,9 +30,24 @@ public class AddonInstanceStatus  {
 
         
         /**
+         * Enum RUNNING for value: "running"
+         */
+        public static final StatusEnum RUNNING = new StatusEnum("running");
+        
+        /**
+         * Enum ABNORMAL for value: "abnormal"
+         */
+        public static final StatusEnum ABNORMAL = new StatusEnum("abnormal");
+        
+        /**
          * Enum INSTALLING for value: "installing"
          */
         public static final StatusEnum INSTALLING = new StatusEnum("installing");
+        
+        /**
+         * Enum INSTALLFAILED for value: "installFailed"
+         */
+        public static final StatusEnum INSTALLFAILED = new StatusEnum("installFailed");
         
         /**
          * Enum UPGRADING for value: "upgrading"
@@ -40,24 +55,51 @@ public class AddonInstanceStatus  {
         public static final StatusEnum UPGRADING = new StatusEnum("upgrading");
         
         /**
-         * Enum FAILED for value: "failed"
+         * Enum UPGRADEFAILED for value: "upgradeFailed"
          */
-        public static final StatusEnum FAILED = new StatusEnum("failed");
+        public static final StatusEnum UPGRADEFAILED = new StatusEnum("upgradeFailed");
         
         /**
-         * Enum RUNNING for value: "running"
+         * Enum DELETING for value: "deleting"
          */
-        public static final StatusEnum RUNNING = new StatusEnum("running");
+        public static final StatusEnum DELETING = new StatusEnum("deleting");
+        
+        /**
+         * Enum DELETESUCCESS for value: "deleteSuccess"
+         */
+        public static final StatusEnum DELETESUCCESS = new StatusEnum("deleteSuccess");
+        
+        /**
+         * Enum DELETEFAILED for value: "deleteFailed"
+         */
+        public static final StatusEnum DELETEFAILED = new StatusEnum("deleteFailed");
+        
+        /**
+         * Enum AVAILABLE for value: "available"
+         */
+        public static final StatusEnum AVAILABLE = new StatusEnum("available");
+        
+        /**
+         * Enum ROLLBACKING for value: "rollbacking"
+         */
+        public static final StatusEnum ROLLBACKING = new StatusEnum("rollbacking");
         
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("installing", INSTALLING);
-            map.put("upgrading", UPGRADING);
-            map.put("failed", FAILED);
             map.put("running", RUNNING);
+            map.put("abnormal", ABNORMAL);
+            map.put("installing", INSTALLING);
+            map.put("installFailed", INSTALLFAILED);
+            map.put("upgrading", UPGRADING);
+            map.put("upgradeFailed", UPGRADEFAILED);
+            map.put("deleting", DELETING);
+            map.put("deleteSuccess", DELETESUCCESS);
+            map.put("deleteFailed", DELETEFAILED);
+            map.put("available", AVAILABLE);
+            map.put("rollbacking", ROLLBACKING);
             return Collections.unmodifiableMap(map);
         }
 

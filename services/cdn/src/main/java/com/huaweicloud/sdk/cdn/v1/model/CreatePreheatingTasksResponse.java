@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.RefreshPreheatingBody;
+import com.huaweicloud.sdk.cdn.v1.model.PreheatingTask;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,18 +22,18 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preheatingTask")
+    @JsonProperty(value="preheating_task")
     
-    private RefreshPreheatingBody preheatingTask;
+    private PreheatingTask preheatingTask;
 
-    public CreatePreheatingTasksResponse withPreheatingTask(RefreshPreheatingBody preheatingTask) {
+    public CreatePreheatingTasksResponse withPreheatingTask(PreheatingTask preheatingTask) {
         this.preheatingTask = preheatingTask;
         return this;
     }
 
-    public CreatePreheatingTasksResponse withPreheatingTask(Consumer<RefreshPreheatingBody> preheatingTaskSetter) {
+    public CreatePreheatingTasksResponse withPreheatingTask(Consumer<PreheatingTask> preheatingTaskSetter) {
         if(this.preheatingTask == null ){
-            this.preheatingTask = new RefreshPreheatingBody();
+            this.preheatingTask = new PreheatingTask();
             preheatingTaskSetter.accept(this.preheatingTask);
         }
         
@@ -45,11 +45,11 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
      * Get preheatingTask
      * @return preheatingTask
      */
-    public RefreshPreheatingBody getPreheatingTask() {
+    public PreheatingTask getPreheatingTask() {
         return preheatingTask;
     }
 
-    public void setPreheatingTask(RefreshPreheatingBody preheatingTask) {
+    public void setPreheatingTask(PreheatingTask preheatingTask) {
         this.preheatingTask = preheatingTask;
     }
 

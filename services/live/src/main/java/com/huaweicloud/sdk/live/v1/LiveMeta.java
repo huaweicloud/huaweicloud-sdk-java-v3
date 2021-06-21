@@ -74,22 +74,49 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRecordConfigRequest, CreateRecordConfigResponse> createRecordConfig = genForcreateRecordConfig();
+    public static final HttpRequestDef<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> createRecordCallbackConfig = genForcreateRecordCallbackConfig();
 
-    private static HttpRequestDef<CreateRecordConfigRequest, CreateRecordConfigResponse> genForcreateRecordConfig() {
+    private static HttpRequestDef<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> genForcreateRecordCallbackConfig() {
         // basic
-        HttpRequestDef.Builder<CreateRecordConfigRequest, CreateRecordConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateRecordConfigRequest.class, CreateRecordConfigResponse.class)
-                .withName("CreateRecordConfig")
-                .withUri("/v1/{project_id}/record/config")
+        HttpRequestDef.Builder<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRecordCallbackConfigRequest.class, CreateRecordCallbackConfigResponse.class)
+                .withName("CreateRecordCallbackConfig")
+                .withUri("/v1/{project_id}/record/callbacks")
                 .withContentType("application/json; charset=UTF-8");
 
         // requests
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RecordConfigInfo.class,
-            f -> f.withMarshaller(CreateRecordConfigRequest::getBody, (req, v) -> {
+            RecordCallbackConfigRequest.class,
+            f -> f.withMarshaller(CreateRecordCallbackConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRule = genForcreateRecordRule();
+
+    private static HttpRequestDef<CreateRecordRuleRequest, CreateRecordRuleResponse> genForcreateRecordRule() {
+        // basic
+        HttpRequestDef.Builder<CreateRecordRuleRequest, CreateRecordRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRecordRuleRequest.class, CreateRecordRuleResponse.class)
+                .withName("CreateRecordRule")
+                .withUri("/v1/{project_id}/record/rules")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RecordRuleRequest.class,
+            f -> f.withMarshaller(CreateRecordRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -233,31 +260,50 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRecordConfigRequest, DeleteRecordConfigResponse> deleteRecordConfig = genFordeleteRecordConfig();
+    public static final HttpRequestDef<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> deleteRecordCallbackConfig = genFordeleteRecordCallbackConfig();
 
-    private static HttpRequestDef<DeleteRecordConfigRequest, DeleteRecordConfigResponse> genFordeleteRecordConfig() {
+    private static HttpRequestDef<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> genFordeleteRecordCallbackConfig() {
         // basic
-        HttpRequestDef.Builder<DeleteRecordConfigRequest, DeleteRecordConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordConfigRequest.class, DeleteRecordConfigResponse.class)
-                .withName("DeleteRecordConfig")
-                .withUri("/v1/{project_id}/record/config")
+        HttpRequestDef.Builder<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordCallbackConfigRequest.class, DeleteRecordCallbackConfigResponse.class)
+                .withName("DeleteRecordCallbackConfig")
+                .withUri("/v1/{project_id}/record/callbacks/{id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("domain",
-            LocationType.Query,
+        builder.withRequestField("id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(DeleteRecordConfigRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
+            f -> f.withMarshaller(DeleteRecordCallbackConfigRequest::getId, (req, v) -> {
+                req.setId(v);
             })
         );
-        builder.withRequestField("app_name",
-            LocationType.Query,
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> deleteRecordRule = genFordeleteRecordRule();
+
+    private static HttpRequestDef<DeleteRecordRuleRequest, DeleteRecordRuleResponse> genFordeleteRecordRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteRecordRuleRequest, DeleteRecordRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRecordRuleRequest.class, DeleteRecordRuleResponse.class)
+                .withName("DeleteRecordRule")
+                .withUri("/v1/{project_id}/record/rules/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(DeleteRecordConfigRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
+            f -> f.withMarshaller(DeleteRecordRuleRequest::getId, (req, v) -> {
+                req.setId(v);
             })
         );
 
@@ -456,63 +502,114 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRecordConfigsRequest, ListRecordConfigsResponse> listRecordConfigs = genForlistRecordConfigs();
+    public static final HttpRequestDef<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> listRecordCallbackConfigs = genForlistRecordCallbackConfigs();
 
-    private static HttpRequestDef<ListRecordConfigsRequest, ListRecordConfigsResponse> genForlistRecordConfigs() {
+    private static HttpRequestDef<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> genForlistRecordCallbackConfigs() {
         // basic
-        HttpRequestDef.Builder<ListRecordConfigsRequest, ListRecordConfigsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListRecordConfigsRequest.class, ListRecordConfigsResponse.class)
-                .withName("ListRecordConfigs")
-                .withUri("/v1/{project_id}/record/config")
+        HttpRequestDef.Builder<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRecordCallbackConfigsRequest.class, ListRecordCallbackConfigsResponse.class)
+                .withName("ListRecordCallbackConfigs")
+                .withUri("/v1/{project_id}/record/callbacks")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("domain",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ListRecordConfigsRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            })
-        );
-        builder.withRequestField("app_name",
+        builder.withRequestField("publish_domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListRecordConfigsRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
             })
         );
-        builder.withRequestField("stream_name",
+        builder.withRequestField("app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListRecordConfigsRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getApp, (req, v) -> {
+                req.setApp(v);
             })
         );
-        builder.withRequestField("page",
+        builder.withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListRecordConfigsRequest::getPage, (req, v) -> {
-                req.setPage(v);
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
             })
         );
-        builder.withRequestField("size",
+        builder.withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             Integer.class,
-            f -> f.withMarshaller(ListRecordConfigsRequest::getSize, (req, v) -> {
-                req.setSize(v);
+            f -> f.withMarshaller(ListRecordCallbackConfigsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRules = genForlistRecordRules();
+
+    private static HttpRequestDef<ListRecordRulesRequest, ListRecordRulesResponse> genForlistRecordRules() {
+        // basic
+        HttpRequestDef.Builder<ListRecordRulesRequest, ListRecordRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRecordRulesRequest.class, ListRecordRulesResponse.class)
+                .withName("ListRecordRules")
+                .withUri("/v1/{project_id}/record/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRecordRulesRequest::getPublishDomain, (req, v) -> {
+                req.setPublishDomain(v);
+            })
+        );
+        builder.withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRecordRulesRequest::getApp, (req, v) -> {
+                req.setApp(v);
+            })
+        );
+        builder.withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRecordRulesRequest::getStream, (req, v) -> {
+                req.setStream(v);
             })
         );
         builder.withRequestField("record_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListRecordConfigsRequest.RecordTypeEnum.class,
-            f -> f.withMarshaller(ListRecordConfigsRequest::getRecordType, (req, v) -> {
+            ListRecordRulesRequest.RecordTypeEnum.class,
+            f -> f.withMarshaller(ListRecordRulesRequest::getRecordType, (req, v) -> {
                 req.setRecordType(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRecordRulesRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRecordRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
             })
         );
 
@@ -590,57 +687,6 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidth = genForshowBandwidth();
-
-    private static HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> genForshowBandwidth() {
-        // basic
-        HttpRequestDef.Builder<ShowBandwidthRequest, ShowBandwidthResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthRequest.class, ShowBandwidthResponse.class)
-                .withName("ShowBandwidth")
-                .withUri("/v1/{project_id}/stream/bandwidth")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("domain",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowBandwidthRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowBandwidthRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowBandwidthRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("step",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ShowBandwidthRequest::getStep, (req, v) -> {
-                req.setStep(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowDomainRequest, ShowDomainResponse> showDomain = genForshowDomain();
 
     private static HttpRequestDef<ShowDomainRequest, ShowDomainResponse> genForshowDomain() {
@@ -668,63 +714,23 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowOnlineUsersRequest, ShowOnlineUsersResponse> showOnlineUsers = genForshowOnlineUsers();
+    public static final HttpRequestDef<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> showRecordCallbackConfig = genForshowRecordCallbackConfig();
 
-    private static HttpRequestDef<ShowOnlineUsersRequest, ShowOnlineUsersResponse> genForshowOnlineUsers() {
+    private static HttpRequestDef<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> genForshowRecordCallbackConfig() {
         // basic
-        HttpRequestDef.Builder<ShowOnlineUsersRequest, ShowOnlineUsersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowOnlineUsersRequest.class, ShowOnlineUsersResponse.class)
-                .withName("ShowOnlineUsers")
-                .withUri("/v1/{project_id}/stream/users")
+        HttpRequestDef.Builder<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecordCallbackConfigRequest.class, ShowRecordCallbackConfigResponse.class)
+                .withName("ShowRecordCallbackConfig")
+                .withUri("/v1/{project_id}/record/callbacks/{id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("domain",
-            LocationType.Query,
+        builder.withRequestField("id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowOnlineUsersRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            })
-        );
-        builder.withRequestField("app_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowOnlineUsersRequest::getAppName, (req, v) -> {
-                req.setAppName(v);
-            })
-        );
-        builder.withRequestField("stream_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowOnlineUsersRequest::getStreamName, (req, v) -> {
-                req.setStreamName(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
-            f -> f.withMarshaller(ShowOnlineUsersRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            OffsetDateTime.class,
-            f -> f.withMarshaller(ShowOnlineUsersRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("step",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ShowOnlineUsersRequest::getStep, (req, v) -> {
-                req.setStep(v);
+            f -> f.withMarshaller(ShowRecordCallbackConfigRequest::getId, (req, v) -> {
+                req.setId(v);
             })
         );
 
@@ -735,47 +741,23 @@ public class LiveMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTrafficRequest, ShowTrafficResponse> showTraffic = genForshowTraffic();
+    public static final HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRule = genForshowRecordRule();
 
-    private static HttpRequestDef<ShowTrafficRequest, ShowTrafficResponse> genForshowTraffic() {
+    private static HttpRequestDef<ShowRecordRuleRequest, ShowRecordRuleResponse> genForshowRecordRule() {
         // basic
-        HttpRequestDef.Builder<ShowTrafficRequest, ShowTrafficResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTrafficRequest.class, ShowTrafficResponse.class)
-                .withName("ShowTraffic")
-                .withUri("/v1/{project_id}/stream/traffic")
+        HttpRequestDef.Builder<ShowRecordRuleRequest, ShowRecordRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecordRuleRequest.class, ShowRecordRuleResponse.class)
+                .withName("ShowRecordRule")
+                .withUri("/v1/{project_id}/record/rules/{id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("domain",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowTrafficRequest::getDomain, (req, v) -> {
-                req.setDomain(v);
-            })
-        );
-        builder.withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTrafficRequest::getStartTime, (req, v) -> {
-                req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTrafficRequest::getEndTime, (req, v) -> {
-                req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("step",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ShowTrafficRequest::getStep, (req, v) -> {
-                req.setStep(v);
+            f -> f.withMarshaller(ShowRecordRuleRequest::getId, (req, v) -> {
+                req.setId(v);
             })
         );
 
@@ -853,6 +835,76 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             LiveDomainModifyReq.class,
             f -> f.withMarshaller(UpdateDomainRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> updateRecordCallbackConfig = genForupdateRecordCallbackConfig();
+
+    private static HttpRequestDef<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> genForupdateRecordCallbackConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordCallbackConfigRequest.class, UpdateRecordCallbackConfigResponse.class)
+                .withName("UpdateRecordCallbackConfig")
+                .withUri("/v1/{project_id}/record/callbacks/{id}")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRecordCallbackConfigRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RecordCallbackConfigRequest.class,
+            f -> f.withMarshaller(UpdateRecordCallbackConfigRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRule = genForupdateRecordRule();
+
+    private static HttpRequestDef<UpdateRecordRuleRequest, UpdateRecordRuleResponse> genForupdateRecordRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecordRuleRequest, UpdateRecordRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRecordRuleRequest.class, UpdateRecordRuleResponse.class)
+                .withName("UpdateRecordRule")
+                .withUri("/v1/{project_id}/record/rules/{id}")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getId, (req, v) -> {
+                req.setId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RecordRuleRequest.class,
+            f -> f.withMarshaller(UpdateRecordRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

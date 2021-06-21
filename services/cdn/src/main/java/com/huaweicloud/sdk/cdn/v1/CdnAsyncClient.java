@@ -441,22 +441,22 @@ public class CdnAsyncClient {
      * 查询Referer过滤规则
      * 查询Referer过滤规则。
      *
-     * @param ShowReferRequest 请求对象
-     * @return CompletableFuture<ShowReferResponse>
+     * @param ShowRefererRequest 请求对象
+     * @return CompletableFuture<ShowRefererResponse>
      */
-    public CompletableFuture<ShowReferResponse> showReferAsync(ShowReferRequest request) {
-        return hcClient.asyncInvokeHttp(request, CdnMeta.showRefer);
+    public CompletableFuture<ShowRefererResponse> showRefererAsync(ShowRefererRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showReferer);
     }
 
     /**
      * 查询Referer过滤规则
      * 查询Referer过滤规则。
      *
-     * @param ShowReferRequest 请求对象
-     * @return AsyncInvoker<ShowReferRequest, ShowReferResponse>
+     * @param ShowRefererRequest 请求对象
+     * @return AsyncInvoker<ShowRefererRequest, ShowRefererResponse>
      */
-    public AsyncInvoker<ShowReferRequest, ShowReferResponse> showReferAsyncInvoker(ShowReferRequest request) {
-        return new AsyncInvoker<ShowReferRequest, ShowReferResponse>(request, CdnMeta.showRefer, hcClient);
+    public AsyncInvoker<ShowRefererRequest, ShowRefererResponse> showRefererAsyncInvoker(ShowRefererRequest request) {
+        return new AsyncInvoker<ShowRefererRequest, ShowRefererResponse>(request, CdnMeta.showReferer, hcClient);
     }
 
     /**

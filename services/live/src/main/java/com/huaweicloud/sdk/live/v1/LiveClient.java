@@ -62,25 +62,47 @@ public class LiveClient {
     }
 
     /**
-     * 创建录制配置
-     * 创建录制配置接口
+     * 创建录制回调配置
+     * 创建录制回调配置接口
      *
-     * @param CreateRecordConfigRequest 请求对象
-     * @return CreateRecordConfigResponse
+     * @param CreateRecordCallbackConfigRequest 请求对象
+     * @return CreateRecordCallbackConfigResponse
      */
-    public CreateRecordConfigResponse createRecordConfig(CreateRecordConfigRequest request) {
-        return hcClient.syncInvokeHttp(request, LiveMeta.createRecordConfig);
+    public CreateRecordCallbackConfigResponse createRecordCallbackConfig(CreateRecordCallbackConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.createRecordCallbackConfig);
     }
 
     /**
-     * 创建录制配置
-     * 创建录制配置接口
+     * 创建录制回调配置
+     * 创建录制回调配置接口
      *
-     * @param CreateRecordConfigRequest 请求对象
-     * @return SyncInvoker<CreateRecordConfigRequest, CreateRecordConfigResponse>
+     * @param CreateRecordCallbackConfigRequest 请求对象
+     * @return SyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse>
      */
-    public SyncInvoker<CreateRecordConfigRequest, CreateRecordConfigResponse> createRecordConfigInvoker(CreateRecordConfigRequest request) {
-        return new SyncInvoker<CreateRecordConfigRequest, CreateRecordConfigResponse>(request, LiveMeta.createRecordConfig, hcClient);
+    public SyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse> createRecordCallbackConfigInvoker(CreateRecordCallbackConfigRequest request) {
+        return new SyncInvoker<CreateRecordCallbackConfigRequest, CreateRecordCallbackConfigResponse>(request, LiveMeta.createRecordCallbackConfig, hcClient);
+    }
+
+    /**
+     * 创建录制规则
+     * 创建录制规则接口，录制规则对新推送的流生效，对已经推送中的流不生效
+     *
+     * @param CreateRecordRuleRequest 请求对象
+     * @return CreateRecordRuleResponse
+     */
+    public CreateRecordRuleResponse createRecordRule(CreateRecordRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.createRecordRule);
+    }
+
+    /**
+     * 创建录制规则
+     * 创建录制规则接口，录制规则对新推送的流生效，对已经推送中的流不生效
+     *
+     * @param CreateRecordRuleRequest 请求对象
+     * @return SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>
+     */
+    public SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRuleInvoker(CreateRecordRuleRequest request) {
+        return new SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse>(request, LiveMeta.createRecordRule, hcClient);
     }
 
     /**
@@ -172,25 +194,47 @@ public class LiveClient {
     }
 
     /**
-     * 删除录制配置
-     * 删除录制配置接口
+     * 删除录制回调配置
+     * 删除录制回调配置接口
      *
-     * @param DeleteRecordConfigRequest 请求对象
-     * @return DeleteRecordConfigResponse
+     * @param DeleteRecordCallbackConfigRequest 请求对象
+     * @return DeleteRecordCallbackConfigResponse
      */
-    public DeleteRecordConfigResponse deleteRecordConfig(DeleteRecordConfigRequest request) {
-        return hcClient.syncInvokeHttp(request, LiveMeta.deleteRecordConfig);
+    public DeleteRecordCallbackConfigResponse deleteRecordCallbackConfig(DeleteRecordCallbackConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.deleteRecordCallbackConfig);
     }
 
     /**
-     * 删除录制配置
-     * 删除录制配置接口
+     * 删除录制回调配置
+     * 删除录制回调配置接口
      *
-     * @param DeleteRecordConfigRequest 请求对象
-     * @return SyncInvoker<DeleteRecordConfigRequest, DeleteRecordConfigResponse>
+     * @param DeleteRecordCallbackConfigRequest 请求对象
+     * @return SyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse>
      */
-    public SyncInvoker<DeleteRecordConfigRequest, DeleteRecordConfigResponse> deleteRecordConfigInvoker(DeleteRecordConfigRequest request) {
-        return new SyncInvoker<DeleteRecordConfigRequest, DeleteRecordConfigResponse>(request, LiveMeta.deleteRecordConfig, hcClient);
+    public SyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse> deleteRecordCallbackConfigInvoker(DeleteRecordCallbackConfigRequest request) {
+        return new SyncInvoker<DeleteRecordCallbackConfigRequest, DeleteRecordCallbackConfigResponse>(request, LiveMeta.deleteRecordCallbackConfig, hcClient);
+    }
+
+    /**
+     * 删除录制规则
+     * 删除录制规则接口
+     *
+     * @param DeleteRecordRuleRequest 请求对象
+     * @return DeleteRecordRuleResponse
+     */
+    public DeleteRecordRuleResponse deleteRecordRule(DeleteRecordRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.deleteRecordRule);
+    }
+
+    /**
+     * 删除录制规则
+     * 删除录制规则接口
+     *
+     * @param DeleteRecordRuleRequest 请求对象
+     * @return SyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>
+     */
+    public SyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse> deleteRecordRuleInvoker(DeleteRecordRuleRequest request) {
+        return new SyncInvoker<DeleteRecordRuleRequest, DeleteRecordRuleResponse>(request, LiveMeta.deleteRecordRule, hcClient);
     }
 
     /**
@@ -282,25 +326,47 @@ public class LiveClient {
     }
 
     /**
-     * 查询录制配置
-     * 查询录制配置接口
+     * 查询录制回调配置列表
+     * 查询录制回调配置列表接口。通过指定条件，查询满足条件的配置列表。
      *
-     * @param ListRecordConfigsRequest 请求对象
-     * @return ListRecordConfigsResponse
+     * @param ListRecordCallbackConfigsRequest 请求对象
+     * @return ListRecordCallbackConfigsResponse
      */
-    public ListRecordConfigsResponse listRecordConfigs(ListRecordConfigsRequest request) {
-        return hcClient.syncInvokeHttp(request, LiveMeta.listRecordConfigs);
+    public ListRecordCallbackConfigsResponse listRecordCallbackConfigs(ListRecordCallbackConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listRecordCallbackConfigs);
     }
 
     /**
-     * 查询录制配置
-     * 查询录制配置接口
+     * 查询录制回调配置列表
+     * 查询录制回调配置列表接口。通过指定条件，查询满足条件的配置列表。
      *
-     * @param ListRecordConfigsRequest 请求对象
-     * @return SyncInvoker<ListRecordConfigsRequest, ListRecordConfigsResponse>
+     * @param ListRecordCallbackConfigsRequest 请求对象
+     * @return SyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse>
      */
-    public SyncInvoker<ListRecordConfigsRequest, ListRecordConfigsResponse> listRecordConfigsInvoker(ListRecordConfigsRequest request) {
-        return new SyncInvoker<ListRecordConfigsRequest, ListRecordConfigsResponse>(request, LiveMeta.listRecordConfigs, hcClient);
+    public SyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse> listRecordCallbackConfigsInvoker(ListRecordCallbackConfigsRequest request) {
+        return new SyncInvoker<ListRecordCallbackConfigsRequest, ListRecordCallbackConfigsResponse>(request, LiveMeta.listRecordCallbackConfigs, hcClient);
+    }
+
+    /**
+     * 查询录制规则列表
+     * 查询录制规则列表接口，通过指定条件，查询满足条件的录制规则列表。
+     *
+     * @param ListRecordRulesRequest 请求对象
+     * @return ListRecordRulesResponse
+     */
+    public ListRecordRulesResponse listRecordRules(ListRecordRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listRecordRules);
+    }
+
+    /**
+     * 查询录制规则列表
+     * 查询录制规则列表接口，通过指定条件，查询满足条件的录制规则列表。
+     *
+     * @param ListRecordRulesRequest 请求对象
+     * @return SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>
+     */
+    public SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRulesInvoker(ListRecordRulesRequest request) {
+        return new SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse>(request, LiveMeta.listRecordRules, hcClient);
     }
 
     /**
@@ -326,28 +392,6 @@ public class LiveClient {
     }
 
     /**
-     * 查询直播加速的带宽数据
-     * 查询直播加速的播流域名网络带宽监控数据
-     *
-     * @param ShowBandwidthRequest 请求对象
-     * @return ShowBandwidthResponse
-     */
-    public ShowBandwidthResponse showBandwidth(ShowBandwidthRequest request) {
-        return hcClient.syncInvokeHttp(request, LiveMeta.showBandwidth);
-    }
-
-    /**
-     * 查询直播加速的带宽数据
-     * 查询直播加速的播流域名网络带宽监控数据
-     *
-     * @param ShowBandwidthRequest 请求对象
-     * @return SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>
-     */
-    public SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidthInvoker(ShowBandwidthRequest request) {
-        return new SyncInvoker<ShowBandwidthRequest, ShowBandwidthResponse>(request, LiveMeta.showBandwidth, hcClient);
-    }
-
-    /**
      * 查询直播域名
      * 查询直播域名
      *
@@ -370,47 +414,47 @@ public class LiveClient {
     }
 
     /**
-     * 查询直播播放在线人数
-     * 查询加速的直播播放在线人数
+     * 查询录制回调配置
+     * 查询录制回调配置接口
      *
-     * @param ShowOnlineUsersRequest 请求对象
-     * @return ShowOnlineUsersResponse
+     * @param ShowRecordCallbackConfigRequest 请求对象
+     * @return ShowRecordCallbackConfigResponse
      */
-    public ShowOnlineUsersResponse showOnlineUsers(ShowOnlineUsersRequest request) {
-        return hcClient.syncInvokeHttp(request, LiveMeta.showOnlineUsers);
+    public ShowRecordCallbackConfigResponse showRecordCallbackConfig(ShowRecordCallbackConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showRecordCallbackConfig);
     }
 
     /**
-     * 查询直播播放在线人数
-     * 查询加速的直播播放在线人数
+     * 查询录制回调配置
+     * 查询录制回调配置接口
      *
-     * @param ShowOnlineUsersRequest 请求对象
-     * @return SyncInvoker<ShowOnlineUsersRequest, ShowOnlineUsersResponse>
+     * @param ShowRecordCallbackConfigRequest 请求对象
+     * @return SyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse>
      */
-    public SyncInvoker<ShowOnlineUsersRequest, ShowOnlineUsersResponse> showOnlineUsersInvoker(ShowOnlineUsersRequest request) {
-        return new SyncInvoker<ShowOnlineUsersRequest, ShowOnlineUsersResponse>(request, LiveMeta.showOnlineUsers, hcClient);
+    public SyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse> showRecordCallbackConfigInvoker(ShowRecordCallbackConfigRequest request) {
+        return new SyncInvoker<ShowRecordCallbackConfigRequest, ShowRecordCallbackConfigResponse>(request, LiveMeta.showRecordCallbackConfig, hcClient);
     }
 
     /**
-     * 查询直播加速的流量数据
-     * 查询直播加速的播流域名网络流量监控数据
+     * 查询录制规则配置
+     * 查询录制规则接口
      *
-     * @param ShowTrafficRequest 请求对象
-     * @return ShowTrafficResponse
+     * @param ShowRecordRuleRequest 请求对象
+     * @return ShowRecordRuleResponse
      */
-    public ShowTrafficResponse showTraffic(ShowTrafficRequest request) {
-        return hcClient.syncInvokeHttp(request, LiveMeta.showTraffic);
+    public ShowRecordRuleResponse showRecordRule(ShowRecordRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showRecordRule);
     }
 
     /**
-     * 查询直播加速的流量数据
-     * 查询直播加速的播流域名网络流量监控数据
+     * 查询录制规则配置
+     * 查询录制规则接口
      *
-     * @param ShowTrafficRequest 请求对象
-     * @return SyncInvoker<ShowTrafficRequest, ShowTrafficResponse>
+     * @param ShowRecordRuleRequest 请求对象
+     * @return SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>
      */
-    public SyncInvoker<ShowTrafficRequest, ShowTrafficResponse> showTrafficInvoker(ShowTrafficRequest request) {
-        return new SyncInvoker<ShowTrafficRequest, ShowTrafficResponse>(request, LiveMeta.showTraffic, hcClient);
+    public SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse> showRecordRuleInvoker(ShowRecordRuleRequest request) {
+        return new SyncInvoker<ShowRecordRuleRequest, ShowRecordRuleResponse>(request, LiveMeta.showRecordRule, hcClient);
     }
 
     /**
@@ -455,6 +499,50 @@ public class LiveClient {
      */
     public SyncInvoker<UpdateDomainRequest, UpdateDomainResponse> updateDomainInvoker(UpdateDomainRequest request) {
         return new SyncInvoker<UpdateDomainRequest, UpdateDomainResponse>(request, LiveMeta.updateDomain, hcClient);
+    }
+
+    /**
+     * 修改录制回调配置
+     * 修改录制回调配置接口
+     *
+     * @param UpdateRecordCallbackConfigRequest 请求对象
+     * @return UpdateRecordCallbackConfigResponse
+     */
+    public UpdateRecordCallbackConfigResponse updateRecordCallbackConfig(UpdateRecordCallbackConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updateRecordCallbackConfig);
+    }
+
+    /**
+     * 修改录制回调配置
+     * 修改录制回调配置接口
+     *
+     * @param UpdateRecordCallbackConfigRequest 请求对象
+     * @return SyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse>
+     */
+    public SyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse> updateRecordCallbackConfigInvoker(UpdateRecordCallbackConfigRequest request) {
+        return new SyncInvoker<UpdateRecordCallbackConfigRequest, UpdateRecordCallbackConfigResponse>(request, LiveMeta.updateRecordCallbackConfig, hcClient);
+    }
+
+    /**
+     * 修改录制规则
+     * 修改录制规则接口，如果规则修改后，修改后的规则对正在录制的流无效，对新的流有效。
+     *
+     * @param UpdateRecordRuleRequest 请求对象
+     * @return UpdateRecordRuleResponse
+     */
+    public UpdateRecordRuleResponse updateRecordRule(UpdateRecordRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.updateRecordRule);
+    }
+
+    /**
+     * 修改录制规则
+     * 修改录制规则接口，如果规则修改后，修改后的规则对正在录制的流无效，对新的流有效。
+     *
+     * @param UpdateRecordRuleRequest 请求对象
+     * @return SyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>
+     */
+    public SyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRuleInvoker(UpdateRecordRuleRequest request) {
+        return new SyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse>(request, LiveMeta.updateRecordRule, hcClient);
     }
 
     /**

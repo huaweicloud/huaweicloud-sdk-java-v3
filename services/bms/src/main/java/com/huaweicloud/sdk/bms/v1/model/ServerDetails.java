@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.AddressInfo;
+import com.huaweicloud.sdk.bms.v1.model.Addresses;
 import com.huaweicloud.sdk.bms.v1.model.Fault;
 import com.huaweicloud.sdk.bms.v1.model.FlavorInfos;
 import com.huaweicloud.sdk.bms.v1.model.ImageInfo;
@@ -90,8 +90,8 @@ public class ServerDetails  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Map<String, List<AddressInfo>> addresses = null;
-    
+    private Addresses addresses;
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_name")
@@ -1014,37 +1014,30 @@ public class ServerDetails  {
 
     
 
-    public ServerDetails withAddresses(Map<String, List<AddressInfo>> addresses) {
+    public ServerDetails withAddresses(Addresses addresses) {
         this.addresses = addresses;
         return this;
     }
 
-    
-
-    public ServerDetails putAddressesItem(String key, List<AddressInfo> addressesItem) {
-        if(this.addresses == null) {
-            this.addresses = new HashMap<>();
+    public ServerDetails withAddresses(Consumer<Addresses> addressesSetter) {
+        if(this.addresses == null ){
+            this.addresses = new Addresses();
+            addressesSetter.accept(this.addresses);
         }
-        this.addresses.put(key, addressesItem);
+        
         return this;
     }
 
-    public ServerDetails withAddresses(Consumer<Map<String, List<AddressInfo>>> addressesSetter) {
-        if(this.addresses == null) {
-            this.addresses = new HashMap<>();
-        }
-        addressesSetter.accept(this.addresses);
-        return this;
-    }
+
     /**
-     * 裸金属服务器的网络属性。详情请参见表3 addresses数据结构说明。
+     * Get addresses
      * @return addresses
      */
-    public Map<String, List<AddressInfo>> getAddresses() {
+    public Addresses getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Map<String, List<AddressInfo>> addresses) {
+    public void setAddresses(Addresses addresses) {
         this.addresses = addresses;
     }
 

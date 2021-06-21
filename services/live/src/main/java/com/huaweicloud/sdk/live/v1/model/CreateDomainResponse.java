@@ -9,12 +9,13 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v1.model.DomainSourceInfo;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -149,6 +150,11 @@ public class CreateDomainResponse extends SdkResponse {
          */
         public static final StatusEnum CONFIGURING = new StatusEnum("configuring");
         
+        /**
+         * Enum DISABLE for value: "disable"
+         */
+        public static final StatusEnum DISABLE = new StatusEnum("disable");
+        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -157,6 +163,7 @@ public class CreateDomainResponse extends SdkResponse {
             map.put("on", ON);
             map.put("off", OFF);
             map.put("configuring", CONFIGURING);
+            map.put("disable", DISABLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -227,9 +234,99 @@ public class CreateDomainResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_source")
+    @JsonProperty(value="status_describe")
     
-    private DomainSourceInfo domainSource;
+    private String statusDescribe;
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     */
+    public static final class ServiceAreaEnum {
+
+        
+        /**
+         * Enum MAINLAND_CHINA for value: "mainland_china"
+         */
+        public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
+        
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
+        public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
+        
+        /**
+         * Enum GLOBAL for value: "global"
+         */
+        public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+        
+
+        private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ServiceAreaEnum> createStaticFields() {
+            Map<String, ServiceAreaEnum> map = new HashMap<>();
+            map.put("mainland_china", MAINLAND_CHINA);
+            map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
+            map.put("global", GLOBAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ServiceAreaEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ServiceAreaEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ServiceAreaEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ServiceAreaEnum(value);
+            }
+            return result;
+        }
+
+        public static ServiceAreaEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ServiceAreaEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ServiceAreaEnum) {
+                return this.value.equals(((ServiceAreaEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_area")
+    
+    private ServiceAreaEnum serviceArea;
 
     public CreateDomainResponse withDomain(String domain) {
         this.domain = domain;
@@ -284,7 +381,7 @@ public class CreateDomainResponse extends SdkResponse {
 
 
     /**
-     * 直播域名的CName
+     * 直播域名的CNAME
      * @return domainCname
      */
     public String getDomainCname() {
@@ -363,31 +460,46 @@ public class CreateDomainResponse extends SdkResponse {
 
     
 
-    public CreateDomainResponse withDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
+    public CreateDomainResponse withStatusDescribe(String statusDescribe) {
+        this.statusDescribe = statusDescribe;
         return this;
     }
 
-    public CreateDomainResponse withDomainSource(Consumer<DomainSourceInfo> domainSourceSetter) {
-        if(this.domainSource == null ){
-            this.domainSource = new DomainSourceInfo();
-            domainSourceSetter.accept(this.domainSource);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get domainSource
-     * @return domainSource
+     * 状态描述
+     * @return statusDescribe
      */
-    public DomainSourceInfo getDomainSource() {
-        return domainSource;
+    public String getStatusDescribe() {
+        return statusDescribe;
     }
 
-    public void setDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
+    public void setStatusDescribe(String statusDescribe) {
+        this.statusDescribe = statusDescribe;
+    }
+
+    
+
+    public CreateDomainResponse withServiceArea(ServiceAreaEnum serviceArea) {
+        this.serviceArea = serviceArea;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
+     * @return serviceArea
+     */
+    public ServiceAreaEnum getServiceArea() {
+        return serviceArea;
+    }
+
+    public void setServiceArea(ServiceAreaEnum serviceArea) {
+        this.serviceArea = serviceArea;
     }
 
     
@@ -407,11 +519,12 @@ public class CreateDomainResponse extends SdkResponse {
             Objects.equals(this.region, createDomainResponse.region) &&
             Objects.equals(this.status, createDomainResponse.status) &&
             Objects.equals(this.createTime, createDomainResponse.createTime) &&
-            Objects.equals(this.domainSource, createDomainResponse.domainSource);
+            Objects.equals(this.statusDescribe, createDomainResponse.statusDescribe) &&
+            Objects.equals(this.serviceArea, createDomainResponse.serviceArea);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, domainCname, region, status, createTime, domainSource);
+        return Objects.hash(domain, domainType, domainCname, region, status, createTime, statusDescribe, serviceArea);
     }
     @Override
     public String toString() {
@@ -423,7 +536,8 @@ public class CreateDomainResponse extends SdkResponse {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    domainSource: ").append(toIndentedString(domainSource)).append("\n");
+        sb.append("    statusDescribe: ").append(toIndentedString(statusDescribe)).append("\n");
+        sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("}");
         return sb.toString();
     }

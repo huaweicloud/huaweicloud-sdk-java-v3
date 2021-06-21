@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.FlowItem;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.TemplateState;
 import com.huaweicloud.sdk.cloudpipeline.v2.model.Workflow;
 import java.util.HashMap;
 import java.util.List;
@@ -27,13 +25,13 @@ public class TemplateCddl  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flow")
     
-    private FlowItem flow;
-
+    private Map<String, Map<String, String>> flow = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="states")
     
-    private Map<String, TemplateState> states = null;
+    private Map<String, Object> states = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,43 +39,50 @@ public class TemplateCddl  {
     
     private Workflow workflow;
 
-    public TemplateCddl withFlow(FlowItem flow) {
+    public TemplateCddl withFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
         return this;
     }
 
-    public TemplateCddl withFlow(Consumer<FlowItem> flowSetter) {
-        if(this.flow == null ){
-            this.flow = new FlowItem();
-            flowSetter.accept(this.flow);
+    
+
+    public TemplateCddl putFlowItem(String key, Map<String, String> flowItem) {
+        if(this.flow == null) {
+            this.flow = new HashMap<>();
         }
-        
+        this.flow.put(key, flowItem);
         return this;
     }
 
-
+    public TemplateCddl withFlow(Consumer<Map<String, Map<String, String>>> flowSetter) {
+        if(this.flow == null) {
+            this.flow = new HashMap<>();
+        }
+        flowSetter.accept(this.flow);
+        return this;
+    }
     /**
-     * Get flow
+     * 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
      * @return flow
      */
-    public FlowItem getFlow() {
+    public Map<String, Map<String, String>> getFlow() {
         return flow;
     }
 
-    public void setFlow(FlowItem flow) {
+    public void setFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
     }
 
     
 
-    public TemplateCddl withStates(Map<String, TemplateState> states) {
+    public TemplateCddl withStates(Map<String, Object> states) {
         this.states = states;
         return this;
     }
 
     
 
-    public TemplateCddl putStatesItem(String key, TemplateState statesItem) {
+    public TemplateCddl putStatesItem(String key, Object statesItem) {
         if(this.states == null) {
             this.states = new HashMap<>();
         }
@@ -85,7 +90,7 @@ public class TemplateCddl  {
         return this;
     }
 
-    public TemplateCddl withStates(Consumer<Map<String, TemplateState>> statesSetter) {
+    public TemplateCddl withStates(Consumer<Map<String, Object>> statesSetter) {
         if(this.states == null) {
             this.states = new HashMap<>();
         }
@@ -93,14 +98,14 @@ public class TemplateCddl  {
         return this;
     }
     /**
-     * 子任务states，map类型数据
+     * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
      * @return states
      */
-    public Map<String, TemplateState> getStates() {
+    public Map<String, Object> getStates() {
         return states;
     }
 
-    public void setStates(Map<String, TemplateState> states) {
+    public void setStates(Map<String, Object> states) {
         this.states = states;
     }
 

@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cloudpipeline.v2.model.TemplateParam;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -90,6 +92,18 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="create_time")
+    
+    private String createTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="last_modify_time")
+    
+    private String lastModifyTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_watch")
     
     private Boolean isWatch;
@@ -110,14 +124,14 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flow")
     
-    private Object flow;
-
+    private Map<String, Map<String, String>> flow = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="states")
     
-    private Object states;
-
+    private Map<String, Object> states = null;
+    
     public ShowTemplateDetailResponse withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -360,6 +374,50 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     
 
+    public ShowTemplateDetailResponse withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 创建时间
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    
+
+    public ShowTemplateDetailResponse withLastModifyTime(String lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 修改时间
+     * @return lastModifyTime
+     */
+    public String getLastModifyTime() {
+        return lastModifyTime;
+    }
+
+    public void setLastModifyTime(String lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
+    }
+
+    
+
     public ShowTemplateDetailResponse withIsWatch(Boolean isWatch) {
         this.isWatch = isWatch;
         return this;
@@ -440,45 +498,73 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     
 
-    public ShowTemplateDetailResponse withFlow(Object flow) {
+    public ShowTemplateDetailResponse withFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
         return this;
     }
 
     
 
+    public ShowTemplateDetailResponse putFlowItem(String key, Map<String, String> flowItem) {
+        if(this.flow == null) {
+            this.flow = new HashMap<>();
+        }
+        this.flow.put(key, flowItem);
+        return this;
+    }
 
+    public ShowTemplateDetailResponse withFlow(Consumer<Map<String, Map<String, String>>> flowSetter) {
+        if(this.flow == null) {
+            this.flow = new HashMap<>();
+        }
+        flowSetter.accept(this.flow);
+        return this;
+    }
     /**
-     * 编排flow，map类型数据
+     * 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
      * @return flow
      */
-    public Object getFlow() {
+    public Map<String, Map<String, String>> getFlow() {
         return flow;
     }
 
-    public void setFlow(Object flow) {
+    public void setFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
     }
 
     
 
-    public ShowTemplateDetailResponse withStates(Object states) {
+    public ShowTemplateDetailResponse withStates(Map<String, Object> states) {
         this.states = states;
         return this;
     }
 
     
 
+    public ShowTemplateDetailResponse putStatesItem(String key, Object statesItem) {
+        if(this.states == null) {
+            this.states = new HashMap<>();
+        }
+        this.states.put(key, statesItem);
+        return this;
+    }
 
+    public ShowTemplateDetailResponse withStates(Consumer<Map<String, Object>> statesSetter) {
+        if(this.states == null) {
+            this.states = new HashMap<>();
+        }
+        statesSetter.accept(this.states);
+        return this;
+    }
     /**
-     * 子任务states，map类型数据
+     * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
      * @return states
      */
-    public Object getStates() {
+    public Map<String, Object> getStates() {
         return states;
     }
 
-    public void setStates(Object states) {
+    public void setStates(Map<String, Object> states) {
         this.states = states;
     }
 
@@ -504,6 +590,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
             Objects.equals(this.region, showTemplateDetailResponse.region) &&
             Objects.equals(this.projectId, showTemplateDetailResponse.projectId) &&
             Objects.equals(this.projectName, showTemplateDetailResponse.projectName) &&
+            Objects.equals(this.createTime, showTemplateDetailResponse.createTime) &&
+            Objects.equals(this.lastModifyTime, showTemplateDetailResponse.lastModifyTime) &&
             Objects.equals(this.isWatch, showTemplateDetailResponse.isWatch) &&
             Objects.equals(this.description, showTemplateDetailResponse.description) &&
             Objects.equals(this.parameter, showTemplateDetailResponse.parameter) &&
@@ -512,7 +600,7 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, templateName, templateType, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, isWatch, description, parameter, flow, states);
+        return Objects.hash(templateId, templateName, templateType, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, createTime, lastModifyTime, isWatch, description, parameter, flow, states);
     }
     @Override
     public String toString() {
@@ -529,6 +617,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    lastModifyTime: ").append(toIndentedString(lastModifyTime)).append("\n");
         sb.append("    isWatch: ").append(toIndentedString(isWatch)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    parameter: ").append(toIndentedString(parameter)).append("\n");

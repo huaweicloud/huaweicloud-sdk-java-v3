@@ -345,12 +345,6 @@ public class ListDomainsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_domain_id")
-    
-    private String userDomainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
     private String enterpriseProjectId;
@@ -491,28 +485,6 @@ public class ListDomainsRequest  {
 
     
 
-    public ListDomainsRequest withUserDomainId(String userDomainId) {
-        this.userDomainId = userDomainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 域名所属用户的domain_id。
-     * @return userDomainId
-     */
-    public String getUserDomainId() {
-        return userDomainId;
-    }
-
-    public void setUserDomainId(String userDomainId) {
-        this.userDomainId = userDomainId;
-    }
-
-    
-
     public ListDomainsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -550,12 +522,11 @@ public class ListDomainsRequest  {
             Objects.equals(this.serviceArea, listDomainsRequest.serviceArea) &&
             Objects.equals(this.pageSize, listDomainsRequest.pageSize) &&
             Objects.equals(this.pageNumber, listDomainsRequest.pageNumber) &&
-            Objects.equals(this.userDomainId, listDomainsRequest.userDomainId) &&
             Objects.equals(this.enterpriseProjectId, listDomainsRequest.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domainName, businessType, domainStatus, serviceArea, pageSize, pageNumber, userDomainId, enterpriseProjectId);
+        return Objects.hash(domainName, businessType, domainStatus, serviceArea, pageSize, pageNumber, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -567,7 +538,6 @@ public class ListDomainsRequest  {
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
         sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
-        sb.append("    userDomainId: ").append(toIndentedString(userDomainId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

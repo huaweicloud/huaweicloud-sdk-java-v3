@@ -27,7 +27,7 @@ import java.util.Objects;
 public class DomainSourceInfo  {
 
     /**
-     * 回源、转推协议。
+     * 回源、转推协议
      */
     public static final class ProtocolEnum {
 
@@ -207,7 +207,7 @@ public class DomainSourceInfo  {
     
     private List<String> sources = null;
         /**
-     * 多个回源、转推地址的优先级。
+     * 多个回源、转推地址的优先级
      */
     public static final class SourcesPriorityEnum {
 
@@ -300,7 +300,7 @@ public class DomainSourceInfo  {
 
 
     /**
-     * 回源、转推协议。
+     * 回源、转推协议
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -358,7 +358,7 @@ public class DomainSourceInfo  {
     }
 
     /**
-     * 回源、转推地址列表，格式为：{domain/IP}[:{port}]，port默认值为1935；最少1个，最多10个。
+     * 回源、转推地址列表，最少1个，最多10个；格式为：{domain/IP}[:{port}]，port默认值为1935
      * @return sources
      */
     public List<String> getSources() {
@@ -380,7 +380,7 @@ public class DomainSourceInfo  {
 
 
     /**
-     * 多个回源、转推地址的优先级。
+     * 多个回源、转推地址的优先级
      * @return sourcesPriority
      */
     public SourcesPriorityEnum getSourcesPriority() {

@@ -46,7 +46,7 @@ public class CdnMeta {
         HttpRequestDef.Builder<CreatePreheatingTasksRequest, CreatePreheatingTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePreheatingTasksRequest.class, CreatePreheatingTasksResponse.class)
                 .withName("CreatePreheatingTasks")
-                .withUri("/v1.0/cdn/preheatingtasks")
+                .withUri("/v1.0/cdn/content/preheating-tasks")
                 .withContentType("application/json");
 
         // requests
@@ -81,7 +81,7 @@ public class CdnMeta {
         HttpRequestDef.Builder<CreateRefreshTasksRequest, CreateRefreshTasksResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateRefreshTasksRequest.class, CreateRefreshTasksResponse.class)
                 .withName("CreateRefreshTasks")
-                .withUri("/v1.0/cdn/refreshtasks")
+                .withUri("/v1.0/cdn/content/refresh-tasks")
                 .withContentType("application/json");
 
         // requests
@@ -271,14 +271,6 @@ public class CdnMeta {
             Integer.class,
             f -> f.withMarshaller(ListDomainsRequest::getPageNumber, (req, v) -> {
                 req.setPageNumber(v);
-            })
-        );
-        builder.withRequestField("user_domain_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListDomainsRequest::getUserDomainId, (req, v) -> {
-                req.setUserDomainId(v);
             })
         );
         builder.withRequestField("enterprise_project_id",
@@ -925,13 +917,13 @@ public class CdnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowReferRequest, ShowReferResponse> showRefer = genForshowRefer();
+    public static final HttpRequestDef<ShowRefererRequest, ShowRefererResponse> showReferer = genForshowReferer();
 
-    private static HttpRequestDef<ShowReferRequest, ShowReferResponse> genForshowRefer() {
+    private static HttpRequestDef<ShowRefererRequest, ShowRefererResponse> genForshowReferer() {
         // basic
-        HttpRequestDef.Builder<ShowReferRequest, ShowReferResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowReferRequest.class, ShowReferResponse.class)
-                .withName("ShowRefer")
+        HttpRequestDef.Builder<ShowRefererRequest, ShowRefererResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRefererRequest.class, ShowRefererResponse.class)
+                .withName("ShowReferer")
                 .withUri("/v1.0/cdn/domains/{domain_id}/referer")
                 .withContentType("application/json");
 
@@ -940,7 +932,7 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowReferRequest::getDomainId, (req, v) -> {
+            f -> f.withMarshaller(ShowRefererRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
             })
         );
@@ -948,7 +940,7 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowReferRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(ShowRefererRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );

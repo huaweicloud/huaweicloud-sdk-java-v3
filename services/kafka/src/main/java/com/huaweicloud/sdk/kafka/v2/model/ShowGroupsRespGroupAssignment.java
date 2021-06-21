@@ -29,7 +29,7 @@ public class ShowGroupsRespGroupAssignment  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="partitions")
     
-    private List<String> partitions = null;
+    private List<Integer> partitions = null;
     
     public ShowGroupsRespGroupAssignment withTopic(String topic) {
         this.topic = topic;
@@ -53,13 +53,13 @@ public class ShowGroupsRespGroupAssignment  {
 
     
 
-    public ShowGroupsRespGroupAssignment withPartitions(List<String> partitions) {
+    public ShowGroupsRespGroupAssignment withPartitions(List<Integer> partitions) {
         this.partitions = partitions;
         return this;
     }
 
     
-    public ShowGroupsRespGroupAssignment addPartitionsItem(String partitionsItem) {
+    public ShowGroupsRespGroupAssignment addPartitionsItem(Integer partitionsItem) {
         if(this.partitions == null) {
             this.partitions = new ArrayList<>();
         }
@@ -67,7 +67,7 @@ public class ShowGroupsRespGroupAssignment  {
         return this;
     }
 
-    public ShowGroupsRespGroupAssignment withPartitions(Consumer<List<String>> partitionsSetter) {
+    public ShowGroupsRespGroupAssignment withPartitions(Consumer<List<Integer>> partitionsSetter) {
         if(this.partitions == null) {
             this.partitions = new ArrayList<>();
         }
@@ -79,11 +79,11 @@ public class ShowGroupsRespGroupAssignment  {
      * 分区列表。
      * @return partitions
      */
-    public List<String> getPartitions() {
+    public List<Integer> getPartitions() {
         return partitions;
     }
 
-    public void setPartitions(List<String> partitions) {
+    public void setPartitions(List<Integer> partitions) {
         this.partitions = partitions;
     }
 

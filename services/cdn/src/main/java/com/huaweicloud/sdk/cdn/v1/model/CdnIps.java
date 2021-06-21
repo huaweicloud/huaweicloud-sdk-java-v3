@@ -27,7 +27,7 @@ public class CdnIps  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="belongs")
     
-    private String belongs;
+    private Boolean belongs;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class CdnIps  {
 
     
 
-    public CdnIps withBelongs(String belongs) {
+    public CdnIps withBelongs(Boolean belongs) {
         this.belongs = belongs;
         return this;
     }
@@ -81,11 +81,11 @@ public class CdnIps  {
      * 是否是华为云CDN节点。
      * @return belongs
      */
-    public String getBelongs() {
+    public Boolean getBelongs() {
         return belongs;
     }
 
-    public void setBelongs(String belongs) {
+    public void setBelongs(Boolean belongs) {
         this.belongs = belongs;
     }
 
