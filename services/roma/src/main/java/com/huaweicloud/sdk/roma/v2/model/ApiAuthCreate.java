@@ -143,7 +143,7 @@ public class ApiAuthCreate  {
     }
 
     /**
-     * API的编号列表，可以选择租户自己的API，也可以选择从云市场上购买的API。
+     * API的编号列表。
      * @return apiIds
      */
     public List<String> getApiIds() {
@@ -201,7 +201,7 @@ public class ApiAuthCreate  {
     }
 
     /**
-     * 绿色通道授权白名单。  允许白名单中的IP不使用认证信息访问，auth_tunnel=GREEN时生效
+     * 绿色通道授权白名单。  允许白名单中的IP不使用认证信息访问，auth_tunnel = GREEN时生效
      * @return authWhitelist
      */
     public List<String> getAuthWhitelist() {
@@ -237,7 +237,7 @@ public class ApiAuthCreate  {
     }
 
     /**
-     * 绿色通道授权黑名单。  auth_tunnel=GREEN时生效
+     * 绿色通道授权黑名单。  auth_tunnel = GREEN时生效
      * @return authBlacklist
      */
     public List<String> getAuthBlacklist() {

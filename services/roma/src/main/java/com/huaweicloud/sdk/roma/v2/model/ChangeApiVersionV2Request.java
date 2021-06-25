@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiVersionInfo;
+import com.huaweicloud.sdk.roma.v2.model.ApiVersion;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class ChangeApiVersionV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiVersionInfo body;
+    private ApiVersion body;
 
     public ChangeApiVersionV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -80,14 +80,14 @@ public class ChangeApiVersionV2Request  {
 
     
 
-    public ChangeApiVersionV2Request withBody(ApiVersionInfo body) {
+    public ChangeApiVersionV2Request withBody(ApiVersion body) {
         this.body = body;
         return this;
     }
 
-    public ChangeApiVersionV2Request withBody(Consumer<ApiVersionInfo> bodySetter) {
+    public ChangeApiVersionV2Request withBody(Consumer<ApiVersion> bodySetter) {
         if(this.body == null ){
-            this.body = new ApiVersionInfo();
+            this.body = new ApiVersion();
             bodySetter.accept(this.body);
         }
         
@@ -99,11 +99,11 @@ public class ChangeApiVersionV2Request  {
      * Get body
      * @return body
      */
-    public ApiVersionInfo getBody() {
+    public ApiVersion getBody() {
         return body;
     }
 
-    public void setBody(ApiVersionInfo body) {
+    public void setBody(ApiVersion body) {
         this.body = body;
     }
 

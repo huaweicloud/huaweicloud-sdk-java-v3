@@ -51,7 +51,7 @@ public class ListFreeResourceUsagesResponse extends SdkResponse {
     }
 
     /**
-     * 资源套餐内的资源项信息（资源项ID级的详情）。
+     * 资源套餐内的资源项信息（资源项ID级的详情），具体参见表2。
      * @return freeResources
      */
     public List<FreeResourceDetail> getFreeResources() {

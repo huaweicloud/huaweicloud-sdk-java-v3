@@ -29,6 +29,12 @@ public class MemberBase  {
     
     private Integer weight;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_backup")
+    
+    private Boolean isBackup;
+
     public MemberBase withHost(String host) {
         this.host = host;
         return this;
@@ -73,6 +79,28 @@ public class MemberBase  {
 
     
 
+    public MemberBase withIsBackup(Boolean isBackup) {
+        this.isBackup = isBackup;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否备节点。  开启后对应后端服务为备用节点，仅当非备用节点全部故障时工作。  实例需要升级到对应版本才支持此功能，若不支持请联系技术支持。
+     * @return isBackup
+     */
+    public Boolean getIsBackup() {
+        return isBackup;
+    }
+
+    public void setIsBackup(Boolean isBackup) {
+        this.isBackup = isBackup;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -83,11 +111,12 @@ public class MemberBase  {
         }
         MemberBase memberBase = (MemberBase) o;
         return Objects.equals(this.host, memberBase.host) &&
-            Objects.equals(this.weight, memberBase.weight);
+            Objects.equals(this.weight, memberBase.weight) &&
+            Objects.equals(this.isBackup, memberBase.isBackup);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(host, weight);
+        return Objects.hash(host, weight, isBackup);
     }
     @Override
     public String toString() {
@@ -95,6 +124,7 @@ public class MemberBase  {
         sb.append("class MemberBase {\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    isBackup: ").append(toIndentedString(isBackup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

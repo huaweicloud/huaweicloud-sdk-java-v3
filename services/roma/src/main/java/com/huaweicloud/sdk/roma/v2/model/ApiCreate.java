@@ -760,7 +760,7 @@ public class ApiCreate  {
 
 
     /**
-     * API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头，3-255个字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。 > 中文字符必须为UTF-8或者unicode编码。
      * @return name
      */
     public String getName() {
@@ -1009,7 +1009,7 @@ public class ApiCreate  {
 
 
     /**
-     * API描述。 > 中文字符必须为UTF-8或者unicode编码。
+     * API描述。  不允许带有<、>字符 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -1053,7 +1053,7 @@ public class ApiCreate  {
 
 
     /**
-     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return bodyRemark
      */
     public String getBodyRemark() {
@@ -1075,7 +1075,7 @@ public class ApiCreate  {
 
 
     /**
-     * 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 正常响应示例，描述API的正常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return resultNormalSample
      */
     public String getResultNormalSample() {
@@ -1097,7 +1097,7 @@ public class ApiCreate  {
 
 
     /**
-     * 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 失败返回示例，描述API的异常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return resultFailureSample
      */
     public String getResultFailureSample() {

@@ -31,18 +31,6 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
-    private String objectType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
-    private String appName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     private Long offset;
@@ -53,6 +41,18 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="object_type")
+    
+    private String objectType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="app_name")
+    
+    private String appName;
+
     public ListSpecialThrottlingConfigurationsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -62,7 +62,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -84,7 +84,7 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
 
     /**
-     * 流控策略的ID
+     * 流控策略的编号
      * @return throttleId
      */
     public String getThrottleId() {
@@ -93,50 +93,6 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
-    }
-
-    
-
-    public ListSpecialThrottlingConfigurationsV2Request withObjectType(String objectType) {
-        this.objectType = objectType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 特殊流控类型：APP, USER
-     * @return objectType
-     */
-    public String getObjectType() {
-        return objectType;
-    }
-
-    public void setObjectType(String objectType) {
-        this.objectType = objectType;
-    }
-
-    
-
-    public ListSpecialThrottlingConfigurationsV2Request withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 筛选的特殊应用名称
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
     }
 
     
@@ -187,6 +143,50 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
 
     
 
+    public ListSpecialThrottlingConfigurationsV2Request withObjectType(String objectType) {
+        this.objectType = objectType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 特殊流控类型：APP, USER
+     * @return objectType
+     */
+    public String getObjectType() {
+        return objectType;
+    }
+
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
+    }
+
+    
+
+    public ListSpecialThrottlingConfigurationsV2Request withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 筛选的特殊应用名称
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -198,14 +198,14 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         ListSpecialThrottlingConfigurationsV2Request listSpecialThrottlingConfigurationsV2Request = (ListSpecialThrottlingConfigurationsV2Request) o;
         return Objects.equals(this.instanceId, listSpecialThrottlingConfigurationsV2Request.instanceId) &&
             Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId) &&
-            Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType) &&
-            Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName) &&
             Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset) &&
-            Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit);
+            Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit) &&
+            Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType) &&
+            Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, throttleId, objectType, appName, offset, limit);
+        return Objects.hash(instanceId, throttleId, offset, limit, objectType, appName);
     }
     @Override
     public String toString() {
@@ -213,10 +213,10 @@ public class ListSpecialThrottlingConfigurationsV2Request  {
         sb.append("class ListSpecialThrottlingConfigurationsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    throttleId: ").append(toIndentedString(throttleId)).append("\n");
-        sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

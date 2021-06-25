@@ -406,7 +406,7 @@ public class ApiGroupDetailResp  {
 
 
     /**
-     * 状态
+     * 状态   - 1： 有效
      * @return status
      */
     public Integer getStatus() {

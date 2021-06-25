@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -35,12 +37,102 @@ public class LdApiCreate  {
     @JsonProperty(value="path")
     
     private String path;
+    /**
+     * 后端API请求方法。  支持GET、PUT、POST、DELETE
+     */
+    public static final class MethodEnum {
+
+        
+        /**
+         * Enum GET for value: "GET"
+         */
+        public static final MethodEnum GET = new MethodEnum("GET");
+        
+        /**
+         * Enum PUT for value: "PUT"
+         */
+        public static final MethodEnum PUT = new MethodEnum("PUT");
+        
+        /**
+         * Enum POST for value: "POST"
+         */
+        public static final MethodEnum POST = new MethodEnum("POST");
+        
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
+        public static final MethodEnum DELETE = new MethodEnum("DELETE");
+        
+
+        private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MethodEnum> createStaticFields() {
+            Map<String, MethodEnum> map = new HashMap<>();
+            map.put("GET", GET);
+            map.put("PUT", PUT);
+            map.put("POST", POST);
+            map.put("DELETE", DELETE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MethodEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MethodEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            MethodEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new MethodEnum(value);
+            }
+            return result;
+        }
+
+        public static MethodEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            MethodEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof MethodEnum) {
+                return this.value.equals(((MethodEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="method")
     
-    private String method;
+    private MethodEnum method;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -177,7 +269,7 @@ public class LdApiCreate  {
 
 
     /**
-     * 后端API名称，校验的正则表达式为“([a-zA-Z]|[\\u4e00-\\u9fa5])([a-zA-Z0-9_]|[\\u4e00-\\u9fa5]){2,63}”
+     * 后端API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
      * @return name
      */
     public String getName() {
@@ -199,7 +291,7 @@ public class LdApiCreate  {
 
 
     /**
-     * 后端API请求路径，校验的正则表达式为“(/)|((/[\\.a-zA-Z0-9_-]+)+/?)”，且最大长度为256
+     * 后端API请求路径。  支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
      * @return path
      */
     public String getPath() {
@@ -212,7 +304,7 @@ public class LdApiCreate  {
 
     
 
-    public LdApiCreate withMethod(String method) {
+    public LdApiCreate withMethod(MethodEnum method) {
         this.method = method;
         return this;
     }
@@ -221,14 +313,14 @@ public class LdApiCreate  {
 
 
     /**
-     * 后端API请求方法，GET、PUT、POST、DELETE
+     * 后端API请求方法。  支持GET、PUT、POST、DELETE
      * @return method
      */
-    public String getMethod() {
+    public MethodEnum getMethod() {
         return method;
     }
 
-    public void setMethod(String method) {
+    public void setMethod(MethodEnum method) {
         this.method = method;
     }
 
@@ -243,7 +335,7 @@ public class LdApiCreate  {
 
 
     /**
-     * 后端API描述，长度为0-255的任意字符
+     * 后端API描述。  不支持<，>字符
      * @return description
      */
     public String getDescription() {
@@ -265,7 +357,7 @@ public class LdApiCreate  {
 
 
     /**
-     * 后端API版本，不能含有< 、>这两个字符，长度为2-16
+     * 后端API版本  支持英文，数字，下划线，中划线，点。
      * @return version
      */
     public String getVersion() {
@@ -309,7 +401,7 @@ public class LdApiCreate  {
 
 
     /**
-     * 后端API为签名认证时绑定的签名秘钥编号
+     * 后端API为签名认证时绑定的签名密钥编号
      * @return apiSignatureId
      */
     public String getApiSignatureId() {

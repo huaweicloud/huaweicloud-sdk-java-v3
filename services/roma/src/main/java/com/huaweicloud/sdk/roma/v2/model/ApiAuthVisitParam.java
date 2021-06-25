@@ -25,6 +25,12 @@ public class ApiAuthVisitParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="app_id")
+    
+    private String appId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="visit_param")
     
     private String visitParam;
@@ -47,6 +53,28 @@ public class ApiAuthVisitParam  {
 
     public void setApiId(String apiId) {
         this.apiId = apiId;
+    }
+
+    
+
+    public ApiAuthVisitParam withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 需要授权的APP编号
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     
@@ -83,17 +111,19 @@ public class ApiAuthVisitParam  {
         }
         ApiAuthVisitParam apiAuthVisitParam = (ApiAuthVisitParam) o;
         return Objects.equals(this.apiId, apiAuthVisitParam.apiId) &&
+            Objects.equals(this.appId, apiAuthVisitParam.appId) &&
             Objects.equals(this.visitParam, apiAuthVisitParam.visitParam);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiId, visitParam);
+        return Objects.hash(apiId, appId, visitParam);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApiAuthVisitParam {\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    visitParam: ").append(toIndentedString(visitParam)).append("\n");
         sb.append("}");
         return sb.toString();

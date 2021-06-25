@@ -371,14 +371,6 @@ public class CceMeta {
                 req.setClusterId(v);
             })
         );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteClusterRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
         builder.withRequestField("delete_efs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -462,14 +454,6 @@ public class CceMeta {
                 req.setNodeId(v);
             })
         );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteNodeRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
         builder.withRequestField("nodepoolScaleDown",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -511,14 +495,6 @@ public class CceMeta {
             String.class,
             f -> f.withMarshaller(DeleteNodePoolRequest::getNodepoolId, (req, v) -> {
                 req.setNodepoolId(v);
-            })
-        );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteNodePoolRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
             })
         );
 
@@ -567,14 +543,6 @@ public class CceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("addon_template_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAddonInstancesRequest::getAddonTemplateName, (req, v) -> {
-                req.setAddonTemplateName(v);
-            })
-        );
         builder.withRequestField("cluster_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -610,38 +578,6 @@ public class CceMeta {
                 req.setAddonTemplateName(v);
             })
         );
-        builder.withRequestField("base_update_addon_version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAddonTemplatesRequest::getBaseUpdateAddonVersion, (req, v) -> {
-                req.setBaseUpdateAddonVersion(v);
-            })
-        );
-        builder.withRequestField("cluster_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAddonTemplatesRequest::getClusterId, (req, v) -> {
-                req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("newest",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAddonTemplatesRequest::getNewest, (req, v) -> {
-                req.setNewest(v);
-            })
-        );
-        builder.withRequestField("version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAddonTemplatesRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            })
-        );
 
         // response
         
@@ -661,14 +597,6 @@ public class CceMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListClustersRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
         builder.withRequestField("detail",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -728,14 +656,6 @@ public class CceMeta {
                 req.setClusterId(v);
             })
         );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListNodePoolsRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
         builder.withRequestField("showDefaultNodePool",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -769,14 +689,6 @@ public class CceMeta {
             String.class,
             f -> f.withMarshaller(ListNodesRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListNodesRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
             })
         );
 
@@ -839,14 +751,6 @@ public class CceMeta {
             String.class,
             f -> f.withMarshaller(ShowClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowClusterRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
             })
         );
         builder.withRequestField("detail",
@@ -919,14 +823,6 @@ public class CceMeta {
                 req.setNodeId(v);
             })
         );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowNodeRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
 
         // response
         
@@ -960,14 +856,6 @@ public class CceMeta {
             String.class,
             f -> f.withMarshaller(ShowNodePoolRequest::getNodepoolId, (req, v) -> {
                 req.setNodepoolId(v);
-            })
-        );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowNodePoolRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
             })
         );
 
@@ -1032,14 +920,6 @@ public class CceMeta {
                 req.setClusterId(v);
             })
         );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateClusterRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1083,14 +963,6 @@ public class CceMeta {
                 req.setNodeId(v);
             })
         );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateNodeRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
-            })
-        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1132,14 +1004,6 @@ public class CceMeta {
             String.class,
             f -> f.withMarshaller(UpdateNodePoolRequest::getNodepoolId, (req, v) -> {
                 req.setNodepoolId(v);
-            })
-        );
-        builder.withRequestField("errorStatus",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateNodePoolRequest::getErrorStatus, (req, v) -> {
-                req.setErrorStatus(v);
             })
         );
         builder.withRequestField("body",

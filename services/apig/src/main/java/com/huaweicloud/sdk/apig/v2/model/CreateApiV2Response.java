@@ -823,7 +823,7 @@ public class CreateApiV2Response extends SdkResponse {
 
 
     /**
-     * API名称长度。  为3 ~ 64位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * API名称。  长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
      * @return name
      */
     public String getName() {
@@ -933,7 +933,7 @@ public class CreateApiV2Response extends SdkResponse {
 
 
     /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。  支持环境变量，使用环境变量时，每个变量名的长度为3 ~ 32位的字符串，字符串由英文字母、数字、中划线、下划线组成，且只能以英文开头。 > 需要服从URI规范。
+     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
      * @return reqUri
      */
     public String getReqUri() {
@@ -1350,7 +1350,7 @@ public class CreateApiV2Response extends SdkResponse {
 
 
     /**
-     * API的状态
+     * API状态   - 1： 有效
      * @return status
      */
     public Integer getStatus() {
@@ -1482,7 +1482,7 @@ public class CreateApiV2Response extends SdkResponse {
 
 
     /**
-     * 发布的环境id
+     * 发布的环境编号  存在多个发布记录时，环境编号之间用|隔开
      * @return runEnvId
      */
     public String getRunEnvId() {
@@ -1504,7 +1504,7 @@ public class CreateApiV2Response extends SdkResponse {
 
 
     /**
-     * 发布的环境名称
+     * 发布的环境名称  存在多个发布记录时，环境名称之间用|隔开
      * @return runEnvName
      */
     public String getRunEnvName() {
@@ -1526,7 +1526,7 @@ public class CreateApiV2Response extends SdkResponse {
 
 
     /**
-     * 发布记录编号  存在多个发布记录时，编号之间用|隔开
+     * 发布记录编号  存在多个发布记录时，发布记录编号之间用|隔开
      * @return publishId
      */
     public String getPublishId() {

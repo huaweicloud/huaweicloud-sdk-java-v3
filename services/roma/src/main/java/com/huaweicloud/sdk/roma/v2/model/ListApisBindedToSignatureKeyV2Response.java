@@ -11,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.SignApiBindingInfo;
-import com.huaweicloud.sdk.roma.v2.model.SignApiBindingResult;
+import com.huaweicloud.sdk.roma.v2.model.SignApiBindingBase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -40,7 +39,7 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bindings")
     
-    private List<SignApiBindingInfo> bindings = null;
+    private List<SignApiBindingBase> bindings = null;
     
     public ListApisBindedToSignatureKeyV2Response withSize(Integer size) {
         this.size = size;
@@ -86,13 +85,13 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
 
     
 
-    public ListApisBindedToSignatureKeyV2Response withBindings(List<SignApiBindingInfo> bindings) {
+    public ListApisBindedToSignatureKeyV2Response withBindings(List<SignApiBindingBase> bindings) {
         this.bindings = bindings;
         return this;
     }
 
     
-    public ListApisBindedToSignatureKeyV2Response addBindingsItem(SignApiBindingInfo bindingsItem) {
+    public ListApisBindedToSignatureKeyV2Response addBindingsItem(SignApiBindingBase bindingsItem) {
         if(this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
@@ -100,7 +99,7 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisBindedToSignatureKeyV2Response withBindings(Consumer<List<SignApiBindingInfo>> bindingsSetter) {
+    public ListApisBindedToSignatureKeyV2Response withBindings(Consumer<List<SignApiBindingBase>> bindingsSetter) {
         if(this.bindings == null) {
             this.bindings = new ArrayList<>();
         }
@@ -109,14 +108,14 @@ public class ListApisBindedToSignatureKeyV2Response extends SdkResponse {
     }
 
     /**
-     * API与签名密钥的绑定关系列表
+     * 本次查询到的签名密钥和API绑定关系列表
      * @return bindings
      */
-    public List<SignApiBindingInfo> getBindings() {
+    public List<SignApiBindingBase> getBindings() {
         return bindings;
     }
 
-    public void setBindings(List<SignApiBindingInfo> bindings) {
+    public void setBindings(List<SignApiBindingBase> bindings) {
         this.bindings = bindings;
     }
 

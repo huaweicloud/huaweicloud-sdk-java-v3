@@ -6,84 +6,88 @@
 
     <parent>
         <groupId>com.huaweicloud.sdk</groupId>
-        <version>3.0.48</version>
+        <version>3.0.49</version>
         <artifactId>huaweicloud-sdk</artifactId>
     </parent>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk-services</artifactId>
-    <version>3.0.48</version>
+    <version>3.0.49</version>
     <packaging>pom</packaging>
     <name>Huawei Cloud SDK for Java Services</name>
     <description>Services code for Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
 
     <modules>
-        <module>gaussdbfornosql</module>
-        <module>ecs</module>
-        <module>live</module>
-        <module>das</module>
-        <module>antiddos</module>
-        <module>ims</module>
-        <module>cce</module>
-        <module>moderation</module>
-        <module>classroom</module>
-        <module>ugo</module>
-        <module>cloudtest</module>
-        <module>cloudbuild</module>
-        <module>dli</module>
-        <module>nat</module>
-        <module>codecheck</module>
-        <module>rabbitmq</module>
-        <module>tms</module>
-        <module>mpc</module>
-        <module>iec</module>
-        <module>bssintl</module>
-        <module>rds</module>
-        <module>functiongraph</module>
-        <module>dns</module>
-        <module>hss</module>
-        <module>dcs</module>
-        <module>rms</module>
-        <module>cts</module>
-        <module>cloudpipeline</module>
-        <module>cbr</module>
-        <module>iam</module>
-        <module>dms</module>
-        <module>vpc</module>
-        <module>eps</module>
-        <module>mrs</module>
-        <module>elb</module>
-        <module>cloudide</module>
-        <module>apig</module>
-        <module>cdn</module>
-        <module>osm</module>
-        <module>ces</module>
-        <module>scm</module>
-        <module>meeting</module>
-        <module>evs</module>
-        <module>smn</module>
-        <module>bcs</module>
-        <module>projectman</module>
-        <module>oms</module>
-        <module>image</module>
-        <module>devstar</module>
-        <module>dws</module>
-        <module>aom</module>
-        <module>dgc</module>
-        <module>eip</module>
-        <module>bss</module>
-        <module>roma</module>
-        <module>kms</module>
-        <module>bms</module>
-        <module>sms</module>
-        <module>dds</module>
-        <module>swr</module>
-        <module>as</module>
-        <module>kafka</module>
-        <module>iotda</module>
-        <module>sa</module>
         <module>servicestage</module>
-        <module>kps</module>
+        <module>aom</module>
+        <module>kms</module>
+        <module>cloudide</module>
+        <module>moderation</module>
+        <module>dns</module>
+        <module>image</module>
+        <module>live</module>
         <module>drs</module>
+        <module>meeting</module>
+        <module>classroom</module>
+        <module>smn</module>
+        <module>as</module>
+        <module>antiddos</module>
+        <module>roma</module>
+        <module>devstar</module>
+        <module>scm</module>
+        <module>cce</module>
+        <module>evs</module>
+        <module>dli</module>
+        <module>das</module>
+        <module>vpc</module>
+        <module>oms</module>
+        <module>gaussdbfornosql</module>
+        <module>mpc</module>
+        <module>dcs</module>
+        <module>bss</module>
+        <module>ces</module>
+        <module>mrs</module>
+        <module>bms</module>
+        <module>hss</module>
+        <module>dds</module>
+        <module>projectman</module>
+        <module>cloudpipeline</module>
+        <module>rabbitmq</module>
+        <module>osm</module>
+        <module>dws</module>
+        <module>ugo</module>
+        <module>codecheck</module>
+        <module>bssintl</module>
+        <module>cloudbuild</module>
+        <module>ocr</module>
+        <module>rds</module>
+        <module>rms</module>
+        <module>ecs</module>
+        <module>kps</module>
+        <module>eip</module>
+        <module>iec</module>
+        <module>waf</module>
+        <module>cdn</module>
+        <module>tms</module>
+        <module>nat</module>
+        <module>iotda</module>
+        <module>vod</module>
+        <module>kafka</module>
+        <module>swr</module>
+        <module>iam</module>
+        <module>ims</module>
+        <module>eps</module>
+        <module>functiongraph</module>
+        <module>dms</module>
+        <module>sms</module>
+        <module>cbr</module>
+        <module>cts</module>
+        <module>cloudtest</module>
+        <module>dgc</module>
+        <module>bcs</module>
+        <module>apig</module>
+        <module>elb</module>
+        <module>sa</module>
+        <module>lts</module>
     </modules>
 </project>

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.LdApiScriptBase;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,20 +35,10 @@ public class LdApiScript  {
     
     private String dsName;
     /**
-     * 数据源类型
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
      */
     public static final class DsTypeEnum {
 
-        
-        /**
-         * Enum SQLSERVER for value: "sqlserver"
-         */
-        public static final DsTypeEnum SQLSERVER = new DsTypeEnum("sqlserver");
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
-        public static final DsTypeEnum MYSQL = new DsTypeEnum("mysql");
         
         /**
          * Enum ORACLE for value: "oracle"
@@ -55,25 +46,77 @@ public class LdApiScript  {
         public static final DsTypeEnum ORACLE = new DsTypeEnum("oracle");
         
         /**
-         * Enum MSSQL for value: "mssql"
+         * Enum MYSQL for value: "mysql"
          */
-        public static final DsTypeEnum MSSQL = new DsTypeEnum("mssql");
+        public static final DsTypeEnum MYSQL = new DsTypeEnum("mysql");
+        
+        /**
+         * Enum MONGODB for value: "mongodb"
+         */
+        public static final DsTypeEnum MONGODB = new DsTypeEnum("mongodb");
+        
+        /**
+         * Enum REDIS for value: "redis"
+         */
+        public static final DsTypeEnum REDIS = new DsTypeEnum("redis");
         
         /**
          * Enum POSTGRESQL for value: "postgresql"
          */
         public static final DsTypeEnum POSTGRESQL = new DsTypeEnum("postgresql");
         
+        /**
+         * Enum HIVE for value: "hive"
+         */
+        public static final DsTypeEnum HIVE = new DsTypeEnum("hive");
+        
+        /**
+         * Enum MSSQL for value: "mssql"
+         */
+        public static final DsTypeEnum MSSQL = new DsTypeEnum("mssql");
+        
+        /**
+         * Enum SQLSERVER for value: "sqlserver"
+         */
+        public static final DsTypeEnum SQLSERVER = new DsTypeEnum("sqlserver");
+        
+        /**
+         * Enum GAUSS200 for value: "gauss200"
+         */
+        public static final DsTypeEnum GAUSS200 = new DsTypeEnum("gauss200");
+        
+        /**
+         * Enum DWS for value: "dws"
+         */
+        public static final DsTypeEnum DWS = new DsTypeEnum("dws");
+        
+        /**
+         * Enum GAUSS100 for value: "gauss100"
+         */
+        public static final DsTypeEnum GAUSS100 = new DsTypeEnum("gauss100");
+        
+        /**
+         * Enum ZENITH for value: "zenith"
+         */
+        public static final DsTypeEnum ZENITH = new DsTypeEnum("zenith");
+        
 
         private static final Map<String, DsTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DsTypeEnum> createStaticFields() {
             Map<String, DsTypeEnum> map = new HashMap<>();
-            map.put("sqlserver", SQLSERVER);
-            map.put("mysql", MYSQL);
             map.put("oracle", ORACLE);
-            map.put("mssql", MSSQL);
+            map.put("mysql", MYSQL);
+            map.put("mongodb", MONGODB);
+            map.put("redis", REDIS);
             map.put("postgresql", POSTGRESQL);
+            map.put("hive", HIVE);
+            map.put("mssql", MSSQL);
+            map.put("sqlserver", SQLSERVER);
+            map.put("gauss200", GAUSS200);
+            map.put("dws", DWS);
+            map.put("gauss100", GAUSS100);
+            map.put("zenith", ZENITH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -187,7 +230,7 @@ public class LdApiScript  {
 
 
     /**
-     * 数据源编号，当api_type为“data”时，必选
+     * 数据源编号，当api_type = data时，必选
      * @return dsId
      */
     public String getDsId() {
@@ -231,7 +274,7 @@ public class LdApiScript  {
 
 
     /**
-     * 数据源类型
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
      * @return dsType
      */
     public DsTypeEnum getDsType() {
@@ -275,7 +318,7 @@ public class LdApiScript  {
 
 
     /**
-     * 返回对象，号，当api的type为data时，必选，校验的正则表达式为“[A-Za-z][A-Za-z0-9_]{0,31}”
+     * 返回对象。  当api_type = data时，必选
      * @return objectName
      */
     public String getObjectName() {
@@ -297,7 +340,7 @@ public class LdApiScript  {
 
 
     /**
-     * API脚本号，当api的type为data时，必选，长度限制100000，请对脚本进行base64编码
+     * API脚本内容  请对脚本进行base64编码
      * @return content
      */
     public String getContent() {
@@ -319,7 +362,7 @@ public class LdApiScript  {
 
 
     /**
-     * 数据脚本是否结果分页，当api的type为data时有效
+     * 数据脚本是否结果分页，当api_type = data时有效
      * @return enableResultPaging
      */
     public Boolean getEnableResultPaging() {
@@ -341,7 +384,7 @@ public class LdApiScript  {
 
 
     /**
-     * 数据脚本是否预编译，当api的type为data时有效
+     * 数据脚本是否预编译，当api_type = data时有效
      * @return enablePreparestatement
      */
     public Boolean getEnablePreparestatement() {

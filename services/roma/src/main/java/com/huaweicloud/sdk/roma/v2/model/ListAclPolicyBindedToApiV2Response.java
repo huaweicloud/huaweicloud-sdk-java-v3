@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiBindAclPageAclsResp;
+import com.huaweicloud.sdk.roma.v2.model.ApiBindAclInfo;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="acls")
     
-    private List<ApiBindAclPageAclsResp> acls = null;
+    private List<ApiBindAclInfo> acls = null;
     
     public ListAclPolicyBindedToApiV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
 
     
 
-    public ListAclPolicyBindedToApiV2Response withAcls(List<ApiBindAclPageAclsResp> acls) {
+    public ListAclPolicyBindedToApiV2Response withAcls(List<ApiBindAclInfo> acls) {
         this.acls = acls;
         return this;
     }
 
     
-    public ListAclPolicyBindedToApiV2Response addAclsItem(ApiBindAclPageAclsResp aclsItem) {
+    public ListAclPolicyBindedToApiV2Response addAclsItem(ApiBindAclInfo aclsItem) {
         if(this.acls == null) {
             this.acls = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
         return this;
     }
 
-    public ListAclPolicyBindedToApiV2Response withAcls(Consumer<List<ApiBindAclPageAclsResp>> aclsSetter) {
+    public ListAclPolicyBindedToApiV2Response withAcls(Consumer<List<ApiBindAclInfo>> aclsSetter) {
         if(this.acls == null) {
             this.acls = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
      * 本次查询返回的ACL列表
      * @return acls
      */
-    public List<ApiBindAclPageAclsResp> getAcls() {
+    public List<ApiBindAclInfo> getAcls() {
         return acls;
     }
 
-    public void setAcls(List<ApiBindAclPageAclsResp> acls) {
+    public void setAcls(List<ApiBindAclInfo> acls) {
         this.acls = acls;
     }
 

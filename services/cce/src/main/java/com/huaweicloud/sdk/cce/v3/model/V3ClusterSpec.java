@@ -142,12 +142,6 @@ public class V3ClusterSpec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offloadCluster")
-    
-    private Boolean offloadCluster;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostNetwork")
     
     private HostNetwork hostNetwork;
@@ -402,28 +396,6 @@ public class V3ClusterSpec  {
 
     public void setIpv6enable(Boolean ipv6enable) {
         this.ipv6enable = ipv6enable;
-    }
-
-    
-
-    public V3ClusterSpec withOffloadCluster(Boolean offloadCluster) {
-        this.offloadCluster = offloadCluster;
-        return this;
-    }
-
-    
-
-
-    /**
-     * CCE Turbo集群(公测)
-     * @return offloadCluster
-     */
-    public Boolean getOffloadCluster() {
-        return offloadCluster;
-    }
-
-    public void setOffloadCluster(Boolean offloadCluster) {
-        this.offloadCluster = offloadCluster;
     }
 
     
@@ -769,7 +741,6 @@ public class V3ClusterSpec  {
             Objects.equals(this.version, v3ClusterSpec.version) &&
             Objects.equals(this.description, v3ClusterSpec.description) &&
             Objects.equals(this.ipv6enable, v3ClusterSpec.ipv6enable) &&
-            Objects.equals(this.offloadCluster, v3ClusterSpec.offloadCluster) &&
             Objects.equals(this.hostNetwork, v3ClusterSpec.hostNetwork) &&
             Objects.equals(this.containerNetwork, v3ClusterSpec.containerNetwork) &&
             Objects.equals(this.eniNetwork, v3ClusterSpec.eniNetwork) &&
@@ -785,7 +756,7 @@ public class V3ClusterSpec  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, flavor, version, description, ipv6enable, offloadCluster, hostNetwork, containerNetwork, eniNetwork, authentication, billingMode, masters, kubernetesSvcIpRange, clusterTags, kubeProxyMode, az, extendParam, supportIstio);
+        return Objects.hash(type, flavor, version, description, ipv6enable, hostNetwork, containerNetwork, eniNetwork, authentication, billingMode, masters, kubernetesSvcIpRange, clusterTags, kubeProxyMode, az, extendParam, supportIstio);
     }
     @Override
     public String toString() {
@@ -796,7 +767,6 @@ public class V3ClusterSpec  {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipv6enable: ").append(toIndentedString(ipv6enable)).append("\n");
-        sb.append("    offloadCluster: ").append(toIndentedString(offloadCluster)).append("\n");
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("    containerNetwork: ").append(toIndentedString(containerNetwork)).append("\n");
         sb.append("    eniNetwork: ").append(toIndentedString(eniNetwork)).append("\n");

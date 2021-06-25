@@ -36,12 +36,6 @@ public class DeleteClusterRequest  {
     @JsonProperty(value="cluster_id")
     
     private String clusterId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
     /**
      * 是否删除SFS Turbo（极速文件存储卷）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
      */
@@ -677,28 +671,6 @@ public class DeleteClusterRequest  {
 
     
 
-    public DeleteClusterRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-    }
-
-    
-
     public DeleteClusterRequest withDeleteEfs(DeleteEfsEnum deleteEfs) {
         this.deleteEfs = deleteEfs;
         return this;
@@ -841,7 +813,6 @@ public class DeleteClusterRequest  {
         }
         DeleteClusterRequest deleteClusterRequest = (DeleteClusterRequest) o;
         return Objects.equals(this.clusterId, deleteClusterRequest.clusterId) &&
-            Objects.equals(this.errorStatus, deleteClusterRequest.errorStatus) &&
             Objects.equals(this.deleteEfs, deleteClusterRequest.deleteEfs) &&
             Objects.equals(this.deleteEni, deleteClusterRequest.deleteEni) &&
             Objects.equals(this.deleteEvs, deleteClusterRequest.deleteEvs) &&
@@ -851,14 +822,13 @@ public class DeleteClusterRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, errorStatus, deleteEfs, deleteEni, deleteEvs, deleteNet, deleteObs, deleteSfs);
+        return Objects.hash(clusterId, deleteEfs, deleteEni, deleteEvs, deleteNet, deleteObs, deleteSfs);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteClusterRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    deleteEfs: ").append(toIndentedString(deleteEfs)).append("\n");
         sb.append("    deleteEni: ").append(toIndentedString(deleteEni)).append("\n");
         sb.append("    deleteEvs: ").append(toIndentedString(deleteEvs)).append("\n");

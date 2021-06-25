@@ -25,6 +25,18 @@ public class ListApiGroupsV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
@@ -43,18 +55,6 @@ public class ListApiGroupsV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Long offset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="precise_search")
     
     private String preciseSearch;
@@ -68,7 +68,7 @@ public class ListApiGroupsV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -77,6 +77,52 @@ public class ListApiGroupsV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    
+
+    public ListApiGroupsV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListApiGroupsV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -147,52 +193,6 @@ public class ListApiGroupsV2Request  {
 
     
 
-    public ListApiGroupsV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    
-
-    public ListApiGroupsV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
     public ListApiGroupsV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -225,27 +225,27 @@ public class ListApiGroupsV2Request  {
         }
         ListApiGroupsV2Request listApiGroupsV2Request = (ListApiGroupsV2Request) o;
         return Objects.equals(this.instanceId, listApiGroupsV2Request.instanceId) &&
+            Objects.equals(this.offset, listApiGroupsV2Request.offset) &&
+            Objects.equals(this.limit, listApiGroupsV2Request.limit) &&
             Objects.equals(this.id, listApiGroupsV2Request.id) &&
             Objects.equals(this.name, listApiGroupsV2Request.name) &&
             Objects.equals(this.romaAppId, listApiGroupsV2Request.romaAppId) &&
-            Objects.equals(this.offset, listApiGroupsV2Request.offset) &&
-            Objects.equals(this.limit, listApiGroupsV2Request.limit) &&
             Objects.equals(this.preciseSearch, listApiGroupsV2Request.preciseSearch);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, id, name, romaAppId, offset, limit, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, id, name, romaAppId, preciseSearch);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApiGroupsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("}");
         return sb.toString();

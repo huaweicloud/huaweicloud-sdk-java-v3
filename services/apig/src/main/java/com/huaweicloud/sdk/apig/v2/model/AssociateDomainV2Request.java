@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.DomainReq;
+import com.huaweicloud.sdk.apig.v2.model.UrlDomainCreate;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class AssociateDomainV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private DomainReq body;
+    private UrlDomainCreate body;
 
     public AssociateDomainV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -80,14 +80,14 @@ public class AssociateDomainV2Request  {
 
     
 
-    public AssociateDomainV2Request withBody(DomainReq body) {
+    public AssociateDomainV2Request withBody(UrlDomainCreate body) {
         this.body = body;
         return this;
     }
 
-    public AssociateDomainV2Request withBody(Consumer<DomainReq> bodySetter) {
+    public AssociateDomainV2Request withBody(Consumer<UrlDomainCreate> bodySetter) {
         if(this.body == null ){
-            this.body = new DomainReq();
+            this.body = new UrlDomainCreate();
             bodySetter.accept(this.body);
         }
         
@@ -99,11 +99,11 @@ public class AssociateDomainV2Request  {
      * Get body
      * @return body
      */
-    public DomainReq getBody() {
+    public UrlDomainCreate getBody() {
         return body;
     }
 
-    public void setBody(DomainReq body) {
+    public void setBody(UrlDomainCreate body) {
         this.body = body;
     }
 

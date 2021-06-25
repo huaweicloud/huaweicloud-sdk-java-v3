@@ -25,15 +25,15 @@ public class DisassociateCertificateV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -50,7 +50,7 @@ public class DisassociateCertificateV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -59,28 +59,6 @@ public class DisassociateCertificateV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    
-
-    public DisassociateCertificateV2Request withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 域名的编号
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
     }
 
     
@@ -103,6 +81,28 @@ public class DisassociateCertificateV2Request  {
 
     public void setGroupId(String groupId) {
         this.groupId = groupId;
+    }
+
+    
+
+    public DisassociateCertificateV2Request withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 域名的编号
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
     }
 
     
@@ -139,21 +139,21 @@ public class DisassociateCertificateV2Request  {
         }
         DisassociateCertificateV2Request disassociateCertificateV2Request = (DisassociateCertificateV2Request) o;
         return Objects.equals(this.instanceId, disassociateCertificateV2Request.instanceId) &&
-            Objects.equals(this.domainId, disassociateCertificateV2Request.domainId) &&
             Objects.equals(this.groupId, disassociateCertificateV2Request.groupId) &&
+            Objects.equals(this.domainId, disassociateCertificateV2Request.domainId) &&
             Objects.equals(this.certificateId, disassociateCertificateV2Request.certificateId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, domainId, groupId, certificateId);
+        return Objects.hash(instanceId, groupId, domainId, certificateId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DisassociateCertificateV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");
         return sb.toString();

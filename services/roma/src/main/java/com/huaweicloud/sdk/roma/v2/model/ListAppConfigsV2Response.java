@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppConfigInfo;
+import com.huaweicloud.sdk.roma.v2.model.AppConfigInfoV2;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListAppConfigsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="configs")
     
-    private List<AppConfigInfo> configs = null;
+    private List<AppConfigInfoV2> configs = null;
     
     public ListAppConfigsV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListAppConfigsV2Response extends SdkResponse {
 
     
 
-    public ListAppConfigsV2Response withConfigs(List<AppConfigInfo> configs) {
+    public ListAppConfigsV2Response withConfigs(List<AppConfigInfoV2> configs) {
         this.configs = configs;
         return this;
     }
 
     
-    public ListAppConfigsV2Response addConfigsItem(AppConfigInfo configsItem) {
+    public ListAppConfigsV2Response addConfigsItem(AppConfigInfoV2 configsItem) {
         if(this.configs == null) {
             this.configs = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListAppConfigsV2Response extends SdkResponse {
         return this;
     }
 
-    public ListAppConfigsV2Response withConfigs(Consumer<List<AppConfigInfo>> configsSetter) {
+    public ListAppConfigsV2Response withConfigs(Consumer<List<AppConfigInfoV2>> configsSetter) {
         if(this.configs == null) {
             this.configs = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListAppConfigsV2Response extends SdkResponse {
      * 本次查询到的应用配置列表
      * @return configs
      */
-    public List<AppConfigInfo> getConfigs() {
+    public List<AppConfigInfoV2> getConfigs() {
         return configs;
     }
 
-    public void setConfigs(List<AppConfigInfo> configs) {
+    public void setConfigs(List<AppConfigInfoV2> configs) {
         this.configs = configs;
     }
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -73,13 +74,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_before")
     
-    private String notBefore;
+    private OffsetDateTime notBefore;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="not_after")
     
-    private String notAfter;
+    private OffsetDateTime notAfter;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -359,7 +360,7 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
     
 
-    public ShowDetailsOfDomainNameCertificateV2Response withNotBefore(String notBefore) {
+    public ShowDetailsOfDomainNameCertificateV2Response withNotBefore(OffsetDateTime notBefore) {
         this.notBefore = notBefore;
         return this;
     }
@@ -371,17 +372,17 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
      * 证书有效期起始时间
      * @return notBefore
      */
-    public String getNotBefore() {
+    public OffsetDateTime getNotBefore() {
         return notBefore;
     }
 
-    public void setNotBefore(String notBefore) {
+    public void setNotBefore(OffsetDateTime notBefore) {
         this.notBefore = notBefore;
     }
 
     
 
-    public ShowDetailsOfDomainNameCertificateV2Response withNotAfter(String notAfter) {
+    public ShowDetailsOfDomainNameCertificateV2Response withNotAfter(OffsetDateTime notAfter) {
         this.notAfter = notAfter;
         return this;
     }
@@ -393,11 +394,11 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
      * 证书有效期截止时间
      * @return notAfter
      */
-    public String getNotAfter() {
+    public OffsetDateTime getNotAfter() {
         return notAfter;
     }
 
-    public void setNotAfter(String notAfter) {
+    public void setNotAfter(OffsetDateTime notAfter) {
         this.notAfter = notAfter;
     }
 

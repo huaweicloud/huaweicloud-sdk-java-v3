@@ -93,7 +93,7 @@ public class ApigMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DomainReq.class,
+            UrlDomainCreate.class,
             f -> f.withMarshaller(AssociateDomainV2Request::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1396,6 +1396,57 @@ public class ApigMeta {
             String.class,
             f -> f.withMarshaller(ShowDetailsOfRequestThrottlingPolicyV2Request::getThrottleId, (req, v) -> {
                 req.setThrottleId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2 = genForupdateDomainV2();
+
+    private static HttpRequestDef<UpdateDomainV2Request, UpdateDomainV2Response> genForupdateDomainV2() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainV2Request, UpdateDomainV2Response> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainV2Request.class, UpdateDomainV2Response.class)
+                .withName("UpdateDomainV2")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/api-groups/{group_id}/domains/{domain_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainV2Request::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainV2Request::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            })
+        );
+        builder.withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(UpdateDomainV2Request::getDomainId, (req, v) -> {
+                req.setDomainId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            UrlDomainModify.class,
+            f -> f.withMarshaller(UpdateDomainV2Request::getBody, (req, v) -> {
+                req.setBody(v);
             })
         );
 

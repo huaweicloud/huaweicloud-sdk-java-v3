@@ -191,6 +191,12 @@ public class QosParticipantInfo  {
     
     private String dataCenter;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="leftReason")
+    
+    private Integer leftReason;
+
     public QosParticipantInfo withConfUUID(String confUUID) {
         this.confUUID = confUUID;
         return this;
@@ -829,6 +835,28 @@ public class QosParticipantInfo  {
 
     
 
+    public QosParticipantInfo withLeftReason(Integer leftReason) {
+        this.leftReason = leftReason;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 离会原因。此字段仅标识离会原因，不做为是否已离会的判断依据。正在与会人员的离会原因初始值 = 0。 说明： * 0：正常离会。 * 1：网络异常离会。
+     * @return leftReason
+     */
+    public Integer getLeftReason() {
+        return leftReason;
+    }
+
+    public void setLeftReason(Integer leftReason) {
+        this.leftReason = leftReason;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -866,11 +894,12 @@ public class QosParticipantInfo  {
             Objects.equals(this.microphoneInfo, qosParticipantInfo.microphoneInfo) &&
             Objects.equals(this.speakerInfo, qosParticipantInfo.speakerInfo) &&
             Objects.equals(this.cameraInfo, qosParticipantInfo.cameraInfo) &&
-            Objects.equals(this.dataCenter, qosParticipantInfo.dataCenter);
+            Objects.equals(this.dataCenter, qosParticipantInfo.dataCenter) &&
+            Objects.equals(this.leftReason, qosParticipantInfo.leftReason);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(confUUID, conferenceID, participantID, userUUID, displayName, deptName, terminalType, role, ipAddress, country, province, city, appVersion, joinTime, leftTime, systemInfo, networkType, alarm, audioAlarmSend, videoAlarmSend, screenAlarmSend, audioAlarmRec, videoAlarmRec, screenAlarmRec, cpuAlarm, microphoneInfo, speakerInfo, cameraInfo, dataCenter);
+        return Objects.hash(confUUID, conferenceID, participantID, userUUID, displayName, deptName, terminalType, role, ipAddress, country, province, city, appVersion, joinTime, leftTime, systemInfo, networkType, alarm, audioAlarmSend, videoAlarmSend, screenAlarmSend, audioAlarmRec, videoAlarmRec, screenAlarmRec, cpuAlarm, microphoneInfo, speakerInfo, cameraInfo, dataCenter, leftReason);
     }
     @Override
     public String toString() {
@@ -905,6 +934,7 @@ public class QosParticipantInfo  {
         sb.append("    speakerInfo: ").append(toIndentedString(speakerInfo)).append("\n");
         sb.append("    cameraInfo: ").append(toIndentedString(cameraInfo)).append("\n");
         sb.append("    dataCenter: ").append(toIndentedString(dataCenter)).append("\n");
+        sb.append("    leftReason: ").append(toIndentedString(leftReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

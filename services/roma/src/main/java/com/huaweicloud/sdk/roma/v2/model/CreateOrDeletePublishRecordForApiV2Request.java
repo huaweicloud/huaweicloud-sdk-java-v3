@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiPublishReq;
+import com.huaweicloud.sdk.roma.v2.model.ApiActionInfo;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiPublishReq body;
+    private ApiActionInfo body;
 
     public CreateOrDeletePublishRecordForApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -39,7 +39,7 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -52,14 +52,14 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
 
     
 
-    public CreateOrDeletePublishRecordForApiV2Request withBody(ApiPublishReq body) {
+    public CreateOrDeletePublishRecordForApiV2Request withBody(ApiActionInfo body) {
         this.body = body;
         return this;
     }
 
-    public CreateOrDeletePublishRecordForApiV2Request withBody(Consumer<ApiPublishReq> bodySetter) {
+    public CreateOrDeletePublishRecordForApiV2Request withBody(Consumer<ApiActionInfo> bodySetter) {
         if(this.body == null ){
-            this.body = new ApiPublishReq();
+            this.body = new ApiActionInfo();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class CreateOrDeletePublishRecordForApiV2Request  {
      * Get body
      * @return body
      */
-    public ApiPublishReq getBody() {
+    public ApiActionInfo getBody() {
         return body;
     }
 
-    public void setBody(ApiPublishReq body) {
+    public void setBody(ApiActionInfo body) {
         this.body = body;
     }
 

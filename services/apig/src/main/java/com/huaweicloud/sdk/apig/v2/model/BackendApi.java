@@ -268,6 +268,12 @@ public class BackendApi  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_client_ssl")
+    
+    private Boolean enableClientSsl;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
@@ -465,7 +471,7 @@ public class BackendApi  {
 
 
     /**
-     * API网关请求后端服务的超时时间。  单位：毫秒。请求参数值不在合法范围内时将使用默认值
+     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -474,6 +480,28 @@ public class BackendApi  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    
+
+    public BackendApi withEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
+    public Boolean getEnableClientSsl() {
+        return enableClientSsl;
+    }
+
+    public void setEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
     }
 
     
@@ -509,7 +537,7 @@ public class BackendApi  {
 
 
     /**
-     * 状态
+     * 后端状态   - 1： 有效
      * @return status
      */
     public Integer getStatus() {
@@ -634,6 +662,7 @@ public class BackendApi  {
             Objects.equals(this.version, backendApi.version) &&
             Objects.equals(this.reqUri, backendApi.reqUri) &&
             Objects.equals(this.timeout, backendApi.timeout) &&
+            Objects.equals(this.enableClientSsl, backendApi.enableClientSsl) &&
             Objects.equals(this.id, backendApi.id) &&
             Objects.equals(this.status, backendApi.status) &&
             Objects.equals(this.registerTime, backendApi.registerTime) &&
@@ -643,7 +672,7 @@ public class BackendApi  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout, id, status, registerTime, updateTime, vpcChannelInfo, vpcChannelStatus);
+        return Objects.hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout, enableClientSsl, id, status, registerTime, updateTime, vpcChannelInfo, vpcChannelStatus);
     }
     @Override
     public String toString() {
@@ -657,6 +686,7 @@ public class BackendApi  {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");

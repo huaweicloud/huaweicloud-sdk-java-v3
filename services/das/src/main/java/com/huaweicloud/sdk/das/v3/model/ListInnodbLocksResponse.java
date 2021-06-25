@@ -35,6 +35,12 @@ public class ListInnodbLocksResponse extends SdkResponse {
     
     private List<InnodbLockWaits> innodbLockWaits = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Integer count;
+
     public ListInnodbLocksResponse withInnodbTrx(List<InnodbTrx> innodbTrx) {
         this.innodbTrx = innodbTrx;
         return this;
@@ -107,6 +113,28 @@ public class ListInnodbLocksResponse extends SdkResponse {
 
     
 
+    public ListInnodbLocksResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 当前持有或等待锁的事务数量
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -117,11 +145,12 @@ public class ListInnodbLocksResponse extends SdkResponse {
         }
         ListInnodbLocksResponse listInnodbLocksResponse = (ListInnodbLocksResponse) o;
         return Objects.equals(this.innodbTrx, listInnodbLocksResponse.innodbTrx) &&
-            Objects.equals(this.innodbLockWaits, listInnodbLocksResponse.innodbLockWaits);
+            Objects.equals(this.innodbLockWaits, listInnodbLocksResponse.innodbLockWaits) &&
+            Objects.equals(this.count, listInnodbLocksResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(innodbTrx, innodbLockWaits);
+        return Objects.hash(innodbTrx, innodbLockWaits, count);
     }
     @Override
     public String toString() {
@@ -129,6 +158,7 @@ public class ListInnodbLocksResponse extends SdkResponse {
         sb.append("class ListInnodbLocksResponse {\n");
         sb.append("    innodbTrx: ").append(toIndentedString(innodbTrx)).append("\n");
         sb.append("    innodbLockWaits: ").append(toIndentedString(innodbLockWaits)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

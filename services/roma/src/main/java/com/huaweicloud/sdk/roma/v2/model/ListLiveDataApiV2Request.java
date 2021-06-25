@@ -25,6 +25,18 @@ public class ListLiveDataApiV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
     private String appId;
@@ -59,18 +71,6 @@ public class ListLiveDataApiV2Request  {
     
     private String preciseSearch;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Long offset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
     public ListLiveDataApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -80,7 +80,7 @@ public class ListLiveDataApiV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -89,6 +89,52 @@ public class ListLiveDataApiV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    
+
+    public ListLiveDataApiV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListLiveDataApiV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -225,52 +271,6 @@ public class ListLiveDataApiV2Request  {
 
     
 
-    public ListLiveDataApiV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    
-
-    public ListLiveDataApiV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -281,32 +281,32 @@ public class ListLiveDataApiV2Request  {
         }
         ListLiveDataApiV2Request listLiveDataApiV2Request = (ListLiveDataApiV2Request) o;
         return Objects.equals(this.instanceId, listLiveDataApiV2Request.instanceId) &&
+            Objects.equals(this.offset, listLiveDataApiV2Request.offset) &&
+            Objects.equals(this.limit, listLiveDataApiV2Request.limit) &&
             Objects.equals(this.appId, listLiveDataApiV2Request.appId) &&
             Objects.equals(this.appName, listLiveDataApiV2Request.appName) &&
             Objects.equals(this.name, listLiveDataApiV2Request.name) &&
             Objects.equals(this.status, listLiveDataApiV2Request.status) &&
             Objects.equals(this.path, listLiveDataApiV2Request.path) &&
-            Objects.equals(this.preciseSearch, listLiveDataApiV2Request.preciseSearch) &&
-            Objects.equals(this.offset, listLiveDataApiV2Request.offset) &&
-            Objects.equals(this.limit, listLiveDataApiV2Request.limit);
+            Objects.equals(this.preciseSearch, listLiveDataApiV2Request.preciseSearch);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appId, appName, name, status, path, preciseSearch, offset, limit);
+        return Objects.hash(instanceId, offset, limit, appId, appName, name, status, path, preciseSearch);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListLiveDataApiV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.Statistics;
+import com.huaweicloud.sdk.roma.v2.model.StatisticsAPI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,19 +32,19 @@ public class ListStatisticsApiResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
-    private Long startTime;
+    private Integer startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_time")
     
-    private Long endTime;
+    private Integer endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="list")
     
-    private List<Statistics> list = null;
+    private List<StatisticsAPI> list = null;
     
     public ListStatisticsApiResponse withCode(String code) {
         this.code = code;
@@ -68,7 +68,7 @@ public class ListStatisticsApiResponse extends SdkResponse {
 
     
 
-    public ListStatisticsApiResponse withStartTime(Long startTime) {
+    public ListStatisticsApiResponse withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -77,20 +77,20 @@ public class ListStatisticsApiResponse extends SdkResponse {
 
 
     /**
-     * 统计起始时间UTC的时间戳
+     * 开始时间的UTC的时间戳
      * @return startTime
      */
-    public Long getStartTime() {
+    public Integer getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Long startTime) {
+    public void setStartTime(Integer startTime) {
         this.startTime = startTime;
     }
 
     
 
-    public ListStatisticsApiResponse withEndTime(Long endTime) {
+    public ListStatisticsApiResponse withEndTime(Integer endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -99,26 +99,26 @@ public class ListStatisticsApiResponse extends SdkResponse {
 
 
     /**
-     * 统计结束时间UTC的时间戳
+     * 截止时间的UTC的时间戳
      * @return endTime
      */
-    public Long getEndTime() {
+    public Integer getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Long endTime) {
+    public void setEndTime(Integer endTime) {
         this.endTime = endTime;
     }
 
     
 
-    public ListStatisticsApiResponse withList(List<Statistics> list) {
+    public ListStatisticsApiResponse withList(List<StatisticsAPI> list) {
         this.list = list;
         return this;
     }
 
     
-    public ListStatisticsApiResponse addListItem(Statistics listItem) {
+    public ListStatisticsApiResponse addListItem(StatisticsAPI listItem) {
         if(this.list == null) {
             this.list = new ArrayList<>();
         }
@@ -126,7 +126,7 @@ public class ListStatisticsApiResponse extends SdkResponse {
         return this;
     }
 
-    public ListStatisticsApiResponse withList(Consumer<List<Statistics>> listSetter) {
+    public ListStatisticsApiResponse withList(Consumer<List<StatisticsAPI>> listSetter) {
         if(this.list == null) {
             this.list = new ArrayList<>();
         }
@@ -135,14 +135,14 @@ public class ListStatisticsApiResponse extends SdkResponse {
     }
 
     /**
-     * APP维度下不同周期指标列表
+     * 统计指标的数据结构结构体
      * @return list
      */
-    public List<Statistics> getList() {
+    public List<StatisticsAPI> getList() {
         return list;
     }
 
-    public void setList(List<Statistics> list) {
+    public void setList(List<StatisticsAPI> list) {
         this.list = list;
     }
 

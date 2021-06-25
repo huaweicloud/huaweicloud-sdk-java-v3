@@ -199,7 +199,7 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_app_name")
     
-    private Object romaAppName;
+    private String romaAppName;
 
     public ShowDetailsOfApiGroupV2Response withId(String id) {
         this.id = id;
@@ -581,7 +581,7 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
 
     
 
-    public ShowDetailsOfApiGroupV2Response withRomaAppName(Object romaAppName) {
+    public ShowDetailsOfApiGroupV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
     }
@@ -593,11 +593,11 @@ public class ShowDetailsOfApiGroupV2Response extends SdkResponse {
      * 分组归属的集成应用名称
      * @return romaAppName
      */
-    public Object getRomaAppName() {
+    public String getRomaAppName() {
         return romaAppName;
     }
 
-    public void setRomaAppName(Object romaAppName) {
+    public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
 

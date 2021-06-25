@@ -18,28 +18,6 @@ public class CloudBuildClient {
 
 
     /**
-     * 新建构建任务
-     * 新建构建任务,可传自定义参数。
-     *
-     * @param CreateJobRequest 请求对象
-     * @return CreateJobResponse
-     */
-    public CreateJobResponse createJob(CreateJobRequest request) {
-        return hcClient.syncInvokeHttp(request, CloudBuildMeta.createJob);
-    }
-
-    /**
-     * 新建构建任务
-     * 新建构建任务,可传自定义参数。
-     *
-     * @param CreateJobRequest 请求对象
-     * @return SyncInvoker<CreateJobRequest, CreateJobResponse>
-     */
-    public SyncInvoker<CreateJobRequest, CreateJobResponse> createJobInvoker(CreateJobRequest request) {
-        return new SyncInvoker<CreateJobRequest, CreateJobResponse>(request, CloudBuildMeta.createJob, hcClient);
-    }
-
-    /**
      * KeyStore文件下载
      * 下载指定租户下的KeyStore文件
      *

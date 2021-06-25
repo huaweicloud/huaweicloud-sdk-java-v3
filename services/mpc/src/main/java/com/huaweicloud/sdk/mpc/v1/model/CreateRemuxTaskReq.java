@@ -44,12 +44,6 @@ public class CreateRemuxTaskReq  {
     
     private RemuxOutputParam outputParam;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notify_url")
-    
-    private String notifyUrl;
-
     public CreateRemuxTaskReq withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -159,28 +153,6 @@ public class CreateRemuxTaskReq  {
 
     
 
-    public CreateRemuxTaskReq withNotifyUrl(String notifyUrl) {
-        this.notifyUrl = notifyUrl;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 提供给mpe通知回调用的的url 
-     * @return notifyUrl
-     */
-    public String getNotifyUrl() {
-        return notifyUrl;
-    }
-
-    public void setNotifyUrl(String notifyUrl) {
-        this.notifyUrl = notifyUrl;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -193,12 +165,11 @@ public class CreateRemuxTaskReq  {
         return Objects.equals(this.input, createRemuxTaskReq.input) &&
             Objects.equals(this.output, createRemuxTaskReq.output) &&
             Objects.equals(this.userData, createRemuxTaskReq.userData) &&
-            Objects.equals(this.outputParam, createRemuxTaskReq.outputParam) &&
-            Objects.equals(this.notifyUrl, createRemuxTaskReq.notifyUrl);
+            Objects.equals(this.outputParam, createRemuxTaskReq.outputParam);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, userData, outputParam, notifyUrl);
+        return Objects.hash(input, output, userData, outputParam);
     }
     @Override
     public String toString() {
@@ -208,7 +179,6 @@ public class CreateRemuxTaskReq  {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    outputParam: ").append(toIndentedString(outputParam)).append("\n");
-        sb.append("    notifyUrl: ").append(toIndentedString(notifyUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

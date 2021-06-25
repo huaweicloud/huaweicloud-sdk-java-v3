@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.EnvVariableResp;
+import com.huaweicloud.sdk.roma.v2.model.EnvVariableInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListEnvironmentVariablesV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="variables")
     
-    private List<EnvVariableResp> variables = null;
+    private List<EnvVariableInfo> variables = null;
     
     public ListEnvironmentVariablesV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListEnvironmentVariablesV2Response extends SdkResponse {
 
     
 
-    public ListEnvironmentVariablesV2Response withVariables(List<EnvVariableResp> variables) {
+    public ListEnvironmentVariablesV2Response withVariables(List<EnvVariableInfo> variables) {
         this.variables = variables;
         return this;
     }
 
     
-    public ListEnvironmentVariablesV2Response addVariablesItem(EnvVariableResp variablesItem) {
+    public ListEnvironmentVariablesV2Response addVariablesItem(EnvVariableInfo variablesItem) {
         if(this.variables == null) {
             this.variables = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListEnvironmentVariablesV2Response extends SdkResponse {
         return this;
     }
 
-    public ListEnvironmentVariablesV2Response withVariables(Consumer<List<EnvVariableResp>> variablesSetter) {
+    public ListEnvironmentVariablesV2Response withVariables(Consumer<List<EnvVariableInfo>> variablesSetter) {
         if(this.variables == null) {
             this.variables = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListEnvironmentVariablesV2Response extends SdkResponse {
      * 本次返回的环境变量列表
      * @return variables
      */
-    public List<EnvVariableResp> getVariables() {
+    public List<EnvVariableInfo> getVariables() {
         return variables;
     }
 
-    public void setVariables(List<EnvVariableResp> variables) {
+    public void setVariables(List<EnvVariableInfo> variables) {
         this.variables = variables;
     }
 

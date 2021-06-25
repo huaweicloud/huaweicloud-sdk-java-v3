@@ -197,7 +197,7 @@ public class ApiGroupInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="roma_app_name")
     
-    private Object romaAppName;
+    private String romaAppName;
 
     public ApiGroupInfo withId(String id) {
         this.id = id;
@@ -579,7 +579,7 @@ public class ApiGroupInfo  {
 
     
 
-    public ApiGroupInfo withRomaAppName(Object romaAppName) {
+    public ApiGroupInfo withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
     }
@@ -591,11 +591,11 @@ public class ApiGroupInfo  {
      * 分组归属的集成应用名称
      * @return romaAppName
      */
-    public Object getRomaAppName() {
+    public String getRomaAppName() {
         return romaAppName;
     }
 
-    public void setRomaAppName(Object romaAppName) {
+    public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
 

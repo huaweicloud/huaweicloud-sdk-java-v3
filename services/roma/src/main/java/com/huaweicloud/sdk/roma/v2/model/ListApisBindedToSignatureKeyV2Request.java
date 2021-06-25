@@ -25,6 +25,18 @@ public class ListApisBindedToSignatureKeyV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="sign_id")
     
     private String signId;
@@ -53,18 +65,6 @@ public class ListApisBindedToSignatureKeyV2Request  {
     
     private String groupId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Long offset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
     public ListApisBindedToSignatureKeyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -74,7 +74,7 @@ public class ListApisBindedToSignatureKeyV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -83,6 +83,52 @@ public class ListApisBindedToSignatureKeyV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    
+
+    public ListApisBindedToSignatureKeyV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListApisBindedToSignatureKeyV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -197,52 +243,6 @@ public class ListApisBindedToSignatureKeyV2Request  {
 
     
 
-    public ListApisBindedToSignatureKeyV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    
-
-    public ListApisBindedToSignatureKeyV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -253,30 +253,30 @@ public class ListApisBindedToSignatureKeyV2Request  {
         }
         ListApisBindedToSignatureKeyV2Request listApisBindedToSignatureKeyV2Request = (ListApisBindedToSignatureKeyV2Request) o;
         return Objects.equals(this.instanceId, listApisBindedToSignatureKeyV2Request.instanceId) &&
+            Objects.equals(this.offset, listApisBindedToSignatureKeyV2Request.offset) &&
+            Objects.equals(this.limit, listApisBindedToSignatureKeyV2Request.limit) &&
             Objects.equals(this.signId, listApisBindedToSignatureKeyV2Request.signId) &&
             Objects.equals(this.envId, listApisBindedToSignatureKeyV2Request.envId) &&
             Objects.equals(this.apiId, listApisBindedToSignatureKeyV2Request.apiId) &&
             Objects.equals(this.apiName, listApisBindedToSignatureKeyV2Request.apiName) &&
-            Objects.equals(this.groupId, listApisBindedToSignatureKeyV2Request.groupId) &&
-            Objects.equals(this.offset, listApisBindedToSignatureKeyV2Request.offset) &&
-            Objects.equals(this.limit, listApisBindedToSignatureKeyV2Request.limit);
+            Objects.equals(this.groupId, listApisBindedToSignatureKeyV2Request.groupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, signId, envId, apiId, apiName, groupId, offset, limit);
+        return Objects.hash(instanceId, offset, limit, signId, envId, apiId, apiName, groupId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApisBindedToSignatureKeyV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    signId: ").append(toIndentedString(signId)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    apiName: ").append(toIndentedString(apiName)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

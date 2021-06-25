@@ -32,12 +32,6 @@ public class UpdateNodePoolRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private NodePool body;
@@ -86,28 +80,6 @@ public class UpdateNodePoolRequest  {
 
     
 
-    public UpdateNodePoolRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-    }
-
-    
-
     public UpdateNodePoolRequest withBody(NodePool body) {
         this.body = body;
         return this;
@@ -148,12 +120,11 @@ public class UpdateNodePoolRequest  {
         UpdateNodePoolRequest updateNodePoolRequest = (UpdateNodePoolRequest) o;
         return Objects.equals(this.clusterId, updateNodePoolRequest.clusterId) &&
             Objects.equals(this.nodepoolId, updateNodePoolRequest.nodepoolId) &&
-            Objects.equals(this.errorStatus, updateNodePoolRequest.errorStatus) &&
             Objects.equals(this.body, updateNodePoolRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, nodepoolId, errorStatus, body);
+        return Objects.hash(clusterId, nodepoolId, body);
     }
     @Override
     public String toString() {
@@ -161,7 +132,6 @@ public class UpdateNodePoolRequest  {
         sb.append("class UpdateNodePoolRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    nodepoolId: ").append(toIndentedString(nodepoolId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

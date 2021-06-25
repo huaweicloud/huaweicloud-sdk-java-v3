@@ -25,15 +25,15 @@ public class DisassociateDomainV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
-    private String domainId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
 
     public DisassociateDomainV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -44,7 +44,7 @@ public class DisassociateDomainV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -53,28 +53,6 @@ public class DisassociateDomainV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    
-
-    public DisassociateDomainV2Request withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 域名的编号
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
     }
 
     
@@ -101,6 +79,28 @@ public class DisassociateDomainV2Request  {
 
     
 
+    public DisassociateDomainV2Request withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 域名的编号
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,20 +111,20 @@ public class DisassociateDomainV2Request  {
         }
         DisassociateDomainV2Request disassociateDomainV2Request = (DisassociateDomainV2Request) o;
         return Objects.equals(this.instanceId, disassociateDomainV2Request.instanceId) &&
-            Objects.equals(this.domainId, disassociateDomainV2Request.domainId) &&
-            Objects.equals(this.groupId, disassociateDomainV2Request.groupId);
+            Objects.equals(this.groupId, disassociateDomainV2Request.groupId) &&
+            Objects.equals(this.domainId, disassociateDomainV2Request.domainId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, domainId, groupId);
+        return Objects.hash(instanceId, groupId, domainId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DisassociateDomainV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

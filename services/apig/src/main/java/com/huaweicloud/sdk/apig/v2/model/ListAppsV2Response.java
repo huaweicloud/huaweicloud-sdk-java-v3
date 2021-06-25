@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.apig.v2.model.AppInfoWithBindNumResp;
+import com.huaweicloud.sdk.apig.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -24,15 +25,15 @@ public class ListAppsV2Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
-    private Integer total;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
     private Integer size;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total")
+    
+    private Long total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,28 +41,6 @@ public class ListAppsV2Response extends SdkResponse {
     
     private List<AppInfoWithBindNumResp> apps = null;
     
-    public ListAppsV2Response withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 符合条件的APP总数
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
-    
-
     public ListAppsV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -71,7 +50,7 @@ public class ListAppsV2Response extends SdkResponse {
 
 
     /**
-     * 本次查询返回的列表长度
+     * 本次返回的列表长度
      * @return size
      */
     public Integer getSize() {
@@ -80,6 +59,28 @@ public class ListAppsV2Response extends SdkResponse {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    
+
+    public ListAppsV2Response withTotal(Long total) {
+        this.total = total;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 满足条件的记录数
+     * @return total
+     */
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
     }
 
     
@@ -129,20 +130,20 @@ public class ListAppsV2Response extends SdkResponse {
             return false;
         }
         ListAppsV2Response listAppsV2Response = (ListAppsV2Response) o;
-        return Objects.equals(this.total, listAppsV2Response.total) &&
-            Objects.equals(this.size, listAppsV2Response.size) &&
+        return Objects.equals(this.size, listAppsV2Response.size) &&
+            Objects.equals(this.total, listAppsV2Response.total) &&
             Objects.equals(this.apps, listAppsV2Response.apps);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, apps);
+        return Objects.hash(size, total, apps);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAppsV2Response {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    apps: ").append(toIndentedString(apps)).append("\n");
         sb.append("}");
         return sb.toString();

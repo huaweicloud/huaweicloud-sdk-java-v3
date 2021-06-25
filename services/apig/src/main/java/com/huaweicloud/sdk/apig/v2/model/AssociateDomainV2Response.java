@@ -131,6 +131,12 @@ public class AssociateDomainV2Response extends SdkResponse {
     
     private StatusEnum status;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="min_ssl_version")
+    
+    private String minSslVersion;
+
     public AssociateDomainV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -162,7 +168,7 @@ public class AssociateDomainV2Response extends SdkResponse {
 
 
     /**
-     * 域名的编号
+     * 自定义域名的编号
      * @return id
      */
     public String getId() {
@@ -197,6 +203,28 @@ public class AssociateDomainV2Response extends SdkResponse {
 
     
 
+    public AssociateDomainV2Response withMinSslVersion(String minSslVersion) {
+        this.minSslVersion = minSslVersion;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 支持的最小SSL版本
+     * @return minSslVersion
+     */
+    public String getMinSslVersion() {
+        return minSslVersion;
+    }
+
+    public void setMinSslVersion(String minSslVersion) {
+        this.minSslVersion = minSslVersion;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -208,11 +236,12 @@ public class AssociateDomainV2Response extends SdkResponse {
         AssociateDomainV2Response associateDomainV2Response = (AssociateDomainV2Response) o;
         return Objects.equals(this.urlDomain, associateDomainV2Response.urlDomain) &&
             Objects.equals(this.id, associateDomainV2Response.id) &&
-            Objects.equals(this.status, associateDomainV2Response.status);
+            Objects.equals(this.status, associateDomainV2Response.status) &&
+            Objects.equals(this.minSslVersion, associateDomainV2Response.minSslVersion);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, id, status);
+        return Objects.hash(urlDomain, id, status, minSslVersion);
     }
     @Override
     public String toString() {
@@ -221,6 +250,7 @@ public class AssociateDomainV2Response extends SdkResponse {
         sb.append("    urlDomain: ").append(toIndentedString(urlDomain)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    minSslVersion: ").append(toIndentedString(minSslVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

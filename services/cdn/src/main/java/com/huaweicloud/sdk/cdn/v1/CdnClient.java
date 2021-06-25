@@ -436,25 +436,47 @@ public class CdnClient {
     }
 
     /**
-     * 查询Referer过滤规则
-     * 查询Referer过滤规则。
+     * 查询用户配额
+     * 查询当前用户域名、刷新文件、刷新目录和预热的配额
      *
-     * @param ShowRefererRequest 请求对象
-     * @return ShowRefererResponse
+     * @param ShowQuotaRequest 请求对象
+     * @return ShowQuotaResponse
      */
-    public ShowRefererResponse showReferer(ShowRefererRequest request) {
-        return hcClient.syncInvokeHttp(request, CdnMeta.showReferer);
+    public ShowQuotaResponse showQuota(ShowQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showQuota);
+    }
+
+    /**
+     * 查询用户配额
+     * 查询当前用户域名、刷新文件、刷新目录和预热的配额
+     *
+     * @param ShowQuotaRequest 请求对象
+     * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
+     */
+    public SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaInvoker(ShowQuotaRequest request) {
+        return new SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, CdnMeta.showQuota, hcClient);
     }
 
     /**
      * 查询Referer过滤规则
      * 查询Referer过滤规则。
      *
-     * @param ShowRefererRequest 请求对象
-     * @return SyncInvoker<ShowRefererRequest, ShowRefererResponse>
+     * @param ShowReferRequest 请求对象
+     * @return ShowReferResponse
      */
-    public SyncInvoker<ShowRefererRequest, ShowRefererResponse> showRefererInvoker(ShowRefererRequest request) {
-        return new SyncInvoker<ShowRefererRequest, ShowRefererResponse>(request, CdnMeta.showReferer, hcClient);
+    public ShowReferResponse showRefer(ShowReferRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.showRefer);
+    }
+
+    /**
+     * 查询Referer过滤规则
+     * 查询Referer过滤规则。
+     *
+     * @param ShowReferRequest 请求对象
+     * @return SyncInvoker<ShowReferRequest, ShowReferResponse>
+     */
+    public SyncInvoker<ShowReferRequest, ShowReferResponse> showReferInvoker(ShowReferRequest request) {
+        return new SyncInvoker<ShowReferRequest, ShowReferResponse>(request, CdnMeta.showRefer, hcClient);
     }
 
     /**

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ThrottleBindingBatchResultFailureResp;
+import com.huaweicloud.sdk.roma.v2.model.ThrottleBindingBatchFailure;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,7 +32,7 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failure")
     
-    private List<ThrottleBindingBatchResultFailureResp> failure = null;
+    private List<ThrottleBindingBatchFailure> failure = null;
     
     public BatchDisassociateThrottlingPolicyV2Response withSuccessCount(Integer successCount) {
         this.successCount = successCount;
@@ -56,13 +56,13 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
 
     
 
-    public BatchDisassociateThrottlingPolicyV2Response withFailure(List<ThrottleBindingBatchResultFailureResp> failure) {
+    public BatchDisassociateThrottlingPolicyV2Response withFailure(List<ThrottleBindingBatchFailure> failure) {
         this.failure = failure;
         return this;
     }
 
     
-    public BatchDisassociateThrottlingPolicyV2Response addFailureItem(ThrottleBindingBatchResultFailureResp failureItem) {
+    public BatchDisassociateThrottlingPolicyV2Response addFailureItem(ThrottleBindingBatchFailure failureItem) {
         if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -70,7 +70,7 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    public BatchDisassociateThrottlingPolicyV2Response withFailure(Consumer<List<ThrottleBindingBatchResultFailureResp>> failureSetter) {
+    public BatchDisassociateThrottlingPolicyV2Response withFailure(Consumer<List<ThrottleBindingBatchFailure>> failureSetter) {
         if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -82,11 +82,11 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
      * 解除绑定失败的API和流控绑定关系及错误信息
      * @return failure
      */
-    public List<ThrottleBindingBatchResultFailureResp> getFailure() {
+    public List<ThrottleBindingBatchFailure> getFailure() {
         return failure;
     }
 
-    public void setFailure(List<ThrottleBindingBatchResultFailureResp> failure) {
+    public void setFailure(List<ThrottleBindingBatchFailure> failure) {
         this.failure = failure;
     }
 

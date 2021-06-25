@@ -29,6 +29,18 @@ public class ListLiveDataApiTestHistoryV2Request  {
     
     private String ldApiId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
     public ListLiveDataApiTestHistoryV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -38,7 +50,7 @@ public class ListLiveDataApiTestHistoryV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +72,7 @@ public class ListLiveDataApiTestHistoryV2Request  {
 
 
     /**
-     * 后端API的编号，可通过查询API信息获取该编号。
+     * 后端API的编号
      * @return ldApiId
      */
     public String getLdApiId() {
@@ -69,6 +81,52 @@ public class ListLiveDataApiTestHistoryV2Request  {
 
     public void setLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
+    }
+
+    
+
+    public ListLiveDataApiTestHistoryV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListLiveDataApiTestHistoryV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -83,11 +141,13 @@ public class ListLiveDataApiTestHistoryV2Request  {
         }
         ListLiveDataApiTestHistoryV2Request listLiveDataApiTestHistoryV2Request = (ListLiveDataApiTestHistoryV2Request) o;
         return Objects.equals(this.instanceId, listLiveDataApiTestHistoryV2Request.instanceId) &&
-            Objects.equals(this.ldApiId, listLiveDataApiTestHistoryV2Request.ldApiId);
+            Objects.equals(this.ldApiId, listLiveDataApiTestHistoryV2Request.ldApiId) &&
+            Objects.equals(this.offset, listLiveDataApiTestHistoryV2Request.offset) &&
+            Objects.equals(this.limit, listLiveDataApiTestHistoryV2Request.limit);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, ldApiId);
+        return Objects.hash(instanceId, ldApiId, offset, limit);
     }
     @Override
     public String toString() {
@@ -95,6 +155,8 @@ public class ListLiveDataApiTestHistoryV2Request  {
         sb.append("class ListLiveDataApiTestHistoryV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

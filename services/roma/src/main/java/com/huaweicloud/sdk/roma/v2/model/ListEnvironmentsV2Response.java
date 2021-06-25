@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.EnvResp;
+import com.huaweicloud.sdk.roma.v2.model.EnvInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListEnvironmentsV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="envs")
     
-    private List<EnvResp> envs = null;
+    private List<EnvInfo> envs = null;
     
     public ListEnvironmentsV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListEnvironmentsV2Response extends SdkResponse {
 
     
 
-    public ListEnvironmentsV2Response withEnvs(List<EnvResp> envs) {
+    public ListEnvironmentsV2Response withEnvs(List<EnvInfo> envs) {
         this.envs = envs;
         return this;
     }
 
     
-    public ListEnvironmentsV2Response addEnvsItem(EnvResp envsItem) {
+    public ListEnvironmentsV2Response addEnvsItem(EnvInfo envsItem) {
         if(this.envs == null) {
             this.envs = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListEnvironmentsV2Response extends SdkResponse {
         return this;
     }
 
-    public ListEnvironmentsV2Response withEnvs(Consumer<List<EnvResp>> envsSetter) {
+    public ListEnvironmentsV2Response withEnvs(Consumer<List<EnvInfo>> envsSetter) {
         if(this.envs == null) {
             this.envs = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListEnvironmentsV2Response extends SdkResponse {
      * 本次返回的环境列表
      * @return envs
      */
-    public List<EnvResp> getEnvs() {
+    public List<EnvInfo> getEnvs() {
         return envs;
     }
 
-    public void setEnvs(List<EnvResp> envs) {
+    public void setEnvs(List<EnvInfo> envs) {
         this.envs = envs;
     }
 

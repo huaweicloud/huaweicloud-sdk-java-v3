@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.FeatureInfo;
+import com.huaweicloud.sdk.roma.v2.model.FeatureInfoV2;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,7 +39,7 @@ public class ListFeaturesV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="features")
     
-    private List<FeatureInfo> features = null;
+    private List<FeatureInfoV2> features = null;
     
     public ListFeaturesV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListFeaturesV2Response extends SdkResponse {
 
     
 
-    public ListFeaturesV2Response withFeatures(List<FeatureInfo> features) {
+    public ListFeaturesV2Response withFeatures(List<FeatureInfoV2> features) {
         this.features = features;
         return this;
     }
 
     
-    public ListFeaturesV2Response addFeaturesItem(FeatureInfo featuresItem) {
+    public ListFeaturesV2Response addFeaturesItem(FeatureInfoV2 featuresItem) {
         if(this.features == null) {
             this.features = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListFeaturesV2Response extends SdkResponse {
         return this;
     }
 
-    public ListFeaturesV2Response withFeatures(Consumer<List<FeatureInfo>> featuresSetter) {
+    public ListFeaturesV2Response withFeatures(Consumer<List<FeatureInfoV2>> featuresSetter) {
         if(this.features == null) {
             this.features = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListFeaturesV2Response extends SdkResponse {
      * 实例特性列表
      * @return features
      */
-    public List<FeatureInfo> getFeatures() {
+    public List<FeatureInfoV2> getFeatures() {
         return features;
     }
 
-    public void setFeatures(List<FeatureInfo> features) {
+    public void setFeatures(List<FeatureInfoV2> features) {
         this.features = features;
     }
 

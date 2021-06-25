@@ -18,6 +18,7 @@ import com.huaweicloud.sdk.apig.v2.model.ApiPolicyHttpBase;
 import com.huaweicloud.sdk.apig.v2.model.ApiPolicyRespBase;
 import com.huaweicloud.sdk.apig.v2.model.BackendParam;
 import com.huaweicloud.sdk.apig.v2.model.CoditionResp;
+import com.huaweicloud.sdk.apig.v2.model.VpcInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -371,7 +372,7 @@ public class ApiPolicyHttpResp  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
-    private String vpcChannelInfo;
+    private VpcInfo vpcChannelInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -636,7 +637,7 @@ public class ApiPolicyHttpResp  {
 
 
     /**
-     * API网关请求后端服务的超时时间。  单位：毫秒。
+     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -649,23 +650,30 @@ public class ApiPolicyHttpResp  {
 
     
 
-    public ApiPolicyHttpResp withVpcChannelInfo(String vpcChannelInfo) {
+    public ApiPolicyHttpResp withVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
         return this;
     }
 
-    
+    public ApiPolicyHttpResp withVpcChannelInfo(Consumer<VpcInfo> vpcChannelInfoSetter) {
+        if(this.vpcChannelInfo == null ){
+            this.vpcChannelInfo = new VpcInfo();
+            vpcChannelInfoSetter.accept(this.vpcChannelInfo);
+        }
+        
+        return this;
+    }
 
 
     /**
-     * VPC通道信息
+     * Get vpcChannelInfo
      * @return vpcChannelInfo
      */
-    public String getVpcChannelInfo() {
+    public VpcInfo getVpcChannelInfo() {
         return vpcChannelInfo;
     }
 
-    public void setVpcChannelInfo(String vpcChannelInfo) {
+    public void setVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 

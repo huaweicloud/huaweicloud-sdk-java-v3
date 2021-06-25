@@ -91,7 +91,7 @@ public class HttpInfoRequestBody  {
 
 
     /**
-     * HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥。
+     * HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，首次配置证书需要传递证书及私钥，如已有证书可不用传证书及私钥。
      * @return httpsStatus
      */
     public Integer getHttpsStatus() {
@@ -113,7 +113,7 @@ public class HttpInfoRequestBody  {
 
 
     /**
-     * 功能说明：HTTPS协议使用的证书内容，不启用证书则无需输入。  取值范围：PEM编码格式。
+     * 功能说明：HTTPS协议使用的证书内容，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
      * @return certificate
      */
     public String getCertificate() {
@@ -135,7 +135,7 @@ public class HttpInfoRequestBody  {
 
 
     /**
-     * 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。  取值范围：PEM编码格式。
+     * 功能说明： HTTPS协议使用的私钥，不启用证书则无需输入。取值范围：PEM编码格式。初次配置证书时必传。
      * @return privateKey
      */
     public String getPrivateKey() {
@@ -179,7 +179,7 @@ public class HttpInfoRequestBody  {
 
 
     /**
-     * 证书类型。1：代表华为云托管证书；0：表示自有证书。
+     * 证书类型。1：代表华为云托管证书；0：表示自有证书。 默认值0。
      * @return certificateType
      */
     public Integer getCertificateType() {

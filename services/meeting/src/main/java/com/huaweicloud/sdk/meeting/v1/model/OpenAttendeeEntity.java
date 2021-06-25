@@ -61,12 +61,6 @@ public class OpenAttendeeEntity  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isExternalContact")
-    
-    private Boolean isExternalContact;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="isHardTerminal")
     
     private Boolean isHardTerminal;
@@ -225,28 +219,6 @@ public class OpenAttendeeEntity  {
 
     
 
-    public OpenAttendeeEntity withIsExternalContact(Boolean isExternalContact) {
-        this.isExternalContact = isExternalContact;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否外部联系人。
-     * @return isExternalContact
-     */
-    public Boolean getIsExternalContact() {
-        return isExternalContact;
-    }
-
-    public void setIsExternalContact(Boolean isExternalContact) {
-        this.isExternalContact = isExternalContact;
-    }
-
-    
-
     public OpenAttendeeEntity withIsHardTerminal(Boolean isHardTerminal) {
         this.isHardTerminal = isHardTerminal;
         return this;
@@ -285,12 +257,11 @@ public class OpenAttendeeEntity  {
             Objects.equals(this.phone, openAttendeeEntity.phone) &&
             Objects.equals(this.email, openAttendeeEntity.email) &&
             Objects.equals(this.sms, openAttendeeEntity.sms) &&
-            Objects.equals(this.isExternalContact, openAttendeeEntity.isExternalContact) &&
             Objects.equals(this.isHardTerminal, openAttendeeEntity.isHardTerminal);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(appId, userAccount, userName, deptName, phone, email, sms, isExternalContact, isHardTerminal);
+        return Objects.hash(appId, userAccount, userName, deptName, phone, email, sms, isHardTerminal);
     }
     @Override
     public String toString() {
@@ -303,7 +274,6 @@ public class OpenAttendeeEntity  {
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    sms: ").append(toIndentedString(sms)).append("\n");
-        sb.append("    isExternalContact: ").append(toIndentedString(isExternalContact)).append("\n");
         sb.append("    isHardTerminal: ").append(toIndentedString(isHardTerminal)).append("\n");
         sb.append("}");
         return sb.toString();

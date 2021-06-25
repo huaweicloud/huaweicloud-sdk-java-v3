@@ -21,15 +21,15 @@ public class MountUser  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
-    private String userId;
+    private Integer userId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_group_id")
     
-    private String userGroupId;
+    private Integer userGroupId;
 
-    public MountUser withUserId(String userId) {
+    public MountUser withUserId(Integer userId) {
         this.userId = userId;
         return this;
     }
@@ -41,17 +41,17 @@ public class MountUser  {
      * 用户ID(-1~65534的非0整数)
      * @return userId
      */
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
     
 
-    public MountUser withUserGroupId(String userGroupId) {
+    public MountUser withUserGroupId(Integer userGroupId) {
         this.userGroupId = userGroupId;
         return this;
     }
@@ -63,11 +63,11 @@ public class MountUser  {
      * 用户组ID(-1~65534的非0整数)
      * @return userGroupId
      */
-    public String getUserGroupId() {
+    public Integer getUserGroupId() {
         return userGroupId;
     }
 
-    public void setUserGroupId(String userGroupId) {
+    public void setUserGroupId(Integer userGroupId) {
         this.userGroupId = userGroupId;
     }
 

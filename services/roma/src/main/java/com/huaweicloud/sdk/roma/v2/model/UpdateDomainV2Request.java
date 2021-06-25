@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.UrlDomainBase;
+import com.huaweicloud.sdk.roma.v2.model.UrlDomainModify;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -40,7 +40,7 @@ public class UpdateDomainV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UrlDomainBase body;
+    private UrlDomainModify body;
 
     public UpdateDomainV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -51,7 +51,7 @@ public class UpdateDomainV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -108,14 +108,14 @@ public class UpdateDomainV2Request  {
 
     
 
-    public UpdateDomainV2Request withBody(UrlDomainBase body) {
+    public UpdateDomainV2Request withBody(UrlDomainModify body) {
         this.body = body;
         return this;
     }
 
-    public UpdateDomainV2Request withBody(Consumer<UrlDomainBase> bodySetter) {
+    public UpdateDomainV2Request withBody(Consumer<UrlDomainModify> bodySetter) {
         if(this.body == null ){
-            this.body = new UrlDomainBase();
+            this.body = new UrlDomainModify();
             bodySetter.accept(this.body);
         }
         
@@ -127,11 +127,11 @@ public class UpdateDomainV2Request  {
      * Get body
      * @return body
      */
-    public UrlDomainBase getBody() {
+    public UrlDomainModify getBody() {
         return body;
     }
 
-    public void setBody(UrlDomainBase body) {
+    public void setBody(UrlDomainModify body) {
         this.body = body;
     }
 

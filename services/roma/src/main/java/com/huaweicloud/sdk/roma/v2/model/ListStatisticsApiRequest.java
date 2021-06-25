@@ -29,7 +29,7 @@ public class ListStatisticsApiRequest  {
     
     private String instanceId;
     /**
-     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主账号权限 * APP：指定集成应用 * API: 指定API * INSTANCE：实例，默认值
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
      */
     public static final class ModeEnum {
 
@@ -254,7 +254,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -276,7 +276,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主账号权限 * APP：指定集成应用 * API: 指定API * INSTANCE：实例，默认值
+     * 查询模式，默认为INSTANCE * ALL：实例下所有调用应用，要求主帐号权限 * APP：指定集成应用 * API：指定API * INSTANCE：实例，默认值  注意：mode = APP或ALL时，接口响应中不返回cycle，api_id，group_id，provider，register_time，status字段
      * @return mode
      */
     public ModeEnum getMode() {
@@ -408,7 +408,7 @@ public class ListStatisticsApiRequest  {
 
 
     /**
-     * 统计时长格式：整数+单位（m、h），m：分钟，h：小时，可支持小时与分钟的组合。例如：1h或2h45m * 同时给定start_time和end_time优先查询[start_time, end_time] * start_time不存在，end_time和duration存在且合法，则查询区间为[end_time - duration, end_time] * start_time和end_time不存在，duration存在且合法，令end_time=now，则查询区间为[end_time - duration, end_time]
+     * 统计时长格式：整数+单位（m、h），m：分钟，h：小时，可支持小时与分钟的组合。例如：1h或2h45m * 同时给定start_time和end_time优先查询[start_time, end_time] * start_time不存在，end_time和duration存在且合法，则查询区间为[end_time - duration, end_time] * start_time和end_time不存在，duration存在且合法，令end_time=now，则查询区间为[end_time - duration, end_time] * start_time，end_time和duration都不存在，报错missing time range parameters。
      * @return duration
      */
     public String getDuration() {

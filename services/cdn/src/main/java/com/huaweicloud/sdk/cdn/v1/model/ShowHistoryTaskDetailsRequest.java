@@ -51,7 +51,7 @@ public class ShowHistoryTaskDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="url")
     
-    private Integer url;
+    private String url;
 
     public ShowHistoryTaskDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -169,7 +169,7 @@ public class ShowHistoryTaskDetailsRequest  {
 
     
 
-    public ShowHistoryTaskDetailsRequest withUrl(Integer url) {
+    public ShowHistoryTaskDetailsRequest withUrl(String url) {
         this.url = url;
         return this;
     }
@@ -181,11 +181,11 @@ public class ShowHistoryTaskDetailsRequest  {
      * url的地址，支持同一任务id的多个url,多个url用分号隔开。
      * @return url
      */
-    public Integer getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(Integer url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 

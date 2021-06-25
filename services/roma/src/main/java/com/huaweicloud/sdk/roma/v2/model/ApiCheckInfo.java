@@ -7,8 +7,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,90 +22,6 @@ import java.util.Objects;
  */
 public class ApiCheckInfo  {
 
-    /**
-     * 校验类型：   - path：路径类型   - name：名称类型
-     */
-    public static final class TypeEnum {
-
-        
-        /**
-         * Enum PATH for value: "path"
-         */
-        public static final TypeEnum PATH = new TypeEnum("path");
-        
-        /**
-         * Enum NAME for value: "name"
-         */
-        public static final TypeEnum NAME = new TypeEnum("name");
-        
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("path", PATH);
-            map.put("name", NAME);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
-    private TypeEnum type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -343,28 +257,6 @@ public class ApiCheckInfo  {
     
     private String apiId;
 
-    public ApiCheckInfo withType(TypeEnum type) {
-        this.type = type;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 校验类型：   - path：路径类型   - name：名称类型
-     * @return type
-     */
-    public TypeEnum getType() {
-        return type;
-    }
-
-    public void setType(TypeEnum type) {
-        this.type = type;
-    }
-
-    
-
     public ApiCheckInfo withName(String name) {
         this.name = name;
         return this;
@@ -528,8 +420,7 @@ public class ApiCheckInfo  {
             return false;
         }
         ApiCheckInfo apiCheckInfo = (ApiCheckInfo) o;
-        return Objects.equals(this.type, apiCheckInfo.type) &&
-            Objects.equals(this.name, apiCheckInfo.name) &&
+        return Objects.equals(this.name, apiCheckInfo.name) &&
             Objects.equals(this.reqMethod, apiCheckInfo.reqMethod) &&
             Objects.equals(this.reqUri, apiCheckInfo.reqUri) &&
             Objects.equals(this.matchMode, apiCheckInfo.matchMode) &&
@@ -539,13 +430,12 @@ public class ApiCheckInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, name, reqMethod, reqUri, matchMode, groupId, romaAppId, apiId);
+        return Objects.hash(name, reqMethod, reqUri, matchMode, groupId, romaAppId, apiId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApiCheckInfo {\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");

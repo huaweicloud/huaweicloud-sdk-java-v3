@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.SwaggerFailureResp;
-import com.huaweicloud.sdk.roma.v2.model.SwaggerInfoResp;
-import com.huaweicloud.sdk.roma.v2.model.SwaggerSuccessResp;
+import com.huaweicloud.sdk.roma.v2.model.Failure;
+import com.huaweicloud.sdk.roma.v2.model.Success;
+import com.huaweicloud.sdk.roma.v2.model.Swagger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -26,93 +26,29 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
+    @JsonProperty(value="success")
     
-    private String groupId;
-
+    private List<Success> success = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failure")
     
-    private List<SwaggerFailureResp> failure = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
-    private List<SwaggerSuccessResp> success = null;
+    private List<Failure> failure = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="swagger")
     
-    private SwaggerInfoResp swagger;
+    private Swagger swagger;
 
-    public ImportLiveDataApiDefinitionsV2Response withGroupId(String groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * API分组编号
-     * @return groupId
-     */
-    public String getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
-    
-
-    public ImportLiveDataApiDefinitionsV2Response withFailure(List<SwaggerFailureResp> failure) {
-        this.failure = failure;
-        return this;
-    }
-
-    
-    public ImportLiveDataApiDefinitionsV2Response addFailureItem(SwaggerFailureResp failureItem) {
-        if(this.failure == null) {
-            this.failure = new ArrayList<>();
-        }
-        this.failure.add(failureItem);
-        return this;
-    }
-
-    public ImportLiveDataApiDefinitionsV2Response withFailure(Consumer<List<SwaggerFailureResp>> failureSetter) {
-        if(this.failure == null) {
-            this.failure = new ArrayList<>();
-        }
-        failureSetter.accept(this.failure);
-        return this;
-    }
-
-    /**
-     * 导入失败信息
-     * @return failure
-     */
-    public List<SwaggerFailureResp> getFailure() {
-        return failure;
-    }
-
-    public void setFailure(List<SwaggerFailureResp> failure) {
-        this.failure = failure;
-    }
-
-    
-
-    public ImportLiveDataApiDefinitionsV2Response withSuccess(List<SwaggerSuccessResp> success) {
+    public ImportLiveDataApiDefinitionsV2Response withSuccess(List<Success> success) {
         this.success = success;
         return this;
     }
 
     
-    public ImportLiveDataApiDefinitionsV2Response addSuccessItem(SwaggerSuccessResp successItem) {
+    public ImportLiveDataApiDefinitionsV2Response addSuccessItem(Success successItem) {
         if(this.success == null) {
             this.success = new ArrayList<>();
         }
@@ -120,7 +56,7 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    public ImportLiveDataApiDefinitionsV2Response withSuccess(Consumer<List<SwaggerSuccessResp>> successSetter) {
+    public ImportLiveDataApiDefinitionsV2Response withSuccess(Consumer<List<Success>> successSetter) {
         if(this.success == null) {
             this.success = new ArrayList<>();
         }
@@ -132,24 +68,60 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
      * 导入成功信息
      * @return success
      */
-    public List<SwaggerSuccessResp> getSuccess() {
+    public List<Success> getSuccess() {
         return success;
     }
 
-    public void setSuccess(List<SwaggerSuccessResp> success) {
+    public void setSuccess(List<Success> success) {
         this.success = success;
     }
 
     
 
-    public ImportLiveDataApiDefinitionsV2Response withSwagger(SwaggerInfoResp swagger) {
+    public ImportLiveDataApiDefinitionsV2Response withFailure(List<Failure> failure) {
+        this.failure = failure;
+        return this;
+    }
+
+    
+    public ImportLiveDataApiDefinitionsV2Response addFailureItem(Failure failureItem) {
+        if(this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
+        this.failure.add(failureItem);
+        return this;
+    }
+
+    public ImportLiveDataApiDefinitionsV2Response withFailure(Consumer<List<Failure>> failureSetter) {
+        if(this.failure == null) {
+            this.failure = new ArrayList<>();
+        }
+        failureSetter.accept(this.failure);
+        return this;
+    }
+
+    /**
+     * 导入失败信息
+     * @return failure
+     */
+    public List<Failure> getFailure() {
+        return failure;
+    }
+
+    public void setFailure(List<Failure> failure) {
+        this.failure = failure;
+    }
+
+    
+
+    public ImportLiveDataApiDefinitionsV2Response withSwagger(Swagger swagger) {
         this.swagger = swagger;
         return this;
     }
 
-    public ImportLiveDataApiDefinitionsV2Response withSwagger(Consumer<SwaggerInfoResp> swaggerSetter) {
+    public ImportLiveDataApiDefinitionsV2Response withSwagger(Consumer<Swagger> swaggerSetter) {
         if(this.swagger == null ){
-            this.swagger = new SwaggerInfoResp();
+            this.swagger = new Swagger();
             swaggerSetter.accept(this.swagger);
         }
         
@@ -161,11 +133,11 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
      * Get swagger
      * @return swagger
      */
-    public SwaggerInfoResp getSwagger() {
+    public Swagger getSwagger() {
         return swagger;
     }
 
-    public void setSwagger(SwaggerInfoResp swagger) {
+    public void setSwagger(Swagger swagger) {
         this.swagger = swagger;
     }
 
@@ -180,22 +152,20 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
             return false;
         }
         ImportLiveDataApiDefinitionsV2Response importLiveDataApiDefinitionsV2Response = (ImportLiveDataApiDefinitionsV2Response) o;
-        return Objects.equals(this.groupId, importLiveDataApiDefinitionsV2Response.groupId) &&
+        return Objects.equals(this.success, importLiveDataApiDefinitionsV2Response.success) &&
             Objects.equals(this.failure, importLiveDataApiDefinitionsV2Response.failure) &&
-            Objects.equals(this.success, importLiveDataApiDefinitionsV2Response.success) &&
             Objects.equals(this.swagger, importLiveDataApiDefinitionsV2Response.swagger);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, failure, success, swagger);
+        return Objects.hash(success, failure, swagger);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportLiveDataApiDefinitionsV2Response {\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-        sb.append("    failure: ").append(toIndentedString(failure)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
+        sb.append("    failure: ").append(toIndentedString(failure)).append("\n");
         sb.append("    swagger: ").append(toIndentedString(swagger)).append("\n");
         sb.append("}");
         return sb.toString();

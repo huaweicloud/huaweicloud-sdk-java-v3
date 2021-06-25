@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AclBindApiPageApisResp;
+import com.huaweicloud.sdk.roma.v2.model.AclBindApiInfo;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListApisBindedToAclPolicyV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apis")
     
-    private List<AclBindApiPageApisResp> apis = null;
+    private List<AclBindApiInfo> apis = null;
     
     public ListApisBindedToAclPolicyV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListApisBindedToAclPolicyV2Response extends SdkResponse {
 
     
 
-    public ListApisBindedToAclPolicyV2Response withApis(List<AclBindApiPageApisResp> apis) {
+    public ListApisBindedToAclPolicyV2Response withApis(List<AclBindApiInfo> apis) {
         this.apis = apis;
         return this;
     }
 
     
-    public ListApisBindedToAclPolicyV2Response addApisItem(AclBindApiPageApisResp apisItem) {
+    public ListApisBindedToAclPolicyV2Response addApisItem(AclBindApiInfo apisItem) {
         if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListApisBindedToAclPolicyV2Response extends SdkResponse {
         return this;
     }
 
-    public ListApisBindedToAclPolicyV2Response withApis(Consumer<List<AclBindApiPageApisResp>> apisSetter) {
+    public ListApisBindedToAclPolicyV2Response withApis(Consumer<List<AclBindApiInfo>> apisSetter) {
         if(this.apis == null) {
             this.apis = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListApisBindedToAclPolicyV2Response extends SdkResponse {
      * 本次查询返回的API列表
      * @return apis
      */
-    public List<AclBindApiPageApisResp> getApis() {
+    public List<AclBindApiInfo> getApis() {
         return apis;
     }
 
-    public void setApis(List<AclBindApiPageApisResp> apis) {
+    public void setApis(List<AclBindApiInfo> apis) {
         this.apis = apis;
     }
 

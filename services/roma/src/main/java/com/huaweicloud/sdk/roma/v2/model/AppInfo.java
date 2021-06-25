@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.AppBaseInfo;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,24 @@ import java.util.Objects;
  */
 public class AppInfo  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="remark")
+    
+    private String remark;
     /**
      * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
      */
@@ -121,24 +140,6 @@ public class AppInfo  {
     @JsonProperty(value="app_key")
     
     private String appKey;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
-    private String remark;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -320,6 +321,72 @@ public class AppInfo  {
     
     private Object romaAppType;
 
+    public AppInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 编号
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
+
+    public AppInfo withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public AppInfo withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 描述
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    
+
     public AppInfo withCreator(CreatorEnum creator) {
         this.creator = creator;
         return this;
@@ -382,72 +449,6 @@ public class AppInfo  {
 
     public void setAppKey(String appKey) {
         this.appKey = appKey;
-    }
-
-    
-
-    public AppInfo withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
-    public AppInfo withRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    
-
-    public AppInfo withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     
@@ -571,12 +572,12 @@ public class AppInfo  {
             return false;
         }
         AppInfo appInfo = (AppInfo) o;
-        return Objects.equals(this.creator, appInfo.creator) &&
-            Objects.equals(this.updateTime, appInfo.updateTime) &&
-            Objects.equals(this.appKey, appInfo.appKey) &&
+        return Objects.equals(this.id, appInfo.id) &&
             Objects.equals(this.name, appInfo.name) &&
             Objects.equals(this.remark, appInfo.remark) &&
-            Objects.equals(this.id, appInfo.id) &&
+            Objects.equals(this.creator, appInfo.creator) &&
+            Objects.equals(this.updateTime, appInfo.updateTime) &&
+            Objects.equals(this.appKey, appInfo.appKey) &&
             Objects.equals(this.appSecret, appInfo.appSecret) &&
             Objects.equals(this.registerTime, appInfo.registerTime) &&
             Objects.equals(this.status, appInfo.status) &&
@@ -585,18 +586,18 @@ public class AppInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, appType, romaAppType);
+        return Objects.hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AppInfo {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

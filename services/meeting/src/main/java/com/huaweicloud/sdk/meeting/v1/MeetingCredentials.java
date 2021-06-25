@@ -35,6 +35,11 @@ public class MeetingCredentials implements ICredential {
     private final static int EXPIRE_HOUR = 24;
     private final static int EXPIRE_HOUR_HALF = EXPIRE_HOUR / 2;
 
+    /**
+     * 客户端类型：API调用类型
+     */
+    private final static int CLIENT_TYPE_API = 72;
+
     @Override
     public CompletableFuture<ICredential> processAuthParams(HcClient hcClient, String regionId) {
         return CompletableFuture.completedFuture(this);
@@ -97,7 +102,7 @@ public class MeetingCredentials implements ICredential {
         String authorization =
             "Basic " + Base64.getEncoder().encodeToString(bytes);
 
-        String requestBody = JsonUtils.toJSON(new AuthReqDTOV1().withAccount(userName).withClientType(0));
+        String requestBody = JsonUtils.toJSON(new AuthReqDTOV1().withAccount(userName).withClientType(CLIENT_TYPE_API));
         HttpRequest createTokenRequest = HttpRequest.newBuilder()
             .withEndpoint(httpRequest.getEndpoint())
             .withMethod(HttpMethod.POST)

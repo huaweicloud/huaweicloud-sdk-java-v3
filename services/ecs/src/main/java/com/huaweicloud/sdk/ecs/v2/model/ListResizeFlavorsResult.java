@@ -105,6 +105,12 @@ public class ListResizeFlavorsResult  {
     
     private FlavorExtraSpec extraSpecs;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="instance_quota")
+    
+    private Object instanceQuota;
+
     public ListResizeFlavorsResult withId(String id) {
         this.id = id;
         return this;
@@ -434,6 +440,28 @@ public class ListResizeFlavorsResult  {
 
     
 
+    public ListResizeFlavorsResult withInstanceQuota(Object instanceQuota) {
+        this.instanceQuota = instanceQuota;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 预留属性。
+     * @return instanceQuota
+     */
+    public Object getInstanceQuota() {
+        return instanceQuota;
+    }
+
+    public void setInstanceQuota(Object instanceQuota) {
+        this.instanceQuota = instanceQuota;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -456,11 +484,12 @@ public class ListResizeFlavorsResult  {
             Objects.equals(this.rxtxCap, listResizeFlavorsResult.rxtxCap) &&
             Objects.equals(this.osFlavorAccessIsPublic, listResizeFlavorsResult.osFlavorAccessIsPublic) &&
             Objects.equals(this.links, listResizeFlavorsResult.links) &&
-            Objects.equals(this.extraSpecs, listResizeFlavorsResult.extraSpecs);
+            Objects.equals(this.extraSpecs, listResizeFlavorsResult.extraSpecs) &&
+            Objects.equals(this.instanceQuota, listResizeFlavorsResult.instanceQuota);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, vcpus, ram, disk, swap, osFLVEXTDATAEphemeral, osFLVDISABLEDDisabled, rxtxFactor, rxtxQuota, rxtxCap, osFlavorAccessIsPublic, links, extraSpecs);
+        return Objects.hash(id, name, vcpus, ram, disk, swap, osFLVEXTDATAEphemeral, osFLVDISABLEDDisabled, rxtxFactor, rxtxQuota, rxtxCap, osFlavorAccessIsPublic, links, extraSpecs, instanceQuota);
     }
     @Override
     public String toString() {
@@ -480,6 +509,7 @@ public class ListResizeFlavorsResult  {
         sb.append("    osFlavorAccessIsPublic: ").append(toIndentedString(osFlavorAccessIsPublic)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    extraSpecs: ").append(toIndentedString(extraSpecs)).append("\n");
+        sb.append("    instanceQuota: ").append(toIndentedString(instanceQuota)).append("\n");
         sb.append("}");
         return sb.toString();
     }

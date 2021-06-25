@@ -23,6 +23,12 @@ public class LdApiDeploy  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="deploy_front_api")
+    
+    private Boolean deployFrontApi;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auth_type")
     
     private String authType;
@@ -165,11 +171,27 @@ public class LdApiDeploy  {
     
     private String romaAppId;
 
+    public LdApiDeploy withDeployFrontApi(Boolean deployFrontApi) {
+        this.deployFrontApi = deployFrontApi;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_front_api")
     
-    private Boolean deployFrontApi;
+
+
+    /**
+     * 是否自动发布API - true：部署完成后自动创建并发布前端API。此时auth_type，group_id，env_id，protocol必填。 - false：部署完成后不创建前端API 
+     * @return deployFrontApi
+     */
+    public Boolean getDeployFrontApi() {
+        return deployFrontApi;
+    }
+
+    public void setDeployFrontApi(Boolean deployFrontApi) {
+        this.deployFrontApi = deployFrontApi;
+    }
+
+    
 
     public LdApiDeploy withAuthType(String authType) {
         this.authType = authType;
@@ -180,7 +202,7 @@ public class LdApiDeploy  {
 
 
     /**
-     * 认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 
+     * 认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
      * @return authType
      */
     public String getAuthType() {
@@ -202,7 +224,7 @@ public class LdApiDeploy  {
 
 
     /**
-     * 自定义认证编号
+     * 自定义认证编号。  认证方式auth_type = AUTHORIZER时必填
      * @return authorizerId
      */
     public String getAuthorizerId() {
@@ -391,28 +413,6 @@ public class LdApiDeploy  {
 
     
 
-    public LdApiDeploy withDeployFrontApi(Boolean deployFrontApi) {
-        this.deployFrontApi = deployFrontApi;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否自动发布API - true：部署完成后自动创建并发布前端API - false：部署完成后不创建前端API 
-     * @return deployFrontApi
-     */
-    public Boolean getDeployFrontApi() {
-        return deployFrontApi;
-    }
-
-    public void setDeployFrontApi(Boolean deployFrontApi) {
-        this.deployFrontApi = deployFrontApi;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -422,7 +422,8 @@ public class LdApiDeploy  {
             return false;
         }
         LdApiDeploy ldApiDeploy = (LdApiDeploy) o;
-        return Objects.equals(this.authType, ldApiDeploy.authType) &&
+        return Objects.equals(this.deployFrontApi, ldApiDeploy.deployFrontApi) &&
+            Objects.equals(this.authType, ldApiDeploy.authType) &&
             Objects.equals(this.authorizerId, ldApiDeploy.authorizerId) &&
             Objects.equals(this.groupId, ldApiDeploy.groupId) &&
             Objects.equals(this.envId, ldApiDeploy.envId) &&
@@ -431,17 +432,17 @@ public class LdApiDeploy  {
             Objects.equals(this.path, ldApiDeploy.path) &&
             Objects.equals(this.method, ldApiDeploy.method) &&
             Objects.equals(this.cors, ldApiDeploy.cors) &&
-            Objects.equals(this.romaAppId, ldApiDeploy.romaAppId) &&
-            Objects.equals(this.deployFrontApi, ldApiDeploy.deployFrontApi);
+            Objects.equals(this.romaAppId, ldApiDeploy.romaAppId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(authType, authorizerId, groupId, envId, protocol, backendTimeout, path, method, cors, romaAppId, deployFrontApi);
+        return Objects.hash(deployFrontApi, authType, authorizerId, groupId, envId, protocol, backendTimeout, path, method, cors, romaAppId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class LdApiDeploy {\n");
+        sb.append("    deployFrontApi: ").append(toIndentedString(deployFrontApi)).append("\n");
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
@@ -452,7 +453,6 @@ public class LdApiDeploy  {
         sb.append("    method: ").append(toIndentedString(method)).append("\n");
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
         sb.append("    romaAppId: ").append(toIndentedString(romaAppId)).append("\n");
-        sb.append("    deployFrontApi: ").append(toIndentedString(deployFrontApi)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -148,7 +148,7 @@ public class ThrottleSpecialReq  {
 
 
     /**
-     * 特殊APP的编号或特殊租户的账号ID
+     * 特殊APP的编号或特殊租户的帐号ID
      * @return objectId
      */
     public String getObjectId() {

@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyFunctionBase;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyRespBase;
 import com.huaweicloud.sdk.roma.v2.model.BackendParam;
-import com.huaweicloud.sdk.roma.v2.model.CoditionResp;
+import com.huaweicloud.sdk.roma.v2.model.ConditionResp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -121,22 +121,40 @@ public class ApiPolicyFunctionResp  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
-    private String version;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
     private Integer timeout;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version")
+    
+    private String version;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
-    /**
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="conditions")
+    
+    private List<ConditionResp> conditions = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="backend_params")
+    
+    private List<BackendParam> backendParams = null;
+        /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
     public static final class EffectModeEnum {
@@ -223,24 +241,6 @@ public class ApiPolicyFunctionResp  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
-    private List<BackendParam> backendParams = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conditions")
-    
-    private List<CoditionResp> conditions = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authorizer_id")
     
     private String authorizerId;
@@ -289,28 +289,6 @@ public class ApiPolicyFunctionResp  {
 
     
 
-    public ApiPolicyFunctionResp withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 版本。字符长度不超过64
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    
-
     public ApiPolicyFunctionResp withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -329,6 +307,28 @@ public class ApiPolicyFunctionResp  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    
+
+    public ApiPolicyFunctionResp withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 版本。字符长度不超过64
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     
@@ -355,28 +355,6 @@ public class ApiPolicyFunctionResp  {
 
     
 
-    public ApiPolicyFunctionResp withEffectMode(EffectModeEnum effectMode) {
-        this.effectMode = effectMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * @return effectMode
-     */
-    public EffectModeEnum getEffectMode() {
-        return effectMode;
-    }
-
-    public void setEffectMode(EffectModeEnum effectMode) {
-        this.effectMode = effectMode;
-    }
-
-    
-
     public ApiPolicyFunctionResp withName(String name) {
         this.name = name;
         return this;
@@ -395,6 +373,42 @@ public class ApiPolicyFunctionResp  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public ApiPolicyFunctionResp withConditions(List<ConditionResp> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    
+    public ApiPolicyFunctionResp addConditionsItem(ConditionResp conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public ApiPolicyFunctionResp withConditions(Consumer<List<ConditionResp>> conditionsSetter) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
+    public List<ConditionResp> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<ConditionResp> conditions) {
+        this.conditions = conditions;
     }
 
     
@@ -435,38 +449,24 @@ public class ApiPolicyFunctionResp  {
 
     
 
-    public ApiPolicyFunctionResp withConditions(List<CoditionResp> conditions) {
-        this.conditions = conditions;
+    public ApiPolicyFunctionResp withEffectMode(EffectModeEnum effectMode) {
+        this.effectMode = effectMode;
         return this;
     }
 
     
-    public ApiPolicyFunctionResp addConditionsItem(CoditionResp conditionsItem) {
-        if(this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
-        this.conditions.add(conditionsItem);
-        return this;
-    }
 
-    public ApiPolicyFunctionResp withConditions(Consumer<List<CoditionResp>> conditionsSetter) {
-        if(this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
-        conditionsSetter.accept(this.conditions);
-        return this;
-    }
 
     /**
-     * 策略条件列表
-     * @return conditions
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
      */
-    public List<CoditionResp> getConditions() {
-        return conditions;
+    public EffectModeEnum getEffectMode() {
+        return effectMode;
     }
 
-    public void setConditions(List<CoditionResp> conditions) {
-        this.conditions = conditions;
+    public void setEffectMode(EffectModeEnum effectMode) {
+        this.effectMode = effectMode;
     }
 
     
@@ -504,18 +504,18 @@ public class ApiPolicyFunctionResp  {
         ApiPolicyFunctionResp apiPolicyFunctionResp = (ApiPolicyFunctionResp) o;
         return Objects.equals(this.functionUrn, apiPolicyFunctionResp.functionUrn) &&
             Objects.equals(this.invocationType, apiPolicyFunctionResp.invocationType) &&
-            Objects.equals(this.version, apiPolicyFunctionResp.version) &&
             Objects.equals(this.timeout, apiPolicyFunctionResp.timeout) &&
+            Objects.equals(this.version, apiPolicyFunctionResp.version) &&
             Objects.equals(this.id, apiPolicyFunctionResp.id) &&
-            Objects.equals(this.effectMode, apiPolicyFunctionResp.effectMode) &&
             Objects.equals(this.name, apiPolicyFunctionResp.name) &&
-            Objects.equals(this.backendParams, apiPolicyFunctionResp.backendParams) &&
             Objects.equals(this.conditions, apiPolicyFunctionResp.conditions) &&
+            Objects.equals(this.backendParams, apiPolicyFunctionResp.backendParams) &&
+            Objects.equals(this.effectMode, apiPolicyFunctionResp.effectMode) &&
             Objects.equals(this.authorizerId, apiPolicyFunctionResp.authorizerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, invocationType, version, timeout, id, effectMode, name, backendParams, conditions, authorizerId);
+        return Objects.hash(functionUrn, invocationType, timeout, version, id, name, conditions, backendParams, effectMode, authorizerId);
     }
     @Override
     public String toString() {
@@ -523,13 +523,13 @@ public class ApiPolicyFunctionResp  {
         sb.append("class ApiPolicyFunctionResp {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
+        sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.EnvVariableCreate;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -39,15 +40,15 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="variable_name")
     
     private String variableName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
 
     public CreateEnvironmentVariableV2Response withVariableValue(String variableValue) {
         this.variableValue = variableValue;
@@ -58,7 +59,7 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
 
 
     /**
-     * 变量值
+     * 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
      * @return variableValue
      */
     public String getVariableValue() {
@@ -115,6 +116,28 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
 
     
 
+    public CreateEnvironmentVariableV2Response withVariableName(String variableName) {
+        this.variableName = variableName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头，3~32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值换。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return variableName
+     */
+    public String getVariableName() {
+        return variableName;
+    }
+
+    public void setVariableName(String variableName) {
+        this.variableName = variableName;
+    }
+
+    
+
     public CreateEnvironmentVariableV2Response withId(String id) {
         this.id = id;
         return this;
@@ -137,28 +160,6 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
 
     
 
-    public CreateEnvironmentVariableV2Response withVariableName(String variableName) {
-        this.variableName = variableName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 变量名
-     * @return variableName
-     */
-    public String getVariableName() {
-        return variableName;
-    }
-
-    public void setVariableName(String variableName) {
-        this.variableName = variableName;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,12 +172,12 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
         return Objects.equals(this.variableValue, createEnvironmentVariableV2Response.variableValue) &&
             Objects.equals(this.envId, createEnvironmentVariableV2Response.envId) &&
             Objects.equals(this.groupId, createEnvironmentVariableV2Response.groupId) &&
-            Objects.equals(this.id, createEnvironmentVariableV2Response.id) &&
-            Objects.equals(this.variableName, createEnvironmentVariableV2Response.variableName);
+            Objects.equals(this.variableName, createEnvironmentVariableV2Response.variableName) &&
+            Objects.equals(this.id, createEnvironmentVariableV2Response.id);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(variableValue, envId, groupId, id, variableName);
+        return Objects.hash(variableValue, envId, groupId, variableName, id);
     }
     @Override
     public String toString() {
@@ -185,8 +186,8 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
         sb.append("    variableValue: ").append(toIndentedString(variableValue)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    variableName: ").append(toIndentedString(variableName)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

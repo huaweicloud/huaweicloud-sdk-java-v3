@@ -25,12 +25,6 @@ public class ShowClusterRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
     private String detail;
@@ -53,28 +47,6 @@ public class ShowClusterRequest  {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
-    }
-
-    
-
-    public ShowClusterRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
     }
 
     
@@ -111,19 +83,17 @@ public class ShowClusterRequest  {
         }
         ShowClusterRequest showClusterRequest = (ShowClusterRequest) o;
         return Objects.equals(this.clusterId, showClusterRequest.clusterId) &&
-            Objects.equals(this.errorStatus, showClusterRequest.errorStatus) &&
             Objects.equals(this.detail, showClusterRequest.detail);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, errorStatus, detail);
+        return Objects.hash(clusterId, detail);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("}");
         return sb.toString();

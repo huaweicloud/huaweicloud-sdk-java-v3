@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.AppCodeCreate;
+import java.time.OffsetDateTime;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -40,7 +41,7 @@ public class AppCodeBaseInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="create_time")
     
-    private String createTime;
+    private OffsetDateTime createTime;
 
     public AppCodeBaseInfo withAppCode(String appCode) {
         this.appCode = appCode;
@@ -51,7 +52,7 @@ public class AppCodeBaseInfo  {
 
 
     /**
-     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头，64-180个字符。
+     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
      * @return appCode
      */
     public String getAppCode() {
@@ -108,7 +109,7 @@ public class AppCodeBaseInfo  {
 
     
 
-    public AppCodeBaseInfo withCreateTime(String createTime) {
+    public AppCodeBaseInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -120,11 +121,11 @@ public class AppCodeBaseInfo  {
      * 创建时间
      * @return createTime
      */
-    public String getCreateTime() {
+    public OffsetDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
 

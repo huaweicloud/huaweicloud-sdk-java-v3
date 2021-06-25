@@ -87,7 +87,7 @@ public class RomaAsyncClient {
 
     /**
      * 绑定域名
-     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效，具体方法请参见《云解析服务用户指南》的“添加CANME类型记录集”章节。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
+     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      *
      * @param AssociateDomainV2Request 请求对象
      * @return CompletableFuture<AssociateDomainV2Response>
@@ -98,7 +98,7 @@ public class RomaAsyncClient {
 
     /**
      * 绑定域名
-     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效，具体方法请参见《云解析服务用户指南》的“添加CANME类型记录集”章节。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
+     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      *
      * @param AssociateDomainV2Request 请求对象
      * @return AsyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
@@ -2990,28 +2990,6 @@ public class RomaAsyncClient {
     }
 
     /**
-     * 查看ROMA Connect实例详情
-     * 查看ROMA Connect实例详情
-     *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
-     * @return CompletableFuture<ShowDetailsOfInstanceV2Response>
-     */
-    public CompletableFuture<ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2Async(ShowDetailsOfInstanceV2Request request) {
-        return hcClient.asyncInvokeHttp(request, RomaMeta.showDetailsOfInstanceV2);
-    }
-
-    /**
-     * 查看ROMA Connect实例详情
-     * 查看ROMA Connect实例详情
-     *
-     * @param ShowDetailsOfInstanceV2Request 请求对象
-     * @return AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>
-     */
-    public AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response> showDetailsOfInstanceV2AsyncInvoker(ShowDetailsOfInstanceV2Request request) {
-        return new AsyncInvoker<ShowDetailsOfInstanceV2Request, ShowDetailsOfInstanceV2Response>(request, RomaMeta.showDetailsOfInstanceV2, hcClient);
-    }
-
-    /**
      * 查看流控策略详情
      * 查看指定流控策略的详细信息。
      *
@@ -4113,7 +4091,7 @@ public class RomaAsyncClient {
 
     /**
      * 批量发布或下线API
-     * 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。
+     * 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。  注意：当action &#x3D; online时，接口返回的响应中publish_id，version_id， publish_time字段才有含义。
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return CompletableFuture<BatchPublishOrOfflineApiV2Response>
@@ -4124,7 +4102,7 @@ public class RomaAsyncClient {
 
     /**
      * 批量发布或下线API
-     * 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。
+     * 将多个API发布到一个指定的环境，或将多个API从指定的环境下线。  注意：当action &#x3D; online时，接口返回的响应中publish_id，version_id， publish_time字段才有含义。
      *
      * @param BatchPublishOrOfflineApiV2Request 请求对象
      * @return AsyncInvoker<BatchPublishOrOfflineApiV2Request, BatchPublishOrOfflineApiV2Response>
@@ -5389,7 +5367,7 @@ public class RomaAsyncClient {
 
     /**
      * 导入API
-     * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考《ROMA Connect用户指南》的“附录：前端API的Swagger扩展定义”章节。
+     * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：前端API的Swagger扩展定义”章节。
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportApiDefinitionsV2Response>
@@ -5400,7 +5378,7 @@ public class RomaAsyncClient {
 
     /**
      * 导入API
-     * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考《ROMA Connect用户指南》的“附录：前端API的Swagger扩展定义”章节。
+     * 导入API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：前端API的Swagger扩展定义”章节。
      *
      * @param ImportApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportApiDefinitionsV2Request, ImportApiDefinitionsV2Response>
@@ -5411,7 +5389,7 @@ public class RomaAsyncClient {
 
     /**
      * 导入自定义后端API
-     * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考《ROMA Connect用户指南》的“附录：后端API的Swagger扩展定义”章节
+     * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：后端API的Swagger扩展定义”章节
      *
      * @param ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return CompletableFuture<ImportLiveDataApiDefinitionsV2Response>
@@ -5422,7 +5400,7 @@ public class RomaAsyncClient {
 
     /**
      * 导入自定义后端API
-     * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考《ROMA Connect用户指南》的“附录：后端API的Swagger扩展定义”章节
+     * 导入自定义后端API。导入文件内容需要符合swagger标准规范，自定义扩展字段请参考用户指南的“附录：后端API的Swagger扩展定义”章节
      *
      * @param ImportLiveDataApiDefinitionsV2Request 请求对象
      * @return AsyncInvoker<ImportLiveDataApiDefinitionsV2Request, ImportLiveDataApiDefinitionsV2Response>

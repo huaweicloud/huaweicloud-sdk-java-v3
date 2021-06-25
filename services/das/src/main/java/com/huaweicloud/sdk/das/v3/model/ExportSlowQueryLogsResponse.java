@@ -57,7 +57,7 @@ public class ExportSlowQueryLogsResponse extends SdkResponse {
     }
 
     /**
-     * 慢SQL集合。
+     * 慢SQL集合。当集合为空时，说明慢SQL已全部导出。
      * @return slowLogs
      */
     public List<SlowLog> getSlowLogs() {

@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.meeting.v1.model.MeetingStatus;
 import com.huaweicloud.sdk.meeting.v1.model.OpenWebinarBaseInfo;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -147,6 +149,12 @@ public class CreateWebinarResponse extends SdkResponse {
     
     private String audiencePasswd;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="attendees")
+    
+    private List<String> attendees = null;
+    
     public CreateWebinarResponse withConferenceId(String conferenceId) {
         this.conferenceId = conferenceId;
         return this;
@@ -609,6 +617,42 @@ public class CreateWebinarResponse extends SdkResponse {
 
     
 
+    public CreateWebinarResponse withAttendees(List<String> attendees) {
+        this.attendees = attendees;
+        return this;
+    }
+
+    
+    public CreateWebinarResponse addAttendeesItem(String attendeesItem) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
+        this.attendees.add(attendeesItem);
+        return this;
+    }
+
+    public CreateWebinarResponse withAttendees(Consumer<List<String>> attendeesSetter) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
+        attendeesSetter.accept(this.attendees);
+        return this;
+    }
+
+    /**
+     * Get attendees
+     * @return attendees
+     */
+    public List<String> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(List<String> attendees) {
+        this.attendees = attendees;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -638,11 +682,12 @@ public class CreateWebinarResponse extends SdkResponse {
             Objects.equals(this.guestJoinUri, createWebinarResponse.guestJoinUri) &&
             Objects.equals(this.guestPasswd, createWebinarResponse.guestPasswd) &&
             Objects.equals(this.audienceJoinUri, createWebinarResponse.audienceJoinUri) &&
-            Objects.equals(this.audiencePasswd, createWebinarResponse.audiencePasswd);
+            Objects.equals(this.audiencePasswd, createWebinarResponse.audiencePasswd) &&
+            Objects.equals(this.attendees, createWebinarResponse.attendees);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceId, corpId, subject, description, startTime, duration, timeZoneId, state, scheduserId, deptName, scheduserName, vmrPkgName, callRestriction, scope, audienceScope, chairJoinUri, chairPasswd, guestJoinUri, guestPasswd, audienceJoinUri, audiencePasswd);
+        return Objects.hash(conferenceId, corpId, subject, description, startTime, duration, timeZoneId, state, scheduserId, deptName, scheduserName, vmrPkgName, callRestriction, scope, audienceScope, chairJoinUri, chairPasswd, guestJoinUri, guestPasswd, audienceJoinUri, audiencePasswd, attendees);
     }
     @Override
     public String toString() {
@@ -669,6 +714,7 @@ public class CreateWebinarResponse extends SdkResponse {
         sb.append("    guestPasswd: ").append(toIndentedString(guestPasswd)).append("\n");
         sb.append("    audienceJoinUri: ").append(toIndentedString(audienceJoinUri)).append("\n");
         sb.append("    audiencePasswd: ").append(toIndentedString(audiencePasswd)).append("\n");
+        sb.append("    attendees: ").append(toIndentedString(attendees)).append("\n");
         sb.append("}");
         return sb.toString();
     }

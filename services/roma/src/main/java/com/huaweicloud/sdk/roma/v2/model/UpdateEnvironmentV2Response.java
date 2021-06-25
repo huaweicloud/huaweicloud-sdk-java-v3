@@ -119,7 +119,7 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
 
 
     /**
-     * 环境id
+     * 环境编号
      * @return id
      */
     public String getId() {

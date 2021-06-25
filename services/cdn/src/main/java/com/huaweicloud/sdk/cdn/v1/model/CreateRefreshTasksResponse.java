@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.RefreshTask;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,32 +23,25 @@ public class CreateRefreshTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="refresh_task")
     
-    private RefreshTask refreshTask;
+    private String refreshTask;
 
-    public CreateRefreshTasksResponse withRefreshTask(RefreshTask refreshTask) {
+    public CreateRefreshTasksResponse withRefreshTask(String refreshTask) {
         this.refreshTask = refreshTask;
         return this;
     }
 
-    public CreateRefreshTasksResponse withRefreshTask(Consumer<RefreshTask> refreshTaskSetter) {
-        if(this.refreshTask == null ){
-            this.refreshTask = new RefreshTask();
-            refreshTaskSetter.accept(this.refreshTask);
-        }
-        
-        return this;
-    }
+    
 
 
     /**
-     * Get refreshTask
+     * 任务ID
      * @return refreshTask
      */
-    public RefreshTask getRefreshTask() {
+    public String getRefreshTask() {
         return refreshTask;
     }
 
-    public void setRefreshTask(RefreshTask refreshTask) {
+    public void setRefreshTask(String refreshTask) {
         this.refreshTask = refreshTask;
     }
 

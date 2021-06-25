@@ -869,9 +869,9 @@ public class ChangeBaremetalNameResponsesServers  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_tags")
+    @JsonProperty(value="sys_tags")
     
-    private List<SystemTags> serverTags = null;
+    private List<SystemTags> sysTags = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1900,38 +1900,38 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
 
-    public ChangeBaremetalNameResponsesServers withServerTags(List<SystemTags> serverTags) {
-        this.serverTags = serverTags;
+    public ChangeBaremetalNameResponsesServers withSysTags(List<SystemTags> sysTags) {
+        this.sysTags = sysTags;
         return this;
     }
 
     
-    public ChangeBaremetalNameResponsesServers addServerTagsItem(SystemTags serverTagsItem) {
-        if(this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
+    public ChangeBaremetalNameResponsesServers addSysTagsItem(SystemTags sysTagsItem) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
         }
-        this.serverTags.add(serverTagsItem);
+        this.sysTags.add(sysTagsItem);
         return this;
     }
 
-    public ChangeBaremetalNameResponsesServers withServerTags(Consumer<List<SystemTags>> serverTagsSetter) {
-        if(this.serverTags == null) {
-            this.serverTags = new ArrayList<>();
+    public ChangeBaremetalNameResponsesServers withSysTags(Consumer<List<SystemTags>> sysTagsSetter) {
+        if(this.sysTags == null) {
+            this.sysTags = new ArrayList<>();
         }
-        serverTagsSetter.accept(this.serverTags);
+        sysTagsSetter.accept(this.sysTags);
         return this;
     }
 
     /**
      * 裸金属服务器的系统标签
-     * @return serverTags
+     * @return sysTags
      */
-    public List<SystemTags> getServerTags() {
-        return serverTags;
+    public List<SystemTags> getSysTags() {
+        return sysTags;
     }
 
-    public void setServerTags(List<SystemTags> serverTags) {
-        this.serverTags = serverTags;
+    public void setSysTags(List<SystemTags> sysTags) {
+        this.sysTags = sysTags;
     }
 
     
@@ -2038,13 +2038,13 @@ public class ChangeBaremetalNameResponsesServers  {
             Objects.equals(this.osEXTSRVATTRUserData, changeBaremetalNameResponsesServers.osEXTSRVATTRUserData) &&
             Objects.equals(this.locked, changeBaremetalNameResponsesServers.locked) &&
             Objects.equals(this.tags, changeBaremetalNameResponsesServers.tags) &&
-            Objects.equals(this.serverTags, changeBaremetalNameResponsesServers.serverTags) &&
+            Objects.equals(this.sysTags, changeBaremetalNameResponsesServers.sysTags) &&
             Objects.equals(this.enterpriseProjectId, changeBaremetalNameResponsesServers.enterpriseProjectId) &&
             Objects.equals(this.osSchedulerHints, changeBaremetalNameResponsesServers.osSchedulerHints);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, status, created, updated, flavor, image, tenantId, keyName, userId, metadata, hostId, addresses, securityGroups, links, osDCFDiskConfig, osEXTAZAvailabilityZone, osEXTSRVATTRHost, osEXTSRVATTRHypervisorHostname, osEXTSRVATTRInstanceName, osEXTSTSPowerState, osEXTSTSTaskState, osEXTSTSVmState, osSRVUSGLaunchedAt, osSRVUSGTerminatedAt, osExtendedVolumesVolumesAttached, accessIPv4, accessIPv6, fault, configDrive, progress, description, hostStatus, osEXTSRVATTRHostname, osEXTSRVATTRReservationId, osEXTSRVATTRLaunchIndex, osEXTSRVATTRKernelId, osEXTSRVATTRRamdiskId, osEXTSRVATTRRootDeviceName, osEXTSRVATTRUserData, locked, tags, serverTags, enterpriseProjectId, osSchedulerHints);
+        return Objects.hash(name, id, status, created, updated, flavor, image, tenantId, keyName, userId, metadata, hostId, addresses, securityGroups, links, osDCFDiskConfig, osEXTAZAvailabilityZone, osEXTSRVATTRHost, osEXTSRVATTRHypervisorHostname, osEXTSRVATTRInstanceName, osEXTSTSPowerState, osEXTSTSTaskState, osEXTSTSVmState, osSRVUSGLaunchedAt, osSRVUSGTerminatedAt, osExtendedVolumesVolumesAttached, accessIPv4, accessIPv6, fault, configDrive, progress, description, hostStatus, osEXTSRVATTRHostname, osEXTSRVATTRReservationId, osEXTSRVATTRLaunchIndex, osEXTSRVATTRKernelId, osEXTSRVATTRRamdiskId, osEXTSRVATTRRootDeviceName, osEXTSRVATTRUserData, locked, tags, sysTags, enterpriseProjectId, osSchedulerHints);
     }
     @Override
     public String toString() {
@@ -2092,7 +2092,7 @@ public class ChangeBaremetalNameResponsesServers  {
         sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    osSchedulerHints: ").append(toIndentedString(osSchedulerHints)).append("\n");
         sb.append("}");

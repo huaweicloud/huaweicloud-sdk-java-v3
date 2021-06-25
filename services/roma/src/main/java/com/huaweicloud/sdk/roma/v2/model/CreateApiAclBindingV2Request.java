@@ -39,7 +39,7 @@ public class CreateApiAclBindingV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {

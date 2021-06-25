@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiCheckInfo;
+import com.huaweicloud.sdk.roma.v2.model.ApiCheckInfoV2;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class CheckApisV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiCheckInfo body;
+    private ApiCheckInfoV2 body;
 
     public CheckApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -39,7 +39,7 @@ public class CheckApisV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -52,14 +52,14 @@ public class CheckApisV2Request  {
 
     
 
-    public CheckApisV2Request withBody(ApiCheckInfo body) {
+    public CheckApisV2Request withBody(ApiCheckInfoV2 body) {
         this.body = body;
         return this;
     }
 
-    public CheckApisV2Request withBody(Consumer<ApiCheckInfo> bodySetter) {
+    public CheckApisV2Request withBody(Consumer<ApiCheckInfoV2> bodySetter) {
         if(this.body == null ){
-            this.body = new ApiCheckInfo();
+            this.body = new ApiCheckInfoV2();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class CheckApisV2Request  {
      * Get body
      * @return body
      */
-    public ApiCheckInfo getBody() {
+    public ApiCheckInfoV2 getBody() {
         return body;
     }
 
-    public void setBody(ApiCheckInfo body) {
+    public void setBody(ApiCheckInfoV2 body) {
         this.body = body;
     }
 

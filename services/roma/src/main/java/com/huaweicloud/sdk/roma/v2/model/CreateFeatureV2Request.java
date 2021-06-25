@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.FeatureToggle;
+import com.huaweicloud.sdk.roma.v2.model.FeatureToggleV2;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class CreateFeatureV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private FeatureToggle body;
+    private FeatureToggleV2 body;
 
     public CreateFeatureV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -39,7 +39,7 @@ public class CreateFeatureV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -52,14 +52,14 @@ public class CreateFeatureV2Request  {
 
     
 
-    public CreateFeatureV2Request withBody(FeatureToggle body) {
+    public CreateFeatureV2Request withBody(FeatureToggleV2 body) {
         this.body = body;
         return this;
     }
 
-    public CreateFeatureV2Request withBody(Consumer<FeatureToggle> bodySetter) {
+    public CreateFeatureV2Request withBody(Consumer<FeatureToggleV2> bodySetter) {
         if(this.body == null ){
-            this.body = new FeatureToggle();
+            this.body = new FeatureToggleV2();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class CreateFeatureV2Request  {
      * Get body
      * @return body
      */
-    public FeatureToggle getBody() {
+    public FeatureToggleV2 getBody() {
         return body;
     }
 
-    public void setBody(FeatureToggle body) {
+    public void setBody(FeatureToggleV2 body) {
         this.body = body;
     }
 

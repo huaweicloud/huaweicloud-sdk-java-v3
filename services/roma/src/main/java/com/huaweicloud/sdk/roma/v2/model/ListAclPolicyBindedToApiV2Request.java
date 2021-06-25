@@ -25,6 +25,18 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="api_id")
     
     private String apiId;
@@ -53,18 +65,6 @@ public class ListAclPolicyBindedToApiV2Request  {
     
     private String aclName;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Long offset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
     public ListAclPolicyBindedToApiV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -74,7 +74,7 @@ public class ListAclPolicyBindedToApiV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -83,6 +83,52 @@ public class ListAclPolicyBindedToApiV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    
+
+    public ListAclPolicyBindedToApiV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListAclPolicyBindedToApiV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -197,52 +243,6 @@ public class ListAclPolicyBindedToApiV2Request  {
 
     
 
-    public ListAclPolicyBindedToApiV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    
-
-    public ListAclPolicyBindedToApiV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -253,30 +253,30 @@ public class ListAclPolicyBindedToApiV2Request  {
         }
         ListAclPolicyBindedToApiV2Request listAclPolicyBindedToApiV2Request = (ListAclPolicyBindedToApiV2Request) o;
         return Objects.equals(this.instanceId, listAclPolicyBindedToApiV2Request.instanceId) &&
+            Objects.equals(this.offset, listAclPolicyBindedToApiV2Request.offset) &&
+            Objects.equals(this.limit, listAclPolicyBindedToApiV2Request.limit) &&
             Objects.equals(this.apiId, listAclPolicyBindedToApiV2Request.apiId) &&
             Objects.equals(this.envId, listAclPolicyBindedToApiV2Request.envId) &&
             Objects.equals(this.envName, listAclPolicyBindedToApiV2Request.envName) &&
             Objects.equals(this.aclId, listAclPolicyBindedToApiV2Request.aclId) &&
-            Objects.equals(this.aclName, listAclPolicyBindedToApiV2Request.aclName) &&
-            Objects.equals(this.offset, listAclPolicyBindedToApiV2Request.offset) &&
-            Objects.equals(this.limit, listAclPolicyBindedToApiV2Request.limit);
+            Objects.equals(this.aclName, listAclPolicyBindedToApiV2Request.aclName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, apiId, envId, envName, aclId, aclName, offset, limit);
+        return Objects.hash(instanceId, offset, limit, apiId, envId, envName, aclId, aclName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAclPolicyBindedToApiV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
         sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
         sb.append("    aclId: ").append(toIndentedString(aclId)).append("\n");
         sb.append("    aclName: ").append(toIndentedString(aclName)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

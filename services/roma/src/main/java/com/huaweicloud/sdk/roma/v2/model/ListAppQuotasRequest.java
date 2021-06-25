@@ -25,12 +25,6 @@ public class ListAppQuotasRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     private Long offset;
@@ -41,6 +35,12 @@ public class ListAppQuotasRequest  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
     public ListAppQuotasRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -50,7 +50,7 @@ public class ListAppQuotasRequest  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -59,28 +59,6 @@ public class ListAppQuotasRequest  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    
-
-    public ListAppQuotasRequest withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 客户端配额名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     
@@ -131,6 +109,28 @@ public class ListAppQuotasRequest  {
 
     
 
+    public ListAppQuotasRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 客户端配额名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -141,22 +141,22 @@ public class ListAppQuotasRequest  {
         }
         ListAppQuotasRequest listAppQuotasRequest = (ListAppQuotasRequest) o;
         return Objects.equals(this.instanceId, listAppQuotasRequest.instanceId) &&
-            Objects.equals(this.name, listAppQuotasRequest.name) &&
             Objects.equals(this.offset, listAppQuotasRequest.offset) &&
-            Objects.equals(this.limit, listAppQuotasRequest.limit);
+            Objects.equals(this.limit, listAppQuotasRequest.limit) &&
+            Objects.equals(this.name, listAppQuotasRequest.name);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, name, offset, limit);
+        return Objects.hash(instanceId, offset, limit, name);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAppQuotasRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

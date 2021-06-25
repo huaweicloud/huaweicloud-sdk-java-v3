@@ -32,12 +32,6 @@ public class UpdateNodeRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
     private CCEClusterNodeInformation body;
@@ -86,28 +80,6 @@ public class UpdateNodeRequest  {
 
     
 
-    public UpdateNodeRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-    }
-
-    
-
     public UpdateNodeRequest withBody(CCEClusterNodeInformation body) {
         this.body = body;
         return this;
@@ -148,12 +120,11 @@ public class UpdateNodeRequest  {
         UpdateNodeRequest updateNodeRequest = (UpdateNodeRequest) o;
         return Objects.equals(this.clusterId, updateNodeRequest.clusterId) &&
             Objects.equals(this.nodeId, updateNodeRequest.nodeId) &&
-            Objects.equals(this.errorStatus, updateNodeRequest.errorStatus) &&
             Objects.equals(this.body, updateNodeRequest.body);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, nodeId, errorStatus, body);
+        return Objects.hash(clusterId, nodeId, body);
     }
     @Override
     public String toString() {
@@ -161,7 +132,6 @@ public class UpdateNodeRequest  {
         sb.append("class UpdateNodeRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

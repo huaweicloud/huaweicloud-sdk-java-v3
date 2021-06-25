@@ -88,7 +88,7 @@ public class Referer  {
 
 
     /**
-     * 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认不包含。
+     * 是否包含空Referer。如果是黑名单并开启该选项，则表示无referer不允许访问。如果是白名单并开启该选项，则表示无referer允许访问。默认值false。
      * @return includeEmpty
      */
     public Boolean getIncludeEmpty() {

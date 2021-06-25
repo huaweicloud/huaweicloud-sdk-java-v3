@@ -25,12 +25,6 @@ public class ListClustersRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detail")
     
     private String detail;
@@ -251,28 +245,6 @@ public class ListClustersRequest  {
     
     private String version;
 
-    public ListClustersRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-    }
-
-    
-
     public ListClustersRequest withDetail(String detail) {
         this.detail = detail;
         return this;
@@ -370,21 +342,19 @@ public class ListClustersRequest  {
             return false;
         }
         ListClustersRequest listClustersRequest = (ListClustersRequest) o;
-        return Objects.equals(this.errorStatus, listClustersRequest.errorStatus) &&
-            Objects.equals(this.detail, listClustersRequest.detail) &&
+        return Objects.equals(this.detail, listClustersRequest.detail) &&
             Objects.equals(this.status, listClustersRequest.status) &&
             Objects.equals(this.type, listClustersRequest.type) &&
             Objects.equals(this.version, listClustersRequest.version);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(errorStatus, detail, status, type, version);
+        return Objects.hash(detail, status, type, version);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClustersRequest {\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

@@ -295,7 +295,7 @@ public class FreeResourcePackage  {
 
 
     /**
-     * 状态： 0：未生效1：生效中2：已用完3：已失效
+     * 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
      * @return status
      */
     public Integer getStatus() {
@@ -441,7 +441,7 @@ public class FreeResourcePackage  {
     }
 
     /**
-     * 资源套餐内的资源项信息（资源项ID级的详情）。
+     * 资源套餐内的资源项信息（资源项ID级的详情），具体参见表3。
      * @return freeResources
      */
     public List<FreeResource> getFreeResources() {

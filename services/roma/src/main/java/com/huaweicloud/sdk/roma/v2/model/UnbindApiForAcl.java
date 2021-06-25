@@ -319,7 +319,7 @@ public class UnbindApiForAcl  {
 
 
     /**
-     * API开放状态
+     * API类型
      * @return type
      */
     public Integer getType() {

@@ -94,7 +94,7 @@ public class AppReq  {
 
 
     /**
-     * APP的key。支持英文，数字，“_”,“-”,且只能以英文或数字开头，8 ~ 64个字符。 > 只支持部分region。
+     * APP的key。支持英文，数字，“_”,“-”,且只能以英文或数字开头，8 ~ 64个字符。
      * @return appKey
      */
     public String getAppKey() {
@@ -116,7 +116,7 @@ public class AppReq  {
 
 
     /**
-     * 密钥。支持英文，数字，“_”,“-”,“_”,“!”,“@”,“#”,“$”,“%”且只能以英文或数字开头，8 ~ 64个字符。 > 只支持部分region。
+     * 密钥。支持英文，数字，“_”,“-”,“_”,“!”,“@”,“#”,“$”,“%”且只能以英文或数字开头，8 ~ 64个字符。
      * @return appSecret
      */
     public String getAppSecret() {

@@ -19,37 +19,9 @@ public class ListAddonInstancesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addon_template_name")
-    
-    private String addonTemplateName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_id")
     
     private String clusterId;
-
-    public ListAddonInstancesRequest withAddonTemplateName(String addonTemplateName) {
-        this.addonTemplateName = addonTemplateName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 含义：想要筛选的插件名称  属性：隐藏参数
-     * @return addonTemplateName
-     */
-    public String getAddonTemplateName() {
-        return addonTemplateName;
-    }
-
-    public void setAddonTemplateName(String addonTemplateName) {
-        this.addonTemplateName = addonTemplateName;
-    }
-
-    
 
     public ListAddonInstancesRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -82,18 +54,16 @@ public class ListAddonInstancesRequest  {
             return false;
         }
         ListAddonInstancesRequest listAddonInstancesRequest = (ListAddonInstancesRequest) o;
-        return Objects.equals(this.addonTemplateName, listAddonInstancesRequest.addonTemplateName) &&
-            Objects.equals(this.clusterId, listAddonInstancesRequest.clusterId);
+        return Objects.equals(this.clusterId, listAddonInstancesRequest.clusterId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(addonTemplateName, clusterId);
+        return Objects.hash(clusterId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAddonInstancesRequest {\n");
-        sb.append("    addonTemplateName: ").append(toIndentedString(addonTemplateName)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();

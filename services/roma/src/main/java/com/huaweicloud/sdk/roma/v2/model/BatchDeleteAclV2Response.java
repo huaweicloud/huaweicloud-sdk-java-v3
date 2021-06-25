@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AclBatchResultFailureResp;
+import com.huaweicloud.sdk.roma.v2.model.AclBatchFailure;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,7 +32,7 @@ public class BatchDeleteAclV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="failure")
     
-    private List<AclBatchResultFailureResp> failure = null;
+    private List<AclBatchFailure> failure = null;
     
     public BatchDeleteAclV2Response withSuccessCount(Integer successCount) {
         this.successCount = successCount;
@@ -56,13 +56,13 @@ public class BatchDeleteAclV2Response extends SdkResponse {
 
     
 
-    public BatchDeleteAclV2Response withFailure(List<AclBatchResultFailureResp> failure) {
+    public BatchDeleteAclV2Response withFailure(List<AclBatchFailure> failure) {
         this.failure = failure;
         return this;
     }
 
     
-    public BatchDeleteAclV2Response addFailureItem(AclBatchResultFailureResp failureItem) {
+    public BatchDeleteAclV2Response addFailureItem(AclBatchFailure failureItem) {
         if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -70,7 +70,7 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         return this;
     }
 
-    public BatchDeleteAclV2Response withFailure(Consumer<List<AclBatchResultFailureResp>> failureSetter) {
+    public BatchDeleteAclV2Response withFailure(Consumer<List<AclBatchFailure>> failureSetter) {
         if(this.failure == null) {
             this.failure = new ArrayList<>();
         }
@@ -82,11 +82,11 @@ public class BatchDeleteAclV2Response extends SdkResponse {
      * 删除失败的ACL策略及错误信息
      * @return failure
      */
-    public List<AclBatchResultFailureResp> getFailure() {
+    public List<AclBatchFailure> getFailure() {
         return failure;
     }
 
-    public void setFailure(List<AclBatchResultFailureResp> failure) {
+    public void setFailure(List<AclBatchFailure> failure) {
         this.failure = failure;
     }
 

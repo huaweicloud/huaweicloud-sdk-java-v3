@@ -31,12 +31,6 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
-    private String appName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     private Long offset;
@@ -47,6 +41,12 @@ public class ListAppQuotaBoundAppsRequest  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="app_name")
+    
+    private String appName;
+
     public ListAppQuotaBoundAppsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -56,7 +56,7 @@ public class ListAppQuotaBoundAppsRequest  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -87,28 +87,6 @@ public class ListAppQuotaBoundAppsRequest  {
 
     public void setAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
-    }
-
-    
-
-    public ListAppQuotaBoundAppsRequest withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 客户端应用名称
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
     }
 
     
@@ -159,6 +137,28 @@ public class ListAppQuotaBoundAppsRequest  {
 
     
 
+    public ListAppQuotaBoundAppsRequest withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 客户端应用名称
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -170,13 +170,13 @@ public class ListAppQuotaBoundAppsRequest  {
         ListAppQuotaBoundAppsRequest listAppQuotaBoundAppsRequest = (ListAppQuotaBoundAppsRequest) o;
         return Objects.equals(this.instanceId, listAppQuotaBoundAppsRequest.instanceId) &&
             Objects.equals(this.appQuotaId, listAppQuotaBoundAppsRequest.appQuotaId) &&
-            Objects.equals(this.appName, listAppQuotaBoundAppsRequest.appName) &&
             Objects.equals(this.offset, listAppQuotaBoundAppsRequest.offset) &&
-            Objects.equals(this.limit, listAppQuotaBoundAppsRequest.limit);
+            Objects.equals(this.limit, listAppQuotaBoundAppsRequest.limit) &&
+            Objects.equals(this.appName, listAppQuotaBoundAppsRequest.appName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appQuotaId, appName, offset, limit);
+        return Objects.hash(instanceId, appQuotaId, offset, limit, appName);
     }
     @Override
     public String toString() {
@@ -184,9 +184,9 @@ public class ListAppQuotaBoundAppsRequest  {
         sb.append("class ListAppQuotaBoundAppsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appQuotaId: ").append(toIndentedString(appQuotaId)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

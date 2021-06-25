@@ -263,6 +263,12 @@ public class BackendApiBaseInfo  {
     
     private Integer timeout;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_client_ssl")
+    
+    private Boolean enableClientSsl;
+
     public BackendApiBaseInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -426,7 +432,7 @@ public class BackendApiBaseInfo  {
 
 
     /**
-     * API网关请求后端服务的超时时间。  单位：毫秒。请求参数值不在合法范围内时将使用默认值
+     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -435,6 +441,28 @@ public class BackendApiBaseInfo  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    
+
+    public BackendApiBaseInfo withEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
+    public Boolean getEnableClientSsl() {
+        return enableClientSsl;
+    }
+
+    public void setEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
     }
 
     
@@ -455,11 +483,12 @@ public class BackendApiBaseInfo  {
             Objects.equals(this.reqMethod, backendApiBaseInfo.reqMethod) &&
             Objects.equals(this.version, backendApiBaseInfo.version) &&
             Objects.equals(this.reqUri, backendApiBaseInfo.reqUri) &&
-            Objects.equals(this.timeout, backendApiBaseInfo.timeout);
+            Objects.equals(this.timeout, backendApiBaseInfo.timeout) &&
+            Objects.equals(this.enableClientSsl, backendApiBaseInfo.enableClientSsl);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout);
+        return Objects.hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout, enableClientSsl);
     }
     @Override
     public String toString() {
@@ -473,6 +502,7 @@ public class BackendApiBaseInfo  {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

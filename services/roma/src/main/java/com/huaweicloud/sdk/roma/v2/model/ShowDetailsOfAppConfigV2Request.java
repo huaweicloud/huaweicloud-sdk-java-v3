@@ -44,7 +44,7 @@ public class ShowDetailsOfAppConfigV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -88,7 +88,7 @@ public class ShowDetailsOfAppConfigV2Request  {
 
 
     /**
-     * 应用配置的ID
+     * 应用配置编号
      * @return appConfigId
      */
     public String getAppConfigId() {

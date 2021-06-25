@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppConfigCreateRequest;
+import com.huaweicloud.sdk.roma.v2.model.AppConfigCreateRequestV2;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class CreateAppConfigV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppConfigCreateRequest body;
+    private AppConfigCreateRequestV2 body;
 
     public CreateAppConfigV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -45,7 +45,7 @@ public class CreateAppConfigV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -80,14 +80,14 @@ public class CreateAppConfigV2Request  {
 
     
 
-    public CreateAppConfigV2Request withBody(AppConfigCreateRequest body) {
+    public CreateAppConfigV2Request withBody(AppConfigCreateRequestV2 body) {
         this.body = body;
         return this;
     }
 
-    public CreateAppConfigV2Request withBody(Consumer<AppConfigCreateRequest> bodySetter) {
+    public CreateAppConfigV2Request withBody(Consumer<AppConfigCreateRequestV2> bodySetter) {
         if(this.body == null ){
-            this.body = new AppConfigCreateRequest();
+            this.body = new AppConfigCreateRequestV2();
             bodySetter.accept(this.body);
         }
         
@@ -99,11 +99,11 @@ public class CreateAppConfigV2Request  {
      * Get body
      * @return body
      */
-    public AppConfigCreateRequest getBody() {
+    public AppConfigCreateRequestV2 getBody() {
         return body;
     }
 
-    public void setBody(AppConfigCreateRequest body) {
+    public void setBody(AppConfigCreateRequestV2 body) {
         this.body = body;
     }
 

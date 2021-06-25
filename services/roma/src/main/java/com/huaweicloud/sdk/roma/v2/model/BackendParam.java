@@ -23,6 +23,102 @@ import java.util.Objects;
  */
 public class BackendParam  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+    /**
+     * 参数位置：PATH、QUERY、HEADER
+     */
+    public static final class LocationEnum {
+
+        
+        /**
+         * Enum PATH for value: "PATH"
+         */
+        public static final LocationEnum PATH = new LocationEnum("PATH");
+        
+        /**
+         * Enum QUERY for value: "QUERY"
+         */
+        public static final LocationEnum QUERY = new LocationEnum("QUERY");
+        
+        /**
+         * Enum HEADER for value: "HEADER"
+         */
+        public static final LocationEnum HEADER = new LocationEnum("HEADER");
+        
+
+        private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LocationEnum> createStaticFields() {
+            Map<String, LocationEnum> map = new HashMap<>();
+            map.put("PATH", PATH);
+            map.put("QUERY", QUERY);
+            map.put("HEADER", HEADER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LocationEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LocationEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            LocationEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LocationEnum(value);
+            }
+            return result;
+        }
+
+        public static LocationEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            LocationEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof LocationEnum) {
+                return this.value.equals(((LocationEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="location")
+    
+    private LocationEnum location;
     /**
      * 参数类别：REQUEST、CONSTANT、SYSTEM
      */
@@ -116,111 +212,15 @@ public class BackendParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
+    @JsonProperty(value="value")
     
-    private String name;
+    private String value;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="remark")
     
     private String remark;
-    /**
-     * 参数位置：PATH、QUERY、HEADER
-     */
-    public static final class LocationEnum {
-
-        
-        /**
-         * Enum PATH for value: "PATH"
-         */
-        public static final LocationEnum PATH = new LocationEnum("PATH");
-        
-        /**
-         * Enum QUERY for value: "QUERY"
-         */
-        public static final LocationEnum QUERY = new LocationEnum("QUERY");
-        
-        /**
-         * Enum HEADER for value: "HEADER"
-         */
-        public static final LocationEnum HEADER = new LocationEnum("HEADER");
-        
-
-        private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, LocationEnum> createStaticFields() {
-            Map<String, LocationEnum> map = new HashMap<>();
-            map.put("PATH", PATH);
-            map.put("QUERY", QUERY);
-            map.put("HEADER", HEADER);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        LocationEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LocationEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocationEnum(value);
-            }
-            return result;
-        }
-
-        public static LocationEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LocationEnum) {
-                return this.value.equals(((LocationEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
-    private LocationEnum location;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
-    private String value;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -233,28 +233,6 @@ public class BackendParam  {
     @JsonProperty(value="req_param_id")
     
     private String reqParamId;
-
-    public BackendParam withOrigin(OriginEnum origin) {
-        this.origin = origin;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 参数类别：REQUEST、CONSTANT、SYSTEM
-     * @return origin
-     */
-    public OriginEnum getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(OriginEnum origin) {
-        this.origin = origin;
-    }
-
-    
 
     public BackendParam withName(String name) {
         this.name = name;
@@ -274,28 +252,6 @@ public class BackendParam  {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    
-
-    public BackendParam withRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 描述。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return remark
-     */
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
     }
 
     
@@ -322,6 +278,28 @@ public class BackendParam  {
 
     
 
+    public BackendParam withOrigin(OriginEnum origin) {
+        this.origin = origin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 参数类别：REQUEST、CONSTANT、SYSTEM
+     * @return origin
+     */
+    public OriginEnum getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(OriginEnum origin) {
+        this.origin = origin;
+    }
+
+    
+
     public BackendParam withValue(String value) {
         this.value = value;
         return this;
@@ -340,6 +318,28 @@ public class BackendParam  {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    
+
+    public BackendParam withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 描述。 > 中文字符必须为UTF-8或者unicode编码。
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     
@@ -397,27 +397,27 @@ public class BackendParam  {
             return false;
         }
         BackendParam backendParam = (BackendParam) o;
-        return Objects.equals(this.origin, backendParam.origin) &&
-            Objects.equals(this.name, backendParam.name) &&
-            Objects.equals(this.remark, backendParam.remark) &&
+        return Objects.equals(this.name, backendParam.name) &&
             Objects.equals(this.location, backendParam.location) &&
+            Objects.equals(this.origin, backendParam.origin) &&
             Objects.equals(this.value, backendParam.value) &&
+            Objects.equals(this.remark, backendParam.remark) &&
             Objects.equals(this.id, backendParam.id) &&
             Objects.equals(this.reqParamId, backendParam.reqParamId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(origin, name, remark, location, value, id, reqParamId);
+        return Objects.hash(name, location, origin, value, remark, id, reqParamId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackendParam {\n");
-        sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    reqParamId: ").append(toIndentedString(reqParamId)).append("\n");
         sb.append("}");

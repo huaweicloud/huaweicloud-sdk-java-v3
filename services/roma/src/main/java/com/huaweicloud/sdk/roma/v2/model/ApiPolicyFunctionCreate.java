@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiConditionBase;
+import com.huaweicloud.sdk.roma.v2.model.ApiConditionCreate;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyFunctionBase;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyReqBase;
 import com.huaweicloud.sdk.roma.v2.model.BackendParamBase;
@@ -121,15 +121,15 @@ public class ApiPolicyFunctionCreate  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
-    private String version;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
     private Integer timeout;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version")
+    
+    private String version;
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
@@ -231,7 +231,7 @@ public class ApiPolicyFunctionCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = null;
+    private List<ApiConditionCreate> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -283,28 +283,6 @@ public class ApiPolicyFunctionCreate  {
 
     
 
-    public ApiPolicyFunctionCreate withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 版本。字符长度不超过64
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    
-
     public ApiPolicyFunctionCreate withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -323,6 +301,28 @@ public class ApiPolicyFunctionCreate  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    
+
+    public ApiPolicyFunctionCreate withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 版本。字符长度不超过64
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 
     
@@ -407,13 +407,13 @@ public class ApiPolicyFunctionCreate  {
 
     
 
-    public ApiPolicyFunctionCreate withConditions(List<ApiConditionBase> conditions) {
+    public ApiPolicyFunctionCreate withConditions(List<ApiConditionCreate> conditions) {
         this.conditions = conditions;
         return this;
     }
 
     
-    public ApiPolicyFunctionCreate addConditionsItem(ApiConditionBase conditionsItem) {
+    public ApiPolicyFunctionCreate addConditionsItem(ApiConditionCreate conditionsItem) {
         if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -421,7 +421,7 @@ public class ApiPolicyFunctionCreate  {
         return this;
     }
 
-    public ApiPolicyFunctionCreate withConditions(Consumer<List<ApiConditionBase>> conditionsSetter) {
+    public ApiPolicyFunctionCreate withConditions(Consumer<List<ApiConditionCreate>> conditionsSetter) {
         if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -433,11 +433,11 @@ public class ApiPolicyFunctionCreate  {
      * 策略条件列表
      * @return conditions
      */
-    public List<ApiConditionBase> getConditions() {
+    public List<ApiConditionCreate> getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<ApiConditionBase> conditions) {
+    public void setConditions(List<ApiConditionCreate> conditions) {
         this.conditions = conditions;
     }
 
@@ -476,8 +476,8 @@ public class ApiPolicyFunctionCreate  {
         ApiPolicyFunctionCreate apiPolicyFunctionCreate = (ApiPolicyFunctionCreate) o;
         return Objects.equals(this.functionUrn, apiPolicyFunctionCreate.functionUrn) &&
             Objects.equals(this.invocationType, apiPolicyFunctionCreate.invocationType) &&
-            Objects.equals(this.version, apiPolicyFunctionCreate.version) &&
             Objects.equals(this.timeout, apiPolicyFunctionCreate.timeout) &&
+            Objects.equals(this.version, apiPolicyFunctionCreate.version) &&
             Objects.equals(this.effectMode, apiPolicyFunctionCreate.effectMode) &&
             Objects.equals(this.name, apiPolicyFunctionCreate.name) &&
             Objects.equals(this.backendParams, apiPolicyFunctionCreate.backendParams) &&
@@ -486,7 +486,7 @@ public class ApiPolicyFunctionCreate  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, invocationType, version, timeout, effectMode, name, backendParams, conditions, authorizerId);
+        return Objects.hash(functionUrn, invocationType, timeout, version, effectMode, name, backendParams, conditions, authorizerId);
     }
     @Override
     public String toString() {
@@ -494,8 +494,8 @@ public class ApiPolicyFunctionCreate  {
         sb.append("class ApiPolicyFunctionCreate {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");

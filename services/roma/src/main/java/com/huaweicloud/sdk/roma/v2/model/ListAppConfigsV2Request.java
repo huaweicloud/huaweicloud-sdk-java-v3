@@ -25,6 +25,18 @@ public class ListAppConfigsV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="app_id")
     
     private String appId;
@@ -41,18 +53,6 @@ public class ListAppConfigsV2Request  {
     
     private String romaAppName;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Long offset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
     public ListAppConfigsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -62,7 +62,7 @@ public class ListAppConfigsV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -71,6 +71,52 @@ public class ListAppConfigsV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    
+
+    public ListAppConfigsV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListAppConfigsV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -141,52 +187,6 @@ public class ListAppConfigsV2Request  {
 
     
 
-    public ListAppConfigsV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    
-
-    public ListAppConfigsV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -197,26 +197,26 @@ public class ListAppConfigsV2Request  {
         }
         ListAppConfigsV2Request listAppConfigsV2Request = (ListAppConfigsV2Request) o;
         return Objects.equals(this.instanceId, listAppConfigsV2Request.instanceId) &&
+            Objects.equals(this.offset, listAppConfigsV2Request.offset) &&
+            Objects.equals(this.limit, listAppConfigsV2Request.limit) &&
             Objects.equals(this.appId, listAppConfigsV2Request.appId) &&
             Objects.equals(this.configName, listAppConfigsV2Request.configName) &&
-            Objects.equals(this.romaAppName, listAppConfigsV2Request.romaAppName) &&
-            Objects.equals(this.offset, listAppConfigsV2Request.offset) &&
-            Objects.equals(this.limit, listAppConfigsV2Request.limit);
+            Objects.equals(this.romaAppName, listAppConfigsV2Request.romaAppName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appId, configName, romaAppName, offset, limit);
+        return Objects.hash(instanceId, offset, limit, appId, configName, romaAppName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAppConfigsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    configName: ").append(toIndentedString(configName)).append("\n");
         sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

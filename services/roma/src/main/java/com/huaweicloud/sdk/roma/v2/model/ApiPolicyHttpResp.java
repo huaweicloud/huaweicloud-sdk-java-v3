@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyHttpBase;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyRespBase;
 import com.huaweicloud.sdk.roma.v2.model.BackendParam;
-import com.huaweicloud.sdk.roma.v2.model.CoditionResp;
+import com.huaweicloud.sdk.roma.v2.model.ConditionResp;
 import com.huaweicloud.sdk.roma.v2.model.VpcInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,25 @@ public class ApiPolicyHttpResp  {
     @JsonProperty(value="id")
     
     private String id;
-    /**
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="conditions")
+    
+    private List<ConditionResp> conditions = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="backend_params")
+    
+    private List<BackendParam> backendParams = null;
+        /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
     public static final class EffectModeEnum {
@@ -122,24 +140,6 @@ public class ApiPolicyHttpResp  {
     
     private EffectModeEnum effectMode;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
-    private List<BackendParam> backendParams = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conditions")
-    
-    private List<CoditionResp> conditions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authorizer_id")
@@ -408,28 +408,6 @@ public class ApiPolicyHttpResp  {
 
     
 
-    public ApiPolicyHttpResp withEffectMode(EffectModeEnum effectMode) {
-        this.effectMode = effectMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * @return effectMode
-     */
-    public EffectModeEnum getEffectMode() {
-        return effectMode;
-    }
-
-    public void setEffectMode(EffectModeEnum effectMode) {
-        this.effectMode = effectMode;
-    }
-
-    
-
     public ApiPolicyHttpResp withName(String name) {
         this.name = name;
         return this;
@@ -448,6 +426,42 @@ public class ApiPolicyHttpResp  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public ApiPolicyHttpResp withConditions(List<ConditionResp> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    
+    public ApiPolicyHttpResp addConditionsItem(ConditionResp conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public ApiPolicyHttpResp withConditions(Consumer<List<ConditionResp>> conditionsSetter) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
+    public List<ConditionResp> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<ConditionResp> conditions) {
+        this.conditions = conditions;
     }
 
     
@@ -488,38 +502,24 @@ public class ApiPolicyHttpResp  {
 
     
 
-    public ApiPolicyHttpResp withConditions(List<CoditionResp> conditions) {
-        this.conditions = conditions;
+    public ApiPolicyHttpResp withEffectMode(EffectModeEnum effectMode) {
+        this.effectMode = effectMode;
         return this;
     }
 
     
-    public ApiPolicyHttpResp addConditionsItem(CoditionResp conditionsItem) {
-        if(this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
-        this.conditions.add(conditionsItem);
-        return this;
-    }
 
-    public ApiPolicyHttpResp withConditions(Consumer<List<CoditionResp>> conditionsSetter) {
-        if(this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
-        conditionsSetter.accept(this.conditions);
-        return this;
-    }
 
     /**
-     * 策略条件列表
-     * @return conditions
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
      */
-    public List<CoditionResp> getConditions() {
-        return conditions;
+    public EffectModeEnum getEffectMode() {
+        return effectMode;
     }
 
-    public void setConditions(List<CoditionResp> conditions) {
-        this.conditions = conditions;
+    public void setEffectMode(EffectModeEnum effectMode) {
+        this.effectMode = effectMode;
     }
 
     
@@ -739,10 +739,10 @@ public class ApiPolicyHttpResp  {
         }
         ApiPolicyHttpResp apiPolicyHttpResp = (ApiPolicyHttpResp) o;
         return Objects.equals(this.id, apiPolicyHttpResp.id) &&
-            Objects.equals(this.effectMode, apiPolicyHttpResp.effectMode) &&
             Objects.equals(this.name, apiPolicyHttpResp.name) &&
-            Objects.equals(this.backendParams, apiPolicyHttpResp.backendParams) &&
             Objects.equals(this.conditions, apiPolicyHttpResp.conditions) &&
+            Objects.equals(this.backendParams, apiPolicyHttpResp.backendParams) &&
+            Objects.equals(this.effectMode, apiPolicyHttpResp.effectMode) &&
             Objects.equals(this.authorizerId, apiPolicyHttpResp.authorizerId) &&
             Objects.equals(this.urlDomain, apiPolicyHttpResp.urlDomain) &&
             Objects.equals(this.reqProtocol, apiPolicyHttpResp.reqProtocol) &&
@@ -755,17 +755,17 @@ public class ApiPolicyHttpResp  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, effectMode, name, backendParams, conditions, authorizerId, urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl, vpcChannelInfo, vpcChannelStatus);
+        return Objects.hash(id, name, conditions, backendParams, effectMode, authorizerId, urlDomain, reqProtocol, reqMethod, reqUri, timeout, enableClientSsl, vpcChannelInfo, vpcChannelStatus);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApiPolicyHttpResp {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
+        sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");
         sb.append("    urlDomain: ").append(toIndentedString(urlDomain)).append("\n");
         sb.append("    reqProtocol: ").append(toIndentedString(reqProtocol)).append("\n");

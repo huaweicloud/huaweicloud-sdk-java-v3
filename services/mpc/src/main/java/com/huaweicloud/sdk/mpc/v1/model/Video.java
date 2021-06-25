@@ -168,12 +168,6 @@ public class Video  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_timestamp")
-    
-    private Boolean syncTimestamp;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="width")
     
     private Integer width;
@@ -195,18 +189,6 @@ public class Video  {
     @JsonProperty(value="black_cut")
     
     private Integer blackCut;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="GOP_structure")
-    
-    private Boolean goPStructure;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sr_factor")
-    
-    private String srFactor;
 
     public Video withOutputPolicy(OutputPolicyEnum outputPolicy) {
         this.outputPolicy = outputPolicy;
@@ -446,28 +428,6 @@ public class Video  {
 
     
 
-    public Video withSyncTimestamp(Boolean syncTimestamp) {
-        this.syncTimestamp = syncTimestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 降帧率时是否同步调整时间戳 在配置降帧率场景下有效 取值范围： false：不调整时间戳； true：根据 frame_rate 配置的帧率，重新计算时间戳; 
-     * @return syncTimestamp
-     */
-    public Boolean getSyncTimestamp() {
-        return syncTimestamp;
-    }
-
-    public void setSyncTimestamp(Boolean syncTimestamp) {
-        this.syncTimestamp = syncTimestamp;
-    }
-
-    
-
     public Video withWidth(Integer width) {
         this.width = width;
         return this;
@@ -564,50 +524,6 @@ public class Video  {
 
     
 
-    public Video withGoPStructure(Boolean goPStructure) {
-        this.goPStructure = goPStructure;
-        return this;
-    }
-
-    
-
-
-    /**
-     * GOP类型（暂不开放） 0: Closed (Default) 1:Open 
-     * @return goPStructure
-     */
-    public Boolean getGoPStructure() {
-        return goPStructure;
-    }
-
-    public void setGoPStructure(Boolean goPStructure) {
-        this.goPStructure = goPStructure;
-    }
-
-    
-
-    public Video withSrFactor(String srFactor) {
-        this.srFactor = srFactor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 超分倍数 \"2\"：两倍超分 
-     * @return srFactor
-     */
-    public String getSrFactor() {
-        return srFactor;
-    }
-
-    public void setSrFactor(String srFactor) {
-        this.srFactor = srFactor;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -627,17 +543,14 @@ public class Video  {
             Objects.equals(this.maxIframesInterval, video.maxIframesInterval) &&
             Objects.equals(this.bframesCount, video.bframesCount) &&
             Objects.equals(this.frameRate, video.frameRate) &&
-            Objects.equals(this.syncTimestamp, video.syncTimestamp) &&
             Objects.equals(this.width, video.width) &&
             Objects.equals(this.height, video.height) &&
             Objects.equals(this.aspectRatio, video.aspectRatio) &&
-            Objects.equals(this.blackCut, video.blackCut) &&
-            Objects.equals(this.goPStructure, video.goPStructure) &&
-            Objects.equals(this.srFactor, video.srFactor);
+            Objects.equals(this.blackCut, video.blackCut);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, syncTimestamp, width, height, aspectRatio, blackCut, goPStructure, srFactor);
+        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, width, height, aspectRatio, blackCut);
     }
     @Override
     public String toString() {
@@ -653,13 +566,10 @@ public class Video  {
         sb.append("    maxIframesInterval: ").append(toIndentedString(maxIframesInterval)).append("\n");
         sb.append("    bframesCount: ").append(toIndentedString(bframesCount)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
-        sb.append("    syncTimestamp: ").append(toIndentedString(syncTimestamp)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    blackCut: ").append(toIndentedString(blackCut)).append("\n");
-        sb.append("    goPStructure: ").append(toIndentedString(goPStructure)).append("\n");
-        sb.append("    srFactor: ").append(toIndentedString(srFactor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

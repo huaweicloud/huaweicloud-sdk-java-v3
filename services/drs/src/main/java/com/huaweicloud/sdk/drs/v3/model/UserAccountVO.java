@@ -41,7 +41,7 @@ public class UserAccountVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_transfer")
     
-    private String isTransfer;
+    private Boolean isTransfer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -139,7 +139,7 @@ public class UserAccountVO  {
 
     
 
-    public UserAccountVO withIsTransfer(String isTransfer) {
+    public UserAccountVO withIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
         return this;
     }
@@ -151,11 +151,11 @@ public class UserAccountVO  {
      * 是否支持迁移
      * @return isTransfer
      */
-    public String getIsTransfer() {
+    public Boolean getIsTransfer() {
         return isTransfer;
     }
 
-    public void setIsTransfer(String isTransfer) {
+    public void setIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
     }
 

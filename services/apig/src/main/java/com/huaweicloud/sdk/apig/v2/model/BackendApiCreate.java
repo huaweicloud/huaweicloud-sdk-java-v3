@@ -269,11 +269,17 @@ public class BackendApiCreate  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="enable_client_ssl")
+    
+    private Boolean enableClientSsl;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
     private ApiBackendVpcReq vpcChannelInfo;
     /**
-     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      */
     public static final class VpcChannelStatusEnum {
 
@@ -520,7 +526,7 @@ public class BackendApiCreate  {
 
 
     /**
-     * API网关请求后端服务的超时时间。  单位：毫秒。请求参数值不在合法范围内时将使用默认值
+     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
      * @return timeout
      */
     public Integer getTimeout() {
@@ -529,6 +535,28 @@ public class BackendApiCreate  {
 
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
+    }
+
+    
+
+    public BackendApiCreate withEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否开启双向认证
+     * @return enableClientSsl
+     */
+    public Boolean getEnableClientSsl() {
+        return enableClientSsl;
+    }
+
+    public void setEnableClientSsl(Boolean enableClientSsl) {
+        this.enableClientSsl = enableClientSsl;
     }
 
     
@@ -571,7 +599,7 @@ public class BackendApiCreate  {
 
 
     /**
-     * 是否使用VPC通道 - 1 : 使用VPC通道 - 2 : 不使用VPC通道
+     * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      * @return vpcChannelStatus
      */
     public VpcChannelStatusEnum getVpcChannelStatus() {
@@ -601,12 +629,13 @@ public class BackendApiCreate  {
             Objects.equals(this.version, backendApiCreate.version) &&
             Objects.equals(this.reqUri, backendApiCreate.reqUri) &&
             Objects.equals(this.timeout, backendApiCreate.timeout) &&
+            Objects.equals(this.enableClientSsl, backendApiCreate.enableClientSsl) &&
             Objects.equals(this.vpcChannelInfo, backendApiCreate.vpcChannelInfo) &&
             Objects.equals(this.vpcChannelStatus, backendApiCreate.vpcChannelStatus);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout, vpcChannelInfo, vpcChannelStatus);
+        return Objects.hash(authorizerId, urlDomain, reqProtocol, remark, reqMethod, version, reqUri, timeout, enableClientSsl, vpcChannelInfo, vpcChannelStatus);
     }
     @Override
     public String toString() {
@@ -620,6 +649,7 @@ public class BackendApiCreate  {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("    vpcChannelInfo: ").append(toIndentedString(vpcChannelInfo)).append("\n");
         sb.append("    vpcChannelStatus: ").append(toIndentedString(vpcChannelStatus)).append("\n");
         sb.append("}");

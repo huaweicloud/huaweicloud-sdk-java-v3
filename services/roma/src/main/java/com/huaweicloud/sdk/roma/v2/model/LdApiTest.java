@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.LdApiParameterTest;
+import com.huaweicloud.sdk.roma.v2.model.LdApiParameter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -24,15 +24,15 @@ public class LdApiTest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="parameters")
     
-    private List<LdApiParameterTest> parameters = null;
+    private List<LdApiParameter> parameters = null;
     
-    public LdApiTest withParameters(List<LdApiParameterTest> parameters) {
+    public LdApiTest withParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
         return this;
     }
 
     
-    public LdApiTest addParametersItem(LdApiParameterTest parametersItem) {
+    public LdApiTest addParametersItem(LdApiParameter parametersItem) {
         if(this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
@@ -40,7 +40,7 @@ public class LdApiTest  {
         return this;
     }
 
-    public LdApiTest withParameters(Consumer<List<LdApiParameterTest>> parametersSetter) {
+    public LdApiTest withParameters(Consumer<List<LdApiParameter>> parametersSetter) {
         if(this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
@@ -52,11 +52,11 @@ public class LdApiTest  {
      * 后端API请求参数
      * @return parameters
      */
-    public List<LdApiParameterTest> getParameters() {
+    public List<LdApiParameter> getParameters() {
         return parameters;
     }
 
-    public void setParameters(List<LdApiParameterTest> parameters) {
+    public void setParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
     }
 

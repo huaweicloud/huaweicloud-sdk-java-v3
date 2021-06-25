@@ -233,6 +233,41 @@ public class BmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> changeBaremetalServerOs = genForchangeBaremetalServerOs();
+
+    private static HttpRequestDef<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> genForchangeBaremetalServerOs() {
+        // basic
+        HttpRequestDef.Builder<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeBaremetalServerOsRequest.class, ChangeBaremetalServerOsResponse.class)
+                .withName("ChangeBaremetalServerOs")
+                .withUri("/v1/{project_id}/baremetalservers/{server_id}/changeos")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ChangeBaremetalServerOsRequest::getServerId, (req, v) -> {
+                req.setServerId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            OSChangeReq.class,
+            f -> f.withMarshaller(ChangeBaremetalServerOsRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateBareMetalServersRequest, CreateBareMetalServersResponse> createBareMetalServers = genForcreateBareMetalServers();
 
     private static HttpRequestDef<CreateBareMetalServersRequest, CreateBareMetalServersResponse> genForcreateBareMetalServers() {

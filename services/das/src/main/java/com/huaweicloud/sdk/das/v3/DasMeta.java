@@ -686,7 +686,7 @@ public class DasMeta {
         builder.withRequestField("show_instance_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            String.class,
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getShowInstanceInfo, (req, v) -> {
                 req.setShowInstanceInfo(v);
             })
@@ -790,6 +790,33 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             ShowDbUserRequest.XLanguageEnum.class,
             f -> f.withMarshaller(ShowDbUserRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForshowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForshowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v3/{project_id}/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            ShowQuotasRequest.XLanguageEnum.class,
+            f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
             })
         );

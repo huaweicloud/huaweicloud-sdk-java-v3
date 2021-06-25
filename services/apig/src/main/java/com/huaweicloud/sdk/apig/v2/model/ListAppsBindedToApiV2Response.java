@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.apig.v2.model.AppAuthBindedApiResp;
+import com.huaweicloud.sdk.apig.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -24,15 +25,15 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
-    private Integer total;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
     private Integer size;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total")
+    
+    private Long total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,28 +41,6 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
     
     private List<AppAuthBindedApiResp> auths = null;
     
-    public ListAppsBindedToApiV2Response withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 符合条件的API总数
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
-    
-
     public ListAppsBindedToApiV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -80,6 +59,28 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    
+
+    public ListAppsBindedToApiV2Response withTotal(Long total) {
+        this.total = total;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 满足条件的记录数
+     * @return total
+     */
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
     }
 
     
@@ -129,20 +130,20 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
             return false;
         }
         ListAppsBindedToApiV2Response listAppsBindedToApiV2Response = (ListAppsBindedToApiV2Response) o;
-        return Objects.equals(this.total, listAppsBindedToApiV2Response.total) &&
-            Objects.equals(this.size, listAppsBindedToApiV2Response.size) &&
+        return Objects.equals(this.size, listAppsBindedToApiV2Response.size) &&
+            Objects.equals(this.total, listAppsBindedToApiV2Response.total) &&
             Objects.equals(this.auths, listAppsBindedToApiV2Response.auths);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, auths);
+        return Objects.hash(size, total, auths);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAppsBindedToApiV2Response {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    auths: ").append(toIndentedString(auths)).append("\n");
         sb.append("}");
         return sb.toString();

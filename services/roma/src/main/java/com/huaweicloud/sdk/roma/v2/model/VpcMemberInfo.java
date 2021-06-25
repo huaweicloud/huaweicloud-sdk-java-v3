@@ -34,6 +34,12 @@ public class VpcMemberInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_backup")
+    
+    private Boolean isBackup;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="ecs_id")
     
     private String ecsId;
@@ -108,6 +114,28 @@ public class VpcMemberInfo  {
 
     public void setWeight(Integer weight) {
         this.weight = weight;
+    }
+
+    
+
+    public VpcMemberInfo withIsBackup(Boolean isBackup) {
+        this.isBackup = isBackup;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否备节点。  开启后对应后端服务为备用节点，仅当非备用节点全部故障时工作。  实例需要升级到对应版本才支持此功能，若不支持请联系技术支持。
+     * @return isBackup
+     */
+    public Boolean getIsBackup() {
+        return isBackup;
+    }
+
+    public void setIsBackup(Boolean isBackup) {
+        this.isBackup = isBackup;
     }
 
     
@@ -255,6 +283,7 @@ public class VpcMemberInfo  {
         VpcMemberInfo vpcMemberInfo = (VpcMemberInfo) o;
         return Objects.equals(this.host, vpcMemberInfo.host) &&
             Objects.equals(this.weight, vpcMemberInfo.weight) &&
+            Objects.equals(this.isBackup, vpcMemberInfo.isBackup) &&
             Objects.equals(this.ecsId, vpcMemberInfo.ecsId) &&
             Objects.equals(this.ecsName, vpcMemberInfo.ecsName) &&
             Objects.equals(this.id, vpcMemberInfo.id) &&
@@ -264,7 +293,7 @@ public class VpcMemberInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(host, weight, ecsId, ecsName, id, status, vpcChannelId, createTime);
+        return Objects.hash(host, weight, isBackup, ecsId, ecsName, id, status, vpcChannelId, createTime);
     }
     @Override
     public String toString() {
@@ -272,6 +301,7 @@ public class VpcMemberInfo  {
         sb.append("class VpcMemberInfo {\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    isBackup: ").append(toIndentedString(isBackup)).append("\n");
         sb.append("    ecsId: ").append(toIndentedString(ecsId)).append("\n");
         sb.append("    ecsName: ").append(toIndentedString(ecsName)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");

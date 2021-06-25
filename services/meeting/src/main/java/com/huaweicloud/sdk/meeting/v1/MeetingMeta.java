@@ -2032,6 +2032,57 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InviteShareRequest, InviteShareResponse> inviteShare = genForinviteShare();
+
+    private static HttpRequestDef<InviteShareRequest, InviteShareResponse> genForinviteShare() {
+        // basic
+        HttpRequestDef.Builder<InviteShareRequest, InviteShareResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, InviteShareRequest.class, InviteShareResponse.class)
+                .withName("InviteShare")
+                .withUri("/v1/mmc/control/conferences/participants/share/invite")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(InviteShareRequest::getConferenceID, (req, v) -> {
+                req.setConferenceID(v);
+            })
+        );
+        builder.withRequestField("participantID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(InviteShareRequest::getParticipantID, (req, v) -> {
+                req.setParticipantID(v);
+            })
+        );
+        builder.withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(InviteShareRequest::getXConferenceAuthorization, (req, v) -> {
+                req.setXConferenceAuthorization(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            InviteShareDTO.class,
+            f -> f.withMarshaller(InviteShareRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<InviteUserRequest, InviteUserResponse> inviteUser = genForinviteUser();
 
     private static HttpRequestDef<InviteUserRequest, InviteUserResponse> genForinviteUser() {

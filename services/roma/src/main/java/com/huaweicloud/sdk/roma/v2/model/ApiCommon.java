@@ -820,15 +820,15 @@ public class ApiCommon  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_id")
-    
-    private String runEnvId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="run_env_name")
     
     private String runEnvName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="run_env_id")
+    
+    private String runEnvId;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -893,7 +893,7 @@ public class ApiCommon  {
 
 
     /**
-     * API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头，3-255个字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。 > 中文字符必须为UTF-8或者unicode编码。
      * @return name
      */
     public String getName() {
@@ -1142,7 +1142,7 @@ public class ApiCommon  {
 
 
     /**
-     * API描述。 > 中文字符必须为UTF-8或者unicode编码。
+     * API描述。  不允许带有<、>字符 > 中文字符必须为UTF-8或者unicode编码。
      * @return remark
      */
     public String getRemark() {
@@ -1186,7 +1186,7 @@ public class ApiCommon  {
 
 
     /**
-     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return bodyRemark
      */
     public String getBodyRemark() {
@@ -1208,7 +1208,7 @@ public class ApiCommon  {
 
 
     /**
-     * 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 正常响应示例，描述API的正常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return resultNormalSample
      */
     public String getResultNormalSample() {
@@ -1230,7 +1230,7 @@ public class ApiCommon  {
 
 
     /**
-     * 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 失败返回示例，描述API的异常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
      * @return resultFailureSample
      */
     public String getResultFailureSample() {
@@ -1530,7 +1530,7 @@ public class ApiCommon  {
 
 
     /**
-     * API所属分组的版本  默认V1，其他版本暂不支持
+     * API所属分组的版本
      * @return groupVersion
      */
     public String getGroupVersion() {
@@ -1539,28 +1539,6 @@ public class ApiCommon  {
 
     public void setGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
-    }
-
-    
-
-    public ApiCommon withRunEnvId(String runEnvId) {
-        this.runEnvId = runEnvId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 发布的环境编号  存在多个发布记录时，环境编号之间用|隔开
-     * @return runEnvId
-     */
-    public String getRunEnvId() {
-        return runEnvId;
-    }
-
-    public void setRunEnvId(String runEnvId) {
-        this.runEnvId = runEnvId;
     }
 
     
@@ -1583,6 +1561,28 @@ public class ApiCommon  {
 
     public void setRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
+    }
+
+    
+
+    public ApiCommon withRunEnvId(String runEnvId) {
+        this.runEnvId = runEnvId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 发布的环境编号  存在多个发布记录时，环境编号之间用|隔开
+     * @return runEnvId
+     */
+    public String getRunEnvId() {
+        return runEnvId;
+    }
+
+    public void setRunEnvId(String runEnvId) {
+        this.runEnvId = runEnvId;
     }
 
     
@@ -1893,8 +1893,8 @@ public class ApiCommon  {
             Objects.equals(this.updateTime, apiCommon.updateTime) &&
             Objects.equals(this.groupName, apiCommon.groupName) &&
             Objects.equals(this.groupVersion, apiCommon.groupVersion) &&
-            Objects.equals(this.runEnvId, apiCommon.runEnvId) &&
             Objects.equals(this.runEnvName, apiCommon.runEnvName) &&
+            Objects.equals(this.runEnvId, apiCommon.runEnvId) &&
             Objects.equals(this.publishId, apiCommon.publishId) &&
             Objects.equals(this.romaAppName, apiCommon.romaAppName) &&
             Objects.equals(this.ldApiId, apiCommon.ldApiId) &&
@@ -1907,7 +1907,7 @@ public class ApiCommon  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, id, status, arrangeNecessary, registerTime, updateTime, groupName, groupVersion, runEnvId, runEnvName, publishId, romaAppName, ldApiId, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks);
+        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, id, status, arrangeNecessary, registerTime, updateTime, groupName, groupVersion, runEnvName, runEnvId, publishId, romaAppName, ldApiId, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks);
     }
     @Override
     public String toString() {
@@ -1942,8 +1942,8 @@ public class ApiCommon  {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupVersion: ").append(toIndentedString(groupVersion)).append("\n");
-        sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    runEnvName: ").append(toIndentedString(runEnvName)).append("\n");
+        sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
         sb.append("    romaAppName: ").append(toIndentedString(romaAppName)).append("\n");
         sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");

@@ -28,6 +28,12 @@ public class ListMetadataLocksResponse extends SdkResponse {
     
     private List<MetadataLock> metadataLocks = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="count")
+    
+    private Integer count;
+
     public ListMetadataLocksResponse withMetadataLocks(List<MetadataLock> metadataLocks) {
         this.metadataLocks = metadataLocks;
         return this;
@@ -64,6 +70,28 @@ public class ListMetadataLocksResponse extends SdkResponse {
 
     
 
+    public ListMetadataLocksResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 元数据锁数量
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -73,17 +101,19 @@ public class ListMetadataLocksResponse extends SdkResponse {
             return false;
         }
         ListMetadataLocksResponse listMetadataLocksResponse = (ListMetadataLocksResponse) o;
-        return Objects.equals(this.metadataLocks, listMetadataLocksResponse.metadataLocks);
+        return Objects.equals(this.metadataLocks, listMetadataLocksResponse.metadataLocks) &&
+            Objects.equals(this.count, listMetadataLocksResponse.count);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(metadataLocks);
+        return Objects.hash(metadataLocks, count);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMetadataLocksResponse {\n");
         sb.append("    metadataLocks: ").append(toIndentedString(metadataLocks)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

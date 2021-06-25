@@ -31,18 +31,6 @@ public class ListApiVersionsV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
-    private String envId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
-    private String envName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     private Long offset;
@@ -53,6 +41,18 @@ public class ListApiVersionsV2Request  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="env_id")
+    
+    private String envId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="env_name")
+    
+    private String envName;
+
     public ListApiVersionsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -62,7 +62,7 @@ public class ListApiVersionsV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -93,50 +93,6 @@ public class ListApiVersionsV2Request  {
 
     public void setApiId(String apiId) {
         this.apiId = apiId;
-    }
-
-    
-
-    public ListApiVersionsV2Request withEnvId(String envId) {
-        this.envId = envId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 环境的编号
-     * @return envId
-     */
-    public String getEnvId() {
-        return envId;
-    }
-
-    public void setEnvId(String envId) {
-        this.envId = envId;
-    }
-
-    
-
-    public ListApiVersionsV2Request withEnvName(String envName) {
-        this.envName = envName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 环境的名称
-     * @return envName
-     */
-    public String getEnvName() {
-        return envName;
-    }
-
-    public void setEnvName(String envName) {
-        this.envName = envName;
     }
 
     
@@ -187,6 +143,50 @@ public class ListApiVersionsV2Request  {
 
     
 
+    public ListApiVersionsV2Request withEnvId(String envId) {
+        this.envId = envId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 环境的编号
+     * @return envId
+     */
+    public String getEnvId() {
+        return envId;
+    }
+
+    public void setEnvId(String envId) {
+        this.envId = envId;
+    }
+
+    
+
+    public ListApiVersionsV2Request withEnvName(String envName) {
+        this.envName = envName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 环境的名称
+     * @return envName
+     */
+    public String getEnvName() {
+        return envName;
+    }
+
+    public void setEnvName(String envName) {
+        this.envName = envName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -198,14 +198,14 @@ public class ListApiVersionsV2Request  {
         ListApiVersionsV2Request listApiVersionsV2Request = (ListApiVersionsV2Request) o;
         return Objects.equals(this.instanceId, listApiVersionsV2Request.instanceId) &&
             Objects.equals(this.apiId, listApiVersionsV2Request.apiId) &&
-            Objects.equals(this.envId, listApiVersionsV2Request.envId) &&
-            Objects.equals(this.envName, listApiVersionsV2Request.envName) &&
             Objects.equals(this.offset, listApiVersionsV2Request.offset) &&
-            Objects.equals(this.limit, listApiVersionsV2Request.limit);
+            Objects.equals(this.limit, listApiVersionsV2Request.limit) &&
+            Objects.equals(this.envId, listApiVersionsV2Request.envId) &&
+            Objects.equals(this.envName, listApiVersionsV2Request.envName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, apiId, envId, envName, offset, limit);
+        return Objects.hash(instanceId, apiId, offset, limit, envId, envName);
     }
     @Override
     public String toString() {
@@ -213,10 +213,10 @@ public class ListApiVersionsV2Request  {
         sb.append("class ListApiVersionsV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
-        sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
-        sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
+        sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

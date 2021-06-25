@@ -10,13 +10,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.FunctionApiBaseInfo;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 函数后端详情
+ * 函数工作流后端详情
  */
 public class ApiFuncCreate  {
 

@@ -125,6 +125,12 @@ public class LiveDataExportReq  {
     
     private List<String> apis = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="status")
+    
+    private Integer status;
+
     public LiveDataExportReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -205,6 +211,28 @@ public class LiveDataExportReq  {
 
     
 
+    public LiveDataExportReq withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 导出的后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -216,11 +244,12 @@ public class LiveDataExportReq  {
         LiveDataExportReq liveDataExportReq = (LiveDataExportReq) o;
         return Objects.equals(this.appId, liveDataExportReq.appId) &&
             Objects.equals(this.format, liveDataExportReq.format) &&
-            Objects.equals(this.apis, liveDataExportReq.apis);
+            Objects.equals(this.apis, liveDataExportReq.apis) &&
+            Objects.equals(this.status, liveDataExportReq.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(appId, format, apis);
+        return Objects.hash(appId, format, apis, status);
     }
     @Override
     public String toString() {
@@ -229,6 +258,7 @@ public class LiveDataExportReq  {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    apis: ").append(toIndentedString(apis)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

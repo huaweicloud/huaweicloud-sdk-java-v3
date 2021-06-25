@@ -10,7 +10,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.LdApiTestHistoryInfoV2;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -74,6 +77,12 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     
     private String ldApiId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="debug_log")
+    
+    private List<String> debugLog = null;
+    
     public DebugLiveDataApiV2Response withTestStatusCode(String testStatusCode) {
         this.testStatusCode = testStatusCode;
         return this;
@@ -272,6 +281,42 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
 
     
 
+    public DebugLiveDataApiV2Response withDebugLog(List<String> debugLog) {
+        this.debugLog = debugLog;
+        return this;
+    }
+
+    
+    public DebugLiveDataApiV2Response addDebugLogItem(String debugLogItem) {
+        if(this.debugLog == null) {
+            this.debugLog = new ArrayList<>();
+        }
+        this.debugLog.add(debugLogItem);
+        return this;
+    }
+
+    public DebugLiveDataApiV2Response withDebugLog(Consumer<List<String>> debugLogSetter) {
+        if(this.debugLog == null) {
+            this.debugLog = new ArrayList<>();
+        }
+        debugLogSetter.accept(this.debugLog);
+        return this;
+    }
+
+    /**
+     * 本次测试日志列表
+     * @return debugLog
+     */
+    public List<String> getDebugLog() {
+        return debugLog;
+    }
+
+    public void setDebugLog(List<String> debugLog) {
+        this.debugLog = debugLog;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -289,11 +334,12 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
             Objects.equals(this.testMethod, debugLiveDataApiV2Response.testMethod) &&
             Objects.equals(this.testId, debugLiveDataApiV2Response.testId) &&
             Objects.equals(this.testDate, debugLiveDataApiV2Response.testDate) &&
-            Objects.equals(this.ldApiId, debugLiveDataApiV2Response.ldApiId);
+            Objects.equals(this.ldApiId, debugLiveDataApiV2Response.ldApiId) &&
+            Objects.equals(this.debugLog, debugLiveDataApiV2Response.debugLog);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(testStatusCode, testRequest, testUsedTime, testOperator, testResponse, testMethod, testId, testDate, ldApiId);
+        return Objects.hash(testStatusCode, testRequest, testUsedTime, testOperator, testResponse, testMethod, testId, testDate, ldApiId, debugLog);
     }
     @Override
     public String toString() {
@@ -308,6 +354,7 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         sb.append("    testId: ").append(toIndentedString(testId)).append("\n");
         sb.append("    testDate: ").append(toIndentedString(testDate)).append("\n");
         sb.append("    ldApiId: ").append(toIndentedString(ldApiId)).append("\n");
+        sb.append("    debugLog: ").append(toIndentedString(debugLog)).append("\n");
         sb.append("}");
         return sb.toString();
     }

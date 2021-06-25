@@ -438,25 +438,47 @@ public class CdnAsyncClient {
     }
 
     /**
-     * 查询Referer过滤规则
-     * 查询Referer过滤规则。
+     * 查询用户配额
+     * 查询当前用户域名、刷新文件、刷新目录和预热的配额
      *
-     * @param ShowRefererRequest 请求对象
-     * @return CompletableFuture<ShowRefererResponse>
+     * @param ShowQuotaRequest 请求对象
+     * @return CompletableFuture<ShowQuotaResponse>
      */
-    public CompletableFuture<ShowRefererResponse> showRefererAsync(ShowRefererRequest request) {
-        return hcClient.asyncInvokeHttp(request, CdnMeta.showReferer);
+    public CompletableFuture<ShowQuotaResponse> showQuotaAsync(ShowQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showQuota);
+    }
+
+    /**
+     * 查询用户配额
+     * 查询当前用户域名、刷新文件、刷新目录和预热的配额
+     *
+     * @param ShowQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
+     */
+    public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
+        return new AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>(request, CdnMeta.showQuota, hcClient);
     }
 
     /**
      * 查询Referer过滤规则
      * 查询Referer过滤规则。
      *
-     * @param ShowRefererRequest 请求对象
-     * @return AsyncInvoker<ShowRefererRequest, ShowRefererResponse>
+     * @param ShowReferRequest 请求对象
+     * @return CompletableFuture<ShowReferResponse>
      */
-    public AsyncInvoker<ShowRefererRequest, ShowRefererResponse> showRefererAsyncInvoker(ShowRefererRequest request) {
-        return new AsyncInvoker<ShowRefererRequest, ShowRefererResponse>(request, CdnMeta.showReferer, hcClient);
+    public CompletableFuture<ShowReferResponse> showReferAsync(ShowReferRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdnMeta.showRefer);
+    }
+
+    /**
+     * 查询Referer过滤规则
+     * 查询Referer过滤规则。
+     *
+     * @param ShowReferRequest 请求对象
+     * @return AsyncInvoker<ShowReferRequest, ShowReferResponse>
+     */
+    public AsyncInvoker<ShowReferRequest, ShowReferResponse> showReferAsyncInvoker(ShowReferRequest request) {
+        return new AsyncInvoker<ShowReferRequest, ShowReferResponse>(request, CdnMeta.showRefer, hcClient);
     }
 
     /**

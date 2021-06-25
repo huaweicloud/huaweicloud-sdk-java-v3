@@ -32,12 +32,6 @@ public class DeleteNodeRequest  {
     @JsonProperty(value="node_id")
     
     private String nodeId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
     /**
      * 标明是否为nodepool下发的请求。若不为“NoScaleDown”将自动更新对应节点池的实例数
      */
@@ -161,28 +155,6 @@ public class DeleteNodeRequest  {
 
     
 
-    public DeleteNodeRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-    }
-
-    
-
     public DeleteNodeRequest withNodepoolScaleDown(NodepoolScaleDownEnum nodepoolScaleDown) {
         this.nodepoolScaleDown = nodepoolScaleDown;
         return this;
@@ -216,12 +188,11 @@ public class DeleteNodeRequest  {
         DeleteNodeRequest deleteNodeRequest = (DeleteNodeRequest) o;
         return Objects.equals(this.clusterId, deleteNodeRequest.clusterId) &&
             Objects.equals(this.nodeId, deleteNodeRequest.nodeId) &&
-            Objects.equals(this.errorStatus, deleteNodeRequest.errorStatus) &&
             Objects.equals(this.nodepoolScaleDown, deleteNodeRequest.nodepoolScaleDown);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, nodeId, errorStatus, nodepoolScaleDown);
+        return Objects.hash(clusterId, nodeId, nodepoolScaleDown);
     }
     @Override
     public String toString() {
@@ -229,7 +200,6 @@ public class DeleteNodeRequest  {
         sb.append("class DeleteNodeRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    nodepoolScaleDown: ").append(toIndentedString(nodepoolScaleDown)).append("\n");
         sb.append("}");
         return sb.toString();

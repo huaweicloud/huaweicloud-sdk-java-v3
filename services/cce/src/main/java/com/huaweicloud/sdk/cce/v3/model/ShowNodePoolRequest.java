@@ -29,12 +29,6 @@ public class ShowNodePoolRequest  {
     
     private String nodepoolId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
-
     public ShowNodePoolRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -79,28 +73,6 @@ public class ShowNodePoolRequest  {
 
     
 
-    public ShowNodePoolRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,12 +83,11 @@ public class ShowNodePoolRequest  {
         }
         ShowNodePoolRequest showNodePoolRequest = (ShowNodePoolRequest) o;
         return Objects.equals(this.clusterId, showNodePoolRequest.clusterId) &&
-            Objects.equals(this.nodepoolId, showNodePoolRequest.nodepoolId) &&
-            Objects.equals(this.errorStatus, showNodePoolRequest.errorStatus);
+            Objects.equals(this.nodepoolId, showNodePoolRequest.nodepoolId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, nodepoolId, errorStatus);
+        return Objects.hash(clusterId, nodepoolId);
     }
     @Override
     public String toString() {
@@ -124,7 +95,6 @@ public class ShowNodePoolRequest  {
         sb.append("class ShowNodePoolRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    nodepoolId: ").append(toIndentedString(nodepoolId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

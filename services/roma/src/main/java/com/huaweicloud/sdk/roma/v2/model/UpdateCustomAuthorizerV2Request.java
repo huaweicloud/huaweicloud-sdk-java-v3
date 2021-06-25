@@ -45,7 +45,7 @@ public class UpdateCustomAuthorizerV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateCustomAuthorizerV2Request  {
 
 
     /**
-     * 自定义认证的ID
+     * 自定义认证的编号
      * @return authorizerId
      */
     public String getAuthorizerId() {

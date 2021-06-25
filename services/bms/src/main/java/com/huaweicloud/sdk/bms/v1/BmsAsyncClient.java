@@ -174,6 +174,28 @@ public class BmsAsyncClient {
     }
 
     /**
+     * 
+     * 切换裸金属服务器的操作系统。切换操作系统支持密码或者密钥注入，该接口支持企业项目细粒度权限的校验，具体细粒度请参见 bms:servers:changeOS
+     *
+     * @param ChangeBaremetalServerOsRequest 请求对象
+     * @return CompletableFuture<ChangeBaremetalServerOsResponse>
+     */
+    public CompletableFuture<ChangeBaremetalServerOsResponse> changeBaremetalServerOsAsync(ChangeBaremetalServerOsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.changeBaremetalServerOs);
+    }
+
+    /**
+     * 
+     * 切换裸金属服务器的操作系统。切换操作系统支持密码或者密钥注入，该接口支持企业项目细粒度权限的校验，具体细粒度请参见 bms:servers:changeOS
+     *
+     * @param ChangeBaremetalServerOsRequest 请求对象
+     * @return AsyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse>
+     */
+    public AsyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse> changeBaremetalServerOsAsyncInvoker(ChangeBaremetalServerOsRequest request) {
+        return new AsyncInvoker<ChangeBaremetalServerOsRequest, ChangeBaremetalServerOsResponse>(request, BmsMeta.changeBaremetalServerOs, hcClient);
+    }
+
+    /**
      * 创建裸金属服务器
      * 创建一台或多台裸金属服务器,裸金属服务器的登录鉴权方式包括两种：密钥对、密码。为安全起见，推荐使用密钥对方式
      *

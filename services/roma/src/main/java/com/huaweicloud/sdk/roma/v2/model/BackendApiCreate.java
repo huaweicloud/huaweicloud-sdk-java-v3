@@ -14,8 +14,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiBackendVpcReq;
 import com.huaweicloud.sdk.roma.v2.model.BackendApiBaseInfo;
+import com.huaweicloud.sdk.roma.v2.model.VpcInfo;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -277,7 +277,7 @@ public class BackendApiCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_info")
     
-    private ApiBackendVpcReq vpcChannelInfo;
+    private VpcInfo vpcChannelInfo;
     /**
      * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      */
@@ -561,14 +561,14 @@ public class BackendApiCreate  {
 
     
 
-    public BackendApiCreate withVpcChannelInfo(ApiBackendVpcReq vpcChannelInfo) {
+    public BackendApiCreate withVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
         return this;
     }
 
-    public BackendApiCreate withVpcChannelInfo(Consumer<ApiBackendVpcReq> vpcChannelInfoSetter) {
+    public BackendApiCreate withVpcChannelInfo(Consumer<VpcInfo> vpcChannelInfoSetter) {
         if(this.vpcChannelInfo == null ){
-            this.vpcChannelInfo = new ApiBackendVpcReq();
+            this.vpcChannelInfo = new VpcInfo();
             vpcChannelInfoSetter.accept(this.vpcChannelInfo);
         }
         
@@ -580,11 +580,11 @@ public class BackendApiCreate  {
      * Get vpcChannelInfo
      * @return vpcChannelInfo
      */
-    public ApiBackendVpcReq getVpcChannelInfo() {
+    public VpcInfo getVpcChannelInfo() {
         return vpcChannelInfo;
     }
 
-    public void setVpcChannelInfo(ApiBackendVpcReq vpcChannelInfo) {
+    public void setVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
     }
 

@@ -45,7 +45,7 @@ public class AssociateAppsForAppQuotaRequest  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {

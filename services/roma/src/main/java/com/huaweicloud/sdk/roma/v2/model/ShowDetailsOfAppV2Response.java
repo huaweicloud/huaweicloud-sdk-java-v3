@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.AppBaseInfo;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +28,24 @@ import java.util.Objects;
  */
 public class ShowDetailsOfAppV2Response extends SdkResponse {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="id")
+    
+    private String id;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="remark")
+    
+    private String remark;
     /**
      * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
      */
@@ -123,24 +142,6 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     @JsonProperty(value="app_key")
     
     private String appKey;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
-    private String remark;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
-    private String id;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -322,6 +323,72 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     
     private Object romaAppType;
 
+    public ShowDetailsOfAppV2Response withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 编号
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
+
+    public ShowDetailsOfAppV2Response withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+
+    public ShowDetailsOfAppV2Response withRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 描述
+     * @return remark
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    
+
     public ShowDetailsOfAppV2Response withCreator(CreatorEnum creator) {
         this.creator = creator;
         return this;
@@ -384,72 +451,6 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
 
     public void setAppKey(String appKey) {
         this.appKey = appKey;
-    }
-
-    
-
-    public ShowDetailsOfAppV2Response withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
-    public ShowDetailsOfAppV2Response withRemark(String remark) {
-        this.remark = remark;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    
-
-    public ShowDetailsOfAppV2Response withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     
@@ -573,12 +574,12 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             return false;
         }
         ShowDetailsOfAppV2Response showDetailsOfAppV2Response = (ShowDetailsOfAppV2Response) o;
-        return Objects.equals(this.creator, showDetailsOfAppV2Response.creator) &&
-            Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime) &&
-            Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey) &&
+        return Objects.equals(this.id, showDetailsOfAppV2Response.id) &&
             Objects.equals(this.name, showDetailsOfAppV2Response.name) &&
             Objects.equals(this.remark, showDetailsOfAppV2Response.remark) &&
-            Objects.equals(this.id, showDetailsOfAppV2Response.id) &&
+            Objects.equals(this.creator, showDetailsOfAppV2Response.creator) &&
+            Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime) &&
+            Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey) &&
             Objects.equals(this.appSecret, showDetailsOfAppV2Response.appSecret) &&
             Objects.equals(this.registerTime, showDetailsOfAppV2Response.registerTime) &&
             Objects.equals(this.status, showDetailsOfAppV2Response.status) &&
@@ -587,18 +588,18 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, appType, romaAppType);
+        return Objects.hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailsOfAppV2Response {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

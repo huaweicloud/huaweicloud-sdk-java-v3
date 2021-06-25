@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BackendParam;
-import com.huaweicloud.sdk.roma.v2.model.CoditionResp;
+import com.huaweicloud.sdk.roma.v2.model.ConditionResp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +30,25 @@ public class ApiPolicyRespBase  {
     @JsonProperty(value="id")
     
     private String id;
-    /**
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="name")
+    
+    private String name;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="conditions")
+    
+    private List<ConditionResp> conditions = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="backend_params")
+    
+    private List<BackendParam> backendParams = null;
+        /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
     public static final class EffectModeEnum {
@@ -117,24 +135,6 @@ public class ApiPolicyRespBase  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
-    private List<BackendParam> backendParams = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conditions")
-    
-    private List<CoditionResp> conditions = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="authorizer_id")
     
     private String authorizerId;
@@ -161,28 +161,6 @@ public class ApiPolicyRespBase  {
 
     
 
-    public ApiPolicyRespBase withEffectMode(EffectModeEnum effectMode) {
-        this.effectMode = effectMode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * @return effectMode
-     */
-    public EffectModeEnum getEffectMode() {
-        return effectMode;
-    }
-
-    public void setEffectMode(EffectModeEnum effectMode) {
-        this.effectMode = effectMode;
-    }
-
-    
-
     public ApiPolicyRespBase withName(String name) {
         this.name = name;
         return this;
@@ -201,6 +179,42 @@ public class ApiPolicyRespBase  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public ApiPolicyRespBase withConditions(List<ConditionResp> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    
+    public ApiPolicyRespBase addConditionsItem(ConditionResp conditionsItem) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public ApiPolicyRespBase withConditions(Consumer<List<ConditionResp>> conditionsSetter) {
+        if(this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /**
+     * 策略条件列表
+     * @return conditions
+     */
+    public List<ConditionResp> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<ConditionResp> conditions) {
+        this.conditions = conditions;
     }
 
     
@@ -241,38 +255,24 @@ public class ApiPolicyRespBase  {
 
     
 
-    public ApiPolicyRespBase withConditions(List<CoditionResp> conditions) {
-        this.conditions = conditions;
+    public ApiPolicyRespBase withEffectMode(EffectModeEnum effectMode) {
+        this.effectMode = effectMode;
         return this;
     }
 
     
-    public ApiPolicyRespBase addConditionsItem(CoditionResp conditionsItem) {
-        if(this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
-        this.conditions.add(conditionsItem);
-        return this;
-    }
 
-    public ApiPolicyRespBase withConditions(Consumer<List<CoditionResp>> conditionsSetter) {
-        if(this.conditions == null) {
-            this.conditions = new ArrayList<>();
-        }
-        conditionsSetter.accept(this.conditions);
-        return this;
-    }
 
     /**
-     * 策略条件列表
-     * @return conditions
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * @return effectMode
      */
-    public List<CoditionResp> getConditions() {
-        return conditions;
+    public EffectModeEnum getEffectMode() {
+        return effectMode;
     }
 
-    public void setConditions(List<CoditionResp> conditions) {
-        this.conditions = conditions;
+    public void setEffectMode(EffectModeEnum effectMode) {
+        this.effectMode = effectMode;
     }
 
     
@@ -309,25 +309,25 @@ public class ApiPolicyRespBase  {
         }
         ApiPolicyRespBase apiPolicyRespBase = (ApiPolicyRespBase) o;
         return Objects.equals(this.id, apiPolicyRespBase.id) &&
-            Objects.equals(this.effectMode, apiPolicyRespBase.effectMode) &&
             Objects.equals(this.name, apiPolicyRespBase.name) &&
-            Objects.equals(this.backendParams, apiPolicyRespBase.backendParams) &&
             Objects.equals(this.conditions, apiPolicyRespBase.conditions) &&
+            Objects.equals(this.backendParams, apiPolicyRespBase.backendParams) &&
+            Objects.equals(this.effectMode, apiPolicyRespBase.effectMode) &&
             Objects.equals(this.authorizerId, apiPolicyRespBase.authorizerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, effectMode, name, backendParams, conditions, authorizerId);
+        return Objects.hash(id, name, conditions, backendParams, effectMode, authorizerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApiPolicyRespBase {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");
+        sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    authorizerId: ").append(toIndentedString(authorizerId)).append("\n");
         sb.append("}");
         return sb.toString();

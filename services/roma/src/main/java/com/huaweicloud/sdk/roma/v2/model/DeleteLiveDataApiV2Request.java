@@ -38,7 +38,7 @@ public class DeleteLiveDataApiV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class DeleteLiveDataApiV2Request  {
 
 
     /**
-     * 后端API的编号，可通过查询API信息获取该编号。
+     * 后端API的编号
      * @return ldApiId
      */
     public String getLdApiId() {

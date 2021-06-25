@@ -35,7 +35,7 @@ public class UserRoleVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_transfer")
     
-    private String isTransfer;
+    private Boolean isTransfer;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -53,7 +53,7 @@ public class UserRoleVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="selected")
     
-    private String selected;
+    private Boolean selected;
 
     public UserRoleVO withRole(String role) {
         this.role = role;
@@ -99,7 +99,7 @@ public class UserRoleVO  {
 
     
 
-    public UserRoleVO withIsTransfer(String isTransfer) {
+    public UserRoleVO withIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
         return this;
     }
@@ -111,11 +111,11 @@ public class UserRoleVO  {
      * 是否支持迁移。
      * @return isTransfer
      */
-    public String getIsTransfer() {
+    public Boolean getIsTransfer() {
         return isTransfer;
     }
 
-    public void setIsTransfer(String isTransfer) {
+    public void setIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
     }
 
@@ -179,7 +179,7 @@ public class UserRoleVO  {
 
     
 
-    public UserRoleVO withSelected(String selected) {
+    public UserRoleVO withSelected(Boolean selected) {
         this.selected = selected;
         return this;
     }
@@ -191,11 +191,11 @@ public class UserRoleVO  {
      * 是否选择。
      * @return selected
      */
-    public String getSelected() {
+    public Boolean getSelected() {
         return selected;
     }
 
-    public void setSelected(String selected) {
+    public void setSelected(Boolean selected) {
         this.selected = selected;
     }
 

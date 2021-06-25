@@ -31,12 +31,6 @@ public class ListAppQuotaBindableAppsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
-    private String appName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="offset")
     
     private Long offset;
@@ -47,6 +41,12 @@ public class ListAppQuotaBindableAppsRequest  {
     
     private Integer limit;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="app_name")
+    
+    private String appName;
+
     public ListAppQuotaBindableAppsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -56,7 +56,7 @@ public class ListAppQuotaBindableAppsRequest  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -78,7 +78,7 @@ public class ListAppQuotaBindableAppsRequest  {
 
 
     /**
-     * 应用配额编号
+     * 客户端配额编号
      * @return appQuotaId
      */
     public String getAppQuotaId() {
@@ -87,28 +87,6 @@ public class ListAppQuotaBindableAppsRequest  {
 
     public void setAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
-    }
-
-    
-
-    public ListAppQuotaBindableAppsRequest withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 应用名称
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
     }
 
     
@@ -159,6 +137,28 @@ public class ListAppQuotaBindableAppsRequest  {
 
     
 
+    public ListAppQuotaBindableAppsRequest withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 应用名称
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -170,13 +170,13 @@ public class ListAppQuotaBindableAppsRequest  {
         ListAppQuotaBindableAppsRequest listAppQuotaBindableAppsRequest = (ListAppQuotaBindableAppsRequest) o;
         return Objects.equals(this.instanceId, listAppQuotaBindableAppsRequest.instanceId) &&
             Objects.equals(this.appQuotaId, listAppQuotaBindableAppsRequest.appQuotaId) &&
-            Objects.equals(this.appName, listAppQuotaBindableAppsRequest.appName) &&
             Objects.equals(this.offset, listAppQuotaBindableAppsRequest.offset) &&
-            Objects.equals(this.limit, listAppQuotaBindableAppsRequest.limit);
+            Objects.equals(this.limit, listAppQuotaBindableAppsRequest.limit) &&
+            Objects.equals(this.appName, listAppQuotaBindableAppsRequest.appName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, appQuotaId, appName, offset, limit);
+        return Objects.hash(instanceId, appQuotaId, offset, limit, appName);
     }
     @Override
     public String toString() {
@@ -184,9 +184,9 @@ public class ListAppQuotaBindableAppsRequest  {
         sb.append("class ListAppQuotaBindableAppsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    appQuotaId: ").append(toIndentedString(appQuotaId)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

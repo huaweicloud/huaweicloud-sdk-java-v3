@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiConditionBase;
+import com.huaweicloud.sdk.roma.v2.model.ApiConditionCreate;
 import com.huaweicloud.sdk.roma.v2.model.BackendParamBase;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -125,7 +125,7 @@ public class ApiPolicyReqBase  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = null;
+    private List<ApiConditionCreate> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -213,13 +213,13 @@ public class ApiPolicyReqBase  {
 
     
 
-    public ApiPolicyReqBase withConditions(List<ApiConditionBase> conditions) {
+    public ApiPolicyReqBase withConditions(List<ApiConditionCreate> conditions) {
         this.conditions = conditions;
         return this;
     }
 
     
-    public ApiPolicyReqBase addConditionsItem(ApiConditionBase conditionsItem) {
+    public ApiPolicyReqBase addConditionsItem(ApiConditionCreate conditionsItem) {
         if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -227,7 +227,7 @@ public class ApiPolicyReqBase  {
         return this;
     }
 
-    public ApiPolicyReqBase withConditions(Consumer<List<ApiConditionBase>> conditionsSetter) {
+    public ApiPolicyReqBase withConditions(Consumer<List<ApiConditionCreate>> conditionsSetter) {
         if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -239,11 +239,11 @@ public class ApiPolicyReqBase  {
      * 策略条件列表
      * @return conditions
      */
-    public List<ApiConditionBase> getConditions() {
+    public List<ApiConditionCreate> getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<ApiConditionBase> conditions) {
+    public void setConditions(List<ApiConditionCreate> conditions) {
         this.conditions = conditions;
     }
 

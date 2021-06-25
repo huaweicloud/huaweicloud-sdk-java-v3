@@ -41,7 +41,7 @@ public class ApigClient {
 
     /**
      * 绑定域名
-     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效，具体方法请参见[增加CNAME类型记录集](https://support.huaweicloud.com/usermanual-dns/dns_usermanual_0010.html)。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
+     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效，具体方法请参见《云解析服务用户指南》的“添加CANME类型记录集”章节。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      *
      * @param AssociateDomainV2Request 请求对象
      * @return AssociateDomainV2Response
@@ -52,7 +52,7 @@ public class ApigClient {
 
     /**
      * 绑定域名
-     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效，具体方法请参见[增加CNAME类型记录集](https://support.huaweicloud.com/usermanual-dns/dns_usermanual_0010.html)。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
+     * 用户自定义的域名，需要CNAME到API分组的子域名上才能生效，具体方法请参见《云解析服务用户指南》的“添加CANME类型记录集”章节。 每个API分组下最多可绑定5个域名。绑定域名后，用户可通过自定义域名调用API。
      *
      * @param AssociateDomainV2Request 请求对象
      * @return SyncInvoker<AssociateDomainV2Request, AssociateDomainV2Response>
@@ -195,7 +195,7 @@ public class ApigClient {
 
     /**
      * 删除环境
-     * 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。
+     * 删除指定的环境。  该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。  环境上存在已发布的API时，该环境不能被删除。
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return DeleteEnvironmentV2Response
@@ -206,7 +206,7 @@ public class ApigClient {
 
     /**
      * 删除环境
-     * 删除指定的环境。 该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。
+     * 删除指定的环境。  该操作将导致此API在指定的环境无法被访问，可能会影响相当一部分应用和用户。请确保已经告知用户，或者确认需要强制下线。  环境上存在已发布的API时，该环境不能被删除。
      *
      * @param DeleteEnvironmentV2Request 请求对象
      * @return SyncInvoker<DeleteEnvironmentV2Request, DeleteEnvironmentV2Response>
@@ -675,6 +675,28 @@ public class ApigClient {
      */
     public SyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response> showDetailsOfRequestThrottlingPolicyV2Invoker(ShowDetailsOfRequestThrottlingPolicyV2Request request) {
         return new SyncInvoker<ShowDetailsOfRequestThrottlingPolicyV2Request, ShowDetailsOfRequestThrottlingPolicyV2Response>(request, ApigMeta.showDetailsOfRequestThrottlingPolicyV2, hcClient);
+    }
+
+    /**
+     * 修改域名
+     * 修改绑定的域名所对应的配置信息。
+     *
+     * @param UpdateDomainV2Request 请求对象
+     * @return UpdateDomainV2Response
+     */
+    public UpdateDomainV2Response updateDomainV2(UpdateDomainV2Request request) {
+        return hcClient.syncInvokeHttp(request, ApigMeta.updateDomainV2);
+    }
+
+    /**
+     * 修改域名
+     * 修改绑定的域名所对应的配置信息。
+     *
+     * @param UpdateDomainV2Request 请求对象
+     * @return SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>
+     */
+    public SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response> updateDomainV2Invoker(UpdateDomainV2Request request) {
+        return new SyncInvoker<UpdateDomainV2Request, UpdateDomainV2Response>(request, ApigMeta.updateDomainV2, hcClient);
     }
 
     /**

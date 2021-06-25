@@ -168,12 +168,6 @@ public class VideoParameters  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_timestamp")
-    
-    private Boolean syncTimestamp;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="width")
     
     private Integer width;
@@ -446,28 +440,6 @@ public class VideoParameters  {
 
     
 
-    public VideoParameters withSyncTimestamp(Boolean syncTimestamp) {
-        this.syncTimestamp = syncTimestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 降帧率时是否同步调整时间戳 在配置降帧率场景下有效。  取值范围：  - false：不调整时间戳 - true：根据 frame_rate 配置的帧率，重新计算时间戳 
-     * @return syncTimestamp
-     */
-    public Boolean getSyncTimestamp() {
-        return syncTimestamp;
-    }
-
-    public void setSyncTimestamp(Boolean syncTimestamp) {
-        this.syncTimestamp = syncTimestamp;
-    }
-
-    
-
     public VideoParameters withWidth(Integer width) {
         this.width = width;
         return this;
@@ -627,7 +599,6 @@ public class VideoParameters  {
             Objects.equals(this.maxIframesInterval, videoParameters.maxIframesInterval) &&
             Objects.equals(this.bframesCount, videoParameters.bframesCount) &&
             Objects.equals(this.frameRate, videoParameters.frameRate) &&
-            Objects.equals(this.syncTimestamp, videoParameters.syncTimestamp) &&
             Objects.equals(this.width, videoParameters.width) &&
             Objects.equals(this.height, videoParameters.height) &&
             Objects.equals(this.aspectRatio, videoParameters.aspectRatio) &&
@@ -637,7 +608,7 @@ public class VideoParameters  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, syncTimestamp, width, height, aspectRatio, blackCut, goPStructure, srFactor);
+        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, width, height, aspectRatio, blackCut, goPStructure, srFactor);
     }
     @Override
     public String toString() {
@@ -653,7 +624,6 @@ public class VideoParameters  {
         sb.append("    maxIframesInterval: ").append(toIndentedString(maxIframesInterval)).append("\n");
         sb.append("    bframesCount: ").append(toIndentedString(bframesCount)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
-        sb.append("    syncTimestamp: ").append(toIndentedString(syncTimestamp)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");

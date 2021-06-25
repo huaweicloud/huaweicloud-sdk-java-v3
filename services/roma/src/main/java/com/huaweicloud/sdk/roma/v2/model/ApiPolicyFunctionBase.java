@@ -113,15 +113,15 @@ public class ApiPolicyFunctionBase  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
-    private String version;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="timeout")
     
     private Integer timeout;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="version")
+    
+    private String version;
 
     public ApiPolicyFunctionBase withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
@@ -167,28 +167,6 @@ public class ApiPolicyFunctionBase  {
 
     
 
-    public ApiPolicyFunctionBase withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 版本。字符长度不超过64
-     * @return version
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    
-
     public ApiPolicyFunctionBase withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
@@ -211,6 +189,28 @@ public class ApiPolicyFunctionBase  {
 
     
 
+    public ApiPolicyFunctionBase withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 版本。字符长度不超过64
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -222,12 +222,12 @@ public class ApiPolicyFunctionBase  {
         ApiPolicyFunctionBase apiPolicyFunctionBase = (ApiPolicyFunctionBase) o;
         return Objects.equals(this.functionUrn, apiPolicyFunctionBase.functionUrn) &&
             Objects.equals(this.invocationType, apiPolicyFunctionBase.invocationType) &&
-            Objects.equals(this.version, apiPolicyFunctionBase.version) &&
-            Objects.equals(this.timeout, apiPolicyFunctionBase.timeout);
+            Objects.equals(this.timeout, apiPolicyFunctionBase.timeout) &&
+            Objects.equals(this.version, apiPolicyFunctionBase.version);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, invocationType, version, timeout);
+        return Objects.hash(functionUrn, invocationType, timeout, version);
     }
     @Override
     public String toString() {
@@ -235,8 +235,8 @@ public class ApiPolicyFunctionBase  {
         sb.append("class ApiPolicyFunctionBase {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
         sb.append("    invocationType: ").append(toIndentedString(invocationType)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

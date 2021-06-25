@@ -57,7 +57,7 @@ public class ExportSqlStatementsResponse extends SdkResponse {
     }
 
     /**
-     * 全量SQL集合。
+     * 全量SQL集合。当集合为空时，说明SQL已全部导出。
      * @return statements
      */
     public List<FullSql> getStatements() {

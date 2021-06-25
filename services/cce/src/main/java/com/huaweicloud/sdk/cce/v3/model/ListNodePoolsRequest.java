@@ -25,12 +25,6 @@ public class ListNodePoolsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorStatus")
-    
-    private String errorStatus;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="showDefaultNodePool")
     
     private String showDefaultNodePool;
@@ -53,28 +47,6 @@ public class ListNodePoolsRequest  {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
-    }
-
-    
-
-    public ListNodePoolsRequest withErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 集群状态兼容Error参数，用于API平滑切换。 兼容场景下，errorStatus为空则屏蔽Error状态为Deleting状态。
-     * @return errorStatus
-     */
-    public String getErrorStatus() {
-        return errorStatus;
-    }
-
-    public void setErrorStatus(String errorStatus) {
-        this.errorStatus = errorStatus;
     }
 
     
@@ -111,19 +83,17 @@ public class ListNodePoolsRequest  {
         }
         ListNodePoolsRequest listNodePoolsRequest = (ListNodePoolsRequest) o;
         return Objects.equals(this.clusterId, listNodePoolsRequest.clusterId) &&
-            Objects.equals(this.errorStatus, listNodePoolsRequest.errorStatus) &&
             Objects.equals(this.showDefaultNodePool, listNodePoolsRequest.showDefaultNodePool);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, errorStatus, showDefaultNodePool);
+        return Objects.hash(clusterId, showDefaultNodePool);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNodePoolsRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    errorStatus: ").append(toIndentedString(errorStatus)).append("\n");
         sb.append("    showDefaultNodePool: ").append(toIndentedString(showDefaultNodePool)).append("\n");
         sb.append("}");
         return sb.toString();

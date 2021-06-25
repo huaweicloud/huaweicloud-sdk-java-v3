@@ -141,7 +141,7 @@ public class ListSpaceAnalysisRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="show_instance_info")
     
-    private Boolean showInstanceInfo;
+    private String showInstanceInfo;
     /**
      * 引擎类型
      */
@@ -361,7 +361,7 @@ public class ListSpaceAnalysisRequest  {
 
     
 
-    public ListSpaceAnalysisRequest withShowInstanceInfo(Boolean showInstanceInfo) {
+    public ListSpaceAnalysisRequest withShowInstanceInfo(String showInstanceInfo) {
         this.showInstanceInfo = showInstanceInfo;
         return this;
     }
@@ -370,14 +370,14 @@ public class ListSpaceAnalysisRequest  {
 
 
     /**
-     * 是否返回实例级别数据
+     * 是否返回实例级别数据，取值：true或者false
      * @return showInstanceInfo
      */
-    public Boolean getShowInstanceInfo() {
+    public String getShowInstanceInfo() {
         return showInstanceInfo;
     }
 
-    public void setShowInstanceInfo(Boolean showInstanceInfo) {
+    public void setShowInstanceInfo(String showInstanceInfo) {
         this.showInstanceInfo = showInstanceInfo;
     }
 

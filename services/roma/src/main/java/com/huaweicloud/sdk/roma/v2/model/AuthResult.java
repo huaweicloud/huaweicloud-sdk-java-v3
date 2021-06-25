@@ -20,18 +20,6 @@ import java.util.Objects;
  */
 public class AuthResult  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
-    private String apiName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
-    private String appName;
     /**
      * 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
      */
@@ -135,49 +123,17 @@ public class AuthResult  {
     
     private String errorCode;
 
-    public AuthResult withApiName(String apiName) {
-        this.apiName = apiName;
-        return this;
-    }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="api_name")
     
+    private String apiName;
 
 
-    /**
-     * API名称
-     * @return apiName
-     */
-    public String getApiName() {
-        return apiName;
-    }
-
-    public void setApiName(String apiName) {
-        this.apiName = apiName;
-    }
-
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="app_name")
     
-
-    public AuthResult withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * APP名称
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
-
-    
+    private String appName;
 
     public AuthResult withStatus(StatusEnum status) {
         this.status = status;
@@ -245,6 +201,50 @@ public class AuthResult  {
 
     
 
+    public AuthResult withApiName(String apiName) {
+        this.apiName = apiName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 授权失败的API名称
+     * @return apiName
+     */
+    public String getApiName() {
+        return apiName;
+    }
+
+    public void setApiName(String apiName) {
+        this.apiName = apiName;
+    }
+
+    
+
+    public AuthResult withAppName(String appName) {
+        this.appName = appName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 授权失败的APP名称
+     * @return appName
+     */
+    public String getAppName() {
+        return appName;
+    }
+
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -254,25 +254,25 @@ public class AuthResult  {
             return false;
         }
         AuthResult authResult = (AuthResult) o;
-        return Objects.equals(this.apiName, authResult.apiName) &&
-            Objects.equals(this.appName, authResult.appName) &&
-            Objects.equals(this.status, authResult.status) &&
+        return Objects.equals(this.status, authResult.status) &&
             Objects.equals(this.errorMsg, authResult.errorMsg) &&
-            Objects.equals(this.errorCode, authResult.errorCode);
+            Objects.equals(this.errorCode, authResult.errorCode) &&
+            Objects.equals(this.apiName, authResult.apiName) &&
+            Objects.equals(this.appName, authResult.appName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(apiName, appName, status, errorMsg, errorCode);
+        return Objects.hash(status, errorMsg, errorCode, apiName, appName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AuthResult {\n");
-        sb.append("    apiName: ").append(toIndentedString(apiName)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    apiName: ").append(toIndentedString(apiName)).append("\n");
+        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

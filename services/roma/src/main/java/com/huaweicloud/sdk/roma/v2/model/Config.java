@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.ConfigOutline;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -243,6 +244,31 @@ public class Config  {
          */
         public static final ConfigNameEnum IS_INIT_API_PATH_HASH = new ConfigNameEnum("IS_INIT_API_PATH_HASH");
         
+        /**
+         * Enum APP_QUOTA_NUM_LIMIT for value: "APP_QUOTA_NUM_LIMIT"
+         */
+        public static final ConfigNameEnum APP_QUOTA_NUM_LIMIT = new ConfigNameEnum("APP_QUOTA_NUM_LIMIT");
+        
+        /**
+         * Enum IS_INIT_API_VERSION for value: "IS_INIT_API_VERSION"
+         */
+        public static final ConfigNameEnum IS_INIT_API_VERSION = new ConfigNameEnum("IS_INIT_API_VERSION");
+        
+        /**
+         * Enum PLUGIN_NUM_LIMIT for value: "PLUGIN_NUM_LIMIT"
+         */
+        public static final ConfigNameEnum PLUGIN_NUM_LIMIT = new ConfigNameEnum("PLUGIN_NUM_LIMIT");
+        
+        /**
+         * Enum APICLIENT_FIRST_USE_X_HW_ID_SWITCH for value: "APICLIENT_FIRST_USE_X_HW_ID_SWITCH"
+         */
+        public static final ConfigNameEnum APICLIENT_FIRST_USE_X_HW_ID_SWITCH = new ConfigNameEnum("APICLIENT_FIRST_USE_X_HW_ID_SWITCH");
+        
+        /**
+         * Enum API_TASK_NUM_LIMIT for value: "API_TASK_NUM_LIMIT"
+         */
+        public static final ConfigNameEnum API_TASK_NUM_LIMIT = new ConfigNameEnum("API_TASK_NUM_LIMIT");
+        
 
         private static final Map<String, ConfigNameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -290,6 +316,11 @@ public class Config  {
             map.put("APP_SECRET_SWITCH", APP_SECRET_SWITCH);
             map.put("CASCADE_SWITCH", CASCADE_SWITCH);
             map.put("IS_INIT_API_PATH_HASH", IS_INIT_API_PATH_HASH);
+            map.put("APP_QUOTA_NUM_LIMIT", APP_QUOTA_NUM_LIMIT);
+            map.put("IS_INIT_API_VERSION", IS_INIT_API_VERSION);
+            map.put("PLUGIN_NUM_LIMIT", PLUGIN_NUM_LIMIT);
+            map.put("APICLIENT_FIRST_USE_X_HW_ID_SWITCH", APICLIENT_FIRST_USE_X_HW_ID_SWITCH);
+            map.put("API_TASK_NUM_LIMIT", API_TASK_NUM_LIMIT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -374,7 +405,7 @@ public class Config  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="used")
     
-    private Integer used;
+    private Long used;
 
     public Config withConfigId(String configId) {
         this.configId = configId;
@@ -473,7 +504,7 @@ public class Config  {
 
 
     /**
-     * 配额描述： - API_NUM_LIMIT：租户可以创建的API个数限制 - APP_NUM_LIMIT：租户可以创建的APP个数限制 - APIGROUP_NUM_LIMIT：租户可以创建的API分组个数限制 - ENVIRONMENT_NUM_LIMIT：租户可以创建的环境个数限制 - VARIABLE_NUM_LIMIT：每个API分组上可以创建的环境变量个数限制 - SIGN_NUM_LIMIT：租户可以创建的签名密钥个数限制 - THROTTLE_NUM_LIMIT：租户可以创建的流控策略个数限制 - APIGROUP_DOMAIN_NUM_LIMIT：每个API分组上可以绑定的自定义域名个数限制 - API_VERSION_NUM_LIMIT：每个API可以保留的发布版本个数限制 - VPC_NUM_LIMIT：租户可以创建的VPC通道个数限制 - VPC_INSTANCE_NUM_LIMIT：每个VPC通道上可以绑定的弹性云服务器个数限制 - API_PARAM_NUM_LIMIT：每个API可以设置的参数个数限制 - API_USER_CALL_LIMIT：每个租户的API单位时间内的请求默认限制 - ACL_NUM_LIMIT：每个租户可以创建的ACL策略个数限制 - APP_THROTTLE_LIMIT：特殊应用流控策略个数限制 - USER_THROTTLE_LIMIT：特殊用户流控策略个数限制 - API_NUM_LIMIT_PER_GROUP：租户每个API分组可以创建的API数量限制 - API_POLICY_NUM_LIMIT：每个API可以设置的策略后端个数限制 - API_CONDITION_NUM_LIMIT：每个API策略后端可以设置的条件个数限制 - SL_DOMAIN_CALL_LIMIT：每个二级域名单位时间内的请求默认限制 - ELB_SWITCH：是否启用ELB通道 - AUTHORIZER_NUM_LIMIT：租户可创建的自定义认证个数限制 - AUTHORIZER_IDENTITY_NUM_LIMIT：每个自定义认证可以设置的身份来源个数限制 - APP_CODE_NUM_LIMIT：每个APP可以创建的APP code数量限制 - REGION_MANAGER_WHITELIST_SERVICES：不校验region manager服务白名单列表，暂不支持 - API_SWAGGER_NUM_LIMIT：单个API分组可以绑定的swagger文档数量限制 - API_TAG_NUM_LIMIT：每个API可以设置的标签个数限制 - LTS_SWITCH：是启用LTS上报 - APP_KEY_SECRET_SWITCH：是否打开APP支持自定义KEY和SECRET的开关，1：开启；2：关闭 - RESPONSE_NUM_LIMIT：分组自定义响应个数限制 - CONFIG_NUM_LIMIT_PER_APP：每个APP可以设置的配置项个数限制 - BACKEND_TOKEN_ALLOW_SWITCH：是否支持普通租户透传后端token，1：开启；2：关闭 - APP_TOKEN_SWITCH：是否启用APPTOKEN - API_DESIGNER_SWITCH：是否启用api设计器，1：开启；2：关闭 - APP_API_KEY_SWITCH：是否启用APP_API_KEY认证方式 - APP_BASIC_SWITCH：是否启用APP_BASIC认证方式 - APP_JWT_SWITCH：是否启用APP_JWT认证方式 - APP_ROUTE_SWITCH：是否启用APP路由 - PUBLIC_KEY_SWITCH：是否启用PUBLIK_KEY后端认证方式 - APP_SECRET_SWITCH：是否启用APP_SECRET认证方式 - CASCADE_SWITCH：是否启用级联网关 - IS_INIT_API_PATH_HASH：是否执行过API PATH HASH刷新
+     * 配额描述：   - API_NUM_LIMIT：租户可以创建的API个数限制   - APP_NUM_LIMIT：租户可以创建的APP个数限制   - APIGROUP_NUM_LIMIT：租户可以创建的API分组个数限制   - ENVIRONMENT_NUM_LIMIT：租户可以创建的环境个数限制   - VARIABLE_NUM_LIMIT：每个API分组上可以创建的环境变量个数限制   - SIGN_NUM_LIMIT：租户可以创建的签名密钥个数限制   - THROTTLE_NUM_LIMIT：租户可以创建的流控策略个数限制   - APIGROUP_DOMAIN_NUM_LIMIT：每个API分组上可以绑定的自定义域名个数限制   - API_VERSION_NUM_LIMIT：每个API可以保留的发布版本个数限制   - VPC_NUM_LIMIT：租户可以创建的VPC通道个数限制   - VPC_INSTANCE_NUM_LIMIT：每个VPC通道上可以绑定的弹性云服务器个数限制   - API_PARAM_NUM_LIMIT：每个API可以设置的参数个数限制   - API_USER_CALL_LIMIT：每个租户的API单位时间内的请求默认限制   - ACL_NUM_LIMIT：每个租户可以创建的ACL策略个数限制   - APP_THROTTLE_LIMIT：特殊应用流控策略个数限制   - USER_THROTTLE_LIMIT：特殊用户流控策略个数限制   - API_NUM_LIMIT_PER_GROUP：租户每个API分组可以创建的API数量限制   - API_POLICY_NUM_LIMIT：每个API可以设置的策略后端个数限制   - API_CONDITION_NUM_LIMIT：每个API策略后端可以设置的条件个数限制   - SL_DOMAIN_CALL_LIMIT：每个二级域名单位时间内的请求默认限制   - ELB_SWITCH：是否启用ELB通道   - AUTHORIZER_NUM_LIMIT：租户可创建的自定义认证个数限制   - AUTHORIZER_IDENTITY_NUM_LIMIT：每个自定义认证可以设置的身份来源个数限制   - APP_CODE_NUM_LIMIT：每个APP可以创建的APP code数量限制   - REGION_MANAGER_WHITELIST_SERVICES：不校验region manager服务白名单列表，暂不支持   - API_SWAGGER_NUM_LIMIT：单个API分组可以绑定的swagger文档数量限制   - API_TAG_NUM_LIMIT：每个API可以设置的标签个数限制   - LTS_SWITCH：是启用LTS上报   - APP_KEY_SECRET_SWITCH：是否打开APP支持自定义KEY和SECRET的开关，1：开启；2：关闭   - RESPONSE_NUM_LIMIT：分组自定义响应个数限制   - CONFIG_NUM_LIMIT_PER_APP：每个APP可以设置的配置项个数限制   - BACKEND_TOKEN_ALLOW_SWITCH：是否支持普通租户透传后端token，1：开启；2：关闭   - APP_TOKEN_SWITCH：是否启用APPTOKEN   - API_DESIGNER_SWITCH：是否启用api设计器，1：开启；2：关闭   - APP_API_KEY_SWITCH：是否启用APP_API_KEY认证方式   - APP_BASIC_SWITCH：是否启用APP_BASIC认证方式   - APP_JWT_SWITCH：是否启用APP_JWT认证方式   - APP_ROUTE_SWITCH：是否启用APP路由   - PUBLIC_KEY_SWITCH：是否启用PUBLIK_KEY后端认证方式   - APP_SECRET_SWITCH：是否启用APP_SECRET认证方式   - CASCADE_SWITCH：是否启用级联网关   - IS_INIT_API_PATH_HASH：是否执行过API PATH HASH刷新   - APP_QUOTA_NUM_LIMIT：租户可以创建的客户端配额个数   - IS_INIT_API_VERSION：是否执行过API VERSION CANONICAL PATH刷新   - PLUGIN_NUM_LIMIT：租户可以创建的插件个数   - APICLIENT_FIRST_USE_X_HW_ID_SWITCH：ApiClient是否优先使用x-hw-id校验权限   [- API_TASK_NUM_LIMIT：租户可以创建的API定时任务个数限制](tag:hws)
      * @return remark
      */
     public String getRemark() {
@@ -486,7 +517,7 @@ public class Config  {
 
     
 
-    public Config withUsed(Integer used) {
+    public Config withUsed(Long used) {
         this.used = used;
         return this;
     }
@@ -498,11 +529,11 @@ public class Config  {
      * 该实例对应配额已使用数量
      * @return used
      */
-    public Integer getUsed() {
+    public Long getUsed() {
         return used;
     }
 
-    public void setUsed(Integer used) {
+    public void setUsed(Long used) {
         this.used = used;
     }
 

@@ -1469,6 +1469,38 @@ public class IamMeta {
                 req.setPerPage(v);
             })
         );
+        builder.withRequestField("permission_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getPermissionType, (req, v) -> {
+                req.setPermissionType(v);
+            })
+        );
+        builder.withRequestField("display_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getDisplayName, (req, v) -> {
+                req.setDisplayName(v);
+            })
+        );
+        builder.withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getType, (req, v) -> {
+                req.setType(v);
+            })
+        );
+        builder.withRequestField("catalog",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(KeystoneListPermissionsRequest::getCatalog, (req, v) -> {
+                req.setCatalog(v);
+            })
+        );
 
         // response
         

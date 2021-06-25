@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiGroupReq;
+import com.huaweicloud.sdk.roma.v2.model.ApiGroupCreate;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public class CreateApiGroupV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private ApiGroupReq body;
+    private ApiGroupCreate body;
 
     public CreateApiGroupV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -39,7 +39,7 @@ public class CreateApiGroupV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -52,14 +52,14 @@ public class CreateApiGroupV2Request  {
 
     
 
-    public CreateApiGroupV2Request withBody(ApiGroupReq body) {
+    public CreateApiGroupV2Request withBody(ApiGroupCreate body) {
         this.body = body;
         return this;
     }
 
-    public CreateApiGroupV2Request withBody(Consumer<ApiGroupReq> bodySetter) {
+    public CreateApiGroupV2Request withBody(Consumer<ApiGroupCreate> bodySetter) {
         if(this.body == null ){
-            this.body = new ApiGroupReq();
+            this.body = new ApiGroupCreate();
             bodySetter.accept(this.body);
         }
         
@@ -71,11 +71,11 @@ public class CreateApiGroupV2Request  {
      * Get body
      * @return body
      */
-    public ApiGroupReq getBody() {
+    public ApiGroupCreate getBody() {
         return body;
     }
 
-    public void setBody(ApiGroupReq body) {
+    public void setBody(ApiGroupCreate body) {
         this.body = body;
     }
 

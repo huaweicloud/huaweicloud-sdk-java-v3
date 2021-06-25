@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppConfigModifyRequest;
+import com.huaweicloud.sdk.roma.v2.model.AppConfigModifyRequestV2;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -40,7 +40,7 @@ public class UpdateAppConfigV2Request  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private AppConfigModifyRequest body;
+    private AppConfigModifyRequestV2 body;
 
     public UpdateAppConfigV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -51,7 +51,7 @@ public class UpdateAppConfigV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -95,7 +95,7 @@ public class UpdateAppConfigV2Request  {
 
 
     /**
-     * 应用配置的ID
+     * 应用配置编号
      * @return appConfigId
      */
     public String getAppConfigId() {
@@ -108,14 +108,14 @@ public class UpdateAppConfigV2Request  {
 
     
 
-    public UpdateAppConfigV2Request withBody(AppConfigModifyRequest body) {
+    public UpdateAppConfigV2Request withBody(AppConfigModifyRequestV2 body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAppConfigV2Request withBody(Consumer<AppConfigModifyRequest> bodySetter) {
+    public UpdateAppConfigV2Request withBody(Consumer<AppConfigModifyRequestV2> bodySetter) {
         if(this.body == null ){
-            this.body = new AppConfigModifyRequest();
+            this.body = new AppConfigModifyRequestV2();
             bodySetter.accept(this.body);
         }
         
@@ -127,11 +127,11 @@ public class UpdateAppConfigV2Request  {
      * Get body
      * @return body
      */
-    public AppConfigModifyRequest getBody() {
+    public AppConfigModifyRequestV2 getBody() {
         return body;
     }
 
-    public void setBody(AppConfigModifyRequest body) {
+    public void setBody(AppConfigModifyRequestV2 body) {
         this.body = body;
     }
 

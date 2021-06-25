@@ -126,7 +126,7 @@ public class Identity  {
 
 
     /**
-     * 参数名称
+     * 参数名称。  支持数字，英文，下划线，中划线，点，且只能以数字或英文开头。
      * @return name
      */
     public String getName() {

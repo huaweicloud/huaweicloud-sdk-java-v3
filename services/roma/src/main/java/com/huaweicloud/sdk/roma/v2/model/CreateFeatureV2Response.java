@@ -155,6 +155,31 @@ public class CreateFeatureV2Response extends SdkResponse {
          */
         public static final NameEnum APICLIENT_FIRST_USE_X_HW_ID = new NameEnum("apiclient_first_use_x_hw_id");
         
+        /**
+         * Enum CORS for value: "cors"
+         */
+        public static final NameEnum CORS = new NameEnum("cors");
+        
+        /**
+         * Enum API_TASK for value: "api_task"
+         */
+        public static final NameEnum API_TASK = new NameEnum("api_task");
+        
+        /**
+         * Enum APP_QUOTA for value: "app_quota"
+         */
+        public static final NameEnum APP_QUOTA = new NameEnum("app_quota");
+        
+        /**
+         * Enum APP_ACL for value: "app_acl"
+         */
+        public static final NameEnum APP_ACL = new NameEnum("app_acl");
+        
+        /**
+         * Enum VPC_BACKUP for value: "vpc_backup"
+         */
+        public static final NameEnum VPC_BACKUP = new NameEnum("vpc_backup");
+        
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -184,6 +209,11 @@ public class CreateFeatureV2Response extends SdkResponse {
             map.put("sandbox", SANDBOX);
             map.put("livedata_config", LIVEDATA_CONFIG);
             map.put("apiclient_first_use_x_hw_id", APICLIENT_FIRST_USE_X_HW_ID);
+            map.put("cors", CORS);
+            map.put("api_task", API_TASK);
+            map.put("app_quota", APP_QUOTA);
+            map.put("app_acl", APP_ACL);
+            map.put("vpc_backup", VPC_BACKUP);
             return Collections.unmodifiableMap(map);
         }
 

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiConditionBase;
+import com.huaweicloud.sdk.roma.v2.model.ApiConditionCreate;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyMockBase;
 import com.huaweicloud.sdk.roma.v2.model.ApiPolicyReqBase;
 import com.huaweicloud.sdk.roma.v2.model.BackendParamBase;
@@ -133,7 +133,7 @@ public class ApiPolicyMockCreate  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="conditions")
     
-    private List<ApiConditionBase> conditions = null;
+    private List<ApiConditionCreate> conditions = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -243,13 +243,13 @@ public class ApiPolicyMockCreate  {
 
     
 
-    public ApiPolicyMockCreate withConditions(List<ApiConditionBase> conditions) {
+    public ApiPolicyMockCreate withConditions(List<ApiConditionCreate> conditions) {
         this.conditions = conditions;
         return this;
     }
 
     
-    public ApiPolicyMockCreate addConditionsItem(ApiConditionBase conditionsItem) {
+    public ApiPolicyMockCreate addConditionsItem(ApiConditionCreate conditionsItem) {
         if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -257,7 +257,7 @@ public class ApiPolicyMockCreate  {
         return this;
     }
 
-    public ApiPolicyMockCreate withConditions(Consumer<List<ApiConditionBase>> conditionsSetter) {
+    public ApiPolicyMockCreate withConditions(Consumer<List<ApiConditionCreate>> conditionsSetter) {
         if(this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -269,11 +269,11 @@ public class ApiPolicyMockCreate  {
      * 策略条件列表
      * @return conditions
      */
-    public List<ApiConditionBase> getConditions() {
+    public List<ApiConditionCreate> getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<ApiConditionBase> conditions) {
+    public void setConditions(List<ApiConditionCreate> conditions) {
         this.conditions = conditions;
     }
 

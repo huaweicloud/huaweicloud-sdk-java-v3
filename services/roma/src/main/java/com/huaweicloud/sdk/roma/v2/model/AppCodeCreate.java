@@ -32,7 +32,7 @@ public class AppCodeCreate  {
 
 
     /**
-     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头，64-180个字符。
+     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
      * @return appCode
      */
     public String getAppCode() {

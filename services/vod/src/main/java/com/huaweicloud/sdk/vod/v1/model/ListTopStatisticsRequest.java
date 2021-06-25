@@ -1,0 +1,113 @@
+package com.huaweicloud.sdk.vod.v1.model;
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.function.Consumer;
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class ListTopStatisticsRequest  {
+
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain")
+    
+    private String domain;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="date")
+    
+    private String date;
+
+    public ListTopStatisticsRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 加速域名，格式：www.test1.com。ALL表示查询名下全部域名。（TopN视频信息要么查询单个域名要么查询所有域名） 
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    
+
+    public ListTopStatisticsRequest withDate(String date) {
+        this.date = date;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 查询日期，格式为yyyymmdd。 1）  date必须为昨天或之前的日期 2）  只能查最近一个月内的数据 
+     * @return date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ListTopStatisticsRequest listTopStatisticsRequest = (ListTopStatisticsRequest) o;
+        return Objects.equals(this.domain, listTopStatisticsRequest.domain) &&
+            Objects.equals(this.date, listTopStatisticsRequest.date);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(domain, date);
+    }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListTopStatisticsRequest {\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    date: ").append(toIndentedString(date)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+    
+}
+

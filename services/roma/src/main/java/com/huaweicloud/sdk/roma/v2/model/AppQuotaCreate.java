@@ -156,7 +156,7 @@ public class AppQuotaCreate  {
 
 
     /**
-     * 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3-255字符
+     * 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头
      * @return name
      */
     public String getName() {
@@ -266,7 +266,7 @@ public class AppQuotaCreate  {
 
 
     /**
-     * 参数说明和描述
+     * 参数说明和描述。  不支持<，>字符
      * @return remark
      */
     public String getRemark() {

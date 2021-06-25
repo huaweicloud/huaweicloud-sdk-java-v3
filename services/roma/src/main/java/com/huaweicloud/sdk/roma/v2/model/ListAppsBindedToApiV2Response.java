@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppAuthBindedApiResp;
+import com.huaweicloud.sdk.roma.v2.model.ApiAuthInfo;
 import com.huaweicloud.sdk.roma.v2.model.BasePage;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auths")
     
-    private List<AppAuthBindedApiResp> auths = null;
+    private List<ApiAuthInfo> auths = null;
     
     public ListAppsBindedToApiV2Response withSize(Integer size) {
         this.size = size;
@@ -85,13 +85,13 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
 
     
 
-    public ListAppsBindedToApiV2Response withAuths(List<AppAuthBindedApiResp> auths) {
+    public ListAppsBindedToApiV2Response withAuths(List<ApiAuthInfo> auths) {
         this.auths = auths;
         return this;
     }
 
     
-    public ListAppsBindedToApiV2Response addAuthsItem(AppAuthBindedApiResp authsItem) {
+    public ListAppsBindedToApiV2Response addAuthsItem(ApiAuthInfo authsItem) {
         if(this.auths == null) {
             this.auths = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
         return this;
     }
 
-    public ListAppsBindedToApiV2Response withAuths(Consumer<List<AppAuthBindedApiResp>> authsSetter) {
+    public ListAppsBindedToApiV2Response withAuths(Consumer<List<ApiAuthInfo>> authsSetter) {
         if(this.auths == null) {
             this.auths = new ArrayList<>();
         }
@@ -111,11 +111,11 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
      * 本次返回的API列表
      * @return auths
      */
-    public List<AppAuthBindedApiResp> getAuths() {
+    public List<ApiAuthInfo> getAuths() {
         return auths;
     }
 
-    public void setAuths(List<AppAuthBindedApiResp> auths) {
+    public void setAuths(List<ApiAuthInfo> auths) {
         this.auths = auths;
     }
 

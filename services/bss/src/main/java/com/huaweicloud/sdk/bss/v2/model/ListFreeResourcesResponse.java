@@ -79,7 +79,7 @@ public class ListFreeResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 资源包信息列表。
+     * 资源包信息列表，具体参见表2。
      * @return freeResourcePackages
      */
     public List<FreeResourcePackage> getFreeResourcePackages() {

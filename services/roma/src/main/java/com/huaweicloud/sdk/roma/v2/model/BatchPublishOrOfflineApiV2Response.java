@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.roma.v2.model.BatchFailure;
-import com.huaweicloud.sdk.roma.v2.model.BatchSuccess;
+import com.huaweicloud.sdk.roma.v2.model.PublishResp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -27,7 +27,7 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="success")
     
-    private List<BatchSuccess> success = null;
+    private List<PublishResp> success = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -35,13 +35,13 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
     
     private List<BatchFailure> failure = null;
     
-    public BatchPublishOrOfflineApiV2Response withSuccess(List<BatchSuccess> success) {
+    public BatchPublishOrOfflineApiV2Response withSuccess(List<PublishResp> success) {
         this.success = success;
         return this;
     }
 
     
-    public BatchPublishOrOfflineApiV2Response addSuccessItem(BatchSuccess successItem) {
+    public BatchPublishOrOfflineApiV2Response addSuccessItem(PublishResp successItem) {
         if(this.success == null) {
             this.success = new ArrayList<>();
         }
@@ -49,7 +49,7 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
         return this;
     }
 
-    public BatchPublishOrOfflineApiV2Response withSuccess(Consumer<List<BatchSuccess>> successSetter) {
+    public BatchPublishOrOfflineApiV2Response withSuccess(Consumer<List<PublishResp>> successSetter) {
         if(this.success == null) {
             this.success = new ArrayList<>();
         }
@@ -61,11 +61,11 @@ public class BatchPublishOrOfflineApiV2Response extends SdkResponse {
      * 发布或下线成功的信息
      * @return success
      */
-    public List<BatchSuccess> getSuccess() {
+    public List<PublishResp> getSuccess() {
         return success;
     }
 
-    public void setSuccess(List<BatchSuccess> success) {
+    public void setSuccess(List<PublishResp> success) {
         this.success = success;
     }
 

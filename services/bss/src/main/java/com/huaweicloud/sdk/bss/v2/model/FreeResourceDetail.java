@@ -130,7 +130,7 @@ public class FreeResourceDetail  {
 
 
     /**
-     * 重置周期，只有quota_reuse_mode为可重置，该字段才有意义。 1：小时2：天3：周4：月5：年|
+     * 重置周期，只有quota_reuse_mode为可重置，该字段才有意义。 1：小时2：天3：周4：月5：年
      * @return quotaReuseCycle
      */
     public Integer getQuotaReuseCycle() {

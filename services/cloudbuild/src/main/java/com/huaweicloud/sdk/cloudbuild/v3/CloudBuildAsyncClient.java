@@ -20,28 +20,6 @@ public class CloudBuildAsyncClient {
 
 
     /**
-     * 新建构建任务
-     * 新建构建任务,可传自定义参数。
-     *
-     * @param CreateJobRequest 请求对象
-     * @return CompletableFuture<CreateJobResponse>
-     */
-    public CompletableFuture<CreateJobResponse> createJobAsync(CreateJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudBuildMeta.createJob);
-    }
-
-    /**
-     * 新建构建任务
-     * 新建构建任务,可传自定义参数。
-     *
-     * @param CreateJobRequest 请求对象
-     * @return AsyncInvoker<CreateJobRequest, CreateJobResponse>
-     */
-    public AsyncInvoker<CreateJobRequest, CreateJobResponse> createJobAsyncInvoker(CreateJobRequest request) {
-        return new AsyncInvoker<CreateJobRequest, CreateJobResponse>(request, CloudBuildMeta.createJob, hcClient);
-    }
-
-    /**
      * KeyStore文件下载
      * 下载指定租户下的KeyStore文件
      *

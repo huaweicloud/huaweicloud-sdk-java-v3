@@ -62,9 +62,9 @@ public class ListDbUsersRequest  {
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
         
         /**
-         * Enum E_USE for value: "e-use"
+         * Enum EN_US for value: "en-us"
          */
-        public static final XLanguageEnum E_USE = new XLanguageEnum("e-use");
+        public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
         
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
@@ -72,7 +72,7 @@ public class ListDbUsersRequest  {
         private static Map<String, XLanguageEnum> createStaticFields() {
             Map<String, XLanguageEnum> map = new HashMap<>();
             map.put("zh-cn", ZH_CN);
-            map.put("e-use", E_USE);
+            map.put("en-us", EN_US);
             return Collections.unmodifiableMap(map);
         }
 

@@ -184,7 +184,7 @@ public class ListFreeResourcesReq  {
 
 
     /**
-     * 状态： 0：未生效1：生效中2：已用完3：已失效
+     * 状态： 0：未生效1：生效中2：已用完3：已失效4：已退订
      * minimum: 0
      * maximum: 4
      * @return status

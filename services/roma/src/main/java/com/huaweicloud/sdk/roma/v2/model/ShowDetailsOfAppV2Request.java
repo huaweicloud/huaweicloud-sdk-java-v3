@@ -38,7 +38,7 @@ public class ShowDetailsOfAppV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,7 +60,7 @@ public class ShowDetailsOfAppV2Request  {
 
 
     /**
-     * APP的编号
+     * 应用编号
      * @return appId
      */
     public String getAppId() {

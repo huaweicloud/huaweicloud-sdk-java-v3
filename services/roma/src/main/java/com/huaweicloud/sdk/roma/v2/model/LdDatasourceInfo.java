@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.roma.v2.model.LdDatasourceCreate;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class LdDatasourceInfo  {
     
     private String name;
     /**
-     * 数据源类型
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
      */
     public static final class TypeEnum {
 
@@ -64,6 +65,16 @@ public class LdDatasourceInfo  {
         public static final TypeEnum HIVE = new TypeEnum("hive");
         
         /**
+         * Enum MSSQL for value: "mssql"
+         */
+        public static final TypeEnum MSSQL = new TypeEnum("mssql");
+        
+        /**
+         * Enum SQLSERVER for value: "sqlserver"
+         */
+        public static final TypeEnum SQLSERVER = new TypeEnum("sqlserver");
+        
+        /**
          * Enum GAUSS200 for value: "gauss200"
          */
         public static final TypeEnum GAUSS200 = new TypeEnum("gauss200");
@@ -72,6 +83,16 @@ public class LdDatasourceInfo  {
          * Enum DWS for value: "dws"
          */
         public static final TypeEnum DWS = new TypeEnum("dws");
+        
+        /**
+         * Enum GAUSS100 for value: "gauss100"
+         */
+        public static final TypeEnum GAUSS100 = new TypeEnum("gauss100");
+        
+        /**
+         * Enum ZENITH for value: "zenith"
+         */
+        public static final TypeEnum ZENITH = new TypeEnum("zenith");
         
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
@@ -84,8 +105,12 @@ public class LdDatasourceInfo  {
             map.put("redis", REDIS);
             map.put("postgresql", POSTGRESQL);
             map.put("hive", HIVE);
+            map.put("mssql", MSSQL);
+            map.put("sqlserver", SQLSERVER);
             map.put("gauss200", GAUSS200);
             map.put("dws", DWS);
+            map.put("gauss100", GAUSS100);
+            map.put("zenith", ZENITH);
             return Collections.unmodifiableMap(map);
         }
 
@@ -162,6 +187,24 @@ public class LdDatasourceInfo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="user")
+    
+    private String user;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="password")
+    
+    private String password;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="remotepath")
+    
+    private String remotepath;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
@@ -215,7 +258,7 @@ public class LdDatasourceInfo  {
 
 
     /**
-     * 数据源类型
+     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
      * @return type
      */
     public TypeEnum getType() {
@@ -268,6 +311,72 @@ public class LdDatasourceInfo  {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    
+
+    public LdDatasourceInfo withUser(String user) {
+        this.user = user;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户名
+     * @return user
+     */
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    
+
+    public LdDatasourceInfo withPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 密码。  敏感信息不作为响应返回
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
+
+    public LdDatasourceInfo withRemotepath(String remotepath) {
+        this.remotepath = remotepath;
+        return this;
+    }
+
+    
+
+
+    /**
+     * ftp上传路径  预留字段，暂不支持。
+     * @return remotepath
+     */
+    public String getRemotepath() {
+        return remotepath;
+    }
+
+    public void setRemotepath(String remotepath) {
+        this.remotepath = remotepath;
     }
 
     
@@ -373,6 +482,9 @@ public class LdDatasourceInfo  {
             Objects.equals(this.type, ldDatasourceInfo.type) &&
             Objects.equals(this.description, ldDatasourceInfo.description) &&
             Objects.equals(this.url, ldDatasourceInfo.url) &&
+            Objects.equals(this.user, ldDatasourceInfo.user) &&
+            Objects.equals(this.password, ldDatasourceInfo.password) &&
+            Objects.equals(this.remotepath, ldDatasourceInfo.remotepath) &&
             Objects.equals(this.id, ldDatasourceInfo.id) &&
             Objects.equals(this.status, ldDatasourceInfo.status) &&
             Objects.equals(this.createdTime, ldDatasourceInfo.createdTime) &&
@@ -380,7 +492,7 @@ public class LdDatasourceInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, description, url, id, status, createdTime, modifiedTime);
+        return Objects.hash(name, type, description, url, user, password, remotepath, id, status, createdTime, modifiedTime);
     }
     @Override
     public String toString() {
@@ -390,6 +502,9 @@ public class LdDatasourceInfo  {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    user: ").append(toIndentedString(user)).append("\n");
+        sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    remotepath: ").append(toIndentedString(remotepath)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

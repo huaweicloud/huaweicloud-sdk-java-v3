@@ -22,7 +22,7 @@ public class HttpInfoResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="https_status")
     
-    private String httpsStatus;
+    private Integer httpsStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -72,7 +72,7 @@ public class HttpInfoResponseBody  {
     
     private Long expirationTime;
 
-    public HttpInfoResponseBody withHttpsStatus(String httpsStatus) {
+    public HttpInfoResponseBody withHttpsStatus(Integer httpsStatus) {
         this.httpsStatus = httpsStatus;
         return this;
     }
@@ -84,11 +84,11 @@ public class HttpInfoResponseBody  {
      * HTTPS证书是否启用。0：不启用，此时无需填写证书及私钥参数；1：启用HTTPS加速并协议跟随回源；2：启用HTTPS加速并HTTP回源，开启时需要传递证书及私钥
      * @return httpsStatus
      */
-    public String getHttpsStatus() {
+    public Integer getHttpsStatus() {
         return httpsStatus;
     }
 
-    public void setHttpsStatus(String httpsStatus) {
+    public void setHttpsStatus(Integer httpsStatus) {
         this.httpsStatus = httpsStatus;
     }
 

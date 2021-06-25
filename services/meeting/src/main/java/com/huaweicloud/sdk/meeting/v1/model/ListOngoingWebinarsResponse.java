@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.meeting.v1.model.OpenPageInfo;
+import com.huaweicloud.sdk.meeting.v1.model.OpenWebinarOngoingInfo;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,6 +41,12 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
     
     private Long count;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="data")
+    
+    private List<OpenWebinarOngoingInfo> data = null;
+    
     public ListOngoingWebinarsResponse withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -104,6 +113,42 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
 
     
 
+    public ListOngoingWebinarsResponse withData(List<OpenWebinarOngoingInfo> data) {
+        this.data = data;
+        return this;
+    }
+
+    
+    public ListOngoingWebinarsResponse addDataItem(OpenWebinarOngoingInfo dataItem) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        this.data.add(dataItem);
+        return this;
+    }
+
+    public ListOngoingWebinarsResponse withData(Consumer<List<OpenWebinarOngoingInfo>> dataSetter) {
+        if(this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        dataSetter.accept(this.data);
+        return this;
+    }
+
+    /**
+     * Get data
+     * @return data
+     */
+    public List<OpenWebinarOngoingInfo> getData() {
+        return data;
+    }
+
+    public void setData(List<OpenWebinarOngoingInfo> data) {
+        this.data = data;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -115,11 +160,12 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
         ListOngoingWebinarsResponse listOngoingWebinarsResponse = (ListOngoingWebinarsResponse) o;
         return Objects.equals(this.offset, listOngoingWebinarsResponse.offset) &&
             Objects.equals(this.limit, listOngoingWebinarsResponse.limit) &&
-            Objects.equals(this.count, listOngoingWebinarsResponse.count);
+            Objects.equals(this.count, listOngoingWebinarsResponse.count) &&
+            Objects.equals(this.data, listOngoingWebinarsResponse.data);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, count);
+        return Objects.hash(offset, limit, count, data);
     }
     @Override
     public String toString() {
@@ -128,6 +174,7 @@ public class ListOngoingWebinarsResponse extends SdkResponse {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.apig.v2.model.BasePage;
 import com.huaweicloud.sdk.apig.v2.model.ThrottleBindingApiResp;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,15 +25,15 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
-    private Integer total;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
     private Integer size;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="total")
+    
+    private Long total;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -40,28 +41,6 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
     
     private List<ThrottleBindingApiResp> apis = null;
     
-    public ListApisBindedToRequestThrottlingPolicyV2Response withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 满足条件的API总数
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
-    
-
     public ListApisBindedToRequestThrottlingPolicyV2Response withSize(Integer size) {
         this.size = size;
         return this;
@@ -71,7 +50,7 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
 
 
     /**
-     * 本次返回的API列表长度
+     * 本次返回的列表长度
      * @return size
      */
     public Integer getSize() {
@@ -80,6 +59,28 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    
+
+    public ListApisBindedToRequestThrottlingPolicyV2Response withTotal(Long total) {
+        this.total = total;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 满足条件的记录数
+     * @return total
+     */
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
     }
 
     
@@ -129,20 +130,20 @@ public class ListApisBindedToRequestThrottlingPolicyV2Response extends SdkRespon
             return false;
         }
         ListApisBindedToRequestThrottlingPolicyV2Response listApisBindedToRequestThrottlingPolicyV2Response = (ListApisBindedToRequestThrottlingPolicyV2Response) o;
-        return Objects.equals(this.total, listApisBindedToRequestThrottlingPolicyV2Response.total) &&
-            Objects.equals(this.size, listApisBindedToRequestThrottlingPolicyV2Response.size) &&
+        return Objects.equals(this.size, listApisBindedToRequestThrottlingPolicyV2Response.size) &&
+            Objects.equals(this.total, listApisBindedToRequestThrottlingPolicyV2Response.total) &&
             Objects.equals(this.apis, listApisBindedToRequestThrottlingPolicyV2Response.apis);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(total, size, apis);
+        return Objects.hash(size, total, apis);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListApisBindedToRequestThrottlingPolicyV2Response {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    apis: ").append(toIndentedString(apis)).append("\n");
         sb.append("}");
         return sb.toString();

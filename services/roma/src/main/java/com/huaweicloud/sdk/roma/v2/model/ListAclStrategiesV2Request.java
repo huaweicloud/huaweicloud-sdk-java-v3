@@ -25,6 +25,18 @@ public class ListAclStrategiesV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Long offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
@@ -49,18 +61,6 @@ public class ListAclStrategiesV2Request  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
-    private Long offset;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="precise_search")
     
     private String preciseSearch;
@@ -74,7 +74,7 @@ public class ListAclStrategiesV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -83,6 +83,52 @@ public class ListAclStrategiesV2Request  {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    
+
+    public ListAclStrategiesV2Request withOffset(Long offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * @return offset
+     */
+    public Long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Long offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ListAclStrategiesV2Request withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 每页显示的条目数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -175,52 +221,6 @@ public class ListAclStrategiesV2Request  {
 
     
 
-    public ListAclStrategiesV2Request withOffset(Long offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
-    public Long getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Long offset) {
-        this.offset = offset;
-    }
-
-    
-
-    public ListAclStrategiesV2Request withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    
-
     public ListAclStrategiesV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
@@ -253,29 +253,29 @@ public class ListAclStrategiesV2Request  {
         }
         ListAclStrategiesV2Request listAclStrategiesV2Request = (ListAclStrategiesV2Request) o;
         return Objects.equals(this.instanceId, listAclStrategiesV2Request.instanceId) &&
+            Objects.equals(this.offset, listAclStrategiesV2Request.offset) &&
+            Objects.equals(this.limit, listAclStrategiesV2Request.limit) &&
             Objects.equals(this.id, listAclStrategiesV2Request.id) &&
             Objects.equals(this.name, listAclStrategiesV2Request.name) &&
             Objects.equals(this.aclType, listAclStrategiesV2Request.aclType) &&
             Objects.equals(this.entityType, listAclStrategiesV2Request.entityType) &&
-            Objects.equals(this.offset, listAclStrategiesV2Request.offset) &&
-            Objects.equals(this.limit, listAclStrategiesV2Request.limit) &&
             Objects.equals(this.preciseSearch, listAclStrategiesV2Request.preciseSearch);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, id, name, aclType, entityType, offset, limit, preciseSearch);
+        return Objects.hash(instanceId, offset, limit, id, name, aclType, entityType, preciseSearch);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAclStrategiesV2Request {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    aclType: ").append(toIndentedString(aclType)).append("\n");
         sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("}");
         return sb.toString();

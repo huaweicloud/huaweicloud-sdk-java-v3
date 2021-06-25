@@ -52,7 +52,7 @@ public class HttpsDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="certificate_type")
     
-    private String certificateType;
+    private Integer certificateType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -194,7 +194,7 @@ public class HttpsDetail  {
 
     
 
-    public HttpsDetail withCertificateType(String certificateType) {
+    public HttpsDetail withCertificateType(Integer certificateType) {
         this.certificateType = certificateType;
         return this;
     }
@@ -206,11 +206,11 @@ public class HttpsDetail  {
      * 0：自有证书  1：云托管证书
      * @return certificateType
      */
-    public String getCertificateType() {
+    public Integer getCertificateType() {
         return certificateType;
     }
 
-    public void setCertificateType(String certificateType) {
+    public void setCertificateType(Integer certificateType) {
         this.certificateType = certificateType;
     }
 

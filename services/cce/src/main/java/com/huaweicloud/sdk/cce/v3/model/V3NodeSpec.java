@@ -109,12 +109,6 @@ public class V3NodeSpec  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="faultDomain")
-    
-    private String faultDomain;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="dedicatedHostId")
     
     private String dedicatedHostId;
@@ -499,28 +493,6 @@ public class V3NodeSpec  {
 
     
 
-    public V3NodeSpec withFaultDomain(String faultDomain) {
-        this.faultDomain = faultDomain;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 云服务器故障域，将节点创建在指定故障域下。\\n >必须同时指定故障域策略的云服务器ID，且需要开启故障域特性开关 
-     * @return faultDomain
-     */
-    public String getFaultDomain() {
-        return faultDomain;
-    }
-
-    public void setFaultDomain(String faultDomain) {
-        this.faultDomain = faultDomain;
-    }
-
-    
-
     public V3NodeSpec withDedicatedHostId(String dedicatedHostId) {
         this.dedicatedHostId = dedicatedHostId;
         return this;
@@ -681,7 +653,6 @@ public class V3NodeSpec  {
             Objects.equals(this.taints, v3NodeSpec.taints) &&
             Objects.equals(this.k8sTags, v3NodeSpec.k8sTags) &&
             Objects.equals(this.ecsGroupId, v3NodeSpec.ecsGroupId) &&
-            Objects.equals(this.faultDomain, v3NodeSpec.faultDomain) &&
             Objects.equals(this.dedicatedHostId, v3NodeSpec.dedicatedHostId) &&
             Objects.equals(this.offloadNode, v3NodeSpec.offloadNode) &&
             Objects.equals(this.userTags, v3NodeSpec.userTags) &&
@@ -690,7 +661,7 @@ public class V3NodeSpec  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(flavor, az, os, login, rootVolume, dataVolumes, publicIP, nodeNicSpec, count, billingMode, taints, k8sTags, ecsGroupId, faultDomain, dedicatedHostId, offloadNode, userTags, runtime, extendParam);
+        return Objects.hash(flavor, az, os, login, rootVolume, dataVolumes, publicIP, nodeNicSpec, count, billingMode, taints, k8sTags, ecsGroupId, dedicatedHostId, offloadNode, userTags, runtime, extendParam);
     }
     @Override
     public String toString() {
@@ -709,7 +680,6 @@ public class V3NodeSpec  {
         sb.append("    taints: ").append(toIndentedString(taints)).append("\n");
         sb.append("    k8sTags: ").append(toIndentedString(k8sTags)).append("\n");
         sb.append("    ecsGroupId: ").append(toIndentedString(ecsGroupId)).append("\n");
-        sb.append("    faultDomain: ").append(toIndentedString(faultDomain)).append("\n");
         sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("    offloadNode: ").append(toIndentedString(offloadNode)).append("\n");
         sb.append("    userTags: ").append(toIndentedString(userTags)).append("\n");

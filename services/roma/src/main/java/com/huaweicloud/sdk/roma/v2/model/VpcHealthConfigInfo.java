@@ -340,7 +340,7 @@ public class VpcHealthConfigInfo  {
 
 
     /**
-     * 健康检查的目标端口，缺省时为VPC中主机的端口号。
+     * 健康检查的目标端口，缺省或port = 0时为VPC中主机的端口号。
      * @return port
      */
     public Integer getPort() {

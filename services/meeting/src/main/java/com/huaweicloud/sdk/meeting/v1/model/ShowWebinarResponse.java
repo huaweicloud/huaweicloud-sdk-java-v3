@@ -11,7 +11,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.meeting.v1.model.MeetingStatus;
+import com.huaweicloud.sdk.meeting.v1.model.OpenNotifySetting;
 import com.huaweicloud.sdk.meeting.v1.model.OpenWebinarBaseInfo;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -147,6 +150,18 @@ public class ShowWebinarResponse extends SdkResponse {
     
     private String audiencePasswd;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="notifySetting")
+    
+    private OpenNotifySetting notifySetting;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="attendees")
+    
+    private List<String> attendees = null;
+    
     public ShowWebinarResponse withConferenceId(String conferenceId) {
         this.conferenceId = conferenceId;
         return this;
@@ -609,6 +624,71 @@ public class ShowWebinarResponse extends SdkResponse {
 
     
 
+    public ShowWebinarResponse withNotifySetting(OpenNotifySetting notifySetting) {
+        this.notifySetting = notifySetting;
+        return this;
+    }
+
+    public ShowWebinarResponse withNotifySetting(Consumer<OpenNotifySetting> notifySettingSetter) {
+        if(this.notifySetting == null ){
+            this.notifySetting = new OpenNotifySetting();
+            notifySettingSetter.accept(this.notifySetting);
+        }
+        
+        return this;
+    }
+
+
+    /**
+     * Get notifySetting
+     * @return notifySetting
+     */
+    public OpenNotifySetting getNotifySetting() {
+        return notifySetting;
+    }
+
+    public void setNotifySetting(OpenNotifySetting notifySetting) {
+        this.notifySetting = notifySetting;
+    }
+
+    
+
+    public ShowWebinarResponse withAttendees(List<String> attendees) {
+        this.attendees = attendees;
+        return this;
+    }
+
+    
+    public ShowWebinarResponse addAttendeesItem(String attendeesItem) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
+        this.attendees.add(attendeesItem);
+        return this;
+    }
+
+    public ShowWebinarResponse withAttendees(Consumer<List<String>> attendeesSetter) {
+        if(this.attendees == null) {
+            this.attendees = new ArrayList<>();
+        }
+        attendeesSetter.accept(this.attendees);
+        return this;
+    }
+
+    /**
+     * Get attendees
+     * @return attendees
+     */
+    public List<String> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(List<String> attendees) {
+        this.attendees = attendees;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -638,11 +718,13 @@ public class ShowWebinarResponse extends SdkResponse {
             Objects.equals(this.guestJoinUri, showWebinarResponse.guestJoinUri) &&
             Objects.equals(this.guestPasswd, showWebinarResponse.guestPasswd) &&
             Objects.equals(this.audienceJoinUri, showWebinarResponse.audienceJoinUri) &&
-            Objects.equals(this.audiencePasswd, showWebinarResponse.audiencePasswd);
+            Objects.equals(this.audiencePasswd, showWebinarResponse.audiencePasswd) &&
+            Objects.equals(this.notifySetting, showWebinarResponse.notifySetting) &&
+            Objects.equals(this.attendees, showWebinarResponse.attendees);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceId, corpId, subject, description, startTime, duration, timeZoneId, state, scheduserId, deptName, scheduserName, vmrPkgName, callRestriction, scope, audienceScope, chairJoinUri, chairPasswd, guestJoinUri, guestPasswd, audienceJoinUri, audiencePasswd);
+        return Objects.hash(conferenceId, corpId, subject, description, startTime, duration, timeZoneId, state, scheduserId, deptName, scheduserName, vmrPkgName, callRestriction, scope, audienceScope, chairJoinUri, chairPasswd, guestJoinUri, guestPasswd, audienceJoinUri, audiencePasswd, notifySetting, attendees);
     }
     @Override
     public String toString() {
@@ -669,6 +751,8 @@ public class ShowWebinarResponse extends SdkResponse {
         sb.append("    guestPasswd: ").append(toIndentedString(guestPasswd)).append("\n");
         sb.append("    audienceJoinUri: ").append(toIndentedString(audienceJoinUri)).append("\n");
         sb.append("    audiencePasswd: ").append(toIndentedString(audiencePasswd)).append("\n");
+        sb.append("    notifySetting: ").append(toIndentedString(notifySetting)).append("\n");
+        sb.append("    attendees: ").append(toIndentedString(attendees)).append("\n");
         sb.append("}");
         return sb.toString();
     }

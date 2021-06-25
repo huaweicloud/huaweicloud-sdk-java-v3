@@ -633,7 +633,7 @@ public class CdnMeta {
         builder.withRequestField("url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            String.class,
             f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getUrl, (req, v) -> {
                 req.setUrl(v);
             })
@@ -917,13 +917,32 @@ public class CdnMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRefererRequest, ShowRefererResponse> showReferer = genForshowReferer();
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForshowQuota();
 
-    private static HttpRequestDef<ShowRefererRequest, ShowRefererResponse> genForshowReferer() {
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForshowQuota() {
         // basic
-        HttpRequestDef.Builder<ShowRefererRequest, ShowRefererResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowRefererRequest.class, ShowRefererResponse.class)
-                .withName("ShowReferer")
+        HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
+                .withName("ShowQuota")
+                .withUri("/v1.0/cdn/quota")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReferRequest, ShowReferResponse> showRefer = genForshowRefer();
+
+    private static HttpRequestDef<ShowReferRequest, ShowReferResponse> genForshowRefer() {
+        // basic
+        HttpRequestDef.Builder<ShowReferRequest, ShowReferResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReferRequest.class, ShowReferResponse.class)
+                .withName("ShowRefer")
                 .withUri("/v1.0/cdn/domains/{domain_id}/referer")
                 .withContentType("application/json");
 
@@ -932,7 +951,7 @@ public class CdnMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(ShowRefererRequest::getDomainId, (req, v) -> {
+            f -> f.withMarshaller(ShowReferRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
             })
         );
@@ -940,7 +959,7 @@ public class CdnMeta {
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowRefererRequest::getEnterpriseProjectId, (req, v) -> {
+            f -> f.withMarshaller(ShowReferRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
             })
         );

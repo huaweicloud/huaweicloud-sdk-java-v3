@@ -45,7 +45,7 @@ public class UpdateApiV2Request  {
 
 
     /**
-     * 实例编号
+     * 实例ID
      * @return instanceId
      */
     public String getInstanceId() {
@@ -67,7 +67,7 @@ public class UpdateApiV2Request  {
 
 
     /**
-     * API的编号，可通过查询API信息获取该编号。
+     * API的编号
      * @return apiId
      */
     public String getApiId() {
