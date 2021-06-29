@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.CreateAssetByFileReq;
+import com.huaweicloud.sdk.vod.v1.model.CreateAssetByFileUploadReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateAssetByFileUploadRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreateAssetByFileReq body;
+    private CreateAssetByFileUploadReq body;
 
-    public CreateAssetByFileUploadRequest withBody(CreateAssetByFileReq body) {
+    public CreateAssetByFileUploadRequest withBody(CreateAssetByFileUploadReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateAssetByFileUploadRequest withBody(Consumer<CreateAssetByFileReq> bodySetter) {
+    public CreateAssetByFileUploadRequest withBody(Consumer<CreateAssetByFileUploadReq> bodySetter) {
         if(this.body == null ){
-            this.body = new CreateAssetByFileReq();
+            this.body = new CreateAssetByFileUploadReq();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class CreateAssetByFileUploadRequest  {
      * Get body
      * @return body
      */
-    public CreateAssetByFileReq getBody() {
+    public CreateAssetByFileUploadReq getBody() {
         return body;
     }
 
-    public void setBody(CreateAssetByFileReq body) {
+    public void setBody(CreateAssetByFileUploadReq body) {
         this.body = body;
     }
 

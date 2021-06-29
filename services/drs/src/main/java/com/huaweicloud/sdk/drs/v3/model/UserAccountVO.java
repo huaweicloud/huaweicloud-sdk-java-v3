@@ -71,7 +71,7 @@ public class UserAccountVO  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="selected")
     
-    private String selected;
+    private Boolean selected;
 
     public UserAccountVO withId(String id) {
         this.id = id;
@@ -277,7 +277,7 @@ public class UserAccountVO  {
 
     
 
-    public UserAccountVO withSelected(String selected) {
+    public UserAccountVO withSelected(Boolean selected) {
         this.selected = selected;
         return this;
     }
@@ -289,11 +289,11 @@ public class UserAccountVO  {
      * 是否选择。
      * @return selected
      */
-    public String getSelected() {
+    public Boolean getSelected() {
         return selected;
     }
 
-    public void setSelected(String selected) {
+    public void setSelected(Boolean selected) {
         this.selected = selected;
     }
 

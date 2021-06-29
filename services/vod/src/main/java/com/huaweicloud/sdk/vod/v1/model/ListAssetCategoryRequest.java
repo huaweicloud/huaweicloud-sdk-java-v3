@@ -32,7 +32,7 @@ public class ListAssetCategoryRequest  {
 
 
     /**
-     * 视频分类ID 
+     * 视频分类ID。 若设置为0，则查询所有一级分类。
      * minimum: 0
      * @return id
      */

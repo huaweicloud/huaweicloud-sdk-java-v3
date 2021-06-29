@@ -25,18 +25,6 @@ public class ShowAssetTempAuthorityRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_md5")
-    
-    private String contentMd5;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_type")
-    
-    private String contentType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bucket")
     
     private String bucket;
@@ -46,6 +34,18 @@ public class ShowAssetTempAuthorityRequest  {
     @JsonProperty(value="object_key")
     
     private String objectKey;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="content_type")
+    
+    private String contentType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="content_md5")
+    
+    private String contentMd5;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -68,7 +68,7 @@ public class ShowAssetTempAuthorityRequest  {
 
 
     /**
-     * http方法<br/>初始化多段上传任务为POST,列举多段上传任务为GET,<br/> 上传段为PUT,合并段为POST,列举已上传段为GET,取消段合并为DELETE。 
+     * 分段上传时调用OBS接口的HTTP方法，具体操作需要的HTTP方法请参考OBS的接口文档。  - 初始化上传任务：POST - 上传段：PUT - 合并段：POST - 取消段：DELETE - 列举已上传段：GET
      * @return httpVerb
      */
     public String getHttpVerb() {
@@ -77,50 +77,6 @@ public class ShowAssetTempAuthorityRequest  {
 
     public void setHttpVerb(String httpVerb) {
         this.httpVerb = httpVerb;
-    }
-
-    
-
-    public ShowAssetTempAuthorityRequest withContentMd5(String contentMd5) {
-        this.contentMd5 = contentMd5;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 上传段时,每段媒资内容的md5值,非上传段操作不涉及此字段<br/> 
-     * @return contentMd5
-     */
-    public String getContentMd5() {
-        return contentMd5;
-    }
-
-    public void setContentMd5(String contentMd5) {
-        this.contentMd5 = contentMd5;
-    }
-
-    
-
-    public ShowAssetTempAuthorityRequest withContentType(String contentType) {
-        this.contentType = contentType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 上传段时,媒资内容对应的content-type值,非上传段操作不涉及此字段<br/> 
-     * @return contentType
-     */
-    public String getContentType() {
-        return contentType;
-    }
-
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
     }
 
     
@@ -134,7 +90,7 @@ public class ShowAssetTempAuthorityRequest  {
 
 
     /**
-     * 桶名<br/> 
+     * 桶名。 调用[创建媒资：上传方式](https://support.huaweicloud.com/api-vod/vod_04_0196.html)接口中返回的响应体中的target字段获得的bucket值。
      * @return bucket
      */
     public String getBucket() {
@@ -156,7 +112,7 @@ public class ShowAssetTempAuthorityRequest  {
 
 
     /**
-     * 对象名<br/> 
+     * 对象名。 调用[创建媒资：上传方式](https://support.huaweicloud.com/api-vod/vod_04_0196.html)接口中返回的响应体中的target字段获得的object值。
      * @return objectKey
      */
     public String getObjectKey() {
@@ -165,6 +121,50 @@ public class ShowAssetTempAuthorityRequest  {
 
     public void setObjectKey(String objectKey) {
         this.objectKey = objectKey;
+    }
+
+    
+
+    public ShowAssetTempAuthorityRequest withContentType(String contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 文件类型对应的content-type，如MP4对应video/mp4。
+     * @return contentType
+     */
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    
+
+    public ShowAssetTempAuthorityRequest withContentMd5(String contentMd5) {
+        this.contentMd5 = contentMd5;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 上传段时每段的MD5。
+     * @return contentMd5
+     */
+    public String getContentMd5() {
+        return contentMd5;
+    }
+
+    public void setContentMd5(String contentMd5) {
+        this.contentMd5 = contentMd5;
     }
 
     
@@ -178,7 +178,7 @@ public class ShowAssetTempAuthorityRequest  {
 
 
     /**
-     * 上传任务id,由OBS分配<br/> 
+     * 每一个上传任务的id，是OBS进行初始段后OBS返回的。
      * @return uploadId
      */
     public String getUploadId() {
@@ -200,7 +200,7 @@ public class ShowAssetTempAuthorityRequest  {
 
 
     /**
-     * 上传段号,取值[1,10000]<br/> 
+     * 上传段时每一段的id。 取值范围：[1,10000]。
      * minimum: 1
      * maximum: 10000
      * @return partNumber
@@ -225,26 +225,26 @@ public class ShowAssetTempAuthorityRequest  {
         }
         ShowAssetTempAuthorityRequest showAssetTempAuthorityRequest = (ShowAssetTempAuthorityRequest) o;
         return Objects.equals(this.httpVerb, showAssetTempAuthorityRequest.httpVerb) &&
-            Objects.equals(this.contentMd5, showAssetTempAuthorityRequest.contentMd5) &&
-            Objects.equals(this.contentType, showAssetTempAuthorityRequest.contentType) &&
             Objects.equals(this.bucket, showAssetTempAuthorityRequest.bucket) &&
             Objects.equals(this.objectKey, showAssetTempAuthorityRequest.objectKey) &&
+            Objects.equals(this.contentType, showAssetTempAuthorityRequest.contentType) &&
+            Objects.equals(this.contentMd5, showAssetTempAuthorityRequest.contentMd5) &&
             Objects.equals(this.uploadId, showAssetTempAuthorityRequest.uploadId) &&
             Objects.equals(this.partNumber, showAssetTempAuthorityRequest.partNumber);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(httpVerb, contentMd5, contentType, bucket, objectKey, uploadId, partNumber);
+        return Objects.hash(httpVerb, bucket, objectKey, contentType, contentMd5, uploadId, partNumber);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAssetTempAuthorityRequest {\n");
         sb.append("    httpVerb: ").append(toIndentedString(httpVerb)).append("\n");
-        sb.append("    contentMd5: ").append(toIndentedString(contentMd5)).append("\n");
-        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
+        sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+        sb.append("    contentMd5: ").append(toIndentedString(contentMd5)).append("\n");
         sb.append("    uploadId: ").append(toIndentedString(uploadId)).append("\n");
         sb.append("    partNumber: ").append(toIndentedString(partNumber)).append("\n");
         sb.append("}");

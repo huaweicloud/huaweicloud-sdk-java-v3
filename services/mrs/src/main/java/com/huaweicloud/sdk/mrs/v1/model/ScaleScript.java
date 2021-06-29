@@ -55,28 +55,28 @@ public class ScaleScript  {
     
     private Boolean activeMaster;
     /**
-     * 自自定义自动化脚本执行失败后，是否继续执行后续脚本和创建集群。  说明：  - 建议您在调试阶段设置为“continue”，无论此自定义自动化脚本是否执行成功，则集群都能继续安装和启动。  - 由于缩容成功无法回滚，因此缩容后执行的脚本“fail_action”必须设置为“continue”。
+     * 自自定义自动化脚本执行失败后，是否继续执行后续脚本和创建集群。  说明：  - 建议您在调试阶段设置为“continue”，无论此自定义自动化脚本是否执行成功，则集群都能继续安装和启动。  - 由于缩容成功无法回滚，因此缩容后执行的脚本“fail_action”必须设置为“continue”。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
      */
     public static final class FailActionEnum {
 
         
         /**
-         * Enum CONTINUE_ for value: "continue：继续执行后续脚本。"
+         * Enum CONTINUE for value: "continue"
          */
-        public static final FailActionEnum CONTINUE_ = new FailActionEnum("continue：继续执行后续脚本。");
+        public static final FailActionEnum CONTINUE = new FailActionEnum("continue");
         
         /**
-         * Enum ERROROUT_ for value: "errorout：终止操作。"
+         * Enum ERROROUT for value: "errorout"
          */
-        public static final FailActionEnum ERROROUT_ = new FailActionEnum("errorout：终止操作。");
+        public static final FailActionEnum ERROROUT = new FailActionEnum("errorout");
         
 
         private static final Map<String, FailActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FailActionEnum> createStaticFields() {
             Map<String, FailActionEnum> map = new HashMap<>();
-            map.put("continue：继续执行后续脚本。", CONTINUE_);
-            map.put("errorout：终止操作。", ERROROUT_);
+            map.put("continue", CONTINUE);
+            map.put("errorout", ERROROUT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -139,40 +139,40 @@ public class ScaleScript  {
     
     private FailActionEnum failAction;
     /**
-     * 脚本执行时机。
+     * 脚本执行时机。  枚举值： - before_scale_out：扩容前 - before_scale_in：缩容前 - after_scale_out：扩容后 - after_scale_in：缩容后
      */
     public static final class ActionStageEnum {
 
         
         /**
-         * Enum BEFORE_SCALE_OUT_ for value: "before_scale_out：扩容前"
+         * Enum BEFORE_SCALE_OUT for value: "before_scale_out"
          */
-        public static final ActionStageEnum BEFORE_SCALE_OUT_ = new ActionStageEnum("before_scale_out：扩容前");
+        public static final ActionStageEnum BEFORE_SCALE_OUT = new ActionStageEnum("before_scale_out");
         
         /**
-         * Enum BEFORE_SCALE_IN_ for value: "before_scale_in：缩容前"
+         * Enum BEFORE_SCALE_IN for value: "before_scale_in"
          */
-        public static final ActionStageEnum BEFORE_SCALE_IN_ = new ActionStageEnum("before_scale_in：缩容前");
+        public static final ActionStageEnum BEFORE_SCALE_IN = new ActionStageEnum("before_scale_in");
         
         /**
-         * Enum AFTER_SCALE_OUT_ for value: "after_scale_out：扩容后"
+         * Enum AFTER_SCALE_OUT for value: "after_scale_out"
          */
-        public static final ActionStageEnum AFTER_SCALE_OUT_ = new ActionStageEnum("after_scale_out：扩容后");
+        public static final ActionStageEnum AFTER_SCALE_OUT = new ActionStageEnum("after_scale_out");
         
         /**
-         * Enum AFTER_SCALE_IN_ for value: "after_scale_in：缩容后"
+         * Enum AFTER_SCALE_IN for value: "after_scale_in"
          */
-        public static final ActionStageEnum AFTER_SCALE_IN_ = new ActionStageEnum("after_scale_in：缩容后");
+        public static final ActionStageEnum AFTER_SCALE_IN = new ActionStageEnum("after_scale_in");
         
 
         private static final Map<String, ActionStageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionStageEnum> createStaticFields() {
             Map<String, ActionStageEnum> map = new HashMap<>();
-            map.put("before_scale_out：扩容前", BEFORE_SCALE_OUT_);
-            map.put("before_scale_in：缩容前", BEFORE_SCALE_IN_);
-            map.put("after_scale_out：扩容后", AFTER_SCALE_OUT_);
-            map.put("after_scale_in：缩容后", AFTER_SCALE_IN_);
+            map.put("before_scale_out", BEFORE_SCALE_OUT);
+            map.put("before_scale_in", BEFORE_SCALE_IN);
+            map.put("after_scale_out", AFTER_SCALE_OUT);
+            map.put("after_scale_in", AFTER_SCALE_IN);
             return Collections.unmodifiableMap(map);
         }
 
@@ -368,7 +368,7 @@ public class ScaleScript  {
 
 
     /**
-     * 自自定义自动化脚本执行失败后，是否继续执行后续脚本和创建集群。  说明：  - 建议您在调试阶段设置为“continue”，无论此自定义自动化脚本是否执行成功，则集群都能继续安装和启动。  - 由于缩容成功无法回滚，因此缩容后执行的脚本“fail_action”必须设置为“continue”。
+     * 自自定义自动化脚本执行失败后，是否继续执行后续脚本和创建集群。  说明：  - 建议您在调试阶段设置为“continue”，无论此自定义自动化脚本是否执行成功，则集群都能继续安装和启动。  - 由于缩容成功无法回滚，因此缩容后执行的脚本“fail_action”必须设置为“continue”。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
      * @return failAction
      */
     public FailActionEnum getFailAction() {
@@ -390,7 +390,7 @@ public class ScaleScript  {
 
 
     /**
-     * 脚本执行时机。
+     * 脚本执行时机。  枚举值： - before_scale_out：扩容前 - before_scale_in：缩容前 - after_scale_out：扩容后 - after_scale_in：缩容后
      * @return actionStage
      */
     public ActionStageEnum getActionStage() {

@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * FileAddr
+ * 媒资存储参数信息
  */
 public class FileAddr  {
 
@@ -44,7 +44,7 @@ public class FileAddr  {
 
 
     /**
-     * OBS的bucket名称。<br/> 
+     * OBS的bucket名称。
      * @return bucket
      */
     public String getBucket() {
@@ -66,7 +66,7 @@ public class FileAddr  {
 
 
     /**
-     * 输入OBS Bucket所在数据中心（OBS Location）。<br/> 
+     * 桶所在的区域名， 如“华北-北京四”的区域名为“cn-north-4”，创建的桶所在区域必须和点播服务所在区域保持一致。
      * @return location
      */
     public String getLocation() {
@@ -88,7 +88,7 @@ public class FileAddr  {
 
 
     /**
-     * OBS对象路径，遵守OSS Object定义。<br/> 当用于指示input时,需要指定到具体对象<br/> 当用于指示output时, 只需指定到转码结果期望存放的路径<br/> 
+     * 文件的存储路径。
      * @return _object
      */
     public String getObject() {

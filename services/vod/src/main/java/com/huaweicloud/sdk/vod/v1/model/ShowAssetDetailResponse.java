@@ -62,7 +62,7 @@ public class ShowAssetDetailResponse extends SdkResponse {
 
 
     /**
-     * 媒资ID
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {

@@ -244,7 +244,7 @@ public class ListQueuesRespQueues  {
 
 
     /**
-     * 与该队列绑定的计算单元数。设置值当前只支持4，16，64。
+     * 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
      * @return cuCount
      */
     public Integer getCuCount() {

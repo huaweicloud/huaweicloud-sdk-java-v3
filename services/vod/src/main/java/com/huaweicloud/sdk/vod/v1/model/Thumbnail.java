@@ -27,7 +27,7 @@ import java.util.Objects;
 public class Thumbnail  {
 
     /**
-     * 采样类型。支持三种采样方式（当前只支持“time”）： “percent”：根据视频时长的百分比间隔采样 “time”：根据时间间隔采样 “dots” : 指定时间点截图 
+     * 截图类型。 取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
      */
     public static final class TypeEnum {
 
@@ -119,12 +119,6 @@ public class Thumbnail  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="percent")
-    
-    private Integer percent;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time")
     
     private Integer time;
@@ -141,7 +135,7 @@ public class Thumbnail  {
     
     private Integer coverPosition;
     /**
-     * 截图文件格式，枚举值（jpg，png，webP）。当前只支持jpg。1 : jpg。
+     * 截图文件格式。 取值如下： - 1：jpg。 默认值：1 。
      */
     public static final class FormatEnum {
 
@@ -219,7 +213,7 @@ public class Thumbnail  {
     
     private FormatEnum format;
     /**
-     * 纵横比（保留,图像缩放方式）。0：自适应（保持原有宽高比）。1：16:9
+     * 纵横比，图像缩放方式。 取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。 默认值：0。
      */
     public static final class AspectRatioEnum {
 
@@ -318,7 +312,7 @@ public class Thumbnail  {
 
 
     /**
-     * 采样类型。支持三种采样方式（当前只支持“time”）： “percent”：根据视频时长的百分比间隔采样 “time”：根据时间间隔采样 “dots” : 指定时间点截图 
+     * 截图类型。 取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
      * @return type
      */
     public TypeEnum getType() {
@@ -327,28 +321,6 @@ public class Thumbnail  {
 
     public void setType(TypeEnum type) {
         this.type = type;
-    }
-
-    
-
-    public Thumbnail withPercent(Integer percent) {
-        this.percent = percent;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 根据视频时长百分比间隔采样时的百分比值
-     * @return percent
-     */
-    public Integer getPercent() {
-        return percent;
-    }
-
-    public void setPercent(Integer percent) {
-        this.percent = percent;
     }
 
     
@@ -362,7 +334,7 @@ public class Thumbnail  {
 
 
     /**
-     * 根据时间间隔采样时的时间间隔值
+     * 根据时间间隔采样时的时间间隔值。 取值范围：[1,12]之间的整数。 单位：秒。
      * @return time
      */
     public Integer getTime() {
@@ -398,7 +370,7 @@ public class Thumbnail  {
     }
 
     /**
-     * 指定时间截图时的时间点数组
+     * 指定时间截图时的时间点数组。
      * @return dots
      */
     public List<Integer> getDots() {
@@ -420,7 +392,7 @@ public class Thumbnail  {
 
 
     /**
-     * 该值表示指定第几张截图作为封面(从1开始)
+     * 该值表示指定第几张截图作为封面(默认值：1)。
      * @return coverPosition
      */
     public Integer getCoverPosition() {
@@ -442,7 +414,7 @@ public class Thumbnail  {
 
 
     /**
-     * 截图文件格式，枚举值（jpg，png，webP）。当前只支持jpg。1 : jpg。
+     * 截图文件格式。 取值如下： - 1：jpg。 默认值：1 。
      * @return format
      */
     public FormatEnum getFormat() {
@@ -464,7 +436,7 @@ public class Thumbnail  {
 
 
     /**
-     * 纵横比（保留,图像缩放方式）。0：自适应（保持原有宽高比）。1：16:9
+     * 纵横比，图像缩放方式。 取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。 默认值：0。
      * @return aspectRatio
      */
     public AspectRatioEnum getAspectRatio() {
@@ -486,7 +458,7 @@ public class Thumbnail  {
 
 
     /**
-     * 截图最长边的尺寸（单位：像素）（宽边尺寸按照该尺寸与原始视频像素等比缩放计算） 
+     * 截图最长边的尺寸。 单位：像素。 宽边尺寸按照该尺寸与原始视频像素等比缩放计算。
      * @return maxLength
      */
     public Integer getMaxLength() {
@@ -509,7 +481,6 @@ public class Thumbnail  {
         }
         Thumbnail thumbnail = (Thumbnail) o;
         return Objects.equals(this.type, thumbnail.type) &&
-            Objects.equals(this.percent, thumbnail.percent) &&
             Objects.equals(this.time, thumbnail.time) &&
             Objects.equals(this.dots, thumbnail.dots) &&
             Objects.equals(this.coverPosition, thumbnail.coverPosition) &&
@@ -519,14 +490,13 @@ public class Thumbnail  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, percent, time, dots, coverPosition, format, aspectRatio, maxLength);
+        return Objects.hash(type, time, dots, coverPosition, format, aspectRatio, maxLength);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Thumbnail {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    dots: ").append(toIndentedString(dots)).append("\n");
         sb.append("    coverPosition: ").append(toIndentedString(coverPosition)).append("\n");

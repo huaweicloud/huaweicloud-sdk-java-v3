@@ -32,7 +32,7 @@ public class ShowAssetCipherRequest  {
 
 
     /**
-     * 媒资id<br/> 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {

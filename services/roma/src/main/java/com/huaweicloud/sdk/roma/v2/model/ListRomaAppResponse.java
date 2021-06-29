@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppInfo;
+import com.huaweicloud.sdk.roma.v2.model.ServerAppInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -38,7 +38,7 @@ public class ListRomaAppResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="apps")
     
-    private List<AppInfo> apps = null;
+    private List<ServerAppInfo> apps = null;
     
     public ListRomaAppResponse withTotal(Integer total) {
         this.total = total;
@@ -84,13 +84,13 @@ public class ListRomaAppResponse extends SdkResponse {
 
     
 
-    public ListRomaAppResponse withApps(List<AppInfo> apps) {
+    public ListRomaAppResponse withApps(List<ServerAppInfo> apps) {
         this.apps = apps;
         return this;
     }
 
     
-    public ListRomaAppResponse addAppsItem(AppInfo appsItem) {
+    public ListRomaAppResponse addAppsItem(ServerAppInfo appsItem) {
         if(this.apps == null) {
             this.apps = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListRomaAppResponse extends SdkResponse {
         return this;
     }
 
-    public ListRomaAppResponse withApps(Consumer<List<AppInfo>> appsSetter) {
+    public ListRomaAppResponse withApps(Consumer<List<ServerAppInfo>> appsSetter) {
         if(this.apps == null) {
             this.apps = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListRomaAppResponse extends SdkResponse {
      * 创建用户信息
      * @return apps
      */
-    public List<AppInfo> getApps() {
+    public List<ServerAppInfo> getApps() {
         return apps;
     }
 
-    public void setApps(List<AppInfo> apps) {
+    public void setApps(List<ServerAppInfo> apps) {
         this.apps = apps;
     }
 

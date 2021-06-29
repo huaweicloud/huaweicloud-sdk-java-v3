@@ -31,9 +31,9 @@ public class CreateConfigurationDatastoreOption  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_engine")
+    @JsonProperty(value="mode")
     
-    private String storageEngine;
+    private String mode;
 
     public CreateConfigurationDatastoreOption withType(String type) {
         this.type = type;
@@ -79,8 +79,8 @@ public class CreateConfigurationDatastoreOption  {
 
     
 
-    public CreateConfigurationDatastoreOption withStorageEngine(String storageEngine) {
-        this.storageEngine = storageEngine;
+    public CreateConfigurationDatastoreOption withMode(String mode) {
+        this.mode = mode;
         return this;
     }
 
@@ -89,14 +89,14 @@ public class CreateConfigurationDatastoreOption  {
 
     /**
      * 数据库部署模式，GaussDB(for Mongo)该参数必选。 - GaussDB(for Mongo) 集群实例取值为\"Sharding\"。 - GaussDB(for Mongo) 副本集实例取值为\"ReplicaSet\"。
-     * @return storageEngine
+     * @return mode
      */
-    public String getStorageEngine() {
-        return storageEngine;
+    public String getMode() {
+        return mode;
     }
 
-    public void setStorageEngine(String storageEngine) {
-        this.storageEngine = storageEngine;
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 
     
@@ -112,11 +112,11 @@ public class CreateConfigurationDatastoreOption  {
         CreateConfigurationDatastoreOption createConfigurationDatastoreOption = (CreateConfigurationDatastoreOption) o;
         return Objects.equals(this.type, createConfigurationDatastoreOption.type) &&
             Objects.equals(this.version, createConfigurationDatastoreOption.version) &&
-            Objects.equals(this.storageEngine, createConfigurationDatastoreOption.storageEngine);
+            Objects.equals(this.mode, createConfigurationDatastoreOption.mode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(type, version, storageEngine);
+        return Objects.hash(type, version, mode);
     }
     @Override
     public String toString() {
@@ -124,7 +124,7 @@ public class CreateConfigurationDatastoreOption  {
         sb.append("class CreateConfigurationDatastoreOption {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    storageEngine: ").append(toIndentedString(storageEngine)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

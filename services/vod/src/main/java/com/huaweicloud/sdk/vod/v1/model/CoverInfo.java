@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CoverInfo
+ * 封面信息。
  */
 public class CoverInfo  {
 
@@ -32,7 +32,7 @@ public class CoverInfo  {
 
 
     /**
-     * 封面文件的下载地址<br/> 
+     * 封面文件的下载地址。
      * @return coverUrl
      */
     public String getCoverUrl() {

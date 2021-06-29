@@ -49,7 +49,7 @@ public class ShowVodStatisticsResponse extends SdkResponse {
 
 
     /**
-     * 统计起始时间 
+     * 统计起始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -71,7 +71,7 @@ public class ShowVodStatisticsResponse extends SdkResponse {
 
 
     /**
-     * 采样时间间隔 
+     * 统计间隔。
      * @return interval
      */
     public Integer getInterval() {
@@ -107,7 +107,7 @@ public class ShowVodStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * Get sampleData
+     * 采样数据数组。从start_time开始，每个间隔对应一个采样数据。
      * @return sampleData
      */
     public List<VodSampleData> getSampleData() {

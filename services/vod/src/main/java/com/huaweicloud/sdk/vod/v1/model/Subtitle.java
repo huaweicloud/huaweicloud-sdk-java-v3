@@ -29,7 +29,7 @@ public class Subtitle  {
     
     private Integer id;
     /**
-     * 字幕文件类型<br/> 
+     * 字幕文件类型，目前暂只支持“SRT”。
      */
     public static final class TypeEnum {
 
@@ -107,7 +107,7 @@ public class Subtitle  {
     
     private TypeEnum type;
     /**
-     * 字幕文件语音种类<br/> 
+     * 字幕语音类型。 取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
      */
     public static final class LanguageEnum {
 
@@ -212,7 +212,7 @@ public class Subtitle  {
 
 
     /**
-     * 字幕文件id<br/> 
+     * 字幕id。 取值范围：[1,8]。
      * @return id
      */
     public Integer getId() {
@@ -234,7 +234,7 @@ public class Subtitle  {
 
 
     /**
-     * 字幕文件类型<br/> 
+     * 字幕文件类型，目前暂只支持“SRT”。
      * @return type
      */
     public TypeEnum getType() {
@@ -256,7 +256,7 @@ public class Subtitle  {
 
 
     /**
-     * 字幕文件语音种类<br/> 
+     * 字幕语音类型。 取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
      * @return language
      */
     public LanguageEnum getLanguage() {
@@ -278,7 +278,7 @@ public class Subtitle  {
 
 
     /**
-     * 字幕文件md5值<br/> 
+     * 字幕文件的MD5值。
      * @return md5
      */
     public String getMd5() {
@@ -300,7 +300,7 @@ public class Subtitle  {
 
 
     /**
-     * 字幕文件描述<br/> 
+     * 字幕描述。
      * @return description
      */
     public String getDescription() {

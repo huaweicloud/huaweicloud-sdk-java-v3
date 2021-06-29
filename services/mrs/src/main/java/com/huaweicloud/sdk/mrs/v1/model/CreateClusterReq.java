@@ -15,6 +15,12 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
+import java.util.Collections;
+
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -710,18 +716,174 @@ public class CreateClusterReq  {
     @JsonProperty(value="safe_mode")
     
     private SafeModeEnum safeMode;
+    /**
+     * 集群类型。  默认值为0：分析集群。  说明：暂不支持通过接口方式创建混合集群。  枚举值： - 0：分析集群 - 1：流式集群
+     */
+    public static final class ClusterTypeEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ClusterTypeEnum NUMBER_0 = new ClusterTypeEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ClusterTypeEnum NUMBER_1 = new ClusterTypeEnum(1);
+        
+
+        private static final Map<Integer, ClusterTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ClusterTypeEnum> createStaticFields() {
+            Map<Integer, ClusterTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ClusterTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ClusterTypeEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ClusterTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ClusterTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static ClusterTypeEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            ClusterTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ClusterTypeEnum) {
+                return this.value.equals(((ClusterTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="cluster_type")
     
-    private Integer clusterType;
+    private ClusterTypeEnum clusterType;
+    /**
+     * 集群创建失败时，是否收集失败日志。  默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。  枚举值： - 0：不收集 - 1：收集
+     */
+    public static final class LogCollectionEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final LogCollectionEnum NUMBER_0 = new LogCollectionEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final LogCollectionEnum NUMBER_1 = new LogCollectionEnum(1);
+        
+
+        private static final Map<Integer, LogCollectionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, LogCollectionEnum> createStaticFields() {
+            Map<Integer, LogCollectionEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        LogCollectionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LogCollectionEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            LogCollectionEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LogCollectionEnum(value);
+            }
+            return result;
+        }
+
+        public static LogCollectionEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            LogCollectionEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof LogCollectionEnum) {
+                return this.value.equals(((LogCollectionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="log_collection")
     
-    private Integer logCollection;
+    private LogCollectionEnum logCollection;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -734,12 +896,90 @@ public class CreateClusterReq  {
     @JsonProperty(value="tags")
     
     private List<Tag> tags = null;
-    
+        /**
+     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。  枚举值： - 0：密码方式 - 1：密钥对方式
+     */
+    public static final class LoginModeEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final LoginModeEnum NUMBER_0 = new LoginModeEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final LoginModeEnum NUMBER_1 = new LoginModeEnum(1);
+        
+
+        private static final Map<Integer, LoginModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, LoginModeEnum> createStaticFields() {
+            Map<Integer, LoginModeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        LoginModeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LoginModeEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            LoginModeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new LoginModeEnum(value);
+            }
+            return result;
+        }
+
+        public static LoginModeEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            LoginModeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof LoginModeEnum) {
+                return this.value.equals(((LoginModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="login_mode")
     
-    private Integer loginMode;
+    private LoginModeEnum loginMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1474,7 +1714,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withClusterType(Integer clusterType) {
+    public CreateClusterReq withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
     }
@@ -1483,20 +1723,20 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群类型。  默认值为0：分析集群。  说明：暂不支持通过接口方式创建混合集群。
+     * 集群类型。  默认值为0：分析集群。  说明：暂不支持通过接口方式创建混合集群。  枚举值： - 0：分析集群 - 1：流式集群
      * @return clusterType
      */
-    public Integer getClusterType() {
+    public ClusterTypeEnum getClusterType() {
         return clusterType;
     }
 
-    public void setClusterType(Integer clusterType) {
+    public void setClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
     }
 
     
 
-    public CreateClusterReq withLogCollection(Integer logCollection) {
+    public CreateClusterReq withLogCollection(LogCollectionEnum logCollection) {
         this.logCollection = logCollection;
         return this;
     }
@@ -1505,14 +1745,14 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群创建失败时，是否收集失败日志。  默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。
+     * 集群创建失败时，是否收集失败日志。  默认设置为1，将创建OBS桶仅用于MRS集群创建失败时的日志收集。  枚举值： - 0：不收集 - 1：收集
      * @return logCollection
      */
-    public Integer getLogCollection() {
+    public LogCollectionEnum getLogCollection() {
         return logCollection;
     }
 
-    public void setLogCollection(Integer logCollection) {
+    public void setLogCollection(LogCollectionEnum logCollection) {
         this.logCollection = logCollection;
     }
 
@@ -1576,7 +1816,7 @@ public class CreateClusterReq  {
 
     
 
-    public CreateClusterReq withLoginMode(Integer loginMode) {
+    public CreateClusterReq withLoginMode(LoginModeEnum loginMode) {
         this.loginMode = loginMode;
         return this;
     }
@@ -1585,14 +1825,14 @@ public class CreateClusterReq  {
 
 
     /**
-     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。
+     * 集群登录方式。默认设置为1。  - 当“login_mode”配置为“0”时，请求消息体中包含cluster_master_secret字段。 - 当“login_mode”配置为“1”时，请求消息体中包含node_public_cert_name字段。  说明： 该参数仅适用于MRS 1.6.2及以后版本的集群，MRS 1.6.2前的版本不支持。  枚举值： - 0：密码方式 - 1：密钥对方式
      * @return loginMode
      */
-    public Integer getLoginMode() {
+    public LoginModeEnum getLoginMode() {
         return loginMode;
     }
 
-    public void setLoginMode(Integer loginMode) {
+    public void setLoginMode(LoginModeEnum loginMode) {
         this.loginMode = loginMode;
     }
 

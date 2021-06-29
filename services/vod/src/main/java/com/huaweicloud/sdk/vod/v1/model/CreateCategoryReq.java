@@ -38,7 +38,7 @@ public class CreateCategoryReq  {
 
 
     /**
-     * 视频分类名称 
+     * 媒资分类名称，最大64字节。
      * @return name
      */
     public String getName() {
@@ -60,7 +60,7 @@ public class CreateCategoryReq  {
 
 
     /**
-     * 父分类ID 
+     * 父分类ID。 若不填，则默认生成一级分类。 根节点分类ID为0。
      * @return parentId
      */
     public Integer getParentId() {

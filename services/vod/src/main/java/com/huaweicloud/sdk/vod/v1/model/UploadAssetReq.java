@@ -12,10 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.Review;
 import com.huaweicloud.sdk.vod.v1.model.Subtitle;
-import com.huaweicloud.sdk.vod.v1.model.Thumbnail;
-import com.huaweicloud.sdk.vod.v1.model.VideoTypeRef;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,12 +21,30 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CreateAssetByFileReq
+ * UploadAssetReq
  */
-public class CreateAssetByFileReq  {
+public class UploadAssetReq  {
 
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="asset_id")
+    
+    private String assetId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="video_md5")
+    
+    private String videoMd5;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="video_name")
+    
+    private String videoName;
     /**
-     * 视频类型<br/> 
+     * 视频文件类型。 取值为MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV
      */
     public static final class VideoTypeEnum {
 
@@ -73,11 +88,6 @@ public class CreateAssetByFileReq  {
          * Enum HLS for value: "HLS"
          */
         public static final VideoTypeEnum HLS = new VideoTypeEnum("HLS");
-        
-        /**
-         * Enum DASH for value: "DASH"
-         */
-        public static final VideoTypeEnum DASH = new VideoTypeEnum("DASH");
         
         /**
          * Enum MP3 for value: "MP3"
@@ -170,26 +180,6 @@ public class CreateAssetByFileReq  {
         public static final VideoTypeEnum MPEG = new VideoTypeEnum("MPEG");
         
         /**
-         * Enum M3U8 for value: "M3U8"
-         */
-        public static final VideoTypeEnum M3U8 = new VideoTypeEnum("M3U8");
-        
-        /**
-         * Enum _3GP for value: "3GP"
-         */
-        public static final VideoTypeEnum _3GP = new VideoTypeEnum("3GP");
-        
-        /**
-         * Enum ASF for value: "ASF"
-         */
-        public static final VideoTypeEnum ASF = new VideoTypeEnum("ASF");
-        
-        /**
-         * Enum MKV for value: "MKV"
-         */
-        public static final VideoTypeEnum MKV = new VideoTypeEnum("MKV");
-        
-        /**
          * Enum UNKNOW for value: "UNKNOW"
          */
         public static final VideoTypeEnum UNKNOW = new VideoTypeEnum("UNKNOW");
@@ -207,7 +197,6 @@ public class CreateAssetByFileReq  {
             map.put("FLV", FLV);
             map.put("WMV", WMV);
             map.put("HLS", HLS);
-            map.put("DASH", DASH);
             map.put("MP3", MP3);
             map.put("WMA", WMA);
             map.put("APE", APE);
@@ -226,10 +215,6 @@ public class CreateAssetByFileReq  {
             map.put("F4V", F4V);
             map.put("M4V", M4V);
             map.put("MPEG", MPEG);
-            map.put("M3U8", M3U8);
-            map.put("3GP", _3GP);
-            map.put("ASF", ASF);
-            map.put("MKV", MKV);
             map.put("UNKNOW", UNKNOW);
             return Collections.unmodifiableMap(map);
         }
@@ -295,83 +280,11 @@ public class CreateAssetByFileReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
+    @JsonProperty(value="cover_id")
     
-    private String title;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
-    private String description;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category_id")
-    
-    private Integer categoryId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
-    private String tags;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_publish")
-    
-    private Integer autoPublish;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_group_name")
-    
-    private String templateGroupName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_encrypt")
-    
-    private Integer autoEncrypt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_preheat")
-    
-    private Integer autoPreheat;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnail")
-    
-    private Thumbnail thumbnail;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="review")
-    
-    private Review review;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_name")
-    
-    private String workflowName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_name")
-    
-    private String videoName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_md5")
-    
-    private String videoMd5;
+    private Integer coverId;
     /**
-     * 封面图片文件类型<br/> 
+     * 封面图片格式类型。 取值如下： - JPG - PNG
      */
     public static final class CoverTypeEnum {
 
@@ -467,8 +380,8 @@ public class CreateAssetByFileReq  {
     
     private List<Subtitle> subtitles = null;
     
-    public CreateAssetByFileReq withVideoType(VideoTypeEnum videoType) {
-        this.videoType = videoType;
+    public UploadAssetReq withAssetId(String assetId) {
+        this.assetId = assetId;
         return this;
     }
 
@@ -476,302 +389,20 @@ public class CreateAssetByFileReq  {
 
 
     /**
-     * 视频类型<br/> 
-     * @return videoType
+     * 媒资ID。
+     * @return assetId
      */
-    public VideoTypeEnum getVideoType() {
-        return videoType;
+    public String getAssetId() {
+        return assetId;
     }
 
-    public void setVideoType(VideoTypeEnum videoType) {
-        this.videoType = videoType;
-    }
-
-    
-
-    public CreateAssetByFileReq withTitle(String title) {
-        this.title = title;
-        return this;
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
     }
 
     
 
-
-    /**
-     * 媒资标题</br> 
-     * @return title
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    
-
-    public CreateAssetByFileReq withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 视频描述<br/> 
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    
-
-    public CreateAssetByFileReq withCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 媒资分类id<br/> 
-     * @return categoryId
-     */
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    
-
-    public CreateAssetByFileReq withTags(String tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 视频标签<br/> 
-     * @return tags
-     */
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
-
-    
-
-    public CreateAssetByFileReq withAutoPublish(Integer autoPublish) {
-        this.autoPublish = autoPublish;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否自动发布<br/> 
-     * minimum: 0
-     * maximum: 1
-     * @return autoPublish
-     */
-    public Integer getAutoPublish() {
-        return autoPublish;
-    }
-
-    public void setAutoPublish(Integer autoPublish) {
-        this.autoPublish = autoPublish;
-    }
-
-    
-
-    public CreateAssetByFileReq withTemplateGroupName(String templateGroupName) {
-        this.templateGroupName = templateGroupName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 转码模板组名称<br/> 
-     * @return templateGroupName
-     */
-    public String getTemplateGroupName() {
-        return templateGroupName;
-    }
-
-    public void setTemplateGroupName(String templateGroupName) {
-        this.templateGroupName = templateGroupName;
-    }
-
-    
-
-    public CreateAssetByFileReq withAutoEncrypt(Integer autoEncrypt) {
-        this.autoEncrypt = autoEncrypt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否自动加密，取值[0，1]，0表示需要不加密；1表示需要加密。加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出必须要为HLS 
-     * minimum: 0
-     * maximum: 1
-     * @return autoEncrypt
-     */
-    public Integer getAutoEncrypt() {
-        return autoEncrypt;
-    }
-
-    public void setAutoEncrypt(Integer autoEncrypt) {
-        this.autoEncrypt = autoEncrypt;
-    }
-
-    
-
-    public CreateAssetByFileReq withAutoPreheat(Integer autoPreheat) {
-        this.autoPreheat = autoPreheat;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否自动预热到CDN,取值[0，1]，0表示不自动预热 
-     * @return autoPreheat
-     */
-    public Integer getAutoPreheat() {
-        return autoPreheat;
-    }
-
-    public void setAutoPreheat(Integer autoPreheat) {
-        this.autoPreheat = autoPreheat;
-    }
-
-    
-
-    public CreateAssetByFileReq withThumbnail(Thumbnail thumbnail) {
-        this.thumbnail = thumbnail;
-        return this;
-    }
-
-    public CreateAssetByFileReq withThumbnail(Consumer<Thumbnail> thumbnailSetter) {
-        if(this.thumbnail == null ){
-            this.thumbnail = new Thumbnail();
-            thumbnailSetter.accept(this.thumbnail);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get thumbnail
-     * @return thumbnail
-     */
-    public Thumbnail getThumbnail() {
-        return thumbnail;
-    }
-
-    public void setThumbnail(Thumbnail thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
-    
-
-    public CreateAssetByFileReq withReview(Review review) {
-        this.review = review;
-        return this;
-    }
-
-    public CreateAssetByFileReq withReview(Consumer<Review> reviewSetter) {
-        if(this.review == null ){
-            this.review = new Review();
-            reviewSetter.accept(this.review);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get review
-     * @return review
-     */
-    public Review getReview() {
-        return review;
-    }
-
-    public void setReview(Review review) {
-        this.review = review;
-    }
-
-    
-
-    public CreateAssetByFileReq withWorkflowName(String workflowName) {
-        this.workflowName = workflowName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 工作流ID
-     * @return workflowName
-     */
-    public String getWorkflowName() {
-        return workflowName;
-    }
-
-    public void setWorkflowName(String workflowName) {
-        this.workflowName = workflowName;
-    }
-
-    
-
-    public CreateAssetByFileReq withVideoName(String videoName) {
-        this.videoName = videoName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 视频文件名<br/> 
-     * @return videoName
-     */
-    public String getVideoName() {
-        return videoName;
-    }
-
-    public void setVideoName(String videoName) {
-        this.videoName = videoName;
-    }
-
-    
-
-    public CreateAssetByFileReq withVideoMd5(String videoMd5) {
+    public UploadAssetReq withVideoMd5(String videoMd5) {
         this.videoMd5 = videoMd5;
         return this;
     }
@@ -780,7 +411,7 @@ public class CreateAssetByFileReq  {
 
 
     /**
-     * 视频文件MD5值<br/> 
+     * 视频文件MD5值。 建议参考[媒资上传和更新](https://support.huaweicloud.com/api-vod/vod_04_0212.html)生成对应的MD5值。
      * @return videoMd5
      */
     public String getVideoMd5() {
@@ -793,7 +424,73 @@ public class CreateAssetByFileReq  {
 
     
 
-    public CreateAssetByFileReq withCoverType(CoverTypeEnum coverType) {
+    public UploadAssetReq withVideoName(String videoName) {
+        this.videoName = videoName;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 视频文件名。 文件名后缀为可选。
+     * @return videoName
+     */
+    public String getVideoName() {
+        return videoName;
+    }
+
+    public void setVideoName(String videoName) {
+        this.videoName = videoName;
+    }
+
+    
+
+    public UploadAssetReq withVideoType(VideoTypeEnum videoType) {
+        this.videoType = videoType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 视频文件类型。 取值为MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV
+     * @return videoType
+     */
+    public VideoTypeEnum getVideoType() {
+        return videoType;
+    }
+
+    public void setVideoType(VideoTypeEnum videoType) {
+        this.videoType = videoType;
+    }
+
+    
+
+    public UploadAssetReq withCoverId(Integer coverId) {
+        this.coverId = coverId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 封面ID。 取值范围：[0,7]。 当前只支持一张封面，只能设置为0。
+     * @return coverId
+     */
+    public Integer getCoverId() {
+        return coverId;
+    }
+
+    public void setCoverId(Integer coverId) {
+        this.coverId = coverId;
+    }
+
+    
+
+    public UploadAssetReq withCoverType(CoverTypeEnum coverType) {
         this.coverType = coverType;
         return this;
     }
@@ -802,7 +499,7 @@ public class CreateAssetByFileReq  {
 
 
     /**
-     * 封面图片文件类型<br/> 
+     * 封面图片格式类型。 取值如下： - JPG - PNG
      * @return coverType
      */
     public CoverTypeEnum getCoverType() {
@@ -815,7 +512,7 @@ public class CreateAssetByFileReq  {
 
     
 
-    public CreateAssetByFileReq withCoverMd5(String coverMd5) {
+    public UploadAssetReq withCoverMd5(String coverMd5) {
         this.coverMd5 = coverMd5;
         return this;
     }
@@ -824,7 +521,7 @@ public class CreateAssetByFileReq  {
 
 
     /**
-     * 封面文件MD5值<br/> 
+     * 封面文件的MD5值。
      * @return coverMd5
      */
     public String getCoverMd5() {
@@ -837,13 +534,13 @@ public class CreateAssetByFileReq  {
 
     
 
-    public CreateAssetByFileReq withSubtitles(List<Subtitle> subtitles) {
+    public UploadAssetReq withSubtitles(List<Subtitle> subtitles) {
         this.subtitles = subtitles;
         return this;
     }
 
     
-    public CreateAssetByFileReq addSubtitlesItem(Subtitle subtitlesItem) {
+    public UploadAssetReq addSubtitlesItem(Subtitle subtitlesItem) {
         if(this.subtitles == null) {
             this.subtitles = new ArrayList<>();
         }
@@ -851,7 +548,7 @@ public class CreateAssetByFileReq  {
         return this;
     }
 
-    public CreateAssetByFileReq withSubtitles(Consumer<List<Subtitle>> subtitlesSetter) {
+    public UploadAssetReq withSubtitles(Consumer<List<Subtitle>> subtitlesSetter) {
         if(this.subtitles == null) {
             this.subtitles = new ArrayList<>();
         }
@@ -860,7 +557,7 @@ public class CreateAssetByFileReq  {
     }
 
     /**
-     * 字幕文件信息<br/> 
+     * 字幕文件信息
      * @return subtitles
      */
     public List<Subtitle> getSubtitles() {
@@ -881,47 +578,29 @@ public class CreateAssetByFileReq  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateAssetByFileReq createAssetByFileReq = (CreateAssetByFileReq) o;
-        return Objects.equals(this.videoType, createAssetByFileReq.videoType) &&
-            Objects.equals(this.title, createAssetByFileReq.title) &&
-            Objects.equals(this.description, createAssetByFileReq.description) &&
-            Objects.equals(this.categoryId, createAssetByFileReq.categoryId) &&
-            Objects.equals(this.tags, createAssetByFileReq.tags) &&
-            Objects.equals(this.autoPublish, createAssetByFileReq.autoPublish) &&
-            Objects.equals(this.templateGroupName, createAssetByFileReq.templateGroupName) &&
-            Objects.equals(this.autoEncrypt, createAssetByFileReq.autoEncrypt) &&
-            Objects.equals(this.autoPreheat, createAssetByFileReq.autoPreheat) &&
-            Objects.equals(this.thumbnail, createAssetByFileReq.thumbnail) &&
-            Objects.equals(this.review, createAssetByFileReq.review) &&
-            Objects.equals(this.workflowName, createAssetByFileReq.workflowName) &&
-            Objects.equals(this.videoName, createAssetByFileReq.videoName) &&
-            Objects.equals(this.videoMd5, createAssetByFileReq.videoMd5) &&
-            Objects.equals(this.coverType, createAssetByFileReq.coverType) &&
-            Objects.equals(this.coverMd5, createAssetByFileReq.coverMd5) &&
-            Objects.equals(this.subtitles, createAssetByFileReq.subtitles);
+        UploadAssetReq uploadAssetReq = (UploadAssetReq) o;
+        return Objects.equals(this.assetId, uploadAssetReq.assetId) &&
+            Objects.equals(this.videoMd5, uploadAssetReq.videoMd5) &&
+            Objects.equals(this.videoName, uploadAssetReq.videoName) &&
+            Objects.equals(this.videoType, uploadAssetReq.videoType) &&
+            Objects.equals(this.coverId, uploadAssetReq.coverId) &&
+            Objects.equals(this.coverType, uploadAssetReq.coverType) &&
+            Objects.equals(this.coverMd5, uploadAssetReq.coverMd5) &&
+            Objects.equals(this.subtitles, uploadAssetReq.subtitles);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(videoType, title, description, categoryId, tags, autoPublish, templateGroupName, autoEncrypt, autoPreheat, thumbnail, review, workflowName, videoName, videoMd5, coverType, coverMd5, subtitles);
+        return Objects.hash(assetId, videoMd5, videoName, videoType, coverId, coverType, coverMd5, subtitles);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateAssetByFileReq {\n");
-        sb.append("    videoType: ").append(toIndentedString(videoType)).append("\n");
-        sb.append("    title: ").append(toIndentedString(title)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    categoryId: ").append(toIndentedString(categoryId)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    autoPublish: ").append(toIndentedString(autoPublish)).append("\n");
-        sb.append("    templateGroupName: ").append(toIndentedString(templateGroupName)).append("\n");
-        sb.append("    autoEncrypt: ").append(toIndentedString(autoEncrypt)).append("\n");
-        sb.append("    autoPreheat: ").append(toIndentedString(autoPreheat)).append("\n");
-        sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
-        sb.append("    review: ").append(toIndentedString(review)).append("\n");
-        sb.append("    workflowName: ").append(toIndentedString(workflowName)).append("\n");
-        sb.append("    videoName: ").append(toIndentedString(videoName)).append("\n");
+        sb.append("class UploadAssetReq {\n");
+        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    videoMd5: ").append(toIndentedString(videoMd5)).append("\n");
+        sb.append("    videoName: ").append(toIndentedString(videoName)).append("\n");
+        sb.append("    videoType: ").append(toIndentedString(videoType)).append("\n");
+        sb.append("    coverId: ").append(toIndentedString(coverId)).append("\n");
         sb.append("    coverType: ").append(toIndentedString(coverType)).append("\n");
         sb.append("    coverMd5: ").append(toIndentedString(coverMd5)).append("\n");
         sb.append("    subtitles: ").append(toIndentedString(subtitles)).append("\n");

@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 截图信息。仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，此字段为空。
+ * 截图信息。  **说明：** 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。
  */
 public class ThumbnailInfo  {
 
@@ -67,7 +67,7 @@ public class ThumbnailInfo  {
     }
 
     /**
-     * Get sample
+     * 视频截图信息。
      * @return sample
      */
     public List<ThumbnailRsp> getSample() {
@@ -125,7 +125,7 @@ public class ThumbnailInfo  {
 
 
     /**
-     * Get execDesc
+     * 执行情况描述。
      * @return execDesc
      */
     public String getExecDesc() {
@@ -147,7 +147,7 @@ public class ThumbnailInfo  {
 
 
     /**
-     * Get thumbnailStatus
+     * 截图状态。 取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
      * @return thumbnailStatus
      */
     public String getThumbnailStatus() {

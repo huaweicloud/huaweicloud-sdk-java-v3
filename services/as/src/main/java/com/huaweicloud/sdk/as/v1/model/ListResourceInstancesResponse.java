@@ -38,7 +38,7 @@ public class ListResourceInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="marker")
     
-    private Integer marker;
+    private String marker;
 
     public ListResourceInstancesResponse withResources(List<Resources> resources) {
         this.resources = resources;
@@ -98,7 +98,7 @@ public class ListResourceInstancesResponse extends SdkResponse {
 
     
 
-    public ListResourceInstancesResponse withMarker(Integer marker) {
+    public ListResourceInstancesResponse withMarker(String marker) {
         this.marker = marker;
         return this;
     }
@@ -110,11 +110,11 @@ public class ListResourceInstancesResponse extends SdkResponse {
      * 分页位置标识。
      * @return marker
      */
-    public Integer getMarker() {
+    public String getMarker() {
         return marker;
     }
 
-    public void setMarker(Integer marker) {
+    public void setMarker(String marker) {
         this.marker = marker;
     }
 

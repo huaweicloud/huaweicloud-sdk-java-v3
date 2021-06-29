@@ -21,7 +21,7 @@ public class CheckMd5DuplicationRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private Long size;
+    private Integer size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,7 +29,7 @@ public class CheckMd5DuplicationRequest  {
     
     private String md5;
 
-    public CheckMd5DuplicationRequest withSize(Long size) {
+    public CheckMd5DuplicationRequest withSize(Integer size) {
         this.size = size;
         return this;
     }
@@ -41,11 +41,11 @@ public class CheckMd5DuplicationRequest  {
      * 文件大小
      * @return size
      */
-    public Long getSize() {
+    public Integer getSize() {
         return size;
     }
 
-    public void setSize(Long size) {
+    public void setSize(Integer size) {
         this.size = size;
     }
 
@@ -60,7 +60,7 @@ public class CheckMd5DuplicationRequest  {
 
 
     /**
-     * 文件MD5
+     * 文件MD5。 建议参考[上传校验](https://support.huaweicloud.com/api-vod/vod_04_0212.html#vod_04_0212__section575102165412)生成对应的MD5值。
      * @return md5
      */
     public String getMd5() {

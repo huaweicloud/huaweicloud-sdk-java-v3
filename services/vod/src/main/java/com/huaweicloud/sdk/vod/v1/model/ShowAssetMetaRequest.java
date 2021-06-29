@@ -9,8 +9,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -406,90 +404,6 @@ public class ShowAssetMetaRequest  {
     @JsonProperty(value="size")
     
     private Integer size;
-    /**
-     * Gets or Sets order
-     */
-    public static final class OrderEnum {
-
-        
-        /**
-         * Enum ASC for value: "asc"
-         */
-        public static final OrderEnum ASC = new OrderEnum("asc");
-        
-        /**
-         * Enum DESC for value: "desc"
-         */
-        public static final OrderEnum DESC = new OrderEnum("desc");
-        
-
-        private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OrderEnum> createStaticFields() {
-            Map<String, OrderEnum> map = new HashMap<>();
-            map.put("asc", ASC);
-            map.put("desc", DESC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OrderEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OrderEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
-        }
-
-        public static OrderEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OrderEnum) {
-                return this.value.equals(((OrderEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order")
-    
-    private OrderEnum order;
 
     public ShowAssetMetaRequest withAssetId(List<String> assetId) {
         this.assetId = assetId;
@@ -514,7 +428,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 媒资id。一次最多10个<br/> 
+     * 媒资id，最多同时查询10个媒资。
      * @return assetId
      */
     public List<String> getAssetId() {
@@ -550,7 +464,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 媒资状态<br/> 
+     * 媒资状态。 取值如下： - UNCREATED：未创建（媒资ID不存在 ） - DELETED：已删除 - CANCELLED：上传取消 - SERVER_ERROR：上传失败（点播服务端故障） - UPLOAD_FAILED：上传失败（向OBS上传失败） - CREATING：创建中 - PUBLISHED：已发布 - TRANSCODING：待发布（转码中） - TRANSCODE_FAILED：待发布（转码失败） - TRANSCODE_SUCCEED：待发布（转码成功） - CREATED：待发布（未转码）
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -586,7 +500,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 转码状态<br/> 
+     * 转码状态 取值如下： - TRANSCODING：转码中 - TRANSCODE_FAILED：转码失败 - TRANSCODE_SUCCEED：转码成功 - UN_TRANSCODE：未转码 - WAITING_TRANSCODE：等待转码
      * @return transcodeStatus
      */
     public List<TranscodeStatusEnum> getTranscodeStatus() {
@@ -622,7 +536,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 媒资状态<br/> 
+     * 媒资状态。 取值如下： - PUBLISHED：已发布 - CREATED：未发布
      * @return assetStatus
      */
     public List<AssetStatusEnum> getAssetStatus() {
@@ -644,7 +558,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 起始时间.指定task_id时该参数无效<br/> 
+     * 起始时间，查询指定“**asset_id**”时，该参数无效。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -666,7 +580,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 结束时间.指定task_id时该参数无效<br/> 
+     * 结束时间，查询指定“**asset_id**”时，该参数无效。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -688,7 +602,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 分类ID<br/> 
+     * 分类ID。
      * @return categoryId
      */
     public Integer getCategoryId() {
@@ -710,7 +624,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 视频标签。<br/>单个标签不超过16个字节，最多不超过16个标签。<br/> 多个用逗号分隔，UTF8编码。<br/> 
+     * 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
      * @return tags
      */
     public String getTags() {
@@ -732,7 +646,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 在媒资标题、描述中模糊查询的字符串。<br/>暂不支持模糊查询。<br/> 
+     * 在媒资标题、描述中模糊查询的字符串。
      * @return queryString
      */
     public String getQueryString() {
@@ -754,7 +668,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 分页编号,默认为0。<br/> 
+     * 分页编号，查询指定“asset_id”时，该参数无效。 默认值：0。
      * minimum: 0
      * @return page
      */
@@ -777,7 +691,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 每页记录数。默认10，范围[1,100]<br/> 指定task_id时该参数无效<br/> 
+     * 每页记录数，查询指定“**asset_id**”时，该参数无效。 取值范围：[1,100]。 默认值：10。
      * minimum: 1
      * maximum: 100
      * @return size
@@ -788,28 +702,6 @@ public class ShowAssetMetaRequest  {
 
     public void setSize(Integer size) {
         this.size = size;
-    }
-
-    
-
-    public ShowAssetMetaRequest withOrder(OrderEnum order) {
-        this.order = order;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get order
-     * @return order
-     */
-    public OrderEnum getOrder() {
-        return order;
-    }
-
-    public void setOrder(OrderEnum order) {
-        this.order = order;
     }
 
     
@@ -833,12 +725,11 @@ public class ShowAssetMetaRequest  {
             Objects.equals(this.tags, showAssetMetaRequest.tags) &&
             Objects.equals(this.queryString, showAssetMetaRequest.queryString) &&
             Objects.equals(this.page, showAssetMetaRequest.page) &&
-            Objects.equals(this.size, showAssetMetaRequest.size) &&
-            Objects.equals(this.order, showAssetMetaRequest.order);
+            Objects.equals(this.size, showAssetMetaRequest.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, status, transcodeStatus, assetStatus, startTime, endTime, categoryId, tags, queryString, page, size, order);
+        return Objects.hash(assetId, status, transcodeStatus, assetStatus, startTime, endTime, categoryId, tags, queryString, page, size);
     }
     @Override
     public String toString() {
@@ -855,7 +746,6 @@ public class ShowAssetMetaRequest  {
         sb.append("    queryString: ").append(toIndentedString(queryString)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("}");
         return sb.toString();
     }

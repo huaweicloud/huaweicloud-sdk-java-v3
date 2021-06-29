@@ -241,22 +241,22 @@ public class AsClient {
      * 批量将实例移出备用状态
      * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
      *
-     * @param BatchUnsetScalingInstancesStandbyRequest 请求对象
-     * @return BatchUnsetScalingInstancesStandbyResponse
+     * @param BatchUnsetScalingInstancesStantbyRequest 请求对象
+     * @return BatchUnsetScalingInstancesStantbyResponse
      */
-    public BatchUnsetScalingInstancesStandbyResponse batchUnsetScalingInstancesStandby(BatchUnsetScalingInstancesStandbyRequest request) {
-        return hcClient.syncInvokeHttp(request, AsMeta.batchUnsetScalingInstancesStandby);
+    public BatchUnsetScalingInstancesStantbyResponse batchUnsetScalingInstancesStantby(BatchUnsetScalingInstancesStantbyRequest request) {
+        return hcClient.syncInvokeHttp(request, AsMeta.batchUnsetScalingInstancesStantby);
     }
 
     /**
      * 批量将实例移出备用状态
      * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
      *
-     * @param BatchUnsetScalingInstancesStandbyRequest 请求对象
-     * @return SyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse>
+     * @param BatchUnsetScalingInstancesStantbyRequest 请求对象
+     * @return SyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse>
      */
-    public SyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandbyInvoker(BatchUnsetScalingInstancesStandbyRequest request) {
-        return new SyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse>(request, AsMeta.batchUnsetScalingInstancesStandby, hcClient);
+    public SyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantbyInvoker(BatchUnsetScalingInstancesStantbyRequest request) {
+        return new SyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse>(request, AsMeta.batchUnsetScalingInstancesStantby, hcClient);
     }
 
     /**

@@ -46,7 +46,7 @@ public class QueryCategoryRsp  {
 
 
     /**
-     * 视频分类ID<br/> 
+     * 分类ID。
      * @return id
      */
     public String getId() {
@@ -68,7 +68,7 @@ public class QueryCategoryRsp  {
 
 
     /**
-     * 视频分类名称<br/> 
+     * 分类名称。
      * @return name
      */
     public String getName() {
@@ -104,7 +104,7 @@ public class QueryCategoryRsp  {
     }
 
     /**
-     * 子分类信息<br/> 
+     * 子分类列表。
      * @return children
      */
     public List<QueryCategoryRsp> getChildren() {

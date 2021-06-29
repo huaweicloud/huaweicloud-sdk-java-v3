@@ -38,7 +38,7 @@ public class ReviewDetail  {
 
 
     /**
-     * 置信度，取值介于0与1之间。
+     * 置信度。 取值范围：[0,1]。
      * @return confidence
      */
     public String getConfidence() {
@@ -60,7 +60,7 @@ public class ReviewDetail  {
 
 
     /**
-     * 每个检测结果的标签化说明，在politics场景中 label为对应的政治人物信息，在terrorism场景中 label为对应的暴恐元素（枪支、刀具、火灾等） 信息，在porn场景中label为对应的涉黄元素（涉 黄、性感等）信息。 
+     * 每个检测结果的标签化说明。 - politics场景：label为对应的政治人物信息。 - terrorism场景： label为对应的暴恐元素（枪支、刀具、火灾等） 信息。 - porn场景：label为对应的涉黄元素（涉黄、性感等）信息。
      * @return label
      */
     public String getLabel() {

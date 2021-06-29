@@ -330,13 +330,13 @@ public class AsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandby = genForbatchUnsetScalingInstancesStandby();
+    public static final HttpRequestDef<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantby = genForbatchUnsetScalingInstancesStantby();
 
-    private static HttpRequestDef<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> genForbatchUnsetScalingInstancesStandby() {
+    private static HttpRequestDef<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> genForbatchUnsetScalingInstancesStantby() {
         // basic
-        HttpRequestDef.Builder<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchUnsetScalingInstancesStandbyRequest.class, BatchUnsetScalingInstancesStandbyResponse.class)
-                .withName("BatchUnsetScalingInstancesStandby")
+        HttpRequestDef.Builder<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUnsetScalingInstancesStantbyRequest.class, BatchUnsetScalingInstancesStantbyResponse.class)
+                .withName("BatchUnsetScalingInstancesStantby")
                 .withUri("/autoscaling-api/v1/{project_id}/scaling_group_instance/{scaling_group_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -345,7 +345,7 @@ public class AsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(BatchUnsetScalingInstancesStandbyRequest::getScalingGroupId, (req, v) -> {
+            f -> f.withMarshaller(BatchUnsetScalingInstancesStantbyRequest::getScalingGroupId, (req, v) -> {
                 req.setScalingGroupId(v);
             })
         );
@@ -353,7 +353,7 @@ public class AsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             BatchExitStandByInstancesOption.class,
-            f -> f.withMarshaller(BatchUnsetScalingInstancesStandbyRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(BatchUnsetScalingInstancesStantbyRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

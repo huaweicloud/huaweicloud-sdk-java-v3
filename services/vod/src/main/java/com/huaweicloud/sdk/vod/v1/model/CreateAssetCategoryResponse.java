@@ -58,7 +58,7 @@ public class CreateAssetCategoryResponse extends SdkResponse {
 
 
     /**
-     * 视频分类名称<br/> 
+     * 媒资分类名称。
      * @return name
      */
     public String getName() {
@@ -80,7 +80,7 @@ public class CreateAssetCategoryResponse extends SdkResponse {
 
 
     /**
-     * 父分类ID<br/> 
+     * 父分类ID。 一级分类父ID为0。
      * @return parentId
      */
     public Integer getParentId() {
@@ -102,7 +102,7 @@ public class CreateAssetCategoryResponse extends SdkResponse {
 
 
     /**
-     * 视频分类ID<br/> 
+     * 媒资分类ID。
      * @return id
      */
     public Integer getId() {
@@ -124,7 +124,7 @@ public class CreateAssetCategoryResponse extends SdkResponse {
 
 
     /**
-     * 视频分类层级<br/> 
+     * 媒资分类层级。 取值如下： - 1：一级分类层级。 - 2：二级分类层级。 - 3：三级分类层级。
      * @return level
      */
     public Integer getLevel() {
@@ -146,7 +146,7 @@ public class CreateAssetCategoryResponse extends SdkResponse {
 
 
     /**
-     * Get projectId
+     * 项目ID。
      * @return projectId
      */
     public String getProjectId() {

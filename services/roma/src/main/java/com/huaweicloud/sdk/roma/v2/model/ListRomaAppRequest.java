@@ -98,7 +98,7 @@ public class ListRomaAppRequest  {
     /**
      * 偏移量，大于等于0
      * minimum: 0
-     * maximum: 10
+     * maximum: 10000
      * @return offset
      */
     public Integer getOffset() {
@@ -144,7 +144,7 @@ public class ListRomaAppRequest  {
 
 
     /**
-     * 查询收藏的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，获取收藏的应用 - 为false时，获取未被收藏的应用products
+     * 查询收藏的应用 - 未提供时，查询当前用户有权限的所有应用 - 为true时，获取收藏的应用 - 为false时，获取未被收藏的应用
      * @return favorite
      */
     public Boolean getFavorite() {

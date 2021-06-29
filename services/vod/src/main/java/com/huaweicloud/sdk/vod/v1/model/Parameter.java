@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Parameter
+ * 需要提取音频的参数信息。
  */
 public class Parameter  {
 
@@ -32,7 +32,7 @@ public class Parameter  {
 
 
     /**
-     * 封装格式，可选值：“MP3”。<br/> 
+     * 封装格式。  取值如下： - MP3 - AAC
      * @return format
      */
     public String getFormat() {

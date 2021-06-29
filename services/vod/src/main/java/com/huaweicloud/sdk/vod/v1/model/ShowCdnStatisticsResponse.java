@@ -48,7 +48,7 @@ public class ShowCdnStatisticsResponse extends SdkResponse {
 
 
     /**
-     * 统计起始时间 
+     * 统计起始时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -70,7 +70,7 @@ public class ShowCdnStatisticsResponse extends SdkResponse {
 
 
     /**
-     * 采样时间间隔 
+     * 统计间隔。
      * @return interval
      */
     public Integer getInterval() {
@@ -106,7 +106,7 @@ public class ShowCdnStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * Get values
+     * 采样数据数组。 从start_time开始，每个间隔对应一个采样数据。
      * @return values
      */
     public List<Long> getValues() {

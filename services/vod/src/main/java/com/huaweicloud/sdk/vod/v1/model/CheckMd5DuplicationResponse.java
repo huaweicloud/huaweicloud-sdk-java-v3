@@ -42,7 +42,7 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
 
 
     /**
-     * 是否重复
+     * 是否重复。 取值如下： - 0：表示不重复。 - 1：表示重复。
      * @return isDuplicated
      */
     public Integer getIsDuplicated() {

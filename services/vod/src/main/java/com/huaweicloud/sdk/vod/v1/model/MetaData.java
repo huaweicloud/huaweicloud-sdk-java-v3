@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,252 +16,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * MetaData
+ * 视频的元数据信息。 经过视频解析后产生，包括封装格式、大小、分辨率、码率、帧率。
  */
 public class MetaData  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="play_type")
-    
-    private Long playType;
     /**
-     * 封装类型,TS/MP4等<br/> 
-     */
-    public static final class PackTypeEnum {
-
-        
-        /**
-         * Enum MP4 for value: "MP4"
-         */
-        public static final PackTypeEnum MP4 = new PackTypeEnum("MP4");
-        
-        /**
-         * Enum TS for value: "TS"
-         */
-        public static final PackTypeEnum TS = new PackTypeEnum("TS");
-        
-        /**
-         * Enum MOV for value: "MOV"
-         */
-        public static final PackTypeEnum MOV = new PackTypeEnum("MOV");
-        
-        /**
-         * Enum MXF for value: "MXF"
-         */
-        public static final PackTypeEnum MXF = new PackTypeEnum("MXF");
-        
-        /**
-         * Enum MPG for value: "MPG"
-         */
-        public static final PackTypeEnum MPG = new PackTypeEnum("MPG");
-        
-        /**
-         * Enum FLV for value: "FLV"
-         */
-        public static final PackTypeEnum FLV = new PackTypeEnum("FLV");
-        
-        /**
-         * Enum WMV for value: "WMV"
-         */
-        public static final PackTypeEnum WMV = new PackTypeEnum("WMV");
-        
-        /**
-         * Enum MP3 for value: "MP3"
-         */
-        public static final PackTypeEnum MP3 = new PackTypeEnum("MP3");
-        
-        /**
-         * Enum WMA for value: "WMA"
-         */
-        public static final PackTypeEnum WMA = new PackTypeEnum("WMA");
-        
-        /**
-         * Enum APE for value: "APE"
-         */
-        public static final PackTypeEnum APE = new PackTypeEnum("APE");
-        
-        /**
-         * Enum FLAC for value: "FLAC"
-         */
-        public static final PackTypeEnum FLAC = new PackTypeEnum("FLAC");
-        
-        /**
-         * Enum AAC for value: "AAC"
-         */
-        public static final PackTypeEnum AAC = new PackTypeEnum("AAC");
-        
-        /**
-         * Enum AC3 for value: "AC3"
-         */
-        public static final PackTypeEnum AC3 = new PackTypeEnum("AC3");
-        
-        /**
-         * Enum MMF for value: "MMF"
-         */
-        public static final PackTypeEnum MMF = new PackTypeEnum("MMF");
-        
-        /**
-         * Enum AMR for value: "AMR"
-         */
-        public static final PackTypeEnum AMR = new PackTypeEnum("AMR");
-        
-        /**
-         * Enum M4A for value: "M4A"
-         */
-        public static final PackTypeEnum M4A = new PackTypeEnum("M4A");
-        
-        /**
-         * Enum M4R for value: "M4R"
-         */
-        public static final PackTypeEnum M4R = new PackTypeEnum("M4R");
-        
-        /**
-         * Enum OGG for value: "OGG"
-         */
-        public static final PackTypeEnum OGG = new PackTypeEnum("OGG");
-        
-        /**
-         * Enum WAV for value: "WAV"
-         */
-        public static final PackTypeEnum WAV = new PackTypeEnum("WAV");
-        
-        /**
-         * Enum WV for value: "WV"
-         */
-        public static final PackTypeEnum WV = new PackTypeEnum("WV");
-        
-        /**
-         * Enum MP2 for value: "MP2"
-         */
-        public static final PackTypeEnum MP2 = new PackTypeEnum("MP2");
-        
-        /**
-         * Enum AVI for value: "AVI"
-         */
-        public static final PackTypeEnum AVI = new PackTypeEnum("AVI");
-        
-        /**
-         * Enum F4V for value: "F4V"
-         */
-        public static final PackTypeEnum F4V = new PackTypeEnum("F4V");
-        
-        /**
-         * Enum M4V for value: "M4V"
-         */
-        public static final PackTypeEnum M4V = new PackTypeEnum("M4V");
-        
-        /**
-         * Enum MPEG for value: "MPEG"
-         */
-        public static final PackTypeEnum MPEG = new PackTypeEnum("MPEG");
-        
-        /**
-         * Enum HLS for value: "HLS"
-         */
-        public static final PackTypeEnum HLS = new PackTypeEnum("HLS");
-        
-        /**
-         * Enum DASH for value: "DASH"
-         */
-        public static final PackTypeEnum DASH = new PackTypeEnum("DASH");
-        
-
-        private static final Map<String, PackTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PackTypeEnum> createStaticFields() {
-            Map<String, PackTypeEnum> map = new HashMap<>();
-            map.put("MP4", MP4);
-            map.put("TS", TS);
-            map.put("MOV", MOV);
-            map.put("MXF", MXF);
-            map.put("MPG", MPG);
-            map.put("FLV", FLV);
-            map.put("WMV", WMV);
-            map.put("MP3", MP3);
-            map.put("WMA", WMA);
-            map.put("APE", APE);
-            map.put("FLAC", FLAC);
-            map.put("AAC", AAC);
-            map.put("AC3", AC3);
-            map.put("MMF", MMF);
-            map.put("AMR", AMR);
-            map.put("M4A", M4A);
-            map.put("M4R", M4R);
-            map.put("OGG", OGG);
-            map.put("WAV", WAV);
-            map.put("WV", WV);
-            map.put("MP2", MP2);
-            map.put("AVI", AVI);
-            map.put("F4V", F4V);
-            map.put("M4V", M4V);
-            map.put("MPEG", MPEG);
-            map.put("HLS", HLS);
-            map.put("DASH", DASH);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PackTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PackTypeEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            PackTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PackTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static PackTypeEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            PackTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PackTypeEnum) {
-                return this.value.equals(((PackTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pack_type")
-    
-    private PackTypeEnum packType;
-    /**
-     * 编码类型：H.264、H.265等<br/> 
+     * 视频编码格式。 取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
      */
     public static final class CodecEnum {
 
@@ -503,50 +261,6 @@ public class MetaData  {
     
     private Integer audioChannels;
 
-    public MetaData withPlayType(Long playType) {
-        this.playType = playType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 封装类型,TS/MP4等<br/> 
-     * @return playType
-     */
-    public Long getPlayType() {
-        return playType;
-    }
-
-    public void setPlayType(Long playType) {
-        this.playType = playType;
-    }
-
-    
-
-    public MetaData withPackType(PackTypeEnum packType) {
-        this.packType = packType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 封装类型,TS/MP4等<br/> 
-     * @return packType
-     */
-    public PackTypeEnum getPackType() {
-        return packType;
-    }
-
-    public void setPackType(PackTypeEnum packType) {
-        this.packType = packType;
-    }
-
-    
-
     public MetaData withCodec(CodecEnum codec) {
         this.codec = codec;
         return this;
@@ -556,7 +270,7 @@ public class MetaData  {
 
 
     /**
-     * 编码类型：H.264、H.265等<br/> 
+     * 视频编码格式。 取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
      * @return codec
      */
     public CodecEnum getCodec() {
@@ -578,7 +292,7 @@ public class MetaData  {
 
 
     /**
-     * 视频时长<br/> 
+     * 视频时长。 若视频的原时长为非整数，则该字段值为原时长的向上取整。
      * @return duration
      */
     public Long getDuration() {
@@ -600,7 +314,7 @@ public class MetaData  {
 
 
     /**
-     * 视频文件大小<br/> 
+     * 视频文件大小。 单位：字节。
      * @return videoSize
      */
     public Long getVideoSize() {
@@ -622,7 +336,7 @@ public class MetaData  {
 
 
     /**
-     * 视频宽度<br/> 
+     * 视频宽度（单位：像素）。 - 编码为H.264的取值范围：[32,3840]之间2的倍数。 - 编码为H.265的取值范围：[320,3840]之间4的倍数。
      * @return width
      */
     public Long getWidth() {
@@ -644,7 +358,7 @@ public class MetaData  {
 
 
     /**
-     * 视频高度<br/> 
+     * 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
      * @return hight
      */
     public Long getHight() {
@@ -666,7 +380,7 @@ public class MetaData  {
 
 
     /**
-     * 视频平均码率<br/> 
+     * 视频平均码率。
      * @return bitRate
      */
     public Long getBitRate() {
@@ -688,7 +402,7 @@ public class MetaData  {
 
 
     /**
-     * 帧率<br/> 
+     * 帧率（单位：帧每秒）。 取值如下： - FRAMERATE_AUTO = 1, - FRAMERATE_10 = 2, - FRAMERATE_15 = 3, - FRAMERATE_2397 = 4, // 23.97 fps - FRAMERATE_24 = 5, - FRAMERATE_25 = 6, - FRAMERATE_2997 = 7, // 29.97 fps - FRAMERATE_30 = 8, - FRAMERATE_50 = 9, - FRAMERATE_60 = 10 默认值：1。 单位：帧每秒。
      * @return frameRate
      */
     public Long getFrameRate() {
@@ -710,7 +424,7 @@ public class MetaData  {
 
 
     /**
-     * 分辨率<br/> 
+     * 清晰度。 取值如下： - FULL_HD：超高清 - HD：高清 - SD：标清 - FLUENT：流畅 - AD：自适应 - 2K - 4K
      * @return quality
      */
     public String getQuality() {
@@ -732,7 +446,7 @@ public class MetaData  {
 
 
     /**
-     * 音频声道数<br/> 
+     * 音频的声道数。
      * @return audioChannels
      */
     public Integer getAudioChannels() {
@@ -754,9 +468,7 @@ public class MetaData  {
             return false;
         }
         MetaData metaData = (MetaData) o;
-        return Objects.equals(this.playType, metaData.playType) &&
-            Objects.equals(this.packType, metaData.packType) &&
-            Objects.equals(this.codec, metaData.codec) &&
+        return Objects.equals(this.codec, metaData.codec) &&
             Objects.equals(this.duration, metaData.duration) &&
             Objects.equals(this.videoSize, metaData.videoSize) &&
             Objects.equals(this.width, metaData.width) &&
@@ -768,14 +480,12 @@ public class MetaData  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(playType, packType, codec, duration, videoSize, width, hight, bitRate, frameRate, quality, audioChannels);
+        return Objects.hash(codec, duration, videoSize, width, hight, bitRate, frameRate, quality, audioChannels);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MetaData {\n");
-        sb.append("    playType: ").append(toIndentedString(playType)).append("\n");
-        sb.append("    packType: ").append(toIndentedString(packType)).append("\n");
         sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    videoSize: ").append(toIndentedString(videoSize)).append("\n");

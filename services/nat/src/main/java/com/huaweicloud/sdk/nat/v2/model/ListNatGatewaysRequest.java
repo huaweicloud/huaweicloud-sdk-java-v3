@@ -28,12 +28,6 @@ public class ListNatGatewaysRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
-    private String tenantId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private String id;
@@ -283,28 +277,6 @@ public class ListNatGatewaysRequest  {
     @JsonProperty(value="limit")
     
     private Integer limit;
-
-    public ListNatGatewaysRequest withTenantId(String tenantId) {
-        this.tenantId = tenantId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 项目的ID。
-     * @return tenantId
-     */
-    public String getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
-
-    
 
     public ListNatGatewaysRequest withId(String id) {
         this.id = id;
@@ -587,8 +559,7 @@ public class ListNatGatewaysRequest  {
             return false;
         }
         ListNatGatewaysRequest listNatGatewaysRequest = (ListNatGatewaysRequest) o;
-        return Objects.equals(this.tenantId, listNatGatewaysRequest.tenantId) &&
-            Objects.equals(this.id, listNatGatewaysRequest.id) &&
+        return Objects.equals(this.id, listNatGatewaysRequest.id) &&
             Objects.equals(this.enterpriseProjectId, listNatGatewaysRequest.enterpriseProjectId) &&
             Objects.equals(this.description, listNatGatewaysRequest.description) &&
             Objects.equals(this.createdAt, listNatGatewaysRequest.createdAt) &&
@@ -602,13 +573,12 @@ public class ListNatGatewaysRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(tenantId, id, enterpriseProjectId, description, createdAt, name, status, spec, adminStateUp, internalNetworkId, routerId, limit);
+        return Objects.hash(id, enterpriseProjectId, description, createdAt, name, status, spec, adminStateUp, internalNetworkId, routerId, limit);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNatGatewaysRequest {\n");
-        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

@@ -134,7 +134,7 @@ public class ShowAssetDetailRequest  {
 
 
     /**
-     * 媒资ID
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -170,7 +170,7 @@ public class ShowAssetDetailRequest  {
     }
 
     /**
-     * 要查询的信息类型，可同时查询多个类型的信息。不指定时表示查询所有信息。 \"base_info\"       //媒资基本信息 \"transcode_info\"   //转码结果信息 \"thumbnail_info\"  //截图结果信息 \"review_info\"     //审核结果信息 
+     * 查询的信息类型。 - 为空时表示查询所有信息。 - 不为空时支持同时查询一个或者多个类型的信息，取值如下： - - base_info：媒资基本信息。 - - transcode_info：转码结果信息。 - - thumbnail_info：截图结果信息。 - - review_info：审核结果信息。
      * @return categories
      */
     public List<CategoriesEnum> getCategories() {

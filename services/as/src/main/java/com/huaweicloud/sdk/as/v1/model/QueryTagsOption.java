@@ -153,9 +153,9 @@ public class QueryTagsOption  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matchs")
+    @JsonProperty(value="matches")
     
-    private List<Matches> matchs = null;
+    private List<Matches> matches = null;
     
     public QueryTagsOption withTags(List<TagsMultiValue> tags) {
         this.tags = tags;
@@ -389,38 +389,38 @@ public class QueryTagsOption  {
 
     
 
-    public QueryTagsOption withMatchs(List<Matches> matchs) {
-        this.matchs = matchs;
+    public QueryTagsOption withMatches(List<Matches> matches) {
+        this.matches = matches;
         return this;
     }
 
     
-    public QueryTagsOption addMatchsItem(Matches matchsItem) {
-        if(this.matchs == null) {
-            this.matchs = new ArrayList<>();
+    public QueryTagsOption addMatchesItem(Matches matchesItem) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
         }
-        this.matchs.add(matchsItem);
+        this.matches.add(matchesItem);
         return this;
     }
 
-    public QueryTagsOption withMatchs(Consumer<List<Matches>> matchsSetter) {
-        if(this.matchs == null) {
-            this.matchs = new ArrayList<>();
+    public QueryTagsOption withMatches(Consumer<List<Matches>> matchesSetter) {
+        if(this.matches == null) {
+            this.matches = new ArrayList<>();
         }
-        matchsSetter.accept(this.matchs);
+        matchesSetter.accept(this.matches);
         return this;
     }
 
     /**
      * 模糊搜索字段。
-     * @return matchs
+     * @return matches
      */
-    public List<Matches> getMatchs() {
-        return matchs;
+    public List<Matches> getMatches() {
+        return matches;
     }
 
-    public void setMatchs(List<Matches> matchs) {
-        this.matchs = matchs;
+    public void setMatches(List<Matches> matches) {
+        this.matches = matches;
     }
 
     
@@ -442,11 +442,11 @@ public class QueryTagsOption  {
             Objects.equals(this.marker, queryTagsOption.marker) &&
             Objects.equals(this.action, queryTagsOption.action) &&
             Objects.equals(this.offset, queryTagsOption.offset) &&
-            Objects.equals(this.matchs, queryTagsOption.matchs);
+            Objects.equals(this.matches, queryTagsOption.matches);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(tags, tagsAny, notTags, notTagsAny, limit, marker, action, offset, matchs);
+        return Objects.hash(tags, tagsAny, notTags, notTagsAny, limit, marker, action, offset, matches);
     }
     @Override
     public String toString() {
@@ -460,7 +460,7 @@ public class QueryTagsOption  {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    matchs: ").append(toIndentedString(matchs)).append("\n");
+        sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
         sb.append("}");
         return sb.toString();
     }

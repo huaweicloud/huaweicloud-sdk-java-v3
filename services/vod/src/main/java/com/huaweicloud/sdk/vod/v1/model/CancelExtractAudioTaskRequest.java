@@ -32,7 +32,7 @@ public class CancelExtractAudioTaskRequest  {
 
 
     /**
-     * 媒姿ID 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {

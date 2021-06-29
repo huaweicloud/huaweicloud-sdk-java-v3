@@ -20,12 +20,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 审核信息数组。仅当审核成功后才能查询到此信息，未审核、正在审核以及审核失败时，此字段为空。
+ * 审核信息数组。  **说明：** 仅当审核成功后才能查询到此信息，未审核、正在审核以及审核失败时，无此字段信息。
  */
 public class ReviewInfo  {
 
     /**
-     * 检测结果是否通过。 - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。  > 说明: > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。 
+     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。  > 说明: > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。
      */
     public static final class SuggestionEnum {
 
@@ -154,7 +154,7 @@ public class ReviewInfo  {
 
 
     /**
-     * 检测结果是否通过。 - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。  > 说明: > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。 
+     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。  > 说明: > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。
      * @return suggestion
      */
     public SuggestionEnum getSuggestion() {
@@ -219,7 +219,7 @@ public class ReviewInfo  {
     }
 
     /**
-     * Get cover
+     * 封面检测结果。
      * @return cover
      */
     public List<PictureReviewRet> getCover() {
@@ -255,7 +255,7 @@ public class ReviewInfo  {
     }
 
     /**
-     * Get video
+     * 视频检测结果。
      * @return video
      */
     public List<PictureReviewRet> getVideo() {
@@ -277,7 +277,7 @@ public class ReviewInfo  {
 
 
     /**
-     * Get execDesc
+     * 执行情况描述。
      * @return execDesc
      */
     public String getExecDesc() {
@@ -299,7 +299,7 @@ public class ReviewInfo  {
 
 
     /**
-     * Get reviewStatus
+     * 审核状态。 取值如下： - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS：审核可疑，需要人工审核 - REVIEW_PASSED：审核通过 - REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
      * @return reviewStatus
      */
     public String getReviewStatus() {

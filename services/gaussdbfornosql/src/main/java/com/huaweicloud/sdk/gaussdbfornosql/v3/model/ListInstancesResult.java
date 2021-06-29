@@ -44,7 +44,7 @@ public class ListInstancesResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
-    private String port;
+    private Integer port;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -214,7 +214,7 @@ public class ListInstancesResult  {
 
     
 
-    public ListInstancesResult withPort(String port) {
+    public ListInstancesResult withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -226,11 +226,11 @@ public class ListInstancesResult  {
      * 数据库端口。
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

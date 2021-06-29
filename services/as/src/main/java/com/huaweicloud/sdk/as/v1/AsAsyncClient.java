@@ -243,22 +243,22 @@ public class AsAsyncClient {
      * 批量将实例移出备用状态
      * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
      *
-     * @param BatchUnsetScalingInstancesStandbyRequest 请求对象
-     * @return CompletableFuture<BatchUnsetScalingInstancesStandbyResponse>
+     * @param BatchUnsetScalingInstancesStantbyRequest 请求对象
+     * @return CompletableFuture<BatchUnsetScalingInstancesStantbyResponse>
      */
-    public CompletableFuture<BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandbyAsync(BatchUnsetScalingInstancesStandbyRequest request) {
-        return hcClient.asyncInvokeHttp(request, AsMeta.batchUnsetScalingInstancesStandby);
+    public CompletableFuture<BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantbyAsync(BatchUnsetScalingInstancesStantbyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AsMeta.batchUnsetScalingInstancesStantby);
     }
 
     /**
      * 批量将实例移出备用状态
      * 批量移出伸缩组中的实例或批量添加伸缩组外的实例。批量对伸缩组中的实例设置或取消其实例保护属性。批量将伸缩组中的实例转入或移出备用状态。
      *
-     * @param BatchUnsetScalingInstancesStandbyRequest 请求对象
-     * @return AsyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse>
+     * @param BatchUnsetScalingInstancesStantbyRequest 请求对象
+     * @return AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse>
      */
-    public AsyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse> batchUnsetScalingInstancesStandbyAsyncInvoker(BatchUnsetScalingInstancesStandbyRequest request) {
-        return new AsyncInvoker<BatchUnsetScalingInstancesStandbyRequest, BatchUnsetScalingInstancesStandbyResponse>(request, AsMeta.batchUnsetScalingInstancesStandby, hcClient);
+    public AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse> batchUnsetScalingInstancesStantbyAsyncInvoker(BatchUnsetScalingInstancesStantbyRequest request) {
+        return new AsyncInvoker<BatchUnsetScalingInstancesStantbyRequest, BatchUnsetScalingInstancesStantbyResponse>(request, AsMeta.batchUnsetScalingInstancesStantby, hcClient);
     }
 
     /**

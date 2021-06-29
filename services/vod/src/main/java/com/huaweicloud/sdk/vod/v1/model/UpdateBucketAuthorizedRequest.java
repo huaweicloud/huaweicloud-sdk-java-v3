@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.BucketAuthorizedReq;
+import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateBucketAuthorizedRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private BucketAuthorizedReq body;
+    private UpdateBucketAuthorizedReq body;
 
-    public UpdateBucketAuthorizedRequest withBody(BucketAuthorizedReq body) {
+    public UpdateBucketAuthorizedRequest withBody(UpdateBucketAuthorizedReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateBucketAuthorizedRequest withBody(Consumer<BucketAuthorizedReq> bodySetter) {
+    public UpdateBucketAuthorizedRequest withBody(Consumer<UpdateBucketAuthorizedReq> bodySetter) {
         if(this.body == null ){
-            this.body = new BucketAuthorizedReq();
+            this.body = new UpdateBucketAuthorizedReq();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class UpdateBucketAuthorizedRequest  {
      * Get body
      * @return body
      */
-    public BucketAuthorizedReq getBody() {
+    public UpdateBucketAuthorizedReq getBody() {
         return body;
     }
 
-    public void setBody(BucketAuthorizedReq body) {
+    public void setBody(UpdateBucketAuthorizedReq body) {
         this.body = body;
     }
 

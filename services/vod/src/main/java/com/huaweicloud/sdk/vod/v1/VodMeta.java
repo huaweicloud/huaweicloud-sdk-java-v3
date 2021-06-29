@@ -80,7 +80,7 @@ public class VodMeta {
         builder.withRequestField("size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            Integer.class,
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getSize, (req, v) -> {
                 req.setSize(v);
             })
@@ -169,7 +169,7 @@ public class VodMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateAssetByFileReq.class,
+            CreateAssetByFileUploadReq.class,
             f -> f.withMarshaller(CreateAssetByFileUploadRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -912,14 +912,6 @@ public class VodMeta {
                 req.setSize(v);
             })
         );
-        builder.withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            ShowAssetMetaRequest.OrderEnum.class,
-            f -> f.withMarshaller(ShowAssetMetaRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
-            })
-        );
 
         // response
         
@@ -947,22 +939,6 @@ public class VodMeta {
                 req.setHttpVerb(v);
             })
         );
-        builder.withRequestField("content_md5",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentMd5, (req, v) -> {
-                req.setContentMd5(v);
-            })
-        );
-        builder.withRequestField("content_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentType, (req, v) -> {
-                req.setContentType(v);
-            })
-        );
         builder.withRequestField("bucket",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -977,6 +953,22 @@ public class VodMeta {
             String.class,
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getObjectKey, (req, v) -> {
                 req.setObjectKey(v);
+            })
+        );
+        builder.withRequestField("content_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentType, (req, v) -> {
+                req.setContentType(v);
+            })
+        );
+        builder.withRequestField("content_md5",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentMd5, (req, v) -> {
+                req.setContentMd5(v);
             })
         );
         builder.withRequestField("upload_id",
@@ -1146,7 +1138,7 @@ public class VodMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateAssetReq.class,
+            UploadAssetReq.class,
             f -> f.withMarshaller(UpdateAssetRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -1227,7 +1219,7 @@ public class VodMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BucketAuthorizedReq.class,
+            UpdateBucketAuthorizedReq.class,
             f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

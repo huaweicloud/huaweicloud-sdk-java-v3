@@ -48,7 +48,7 @@ public class DeleteAssetsRequest  {
     }
 
     /**
-     * 媒资ID 
+     * 媒资ID，支持一次删除多个媒资，批量删除时以逗号分隔。
      * @return assetId
      */
     public List<String> getAssetId() {

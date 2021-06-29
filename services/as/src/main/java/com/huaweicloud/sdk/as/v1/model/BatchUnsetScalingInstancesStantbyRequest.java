@@ -15,7 +15,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class BatchUnsetScalingInstancesStandbyRequest  {
+public class BatchUnsetScalingInstancesStantbyRequest  {
 
 
 
@@ -30,7 +30,7 @@ public class BatchUnsetScalingInstancesStandbyRequest  {
     
     private BatchExitStandByInstancesOption body;
 
-    public BatchUnsetScalingInstancesStandbyRequest withScalingGroupId(String scalingGroupId) {
+    public BatchUnsetScalingInstancesStantbyRequest withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
         return this;
     }
@@ -52,12 +52,12 @@ public class BatchUnsetScalingInstancesStandbyRequest  {
 
     
 
-    public BatchUnsetScalingInstancesStandbyRequest withBody(BatchExitStandByInstancesOption body) {
+    public BatchUnsetScalingInstancesStantbyRequest withBody(BatchExitStandByInstancesOption body) {
         this.body = body;
         return this;
     }
 
-    public BatchUnsetScalingInstancesStandbyRequest withBody(Consumer<BatchExitStandByInstancesOption> bodySetter) {
+    public BatchUnsetScalingInstancesStantbyRequest withBody(Consumer<BatchExitStandByInstancesOption> bodySetter) {
         if(this.body == null ){
             this.body = new BatchExitStandByInstancesOption();
             bodySetter.accept(this.body);
@@ -89,9 +89,9 @@ public class BatchUnsetScalingInstancesStandbyRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BatchUnsetScalingInstancesStandbyRequest batchUnsetScalingInstancesStandbyRequest = (BatchUnsetScalingInstancesStandbyRequest) o;
-        return Objects.equals(this.scalingGroupId, batchUnsetScalingInstancesStandbyRequest.scalingGroupId) &&
-            Objects.equals(this.body, batchUnsetScalingInstancesStandbyRequest.body);
+        BatchUnsetScalingInstancesStantbyRequest batchUnsetScalingInstancesStantbyRequest = (BatchUnsetScalingInstancesStantbyRequest) o;
+        return Objects.equals(this.scalingGroupId, batchUnsetScalingInstancesStantbyRequest.scalingGroupId) &&
+            Objects.equals(this.body, batchUnsetScalingInstancesStantbyRequest.body);
     }
     @Override
     public int hashCode() {
@@ -100,7 +100,7 @@ public class BatchUnsetScalingInstancesStandbyRequest  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BatchUnsetScalingInstancesStandbyRequest {\n");
+        sb.append("class BatchUnsetScalingInstancesStantbyRequest {\n");
         sb.append("    scalingGroupId: ").append(toIndentedString(scalingGroupId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

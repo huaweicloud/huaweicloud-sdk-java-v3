@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.UpdateAssetReq;
+import com.huaweicloud.sdk.vod.v1.model.UploadAssetReq;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class UpdateAssetRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private UpdateAssetReq body;
+    private UploadAssetReq body;
 
-    public UpdateAssetRequest withBody(UpdateAssetReq body) {
+    public UpdateAssetRequest withBody(UploadAssetReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateAssetRequest withBody(Consumer<UpdateAssetReq> bodySetter) {
+    public UpdateAssetRequest withBody(Consumer<UploadAssetReq> bodySetter) {
         if(this.body == null ){
-            this.body = new UpdateAssetReq();
+            this.body = new UploadAssetReq();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class UpdateAssetRequest  {
      * Get body
      * @return body
      */
-    public UpdateAssetReq getBody() {
+    public UploadAssetReq getBody() {
         return body;
     }
 
-    public void setBody(UpdateAssetReq body) {
+    public void setBody(UploadAssetReq body) {
         this.body = body;
     }
 

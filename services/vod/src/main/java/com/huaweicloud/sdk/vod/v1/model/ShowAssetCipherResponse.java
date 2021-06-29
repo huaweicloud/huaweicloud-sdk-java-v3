@@ -46,7 +46,7 @@ public class ShowAssetCipherResponse extends SdkResponse {
 
 
     /**
-     * 媒资id<br/> 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -68,7 +68,7 @@ public class ShowAssetCipherResponse extends SdkResponse {
 
 
     /**
-     * 密钥密文。未加密、正在加密或加密失败的媒资不会包含此字段。<br/> 
+     * 密钥密文。
      * @return edk
      */
     public String getEdk() {
@@ -90,7 +90,7 @@ public class ShowAssetCipherResponse extends SdkResponse {
 
 
     /**
-     * 密钥明文。未加密、正在加密或加密失败的媒资不会包含此字段。<br/> 
+     * 密钥明文。
      * @return dk
      */
     public String getDk() {

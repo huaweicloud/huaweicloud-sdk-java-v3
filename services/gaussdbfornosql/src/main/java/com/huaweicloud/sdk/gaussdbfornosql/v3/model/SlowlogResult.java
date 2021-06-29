@@ -19,9 +19,9 @@ public class SlowlogResult  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_name")
+    @JsonProperty(value="time")
     
-    private String nodeName;
+    private String time;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,8 +47,8 @@ public class SlowlogResult  {
     
     private String startTime;
 
-    public SlowlogResult withNodeName(String nodeName) {
-        this.nodeName = nodeName;
+    public SlowlogResult withTime(String time) {
+        this.time = time;
         return this;
     }
 
@@ -56,15 +56,15 @@ public class SlowlogResult  {
 
 
     /**
-     * 节点名称。
-     * @return nodeName
+     * 执行时间。
+     * @return time
      */
-    public String getNodeName() {
-        return nodeName;
+    public String getTime() {
+        return time;
     }
 
-    public void setNodeName(String nodeName) {
-        this.nodeName = nodeName;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     
@@ -166,7 +166,7 @@ public class SlowlogResult  {
             return false;
         }
         SlowlogResult slowlogResult = (SlowlogResult) o;
-        return Objects.equals(this.nodeName, slowlogResult.nodeName) &&
+        return Objects.equals(this.time, slowlogResult.time) &&
             Objects.equals(this.database, slowlogResult.database) &&
             Objects.equals(this.querySample, slowlogResult.querySample) &&
             Objects.equals(this.type, slowlogResult.type) &&
@@ -174,13 +174,13 @@ public class SlowlogResult  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(nodeName, database, querySample, type, startTime);
+        return Objects.hash(time, database, querySample, type, startTime);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowlogResult {\n");
-        sb.append("    nodeName: ").append(toIndentedString(nodeName)).append("\n");
+        sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    database: ").append(toIndentedString(database)).append("\n");
         sb.append("    querySample: ").append(toIndentedString(querySample)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

@@ -34,7 +34,7 @@ public class CreatePreheatingAssetResponse extends SdkResponse {
 
 
     /**
-     * 预热任务ID<br/> 
+     * 预热任务ID。
      * @return taskId
      */
     public String getTaskId() {

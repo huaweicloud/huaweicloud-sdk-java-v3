@@ -12,7 +12,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class BatchUnsetScalingInstancesStandbyResponse extends SdkResponse {
+public class BatchUnsetScalingInstancesStantbyResponse extends SdkResponse {
 
 
     @Override
@@ -32,7 +32,7 @@ public class BatchUnsetScalingInstancesStandbyResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BatchUnsetScalingInstancesStandbyResponse {\n");
+        sb.append("class BatchUnsetScalingInstancesStantbyResponse {\n");
         sb.append("}");
         return sb.toString();
     }

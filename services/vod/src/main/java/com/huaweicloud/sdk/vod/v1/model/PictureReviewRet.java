@@ -24,7 +24,7 @@ import java.util.Objects;
 public class PictureReviewRet  {
 
     /**
-     * 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查。 
+     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
      */
     public static final class SuggestionEnum {
 
@@ -153,7 +153,7 @@ public class PictureReviewRet  {
 
 
     /**
-     * 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查。 
+     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
      * @return suggestion
      */
     public SuggestionEnum getSuggestion() {
@@ -175,7 +175,7 @@ public class PictureReviewRet  {
 
 
     /**
-     * 截图在视频中的时间偏移值，单位为秒。封面不涉及此字段
+     * 截图在视频中的时间偏移值。封面不涉及此字段 单位：秒。
      * @return offset
      */
     public Integer getOffset() {
@@ -197,7 +197,7 @@ public class PictureReviewRet  {
 
 
     /**
-     * 对应截图/封面的的访问url
+     * 对应截图/封面的访问URL。
      * @return url
      */
     public String getUrl() {
@@ -233,7 +233,7 @@ public class PictureReviewRet  {
     }
 
     /**
-     * Get politics
+     * 政治因素审核结果。
      * @return politics
      */
     public List<ReviewDetail> getPolitics() {
@@ -269,7 +269,7 @@ public class PictureReviewRet  {
     }
 
     /**
-     * Get terrorism
+     * 暴恐元素审核结果。
      * @return terrorism
      */
     public List<ReviewDetail> getTerrorism() {
@@ -305,7 +305,7 @@ public class PictureReviewRet  {
     }
 
     /**
-     * Get porn
+     * 涉黄内容审核结果。
      * @return porn
      */
     public List<ReviewDetail> getPorn() {

@@ -56,7 +56,7 @@ public class TopUrl  {
 
 
     /**
-     * 总播放次数 
+     * 总播放次数。
      * @return value
      */
     public Long getValue() {
@@ -78,7 +78,7 @@ public class TopUrl  {
 
 
     /**
-     * 媒资ID 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -100,7 +100,7 @@ public class TopUrl  {
 
 
     /**
-     * 媒资名称 
+     * 媒资名称。
      * @return title
      */
     public String getTitle() {
@@ -122,7 +122,7 @@ public class TopUrl  {
 
 
     /**
-     * 媒资时长，单位为秒 
+     * 媒资时长。 单位：秒。
      * @return duration
      */
     public Integer getDuration() {
@@ -144,7 +144,7 @@ public class TopUrl  {
 
 
     /**
-     * 媒资原始视频大小，单位为字节 
+     * 媒资原始大小。 单位：字节。
      * @return size
      */
     public Long getSize() {

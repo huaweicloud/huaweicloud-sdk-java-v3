@@ -10,14 +10,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.vod.v1.model.BaseInfo;
 import com.huaweicloud.sdk.vod.v1.model.PlayInfo;
-import com.huaweicloud.sdk.vod.v1.model.Status;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * AssetInfo
+ * 
  */
 public class AssetInfo  {
 
@@ -32,7 +31,7 @@ public class AssetInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Status status;
+    private String status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,7 +60,7 @@ public class AssetInfo  {
 
 
     /**
-     * 媒体ID<br/> 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -74,7 +73,7 @@ public class AssetInfo  {
 
     
 
-    public AssetInfo withStatus(Status status) {
+    public AssetInfo withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -83,14 +82,14 @@ public class AssetInfo  {
 
 
     /**
-     * Get status
+     * 媒资状态。 取值如下： - UNCREATED：未创建（媒资ID不存在 ） - DELETED：已删除 - CANCELLED：上传取消 - SERVER_ERROR：上传失败（点播服务端故障） - UPLOAD_FAILED：上传失败（向OBS上传失败） - CREATING：创建中 - PUBLISHED：已发布 - WAITING_TRANSCODE：待发布（转码排队中） - TRANSCODING：待发布（转码中） - TRANSCODE_FAILED：待发布（转码失败） - TRANSCODE_SUCCEED：待发布（转码成功） - CREATED：待发布（未转码） - NO_ASSET：该媒资不存在 - DELETING：正在删除 - DELETE_FAILED：删除失败 - OBS_CREATING：OBS转存方式创建中 - OBS_CREATE_FAILED： OBS转存失败 - OBS_CREATE_SUCCESS： OBS转存成功
      * @return status
      */
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -105,7 +104,7 @@ public class AssetInfo  {
 
 
     /**
-     * 媒资描述信息<br/> 
+     * 媒资子状态或描述信息。 - 对于媒资异常场景，描述具体的异常原因。 - 对于正常场景，描述媒资的处理信息。
      * @return description
      */
     public String getDescription() {
@@ -170,7 +169,7 @@ public class AssetInfo  {
     }
 
     /**
-     * 播放信息数组<br/> 
+     * 转码文件的播放信息。 - HLS或DASH：此数组的成员个数为n+1，n为转码输出路数。 - MP4：此数组的成员个数为n，n为转码输出路数。
      * @return playInfoArray
      */
     public List<PlayInfo> getPlayInfoArray() {

@@ -27,7 +27,7 @@ public class PreheatingResult  {
     
     private String url;
     /**
-     * 预热任务状态，取值processing， succeed， failed，分别表示处理中，完成，失败。<br/> 
+     * 预热任务状态。 取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
      */
     public static final class StatusEnum {
 
@@ -126,7 +126,7 @@ public class PreheatingResult  {
 
 
     /**
-     * 预热任务数组。<br/> 
+     * 媒资URL。
      * @return url
      */
     public String getUrl() {
@@ -148,7 +148,7 @@ public class PreheatingResult  {
 
 
     /**
-     * 预热任务状态，取值processing， succeed， failed，分别表示处理中，完成，失败。<br/> 
+     * 预热任务状态。 取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
      * @return status
      */
     public StatusEnum getStatus() {

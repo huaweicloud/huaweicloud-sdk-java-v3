@@ -12,6 +12,7 @@ public class MpcRegion {
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://mpc.cn-north-4.myhuaweicloud.com");
     public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://mts.cn-north-1.myhuaweicloud.com");
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://mpc.cn-east-2.myhuaweicloud.com");
+    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://mpc.cn-east-3.myhuaweicloud.com");
     
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
@@ -20,6 +21,7 @@ public class MpcRegion {
         map.put("cn-north-4", CN_NORTH_4);
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-east-2", CN_EAST_2);
+        map.put("cn-east-3", CN_EAST_3);
         return Collections.unmodifiableMap(map);
     }
 

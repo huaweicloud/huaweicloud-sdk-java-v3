@@ -359,14 +359,6 @@ public class NatMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("tenant_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListNatGatewaysRequest::getTenantId, (req, v) -> {
-                req.setTenantId(v);
-            })
-        );
         builder.withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

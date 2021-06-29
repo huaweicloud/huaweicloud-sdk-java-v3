@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.mrs.v1.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -53,28 +55,28 @@ public class BootstrapScript  {
     
     private Boolean activeMaster;
     /**
-     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。
+     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
      */
     public static final class FailActionEnum {
 
         
         /**
-         * Enum CONTINUE_ for value: "continue：继续执行后续脚本。"
+         * Enum CONTINUE for value: "continue"
          */
-        public static final FailActionEnum CONTINUE_ = new FailActionEnum("continue：继续执行后续脚本。");
+        public static final FailActionEnum CONTINUE = new FailActionEnum("continue");
         
         /**
-         * Enum ERROROUT_ for value: "errorout：终止操作。"
+         * Enum ERROROUT for value: "errorout"
          */
-        public static final FailActionEnum ERROROUT_ = new FailActionEnum("errorout：终止操作。");
+        public static final FailActionEnum ERROROUT = new FailActionEnum("errorout");
         
 
         private static final Map<String, FailActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FailActionEnum> createStaticFields() {
             Map<String, FailActionEnum> map = new HashMap<>();
-            map.put("continue：继续执行后续脚本。", CONTINUE_);
-            map.put("errorout：终止操作。", ERROROUT_);
+            map.put("continue", CONTINUE);
+            map.put("errorout", ERROROUT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -142,24 +144,114 @@ public class BootstrapScript  {
     @JsonProperty(value="before_component_start")
     
     private Boolean beforeComponentStart;
+    /**
+     * 枚举值： - BEFORE_COMPONENT_FIRST_START: 组件首次启动后 - AFTER_COMPONENT_FIRST_START: 组件首次启动前 - BEFORE_SCALE_IN: 缩容前 - AFTER_SCALE_IN: 缩容后 - BEFORE_SCALE_OUT: 扩容前 - AFTER_SCALE_OUT: 扩容后
+     */
+    public static final class ActionStagesEnum {
 
+        
+        /**
+         * Enum BEFORE_COMPONENT_FIRST_START for value: "BEFORE_COMPONENT_FIRST_START"
+         */
+        public static final ActionStagesEnum BEFORE_COMPONENT_FIRST_START = new ActionStagesEnum("BEFORE_COMPONENT_FIRST_START");
+        
+        /**
+         * Enum AFTER_COMPONENT_FIRST_START for value: "AFTER_COMPONENT_FIRST_START"
+         */
+        public static final ActionStagesEnum AFTER_COMPONENT_FIRST_START = new ActionStagesEnum("AFTER_COMPONENT_FIRST_START");
+        
+        /**
+         * Enum BEFORE_SCALE_IN for value: "BEFORE_SCALE_IN"
+         */
+        public static final ActionStagesEnum BEFORE_SCALE_IN = new ActionStagesEnum("BEFORE_SCALE_IN");
+        
+        /**
+         * Enum AFTER_SCALE_IN for value: "AFTER_SCALE_IN"
+         */
+        public static final ActionStagesEnum AFTER_SCALE_IN = new ActionStagesEnum("AFTER_SCALE_IN");
+        
+        /**
+         * Enum BEFORE_SCALE_OUT for value: "BEFORE_SCALE_OUT"
+         */
+        public static final ActionStagesEnum BEFORE_SCALE_OUT = new ActionStagesEnum("BEFORE_SCALE_OUT");
+        
+        /**
+         * Enum AFTER_SCALE_OUT for value: "AFTER_SCALE_OUT"
+         */
+        public static final ActionStagesEnum AFTER_SCALE_OUT = new ActionStagesEnum("AFTER_SCALE_OUT");
+        
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
-    private String startTime;
+        private static final Map<String, ActionStagesEnum> STATIC_FIELDS = createStaticFields();
 
+        private static Map<String, ActionStagesEnum> createStaticFields() {
+            Map<String, ActionStagesEnum> map = new HashMap<>();
+            map.put("BEFORE_COMPONENT_FIRST_START", BEFORE_COMPONENT_FIRST_START);
+            map.put("AFTER_COMPONENT_FIRST_START", AFTER_COMPONENT_FIRST_START);
+            map.put("BEFORE_SCALE_IN", BEFORE_SCALE_IN);
+            map.put("AFTER_SCALE_IN", AFTER_SCALE_IN);
+            map.put("BEFORE_SCALE_OUT", BEFORE_SCALE_OUT);
+            map.put("AFTER_SCALE_OUT", AFTER_SCALE_OUT);
+            return Collections.unmodifiableMap(map);
+        }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
-    private String state;
+        private String value;
+
+        ActionStagesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionStagesEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            ActionStagesEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new ActionStagesEnum(value);
+            }
+            return result;
+        }
+
+        public static ActionStagesEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            ActionStagesEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof ActionStagesEnum) {
+                return this.value.equals(((ActionStagesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action_stages")
     
-    private List<String> actionStages = null;
+    private List<ActionStagesEnum> actionStages = null;
     
     public BootstrapScript withName(String name) {
         this.name = name;
@@ -294,7 +386,7 @@ public class BootstrapScript  {
 
 
     /**
-     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。
+     * 引导操作脚本执行失败后，是否继续执行后续脚本和创建集群。  缺省值为errorout,表示终止操作。   说明： 建议您在调试阶段设置为“继续”，无论此引导操作是否执行成功，则集群都能继续安装和启动。  枚举值： - continue：继续执行后续脚本。 - errorout：终止操作。
      * @return failAction
      */
     public FailActionEnum getFailAction() {
@@ -329,57 +421,13 @@ public class BootstrapScript  {
 
     
 
-    public BootstrapScript withStartTime(String startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 单个引导操作脚本的执行时间。
-     * @return startTime
-     */
-    public String getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
-
-    
-
-    public BootstrapScript withState(String state) {
-        this.state = state;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 单个引导操作脚本的运行状态。 - PENDING - IN_PROGRESS - SUCCESS - FAILURE
-     * @return state
-     */
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    
-
-    public BootstrapScript withActionStages(List<String> actionStages) {
+    public BootstrapScript withActionStages(List<ActionStagesEnum> actionStages) {
         this.actionStages = actionStages;
         return this;
     }
 
     
-    public BootstrapScript addActionStagesItem(String actionStagesItem) {
+    public BootstrapScript addActionStagesItem(ActionStagesEnum actionStagesItem) {
         if(this.actionStages == null) {
             this.actionStages = new ArrayList<>();
         }
@@ -387,7 +435,7 @@ public class BootstrapScript  {
         return this;
     }
 
-    public BootstrapScript withActionStages(Consumer<List<String>> actionStagesSetter) {
+    public BootstrapScript withActionStages(Consumer<List<ActionStagesEnum>> actionStagesSetter) {
         if(this.actionStages == null) {
             this.actionStages = new ArrayList<>();
         }
@@ -399,11 +447,11 @@ public class BootstrapScript  {
      * 选择引导操作脚本执行的时间。 - BEFORE_COMPONENT_FIRST_START: 组件首次启动后 - AFTER_COMPONENT_FIRST_START: 组件首次启动前 - BEFORE_SCALE_IN: 缩容前 - AFTER_SCALE_IN: 缩容后 - BEFORE_SCALE_OUT: 扩容前 - AFTER_SCALE_OUT: 扩容后
      * @return actionStages
      */
-    public List<String> getActionStages() {
+    public List<ActionStagesEnum> getActionStages() {
         return actionStages;
     }
 
-    public void setActionStages(List<String> actionStages) {
+    public void setActionStages(List<ActionStagesEnum> actionStages) {
         this.actionStages = actionStages;
     }
 
@@ -425,13 +473,11 @@ public class BootstrapScript  {
             Objects.equals(this.activeMaster, bootstrapScript.activeMaster) &&
             Objects.equals(this.failAction, bootstrapScript.failAction) &&
             Objects.equals(this.beforeComponentStart, bootstrapScript.beforeComponentStart) &&
-            Objects.equals(this.startTime, bootstrapScript.startTime) &&
-            Objects.equals(this.state, bootstrapScript.state) &&
             Objects.equals(this.actionStages, bootstrapScript.actionStages);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, uri, parameters, nodes, activeMaster, failAction, beforeComponentStart, startTime, state, actionStages);
+        return Objects.hash(name, uri, parameters, nodes, activeMaster, failAction, beforeComponentStart, actionStages);
     }
     @Override
     public String toString() {
@@ -444,8 +490,6 @@ public class BootstrapScript  {
         sb.append("    activeMaster: ").append(toIndentedString(activeMaster)).append("\n");
         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
         sb.append("    beforeComponentStart: ").append(toIndentedString(beforeComponentStart)).append("\n");
-        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    actionStages: ").append(toIndentedString(actionStages)).append("\n");
         sb.append("}");
         return sb.toString();

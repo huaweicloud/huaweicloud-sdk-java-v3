@@ -40,7 +40,7 @@ public class CreatePreheatingAssetReq  {
 
 
     /**
-     * 根据媒资ID预热时，必选。 
+     * 已发布媒资的ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -76,7 +76,7 @@ public class CreatePreheatingAssetReq  {
     }
 
     /**
-     * 根据url预热时，必选。<br/> 
+     * 已发布媒资的播放URL列表，一次最多只能预热10个URL。
      * @return urls
      */
     public List<String> getUrls() {

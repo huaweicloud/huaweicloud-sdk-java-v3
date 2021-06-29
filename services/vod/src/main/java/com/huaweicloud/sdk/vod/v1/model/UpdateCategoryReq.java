@@ -38,7 +38,7 @@ public class UpdateCategoryReq  {
 
 
     /**
-     * 视频分类名称 
+     * 媒资分类名称。
      * @return name
      */
     public String getName() {
@@ -60,7 +60,7 @@ public class UpdateCategoryReq  {
 
 
     /**
-     * 视频分类ID 
+     * 媒资分类ID。
      * @return id
      */
     public Integer getId() {

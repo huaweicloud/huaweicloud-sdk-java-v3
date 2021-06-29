@@ -12,9 +12,9 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * BucketAuthorizedReq
+ * 
  */
-public class BucketAuthorizedReq  {
+public class UpdateBucketAuthorizedReq  {
 
 
 
@@ -29,7 +29,7 @@ public class BucketAuthorizedReq  {
     
     private String operation;
 
-    public BucketAuthorizedReq withBucket(String bucket) {
+    public UpdateBucketAuthorizedReq withBucket(String bucket) {
         this.bucket = bucket;
         return this;
     }
@@ -38,7 +38,7 @@ public class BucketAuthorizedReq  {
 
 
     /**
-     * 桶名称 ID 
+     * OBS桶名称。
      * @return bucket
      */
     public String getBucket() {
@@ -51,7 +51,7 @@ public class BucketAuthorizedReq  {
 
     
 
-    public BucketAuthorizedReq withOperation(String operation) {
+    public UpdateBucketAuthorizedReq withOperation(String operation) {
         this.operation = operation;
         return this;
     }
@@ -60,7 +60,7 @@ public class BucketAuthorizedReq  {
 
 
     /**
-     * 操作标记，0表示取消授权，1表示授权 
+     * 是否进行桶授权。 取值如下： - 0：取消授权。 - 1：授权。
      * @return operation
      */
     public String getOperation() {
@@ -81,9 +81,9 @@ public class BucketAuthorizedReq  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BucketAuthorizedReq bucketAuthorizedReq = (BucketAuthorizedReq) o;
-        return Objects.equals(this.bucket, bucketAuthorizedReq.bucket) &&
-            Objects.equals(this.operation, bucketAuthorizedReq.operation);
+        UpdateBucketAuthorizedReq updateBucketAuthorizedReq = (UpdateBucketAuthorizedReq) o;
+        return Objects.equals(this.bucket, updateBucketAuthorizedReq.bucket) &&
+            Objects.equals(this.operation, updateBucketAuthorizedReq.operation);
     }
     @Override
     public int hashCode() {
@@ -92,7 +92,7 @@ public class BucketAuthorizedReq  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BucketAuthorizedReq {\n");
+        sb.append("class UpdateBucketAuthorizedReq {\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
         sb.append("}");

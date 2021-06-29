@@ -76,8 +76,8 @@ public class InstanceConfigResult  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="personality")
     
-    private PersonalityResult personality;
-
+    private List<PersonalityResult> personality = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="public_ip")
@@ -322,30 +322,37 @@ public class InstanceConfigResult  {
 
     
 
-    public InstanceConfigResult withPersonality(PersonalityResult personality) {
+    public InstanceConfigResult withPersonality(List<PersonalityResult> personality) {
         this.personality = personality;
         return this;
     }
 
-    public InstanceConfigResult withPersonality(Consumer<PersonalityResult> personalitySetter) {
-        if(this.personality == null ){
-            this.personality = new PersonalityResult();
-            personalitySetter.accept(this.personality);
+    
+    public InstanceConfigResult addPersonalityItem(PersonalityResult personalityItem) {
+        if(this.personality == null) {
+            this.personality = new ArrayList<>();
         }
-        
+        this.personality.add(personalityItem);
         return this;
     }
 
+    public InstanceConfigResult withPersonality(Consumer<List<PersonalityResult>> personalitySetter) {
+        if(this.personality == null) {
+            this.personality = new ArrayList<>();
+        }
+        personalitySetter.accept(this.personality);
+        return this;
+    }
 
     /**
-     * Get personality
+     * 个人信息
      * @return personality
      */
-    public PersonalityResult getPersonality() {
+    public List<PersonalityResult> getPersonality() {
         return personality;
     }
 
-    public void setPersonality(PersonalityResult personality) {
+    public void setPersonality(List<PersonalityResult> personality) {
         this.personality = personality;
     }
 

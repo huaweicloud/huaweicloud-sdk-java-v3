@@ -21,12 +21,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 转码输出数组。HLS或DASH场景，此数组的成员个数为n+1，n为转码输出路数。MP4场景，此数组的成员个数为n，n为转码输出路数
+ * 转码输出数组。 - HLS或DASH格式：此数组的成员个数为n+1，n为转码输出路数。 - MP4格式：此数组的成员个数为n，n为转码输出路数。
  */
 public class Output  {
 
     /**
-     * 协议类型。 取值hls、 dash、mp4、mp3、aac
+     * 协议类型。 取值如下： - hls - dash - mp4
      */
     public static final class PlayTypeEnum {
 
@@ -134,7 +134,7 @@ public class Output  {
     
     private String url;
     /**
-     * 标记流是否已被加密，取值[0,1] 0表示未加密，1表示已被加密。
+     * 标记流是否已被加密。 取值如下： - 0：表示未加密。 - 1：表示已被加密。
      */
     public static final class EncryptedEnum {
 
@@ -218,7 +218,7 @@ public class Output  {
     
     private EncryptedEnum encrypted;
     /**
-     * 清晰度
+     * 清晰度。 取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
      */
     public static final class QualityEnum {
 
@@ -329,7 +329,7 @@ public class Output  {
 
 
     /**
-     * 协议类型。 取值hls、 dash、mp4、mp3、aac
+     * 协议类型。 取值如下： - hls - dash - mp4
      * @return playType
      */
     public PlayTypeEnum getPlayType() {
@@ -351,7 +351,7 @@ public class Output  {
 
 
     /**
-     * 访问URL
+     * 播放URL。
      * @return url
      */
     public String getUrl() {
@@ -373,7 +373,7 @@ public class Output  {
 
 
     /**
-     * 标记流是否已被加密，取值[0,1] 0表示未加密，1表示已被加密。
+     * 标记流是否已被加密。 取值如下： - 0：表示未加密。 - 1：表示已被加密。
      * @return encrypted
      */
     public EncryptedEnum getEncrypted() {
@@ -395,7 +395,7 @@ public class Output  {
 
 
     /**
-     * 清晰度
+     * 清晰度。 取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
      * @return quality
      */
     public QualityEnum getQuality() {

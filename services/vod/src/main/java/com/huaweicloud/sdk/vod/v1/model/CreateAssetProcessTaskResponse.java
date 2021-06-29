@@ -34,7 +34,7 @@ public class CreateAssetProcessTaskResponse extends SdkResponse {
 
 
     /**
-     * Get assetId
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {

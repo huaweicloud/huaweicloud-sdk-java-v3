@@ -51,7 +51,7 @@ public class DeleteAssetsResponse extends SdkResponse {
     }
 
     /**
-     * Get deleteResultArray
+     * 删除媒资任务的处理结果。
      * @return deleteResultArray
      */
     public List<DeleteResult> getDeleteResultArray() {

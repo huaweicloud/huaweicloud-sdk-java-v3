@@ -13,23 +13,15 @@ import com.huaweicloud.sdk.vod.v1.model.FileAddr;
 import com.huaweicloud.sdk.vod.v1.model.MetaData;
 import com.huaweicloud.sdk.vod.v1.model.SubtitleInfo;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * BaseInfo
+ * 媒资基本信息。
  */
 public class BaseInfo  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_status")
-    
-    private String assetStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -111,12 +103,6 @@ public class BaseInfo  {
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sourch_path")
-    
-    private FileAddr sourchPath;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="source_path")
     
     private FileAddr sourcePath;
@@ -127,52 +113,6 @@ public class BaseInfo  {
     
     private FileAddr outputPath;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_user")
-    
-    private String createUser;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privilege")
-    
-    private String privilege;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="folder_name")
-    
-    private String folderName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="custom_metadata")
-    
-    private Map<String, Object> customMetadata = null;
-    
-    public BaseInfo withAssetStatus(String assetStatus) {
-        this.assetStatus = assetStatus;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
-     * @return assetStatus
-     */
-    public String getAssetStatus() {
-        return assetStatus;
-    }
-
-    public void setAssetStatus(String assetStatus) {
-        this.assetStatus = assetStatus;
-    }
-
-    
-
     public BaseInfo withTitle(String title) {
         this.title = title;
         return this;
@@ -182,7 +122,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒体标题<br/> 
+     * 媒资标题。 长度不超过128个字节，UTF8编码。
      * @return title
      */
     public String getTitle() {
@@ -204,7 +144,7 @@ public class BaseInfo  {
 
 
     /**
-     * 视频文件名<br/> 
+     * 媒资文件名。
      * @return videoName
      */
     public String getVideoName() {
@@ -226,7 +166,7 @@ public class BaseInfo  {
 
 
     /**
-     * 视频描述<br/> 
+     * 媒资描述。 长度不超过1024个字节。
      * @return description
      */
     public String getDescription() {
@@ -248,7 +188,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资分类id<br/> 
+     * 媒资分类id。
      * @return categoryId
      */
     public Long getCategoryId() {
@@ -270,7 +210,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资分类名称<br/> 
+     * 媒资分类名称。
      * @return categoryName
      */
     public String getCategoryName() {
@@ -292,7 +232,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资创建时间<br/> 
+     * 媒资创建时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -314,7 +254,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资最近修改时间<br/> 
+     * 媒资最近修改时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return lastModified
      */
     public String getLastModified() {
@@ -336,7 +276,7 @@ public class BaseInfo  {
 
 
     /**
-     * 音视频文件类型。 取值如下： 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2 
+     * 音视频文件类型。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
      * @return videoType
      */
     public String getVideoType() {
@@ -358,7 +298,7 @@ public class BaseInfo  {
 
 
     /**
-     * 视频标签<br/> 
+     * 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
      * @return tags
      */
     public String getTags() {
@@ -409,7 +349,7 @@ public class BaseInfo  {
 
 
     /**
-     * 原始视频文件的下载地址<br/> 
+     * 原始视频文件的访问地址。
      * @return videoUrl
      */
     public String getVideoUrl() {
@@ -445,7 +385,7 @@ public class BaseInfo  {
     }
 
     /**
-     * 封面信息数组<br/> 
+     * 封面信息。
      * @return coverInfoArray
      */
     public List<CoverInfo> getCoverInfoArray() {
@@ -481,7 +421,7 @@ public class BaseInfo  {
     }
 
     /**
-     * 字幕信息数组<br/> 
+     * 字幕信息数组<br/>
      * @return subtitleInfo
      */
     public List<SubtitleInfo> getSubtitleInfo() {
@@ -490,35 +430,6 @@ public class BaseInfo  {
 
     public void setSubtitleInfo(List<SubtitleInfo> subtitleInfo) {
         this.subtitleInfo = subtitleInfo;
-    }
-
-    
-
-    public BaseInfo withSourchPath(FileAddr sourchPath) {
-        this.sourchPath = sourchPath;
-        return this;
-    }
-
-    public BaseInfo withSourchPath(Consumer<FileAddr> sourchPathSetter) {
-        if(this.sourchPath == null ){
-            this.sourchPath = new FileAddr();
-            sourchPathSetter.accept(this.sourchPath);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get sourchPath
-     * @return sourchPath
-     */
-    public FileAddr getSourchPath() {
-        return sourchPath;
-    }
-
-    public void setSourchPath(FileAddr sourchPath) {
-        this.sourchPath = sourchPath;
     }
 
     
@@ -581,108 +492,6 @@ public class BaseInfo  {
 
     
 
-    public BaseInfo withCreateUser(String createUser) {
-        this.createUser = createUser;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 创建该资源的用户<br/> 
-     * @return createUser
-     */
-    public String getCreateUser() {
-        return createUser;
-    }
-
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
-    }
-
-    
-
-    public BaseInfo withPrivilege(String privilege) {
-        this.privilege = privilege;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 权限<br/> 
-     * @return privilege
-     */
-    public String getPrivilege() {
-        return privilege;
-    }
-
-    public void setPrivilege(String privilege) {
-        this.privilege = privilege;
-    }
-
-    
-
-    public BaseInfo withFolderName(String folderName) {
-        this.folderName = folderName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 文件夹code<br/> 
-     * @return folderName
-     */
-    public String getFolderName() {
-        return folderName;
-    }
-
-    public void setFolderName(String folderName) {
-        this.folderName = folderName;
-    }
-
-    
-
-    public BaseInfo withCustomMetadata(Map<String, Object> customMetadata) {
-        this.customMetadata = customMetadata;
-        return this;
-    }
-
-    
-
-    public BaseInfo putCustomMetadataItem(String key, Object customMetadataItem) {
-        if(this.customMetadata == null) {
-            this.customMetadata = new HashMap<>();
-        }
-        this.customMetadata.put(key, customMetadataItem);
-        return this;
-    }
-
-    public BaseInfo withCustomMetadata(Consumer<Map<String, Object>> customMetadataSetter) {
-        if(this.customMetadata == null) {
-            this.customMetadata = new HashMap<>();
-        }
-        customMetadataSetter.accept(this.customMetadata);
-        return this;
-    }
-    /**
-     * 自定义元数据<br/> 
-     * @return customMetadata
-     */
-    public Map<String, Object> getCustomMetadata() {
-        return customMetadata;
-    }
-
-    public void setCustomMetadata(Map<String, Object> customMetadata) {
-        this.customMetadata = customMetadata;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -692,8 +501,7 @@ public class BaseInfo  {
             return false;
         }
         BaseInfo baseInfo = (BaseInfo) o;
-        return Objects.equals(this.assetStatus, baseInfo.assetStatus) &&
-            Objects.equals(this.title, baseInfo.title) &&
+        return Objects.equals(this.title, baseInfo.title) &&
             Objects.equals(this.videoName, baseInfo.videoName) &&
             Objects.equals(this.description, baseInfo.description) &&
             Objects.equals(this.categoryId, baseInfo.categoryId) &&
@@ -706,23 +514,17 @@ public class BaseInfo  {
             Objects.equals(this.videoUrl, baseInfo.videoUrl) &&
             Objects.equals(this.coverInfoArray, baseInfo.coverInfoArray) &&
             Objects.equals(this.subtitleInfo, baseInfo.subtitleInfo) &&
-            Objects.equals(this.sourchPath, baseInfo.sourchPath) &&
             Objects.equals(this.sourcePath, baseInfo.sourcePath) &&
-            Objects.equals(this.outputPath, baseInfo.outputPath) &&
-            Objects.equals(this.createUser, baseInfo.createUser) &&
-            Objects.equals(this.privilege, baseInfo.privilege) &&
-            Objects.equals(this.folderName, baseInfo.folderName) &&
-            Objects.equals(this.customMetadata, baseInfo.customMetadata);
+            Objects.equals(this.outputPath, baseInfo.outputPath);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(assetStatus, title, videoName, description, categoryId, categoryName, createTime, lastModified, videoType, tags, metaData, videoUrl, coverInfoArray, subtitleInfo, sourchPath, sourcePath, outputPath, createUser, privilege, folderName, customMetadata);
+        return Objects.hash(title, videoName, description, categoryId, categoryName, createTime, lastModified, videoType, tags, metaData, videoUrl, coverInfoArray, subtitleInfo, sourcePath, outputPath);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BaseInfo {\n");
-        sb.append("    assetStatus: ").append(toIndentedString(assetStatus)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    videoName: ").append(toIndentedString(videoName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -736,13 +538,8 @@ public class BaseInfo  {
         sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
         sb.append("    coverInfoArray: ").append(toIndentedString(coverInfoArray)).append("\n");
         sb.append("    subtitleInfo: ").append(toIndentedString(subtitleInfo)).append("\n");
-        sb.append("    sourchPath: ").append(toIndentedString(sourchPath)).append("\n");
         sb.append("    sourcePath: ").append(toIndentedString(sourcePath)).append("\n");
         sb.append("    outputPath: ").append(toIndentedString(outputPath)).append("\n");
-        sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
-        sb.append("    privilege: ").append(toIndentedString(privilege)).append("\n");
-        sb.append("    folderName: ").append(toIndentedString(folderName)).append("\n");
-        sb.append("    customMetadata: ").append(toIndentedString(customMetadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

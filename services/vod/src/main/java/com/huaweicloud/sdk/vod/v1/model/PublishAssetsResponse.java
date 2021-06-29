@@ -51,7 +51,7 @@ public class PublishAssetsResponse extends SdkResponse {
     }
 
     /**
-     * Get assetInfoArray
+     * 发布的媒资信息。
      * @return assetInfoArray
      */
     public List<AssetInfo> getAssetInfoArray() {

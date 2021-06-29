@@ -88,7 +88,7 @@ public class CreateQueueReq  {
 
 
     /**
-     * 新建的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。
+     * 新建的队列名称，名称只能包含数字、英文字母和下划线，但不能是纯数字，且不能以下划线开头。长度限制：1~128个字符。 说明：  队列名称不区分大小写，系统会自动转换为小写。
      * @return queueName
      */
     public String getQueueName() {
@@ -154,7 +154,7 @@ public class CreateQueueReq  {
 
 
     /**
-     * 与队列绑定的最小计算单元个数。设置值当前只支持4，16，64。
+     * 与队列绑定的最小计算单元个数。设置值当前只支持16，64，256。
      * @return cuCount
      */
     public Integer getCuCount() {

@@ -21,7 +21,7 @@ import java.util.Objects;
 public class TextReviewRet  {
 
     /**
-     * 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查。 
+     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
      */
     public static final class SuggestionEnum {
 
@@ -138,7 +138,7 @@ public class TextReviewRet  {
 
 
     /**
-     * 检测结果是否通过。 block：包含敏感信息，不通过。 pass：不包含敏感信息，通过。 review：需要人工复查。 
+     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
      * @return suggestion
      */
     public SuggestionEnum getSuggestion() {

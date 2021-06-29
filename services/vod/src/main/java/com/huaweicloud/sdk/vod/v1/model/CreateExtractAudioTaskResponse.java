@@ -40,7 +40,7 @@ public class CreateExtractAudioTaskResponse extends SdkResponse {
 
 
     /**
-     * 视频源媒资ID<br/> 
+     * 视频源媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -62,7 +62,7 @@ public class CreateExtractAudioTaskResponse extends SdkResponse {
 
 
     /**
-     * 提取的音频媒资ID<br/> 
+     * 提取的音频媒资ID。
      * @return audioAssetId
      */
     public String getAudioAssetId() {

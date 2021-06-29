@@ -84,7 +84,7 @@ public class AssetSummary  {
     
     private String createTime;
     /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
+     * 媒资状态。 取值如下： - CREATING：上传中。 - FAILED：上传失败。 - CREATED：上传成功。 - PUBLISHED：已发布。 - DELETED：已删除。
      */
     public static final class AssetStatusEnum {
 
@@ -186,7 +186,7 @@ public class AssetSummary  {
     
     private AssetStatusEnum assetStatus;
     /**
-     * 转码状态 \"UN_TRANSCODE\"        //未转码 \"WAITING_TRANSCODE\"   //等待转码，排队中 \"TRANSCODING\"         //转码中 \"TRANSCODE_SUCCEED\"   //转码成功 \"TRANSCODE_FAILED\"     //转码失败 
+     * 转码状态。 取值如下： - UN_TRANSCODE：未转码。 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中。 - TRANSCODE_SUCCEED：转码成功。 - TRANSCODE_FAILED：转码失败。
      */
     public static final class TranscodeStatusEnum {
 
@@ -288,7 +288,7 @@ public class AssetSummary  {
     
     private TranscodeStatusEnum transcodeStatus;
     /**
-     * 截图状态 \"UN_THUMBNAIL\"        //未截图 \"THUMBNAILING\"    //截图中 \"THUMBNAIL_SUCCEED\"  //截图成功 \"THUMBNAIL_FAILED\"     //截图失败 
+     * 截图状态。 取值如下： - UN_THUMBNAIL：未截图。 - THUMBNAILING：截图中。 - THUMBNAIL_SUCCEED：截图成功。 - THUMBNAIL_FAILED：截图失败。
      */
     public static final class ThumbnailStatusEnum {
 
@@ -384,7 +384,7 @@ public class AssetSummary  {
     
     private ThumbnailStatusEnum thumbnailStatus;
     /**
-     * 内容审核状态 \"UN_REVIEW\"        //未审核 \"REVIEWING\"  //审核中 \"REVIEW_SUSPICIOUS \"  //审核不过，待人工复审 \"REVIEW_PASSED\"      //审核通过 \"REVIEW_FAILED\"      //审核任务失败 \"REVIEW_BLOCKED\"      //已屏蔽 
+     * 内容审核状态 取值如下： - UN_REVIEW：未审核。 - REVIEWING：审核中。 - REVIEW_SUSPICIOUS：审核可疑，需要人工复审。 - REVIEW_PASSED：审核通过。 - REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
      */
     public static final class ReviewStatusEnum {
 
@@ -535,7 +535,7 @@ public class AssetSummary  {
 
 
     /**
-     * 媒体标题。 长度不超过128 个字节，utf-8 编码。
+     * 媒资标题。长度不超过128个字节，UTF-8编码。
      * @return title
      */
     public String getTitle() {
@@ -557,7 +557,7 @@ public class AssetSummary  {
 
 
     /**
-     * 视频描述。 长度不超过 1024个字节。
+     * 媒资描述。长度不超过1024个字节。
      * @return description
      */
     public String getDescription() {
@@ -579,7 +579,7 @@ public class AssetSummary  {
 
 
     /**
-     * 视频时长。单位为秒
+     * 媒资时长。 单位：秒。
      * @return duration
      */
     public Integer getDuration() {
@@ -601,7 +601,7 @@ public class AssetSummary  {
 
 
     /**
-     * 视频大小。单位为字节。
+     * 媒资大小。 单位：字节。
      * @return size
      */
     public Long getSize() {
@@ -703,7 +703,7 @@ public class AssetSummary  {
 
 
     /**
-     * 媒资创建时 间。 格式为 yyyymmddhhm mss。必须是 与时区无关的 UTC时间。
+     * 媒资创建时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -725,7 +725,7 @@ public class AssetSummary  {
 
 
     /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
+     * 媒资状态。 取值如下： - CREATING：上传中。 - FAILED：上传失败。 - CREATED：上传成功。 - PUBLISHED：已发布。 - DELETED：已删除。
      * @return assetStatus
      */
     public AssetStatusEnum getAssetStatus() {
@@ -747,7 +747,7 @@ public class AssetSummary  {
 
 
     /**
-     * 转码状态 \"UN_TRANSCODE\"        //未转码 \"WAITING_TRANSCODE\"   //等待转码，排队中 \"TRANSCODING\"         //转码中 \"TRANSCODE_SUCCEED\"   //转码成功 \"TRANSCODE_FAILED\"     //转码失败 
+     * 转码状态。 取值如下： - UN_TRANSCODE：未转码。 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中。 - TRANSCODE_SUCCEED：转码成功。 - TRANSCODE_FAILED：转码失败。
      * @return transcodeStatus
      */
     public TranscodeStatusEnum getTranscodeStatus() {
@@ -769,7 +769,7 @@ public class AssetSummary  {
 
 
     /**
-     * 截图状态 \"UN_THUMBNAIL\"        //未截图 \"THUMBNAILING\"    //截图中 \"THUMBNAIL_SUCCEED\"  //截图成功 \"THUMBNAIL_FAILED\"     //截图失败 
+     * 截图状态。 取值如下： - UN_THUMBNAIL：未截图。 - THUMBNAILING：截图中。 - THUMBNAIL_SUCCEED：截图成功。 - THUMBNAIL_FAILED：截图失败。
      * @return thumbnailStatus
      */
     public ThumbnailStatusEnum getThumbnailStatus() {
@@ -791,7 +791,7 @@ public class AssetSummary  {
 
 
     /**
-     * 内容审核状态 \"UN_REVIEW\"        //未审核 \"REVIEWING\"  //审核中 \"REVIEW_SUSPICIOUS \"  //审核不过，待人工复审 \"REVIEW_PASSED\"      //审核通过 \"REVIEW_FAILED\"      //审核任务失败 \"REVIEW_BLOCKED\"      //已屏蔽 
+     * 内容审核状态 取值如下： - UN_REVIEW：未审核。 - REVIEWING：审核中。 - REVIEW_SUSPICIOUS：审核可疑，需要人工复审。 - REVIEW_PASSED：审核通过。 - REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
      * @return reviewStatus
      */
     public ReviewStatusEnum getReviewStatus() {
@@ -813,7 +813,7 @@ public class AssetSummary  {
 
 
     /**
-     * 媒资的任务执行描述汇总。
+     * 媒资的任务执行描述汇总。 示例： - asset_exec_desc: upload success，媒资任务执行描述信息。 - transcode_exec_desc: transcode success，转码任务执行描述信息。 - thumbnail_exec_desc: thumbnail failed，截图任务执行描述信息。 - review_exec_desc: review pass，审核任务执行描述信息。
      * @return execDesc
      */
     public String getExecDesc() {
@@ -835,7 +835,7 @@ public class AssetSummary  {
 
 
     /**
-     * 媒资的音视频文件格式。
+     * 音视频文件的格式。 取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG - 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
      * @return mediaType
      */
     public String getMediaType() {

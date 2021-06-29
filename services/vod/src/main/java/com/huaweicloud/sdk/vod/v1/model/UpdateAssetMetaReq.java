@@ -8,9 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -50,24 +47,6 @@ public class UpdateAssetMetaReq  {
     
     private String tags;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="folder_name")
-    
-    private String folderName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="custom_metadata")
-    
-    private Map<String, Object> customMetadata = null;
-    
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privilege")
-    
-    private String privilege;
-
     public UpdateAssetMetaReq withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -77,7 +56,7 @@ public class UpdateAssetMetaReq  {
 
 
     /**
-     * 媒体ID<br/> 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -99,7 +78,7 @@ public class UpdateAssetMetaReq  {
 
 
     /**
-     * 媒体标题<br/> 
+     * 媒资标题，长度不超过128个字节，UTF-8编码。
      * @return title
      */
     public String getTitle() {
@@ -121,7 +100,7 @@ public class UpdateAssetMetaReq  {
 
 
     /**
-     * 视频描述<br/> 
+     * 媒资描述，长度不超过1024个字节。
      * @return description
      */
     public String getDescription() {
@@ -143,7 +122,7 @@ public class UpdateAssetMetaReq  {
 
 
     /**
-     * 媒资分类id<br/> 
+     * 媒资分类id。
      * @return categoryId
      */
     public Integer getCategoryId() {
@@ -165,7 +144,7 @@ public class UpdateAssetMetaReq  {
 
 
     /**
-     * 视频标签<br/> 
+     * 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF-8编码。
      * @return tags
      */
     public String getTags() {
@@ -174,86 +153,6 @@ public class UpdateAssetMetaReq  {
 
     public void setTags(String tags) {
         this.tags = tags;
-    }
-
-    
-
-    public UpdateAssetMetaReq withFolderName(String folderName) {
-        this.folderName = folderName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 媒资所在文件夹id
-     * @return folderName
-     */
-    public String getFolderName() {
-        return folderName;
-    }
-
-    public void setFolderName(String folderName) {
-        this.folderName = folderName;
-    }
-
-    
-
-    public UpdateAssetMetaReq withCustomMetadata(Map<String, Object> customMetadata) {
-        this.customMetadata = customMetadata;
-        return this;
-    }
-
-    
-
-    public UpdateAssetMetaReq putCustomMetadataItem(String key, Object customMetadataItem) {
-        if(this.customMetadata == null) {
-            this.customMetadata = new HashMap<>();
-        }
-        this.customMetadata.put(key, customMetadataItem);
-        return this;
-    }
-
-    public UpdateAssetMetaReq withCustomMetadata(Consumer<Map<String, Object>> customMetadataSetter) {
-        if(this.customMetadata == null) {
-            this.customMetadata = new HashMap<>();
-        }
-        customMetadataSetter.accept(this.customMetadata);
-        return this;
-    }
-    /**
-     * 自定义元数据<br/> 
-     * @return customMetadata
-     */
-    public Map<String, Object> getCustomMetadata() {
-        return customMetadata;
-    }
-
-    public void setCustomMetadata(Map<String, Object> customMetadata) {
-        this.customMetadata = customMetadata;
-    }
-
-    
-
-    public UpdateAssetMetaReq withPrivilege(String privilege) {
-        this.privilege = privilege;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 权限<br/> 
-     * @return privilege
-     */
-    public String getPrivilege() {
-        return privilege;
-    }
-
-    public void setPrivilege(String privilege) {
-        this.privilege = privilege;
     }
 
     
@@ -271,14 +170,11 @@ public class UpdateAssetMetaReq  {
             Objects.equals(this.title, updateAssetMetaReq.title) &&
             Objects.equals(this.description, updateAssetMetaReq.description) &&
             Objects.equals(this.categoryId, updateAssetMetaReq.categoryId) &&
-            Objects.equals(this.tags, updateAssetMetaReq.tags) &&
-            Objects.equals(this.folderName, updateAssetMetaReq.folderName) &&
-            Objects.equals(this.customMetadata, updateAssetMetaReq.customMetadata) &&
-            Objects.equals(this.privilege, updateAssetMetaReq.privilege);
+            Objects.equals(this.tags, updateAssetMetaReq.tags);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, title, description, categoryId, tags, folderName, customMetadata, privilege);
+        return Objects.hash(assetId, title, description, categoryId, tags);
     }
     @Override
     public String toString() {
@@ -289,9 +185,6 @@ public class UpdateAssetMetaReq  {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    categoryId: ").append(toIndentedString(categoryId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    folderName: ").append(toIndentedString(folderName)).append("\n");
-        sb.append("    customMetadata: ").append(toIndentedString(customMetadata)).append("\n");
-        sb.append("    privilege: ").append(toIndentedString(privilege)).append("\n");
         sb.append("}");
         return sb.toString();
     }

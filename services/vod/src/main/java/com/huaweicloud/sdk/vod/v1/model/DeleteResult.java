@@ -27,7 +27,7 @@ public class DeleteResult  {
     
     private String assetId;
     /**
-     * 删除状态<br/> 
+     * 删除状态。  取值如下： - DELETED：已删除。 - FAILED：删除失败。
      */
     public static final class StatusEnum {
 
@@ -126,7 +126,7 @@ public class DeleteResult  {
 
 
     /**
-     * 媒体ID<br/> 
+     * 媒资ID。
      * @return assetId
      */
     public String getAssetId() {
@@ -148,7 +148,7 @@ public class DeleteResult  {
 
 
     /**
-     * 删除状态<br/> 
+     * 删除状态。  取值如下： - DELETED：已删除。 - FAILED：删除失败。
      * @return status
      */
     public StatusEnum getStatus() {

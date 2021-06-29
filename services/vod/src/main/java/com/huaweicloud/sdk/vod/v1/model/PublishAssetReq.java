@@ -48,7 +48,7 @@ public class PublishAssetReq  {
     }
 
     /**
-     * Get assetId
+     * 媒资ID。
      * @return assetId
      */
     public List<String> getAssetId() {
