@@ -31,7 +31,7 @@ public class ShowRoomSettingRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceId")
+    @JsonProperty(value="conference_id")
     
     private String conferenceId;
 

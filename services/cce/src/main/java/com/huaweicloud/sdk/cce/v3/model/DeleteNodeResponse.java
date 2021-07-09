@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cce.v3.model.NodeMetadata;
-import com.huaweicloud.sdk.cce.v3.model.V3NodeSpec;
-import com.huaweicloud.sdk.cce.v3.model.V3NodeStatus;
+import com.huaweicloud.sdk.cce.v3.model.NodeSpec;
+import com.huaweicloud.sdk.cce.v3.model.NodeStatus;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,13 +44,13 @@ public class DeleteNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3NodeSpec spec;
+    private NodeSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private V3NodeStatus status;
+    private NodeStatus status;
 
     public DeleteNodeResponse withKind(String kind) {
         this.kind = kind;
@@ -125,14 +125,14 @@ public class DeleteNodeResponse extends SdkResponse {
 
     
 
-    public DeleteNodeResponse withSpec(V3NodeSpec spec) {
+    public DeleteNodeResponse withSpec(NodeSpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public DeleteNodeResponse withSpec(Consumer<V3NodeSpec> specSetter) {
+    public DeleteNodeResponse withSpec(Consumer<NodeSpec> specSetter) {
         if(this.spec == null ){
-            this.spec = new V3NodeSpec();
+            this.spec = new NodeSpec();
             specSetter.accept(this.spec);
         }
         
@@ -144,24 +144,24 @@ public class DeleteNodeResponse extends SdkResponse {
      * Get spec
      * @return spec
      */
-    public V3NodeSpec getSpec() {
+    public NodeSpec getSpec() {
         return spec;
     }
 
-    public void setSpec(V3NodeSpec spec) {
+    public void setSpec(NodeSpec spec) {
         this.spec = spec;
     }
 
     
 
-    public DeleteNodeResponse withStatus(V3NodeStatus status) {
+    public DeleteNodeResponse withStatus(NodeStatus status) {
         this.status = status;
         return this;
     }
 
-    public DeleteNodeResponse withStatus(Consumer<V3NodeStatus> statusSetter) {
+    public DeleteNodeResponse withStatus(Consumer<NodeStatus> statusSetter) {
         if(this.status == null ){
-            this.status = new V3NodeStatus();
+            this.status = new NodeStatus();
             statusSetter.accept(this.status);
         }
         
@@ -173,11 +173,11 @@ public class DeleteNodeResponse extends SdkResponse {
      * Get status
      * @return status
      */
-    public V3NodeStatus getStatus() {
+    public NodeStatus getStatus() {
         return status;
     }
 
-    public void setStatus(V3NodeStatus status) {
+    public void setStatus(NodeStatus status) {
         this.status = status;
     }
 

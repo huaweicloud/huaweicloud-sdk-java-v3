@@ -157,6 +157,8 @@ public class CloudWafSubscriptioResponseResources  {
 
     /**
      * 资源状态，0：解冻/正常，1：冻结，2：删除
+     * minimum: 0
+     * maximum: 2
      * @return status
      */
     public Integer getStatus() {
@@ -201,6 +203,8 @@ public class CloudWafSubscriptioResponseResources  {
 
     /**
      * 资源数量
+     * minimum: 1
+     * maximum: 1000
      * @return resourceSize
      */
     public Integer getResourceSize() {

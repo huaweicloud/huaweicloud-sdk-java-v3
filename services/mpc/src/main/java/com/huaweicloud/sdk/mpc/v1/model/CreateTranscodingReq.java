@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mpc.v1.model.AudioProcess;
 import com.huaweicloud.sdk.mpc.v1.model.AudioTrack;
-import com.huaweicloud.sdk.mpc.v1.model.Audit;
 import com.huaweicloud.sdk.mpc.v1.model.AvParameters;
 import com.huaweicloud.sdk.mpc.v1.model.Crop;
 import com.huaweicloud.sdk.mpc.v1.model.DigitalWatermark;
@@ -95,12 +94,6 @@ public class CreateTranscodingReq  {
     @JsonProperty(value="priority")
     
     private Integer priority;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audit")
-    
-    private Audit audit;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -474,35 +467,6 @@ public class CreateTranscodingReq  {
 
     
 
-    public CreateTranscodingReq withAudit(Audit audit) {
-        this.audit = audit;
-        return this;
-    }
-
-    public CreateTranscodingReq withAudit(Consumer<Audit> auditSetter) {
-        if(this.audit == null ){
-            this.audit = new Audit();
-            auditSetter.accept(this.audit);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get audit
-     * @return audit
-     */
-    public Audit getAudit() {
-        return audit;
-    }
-
-    public void setAudit(Audit audit) {
-        this.audit = audit;
-    }
-
-    
-
     public CreateTranscodingReq withSubtitle(Subtitle subtitle) {
         this.subtitle = subtitle;
         return this;
@@ -841,7 +805,6 @@ public class CreateTranscodingReq  {
             Objects.equals(this.thumbnail, createTranscodingReq.thumbnail) &&
             Objects.equals(this.digitalWatermark, createTranscodingReq.digitalWatermark) &&
             Objects.equals(this.priority, createTranscodingReq.priority) &&
-            Objects.equals(this.audit, createTranscodingReq.audit) &&
             Objects.equals(this.subtitle, createTranscodingReq.subtitle) &&
             Objects.equals(this.specialEffect, createTranscodingReq.specialEffect) &&
             Objects.equals(this.encryption, createTranscodingReq.encryption) &&
@@ -856,7 +819,7 @@ public class CreateTranscodingReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, priority, audit, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, templateExtend);
+        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, priority, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, templateExtend);
     }
     @Override
     public String toString() {
@@ -872,7 +835,6 @@ public class CreateTranscodingReq  {
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    digitalWatermark: ").append(toIndentedString(digitalWatermark)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-        sb.append("    audit: ").append(toIndentedString(audit)).append("\n");
         sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
         sb.append("    specialEffect: ").append(toIndentedString(specialEffect)).append("\n");
         sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");

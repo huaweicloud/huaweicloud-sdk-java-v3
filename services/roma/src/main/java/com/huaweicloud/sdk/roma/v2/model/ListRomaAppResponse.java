@@ -50,6 +50,8 @@ public class ListRomaAppResponse extends SdkResponse {
 
     /**
      * 总的数量
+     * minimum: 1
+     * maximum: 10
      * @return total
      */
     public Integer getTotal() {
@@ -72,6 +74,8 @@ public class ListRomaAppResponse extends SdkResponse {
 
     /**
      * 当前页数量
+     * minimum: 1
+     * maximum: 10
      * @return size
      */
     public Integer getSize() {

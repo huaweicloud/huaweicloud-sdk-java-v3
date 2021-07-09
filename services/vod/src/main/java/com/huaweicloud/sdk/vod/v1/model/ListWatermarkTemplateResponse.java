@@ -57,7 +57,7 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
     }
 
     /**
-     * Get templates
+     * 水印模板信息。
      * @return templates
      */
     public List<WatermarkTemplate> getTemplates() {
@@ -79,7 +79,7 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
 
 
     /**
-     * Get total
+     * 总数。
      * @return total
      */
     public Integer getTotal() {

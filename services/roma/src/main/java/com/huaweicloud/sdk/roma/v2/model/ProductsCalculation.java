@@ -39,6 +39,8 @@ public class ProductsCalculation  {
 
     /**
      * 普通产品数量
+     * minimum: 0
+     * maximum: 999999999
      * @return normalProductsNumbers
      */
     public Integer getNormalProductsNumbers() {
@@ -61,6 +63,8 @@ public class ProductsCalculation  {
 
     /**
      * 网关产品数量
+     * minimum: 0
+     * maximum: 999999999
      * @return gatewayProductsNumbers
      */
     public Integer getGatewayProductsNumbers() {

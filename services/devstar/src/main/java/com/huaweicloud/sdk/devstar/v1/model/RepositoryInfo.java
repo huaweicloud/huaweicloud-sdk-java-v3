@@ -191,6 +191,8 @@ public class RepositoryInfo  {
 
     /**
      * 是否允许项目内成员访问仓库： - 0：不允许 - 1：允许 
+     * minimum: 0
+     * maximum: 1
      * @return memberPermission
      */
     public Integer getMemberPermission() {
@@ -213,6 +215,8 @@ public class RepositoryInfo  {
 
     /**
      * 是否允许生成README文件： - 0：不允许 - 1：允许 
+     * minimum: 0
+     * maximum: 1
      * @return readmePermission
      */
     public Integer getReadmePermission() {
@@ -235,6 +239,8 @@ public class RepositoryInfo  {
 
     /**
      * 是否公开： - 0：私有 - 20：公开只读 
+     * minimum: 0
+     * maximum: 20
      * @return visibilityLevel
      */
     public Integer getVisibilityLevel() {
@@ -257,6 +263,8 @@ public class RepositoryInfo  {
 
     /**
      *  开源许可证id （0:默认）。
+     * minimum: 0
+     * maximum: 100
      * @return licenseId
      */
     public Integer getLicenseId() {

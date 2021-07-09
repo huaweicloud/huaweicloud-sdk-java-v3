@@ -51,7 +51,7 @@ public class ListAssetCategoryResponse extends SdkResponse {
     }
 
     /**
-     * 分类返回值<br/>
+     * 分类返回值
      * @return body
      */
     public List<QueryCategoryRsp> getBody() {

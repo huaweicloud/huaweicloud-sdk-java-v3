@@ -95,6 +95,8 @@ public class LbaasListener  {
 
     /**
      * 后端协议端口，指后端云服务器监听的端口。
+     * minimum: 1
+     * maximum: 65535
      * @return protocolPort
      */
     public Integer getProtocolPort() {

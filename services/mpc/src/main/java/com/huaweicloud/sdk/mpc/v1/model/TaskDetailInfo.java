@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AuditReport;
 import com.huaweicloud.sdk.mpc.v1.model.ErrorResponse;
 import com.huaweicloud.sdk.mpc.v1.model.MediaDetail;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
@@ -180,12 +179,6 @@ public class TaskDetailInfo  {
     @JsonProperty(value="user_data")
     
     private String userData;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audit_report")
-    
-    private AuditReport auditReport;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -401,35 +394,6 @@ public class TaskDetailInfo  {
 
     
 
-    public TaskDetailInfo withAuditReport(AuditReport auditReport) {
-        this.auditReport = auditReport;
-        return this;
-    }
-
-    public TaskDetailInfo withAuditReport(Consumer<AuditReport> auditReportSetter) {
-        if(this.auditReport == null ){
-            this.auditReport = new AuditReport();
-            auditReportSetter.accept(this.auditReport);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get auditReport
-     * @return auditReport
-     */
-    public AuditReport getAuditReport() {
-        return auditReport;
-    }
-
-    public void setAuditReport(AuditReport auditReport) {
-        this.auditReport = auditReport;
-    }
-
-    
-
     public TaskDetailInfo withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -549,7 +513,6 @@ public class TaskDetailInfo  {
             Objects.equals(this.input, taskDetailInfo.input) &&
             Objects.equals(this.output, taskDetailInfo.output) &&
             Objects.equals(this.userData, taskDetailInfo.userData) &&
-            Objects.equals(this.auditReport, taskDetailInfo.auditReport) &&
             Objects.equals(this.errorCode, taskDetailInfo.errorCode) &&
             Objects.equals(this.description, taskDetailInfo.description) &&
             Objects.equals(this.mediaDetail, taskDetailInfo.mediaDetail) &&
@@ -557,7 +520,7 @@ public class TaskDetailInfo  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, userData, auditReport, errorCode, description, mediaDetail, xcodeError);
+        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, userData, errorCode, description, mediaDetail, xcodeError);
     }
     @Override
     public String toString() {
@@ -571,7 +534,6 @@ public class TaskDetailInfo  {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
-        sb.append("    auditReport: ").append(toIndentedString(auditReport)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    mediaDetail: ").append(toIndentedString(mediaDetail)).append("\n");

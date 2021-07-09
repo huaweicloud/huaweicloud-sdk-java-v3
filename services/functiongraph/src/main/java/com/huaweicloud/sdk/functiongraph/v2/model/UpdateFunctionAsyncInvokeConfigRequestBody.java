@@ -46,6 +46,8 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody  {
 
     /**
      * 消息最大存活时长，取值范围[1，86400]，单位：秒，默认值为3600。
+     * minimum: 1
+     * maximum: 86400
      * @return maxAsyncEventAgeInSeconds
      */
     public Integer getMaxAsyncEventAgeInSeconds() {
@@ -68,6 +70,8 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody  {
 
     /**
      * 异步调用失败后的最大重试次数，默认值为1。取值范围[0，3]。
+     * minimum: 0
+     * maximum: 3
      * @return maxAsyncRetryAttempts
      */
     public Integer getMaxAsyncRetryAttempts() {

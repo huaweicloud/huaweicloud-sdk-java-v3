@@ -27,7 +27,7 @@ public class ConfirmAssetUploadReq  {
     
     private String assetId;
     /**
-     * 上传状态。 取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
+     * 上传状态。  取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
      */
     public static final class StatusEnum {
 
@@ -148,7 +148,7 @@ public class ConfirmAssetUploadReq  {
 
 
     /**
-     * 上传状态。 取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
+     * 上传状态。  取值如下： - CREATED：创建成功。 - FAILED：创建失败。 - CANCELLED：创建取消。
      * @return status
      */
     public StatusEnum getStatus() {

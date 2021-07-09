@@ -849,6 +849,8 @@ public class TaskMonitorInfo  {
 
     /**
      * 调度周期，和period字段一起可以确定每隔多长时间调度一次，只有定时任务且use_quartz_cron为false时才有该属性
+     * minimum: 1
+     * maximum: 60
      * @return dispatchInterval
      */
     public Integer getDispatchInterval() {

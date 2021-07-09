@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.RefreshTaskRequestRefreshTask;
+import com.huaweicloud.sdk.cdn.v1.model.RefreshTaskRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class RefreshTaskRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="refresh_task")
     
-    private RefreshTaskRequestRefreshTask refreshTask;
+    private RefreshTaskRequestBody refreshTask;
 
-    public RefreshTaskRequest withRefreshTask(RefreshTaskRequestRefreshTask refreshTask) {
+    public RefreshTaskRequest withRefreshTask(RefreshTaskRequestBody refreshTask) {
         this.refreshTask = refreshTask;
         return this;
     }
 
-    public RefreshTaskRequest withRefreshTask(Consumer<RefreshTaskRequestRefreshTask> refreshTaskSetter) {
+    public RefreshTaskRequest withRefreshTask(Consumer<RefreshTaskRequestBody> refreshTaskSetter) {
         if(this.refreshTask == null ){
-            this.refreshTask = new RefreshTaskRequestRefreshTask();
+            this.refreshTask = new RefreshTaskRequestBody();
             refreshTaskSetter.accept(this.refreshTask);
         }
         
@@ -43,11 +43,11 @@ public class RefreshTaskRequest  {
      * Get refreshTask
      * @return refreshTask
      */
-    public RefreshTaskRequestRefreshTask getRefreshTask() {
+    public RefreshTaskRequestBody getRefreshTask() {
         return refreshTask;
     }
 
-    public void setRefreshTask(RefreshTaskRequestRefreshTask refreshTask) {
+    public void setRefreshTask(RefreshTaskRequestBody refreshTask) {
         this.refreshTask = refreshTask;
     }
 

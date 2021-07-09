@@ -106,7 +106,7 @@ public class ShowCdnStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 采样数据数组。 从start_time开始，每个间隔对应一个采样数据。
+     * 采样数据数组。  从start_time开始，每个间隔对应一个采样数据。
      * @return values
      */
     public List<Long> getValues() {

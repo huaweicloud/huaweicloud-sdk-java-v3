@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.CustomerOrderV2;
+import com.huaweicloud.sdk.bss.v2.model.CustomerOrderV3;
 import com.huaweicloud.sdk.bss.v2.model.OrderLineItemEntityV2;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_info")
     
-    private CustomerOrderV2 orderInfo;
+    private CustomerOrderV3 orderInfo;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -63,14 +63,14 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
 
     
 
-    public ShowCustomerOrderDetailsResponse withOrderInfo(CustomerOrderV2 orderInfo) {
+    public ShowCustomerOrderDetailsResponse withOrderInfo(CustomerOrderV3 orderInfo) {
         this.orderInfo = orderInfo;
         return this;
     }
 
-    public ShowCustomerOrderDetailsResponse withOrderInfo(Consumer<CustomerOrderV2> orderInfoSetter) {
+    public ShowCustomerOrderDetailsResponse withOrderInfo(Consumer<CustomerOrderV3> orderInfoSetter) {
         if(this.orderInfo == null ){
-            this.orderInfo = new CustomerOrderV2();
+            this.orderInfo = new CustomerOrderV3();
             orderInfoSetter.accept(this.orderInfo);
         }
         
@@ -82,11 +82,11 @@ public class ShowCustomerOrderDetailsResponse extends SdkResponse {
      * Get orderInfo
      * @return orderInfo
      */
-    public CustomerOrderV2 getOrderInfo() {
+    public CustomerOrderV3 getOrderInfo() {
         return orderInfo;
     }
 
-    public void setOrderInfo(CustomerOrderV2 orderInfo) {
+    public void setOrderInfo(CustomerOrderV3 orderInfo) {
         this.orderInfo = orderInfo;
     }
 

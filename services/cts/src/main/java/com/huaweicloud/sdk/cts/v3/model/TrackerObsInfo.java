@@ -3,15 +3,11 @@ package com.huaweicloud.sdk.cts.v3.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,108 +34,12 @@ public class TrackerObsInfo  {
     @JsonProperty(value="is_obs_created")
     
     private Boolean isObsCreated;
-    /**
-     * 标识配置桶内对象存储周期。 当\"tracker_type\"参数值为\"data\"时该参数值有效。
-     */
-    public static final class BucketLifecycleEnum {
-
-        
-        /**
-         * Enum NUMBER_30 for value: 30
-         */
-        public static final BucketLifecycleEnum NUMBER_30 = new BucketLifecycleEnum(30);
-        
-        /**
-         * Enum NUMBER_60 for value: 60
-         */
-        public static final BucketLifecycleEnum NUMBER_60 = new BucketLifecycleEnum(60);
-        
-        /**
-         * Enum NUMBER_90 for value: 90
-         */
-        public static final BucketLifecycleEnum NUMBER_90 = new BucketLifecycleEnum(90);
-        
-        /**
-         * Enum NUMBER_180 for value: 180
-         */
-        public static final BucketLifecycleEnum NUMBER_180 = new BucketLifecycleEnum(180);
-        
-        /**
-         * Enum NUMBER_1095 for value: 1095
-         */
-        public static final BucketLifecycleEnum NUMBER_1095 = new BucketLifecycleEnum(1095);
-        
-
-        private static final Map<Integer, BucketLifecycleEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, BucketLifecycleEnum> createStaticFields() {
-            Map<Integer, BucketLifecycleEnum> map = new HashMap<>();
-            map.put(30, NUMBER_30);
-            map.put(60, NUMBER_60);
-            map.put(90, NUMBER_90);
-            map.put(180, NUMBER_180);
-            map.put(1095, NUMBER_1095);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        BucketLifecycleEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static BucketLifecycleEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            BucketLifecycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BucketLifecycleEnum(value);
-            }
-            return result;
-        }
-
-        public static BucketLifecycleEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            BucketLifecycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BucketLifecycleEnum) {
-                return this.value.equals(((BucketLifecycleEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bucket_lifecycle")
     
-    private BucketLifecycleEnum bucketLifecycle;
+    private Integer bucketLifecycle;
 
     public TrackerObsInfo withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -207,7 +107,7 @@ public class TrackerObsInfo  {
 
     
 
-    public TrackerObsInfo withBucketLifecycle(BucketLifecycleEnum bucketLifecycle) {
+    public TrackerObsInfo withBucketLifecycle(Integer bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
         return this;
     }
@@ -217,13 +117,15 @@ public class TrackerObsInfo  {
 
     /**
      * 标识配置桶内对象存储周期。 当\"tracker_type\"参数值为\"data\"时该参数值有效。
+     * minimum: 0
+     * maximum: 5000
      * @return bucketLifecycle
      */
-    public BucketLifecycleEnum getBucketLifecycle() {
+    public Integer getBucketLifecycle() {
         return bucketLifecycle;
     }
 
-    public void setBucketLifecycle(BucketLifecycleEnum bucketLifecycle) {
+    public void setBucketLifecycle(Integer bucketLifecycle) {
         this.bucketLifecycle = bucketLifecycle;
     }
 

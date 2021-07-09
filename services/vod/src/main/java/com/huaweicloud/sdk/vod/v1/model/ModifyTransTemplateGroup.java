@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -22,7 +20,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ModifyTransTemplateGroup
+ * 
  */
 public class ModifyTransTemplateGroup  {
 
@@ -39,7 +37,7 @@ public class ModifyTransTemplateGroup  {
     
     private String name;
     /**
-     * 是否设置默认<br/> 
+     * 是否设置默认。
      */
     public static final class StatusEnum {
 
@@ -122,90 +120,12 @@ public class ModifyTransTemplateGroup  {
     @JsonProperty(value="status")
     
     private StatusEnum status;
-    /**
-     * 是否自动加密
-     */
-    public static final class AutoEncryptEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final AutoEncryptEnum NUMBER_0 = new AutoEncryptEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final AutoEncryptEnum NUMBER_1 = new AutoEncryptEnum(1);
-        
-
-        private static final Map<Integer, AutoEncryptEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, AutoEncryptEnum> createStaticFields() {
-            Map<Integer, AutoEncryptEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        AutoEncryptEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AutoEncryptEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            AutoEncryptEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AutoEncryptEnum(value);
-            }
-            return result;
-        }
-
-        public static AutoEncryptEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            AutoEncryptEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AutoEncryptEnum) {
-                return this.value.equals(((AutoEncryptEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_encrypt")
     
-    private AutoEncryptEnum autoEncrypt;
+    private Integer autoEncrypt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -240,7 +160,7 @@ public class ModifyTransTemplateGroup  {
 
 
     /**
-     * 模板组名称<br/> 
+     * 模板组名称。
      * @return groupId
      */
     public String getGroupId() {
@@ -262,7 +182,7 @@ public class ModifyTransTemplateGroup  {
 
 
     /**
-     * 模板组名称<br/> 
+     * 模板组名称。
      * @return name
      */
     public String getName() {
@@ -284,7 +204,7 @@ public class ModifyTransTemplateGroup  {
 
 
     /**
-     * 是否设置默认<br/> 
+     * 是否设置默认。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -297,7 +217,7 @@ public class ModifyTransTemplateGroup  {
 
     
 
-    public ModifyTransTemplateGroup withAutoEncrypt(AutoEncryptEnum autoEncrypt) {
+    public ModifyTransTemplateGroup withAutoEncrypt(Integer autoEncrypt) {
         this.autoEncrypt = autoEncrypt;
         return this;
     }
@@ -306,14 +226,14 @@ public class ModifyTransTemplateGroup  {
 
 
     /**
-     * 是否自动加密
+     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出必须要为HLS。
      * @return autoEncrypt
      */
-    public AutoEncryptEnum getAutoEncrypt() {
+    public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
 
-    public void setAutoEncrypt(AutoEncryptEnum autoEncrypt) {
+    public void setAutoEncrypt(Integer autoEncrypt) {
         this.autoEncrypt = autoEncrypt;
     }
 
@@ -342,7 +262,7 @@ public class ModifyTransTemplateGroup  {
     }
 
     /**
-     * 画质配置信息列表<br/> 
+     * 画质配置信息列表。
      * @return qualityInfoList
      */
     public List<QualityInfo> getQualityInfoList() {
@@ -378,7 +298,7 @@ public class ModifyTransTemplateGroup  {
     }
 
     /**
-     * 绑定的水印模板组ID数组<br/> 
+     * 绑定的水印模板组ID数组。
      * @return watermarkTemplateIds
      */
     public List<String> getWatermarkTemplateIds() {
@@ -400,7 +320,7 @@ public class ModifyTransTemplateGroup  {
 
 
     /**
-     * 模板介绍<br/> 
+     * 模板介绍。
      * @return description
      */
     public String getDescription() {

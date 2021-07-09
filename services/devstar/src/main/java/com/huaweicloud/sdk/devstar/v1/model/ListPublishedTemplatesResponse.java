@@ -44,6 +44,8 @@ public class ListPublishedTemplatesResponse extends SdkResponse {
 
     /**
      * 返回模板的数量。
+     * minimum: 0
+     * maximum: 1000000
      * @return count
      */
     public Integer getCount() {

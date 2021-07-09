@@ -44,8 +44,14 @@ public class ShowDomainItemDetailsRequest  {
     @JsonProperty(value="domain_name")
     
     private String domainName;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="service_area")
+    
+    private String serviceArea;
     /**
-     * 网络资源消耗： - bw（带宽） - flux（流量） - bs_bw(回源带宽) - bs_flux（回源流量）  访问情况： - req_num（请求总数） - hit_num（请求命中次数） - bs_num(回源总数) - bs_fail_num(回源失败数) - hit_flux（命中流量）
+     * 网络资源消耗： - bw（带宽） - flux（流量） - bs_bw(回源带宽) - bs_flux（回源流量）  访问情况： - req_num（请求总数） - hit_num（请求命中次数） - bs_num(回源总数) - bs_fail_num(回源失败数) - hit_flux（命中流量）  HTTP状态码（组合指标）： - http_code_2xx(状态码汇总2xx) - http_code_3xx(状态码汇总3xx) - http_code_4xx(状态码汇总4xx) - http_code_5xx(状态码汇总5xx)
      */
     public static final class StatTypeEnum {
 
@@ -95,6 +101,26 @@ public class ShowDomainItemDetailsRequest  {
          */
         public static final StatTypeEnum HIT_FLUX = new StatTypeEnum("hit_flux");
         
+        /**
+         * Enum HTTP_CODE_2XX for value: "http_code_2xx"
+         */
+        public static final StatTypeEnum HTTP_CODE_2XX = new StatTypeEnum("http_code_2xx");
+        
+        /**
+         * Enum HTTP_CODE_3XX for value: "http_code_3xx"
+         */
+        public static final StatTypeEnum HTTP_CODE_3XX = new StatTypeEnum("http_code_3xx");
+        
+        /**
+         * Enum HTTP_CODE_4XX for value: "http_code_4xx"
+         */
+        public static final StatTypeEnum HTTP_CODE_4XX = new StatTypeEnum("http_code_4xx");
+        
+        /**
+         * Enum HTTP_CODE_5XX for value: "http_code_5xx"
+         */
+        public static final StatTypeEnum HTTP_CODE_5XX = new StatTypeEnum("http_code_5xx");
+        
 
         private static final Map<String, StatTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -109,6 +135,10 @@ public class ShowDomainItemDetailsRequest  {
             map.put("bs_num", BS_NUM);
             map.put("bs_fail_num", BS_FAIL_NUM);
             map.put("hit_flux", HIT_FLUX);
+            map.put("http_code_2xx", HTTP_CODE_2XX);
+            map.put("http_code_3xx", HTTP_CODE_3XX);
+            map.put("http_code_4xx", HTTP_CODE_4XX);
+            map.put("http_code_5xx", HTTP_CODE_5XX);
             return Collections.unmodifiableMap(map);
         }
 
@@ -259,6 +289,28 @@ public class ShowDomainItemDetailsRequest  {
 
     
 
+    public ShowDomainItemDetailsRequest withServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
+        return this;
+    }
+
+    
+
+
+    /**
+     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+     * @return serviceArea
+     */
+    public String getServiceArea() {
+        return serviceArea;
+    }
+
+    public void setServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
+    }
+
+    
+
     public ShowDomainItemDetailsRequest withStatType(StatTypeEnum statType) {
         this.statType = statType;
         return this;
@@ -268,7 +320,7 @@ public class ShowDomainItemDetailsRequest  {
 
 
     /**
-     * 网络资源消耗： - bw（带宽） - flux（流量） - bs_bw(回源带宽) - bs_flux（回源流量）  访问情况： - req_num（请求总数） - hit_num（请求命中次数） - bs_num(回源总数) - bs_fail_num(回源失败数) - hit_flux（命中流量）
+     * 网络资源消耗： - bw（带宽） - flux（流量） - bs_bw(回源带宽) - bs_flux（回源流量）  访问情况： - req_num（请求总数） - hit_num（请求命中次数） - bs_num(回源总数) - bs_fail_num(回源失败数) - hit_flux（命中流量）  HTTP状态码（组合指标）： - http_code_2xx(状态码汇总2xx) - http_code_3xx(状态码汇总3xx) - http_code_4xx(状态码汇总4xx) - http_code_5xx(状态码汇总5xx)
      * @return statType
      */
     public StatTypeEnum getStatType() {
@@ -294,11 +346,12 @@ public class ShowDomainItemDetailsRequest  {
             Objects.equals(this.startTime, showDomainItemDetailsRequest.startTime) &&
             Objects.equals(this.endTime, showDomainItemDetailsRequest.endTime) &&
             Objects.equals(this.domainName, showDomainItemDetailsRequest.domainName) &&
+            Objects.equals(this.serviceArea, showDomainItemDetailsRequest.serviceArea) &&
             Objects.equals(this.statType, showDomainItemDetailsRequest.statType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, startTime, endTime, domainName, statType);
+        return Objects.hash(enterpriseProjectId, startTime, endTime, domainName, serviceArea, statType);
     }
     @Override
     public String toString() {
@@ -308,6 +361,7 @@ public class ShowDomainItemDetailsRequest  {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
+        sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    statType: ").append(toIndentedString(statType)).append("\n");
         sb.append("}");
         return sb.toString();

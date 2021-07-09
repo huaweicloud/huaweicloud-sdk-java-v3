@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -47,90 +45,12 @@ public class CreateCcRuleRequestBody  {
     @JsonProperty(value="url")
     
     private String url;
-    /**
-     * 工作模式：（0标准，1高级），高级模式参数无法在同一个接口同一份文档中用描述，参考console页面构建参数
-     */
-    public static final class ModeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ModeEnum NUMBER_0 = new ModeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ModeEnum NUMBER_1 = new ModeEnum(1);
-        
-
-        private static final Map<Integer, ModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ModeEnum> createStaticFields() {
-            Map<Integer, ModeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ModeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ModeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
-        }
-
-        public static ModeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ModeEnum) {
-                return this.value.equals(((ModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="mode")
     
-    private ModeEnum mode;
+    private Integer mode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -260,6 +180,8 @@ public class CreateCcRuleRequestBody  {
 
     /**
      * 限制频率次数
+     * minimum: 0
+     * maximum: 10000
      * @return limitNum
      */
     public Integer getLimitNum() {
@@ -282,6 +204,8 @@ public class CreateCcRuleRequestBody  {
 
     /**
      * 限制频率单位时间
+     * minimum: 0
+     * maximum: 10000
      * @return limitPeriod
      */
     public Integer getLimitPeriod() {
@@ -316,7 +240,7 @@ public class CreateCcRuleRequestBody  {
 
     
 
-    public CreateCcRuleRequestBody withMode(ModeEnum mode) {
+    public CreateCcRuleRequestBody withMode(Integer mode) {
         this.mode = mode;
         return this;
     }
@@ -328,11 +252,11 @@ public class CreateCcRuleRequestBody  {
      * 工作模式：（0标准，1高级），高级模式参数无法在同一个接口同一份文档中用描述，参考console页面构建参数
      * @return mode
      */
-    public ModeEnum getMode() {
+    public Integer getMode() {
         return mode;
     }
 
-    public void setMode(ModeEnum mode) {
+    public void setMode(Integer mode) {
         this.mode = mode;
     }
 

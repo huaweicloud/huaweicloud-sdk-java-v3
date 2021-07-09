@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * QualityInfo
+ * 
  */
 public class QualityInfo  {
 
@@ -35,7 +35,7 @@ public class QualityInfo  {
     
     private AudioTemplateInfo audio;
     /**
-     * 格式<br/> 
+     * 格式。
      */
     public static final class FormatEnum {
 
@@ -216,7 +216,7 @@ public class QualityInfo  {
 
 
     /**
-     * 格式<br/> 
+     * 格式。
      * @return format
      */
     public FormatEnum getFormat() {

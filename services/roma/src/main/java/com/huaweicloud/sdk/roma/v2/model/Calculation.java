@@ -45,6 +45,8 @@ public class Calculation  {
 
     /**
      * 从未连接过的设备数量
+     * minimum: 0
+     * maximum: 999999999
      * @return neverConnected
      */
     public Integer getNeverConnected() {
@@ -67,6 +69,8 @@ public class Calculation  {
 
     /**
      * 在线设备数量
+     * minimum: 0
+     * maximum: 999999999
      * @return online
      */
     public Integer getOnline() {
@@ -89,6 +93,8 @@ public class Calculation  {
 
     /**
      * 离线设备数量
+     * minimum: 0
+     * maximum: 999999999
      * @return offline
      */
     public Integer getOffline() {

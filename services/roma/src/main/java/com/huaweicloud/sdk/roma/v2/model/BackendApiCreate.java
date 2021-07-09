@@ -7,8 +7,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -278,90 +276,12 @@ public class BackendApiCreate  {
     @JsonProperty(value="vpc_channel_info")
     
     private VpcInfo vpcChannelInfo;
-    /**
-     * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
-     */
-    public static final class VpcChannelStatusEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final VpcChannelStatusEnum NUMBER_1 = new VpcChannelStatusEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final VpcChannelStatusEnum NUMBER_2 = new VpcChannelStatusEnum(2);
-        
-
-        private static final Map<Integer, VpcChannelStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, VpcChannelStatusEnum> createStaticFields() {
-            Map<Integer, VpcChannelStatusEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        VpcChannelStatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VpcChannelStatusEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VpcChannelStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static VpcChannelStatusEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VpcChannelStatusEnum) {
-                return this.value.equals(((VpcChannelStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="vpc_channel_status")
     
-    private VpcChannelStatusEnum vpcChannelStatus;
+    private Integer vpcChannelStatus;
 
     public BackendApiCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
@@ -527,6 +447,7 @@ public class BackendApiCreate  {
 
     /**
      * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
+     * minimum: 1
      * @return timeout
      */
     public Integer getTimeout() {
@@ -590,7 +511,7 @@ public class BackendApiCreate  {
 
     
 
-    public BackendApiCreate withVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
+    public BackendApiCreate withVpcChannelStatus(Integer vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
         return this;
     }
@@ -602,11 +523,11 @@ public class BackendApiCreate  {
      * 是否使用VPC通道 - 1：使用VPC通道 - 2：不使用VPC通道
      * @return vpcChannelStatus
      */
-    public VpcChannelStatusEnum getVpcChannelStatus() {
+    public Integer getVpcChannelStatus() {
         return vpcChannelStatus;
     }
 
-    public void setVpcChannelStatus(VpcChannelStatusEnum vpcChannelStatus) {
+    public void setVpcChannelStatus(Integer vpcChannelStatus) {
         this.vpcChannelStatus = vpcChannelStatus;
     }
 

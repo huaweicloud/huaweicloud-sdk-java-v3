@@ -38,7 +38,7 @@ public class VodSampleData  {
 
 
     /**
-     * 存储空间。 单位：GB。
+     * 存储空间。  单位：GB。
      * @return storage
      */
     public Float getStorage() {
@@ -60,7 +60,7 @@ public class VodSampleData  {
 
 
     /**
-     * 转码时长。 单位：秒。
+     * 转码时长。  单位：秒。
      * @return transcode
      */
     public Long getTranscode() {

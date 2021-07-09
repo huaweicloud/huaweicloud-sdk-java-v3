@@ -569,6 +569,7 @@ public class ScalingV2PolicyDetail  {
 
     /**
      * 冷却时间，取值范围0-86400，默认为300，单位是秒。
+     * maximum: 86400
      * @return coolDownTime
      */
     public Integer getCoolDownTime() {

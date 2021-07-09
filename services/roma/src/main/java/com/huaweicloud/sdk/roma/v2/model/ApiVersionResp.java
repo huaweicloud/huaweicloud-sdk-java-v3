@@ -3,16 +3,12 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -63,90 +59,12 @@ public class ApiVersionResp  {
     @JsonProperty(value="publish_time")
     
     private OffsetDateTime publishTime;
-    /**
-     * 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
-     */
-    public static final class StatusEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
-        
-
-        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, StatusEnum> createStaticFields() {
-            Map<Integer, StatusEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        StatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
-        }
-
-        public static StatusEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private StatusEnum status;
+    private Integer status;
 
     public ApiVersionResp withVersionId(String versionId) {
         this.versionId = versionId;
@@ -302,7 +220,7 @@ public class ApiVersionResp  {
 
     
 
-    public ApiVersionResp withStatus(StatusEnum status) {
+    public ApiVersionResp withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -314,11 +232,11 @@ public class ApiVersionResp  {
      * 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

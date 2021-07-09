@@ -24,7 +24,7 @@ import java.util.Objects;
 public class UploadMetaDataByUrl  {
 
     /**
-     * 上传音视频文件的格式。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2 若上传格式为音频文件，则不支持转码、添加水印和字幕。
+     * 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
      */
     public static final class VideoTypeEnum {
 
@@ -350,12 +350,6 @@ public class UploadMetaDataByUrl  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smart_cover")
-    
-    private Integer smartCover;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="workflow_name")
     
     private String workflowName;
@@ -375,7 +369,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 上传音视频文件的格式。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2 若上传格式为音频文件，则不支持转码、添加水印和字幕。
+     * 上传音视频文件的格式。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV、HLS - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2  若上传格式为音频文件，则不支持转码、添加水印和字幕。
      * @return videoType
      */
     public VideoTypeEnum getVideoType() {
@@ -441,7 +435,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 媒资分类ID。 您可以调用[创建媒资分类](https://support.huaweicloud.com/api-vod/vod_04_0028.html)接口或在点播控制台的[分类设置](https://support.huaweicloud.com/usermanual-vod/vod010006.html)中创建对应的媒资分类，并获取分类ID。  **说明：** 若不设置或者设置为-1，则上传的音视频归类到系统预置的“其它”分类中。
+     * 媒资分类ID。  您可以调用[创建媒资分类](https://support.huaweicloud.com/api-vod/vod_04_0028.html)接口或在点播控制台的[分类设置](https://support.huaweicloud.com/usermanual-vod/vod010006.html)中创建对应的媒资分类，并获取分类ID。  > 若不设置或者设置为-1，则上传的音视频归类到系统预置的“其它”分类中。
      * @return categoryId
      */
     public Integer getCategoryId() {
@@ -463,7 +457,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 视频标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
+     * 视频标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF8编码。
      * @return tags
      */
     public String getTags() {
@@ -485,7 +479,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 是否自动发布。 取值如下： - 0：表示不自动发布。 - 1：表示自动发布。 默认值：0。
+     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
      * minimum: 0
      * maximum: 1
      * @return autoPublish
@@ -509,7 +503,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 转码模板组名称。 若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。  **说明：** 若同时设置了“**template_group_name**”和“**workflow_name**”字段，则“**template_group_name**”字段生效。
+     * 转码模板组名称。  若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。  > 若同时设置了“**template_group_name**”和“**workflow_name**”字段，则“**template_group_name**”字段生效。
      * @return templateGroupName
      */
     public String getTemplateGroupName() {
@@ -531,7 +525,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 是否自动加密。 取值如下： - 0：表示不加密。 - 1：表示需要加密。 默认值：0。 若设置为需要加密，则必须配置转码模板，且转码的输出格式是HLS。
+     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  若设置为需要加密，则必须配置转码模板，且转码的输出格式是HLS。
      * minimum: 0
      * maximum: 1
      * @return autoEncrypt
@@ -555,7 +549,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 是否自动预热到CDN。 取值如下： - 0：表示不自动预热。 - 1：表示自动预热。 默认值：0。
+     * 是否自动预热到CDN。  取值如下： - 0：表示不自动预热。 - 1：表示自动预热。  默认值：0。
      * @return autoPreheat
      */
     public Integer getAutoPreheat() {
@@ -626,30 +620,6 @@ public class UploadMetaDataByUrl  {
 
     
 
-    public UploadMetaDataByUrl withSmartCover(Integer smartCover) {
-        this.smartCover = smartCover;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否生成智能封面，取值[0，1]，0表示不生成；1表示生成。
-     * minimum: 0
-     * maximum: 1
-     * @return smartCover
-     */
-    public Integer getSmartCover() {
-        return smartCover;
-    }
-
-    public void setSmartCover(Integer smartCover) {
-        this.smartCover = smartCover;
-    }
-
-    
-
     public UploadMetaDataByUrl withWorkflowName(String workflowName) {
         this.workflowName = workflowName;
         return this;
@@ -659,7 +629,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 工作流名称。 若不为空，则使用指定的工作流对上传的音视频进行处理，您可以在视频点播控制台配置工作流，具体请参见[工作流设置](https://support.huaweicloud.com/usermanual-vod/vod010041.html)。
+     * 工作流名称。  若不为空，则使用指定的工作流对上传的音视频进行处理，您可以在视频点播控制台配置工作流，具体请参见[工作流设置](https://support.huaweicloud.com/usermanual-vod/vod010041.html)。
      * @return workflowName
      */
     public String getWorkflowName() {
@@ -681,7 +651,7 @@ public class UploadMetaDataByUrl  {
 
 
     /**
-     * 音视频源文件URL。  **说明：** URL必须以扩展名结尾，暂只支持http和https协议。
+     * 音视频源文件URL。  > URL必须以扩展名结尾，暂只支持http和https协议。
      * @return url
      */
     public String getUrl() {
@@ -714,13 +684,12 @@ public class UploadMetaDataByUrl  {
             Objects.equals(this.autoPreheat, uploadMetaDataByUrl.autoPreheat) &&
             Objects.equals(this.thumbnail, uploadMetaDataByUrl.thumbnail) &&
             Objects.equals(this.review, uploadMetaDataByUrl.review) &&
-            Objects.equals(this.smartCover, uploadMetaDataByUrl.smartCover) &&
             Objects.equals(this.workflowName, uploadMetaDataByUrl.workflowName) &&
             Objects.equals(this.url, uploadMetaDataByUrl.url);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(videoType, title, description, categoryId, tags, autoPublish, templateGroupName, autoEncrypt, autoPreheat, thumbnail, review, smartCover, workflowName, url);
+        return Objects.hash(videoType, title, description, categoryId, tags, autoPublish, templateGroupName, autoEncrypt, autoPreheat, thumbnail, review, workflowName, url);
     }
     @Override
     public String toString() {
@@ -737,7 +706,6 @@ public class UploadMetaDataByUrl  {
         sb.append("    autoPreheat: ").append(toIndentedString(autoPreheat)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    review: ").append(toIndentedString(review)).append("\n");
-        sb.append("    smartCover: ").append(toIndentedString(smartCover)).append("\n");
         sb.append("    workflowName: ").append(toIndentedString(workflowName)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("}");

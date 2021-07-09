@@ -20,12 +20,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * Common
+ * 模板信息
  */
 public class Common  {
 
     /**
-     * pvc开关<br/> 
+     * pvc开关。
      */
     public static final class PvcEnum {
 
@@ -127,7 +127,7 @@ public class Common  {
     
     private String pvcVersion;
     /**
-     * 视频编码格式<br/> 
+     * 视频编码格式。
      */
     public static final class VideoCodecEnum {
 
@@ -217,7 +217,7 @@ public class Common  {
     
     private VideoCodecEnum videoCodec;
     /**
-     * 音频编码格式(有效值范围)<br/> AUDIO_CODECTYPE_AAC=1 (default)<br/> AUDIO_CODECTYPE_HEAAC1=2<br/> AUDIO_CODECTYPE_HEAAC2=3<br/> AUDIO_CODECTYPE_MP3=4<br/> 
+     * 音频编码格式(有效值范围) - 1：AUDIO_CODECTYPE_AAC - 2：AUDIO_CODECTYPE_HEAAC1 - 3：AUDIO_CODECTYPE_HEAAC2 - 4：AUDIO_CODECTYPE_MP3  默认值为1。
      */
     public static final class AudioCodecEnum {
 
@@ -328,7 +328,7 @@ public class Common  {
 
 
     /**
-     * pvc开关<br/> 
+     * pvc开关。
      * @return pvc
      */
     public PvcEnum getPvc() {
@@ -350,7 +350,7 @@ public class Common  {
 
 
     /**
-     * pvc版本<br/> 
+     * pvc版本。
      * @return pvcVersion
      */
     public String getPvcVersion() {
@@ -372,7 +372,7 @@ public class Common  {
 
 
     /**
-     * 视频编码格式<br/> 
+     * 视频编码格式。
      * @return videoCodec
      */
     public VideoCodecEnum getVideoCodec() {
@@ -394,7 +394,7 @@ public class Common  {
 
 
     /**
-     * 音频编码格式(有效值范围)<br/> AUDIO_CODECTYPE_AAC=1 (default)<br/> AUDIO_CODECTYPE_HEAAC1=2<br/> AUDIO_CODECTYPE_HEAAC2=3<br/> AUDIO_CODECTYPE_MP3=4<br/> 
+     * 音频编码格式(有效值范围) - 1：AUDIO_CODECTYPE_AAC - 2：AUDIO_CODECTYPE_HEAAC1 - 3：AUDIO_CODECTYPE_HEAAC2 - 4：AUDIO_CODECTYPE_MP3  默认值为1。
      * @return audioCodec
      */
     public AudioCodecEnum getAudioCodec() {
@@ -416,7 +416,7 @@ public class Common  {
 
 
     /**
-     * 分片时长(默认为5秒)<br/> 
+     * 分片时长(默认为5秒)。
      * @return hlsInterval
      */
     public Integer getHlsInterval() {

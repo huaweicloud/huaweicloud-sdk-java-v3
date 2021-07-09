@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.CCEClusterNodeInformation;
+import com.huaweicloud.sdk.cce.v3.model.ClusterNodeInformation;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class UpdateNodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CCEClusterNodeInformation body;
+    private ClusterNodeInformation body;
 
     public UpdateNodeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -80,14 +80,14 @@ public class UpdateNodeRequest  {
 
     
 
-    public UpdateNodeRequest withBody(CCEClusterNodeInformation body) {
+    public UpdateNodeRequest withBody(ClusterNodeInformation body) {
         this.body = body;
         return this;
     }
 
-    public UpdateNodeRequest withBody(Consumer<CCEClusterNodeInformation> bodySetter) {
+    public UpdateNodeRequest withBody(Consumer<ClusterNodeInformation> bodySetter) {
         if(this.body == null ){
-            this.body = new CCEClusterNodeInformation();
+            this.body = new ClusterNodeInformation();
             bodySetter.accept(this.body);
         }
         
@@ -99,11 +99,11 @@ public class UpdateNodeRequest  {
      * Get body
      * @return body
      */
-    public CCEClusterNodeInformation getBody() {
+    public ClusterNodeInformation getBody() {
         return body;
     }
 
-    public void setBody(CCEClusterNodeInformation body) {
+    public void setBody(ClusterNodeInformation body) {
         this.body = body;
     }
 

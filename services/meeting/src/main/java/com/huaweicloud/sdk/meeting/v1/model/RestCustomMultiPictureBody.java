@@ -51,6 +51,12 @@ public class RestCustomMultiPictureBody  {
     
     private Integer switchTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="multiPicSaveOnly")
+    
+    private Boolean multiPicSaveOnly;
+
     public RestCustomMultiPictureBody withManualSet(Integer manualSet) {
         this.manualSet = manualSet;
         return this;
@@ -186,6 +192,28 @@ public class RestCustomMultiPictureBody  {
 
     
 
+    public RestCustomMultiPictureBody withMultiPicSaveOnly(Boolean multiPicSaveOnly) {
+        this.multiPicSaveOnly = multiPicSaveOnly;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 多画面仅保存
+     * @return multiPicSaveOnly
+     */
+    public Boolean getMultiPicSaveOnly() {
+        return multiPicSaveOnly;
+    }
+
+    public void setMultiPicSaveOnly(Boolean multiPicSaveOnly) {
+        this.multiPicSaveOnly = multiPicSaveOnly;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -199,11 +227,12 @@ public class RestCustomMultiPictureBody  {
             Objects.equals(this.picLayoutInfo, restCustomMultiPictureBody.picLayoutInfo) &&
             Objects.equals(this.imageType, restCustomMultiPictureBody.imageType) &&
             Objects.equals(this.subscriberInPics, restCustomMultiPictureBody.subscriberInPics) &&
-            Objects.equals(this.switchTime, restCustomMultiPictureBody.switchTime);
+            Objects.equals(this.switchTime, restCustomMultiPictureBody.switchTime) &&
+            Objects.equals(this.multiPicSaveOnly, restCustomMultiPictureBody.multiPicSaveOnly);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(manualSet, picLayoutInfo, imageType, subscriberInPics, switchTime);
+        return Objects.hash(manualSet, picLayoutInfo, imageType, subscriberInPics, switchTime, multiPicSaveOnly);
     }
     @Override
     public String toString() {
@@ -214,6 +243,7 @@ public class RestCustomMultiPictureBody  {
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    subscriberInPics: ").append(toIndentedString(subscriberInPics)).append("\n");
         sb.append("    switchTime: ").append(toIndentedString(switchTime)).append("\n");
+        sb.append("    multiPicSaveOnly: ").append(toIndentedString(multiPicSaveOnly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

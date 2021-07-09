@@ -38,7 +38,7 @@ public class ReviewDetail  {
 
 
     /**
-     * 置信度。 取值范围：[0,1]。
+     * 置信度。  取值范围：[0,1]。
      * @return confidence
      */
     public String getConfidence() {

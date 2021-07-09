@@ -80,6 +80,8 @@ public class ListTemplateViewHistoriesResponse extends SdkResponse {
 
     /**
      * 我浏览的模板数量。
+     * minimum: 0
+     * maximum: 100
      * @return count
      */
     public Integer getCount() {

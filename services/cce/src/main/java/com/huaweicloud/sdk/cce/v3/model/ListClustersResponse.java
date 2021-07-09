@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.V3Cluster;
+import com.huaweicloud.sdk.cce.v3.model.Cluster;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -38,7 +38,7 @@ public class ListClustersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
     
-    private List<V3Cluster> items = null;
+    private List<Cluster> items = null;
     
     public ListClustersResponse withKind(String kind) {
         this.kind = kind;
@@ -84,13 +84,13 @@ public class ListClustersResponse extends SdkResponse {
 
     
 
-    public ListClustersResponse withItems(List<V3Cluster> items) {
+    public ListClustersResponse withItems(List<Cluster> items) {
         this.items = items;
         return this;
     }
 
     
-    public ListClustersResponse addItemsItem(V3Cluster itemsItem) {
+    public ListClustersResponse addItemsItem(Cluster itemsItem) {
         if(this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListClustersResponse extends SdkResponse {
         return this;
     }
 
-    public ListClustersResponse withItems(Consumer<List<V3Cluster>> itemsSetter) {
+    public ListClustersResponse withItems(Consumer<List<Cluster>> itemsSetter) {
         if(this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListClustersResponse extends SdkResponse {
      * 集群对象列表，包含了当前项目下所有集群的详细信息。您可通过items.metadata.name下的值来找到对应的集群。
      * @return items
      */
-    public List<V3Cluster> getItems() {
+    public List<Cluster> getItems() {
         return items;
     }
 
-    public void setItems(List<V3Cluster> items) {
+    public void setItems(List<Cluster> items) {
         this.items = items;
     }
 

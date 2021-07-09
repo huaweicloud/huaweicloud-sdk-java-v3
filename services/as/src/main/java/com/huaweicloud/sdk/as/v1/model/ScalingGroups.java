@@ -683,6 +683,7 @@ public class ScalingGroups  {
 
     /**
      * 冷却时间，单位是秒。
+     * maximum: 86400
      * @return coolDownTime
      */
     public Integer getCoolDownTime() {

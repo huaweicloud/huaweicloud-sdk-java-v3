@@ -167,6 +167,8 @@ public class ScalingPolicyActionV2  {
 
     /**
      * 操作大小，取值范围为0到300的整数，默认为1。当scaling_resource_type为SCALING_GROUP时，size为实例个数,取值范围为0-300的整数，默认为1。当scaling_resource_type为BANDWIDTH时，size表示带宽大小，单位为Mbit/s，取值范围为1到300的整数，默认为1。当scaling_resource_type为SCALING_GROUP时，size和percentage参数只能选其中一个进行配置。
+     * minimum: 0
+     * maximum: 300
      * @return size
      */
     public Integer getSize() {
@@ -189,6 +191,8 @@ public class ScalingPolicyActionV2  {
 
     /**
      * 操作百分比，取值为0到20000的整数。当scaling_resource_type为SCALING_GROUP时，size和instance_percentage参数均无配置，则size默认为1。当scaling_resource_type为BANDWIDTH时，不支持配置instance_percentage参数。
+     * minimum: 0
+     * maximum: 20000
      * @return percentage
      */
     public Integer getPercentage() {

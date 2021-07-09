@@ -137,6 +137,8 @@ public class PublicIps  {
 
     /**
      * IP版本信息，取值范围是4和6。 4：表示IPv4； 6：表示IPv6。
+     * minimum: 4
+     * maximum: 6
      * @return ipVersion
      */
     public Integer getIpVersion() {

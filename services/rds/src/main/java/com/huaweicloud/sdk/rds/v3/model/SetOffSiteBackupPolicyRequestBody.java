@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.rds.v3.model.OffSiteBackupPolicy;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,32 +24,39 @@ public class SetOffSiteBackupPolicyRequestBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="policy_para")
     
-    private OffSiteBackupPolicy policyPara;
-
-    public SetOffSiteBackupPolicyRequestBody withPolicyPara(OffSiteBackupPolicy policyPara) {
+    private List<OffSiteBackupPolicy> policyPara = null;
+    
+    public SetOffSiteBackupPolicyRequestBody withPolicyPara(List<OffSiteBackupPolicy> policyPara) {
         this.policyPara = policyPara;
         return this;
     }
 
-    public SetOffSiteBackupPolicyRequestBody withPolicyPara(Consumer<OffSiteBackupPolicy> policyParaSetter) {
-        if(this.policyPara == null ){
-            this.policyPara = new OffSiteBackupPolicy();
-            policyParaSetter.accept(this.policyPara);
+    
+    public SetOffSiteBackupPolicyRequestBody addPolicyParaItem(OffSiteBackupPolicy policyParaItem) {
+        if(this.policyPara == null) {
+            this.policyPara = new ArrayList<>();
         }
-        
+        this.policyPara.add(policyParaItem);
         return this;
     }
 
+    public SetOffSiteBackupPolicyRequestBody withPolicyPara(Consumer<List<OffSiteBackupPolicy>> policyParaSetter) {
+        if(this.policyPara == null) {
+            this.policyPara = new ArrayList<>();
+        }
+        policyParaSetter.accept(this.policyPara);
+        return this;
+    }
 
     /**
-     * Get policyPara
+     * 备份策略对象，包括备份类型、备份保留天数、目标区域ID和目标project ID。
      * @return policyPara
      */
-    public OffSiteBackupPolicy getPolicyPara() {
+    public List<OffSiteBackupPolicy> getPolicyPara() {
         return policyPara;
     }
 
-    public void setPolicyPara(OffSiteBackupPolicy policyPara) {
+    public void setPolicyPara(List<OffSiteBackupPolicy> policyPara) {
         this.policyPara = policyPara;
     }
 

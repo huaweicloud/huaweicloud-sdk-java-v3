@@ -3179,6 +3179,14 @@ public class BssMeta {
                 req.setIndirectPartnerId(v);
             })
         );
+        builder.withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getXLanguage, (req, v) -> {
+                req.setXLanguage(v);
+            })
+        );
 
         // response
         

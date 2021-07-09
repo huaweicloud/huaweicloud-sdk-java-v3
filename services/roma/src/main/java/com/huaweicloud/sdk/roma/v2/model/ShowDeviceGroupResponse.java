@@ -135,6 +135,8 @@ public class ShowDeviceGroupResponse extends SdkResponse {
 
     /**
      * 父分组ID
+     * minimum: 1
+     * maximum: 99999999999999999
      * @return parentId
      */
     public Integer getParentId() {
@@ -157,6 +159,8 @@ public class ShowDeviceGroupResponse extends SdkResponse {
 
     /**
      * 分组ID
+     * minimum: 1
+     * maximum: 99999999999999999
      * @return id
      */
     public Integer getId() {

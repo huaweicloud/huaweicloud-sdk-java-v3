@@ -273,13 +273,13 @@ public class LtsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLogContentsRequest, UpdateLogContentsResponse> updateLogContents = genForupdateLogContents();
+    public static final HttpRequestDef<ListLogsRequest, ListLogsResponse> listLogs = genForlistLogs();
 
-    private static HttpRequestDef<UpdateLogContentsRequest, UpdateLogContentsResponse> genForupdateLogContents() {
+    private static HttpRequestDef<ListLogsRequest, ListLogsResponse> genForlistLogs() {
         // basic
-        HttpRequestDef.Builder<UpdateLogContentsRequest, UpdateLogContentsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateLogContentsRequest.class, UpdateLogContentsResponse.class)
-                .withName("UpdateLogContents")
+        HttpRequestDef.Builder<ListLogsRequest, ListLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLogsRequest.class, ListLogsResponse.class)
+                .withName("ListLogs")
                 .withUri("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/content/query")
                 .withContentType("application/json");
 
@@ -288,7 +288,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateLogContentsRequest::getLogGroupId, (req, v) -> {
+            f -> f.withMarshaller(ListLogsRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
             })
         );
@@ -296,7 +296,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateLogContentsRequest::getLogStreamId, (req, v) -> {
+            f -> f.withMarshaller(ListLogsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             })
         );
@@ -304,7 +304,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             QueryLTSLogParams.class,
-            f -> f.withMarshaller(UpdateLogContentsRequest::getBody, (req, v) -> {
+            f -> f.withMarshaller(ListLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -316,13 +316,13 @@ public class LtsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLogContents2Request, UpdateLogContents2Response> updateLogContents2 = genForupdateLogContents2();
+    public static final HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogs = genForlistQueryStructuredLogs();
 
-    private static HttpRequestDef<UpdateLogContents2Request, UpdateLogContents2Response> genForupdateLogContents2() {
+    private static HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> genForlistQueryStructuredLogs() {
         // basic
-        HttpRequestDef.Builder<UpdateLogContents2Request, UpdateLogContents2Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateLogContents2Request.class, UpdateLogContents2Response.class)
-                .withName("UpdateLogContents2")
+        HttpRequestDef.Builder<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListQueryStructuredLogsRequest.class, ListQueryStructuredLogsResponse.class)
+                .withName("ListQueryStructuredLogs")
                 .withUri("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/struct-content/query")
                 .withContentType("application/json");
 
@@ -331,7 +331,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateLogContents2Request::getLogGroupId, (req, v) -> {
+            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
             })
         );
@@ -339,7 +339,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateLogContents2Request::getLogStreamId, (req, v) -> {
+            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             })
         );
@@ -347,7 +347,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             QueryLTSStructLogParams.class,
-            f -> f.withMarshaller(UpdateLogContents2Request::getBody, (req, v) -> {
+            f -> f.withMarshaller(ListQueryStructuredLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -359,13 +359,13 @@ public class LtsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLogContents3Request, UpdateLogContents3Response> updateLogContents3 = genForupdateLogContents3();
+    public static final HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRange = genForlistStructuredLogsWithTimeRange();
 
-    private static HttpRequestDef<UpdateLogContents3Request, UpdateLogContents3Response> genForupdateLogContents3() {
+    private static HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> genForlistStructuredLogsWithTimeRange() {
         // basic
-        HttpRequestDef.Builder<UpdateLogContents3Request, UpdateLogContents3Response> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateLogContents3Request.class, UpdateLogContents3Response.class)
-                .withName("UpdateLogContents3")
+        HttpRequestDef.Builder<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListStructuredLogsWithTimeRangeRequest.class, ListStructuredLogsWithTimeRangeResponse.class)
+                .withName("ListStructuredLogsWithTimeRange")
                 .withUri("/v2/{project_id}/streams/{log_stream_id}/struct-content/query")
                 .withContentType("application/json");
 
@@ -374,7 +374,7 @@ public class LtsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
-            f -> f.withMarshaller(UpdateLogContents3Request::getLogStreamId, (req, v) -> {
+            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
             })
         );
@@ -382,7 +382,7 @@ public class LtsMeta {
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             QueryLTSStructLogParamsNew.class,
-            f -> f.withMarshaller(UpdateLogContents3Request::getBody, (req, v) -> {
+            f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );

@@ -5,10 +5,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,7 +23,7 @@ import java.util.Objects;
 public class Thumbnail  {
 
     /**
-     * 截图类型。 取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
      */
     public static final class TypeEnum {
 
@@ -134,168 +130,18 @@ public class Thumbnail  {
     @JsonProperty(value="cover_position")
     
     private Integer coverPosition;
-    /**
-     * 截图文件格式。 取值如下： - 1：jpg。 默认值：1 。
-     */
-    public static final class FormatEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final FormatEnum NUMBER_1 = new FormatEnum(1);
-        
-
-        private static final Map<Integer, FormatEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, FormatEnum> createStaticFields() {
-            Map<Integer, FormatEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        FormatEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static FormatEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FormatEnum(value);
-            }
-            return result;
-        }
-
-        public static FormatEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FormatEnum) {
-                return this.value.equals(((FormatEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="format")
     
-    private FormatEnum format;
-    /**
-     * 纵横比，图像缩放方式。 取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。 默认值：0。
-     */
-    public static final class AspectRatioEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final AspectRatioEnum NUMBER_0 = new AspectRatioEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final AspectRatioEnum NUMBER_1 = new AspectRatioEnum(1);
-        
-
-        private static final Map<Integer, AspectRatioEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, AspectRatioEnum> createStaticFields() {
-            Map<Integer, AspectRatioEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        AspectRatioEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AspectRatioEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            AspectRatioEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AspectRatioEnum(value);
-            }
-            return result;
-        }
-
-        public static AspectRatioEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            AspectRatioEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AspectRatioEnum) {
-                return this.value.equals(((AspectRatioEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private Integer format;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="aspect_ratio")
     
-    private AspectRatioEnum aspectRatio;
+    private Integer aspectRatio;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -312,7 +158,7 @@ public class Thumbnail  {
 
 
     /**
-     * 截图类型。 取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
      * @return type
      */
     public TypeEnum getType() {
@@ -334,7 +180,7 @@ public class Thumbnail  {
 
 
     /**
-     * 根据时间间隔采样时的时间间隔值。 取值范围：[1,12]之间的整数。 单位：秒。
+     * 根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
      * @return time
      */
     public Integer getTime() {
@@ -392,7 +238,7 @@ public class Thumbnail  {
 
 
     /**
-     * 该值表示指定第几张截图作为封面(默认值：1)。
+     * 该值表示指定第几张截图作为封面。  默认值：1。
      * @return coverPosition
      */
     public Integer getCoverPosition() {
@@ -405,7 +251,7 @@ public class Thumbnail  {
 
     
 
-    public Thumbnail withFormat(FormatEnum format) {
+    public Thumbnail withFormat(Integer format) {
         this.format = format;
         return this;
     }
@@ -414,20 +260,20 @@ public class Thumbnail  {
 
 
     /**
-     * 截图文件格式。 取值如下： - 1：jpg。 默认值：1 。
+     * 截图文件格式。  取值如下： - 1：jpg。  默认值：1 。
      * @return format
      */
-    public FormatEnum getFormat() {
+    public Integer getFormat() {
         return format;
     }
 
-    public void setFormat(FormatEnum format) {
+    public void setFormat(Integer format) {
         this.format = format;
     }
 
     
 
-    public Thumbnail withAspectRatio(AspectRatioEnum aspectRatio) {
+    public Thumbnail withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
         return this;
     }
@@ -436,14 +282,14 @@ public class Thumbnail  {
 
 
     /**
-     * 纵横比，图像缩放方式。 取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。 默认值：0。
+     * 纵横比，图像缩放方式。  取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。  默认值：0。
      * @return aspectRatio
      */
-    public AspectRatioEnum getAspectRatio() {
+    public Integer getAspectRatio() {
         return aspectRatio;
     }
 
-    public void setAspectRatio(AspectRatioEnum aspectRatio) {
+    public void setAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
 
@@ -458,7 +304,7 @@ public class Thumbnail  {
 
 
     /**
-     * 截图最长边的尺寸。 单位：像素。 宽边尺寸按照该尺寸与原始视频像素等比缩放计算。
+     * 截图最长边的尺寸。  单位：像素。  宽边尺寸按照该尺寸与原始视频像素等比缩放计算。
      * @return maxLength
      */
     public Integer getMaxLength() {

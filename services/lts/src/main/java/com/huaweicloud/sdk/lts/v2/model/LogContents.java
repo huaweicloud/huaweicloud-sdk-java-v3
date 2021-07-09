@@ -8,6 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -33,8 +36,8 @@ public class LogContents  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="labels")
     
-    private Object labels;
-
+    private Map<String, String> labels = null;
+    
     public LogContents withContent(String content) {
         this.content = content;
         return this;
@@ -79,23 +82,37 @@ public class LogContents  {
 
     
 
-    public LogContents withLabels(Object labels) {
+    public LogContents withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
     }
 
     
 
+    public LogContents putLabelsItem(String key, String labelsItem) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        this.labels.put(key, labelsItem);
+        return this;
+    }
 
+    public LogContents withLabels(Consumer<Map<String, String>> labelsSetter) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
     /**
      * 该条日志包含的 labels。
      * @return labels
      */
-    public Object getLabels() {
+    public Map<String, String> getLabels() {
         return labels;
     }
 
-    public void setLabels(Object labels) {
+    public void setLabels(Map<String, String> labels) {
         this.labels = labels;
     }
 

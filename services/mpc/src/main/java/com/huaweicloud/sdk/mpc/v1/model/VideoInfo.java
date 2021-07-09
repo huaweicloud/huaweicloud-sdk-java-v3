@@ -157,6 +157,8 @@ public class VideoInfo  {
 
     /**
      * 视频宽度
+     * minimum: 0
+     * maximum: 2147483647
      * @return width
      */
     public Integer getWidth() {
@@ -179,6 +181,8 @@ public class VideoInfo  {
 
     /**
      * 视频高度
+     * minimum: 0
+     * maximum: 2147483647
      * @return height
      */
     public Integer getHeight() {
@@ -201,6 +205,8 @@ public class VideoInfo  {
 
     /**
      * 视频码率，单位: kbit/s 
+     * minimum: 0
+     * maximum: 2147483647
      * @return bitrate
      */
     public Integer getBitrate() {
@@ -247,6 +253,8 @@ public class VideoInfo  {
 
     /**
      * 帧率。    取值范围：0或[5,60]，0表示自适应。    单位：帧每秒。    > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return frameRate
      */
     public Integer getFrameRate() {

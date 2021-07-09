@@ -61,6 +61,8 @@ public class VideoDeblock  {
 
     /**
      * 1 表示视频处理时第一个执行，2表示第二个执行，以此类推；除不执行，各视频处理算法的执行次序不可相同。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return executionOrder
      */
     public Integer getExecutionOrder() {

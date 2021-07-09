@@ -39,6 +39,8 @@ public class DeviceInfoSimple  {
 
     /**
      * 设备ID
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return id
      */
     public Integer getId() {

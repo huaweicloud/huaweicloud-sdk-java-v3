@@ -253,6 +253,8 @@ public class CertificateDetail  {
 
     /**
      * 证书有效期，以月为单位。
+     * minimum: 12
+     * maximum: 12
      * @return validityPeriod
      */
     public Integer getValidityPeriod() {
@@ -297,6 +299,8 @@ public class CertificateDetail  {
 
     /**
      * 证书可绑定域名个数。
+     * minimum: 1
+     * maximum: 100
      * @return domainCount
      */
     public Integer getDomainCount() {
@@ -319,6 +323,8 @@ public class CertificateDetail  {
 
     /**
      * 证书可绑定泛域名个数。
+     * minimum: 0
+     * maximum: 100
      * @return wildcardCount
      */
     public Integer getWildcardCount() {

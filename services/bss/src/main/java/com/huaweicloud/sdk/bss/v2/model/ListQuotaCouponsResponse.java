@@ -79,7 +79,7 @@ public class ListQuotaCouponsResponse extends SdkResponse {
     }
 
     /**
-     * 额度记录列表。 具体请参见表2。
+     * 额度记录列表。 具体请参见表1。
      * @return quotas
      */
     public List<CouponQuotaV2> getQuotas() {

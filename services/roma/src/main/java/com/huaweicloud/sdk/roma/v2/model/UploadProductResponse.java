@@ -49,6 +49,8 @@ public class UploadProductResponse extends SdkResponse {
 
     /**
      * 导入成功的产品数
+     * minimum: 0
+     * maximum: 500
      * @return succNum
      */
     public Integer getSuccNum() {
@@ -71,6 +73,8 @@ public class UploadProductResponse extends SdkResponse {
 
     /**
      * 导入失败的产品数
+     * minimum: 0
+     * maximum: 500
      * @return failNum
      */
     public Integer getFailNum() {

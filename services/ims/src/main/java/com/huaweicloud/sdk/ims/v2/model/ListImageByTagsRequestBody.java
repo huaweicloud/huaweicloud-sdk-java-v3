@@ -151,6 +151,12 @@ public class ListImageByTagsRequestBody  {
     
     private List<TagKeyValue> matches = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="without_any_tag")
+    
+    private Boolean withoutAnyTag;
+
     public ListImageByTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
@@ -397,6 +403,28 @@ public class ListImageByTagsRequestBody  {
 
     
 
+    public ListImageByTagsRequestBody withWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
+     * @return withoutAnyTag
+     */
+    public Boolean getWithoutAnyTag() {
+        return withoutAnyTag;
+    }
+
+    public void setWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -413,11 +441,12 @@ public class ListImageByTagsRequestBody  {
             Objects.equals(this.notTagsAny, listImageByTagsRequestBody.notTagsAny) &&
             Objects.equals(this.limit, listImageByTagsRequestBody.limit) &&
             Objects.equals(this.offset, listImageByTagsRequestBody.offset) &&
-            Objects.equals(this.matches, listImageByTagsRequestBody.matches);
+            Objects.equals(this.matches, listImageByTagsRequestBody.matches) &&
+            Objects.equals(this.withoutAnyTag, listImageByTagsRequestBody.withoutAnyTag);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(action, tags, tagsAny, notTags, notTagsAny, limit, offset, matches);
+        return Objects.hash(action, tags, tagsAny, notTags, notTagsAny, limit, offset, matches, withoutAnyTag);
     }
     @Override
     public String toString() {
@@ -431,6 +460,7 @@ public class ListImageByTagsRequestBody  {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
+        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

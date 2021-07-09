@@ -57,6 +57,8 @@ public class HLSRecordConfig  {
 
     /**
      * 单位为秒，周期录制时长，最小1分钟（60秒），最大12小时。如果为0则整个流录制一个文件。
+     * minimum: 0
+     * maximum: 43200
      * @return recordCycle
      */
     public Integer getRecordCycle() {
@@ -123,6 +125,8 @@ public class HLSRecordConfig  {
 
     /**
      * 录制HLS时ts的切片时长，非必须，缺省为10，单位秒，最小2，最大60
+     * minimum: 2
+     * maximum: 60
      * @return recordSliceDuration
      */
     public Integer getRecordSliceDuration() {
@@ -145,6 +149,8 @@ public class HLSRecordConfig  {
 
     /**
      * 录制HLS文件拼接时长，如果流中断超过该时间，则生成新文件。单位秒。如果为0表示流中断就生成新文件，如果为-1则表示相同的流中断恢复后继续在30天内的前一个文件保存。默认为0。
+     * minimum: -1
+     * maximum: 300
      * @return recordMaxDurationToMergeFile
      */
     public Integer getRecordMaxDurationToMergeFile() {

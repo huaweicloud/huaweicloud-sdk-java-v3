@@ -196,6 +196,28 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 查询集群列表
+     * 查看用户创建的集群列表信息。该接口不兼容Sahara。
+     *
+     * @param ListClustersRequest 请求对象
+     * @return CompletableFuture<ListClustersResponse>
+     */
+    public CompletableFuture<ListClustersResponse> listClustersAsync(ListClustersRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.listClusters);
+    }
+
+    /**
+     * 查询集群列表
+     * 查看用户创建的集群列表信息。该接口不兼容Sahara。
+     *
+     * @param ListClustersRequest 请求对象
+     * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
+     */
+    public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(ListClustersRequest request) {
+        return new AsyncInvoker<ListClustersRequest, ListClustersResponse>(request, MrsMeta.listClusters, hcClient);
+    }
+
+    /**
      * 查询特定标签的集群列表
      * 使用标签过滤集群。  集群默认按照创建时间倒序，集群tag也按照创建时间倒序。
      *

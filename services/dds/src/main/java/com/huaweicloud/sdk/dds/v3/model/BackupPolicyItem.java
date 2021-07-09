@@ -45,6 +45,8 @@ public class BackupPolicyItem  {
 
     /**
      * 备份文件可以保存的天数。
+     * minimum: 0
+     * maximum: 732
      * @return keepDays
      */
     public Integer getKeepDays() {

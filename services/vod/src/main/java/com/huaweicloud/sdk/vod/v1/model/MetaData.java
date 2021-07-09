@@ -16,12 +16,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 视频的元数据信息。 经过视频解析后产生，包括封装格式、大小、分辨率、码率、帧率。
+ * 视频的元数据信息。  经过视频解析后产生，包括封装格式、大小、分辨率、码率、帧率。
  */
 public class MetaData  {
 
     /**
-     * 视频编码格式。 取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
+     * 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
      */
     public static final class CodecEnum {
 
@@ -270,7 +270,7 @@ public class MetaData  {
 
 
     /**
-     * 视频编码格式。 取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
+     * 视频编码格式。  取值如下： - MPEG-2 - MPEG-4 - H.264 - H.265 - WMV - Vorbis - AAC - AC-3 - AMR - APE - FLAC - MP3 - MP2 - WMA - PCM - ADPCM - WavPack
      * @return codec
      */
     public CodecEnum getCodec() {
@@ -292,7 +292,7 @@ public class MetaData  {
 
 
     /**
-     * 视频时长。 若视频的原时长为非整数，则该字段值为原时长的向上取整。
+     * 视频时长。  若视频的原时长为非整数，则该字段值为原时长的向上取整。
      * @return duration
      */
     public Long getDuration() {
@@ -314,7 +314,7 @@ public class MetaData  {
 
 
     /**
-     * 视频文件大小。 单位：字节。
+     * 视频文件大小。  单位：字节。
      * @return videoSize
      */
     public Long getVideoSize() {
@@ -402,7 +402,7 @@ public class MetaData  {
 
 
     /**
-     * 帧率（单位：帧每秒）。 取值如下： - FRAMERATE_AUTO = 1, - FRAMERATE_10 = 2, - FRAMERATE_15 = 3, - FRAMERATE_2397 = 4, // 23.97 fps - FRAMERATE_24 = 5, - FRAMERATE_25 = 6, - FRAMERATE_2997 = 7, // 29.97 fps - FRAMERATE_30 = 8, - FRAMERATE_50 = 9, - FRAMERATE_60 = 10 默认值：1。 单位：帧每秒。
+     * 帧率（单位：帧每秒）。  取值如下： - FRAMERATE_AUTO = 1, - FRAMERATE_10 = 2, - FRAMERATE_15 = 3, - FRAMERATE_2397 = 4, // 23.97 fps - FRAMERATE_24 = 5, - FRAMERATE_25 = 6, - FRAMERATE_2997 = 7, // 29.97 fps - FRAMERATE_30 = 8, - FRAMERATE_50 = 9, - FRAMERATE_60 = 10  默认值：1。  单位：帧每秒。
      * @return frameRate
      */
     public Long getFrameRate() {
@@ -424,7 +424,7 @@ public class MetaData  {
 
 
     /**
-     * 清晰度。 取值如下： - FULL_HD：超高清 - HD：高清 - SD：标清 - FLUENT：流畅 - AD：自适应 - 2K - 4K
+     * 清晰度。  取值如下： - FULL_HD：超高清 - HD：高清 - SD：标清 - FLUENT：流畅 - AD：自适应 - 2K - 4K
      * @return quality
      */
     public String getQuality() {

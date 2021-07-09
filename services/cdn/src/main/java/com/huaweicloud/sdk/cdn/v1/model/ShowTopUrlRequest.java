@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.cdn.v1.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -55,12 +57,18 @@ public class ShowTopUrlRequest  {
          */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
         
+        /**
+         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
+         */
+        public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
+        
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceAreaEnum> createStaticFields() {
             Map<String, ServiceAreaEnum> map = new HashMap<>();
             map.put("mainland_china", MAINLAND_CHINA);
+            map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -122,12 +130,90 @@ public class ShowTopUrlRequest  {
     @JsonProperty(value="service_area")
     
     private ServiceAreaEnum serviceArea;
+    /**
+     * 参数类型支持：flux(流量),req_num(请求总数)。
+     */
+    public static final class StatTypeEnum {
+
+        
+        /**
+         * Enum FLUX for value: "flux"
+         */
+        public static final StatTypeEnum FLUX = new StatTypeEnum("flux");
+        
+        /**
+         * Enum REQ_NUM for value: "req_num"
+         */
+        public static final StatTypeEnum REQ_NUM = new StatTypeEnum("req_num");
+        
+
+        private static final Map<String, StatTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatTypeEnum> createStaticFields() {
+            Map<String, StatTypeEnum> map = new HashMap<>();
+            map.put("flux", FLUX);
+            map.put("req_num", REQ_NUM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatTypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatTypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new StatTypeEnum(value);
+            }
+            return result;
+        }
+
+        public static StatTypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            StatTypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof StatTypeEnum) {
+                return this.value.equals(((StatTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="stat_type")
     
-    private String statType;
+    private StatTypeEnum statType;
 
     public ShowTopUrlRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -239,7 +325,7 @@ public class ShowTopUrlRequest  {
 
     
 
-    public ShowTopUrlRequest withStatType(String statType) {
+    public ShowTopUrlRequest withStatType(StatTypeEnum statType) {
         this.statType = statType;
         return this;
     }
@@ -251,11 +337,11 @@ public class ShowTopUrlRequest  {
      * 参数类型支持：flux(流量),req_num(请求总数)。
      * @return statType
      */
-    public String getStatType() {
+    public StatTypeEnum getStatType() {
         return statType;
     }
 
-    public void setStatType(String statType) {
+    public void setStatType(StatTypeEnum statType) {
         this.statType = statType;
     }
 

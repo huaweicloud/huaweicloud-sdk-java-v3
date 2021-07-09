@@ -50,6 +50,8 @@ public class ListCommandsResponse extends SdkResponse {
 
     /**
      * 总数
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return total
      */
     public Integer getTotal() {
@@ -72,6 +74,8 @@ public class ListCommandsResponse extends SdkResponse {
 
     /**
      * 本次返回数量
+     * minimum: 1
+     * maximum: 9999
      * @return size
      */
     public Integer getSize() {

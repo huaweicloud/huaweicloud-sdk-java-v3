@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.V3Cluster;
+import com.huaweicloud.sdk.cce.v3.model.Cluster;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreateClusterRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private V3Cluster body;
+    private Cluster body;
 
-    public CreateClusterRequest withBody(V3Cluster body) {
+    public CreateClusterRequest withBody(Cluster body) {
         this.body = body;
         return this;
     }
 
-    public CreateClusterRequest withBody(Consumer<V3Cluster> bodySetter) {
+    public CreateClusterRequest withBody(Consumer<Cluster> bodySetter) {
         if(this.body == null ){
-            this.body = new V3Cluster();
+            this.body = new Cluster();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class CreateClusterRequest  {
      * Get body
      * @return body
      */
-    public V3Cluster getBody() {
+    public Cluster getBody() {
         return body;
     }
 
-    public void setBody(V3Cluster body) {
+    public void setBody(Cluster body) {
         this.body = body;
     }
 

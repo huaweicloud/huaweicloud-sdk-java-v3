@@ -51,7 +51,7 @@ public class ShowPreheatingAssetResponse extends SdkResponse {
     }
 
     /**
-     * 预热任务数组<br/> 
+     * 预热任务数组 
      * @return preheatingResults
      */
     public List<PreheatingResult> getPreheatingResults() {

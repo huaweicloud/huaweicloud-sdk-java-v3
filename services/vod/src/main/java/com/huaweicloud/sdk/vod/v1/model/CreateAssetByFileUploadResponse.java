@@ -61,7 +61,7 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
 
 
     /**
-     * 媒体ID<br/> 
+     * 媒体ID 
      * @return assetId
      */
     public String getAssetId() {
@@ -83,7 +83,7 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
 
 
     /**
-     * 视频上传URL<br/> 
+     * 视频上传URL 
      * @return videoUploadUrl
      */
     public String getVideoUploadUrl() {
@@ -105,7 +105,7 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
 
 
     /**
-     * 封面上传地址<br/> 
+     * 封面上传地址 
      * @return coverUploadUrl
      */
     public String getCoverUploadUrl() {
@@ -141,7 +141,7 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
     }
 
     /**
-     * 字幕文件上传url数组<br/> 
+     * 字幕文件上传url数组 
      * @return subtitleUploadUrls
      */
     public List<String> getSubtitleUploadUrls() {

@@ -97,6 +97,18 @@ public class Vault  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="smn_notify")
+    
+    private Boolean smnNotify;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="threshold")
+    
+    private Integer threshold;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="user_id")
     
     private String userId;
@@ -413,6 +425,52 @@ public class Vault  {
 
     
 
+    public Vault withSmnNotify(Boolean smnNotify) {
+        this.smnNotify = smnNotify;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 存储库smn消息通知开关
+     * @return smnNotify
+     */
+    public Boolean getSmnNotify() {
+        return smnNotify;
+    }
+
+    public void setSmnNotify(Boolean smnNotify) {
+        this.smnNotify = smnNotify;
+    }
+
+    
+
+    public Vault withThreshold(Integer threshold) {
+        this.threshold = threshold;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 存储库容量阈值，已用容量占总容量达到此百分比即发送相关通知
+     * minimum: 1
+     * maximum: 100
+     * @return threshold
+     */
+    public Integer getThreshold() {
+        return threshold;
+    }
+
+    public void setThreshold(Integer threshold) {
+        this.threshold = threshold;
+    }
+
+    
+
     public Vault withUserId(String userId) {
         this.userId = userId;
         return this;
@@ -478,12 +536,14 @@ public class Vault  {
             Objects.equals(this.autoBind, vault.autoBind) &&
             Objects.equals(this.bindRules, vault.bindRules) &&
             Objects.equals(this.autoExpand, vault.autoExpand) &&
+            Objects.equals(this.smnNotify, vault.smnNotify) &&
+            Objects.equals(this.threshold, vault.threshold) &&
             Objects.equals(this.userId, vault.userId) &&
             Objects.equals(this.createdAt, vault.createdAt);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(billing, description, id, name, projectId, providerId, resources, tags, enterpriseProjectId, autoBind, bindRules, autoExpand, userId, createdAt);
+        return Objects.hash(billing, description, id, name, projectId, providerId, resources, tags, enterpriseProjectId, autoBind, bindRules, autoExpand, smnNotify, threshold, userId, createdAt);
     }
     @Override
     public String toString() {
@@ -501,6 +561,8 @@ public class Vault  {
         sb.append("    autoBind: ").append(toIndentedString(autoBind)).append("\n");
         sb.append("    bindRules: ").append(toIndentedString(bindRules)).append("\n");
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
+        sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
+        sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");

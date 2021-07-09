@@ -261,6 +261,73 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClustersRequest, ListClustersResponse> listClusters = genForlistClusters();
+
+    private static HttpRequestDef<ListClustersRequest, ListClustersResponse> genForlistClusters() {
+        // basic
+        HttpRequestDef.Builder<ListClustersRequest, ListClustersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClustersRequest.class, ListClustersResponse.class)
+                .withName("ListClusters")
+                .withUri("/v1.1/{project_id}/cluster_infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClustersRequest::getTags, (req, v) -> {
+                req.setTags(v);
+            })
+        );
+        builder.withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClustersRequest::getPageSize, (req, v) -> {
+                req.setPageSize(v);
+            })
+        );
+        builder.withRequestField("currentPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClustersRequest::getCurrentPage, (req, v) -> {
+                req.setCurrentPage(v);
+            })
+        );
+        builder.withRequestField("clusterName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClustersRequest::getClusterName, (req, v) -> {
+                req.setClusterName(v);
+            })
+        );
+        builder.withRequestField("clusterState",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClustersRequest::getClusterState, (req, v) -> {
+                req.setClusterState(v);
+            })
+        );
+        builder.withRequestField("enterpriseProjectId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListClustersRequest::getEnterpriseProjectId, (req, v) -> {
+                req.setEnterpriseProjectId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTags = genForlistClustersByTags();
 
     private static HttpRequestDef<ListClustersByTagsRequest, ListClustersByTagsResponse> genForlistClustersByTags() {

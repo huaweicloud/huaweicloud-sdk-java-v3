@@ -322,6 +322,8 @@ public class VpcHealthConfig  {
 
     /**
      * 健康检查的目标端口，缺省或port = 0时为VPC中主机的端口号。
+     * minimum: 0
+     * maximum: 65535
      * @return port
      */
     public Integer getPort() {
@@ -344,6 +346,8 @@ public class VpcHealthConfig  {
 
     /**
      * 正常阈值。判定VPC通道中主机正常的依据为：连续检查x成功，x为您设置的正常阈值。
+     * minimum: 2
+     * maximum: 10
      * @return thresholdNormal
      */
     public Integer getThresholdNormal() {
@@ -366,6 +370,8 @@ public class VpcHealthConfig  {
 
     /**
      * 异常阙值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。
+     * minimum: 2
+     * maximum: 10
      * @return thresholdAbnormal
      */
     public Integer getThresholdAbnormal() {
@@ -388,6 +394,8 @@ public class VpcHealthConfig  {
 
     /**
      * 间隔时间：连续两次检查的间隔时间，单位为秒。必须大于timeout字段取值。
+     * minimum: 5
+     * maximum: 300
      * @return timeInterval
      */
     public Integer getTimeInterval() {
@@ -454,6 +462,8 @@ public class VpcHealthConfig  {
 
     /**
      * 超时时间：检查期间，无响应的时间，单位为秒。必须小于time_interval字段取值。
+     * minimum: 2
+     * maximum: 30
      * @return timeout
      */
     public Integer getTimeout() {

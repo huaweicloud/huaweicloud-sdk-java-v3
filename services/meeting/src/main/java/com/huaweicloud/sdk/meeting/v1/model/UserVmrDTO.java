@@ -3,15 +3,11 @@ package com.huaweicloud.sdk.meeting.v1.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -68,96 +64,12 @@ public class UserVmrDTO  {
     @JsonProperty(value="vmrPkgLength")
     
     private Integer vmrPkgLength;
-    /**
-     * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
-     */
-    public static final class StatusEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
-        
-
-        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, StatusEnum> createStaticFields() {
-            Map<Integer, StatusEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        StatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
-        }
-
-        public static StatusEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private StatusEnum status;
+    private Integer status;
 
     public UserVmrDTO withId(String id) {
         this.id = id;
@@ -335,7 +247,7 @@ public class UserVmrDTO  {
 
     
 
-    public UserVmrDTO withStatus(StatusEnum status) {
+    public UserVmrDTO withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -347,11 +259,11 @@ public class UserVmrDTO  {
      * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

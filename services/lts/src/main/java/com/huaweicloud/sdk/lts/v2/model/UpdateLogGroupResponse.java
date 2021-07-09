@@ -23,7 +23,7 @@ public class UpdateLogGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creation_time")
     
-    private Double creationTime;
+    private Long creationTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -43,7 +43,7 @@ public class UpdateLogGroupResponse extends SdkResponse {
     
     private Integer ttlInDays;
 
-    public UpdateLogGroupResponse withCreationTime(Double creationTime) {
+    public UpdateLogGroupResponse withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
         return this;
     }
@@ -53,15 +53,15 @@ public class UpdateLogGroupResponse extends SdkResponse {
 
     /**
      * 创建该日志组的时间， 毫秒级。
-     * minimum: 9.46656E+17
-     * maximum: 4.102416E+18
+     * minimum: 946656000000000000
+     * maximum: 4102416000000000000
      * @return creationTime
      */
-    public Double getCreationTime() {
+    public Long getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(Double creationTime) {
+    public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
 
@@ -121,6 +121,8 @@ public class UpdateLogGroupResponse extends SdkResponse {
 
     /**
      * 日志存储时间（天）。
+     * minimum: 1
+     * maximum: 30
      * @return ttlInDays
      */
     public Integer getTtlInDays() {

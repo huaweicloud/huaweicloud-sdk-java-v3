@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * CreateWatermarkTemplateReq
+ * 
  */
 public class CreateWatermarkTemplateReq  {
 
@@ -31,7 +31,7 @@ public class CreateWatermarkTemplateReq  {
     
     private String name;
     /**
-     * 水印类型，当前只支持Image（图片水印）<br/> 
+     * 水印类型，当前只支持Image（图片水印）<br/>
      */
     public static final class WatermarkTypeEnum {
 
@@ -115,7 +115,7 @@ public class CreateWatermarkTemplateReq  {
     
     private WatermarkTypeEnum watermarkType;
     /**
-     * type设置为Image时有效，目前包括Original（只做简单缩放，不做其他处理），Transparent（图片底色透明），Grayed（彩色图片变灰）<br/> 
+     * type设置为Image时有效。 目前包括 - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
      */
     public static final class ImageProcessEnum {
 
@@ -217,7 +217,7 @@ public class CreateWatermarkTemplateReq  {
     
     private String dy;
     /**
-     * 水印的位置<br/> 
+     * 水印的位置<br/>
      */
     public static final class PositionEnum {
 
@@ -358,7 +358,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印模板名称<br/> 
+     * 水印模板名称<br/>
      * @return name
      */
     public String getName() {
@@ -380,7 +380,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印类型，当前只支持Image（图片水印）<br/> 
+     * 水印类型，当前只支持Image（图片水印）<br/>
      * @return watermarkType
      */
     public WatermarkTypeEnum getWatermarkType() {
@@ -402,7 +402,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * type设置为Image时有效，目前包括Original（只做简单缩放，不做其他处理），Transparent（图片底色透明），Grayed（彩色图片变灰）<br/> 
+     * type设置为Image时有效。 目前包括 - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
      * @return imageProcess
      */
     public ImageProcessEnum getImageProcess() {
@@ -424,7 +424,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印图片相对输出视频的水平偏移量，默认值是0<br/> 
+     * 水印图片相对输出视频的水平偏移量，默认值是0<br/>
      * @return dx
      */
     public String getDx() {
@@ -446,7 +446,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印图片相对输出视频的垂直偏移量，默认值是0<br/> 
+     * 水印图片相对输出视频的垂直偏移量，默认值是0<br/>
      * @return dy
      */
     public String getDy() {
@@ -468,7 +468,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印的位置<br/> 
+     * 水印的位置<br/>
      * @return position
      */
     public PositionEnum getPosition() {
@@ -490,7 +490,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印图片宽<br/> 
+     * 水印图片宽<br/>
      * @return width
      */
     public String getWidth() {
@@ -512,7 +512,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印图片高<br/> 
+     * 水印图片高<br/>
      * @return height
      */
     public String getHeight() {
@@ -534,7 +534,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印开始时间<br/> 
+     * 水印开始时间<br/>
      * @return timelineStart
      */
     public String getTimelineStart() {
@@ -556,7 +556,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印持续时间<br/> 
+     * 水印持续时间<br/>
      * @return timelineDuration
      */
     public String getTimelineDuration() {
@@ -578,7 +578,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印图片格式类型<br/> 
+     * 水印图片格式类型<br/>
      * @return type
      */
     public String getType() {
@@ -600,7 +600,7 @@ public class CreateWatermarkTemplateReq  {
 
 
     /**
-     * 水印图片MD5值<br/> 
+     * 水印图片MD5值<br/>
      * @return md5
      */
     public String getMd5() {

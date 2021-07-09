@@ -13,8 +13,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -42,90 +40,12 @@ public class ApiInfoPerPage  {
     @JsonProperty(value="name")
     
     private String name;
-    /**
-     * API类型 - 1：公有API - 2：私有API
-     */
-    public static final class TypeEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
-        
-
-        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, TypeEnum> createStaticFields() {
-            Map<Integer, TypeEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        TypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type;
+    private Integer type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -785,7 +705,7 @@ public class ApiInfoPerPage  {
 
     
 
-    public ApiInfoPerPage withType(TypeEnum type) {
+    public ApiInfoPerPage withType(Integer type) {
         this.type = type;
         return this;
     }
@@ -797,11 +717,11 @@ public class ApiInfoPerPage  {
      * API类型 - 1：公有API - 2：私有API
      * @return type
      */
-    public TypeEnum getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 

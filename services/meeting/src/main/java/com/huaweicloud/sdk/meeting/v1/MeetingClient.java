@@ -2637,7 +2637,7 @@ public class MeetingClient {
 
     /**
      * 查询网络研讨会详情
-     * 根据conferenceId查询网络研讨会详情。
+     * 根据conference_id查询网络研讨会详情。
      *
      * @param ShowWebinarRequest 请求对象
      * @return ShowWebinarResponse
@@ -2648,7 +2648,7 @@ public class MeetingClient {
 
     /**
      * 查询网络研讨会详情
-     * 根据conferenceId查询网络研讨会详情。
+     * 根据conference_id查询网络研讨会详情。
      *
      * @param ShowWebinarRequest 请求对象
      * @return SyncInvoker<ShowWebinarRequest, ShowWebinarResponse>

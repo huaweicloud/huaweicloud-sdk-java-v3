@@ -144,7 +144,7 @@ public class UpdateAssetMetaReq  {
 
 
     /**
-     * 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF-8编码。
+     * 媒资标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF-8编码。
      * @return tags
      */
     public String getTags() {

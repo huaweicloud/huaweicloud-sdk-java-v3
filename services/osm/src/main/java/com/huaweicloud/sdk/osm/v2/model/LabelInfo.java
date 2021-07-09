@@ -45,6 +45,8 @@ public class LabelInfo  {
 
     /**
      * 标签id
+     * minimum: 0
+     * maximum: 65535
      * @return labelId
      */
     public Integer getLabelId() {

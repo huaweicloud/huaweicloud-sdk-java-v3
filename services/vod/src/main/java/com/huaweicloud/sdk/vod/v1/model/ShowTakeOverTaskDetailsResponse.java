@@ -55,7 +55,7 @@ public class ShowTakeOverTaskDetailsResponse extends SdkResponse {
 
 
     /**
-     * Get total
+     * 总数。
      * @return total
      */
     public Integer getTotal() {
@@ -77,7 +77,7 @@ public class ShowTakeOverTaskDetailsResponse extends SdkResponse {
 
 
     /**
-     * Get taskId
+     * 任务ID。
      * @return taskId
      */
     public String getTaskId() {
@@ -99,7 +99,7 @@ public class ShowTakeOverTaskDetailsResponse extends SdkResponse {
 
 
     /**
-     * Get taskStatus
+     * 任务状态。
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -135,7 +135,7 @@ public class ShowTakeOverTaskDetailsResponse extends SdkResponse {
     }
 
     /**
-     * Get assets
+     * 媒资信息。
      * @return assets
      */
     public List<AssetDetails> getAssets() {

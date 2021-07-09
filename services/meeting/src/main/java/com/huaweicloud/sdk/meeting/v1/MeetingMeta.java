@@ -1248,7 +1248,7 @@ public class MeetingMeta {
         builder.withRequestField("X-Login-Type",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            Integer.class,
             f -> f.withMarshaller(CreateConfTokenRequest::getXLoginType, (req, v) -> {
                 req.setXLoginType(v);
             })
@@ -1315,6 +1315,15 @@ public class MeetingMeta {
 
         // response
         
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(CreateMeetingResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ConferenceInfo.class)
+        );
 
 
         return builder.build();
@@ -1800,11 +1809,11 @@ public class MeetingMeta {
         HttpRequestDef.Builder<DeleteWebinarRequest, DeleteWebinarResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteWebinarRequest.class, DeleteWebinarResponse.class)
                 .withName("DeleteWebinar")
-                .withUri("/v1/wss/webinar/open/conferences/{conferenceId}")
+                .withUri("/v1/wss/webinar/open/conferences/{conference_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("conferenceId",
+        builder.withRequestField("conference_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
@@ -6143,11 +6152,11 @@ public class MeetingMeta {
         HttpRequestDef.Builder<ShowRoomSettingRequest, ShowRoomSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowRoomSettingRequest.class, ShowRoomSettingResponse.class)
                 .withName("ShowRoomSetting")
-                .withUri("/v1/wss/webinar/open/room_setting/{conferenceId}")
+                .withUri("/v1/wss/webinar/open/room-setting/{conference_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("conferenceId",
+        builder.withRequestField("conference_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
@@ -6299,11 +6308,11 @@ public class MeetingMeta {
         HttpRequestDef.Builder<ShowWebinarRequest, ShowWebinarResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowWebinarRequest.class, ShowWebinarResponse.class)
                 .withName("ShowWebinar")
-                .withUri("/v1/wss/webinar/open/conferences/{conferenceId}")
+                .withUri("/v1/wss/webinar/open/conferences/{conference_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("conferenceId",
+        builder.withRequestField("conference_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
@@ -6757,6 +6766,15 @@ public class MeetingMeta {
 
         // response
         
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(UpdateMeetingResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ConferenceInfo.class)
+        );
 
 
         return builder.build();
@@ -7059,11 +7077,11 @@ public class MeetingMeta {
         HttpRequestDef.Builder<UpdateRoomSettingRequest, UpdateRoomSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, UpdateRoomSettingRequest.class, UpdateRoomSettingResponse.class)
                 .withName("UpdateRoomSetting")
-                .withUri("/v1/wss/webinar/open/room_setting/{conferenceId}")
+                .withUri("/v1/wss/webinar/open/room-setting/{conference_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("conferenceId",
+        builder.withRequestField("conference_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,

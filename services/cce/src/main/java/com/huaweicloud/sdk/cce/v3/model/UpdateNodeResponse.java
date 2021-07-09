@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cce.v3.model.NodeMetadata;
-import com.huaweicloud.sdk.cce.v3.model.V3NodeSpec;
-import com.huaweicloud.sdk.cce.v3.model.V3NodeStatus;
+import com.huaweicloud.sdk.cce.v3.model.NodeSpec;
+import com.huaweicloud.sdk.cce.v3.model.NodeStatus;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -44,13 +44,13 @@ public class UpdateNodeResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3NodeSpec spec;
+    private NodeSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private V3NodeStatus status;
+    private NodeStatus status;
 
     public UpdateNodeResponse withKind(String kind) {
         this.kind = kind;
@@ -125,14 +125,14 @@ public class UpdateNodeResponse extends SdkResponse {
 
     
 
-    public UpdateNodeResponse withSpec(V3NodeSpec spec) {
+    public UpdateNodeResponse withSpec(NodeSpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public UpdateNodeResponse withSpec(Consumer<V3NodeSpec> specSetter) {
+    public UpdateNodeResponse withSpec(Consumer<NodeSpec> specSetter) {
         if(this.spec == null ){
-            this.spec = new V3NodeSpec();
+            this.spec = new NodeSpec();
             specSetter.accept(this.spec);
         }
         
@@ -144,24 +144,24 @@ public class UpdateNodeResponse extends SdkResponse {
      * Get spec
      * @return spec
      */
-    public V3NodeSpec getSpec() {
+    public NodeSpec getSpec() {
         return spec;
     }
 
-    public void setSpec(V3NodeSpec spec) {
+    public void setSpec(NodeSpec spec) {
         this.spec = spec;
     }
 
     
 
-    public UpdateNodeResponse withStatus(V3NodeStatus status) {
+    public UpdateNodeResponse withStatus(NodeStatus status) {
         this.status = status;
         return this;
     }
 
-    public UpdateNodeResponse withStatus(Consumer<V3NodeStatus> statusSetter) {
+    public UpdateNodeResponse withStatus(Consumer<NodeStatus> statusSetter) {
         if(this.status == null ){
-            this.status = new V3NodeStatus();
+            this.status = new NodeStatus();
             statusSetter.accept(this.status);
         }
         
@@ -173,11 +173,11 @@ public class UpdateNodeResponse extends SdkResponse {
      * Get status
      * @return status
      */
-    public V3NodeStatus getStatus() {
+    public NodeStatus getStatus() {
         return status;
     }
 
-    public void setStatus(V3NodeStatus status) {
+    public void setStatus(NodeStatus status) {
         this.status = status;
     }
 

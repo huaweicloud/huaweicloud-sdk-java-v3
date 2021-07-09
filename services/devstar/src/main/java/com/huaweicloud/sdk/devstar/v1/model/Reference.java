@@ -101,6 +101,8 @@ public class Reference  {
 
     /**
      * 关联类型。
+     * minimum: 0
+     * maximum: 10
      * @return type
      */
     public Integer getType() {

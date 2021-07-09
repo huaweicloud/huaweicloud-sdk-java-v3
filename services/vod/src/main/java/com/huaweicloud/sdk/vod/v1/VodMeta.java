@@ -31,6 +31,22 @@ public class VodMeta {
                 req.setAssetId(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -56,6 +72,22 @@ public class VodMeta {
             String.class,
             f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CancelExtractAudioTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 
@@ -93,6 +125,22 @@ public class VodMeta {
                 req.setMd5(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckMd5DuplicationRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckMd5DuplicationRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -112,6 +160,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ConfirmAssetUploadRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ConfirmAssetUploadRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -139,6 +203,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ConfirmImageUploadRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ConfirmImageUploadRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -166,6 +246,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetByFileUploadRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -193,6 +289,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetCategoryRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetCategoryRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -220,6 +332,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetProcessTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -247,6 +375,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAssetReviewTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -274,11 +418,113 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateExtractAudioTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             ExtractAudioTaskReq.class,
             f -> f.withMarshaller(CreateExtractAudioTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAsset = genForcreatePreheatingAsset();
+
+    private static HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> genForcreatePreheatingAsset() {
+        // basic
+        HttpRequestDef.Builder<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePreheatingAssetRequest.class, CreatePreheatingAssetResponse.class)
+                .withName("CreatePreheatingAsset")
+                .withUri("/v1.0/{project_id}/asset/preheating")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePreheatingAssetRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePreheatingAssetRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreatePreheatingAssetReq.class,
+            f -> f.withMarshaller(CreatePreheatingAssetRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTask = genForcreateTakeOverTask();
+
+    private static HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> genForcreateTakeOverTask() {
+        // basic
+        HttpRequestDef.Builder<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTakeOverTaskRequest.class, CreateTakeOverTaskResponse.class)
+                .withName("CreateTakeOverTask")
+                .withUri("/v1.0/{project_id}/asset/obs/host/stock/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTakeOverTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTakeOverTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateTakeOverTaskReq.class,
+            f -> f.withMarshaller(CreateTakeOverTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -301,6 +547,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTemplateGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTemplateGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -328,6 +590,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -363,6 +641,22 @@ public class VodMeta {
                 req.setId(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAssetCategoryRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAssetCategoryRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -388,6 +682,22 @@ public class VodMeta {
             List.class,
             f -> f.withMarshaller(DeleteAssetsRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAssetsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteAssetsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 
@@ -417,6 +727,22 @@ public class VodMeta {
                 req.setGroupId(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTemplateGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTemplateGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -444,6 +770,22 @@ public class VodMeta {
                 req.setId(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -469,6 +811,22 @@ public class VodMeta {
             Integer.class,
             f -> f.withMarshaller(ListAssetCategoryRequest::getId, (req, v) -> {
                 req.setId(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAssetCategoryRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAssetCategoryRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 
@@ -587,6 +945,22 @@ public class VodMeta {
                 req.setOrder(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAssetListRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -638,6 +1012,22 @@ public class VodMeta {
                 req.setSize(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTemplateGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTemplateGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -671,6 +1061,22 @@ public class VodMeta {
             String.class,
             f -> f.withMarshaller(ListTopStatisticsRequest::getDate, (req, v) -> {
                 req.setDate(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTopStatisticsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTopStatisticsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 
@@ -716,6 +1122,22 @@ public class VodMeta {
                 req.setSize(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -735,6 +1157,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PublishAssetFromObsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PublishAssetFromObsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -762,12 +1200,71 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PublishAssetsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(PublishAssetsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             PublishAssetReq.class,
             f -> f.withMarshaller(PublishAssetsRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipher = genForshowAssetCipher();
+
+    private static HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> genForshowAssetCipher() {
+        // basic
+        HttpRequestDef.Builder<ShowAssetCipherRequest, ShowAssetCipherResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAssetCipherRequest.class, ShowAssetCipherResponse.class)
+                .withName("ShowAssetCipher")
+                .withUri("/v1.0/{project_id}/asset/ciphers")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowAssetCipherRequest::getAssetId, (req, v) -> {
+                req.setAssetId(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetCipherRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetCipherRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 
@@ -803,6 +1300,22 @@ public class VodMeta {
             List.class,
             f -> f.withMarshaller(ShowAssetDetailRequest::getCategories, (req, v) -> {
                 req.setCategories(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetDetailRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetDetailRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 
@@ -912,6 +1425,22 @@ public class VodMeta {
                 req.setSize(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetMetaRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetMetaRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -987,6 +1516,22 @@ public class VodMeta {
                 req.setPartNumber(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -1046,6 +1591,65 @@ public class VodMeta {
                 req.setInterval(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowCdnStatisticsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAsset = genForshowPreheatingAsset();
+
+    private static HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> genForshowPreheatingAsset() {
+        // basic
+        HttpRequestDef.Builder<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPreheatingAssetRequest.class, ShowPreheatingAssetResponse.class)
+                .withName("ShowPreheatingAsset")
+                .withUri("/v1.0/{project_id}/asset/preheating")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPreheatingAssetRequest::getTaskId, (req, v) -> {
+                req.setTaskId(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPreheatingAssetRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPreheatingAssetRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -1089,6 +1693,22 @@ public class VodMeta {
                 req.setInterval(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowVodStatisticsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowVodStatisticsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -1108,6 +1728,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnpublishAssetsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnpublishAssetsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1135,6 +1771,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAssetRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAssetRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1162,6 +1814,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAssetCategoryRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAssetCategoryRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1189,6 +1857,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAssetMetaRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateAssetMetaRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1216,6 +1900,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1243,6 +1943,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1270,6 +1986,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateTemplateGroupRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateTemplateGroupRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1297,6 +2029,22 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1324,119 +2072,27 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadMetaDataByUrlRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             UploadMetaDataByUrlReq.class,
             f -> f.withMarshaller(UploadMetaDataByUrlRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAsset = genForcreatePreheatingAsset();
-
-    private static HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> genForcreatePreheatingAsset() {
-        // basic
-        HttpRequestDef.Builder<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePreheatingAssetRequest.class, CreatePreheatingAssetResponse.class)
-                .withName("CreatePreheatingAsset")
-                .withUri("/v1.0/{project_id}/asset/preheating")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePreheatingAssetReq.class,
-            f -> f.withMarshaller(CreatePreheatingAssetRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAsset = genForshowPreheatingAsset();
-
-    private static HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> genForshowPreheatingAsset() {
-        // basic
-        HttpRequestDef.Builder<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPreheatingAssetRequest.class, ShowPreheatingAssetResponse.class)
-                .withName("ShowPreheatingAsset")
-                .withUri("/v1.0/{project_id}/asset/preheating")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("task_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowPreheatingAssetRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipher = genForshowAssetCipher();
-
-    private static HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> genForshowAssetCipher() {
-        // basic
-        HttpRequestDef.Builder<ShowAssetCipherRequest, ShowAssetCipherResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAssetCipherRequest.class, ShowAssetCipherResponse.class)
-                .withName("ShowAssetCipher")
-                .withUri("/v1.0/{project_id}/asset/ciphers")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("asset_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
-            f -> f.withMarshaller(ShowAssetCipherRequest::getAssetId, (req, v) -> {
-                req.setAssetId(v);
-            })
-        );
-
-        // response
-        
-
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTask = genForcreateTakeOverTask();
-
-    private static HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> genForcreateTakeOverTask() {
-        // basic
-        HttpRequestDef.Builder<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateTakeOverTaskRequest.class, CreateTakeOverTaskResponse.class)
-                .withName("CreateTakeOverTask")
-                .withUri("/v1.0/{project_id}/asset/obs/host/stock/task")
-                .withContentType("application/json");
-
-        // requests
-        builder.withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            CreateTakeOverTaskReq.class,
-            f -> f.withMarshaller(CreateTakeOverTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
         );
@@ -1491,6 +2147,22 @@ public class VodMeta {
                 req.setSize(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTakeOverTaskRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -1526,6 +2198,22 @@ public class VodMeta {
                 req.setSourceObject(v);
             })
         );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
+            })
+        );
 
         // response
         
@@ -1547,7 +2235,7 @@ public class VodMeta {
         // requests
         builder.withRequestField("task_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
@@ -1567,6 +2255,22 @@ public class VodMeta {
             Integer.class,
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getSize, (req, v) -> {
                 req.setSize(v);
+            })
+        );
+        builder.withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getAuthorization, (req, v) -> {
+                req.setAuthorization(v);
+            })
+        );
+        builder.withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getXSdkDate, (req, v) -> {
+                req.setXSdkDate(v);
             })
         );
 

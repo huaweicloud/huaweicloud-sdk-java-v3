@@ -30,6 +30,12 @@ public class VaultResourceInstancesReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="without_any_tag")
+    
+    private Boolean withoutAnyTag;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="tags")
     
     private List<TagsReq> tags = null;
@@ -249,6 +255,28 @@ public class VaultResourceInstancesReq  {
     @JsonProperty(value="object_type")
     
     private ObjectTypeEnum objectType;
+
+    public VaultResourceInstancesReq withWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段。
+     * @return withoutAnyTag
+     */
+    public Boolean getWithoutAnyTag() {
+        return withoutAnyTag;
+    }
+
+    public void setWithoutAnyTag(Boolean withoutAnyTag) {
+        this.withoutAnyTag = withoutAnyTag;
+    }
+
+    
 
     public VaultResourceInstancesReq withTags(List<TagsReq> tags) {
         this.tags = tags;
@@ -585,7 +613,8 @@ public class VaultResourceInstancesReq  {
             return false;
         }
         VaultResourceInstancesReq vaultResourceInstancesReq = (VaultResourceInstancesReq) o;
-        return Objects.equals(this.tags, vaultResourceInstancesReq.tags) &&
+        return Objects.equals(this.withoutAnyTag, vaultResourceInstancesReq.withoutAnyTag) &&
+            Objects.equals(this.tags, vaultResourceInstancesReq.tags) &&
             Objects.equals(this.tagsAny, vaultResourceInstancesReq.tagsAny) &&
             Objects.equals(this.notTags, vaultResourceInstancesReq.notTags) &&
             Objects.equals(this.notTagsAny, vaultResourceInstancesReq.notTagsAny) &&
@@ -599,12 +628,13 @@ public class VaultResourceInstancesReq  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(tags, tagsAny, notTags, notTagsAny, sysTags, limit, offset, action, matches, cloudType, objectType);
+        return Objects.hash(withoutAnyTag, tags, tagsAny, notTags, notTagsAny, sysTags, limit, offset, action, matches, cloudType, objectType);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VaultResourceInstancesReq {\n");
+        sb.append("    withoutAnyTag: ").append(toIndentedString(withoutAnyTag)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    tagsAny: ").append(toIndentedString(tagsAny)).append("\n");
         sb.append("    notTags: ").append(toIndentedString(notTags)).append("\n");

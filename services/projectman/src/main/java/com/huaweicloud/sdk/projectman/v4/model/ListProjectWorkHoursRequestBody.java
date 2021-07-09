@@ -237,6 +237,7 @@ public class ListProjectWorkHoursRequestBody  {
 
     /**
      * 偏移量,offset是limit的整数倍，limit=10,offset=0,10,20...
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {
@@ -259,6 +260,8 @@ public class ListProjectWorkHoursRequestBody  {
 
     /**
      * 每页显示数量，每页最多显示100条
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

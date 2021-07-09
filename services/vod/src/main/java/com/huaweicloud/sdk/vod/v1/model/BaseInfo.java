@@ -122,7 +122,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资标题。 长度不超过128个字节，UTF8编码。
+     * 媒资标题。  长度不超过128个字节，UTF8编码。
      * @return title
      */
     public String getTitle() {
@@ -166,7 +166,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资描述。 长度不超过1024个字节。
+     * 媒资描述。  长度不超过1024个字节。
      * @return description
      */
     public String getDescription() {
@@ -232,7 +232,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资创建时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * 媒资创建时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -254,7 +254,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资最近修改时间。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * 媒资最近修改时间。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return lastModified
      */
     public String getLastModified() {
@@ -276,7 +276,7 @@ public class BaseInfo  {
 
 
     /**
-     * 音视频文件类型。 取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
+     * 音视频文件类型。  取值如下： - 视频文件：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG、3GP、ASF、MKV - 音频文件：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
      * @return videoType
      */
     public String getVideoType() {
@@ -298,7 +298,7 @@ public class BaseInfo  {
 
 
     /**
-     * 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
+     * 媒资标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF8编码。
      * @return tags
      */
     public String getTags() {
@@ -421,7 +421,7 @@ public class BaseInfo  {
     }
 
     /**
-     * 字幕信息数组<br/>
+     * 字幕信息数组
      * @return subtitleInfo
      */
     public List<SubtitleInfo> getSubtitleInfo() {

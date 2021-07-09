@@ -35,6 +35,8 @@ public class ListDevicesInProductResponse extends SdkResponse {
 
     /**
      * 产品内设备数量
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return summary
      */
     public Integer getSummary() {

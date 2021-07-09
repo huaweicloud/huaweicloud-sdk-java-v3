@@ -19,6 +19,12 @@ public class ShowCustomerOrderDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Language")
+    
+    private String xLanguage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="order_id")
     
     private String orderId;
@@ -40,6 +46,30 @@ public class ShowCustomerOrderDetailsRequest  {
     @JsonProperty(value="indirect_partner_id")
     
     private String indirectPartnerId;
+
+    public ShowCustomerOrderDetailsRequest withXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US缺省为zh_CN|
+     * @return xLanguage
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Language")
+    public String getXLanguage() {
+        return xLanguage;
+    }
+
+    public void setXLanguage(String xLanguage) {
+        this.xLanguage = xLanguage;
+    }
+
+    
 
     public ShowCustomerOrderDetailsRequest withOrderId(String orderId) {
         this.orderId = orderId;
@@ -142,19 +172,21 @@ public class ShowCustomerOrderDetailsRequest  {
             return false;
         }
         ShowCustomerOrderDetailsRequest showCustomerOrderDetailsRequest = (ShowCustomerOrderDetailsRequest) o;
-        return Objects.equals(this.orderId, showCustomerOrderDetailsRequest.orderId) &&
+        return Objects.equals(this.xLanguage, showCustomerOrderDetailsRequest.xLanguage) &&
+            Objects.equals(this.orderId, showCustomerOrderDetailsRequest.orderId) &&
             Objects.equals(this.limit, showCustomerOrderDetailsRequest.limit) &&
             Objects.equals(this.offset, showCustomerOrderDetailsRequest.offset) &&
             Objects.equals(this.indirectPartnerId, showCustomerOrderDetailsRequest.indirectPartnerId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, limit, offset, indirectPartnerId);
+        return Objects.hash(xLanguage, orderId, limit, offset, indirectPartnerId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCustomerOrderDetailsRequest {\n");
+        sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

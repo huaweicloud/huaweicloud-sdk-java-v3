@@ -33,7 +33,7 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
     
     private String assetId;
     /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
+     * 媒资状态。 - \"CREATING\"：上传中 - \"FAILED\"：上传失败 - \"CREATED\"：上传成功 - \"PUBLISHED\"：已发布 - \"DELETED\"：已删除
      */
     public static final class AssetStatusEnum {
 
@@ -135,7 +135,7 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
     
     private AssetStatusEnum assetStatus;
     /**
-     * 转码状态 \"UN_TRANSCODE\"        //未转码 \"WAITING_TRANSCODE\"   //等待转码，排队中 \"TRANSCODING\"          //转码中 \"TRANSCODE_SUCCEED\"    //转码成功 \"TRANSCODE_FAILED\"     //转码失败 
+     * 转码状态 - \"UN_TRANSCODE\"：未转码 - \"WAITING_TRANSCODE\"：等待转码，排队中 - \"TRANSCODING\"：转码中 - \"TRANSCODE_SUCCEED\"：转码成功 - \"TRANSCODE_FAILED\"：转码失败
      */
     public static final class TranscodeStatusEnum {
 
@@ -280,7 +280,7 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
 
 
     /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
+     * 媒资状态。 - \"CREATING\"：上传中 - \"FAILED\"：上传失败 - \"CREATED\"：上传成功 - \"PUBLISHED\"：已发布 - \"DELETED\"：已删除
      * @return assetStatus
      */
     public AssetStatusEnum getAssetStatus() {
@@ -302,7 +302,7 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
 
 
     /**
-     * 转码状态 \"UN_TRANSCODE\"        //未转码 \"WAITING_TRANSCODE\"   //等待转码，排队中 \"TRANSCODING\"          //转码中 \"TRANSCODE_SUCCEED\"    //转码成功 \"TRANSCODE_FAILED\"     //转码失败 
+     * 转码状态 - \"UN_TRANSCODE\"：未转码 - \"WAITING_TRANSCODE\"：等待转码，排队中 - \"TRANSCODING\"：转码中 - \"TRANSCODE_SUCCEED\"：转码成功 - \"TRANSCODE_FAILED\"：转码失败
      * @return transcodeStatus
      */
     public TranscodeStatusEnum getTranscodeStatus() {

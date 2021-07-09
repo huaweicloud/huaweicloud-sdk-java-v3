@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -136,90 +134,12 @@ public class UpdatePropertyRequestBody  {
     @JsonProperty(value="data_type")
     
     private DataTypeEnum dataType;
-    /**
-     * 是否必填 0-非必填 1-必填
-     */
-    public static final class RequiredEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final RequiredEnum NUMBER_0 = new RequiredEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final RequiredEnum NUMBER_1 = new RequiredEnum(1);
-        
-
-        private static final Map<Integer, RequiredEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, RequiredEnum> createStaticFields() {
-            Map<Integer, RequiredEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        RequiredEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static RequiredEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            RequiredEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RequiredEnum(value);
-            }
-            return result;
-        }
-
-        public static RequiredEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            RequiredEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RequiredEnum) {
-                return this.value.equals(((RequiredEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="required")
     
-    private RequiredEnum required;
+    private Integer required;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -323,7 +243,7 @@ public class UpdatePropertyRequestBody  {
 
     
 
-    public UpdatePropertyRequestBody withRequired(RequiredEnum required) {
+    public UpdatePropertyRequestBody withRequired(Integer required) {
         this.required = required;
         return this;
     }
@@ -333,13 +253,15 @@ public class UpdatePropertyRequestBody  {
 
     /**
      * 是否必填 0-非必填 1-必填
+     * minimum: 0
+     * maximum: 10
      * @return required
      */
-    public RequiredEnum getRequired() {
+    public Integer getRequired() {
         return required;
     }
 
-    public void setRequired(RequiredEnum required) {
+    public void setRequired(Integer required) {
         this.required = required;
     }
 
@@ -421,6 +343,8 @@ public class UpdatePropertyRequestBody  {
 
     /**
      * 字符串最大长度，当data_type为string, datetime, json时必填,自动向下取整
+     * minimum: 0
+     * maximum: 9999999
      * @return maxLength
      */
     public Integer getMaxLength() {

@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.CCEJobMetadata;
-import com.huaweicloud.sdk.cce.v3.model.CCEJobSpec;
-import com.huaweicloud.sdk.cce.v3.model.CCEJobStatus;
+import com.huaweicloud.sdk.cce.v3.model.JobMetadata;
+import com.huaweicloud.sdk.cce.v3.model.JobSpec;
+import com.huaweicloud.sdk.cce.v3.model.JobStatus;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,19 +38,19 @@ public class ShowJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private CCEJobMetadata metadata;
+    private JobMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private CCEJobSpec spec;
+    private JobSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private CCEJobStatus status;
+    private JobStatus status;
 
     public ShowJobResponse withKind(String kind) {
         this.kind = kind;
@@ -96,14 +96,14 @@ public class ShowJobResponse extends SdkResponse {
 
     
 
-    public ShowJobResponse withMetadata(CCEJobMetadata metadata) {
+    public ShowJobResponse withMetadata(JobMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ShowJobResponse withMetadata(Consumer<CCEJobMetadata> metadataSetter) {
+    public ShowJobResponse withMetadata(Consumer<JobMetadata> metadataSetter) {
         if(this.metadata == null ){
-            this.metadata = new CCEJobMetadata();
+            this.metadata = new JobMetadata();
             metadataSetter.accept(this.metadata);
         }
         
@@ -115,24 +115,24 @@ public class ShowJobResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public CCEJobMetadata getMetadata() {
+    public JobMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(CCEJobMetadata metadata) {
+    public void setMetadata(JobMetadata metadata) {
         this.metadata = metadata;
     }
 
     
 
-    public ShowJobResponse withSpec(CCEJobSpec spec) {
+    public ShowJobResponse withSpec(JobSpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public ShowJobResponse withSpec(Consumer<CCEJobSpec> specSetter) {
+    public ShowJobResponse withSpec(Consumer<JobSpec> specSetter) {
         if(this.spec == null ){
-            this.spec = new CCEJobSpec();
+            this.spec = new JobSpec();
             specSetter.accept(this.spec);
         }
         
@@ -144,24 +144,24 @@ public class ShowJobResponse extends SdkResponse {
      * Get spec
      * @return spec
      */
-    public CCEJobSpec getSpec() {
+    public JobSpec getSpec() {
         return spec;
     }
 
-    public void setSpec(CCEJobSpec spec) {
+    public void setSpec(JobSpec spec) {
         this.spec = spec;
     }
 
     
 
-    public ShowJobResponse withStatus(CCEJobStatus status) {
+    public ShowJobResponse withStatus(JobStatus status) {
         this.status = status;
         return this;
     }
 
-    public ShowJobResponse withStatus(Consumer<CCEJobStatus> statusSetter) {
+    public ShowJobResponse withStatus(Consumer<JobStatus> statusSetter) {
         if(this.status == null ){
-            this.status = new CCEJobStatus();
+            this.status = new JobStatus();
             statusSetter.accept(this.status);
         }
         
@@ -173,11 +173,11 @@ public class ShowJobResponse extends SdkResponse {
      * Get status
      * @return status
      */
-    public CCEJobStatus getStatus() {
+    public JobStatus getStatus() {
         return status;
     }
 
-    public void setStatus(CCEJobStatus status) {
+    public void setStatus(JobStatus status) {
         this.status = status;
     }
 

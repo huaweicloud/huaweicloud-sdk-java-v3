@@ -23,19 +23,7 @@ import java.util.Objects;
  */
 public class Rule  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
-    private Object params;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_selectors")
-    
-    private List<TagSelector> tagSelectors = null;
-        /**
+    /**
      * 回收类型，date_rule、tag_rule
      */
     public static final class TemplateEnum {
@@ -120,6 +108,40 @@ public class Rule  {
     
     private TemplateEnum template;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="params")
+    
+    private Object params;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tag_selectors")
+    
+    private List<TagSelector> tagSelectors = null;
+    
+    public Rule withTemplate(TemplateEnum template) {
+        this.template = template;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 回收类型，date_rule、tag_rule
+     * @return template
+     */
+    public TemplateEnum getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(TemplateEnum template) {
+        this.template = template;
+    }
+
+    
+
     public Rule withParams(Object params) {
         this.params = params;
         return this;
@@ -129,7 +151,7 @@ public class Rule  {
 
 
     /**
-     * template是date_rule时，设置params[\"days\"] template是tag_rule时，设置params[\"num\"] 
+     * template是date_rule时，设置params为{\"days\": \"xxx\"} template是tag_rule时，设置params为{\"num\": \"xxx\"} 
      * @return params
      */
     public Object getParams() {
@@ -178,28 +200,6 @@ public class Rule  {
 
     
 
-    public Rule withTemplate(TemplateEnum template) {
-        this.template = template;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 回收类型，date_rule、tag_rule
-     * @return template
-     */
-    public TemplateEnum getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(TemplateEnum template) {
-        this.template = template;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -209,21 +209,21 @@ public class Rule  {
             return false;
         }
         Rule rule = (Rule) o;
-        return Objects.equals(this.params, rule.params) &&
-            Objects.equals(this.tagSelectors, rule.tagSelectors) &&
-            Objects.equals(this.template, rule.template);
+        return Objects.equals(this.template, rule.template) &&
+            Objects.equals(this.params, rule.params) &&
+            Objects.equals(this.tagSelectors, rule.tagSelectors);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(params, tagSelectors, template);
+        return Objects.hash(template, params, tagSelectors);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Rule {\n");
+        sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    tagSelectors: ").append(toIndentedString(tagSelectors)).append("\n");
-        sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("}");
         return sb.toString();
     }

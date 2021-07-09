@@ -180,6 +180,8 @@ public class AddUserRequestBody  {
 
     /**
      * 通讯录排序等级，序号越低优先级越高
+     * minimum: 1
+     * maximum: 10000
      * @return sortLevel
      */
     public Integer getSortLevel() {

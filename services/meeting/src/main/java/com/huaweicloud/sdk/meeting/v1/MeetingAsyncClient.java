@@ -2639,7 +2639,7 @@ public class MeetingAsyncClient {
 
     /**
      * 查询网络研讨会详情
-     * 根据conferenceId查询网络研讨会详情。
+     * 根据conference_id查询网络研讨会详情。
      *
      * @param ShowWebinarRequest 请求对象
      * @return CompletableFuture<ShowWebinarResponse>
@@ -2650,7 +2650,7 @@ public class MeetingAsyncClient {
 
     /**
      * 查询网络研讨会详情
-     * 根据conferenceId查询网络研讨会详情。
+     * 根据conference_id查询网络研讨会详情。
      *
      * @param ShowWebinarRequest 请求对象
      * @return AsyncInvoker<ShowWebinarRequest, ShowWebinarResponse>

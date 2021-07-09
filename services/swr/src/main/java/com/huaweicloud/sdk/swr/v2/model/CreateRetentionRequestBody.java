@@ -41,7 +41,7 @@ public class CreateRetentionRequestBody  {
 
 
     /**
-     * 回收规则匹配策略，or
+     * 回收规则匹配策略，固定为\"or\"
      * @return algorithm
      */
     public String getAlgorithm() {

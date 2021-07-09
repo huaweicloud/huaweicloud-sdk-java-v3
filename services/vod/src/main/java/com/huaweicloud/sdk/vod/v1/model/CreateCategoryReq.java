@@ -60,7 +60,8 @@ public class CreateCategoryReq  {
 
 
     /**
-     * 父分类ID。 若不填，则默认生成一级分类。 根节点分类ID为0。
+     * 父分类ID。  若不填，则默认生成一级分类。  根节点分类ID为0。
+     * minimum: 0
      * @return parentId
      */
     public Integer getParentId() {

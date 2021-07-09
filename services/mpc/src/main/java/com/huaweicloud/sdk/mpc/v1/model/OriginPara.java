@@ -59,6 +59,8 @@ public class OriginPara  {
 
     /**
      * 片源时长，单位：秒
+     * minimum: 0
+     * maximum: 2147483647
      * @return duration
      */
     public Integer getDuration() {

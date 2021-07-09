@@ -21,7 +21,7 @@ public class LogGroup  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="creation_time")
     
-    private Double creationTime;
+    private Long creationTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,7 +41,7 @@ public class LogGroup  {
     
     private Integer ttlInDays;
 
-    public LogGroup withCreationTime(Double creationTime) {
+    public LogGroup withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
         return this;
     }
@@ -51,15 +51,15 @@ public class LogGroup  {
 
     /**
      * 创建时间 
-     * minimum: 9.46656E+17
-     * maximum: 4.102416E+18
+     * minimum: 946656000000000000
+     * maximum: 4102416000000000000
      * @return creationTime
      */
-    public Double getCreationTime() {
+    public Long getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(Double creationTime) {
+    public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
 
@@ -119,6 +119,8 @@ public class LogGroup  {
 
     /**
      * 日志存储时间 天 
+     * minimum: 1
+     * maximum: 30
      * @return ttlInDays
      */
     public Integer getTtlInDays() {

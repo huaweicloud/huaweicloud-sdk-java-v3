@@ -56,6 +56,7 @@ public class SearchQosHistoryMeetingsResponse extends SdkResponse {
 
     /**
      * 总记录数。
+     * minimum: 0
      * @return count
      */
     public Integer getCount() {
@@ -78,6 +79,8 @@ public class SearchQosHistoryMeetingsResponse extends SdkResponse {
 
     /**
      * 查询条目数量。
+     * minimum: 10
+     * maximum: 500
      * @return limit
      */
     public Integer getLimit() {
@@ -100,6 +103,7 @@ public class SearchQosHistoryMeetingsResponse extends SdkResponse {
 
     /**
      * 查询偏移量。
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {

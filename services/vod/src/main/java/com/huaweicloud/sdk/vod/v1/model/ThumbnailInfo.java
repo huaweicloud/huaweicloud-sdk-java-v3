@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 截图信息。  **说明：** 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。
+ * 截图信息。  &gt; 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。
  */
 public class ThumbnailInfo  {
 
@@ -147,7 +147,7 @@ public class ThumbnailInfo  {
 
 
     /**
-     * 截图状态。 取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
+     * 截图状态。  取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
      * @return thumbnailStatus
      */
     public String getThumbnailStatus() {

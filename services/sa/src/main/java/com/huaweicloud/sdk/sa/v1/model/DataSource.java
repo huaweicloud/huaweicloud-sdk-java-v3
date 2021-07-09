@@ -69,6 +69,8 @@ public class DataSource  {
 
     /**
      * 数据源类型，取值范围如下： 1 - 华为产品 2 - 第三方产品 3 - 租户私有产品
+     * minimum: 1
+     * maximum: 3
      * @return type
      */
     public Integer getType() {

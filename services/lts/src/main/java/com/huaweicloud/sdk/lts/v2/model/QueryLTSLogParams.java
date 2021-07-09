@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -39,8 +40,8 @@ public class QueryLTSLogParams  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="labels")
     
-    private Object labels;
-    /**
+    private Map<String, String> labels = null;
+        /**
      * 支持关键词精确搜索。关键词指相邻两个分词符之间的单词。
      */
     public static final class KeywordsEnum {
@@ -259,23 +260,37 @@ public class QueryLTSLogParams  {
 
     
 
-    public QueryLTSLogParams withLabels(Object labels) {
+    public QueryLTSLogParams withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
     }
 
     
 
+    public QueryLTSLogParams putLabelsItem(String key, String labelsItem) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        this.labels.put(key, labelsItem);
+        return this;
+    }
 
+    public QueryLTSLogParams withLabels(Consumer<Map<String, String>> labelsSetter) {
+        if(this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
     /**
      * 日志过滤条件集合，不同日志来源所需字段不同。
      * @return labels
      */
-    public Object getLabels() {
+    public Map<String, String> getLabels() {
         return labels;
     }
 
-    public void setLabels(Object labels) {
+    public void setLabels(Map<String, String> labels) {
         this.labels = labels;
     }
 
@@ -379,6 +394,8 @@ public class QueryLTSLogParams  {
 
     /**
      * 表示每次查询的日志条数，不填时默认为5000，建议您设置为100。
+     * minimum: 1
+     * maximum: 5000
      * @return limit
      */
     public Integer getLimit() {

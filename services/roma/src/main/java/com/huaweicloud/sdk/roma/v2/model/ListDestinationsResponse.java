@@ -50,6 +50,8 @@ public class ListDestinationsResponse extends SdkResponse {
 
     /**
      * 总数
+     * minimum: 0
+     * maximum: 9999999999999999
      * @return total
      */
     public Integer getTotal() {
@@ -72,6 +74,8 @@ public class ListDestinationsResponse extends SdkResponse {
 
     /**
      * 本次返回数量
+     * minimum: 0
+     * maximum: 999
      * @return size
      */
     public Integer getSize() {

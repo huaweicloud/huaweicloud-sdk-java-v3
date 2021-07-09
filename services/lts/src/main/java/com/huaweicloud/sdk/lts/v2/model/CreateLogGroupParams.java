@@ -61,6 +61,8 @@ public class CreateLogGroupParams  {
 
     /**
      * 日志存储时间（天），取值范围：1-30。
+     * minimum: 1
+     * maximum: 30
      * @return ttlInDays
      */
     public Integer getTtlInDays() {

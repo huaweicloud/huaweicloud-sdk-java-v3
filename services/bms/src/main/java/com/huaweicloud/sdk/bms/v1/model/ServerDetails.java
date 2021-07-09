@@ -13,14 +13,12 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.Addresses;
+import com.huaweicloud.sdk.bms.v1.model.AddressInfo;
 import com.huaweicloud.sdk.bms.v1.model.Fault;
 import com.huaweicloud.sdk.bms.v1.model.FlavorInfos;
 import com.huaweicloud.sdk.bms.v1.model.ImageInfo;
@@ -90,8 +88,8 @@ public class ServerDetails  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="addresses")
     
-    private Addresses addresses;
-
+    private Map<String, List<AddressInfo>> addresses = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="key_name")
@@ -475,96 +473,12 @@ public class ServerDetails  {
     @JsonProperty(value="OS-EXT-SRV-ATTR:instance_name")
     
     private String osEXTSRVATTRInstanceName;
-    /**
-     * 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
-     */
-    public static final class OsEXTSTSPowerStateEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final OsEXTSTSPowerStateEnum NUMBER_0 = new OsEXTSTSPowerStateEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final OsEXTSTSPowerStateEnum NUMBER_1 = new OsEXTSTSPowerStateEnum(1);
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final OsEXTSTSPowerStateEnum NUMBER_4 = new OsEXTSTSPowerStateEnum(4);
-        
-
-        private static final Map<Integer, OsEXTSTSPowerStateEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, OsEXTSTSPowerStateEnum> createStaticFields() {
-            Map<Integer, OsEXTSTSPowerStateEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(4, NUMBER_4);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        OsEXTSTSPowerStateEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OsEXTSTSPowerStateEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            OsEXTSTSPowerStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSPowerStateEnum(value);
-            }
-            return result;
-        }
-
-        public static OsEXTSTSPowerStateEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            OsEXTSTSPowerStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEXTSTSPowerStateEnum) {
-                return this.value.equals(((OsEXTSTSPowerStateEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-EXT-STS:power_state")
     
-    private OsEXTSTSPowerStateEnum osEXTSTSPowerState;
+    private Integer osEXTSTSPowerState;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1014,30 +928,37 @@ public class ServerDetails  {
 
     
 
-    public ServerDetails withAddresses(Addresses addresses) {
+    public ServerDetails withAddresses(Map<String, List<AddressInfo>> addresses) {
         this.addresses = addresses;
         return this;
     }
 
-    public ServerDetails withAddresses(Consumer<Addresses> addressesSetter) {
-        if(this.addresses == null ){
-            this.addresses = new Addresses();
-            addressesSetter.accept(this.addresses);
+    
+
+    public ServerDetails putAddressesItem(String key, List<AddressInfo> addressesItem) {
+        if(this.addresses == null) {
+            this.addresses = new HashMap<>();
         }
-        
+        this.addresses.put(key, addressesItem);
         return this;
     }
 
-
+    public ServerDetails withAddresses(Consumer<Map<String, List<AddressInfo>>> addressesSetter) {
+        if(this.addresses == null) {
+            this.addresses = new HashMap<>();
+        }
+        addressesSetter.accept(this.addresses);
+        return this;
+    }
     /**
-     * Get addresses
+     * 裸金属服务器的网络属性。详情请参见表3 addresses数据结构说明。
      * @return addresses
      */
-    public Addresses getAddresses() {
+    public Map<String, List<AddressInfo>> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Addresses addresses) {
+    public void setAddresses(Map<String, List<AddressInfo>> addresses) {
         this.addresses = addresses;
     }
 
@@ -1386,7 +1307,7 @@ public class ServerDetails  {
 
     
 
-    public ServerDetails withOsEXTSTSPowerState(OsEXTSTSPowerStateEnum osEXTSTSPowerState) {
+    public ServerDetails withOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
         return this;
     }
@@ -1398,11 +1319,11 @@ public class ServerDetails  {
      * 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
      * @return osEXTSTSPowerState
      */
-    public OsEXTSTSPowerStateEnum getOsEXTSTSPowerState() {
+    public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
 
-    public void setOsEXTSTSPowerState(OsEXTSTSPowerStateEnum osEXTSTSPowerState) {
+    public void setOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 

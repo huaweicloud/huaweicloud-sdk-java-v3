@@ -154,6 +154,8 @@ public class Network  {
 
     /**
      * 源端口，0–65535。
+     * minimum: 0
+     * maximum: 65535
      * @return srcPort
      */
     public Integer getSrcPort() {
@@ -249,6 +251,8 @@ public class Network  {
 
     /**
      * 目标端口，0–65535。
+     * minimum: 0
+     * maximum: 65535
      * @return destPort
      */
     public Integer getDestPort() {

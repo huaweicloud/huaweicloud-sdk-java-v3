@@ -29,10 +29,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -68,12 +64,6 @@ public class UpdateImageResponse extends SdkResponse {
     @JsonProperty(value="__description")
     
     private String description;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__image_location")
-    
-    private String imageLocation;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -254,90 +244,6 @@ public class UpdateImageResponse extends SdkResponse {
     @JsonProperty(value="__imagetype")
     
     private ImagetypeEnum imagetype;
-    /**
-     * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
-     */
-    public static final class IsConfigInitEnum {
-
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
-        public static final IsConfigInitEnum TRUE = new IsConfigInitEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final IsConfigInitEnum FALSE = new IsConfigInitEnum("false");
-        
-
-        private static final Map<String, IsConfigInitEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, IsConfigInitEnum> createStaticFields() {
-            Map<String, IsConfigInitEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        IsConfigInitEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static IsConfigInitEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            IsConfigInitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsConfigInitEnum(value);
-            }
-            return result;
-        }
-
-        public static IsConfigInitEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            IsConfigInitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsConfigInitEnum) {
-                return this.value.equals(((IsConfigInitEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__is_config_init")
-    
-    private IsConfigInitEnum isConfigInit;
     /**
      * 是否是注册过的镜像，取值为“true”或者“false”
      */
@@ -1203,90 +1109,6 @@ public class UpdateImageResponse extends SdkResponse {
     
     private VisibilityEnum visibility;
     /**
-     * 镜像架构类型。取值包括： x86 arm
-     */
-    public static final class ArchitectureEnum {
-
-        
-        /**
-         * Enum X86 for value: "x86"
-         */
-        public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
-        
-        /**
-         * Enum ARM for value: "arm"
-         */
-        public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
-        
-
-        private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ArchitectureEnum> createStaticFields() {
-            Map<String, ArchitectureEnum> map = new HashMap<>();
-            map.put("x86", X86);
-            map.put("arm", ARM);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ArchitectureEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ArchitectureEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchitectureEnum(value);
-            }
-            return result;
-        }
-
-        public static ArchitectureEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ArchitectureEnum) {
-                return this.value.equals(((ArchitectureEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="architecture")
-    
-    private ArchitectureEnum architecture;
-    /**
      * 表示当前镜像支持CloudInit密码/密钥注入方式，建议设置为\"true\"或者\"false\"。 如果取值为\"true\"，表示该镜像不支持CloudInit注入密码/密钥，其他取值时表示支持CloudInit注入密钥/密码。
      */
     public static final class SupportFcInjectEnum {
@@ -1569,6 +1391,42 @@ public class UpdateImageResponse extends SdkResponse {
     
     private String hwVifMultiqueueEnabled;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__is_offshelved")
+    
+    private String isOffshelved;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__lazyloading")
+    
+    private Boolean lazyloading;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__root_origin")
+    
+    private String rootOrigin;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__sequence_num")
+    
+    private String sequenceNum;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="active_at")
+    
+    private String activeAt;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__support_agent_list")
+    
+    private String supportAgentList;
+
     public UpdateImageResponse withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -1641,30 +1499,6 @@ public class UpdateImageResponse extends SdkResponse {
 
     
 
-    public UpdateImageResponse withImageLocation(String imageLocation) {
-        this.imageLocation = imageLocation;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 镜像的存储位置
-     * @return imageLocation
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__image_location")
-    public String getImageLocation() {
-        return imageLocation;
-    }
-
-    public void setImageLocation(String imageLocation) {
-        this.imageLocation = imageLocation;
-    }
-
-    
-
     public UpdateImageResponse withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
@@ -1733,30 +1567,6 @@ public class UpdateImageResponse extends SdkResponse {
 
     public void setImagetype(ImagetypeEnum imagetype) {
         this.imagetype = imagetype;
-    }
-
-    
-
-    public UpdateImageResponse withIsConfigInit(IsConfigInitEnum isConfigInit) {
-        this.isConfigInit = isConfigInit;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否完成了初始化配置。取值为true或false。如果用户确定完成了初始化配置，则可以设置为true，否则设置为false。默认为false。
-     * @return isConfigInit
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__is_config_init")
-    public IsConfigInitEnum getIsConfigInit() {
-        return isConfigInit;
-    }
-
-    public void setIsConfigInit(IsConfigInitEnum isConfigInit) {
-        this.isConfigInit = isConfigInit;
     }
 
     
@@ -2647,28 +2457,6 @@ public class UpdateImageResponse extends SdkResponse {
 
     
 
-    public UpdateImageResponse withArchitecture(ArchitectureEnum architecture) {
-        this.architecture = architecture;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 镜像架构类型。取值包括： x86 arm
-     * @return architecture
-     */
-    public ArchitectureEnum getArchitecture() {
-        return architecture;
-    }
-
-    public void setArchitecture(ArchitectureEnum architecture) {
-        this.architecture = architecture;
-    }
-
-    
-
     public UpdateImageResponse withSupportFcInject(SupportFcInjectEnum supportFcInject) {
         this.supportFcInject = supportFcInject;
         return this;
@@ -2855,6 +2643,148 @@ public class UpdateImageResponse extends SdkResponse {
 
     
 
+    public UpdateImageResponse withIsOffshelved(String isOffshelved) {
+        this.isOffshelved = isOffshelved;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 表示当前市场镜像是否下架。true：已下架 false：未下架
+     * @return isOffshelved
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__is_offshelved")
+    public String getIsOffshelved() {
+        return isOffshelved;
+    }
+
+    public void setIsOffshelved(String isOffshelved) {
+        this.isOffshelved = isOffshelved;
+    }
+
+    
+
+    public UpdateImageResponse withLazyloading(Boolean lazyloading) {
+        this.lazyloading = lazyloading;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像是否支持延迟加载。取值为“True”或“False”。
+     * @return lazyloading
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__lazyloading")
+    public Boolean getLazyloading() {
+        return lazyloading;
+    }
+
+    public void setLazyloading(Boolean lazyloading) {
+        this.lazyloading = lazyloading;
+    }
+
+    
+
+    public UpdateImageResponse withRootOrigin(String rootOrigin) {
+        this.rootOrigin = rootOrigin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 表示当前镜像来源是从外部导入。取值：file。
+     * @return rootOrigin
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__root_origin")
+    public String getRootOrigin() {
+        return rootOrigin;
+    }
+
+    public void setRootOrigin(String rootOrigin) {
+        this.rootOrigin = rootOrigin;
+    }
+
+    
+
+    public UpdateImageResponse withSequenceNum(String sequenceNum) {
+        this.sequenceNum = sequenceNum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 表示当前镜像对应云服务器的系统盘插槽位置。目前暂时不用
+     * @return sequenceNum
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__sequence_num")
+    public String getSequenceNum() {
+        return sequenceNum;
+    }
+
+    public void setSequenceNum(String sequenceNum) {
+        this.sequenceNum = sequenceNum;
+    }
+
+    
+
+    public UpdateImageResponse withActiveAt(String activeAt) {
+        this.activeAt = activeAt;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像状态变为正常的时间。
+     * @return activeAt
+     */
+    public String getActiveAt() {
+        return activeAt;
+    }
+
+    public void setActiveAt(String activeAt) {
+        this.activeAt = activeAt;
+    }
+
+    
+
+    public UpdateImageResponse withSupportAgentList(String supportAgentList) {
+        this.supportAgentList = supportAgentList;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+     * @return supportAgentList
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__support_agent_list")
+    public String getSupportAgentList() {
+        return supportAgentList;
+    }
+
+    public void setSupportAgentList(String supportAgentList) {
+        this.supportAgentList = supportAgentList;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2867,11 +2797,9 @@ public class UpdateImageResponse extends SdkResponse {
         return Objects.equals(this.backupId, updateImageResponse.backupId) &&
             Objects.equals(this.dataOrigin, updateImageResponse.dataOrigin) &&
             Objects.equals(this.description, updateImageResponse.description) &&
-            Objects.equals(this.imageLocation, updateImageResponse.imageLocation) &&
             Objects.equals(this.imageSize, updateImageResponse.imageSize) &&
             Objects.equals(this.imageSourceType, updateImageResponse.imageSourceType) &&
             Objects.equals(this.imagetype, updateImageResponse.imagetype) &&
-            Objects.equals(this.isConfigInit, updateImageResponse.isConfigInit) &&
             Objects.equals(this.isregistered, updateImageResponse.isregistered) &&
             Objects.equals(this.originalimagename, updateImageResponse.originalimagename) &&
             Objects.equals(this.osBit, updateImageResponse.osBit) &&
@@ -2910,7 +2838,6 @@ public class UpdateImageResponse extends SdkResponse {
             Objects.equals(this.virtualEnvType, updateImageResponse.virtualEnvType) &&
             Objects.equals(this.virtualSize, updateImageResponse.virtualSize) &&
             Objects.equals(this.visibility, updateImageResponse.visibility) &&
-            Objects.equals(this.architecture, updateImageResponse.architecture) &&
             Objects.equals(this.supportFcInject, updateImageResponse.supportFcInject) &&
             Objects.equals(this.hwFirmwareType, updateImageResponse.hwFirmwareType) &&
             Objects.equals(this.supportArm, updateImageResponse.supportArm) &&
@@ -2918,11 +2845,17 @@ public class UpdateImageResponse extends SdkResponse {
             Objects.equals(this.systemCmkid, updateImageResponse.systemCmkid) &&
             Objects.equals(this.osFeatureList, updateImageResponse.osFeatureList) &&
             Objects.equals(this.accountCode, updateImageResponse.accountCode) &&
-            Objects.equals(this.hwVifMultiqueueEnabled, updateImageResponse.hwVifMultiqueueEnabled);
+            Objects.equals(this.hwVifMultiqueueEnabled, updateImageResponse.hwVifMultiqueueEnabled) &&
+            Objects.equals(this.isOffshelved, updateImageResponse.isOffshelved) &&
+            Objects.equals(this.lazyloading, updateImageResponse.lazyloading) &&
+            Objects.equals(this.rootOrigin, updateImageResponse.rootOrigin) &&
+            Objects.equals(this.sequenceNum, updateImageResponse.sequenceNum) &&
+            Objects.equals(this.activeAt, updateImageResponse.activeAt) &&
+            Objects.equals(this.supportAgentList, updateImageResponse.supportAgentList);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(backupId, dataOrigin, description, imageLocation, imageSize, imageSourceType, imagetype, isConfigInit, isregistered, originalimagename, osBit, osType, osVersion, platform, productcode, supportDiskintensive, supportHighperformance, supportKvm, supportKvmGpuType, supportKvmInfiniband, supportLargememory, supportXen, supportXenGpuType, supportXenHana, systemSupportMarket, checksum, containerFormat, createdAt, diskFormat, enterpriseProjectId, file, id, minDisk, minRam, name, owner, _protected, schema, self, size, status, tags, updatedAt, virtualEnvType, virtualSize, visibility, architecture, supportFcInject, hwFirmwareType, supportArm, maxRam, systemCmkid, osFeatureList, accountCode, hwVifMultiqueueEnabled);
+        return Objects.hash(backupId, dataOrigin, description, imageSize, imageSourceType, imagetype, isregistered, originalimagename, osBit, osType, osVersion, platform, productcode, supportDiskintensive, supportHighperformance, supportKvm, supportKvmGpuType, supportKvmInfiniband, supportLargememory, supportXen, supportXenGpuType, supportXenHana, systemSupportMarket, checksum, containerFormat, createdAt, diskFormat, enterpriseProjectId, file, id, minDisk, minRam, name, owner, _protected, schema, self, size, status, tags, updatedAt, virtualEnvType, virtualSize, visibility, supportFcInject, hwFirmwareType, supportArm, maxRam, systemCmkid, osFeatureList, accountCode, hwVifMultiqueueEnabled, isOffshelved, lazyloading, rootOrigin, sequenceNum, activeAt, supportAgentList);
     }
     @Override
     public String toString() {
@@ -2931,11 +2864,9 @@ public class UpdateImageResponse extends SdkResponse {
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("    dataOrigin: ").append(toIndentedString(dataOrigin)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    imageLocation: ").append(toIndentedString(imageLocation)).append("\n");
         sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");
         sb.append("    imageSourceType: ").append(toIndentedString(imageSourceType)).append("\n");
         sb.append("    imagetype: ").append(toIndentedString(imagetype)).append("\n");
-        sb.append("    isConfigInit: ").append(toIndentedString(isConfigInit)).append("\n");
         sb.append("    isregistered: ").append(toIndentedString(isregistered)).append("\n");
         sb.append("    originalimagename: ").append(toIndentedString(originalimagename)).append("\n");
         sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
@@ -2974,7 +2905,6 @@ public class UpdateImageResponse extends SdkResponse {
         sb.append("    virtualEnvType: ").append(toIndentedString(virtualEnvType)).append("\n");
         sb.append("    virtualSize: ").append(toIndentedString(virtualSize)).append("\n");
         sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
-        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    supportFcInject: ").append(toIndentedString(supportFcInject)).append("\n");
         sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("    supportArm: ").append(toIndentedString(supportArm)).append("\n");
@@ -2983,6 +2913,12 @@ public class UpdateImageResponse extends SdkResponse {
         sb.append("    osFeatureList: ").append(toIndentedString(osFeatureList)).append("\n");
         sb.append("    accountCode: ").append(toIndentedString(accountCode)).append("\n");
         sb.append("    hwVifMultiqueueEnabled: ").append(toIndentedString(hwVifMultiqueueEnabled)).append("\n");
+        sb.append("    isOffshelved: ").append(toIndentedString(isOffshelved)).append("\n");
+        sb.append("    lazyloading: ").append(toIndentedString(lazyloading)).append("\n");
+        sb.append("    rootOrigin: ").append(toIndentedString(rootOrigin)).append("\n");
+        sb.append("    sequenceNum: ").append(toIndentedString(sequenceNum)).append("\n");
+        sb.append("    activeAt: ").append(toIndentedString(activeAt)).append("\n");
+        sb.append("    supportAgentList: ").append(toIndentedString(supportAgentList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,6 +21,18 @@ public class ListWatermarkTemplateRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="id")
     
     private List<String> id = null;
@@ -36,6 +48,52 @@ public class ListWatermarkTemplateRequest  {
     @JsonProperty(value="size")
     
     private Integer size;
+
+    public ListWatermarkTemplateRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public ListWatermarkTemplateRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
 
     public ListWatermarkTemplateRequest withId(List<String> id) {
         this.id = id;
@@ -60,7 +118,7 @@ public class ListWatermarkTemplateRequest  {
     }
 
     /**
-     * 水印模板配置id，一次最多10个<br/> 
+     * 水印模板配置id，一次最多10个。
      * @return id
      */
     public List<String> getId() {
@@ -82,7 +140,7 @@ public class ListWatermarkTemplateRequest  {
 
 
     /**
-     * 分页编号。默认为0。指定id时该参数无效。<br/> 
+     * 分页编号。  默认为0。指定id时该参数无效。
      * @return page
      */
     public Integer getPage() {
@@ -104,7 +162,7 @@ public class ListWatermarkTemplateRequest  {
 
 
     /**
-     * 每页记录数。默认为10，范围[1,100]。指定id时该参数无效。<br/> 
+     * 每页记录数。  默认为10，范围[1,100]。指定id时该参数无效。
      * @return size
      */
     public Integer getSize() {
@@ -126,18 +184,22 @@ public class ListWatermarkTemplateRequest  {
             return false;
         }
         ListWatermarkTemplateRequest listWatermarkTemplateRequest = (ListWatermarkTemplateRequest) o;
-        return Objects.equals(this.id, listWatermarkTemplateRequest.id) &&
+        return Objects.equals(this.authorization, listWatermarkTemplateRequest.authorization) &&
+            Objects.equals(this.xSdkDate, listWatermarkTemplateRequest.xSdkDate) &&
+            Objects.equals(this.id, listWatermarkTemplateRequest.id) &&
             Objects.equals(this.page, listWatermarkTemplateRequest.page) &&
             Objects.equals(this.size, listWatermarkTemplateRequest.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, page, size);
+        return Objects.hash(authorization, xSdkDate, id, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWatermarkTemplateRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");

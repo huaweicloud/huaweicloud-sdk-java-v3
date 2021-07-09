@@ -123,7 +123,7 @@ public class CceMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            V3Cluster.class,
+            Cluster.class,
             f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -168,6 +168,15 @@ public class CceMeta {
         
 
 
+        builder.withResponseField(
+            "Port-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(
+                CreateKubernetesClusterCertResponse::getPortID,
+                CreateKubernetesClusterCertResponse::setPortID)
+        );
         return builder.build();
     }
 
@@ -201,7 +210,7 @@ public class CceMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            V3NodeCreateRequest.class,
+            NodeCreateRequest.class,
             f -> f.withMarshaller(CreateNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })
@@ -417,6 +426,14 @@ public class CceMeta {
             DeleteClusterRequest.DeleteSfsEnum.class,
             f -> f.withMarshaller(DeleteClusterRequest::getDeleteSfs, (req, v) -> {
                 req.setDeleteSfs(v);
+            })
+        );
+        builder.withRequestField("tobedeleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            DeleteClusterRequest.TobedeletedEnum.class,
+            f -> f.withMarshaller(DeleteClusterRequest::getTobedeleted, (req, v) -> {
+                req.setTobedeleted(v);
             })
         );
 
@@ -699,6 +716,84 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> migrateNode = genFormigrateNode();
+
+    private static HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> genFormigrateNode() {
+        // basic
+        HttpRequestDef.Builder<MigrateNodeRequest, MigrateNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, MigrateNodeRequest.class, MigrateNodeResponse.class)
+                .withName("MigrateNode")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/migrateto/{target_cluster_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(MigrateNodeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            })
+        );
+        builder.withRequestField("target_cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(MigrateNodeRequest::getTargetClusterId, (req, v) -> {
+                req.setTargetClusterId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            MigrateNodesTask.class,
+            f -> f.withMarshaller(MigrateNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> removeNode = genForremoveNode();
+
+    private static HttpRequestDef<RemoveNodeRequest, RemoveNodeResponse> genForremoveNode() {
+        // basic
+        HttpRequestDef.Builder<RemoveNodeRequest, RemoveNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RemoveNodeRequest.class, RemoveNodeResponse.class)
+                .withName("RemoveNode")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/operation/remove")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(RemoveNodeRequest::getClusterId, (req, v) -> {
+                req.setClusterId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            RemoveNodesTask.class,
+            f -> f.withMarshaller(RemoveNodeRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAddonInstanceRequest, ShowAddonInstanceResponse> showAddonInstance = genForshowAddonInstance();
 
     private static HttpRequestDef<ShowAddonInstanceRequest, ShowAddonInstanceResponse> genForshowAddonInstance() {
@@ -966,7 +1061,7 @@ public class CceMeta {
         builder.withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CCEClusterNodeInformation.class,
+            ClusterNodeInformation.class,
             f -> f.withMarshaller(UpdateNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
             })

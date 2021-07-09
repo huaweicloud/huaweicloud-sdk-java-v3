@@ -627,6 +627,24 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     
     private Object properties;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__root_origin")
+    
+    private String rootOrigin;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="checksum")
+    
+    private String checksum;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="size")
+    
+    private Long size;
+
     public GlanceCreateImageMetadataResponse withVisibility(String visibility) {
         this.visibility = visibility;
         return this;
@@ -1253,6 +1271,74 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
     
 
+    public GlanceCreateImageMetadataResponse withRootOrigin(String rootOrigin) {
+        this.rootOrigin = rootOrigin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 表示当前镜像来源是从外部导入。取值：file
+     * @return rootOrigin
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__root_origin")
+    public String getRootOrigin() {
+        return rootOrigin;
+    }
+
+    public void setRootOrigin(String rootOrigin) {
+        this.rootOrigin = rootOrigin;
+    }
+
+    
+
+    public GlanceCreateImageMetadataResponse withChecksum(String checksum) {
+        this.checksum = checksum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像文件md5值。
+     * @return checksum
+     */
+    public String getChecksum() {
+        return checksum;
+    }
+
+    public void setChecksum(String checksum) {
+        this.checksum = checksum;
+    }
+
+    
+
+    public GlanceCreateImageMetadataResponse withSize(Long size) {
+        this.size = size;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 目前暂时不使用。
+     * @return size
+     */
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1288,11 +1374,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             Objects.equals(this.virtualEnvType, glanceCreateImageMetadataResponse.virtualEnvType) &&
             Objects.equals(this.owner, glanceCreateImageMetadataResponse.owner) &&
             Objects.equals(this.virtualSize, glanceCreateImageMetadataResponse.virtualSize) &&
-            Objects.equals(this.properties, glanceCreateImageMetadataResponse.properties);
+            Objects.equals(this.properties, glanceCreateImageMetadataResponse.properties) &&
+            Objects.equals(this.rootOrigin, glanceCreateImageMetadataResponse.rootOrigin) &&
+            Objects.equals(this.checksum, glanceCreateImageMetadataResponse.checksum) &&
+            Objects.equals(this.size, glanceCreateImageMetadataResponse.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(visibility, name, _protected, containerFormat, diskFormat, tags, minRam, minDisk, status, createdAt, updatedAt, self, id, file, schema, imageSourceType, imageSize, isregistered, osVersion, osType, platform, osBit, imagetype, virtualEnvType, owner, virtualSize, properties);
+        return Objects.hash(visibility, name, _protected, containerFormat, diskFormat, tags, minRam, minDisk, status, createdAt, updatedAt, self, id, file, schema, imageSourceType, imageSize, isregistered, osVersion, osType, platform, osBit, imagetype, virtualEnvType, owner, virtualSize, properties, rootOrigin, checksum, size);
     }
     @Override
     public String toString() {
@@ -1325,6 +1414,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    virtualSize: ").append(toIndentedString(virtualSize)).append("\n");
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+        sb.append("    rootOrigin: ").append(toIndentedString(rootOrigin)).append("\n");
+        sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }

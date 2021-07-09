@@ -3,15 +3,11 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -26,126 +22,12 @@ public class PolicyAntiCrawlerPostInfo  {
     @JsonProperty(value="url")
     
     private String url;
-    /**
-     * 规则匹配逻辑（说明：1：包含，2：不包含，3：等于，4：不等于，5：前缀为，6：前缀不为，7：后缀为，8：后缀不为）
-     */
-    public static final class LogicEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final LogicEnum NUMBER_1 = new LogicEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final LogicEnum NUMBER_2 = new LogicEnum(2);
-        
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final LogicEnum NUMBER_3 = new LogicEnum(3);
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final LogicEnum NUMBER_4 = new LogicEnum(4);
-        
-        /**
-         * Enum NUMBER_5 for value: 5
-         */
-        public static final LogicEnum NUMBER_5 = new LogicEnum(5);
-        
-        /**
-         * Enum NUMBER_6 for value: 6
-         */
-        public static final LogicEnum NUMBER_6 = new LogicEnum(6);
-        
-        /**
-         * Enum NUMBER_7 for value: 7
-         */
-        public static final LogicEnum NUMBER_7 = new LogicEnum(7);
-        
-        /**
-         * Enum NUMBER_8 for value: 8
-         */
-        public static final LogicEnum NUMBER_8 = new LogicEnum(8);
-        
-
-        private static final Map<Integer, LogicEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, LogicEnum> createStaticFields() {
-            Map<Integer, LogicEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
-            map.put(4, NUMBER_4);
-            map.put(5, NUMBER_5);
-            map.put(6, NUMBER_6);
-            map.put(7, NUMBER_7);
-            map.put(8, NUMBER_8);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        LogicEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static LogicEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            LogicEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogicEnum(value);
-            }
-            return result;
-        }
-
-        public static LogicEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            LogicEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LogicEnum) {
-                return this.value.equals(((LogicEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="logic")
     
-    private LogicEnum logic;
+    private Integer logic;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -187,7 +69,7 @@ public class PolicyAntiCrawlerPostInfo  {
 
     
 
-    public PolicyAntiCrawlerPostInfo withLogic(LogicEnum logic) {
+    public PolicyAntiCrawlerPostInfo withLogic(Integer logic) {
         this.logic = logic;
         return this;
     }
@@ -199,11 +81,11 @@ public class PolicyAntiCrawlerPostInfo  {
      * 规则匹配逻辑（说明：1：包含，2：不包含，3：等于，4：不等于，5：前缀为，6：前缀不为，7：后缀为，8：后缀不为）
      * @return logic
      */
-    public LogicEnum getLogic() {
+    public Integer getLogic() {
         return logic;
     }
 
-    public void setLogic(LogicEnum logic) {
+    public void setLogic(Integer logic) {
         this.logic = logic;
     }
 

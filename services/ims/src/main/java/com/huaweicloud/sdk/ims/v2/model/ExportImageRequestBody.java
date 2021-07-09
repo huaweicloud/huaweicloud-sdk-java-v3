@@ -123,6 +123,12 @@ public class ExportImageRequestBody  {
     
     private FileFormatEnum fileFormat;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="is_quick_export")
+    
+    private Boolean isQuickExport;
+
     public ExportImageRequestBody withBucketUrl(String bucketUrl) {
         this.bucketUrl = bucketUrl;
         return this;
@@ -167,6 +173,28 @@ public class ExportImageRequestBody  {
 
     
 
+    public ExportImageRequestBody withIsQuickExport(Boolean isQuickExport) {
+        this.isQuickExport = isQuickExport;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否使用快速导出，取值为true或者false。 说明：若使用快速导出，则无法指定file_format参数。
+     * @return isQuickExport
+     */
+    public Boolean getIsQuickExport() {
+        return isQuickExport;
+    }
+
+    public void setIsQuickExport(Boolean isQuickExport) {
+        this.isQuickExport = isQuickExport;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -177,11 +205,12 @@ public class ExportImageRequestBody  {
         }
         ExportImageRequestBody exportImageRequestBody = (ExportImageRequestBody) o;
         return Objects.equals(this.bucketUrl, exportImageRequestBody.bucketUrl) &&
-            Objects.equals(this.fileFormat, exportImageRequestBody.fileFormat);
+            Objects.equals(this.fileFormat, exportImageRequestBody.fileFormat) &&
+            Objects.equals(this.isQuickExport, exportImageRequestBody.isQuickExport);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bucketUrl, fileFormat);
+        return Objects.hash(bucketUrl, fileFormat, isQuickExport);
     }
     @Override
     public String toString() {
@@ -189,6 +218,7 @@ public class ExportImageRequestBody  {
         sb.append("class ExportImageRequestBody {\n");
         sb.append("    bucketUrl: ").append(toIndentedString(bucketUrl)).append("\n");
         sb.append("    fileFormat: ").append(toIndentedString(fileFormat)).append("\n");
+        sb.append("    isQuickExport: ").append(toIndentedString(isQuickExport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,6 +19,18 @@ public class ShowTakeOverTaskDetailsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="task_id")
     
     private String taskId;
@@ -35,6 +47,52 @@ public class ShowTakeOverTaskDetailsRequest  {
     
     private Integer size;
 
+    public ShowTakeOverTaskDetailsRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public ShowTakeOverTaskDetailsRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
+
     public ShowTakeOverTaskDetailsRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -44,7 +102,7 @@ public class ShowTakeOverTaskDetailsRequest  {
 
 
     /**
-     * 起始时间.指定task_id时该参数无效<br/> 
+     * 任务ID。
      * @return taskId
      */
     public String getTaskId() {
@@ -66,7 +124,7 @@ public class ShowTakeOverTaskDetailsRequest  {
 
 
     /**
-     * 分页编号,默认为0。<br/> 
+     * 分页编号，默认为0。
      * minimum: 0
      * @return page
      */
@@ -89,7 +147,7 @@ public class ShowTakeOverTaskDetailsRequest  {
 
 
     /**
-     * 每页记录数。默认10，范围[1,100]<br/> 
+     * 每页记录数。  默认10，范围[1,100]
      * minimum: 1
      * maximum: 100
      * @return size
@@ -113,18 +171,22 @@ public class ShowTakeOverTaskDetailsRequest  {
             return false;
         }
         ShowTakeOverTaskDetailsRequest showTakeOverTaskDetailsRequest = (ShowTakeOverTaskDetailsRequest) o;
-        return Objects.equals(this.taskId, showTakeOverTaskDetailsRequest.taskId) &&
+        return Objects.equals(this.authorization, showTakeOverTaskDetailsRequest.authorization) &&
+            Objects.equals(this.xSdkDate, showTakeOverTaskDetailsRequest.xSdkDate) &&
+            Objects.equals(this.taskId, showTakeOverTaskDetailsRequest.taskId) &&
             Objects.equals(this.page, showTakeOverTaskDetailsRequest.page) &&
             Objects.equals(this.size, showTakeOverTaskDetailsRequest.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, page, size);
+        return Objects.hash(authorization, xSdkDate, taskId, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTakeOverTaskDetailsRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");

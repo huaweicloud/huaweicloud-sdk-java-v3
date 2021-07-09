@@ -147,6 +147,8 @@ public class HistoryStreamInfo  {
 
     /**
      * 推流类型，取值如下：  - 0：表示主播推流  - 1：表示第三方推流 
+     * minimum: 0
+     * maximum: 1
      * @return type
      */
     public Integer getType() {

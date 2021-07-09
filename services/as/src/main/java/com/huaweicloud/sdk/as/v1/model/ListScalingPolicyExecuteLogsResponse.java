@@ -80,6 +80,8 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
 
     /**
      * 查询的起始行号。
+     * minimum: 0
+     * maximum: 32768
      * @return startNumber
      */
     public Integer getStartNumber() {
@@ -102,6 +104,8 @@ public class ListScalingPolicyExecuteLogsResponse extends SdkResponse {
 
     /**
      * 查询记录数。
+     * minimum: 0
+     * maximum: 32768
      * @return limit
      */
     public Integer getLimit() {

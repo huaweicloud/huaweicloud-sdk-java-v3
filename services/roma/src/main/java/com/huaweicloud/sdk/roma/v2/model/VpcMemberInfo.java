@@ -106,6 +106,8 @@ public class VpcMemberInfo  {
 
     /**
      * 权重值。  允许您对云服务器进行评级，权重值越大，转发到该云服务的请求数量越多。权重只对加权轮询和加权最小连接算法生效  仅VPC通道类型为2时有效。
+     * minimum: 0
+     * maximum: 100
      * @return weight
      */
     public Integer getWeight() {

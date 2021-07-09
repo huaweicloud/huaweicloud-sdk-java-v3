@@ -3,16 +3,12 @@ package com.huaweicloud.sdk.apig.v2.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -27,96 +23,12 @@ public class ThrottleBindingResp  {
     @JsonProperty(value="publish_id")
     
     private String publishId;
-    /**
-     * 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP  目前只支持1
-     */
-    public static final class ScopeEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ScopeEnum NUMBER_1 = new ScopeEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final ScopeEnum NUMBER_2 = new ScopeEnum(2);
-        
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final ScopeEnum NUMBER_3 = new ScopeEnum(3);
-        
-
-        private static final Map<Integer, ScopeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ScopeEnum> createStaticFields() {
-            Map<Integer, ScopeEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ScopeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ScopeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
-        }
-
-        public static ScopeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScopeEnum) {
-                return this.value.equals(((ScopeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="scope")
     
-    private ScopeEnum scope;
+    private Integer scope;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -158,7 +70,7 @@ public class ThrottleBindingResp  {
 
     
 
-    public ThrottleBindingResp withScope(ScopeEnum scope) {
+    public ThrottleBindingResp withScope(Integer scope) {
         this.scope = scope;
         return this;
     }
@@ -170,11 +82,11 @@ public class ThrottleBindingResp  {
      * 策略作用域，取值如下： - 1：整个API - 2： 单个用户 - 3：单个APP  目前只支持1
      * @return scope
      */
-    public ScopeEnum getScope() {
+    public Integer getScope() {
         return scope;
     }
 
-    public void setScope(ScopeEnum scope) {
+    public void setScope(Integer scope) {
         this.scope = scope;
     }
 

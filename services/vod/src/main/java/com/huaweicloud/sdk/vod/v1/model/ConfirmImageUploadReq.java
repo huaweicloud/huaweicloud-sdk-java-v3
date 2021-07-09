@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * ConfirmImageUploadReq
+ * 
  */
 public class ConfirmImageUploadReq  {
 
@@ -27,7 +27,7 @@ public class ConfirmImageUploadReq  {
     
     private String id;
     /**
-     * 水印图片格式类型<br/> 
+     * 水印上传状态。
      */
     public static final class StatusEnum {
 
@@ -120,7 +120,7 @@ public class ConfirmImageUploadReq  {
 
 
     /**
-     * 水印配置模板id<br/> 
+     * 水印配置模板id。
      * @return id
      */
     public String getId() {
@@ -142,7 +142,7 @@ public class ConfirmImageUploadReq  {
 
 
     /**
-     * 水印图片格式类型<br/> 
+     * 水印上传状态。
      * @return status
      */
     public StatusEnum getStatus() {

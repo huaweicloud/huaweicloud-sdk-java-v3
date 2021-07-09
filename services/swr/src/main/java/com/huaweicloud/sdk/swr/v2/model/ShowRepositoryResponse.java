@@ -115,6 +115,18 @@ public class ShowRepositoryResponse extends SdkResponse {
     
     private String updated;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="domain_id")
+    
+    private String domainId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="priority")
+    
+    private Integer priority;
+
     public ShowRepositoryResponse withId(Long id) {
         this.id = id;
         return this;
@@ -467,6 +479,50 @@ public class ShowRepositoryResponse extends SdkResponse {
 
     
 
+    public ShowRepositoryResponse withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 账号ID
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    
+
+    public ShowRepositoryResponse withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像排序优先级
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -491,11 +547,13 @@ public class ShowRepositoryResponse extends SdkResponse {
             Objects.equals(this.path, showRepositoryResponse.path) &&
             Objects.equals(this.internalPath, showRepositoryResponse.internalPath) &&
             Objects.equals(this.created, showRepositoryResponse.created) &&
-            Objects.equals(this.updated, showRepositoryResponse.updated);
+            Objects.equals(this.updated, showRepositoryResponse.updated) &&
+            Objects.equals(this.domainId, showRepositoryResponse.domainId) &&
+            Objects.equals(this.priority, showRepositoryResponse.priority);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, nsId, name, category, description, creatorId, creatorName, size, isPublic, numImages, numDownload, url, path, internalPath, created, updated);
+        return Objects.hash(id, nsId, name, category, description, creatorId, creatorName, size, isPublic, numImages, numDownload, url, path, internalPath, created, updated, domainId, priority);
     }
     @Override
     public String toString() {
@@ -517,6 +575,8 @@ public class ShowRepositoryResponse extends SdkResponse {
         sb.append("    internalPath: ").append(toIndentedString(internalPath)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

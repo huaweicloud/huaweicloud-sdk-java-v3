@@ -50,6 +50,8 @@ public class ListLiveSampleLogsResponse extends SdkResponse {
 
     /**
      * 符合查询条件的总条目数
+     * minimum: 0
+     * maximum: 2016
      * @return total
      */
     public Integer getTotal() {

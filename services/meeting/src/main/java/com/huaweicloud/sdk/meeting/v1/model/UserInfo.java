@@ -613,6 +613,8 @@ public class UserInfo  {
 
     /**
      * 用户状态。 * 0：正常 * 1：停用 
+     * minimum: 0
+     * maximum: 7
      * @return status
      */
     public Integer getStatus() {

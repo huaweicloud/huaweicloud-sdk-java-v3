@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * WatermarkTemplate
+ * 
  */
 public class WatermarkTemplate  {
 
@@ -116,7 +116,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印模板名称<br/> 
+     * 水印模板名称<br/>
      * @return name
      */
     public String getName() {
@@ -138,7 +138,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印模板配置id<br/> 
+     * 水印模板配置id<br/>
      * @return id
      */
     public String getId() {
@@ -160,7 +160,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 启用状态，取值为：0，停用；1,启用<br/> 
+     * 启用状态。  取值为： - 0：停用 - 1：启用
      * @return status
      */
     public Long getStatus() {
@@ -182,7 +182,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印图片相对输出视频的水平偏移量，默认值是0<br/> 
+     * 水印图片相对输出视频的水平偏移量。  默认值是0。
      * @return dx
      */
     public String getDx() {
@@ -204,7 +204,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印图片相对输出视频的垂直偏移量，默认值是0<br/> 
+     * 水印图片相对输出视频的垂直偏移量。  默认值是0。
      * @return dy
      */
     public String getDy() {
@@ -226,7 +226,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印的位置<br/> 
+     * 水印的位置<br/>
      * @return position
      */
     public String getPosition() {
@@ -248,7 +248,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印图片宽<br/> 
+     * 水印图片宽<br/>
      * @return width
      */
     public String getWidth() {
@@ -270,7 +270,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印图片高<br/> 
+     * 水印图片高<br/>
      * @return height
      */
     public String getHeight() {
@@ -292,7 +292,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 创建时间<br/> 
+     * 创建时间<br/>
      * @return createTime
      */
     public String getCreateTime() {
@@ -314,7 +314,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印图片下载url<br/> 
+     * 水印图片下载url<br/>
      * @return imageUrl
      */
     public String getImageUrl() {
@@ -336,7 +336,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印图片格式类型<br/> 
+     * 水印图片格式类型<br/>
      * @return type
      */
     public String getType() {
@@ -358,7 +358,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印类型，当前只支持Image（图片水印）<br/> 
+     * 水印类型，当前只支持Image（图片水印）<br/>
      * @return watermarkType
      */
     public String getWatermarkType() {
@@ -380,7 +380,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * type设置为Image时有效，目前包括Original（只做简单缩放，不做其他处理），Transparent（图片底色透明），Grayed（彩色图片变灰）<br/> 
+     * type设置为Image时有效。 目前包括： - Original：只做简单缩放，不做其他处理 - Transparent：图片底色透明 - Grayed：彩色图片变灰
      * @return imageProcess
      */
     public String getImageProcess() {
@@ -402,7 +402,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印开始时间<br/> 
+     * 水印开始时间<br/>
      * @return timelineStart
      */
     public String getTimelineStart() {
@@ -424,7 +424,7 @@ public class WatermarkTemplate  {
 
 
     /**
-     * 水印持续时间<br/> 
+     * 水印持续时间<br/>
      * @return timelineDuration
      */
     public String getTimelineDuration() {

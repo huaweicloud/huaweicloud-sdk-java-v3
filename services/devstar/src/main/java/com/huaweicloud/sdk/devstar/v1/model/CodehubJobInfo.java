@@ -189,6 +189,8 @@ public class CodehubJobInfo  {
 
     /**
      * - 0 - 将生成的应用代码存储于 repo_info 指定的 CodeHub 仓库中。 - 1 - 将生成的应用代码存储到华为云，任务创建人可以通过 ExportApplicationCode 下载代码压缩包。 
+     * minimum: 0
+     * maximum: 1
      * @return repoType
      */
     public Integer getRepoType() {

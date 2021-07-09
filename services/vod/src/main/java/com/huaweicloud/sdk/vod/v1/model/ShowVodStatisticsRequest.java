@@ -19,6 +19,18 @@ public class ShowVodStatisticsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_time")
     
     private String startTime;
@@ -34,6 +46,52 @@ public class ShowVodStatisticsRequest  {
     @JsonProperty(value="interval")
     
     private Integer interval;
+
+    public ShowVodStatisticsRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public ShowVodStatisticsRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
 
     public ShowVodStatisticsRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -88,7 +146,7 @@ public class ShowVodStatisticsRequest  {
 
 
     /**
-     * 查询粒度间隔。 取值如下： - 时间跨度1天：1小时、4小时、8小时，分别对应3600秒、14400秒和28800秒。 - 时间跨度2~7天：1小时、4小时、8小时、1天，分别对应3600秒、14400秒、28800秒和86400秒。 - 时间跨度8~31天：4小时、8小时、1天，分别对应14400秒、28800秒和86400秒。 单位：秒。 若不设置，默认取对应时间跨度的最小间隔。
+     * 查询粒度间隔。  取值如下： - 时间跨度1天：1小时、4小时、8小时，分别对应3600秒、14400秒和28800秒。 - 时间跨度2~7天：1小时、4小时、8小时、1天，分别对应3600秒、14400秒、28800秒和86400秒。 - 时间跨度8~31天：4小时、8小时、1天，分别对应14400秒、28800秒和86400秒。  单位：秒。  若不设置，默认取对应时间跨度的最小间隔。
      * @return interval
      */
     public Integer getInterval() {
@@ -110,18 +168,22 @@ public class ShowVodStatisticsRequest  {
             return false;
         }
         ShowVodStatisticsRequest showVodStatisticsRequest = (ShowVodStatisticsRequest) o;
-        return Objects.equals(this.startTime, showVodStatisticsRequest.startTime) &&
+        return Objects.equals(this.authorization, showVodStatisticsRequest.authorization) &&
+            Objects.equals(this.xSdkDate, showVodStatisticsRequest.xSdkDate) &&
+            Objects.equals(this.startTime, showVodStatisticsRequest.startTime) &&
             Objects.equals(this.endTime, showVodStatisticsRequest.endTime) &&
             Objects.equals(this.interval, showVodStatisticsRequest.interval);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, interval);
+        return Objects.hash(authorization, xSdkDate, startTime, endTime, interval);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowVodStatisticsRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");

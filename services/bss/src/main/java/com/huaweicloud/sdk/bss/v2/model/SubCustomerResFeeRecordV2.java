@@ -358,7 +358,7 @@ public class SubCustomerResFeeRecordV2  {
 
 
     /**
-     * 消费金额，包括现金券和代金券金额，精确到小数点后2位。
+     * 消费金额，包括现金券和代金券金额，精确到小数点后2位。  说明： amount的值等于cash_amount，credit_amount，coupon_amount，flexipurchase_coupon_amount，stored_card_amount，bonus_amount，debt_amount，adjustment_amount的总和。
      * @return amount
      */
     public Double getAmount() {

@@ -50,6 +50,8 @@ public class ListDictionaryResponse extends SdkResponse {
 
     /**
      * 总数，与分页无关
+     * minimum: 1
+     * maximum: 128
      * @return total
      */
     public Integer getTotal() {
@@ -72,6 +74,8 @@ public class ListDictionaryResponse extends SdkResponse {
 
     /**
      * 当前页的数量，小于等于请求里指定的limit
+     * minimum: 1
+     * maximum: 128
      * @return size
      */
     public Integer getSize() {

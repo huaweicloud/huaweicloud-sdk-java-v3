@@ -85,7 +85,7 @@ public class VodClient {
 
     /**
      * 确认媒资上传
-     * 媒资分段上传完成后，需要调用此接口通知点播服务媒资上传的状态，表示媒资上传创建完成。 
+     * 媒资分段上传完成后，需要调用此接口通知点播服务媒资上传的状态，表示媒资上传创建完成。
      *
      * @param ConfirmAssetUploadRequest 请求对象
      * @return ConfirmAssetUploadResponse
@@ -96,7 +96,7 @@ public class VodClient {
 
     /**
      * 确认媒资上传
-     * 媒资分段上传完成后，需要调用此接口通知点播服务媒资上传的状态，表示媒资上传创建完成。 
+     * 媒资分段上传完成后，需要调用此接口通知点播服务媒资上传的状态，表示媒资上传创建完成。
      *
      * @param ConfirmAssetUploadRequest 请求对象
      * @return SyncInvoker<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse>
@@ -107,7 +107,7 @@ public class VodClient {
 
     /**
      * 确认水印图片上传
-     * ## 典型场景 ##   确认水印图片上传调用此接口&lt;br/&gt;  ## 接口功能 ##   确认水印图片是否已经上传至对象存储&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 确认水印图片上传 
      *
      * @param ConfirmImageUploadRequest 请求对象
      * @return ConfirmImageUploadResponse
@@ -118,7 +118,7 @@ public class VodClient {
 
     /**
      * 确认水印图片上传
-     * ## 典型场景 ##   确认水印图片上传调用此接口&lt;br/&gt;  ## 接口功能 ##   确认水印图片是否已经上传至对象存储&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 确认水印图片上传 
      *
      * @param ConfirmImageUploadRequest 请求对象
      * @return SyncInvoker<ConfirmImageUploadRequest, ConfirmImageUploadResponse>
@@ -151,7 +151,7 @@ public class VodClient {
 
     /**
      * 创建媒资分类
-     * ## 功能介绍 ##   创建媒资分类。&lt;br/&gt;  ## 接口约束 ##   最大支持三级分类，每个分类最多支持创建128个子分类。&lt;br/&gt; 
+     * 创建媒资分类。
      *
      * @param CreateAssetCategoryRequest 请求对象
      * @return CreateAssetCategoryResponse
@@ -162,7 +162,7 @@ public class VodClient {
 
     /**
      * 创建媒资分类
-     * ## 功能介绍 ##   创建媒资分类。&lt;br/&gt;  ## 接口约束 ##   最大支持三级分类，每个分类最多支持创建128个子分类。&lt;br/&gt; 
+     * 创建媒资分类。
      *
      * @param CreateAssetCategoryRequest 请求对象
      * @return SyncInvoker<CreateAssetCategoryRequest, CreateAssetCategoryResponse>
@@ -173,7 +173,7 @@ public class VodClient {
 
     /**
      * 媒资处理
-     * 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。 
+     * 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。
      *
      * @param CreateAssetProcessTaskRequest 请求对象
      * @return CreateAssetProcessTaskResponse
@@ -184,7 +184,7 @@ public class VodClient {
 
     /**
      * 媒资处理
-     * 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。 
+     * 实现视频转码、截图、加密等处理。既可以同时启动多种操作，也可以只启动一种操作。
      *
      * @param CreateAssetProcessTaskRequest 请求对象
      * @return SyncInvoker<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse>
@@ -195,7 +195,7 @@ public class VodClient {
 
     /**
      * 创建审核媒资任务
-     * ## 功能介绍 ## 对上传的媒资进行审核。审核后，可以调用[查询媒资详细信息](https://support.huaweicloud.com/api-vod/vod_04_0202.html)接口查看审核结果。  ## 接口约束 ## 目前“华东-上海二”区域的点播服务暂不支持此功能。
+     * 对上传的媒资进行审核。审核后，可以调用[查询媒资详细信息](https://support.huaweicloud.com/api-vod/vod_04_0202.html)接口查看审核结果。
      *
      * @param CreateAssetReviewTaskRequest 请求对象
      * @return CreateAssetReviewTaskResponse
@@ -206,7 +206,7 @@ public class VodClient {
 
     /**
      * 创建审核媒资任务
-     * ## 功能介绍 ## 对上传的媒资进行审核。审核后，可以调用[查询媒资详细信息](https://support.huaweicloud.com/api-vod/vod_04_0202.html)接口查看审核结果。  ## 接口约束 ## 目前“华东-上海二”区域的点播服务暂不支持此功能。
+     * 对上传的媒资进行审核。审核后，可以调用[查询媒资详细信息](https://support.huaweicloud.com/api-vod/vod_04_0202.html)接口查看审核结果。
      *
      * @param CreateAssetReviewTaskRequest 请求对象
      * @return SyncInvoker<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse>
@@ -217,7 +217,7 @@ public class VodClient {
 
     /**
      * 音频提取
-     * 用于从已有视频文件中提取音频。 
+     * 用于从已有视频文件中提取音频。
      *
      * @param CreateExtractAudioTaskRequest 请求对象
      * @return CreateExtractAudioTaskResponse
@@ -228,7 +228,7 @@ public class VodClient {
 
     /**
      * 音频提取
-     * 用于从已有视频文件中提取音频。 
+     * 用于从已有视频文件中提取音频。
      *
      * @param CreateExtractAudioTaskRequest 请求对象
      * @return SyncInvoker<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse>
@@ -238,8 +238,52 @@ public class VodClient {
     }
 
     /**
+     * CDN预热
+     * 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。
+     *
+     * @param CreatePreheatingAssetRequest 请求对象
+     * @return CreatePreheatingAssetResponse
+     */
+    public CreatePreheatingAssetResponse createPreheatingAsset(CreatePreheatingAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createPreheatingAsset);
+    }
+
+    /**
+     * CDN预热
+     * 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。
+     *
+     * @param CreatePreheatingAssetRequest 请求对象
+     * @return SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse>
+     */
+    public SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAssetInvoker(CreatePreheatingAssetRequest request) {
+        return new SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse>(request, VodMeta.createPreheatingAsset, hcClient);
+    }
+
+    /**
+     * 创建媒资：OBS托管方式
+     * 通过存量托管的方式，将已存储在OBS桶中的音视频文件同步到点播服务。  OBS托管方式分为增量托管和存量托管，增量托管暂只支持通过视频点播控制台配置，配置后，若OBS有新增音视频文件，则会自动同步到点播服务中，具体请参见[增量托管](https://support.huaweicloud.com/usermanual-vod/vod010032.html)。两个托管方式都需要先将对应的OBS桶授权给点播服务，具体请参见[桶授权](https://support.huaweicloud.com/usermanual-vod/vod010031.html)。
+     *
+     * @param CreateTakeOverTaskRequest 请求对象
+     * @return CreateTakeOverTaskResponse
+     */
+    public CreateTakeOverTaskResponse createTakeOverTask(CreateTakeOverTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createTakeOverTask);
+    }
+
+    /**
+     * 创建媒资：OBS托管方式
+     * 通过存量托管的方式，将已存储在OBS桶中的音视频文件同步到点播服务。  OBS托管方式分为增量托管和存量托管，增量托管暂只支持通过视频点播控制台配置，配置后，若OBS有新增音视频文件，则会自动同步到点播服务中，具体请参见[增量托管](https://support.huaweicloud.com/usermanual-vod/vod010032.html)。两个托管方式都需要先将对应的OBS桶授权给点播服务，具体请参见[桶授权](https://support.huaweicloud.com/usermanual-vod/vod010031.html)。
+     *
+     * @param CreateTakeOverTaskRequest 请求对象
+     * @return SyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse>
+     */
+    public SyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTaskInvoker(CreateTakeOverTaskRequest request) {
+        return new SyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse>(request, VodMeta.createTakeOverTask, hcClient);
+    }
+
+    /**
      * 创建自定义模板组
-     * ## 典型场景 ##   创建自定义模板组时调用此接口。&lt;br/&gt;  ## 接口功能 ##   创建模板组。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 创建自定义模板组。
      *
      * @param CreateTemplateGroupRequest 请求对象
      * @return CreateTemplateGroupResponse
@@ -250,7 +294,7 @@ public class VodClient {
 
     /**
      * 创建自定义模板组
-     * ## 典型场景 ##   创建自定义模板组时调用此接口。&lt;br/&gt;  ## 接口功能 ##   创建模板组。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 创建自定义模板组。
      *
      * @param CreateTemplateGroupRequest 请求对象
      * @return SyncInvoker<CreateTemplateGroupRequest, CreateTemplateGroupResponse>
@@ -261,7 +305,7 @@ public class VodClient {
 
     /**
      * 创建水印模板
-     * ## 典型场景 ##   创建水印模板调用此接口&lt;br/&gt;  ## 接口功能 ##   创建水印模板&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 创建水印模板 
      *
      * @param CreateWatermarkTemplateRequest 请求对象
      * @return CreateWatermarkTemplateResponse
@@ -272,7 +316,7 @@ public class VodClient {
 
     /**
      * 创建水印模板
-     * ## 典型场景 ##   创建水印模板调用此接口&lt;br/&gt;  ## 接口功能 ##   创建水印模板&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 创建水印模板 
      *
      * @param CreateWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse>
@@ -283,7 +327,7 @@ public class VodClient {
 
     /**
      * 删除媒资分类
-     * 删除媒资分类。 
+     * 删除媒资分类。
      *
      * @param DeleteAssetCategoryRequest 请求对象
      * @return DeleteAssetCategoryResponse
@@ -294,7 +338,7 @@ public class VodClient {
 
     /**
      * 删除媒资分类
-     * 删除媒资分类。 
+     * 删除媒资分类。
      *
      * @param DeleteAssetCategoryRequest 请求对象
      * @return SyncInvoker<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse>
@@ -305,7 +349,7 @@ public class VodClient {
 
     /**
      * 删除媒资
-     * ## 功能介绍 ## 删除媒资。  ## 接口约束 ## 正在处理中的媒资不支持删除，包括转码中、审核中、截图中等。
+     * 删除媒资。
      *
      * @param DeleteAssetsRequest 请求对象
      * @return DeleteAssetsResponse
@@ -316,7 +360,7 @@ public class VodClient {
 
     /**
      * 删除媒资
-     * ## 功能介绍 ## 删除媒资。  ## 接口约束 ## 正在处理中的媒资不支持删除，包括转码中、审核中、截图中等。
+     * 删除媒资。
      *
      * @param DeleteAssetsRequest 请求对象
      * @return SyncInvoker<DeleteAssetsRequest, DeleteAssetsResponse>
@@ -327,7 +371,7 @@ public class VodClient {
 
     /**
      * 删除自定义模板组
-     * ## 典型场景 ##   删除自定义模板组接口。&lt;br/&gt;  ## 接口功能 ##   删除自定义模板组。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 删除自定义模板组。 
      *
      * @param DeleteTemplateGroupRequest 请求对象
      * @return DeleteTemplateGroupResponse
@@ -338,7 +382,7 @@ public class VodClient {
 
     /**
      * 删除自定义模板组
-     * ## 典型场景 ##   删除自定义模板组接口。&lt;br/&gt;  ## 接口功能 ##   删除自定义模板组。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 删除自定义模板组。 
      *
      * @param DeleteTemplateGroupRequest 请求对象
      * @return SyncInvoker<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse>
@@ -349,7 +393,7 @@ public class VodClient {
 
     /**
      * 删除水印模板
-     * ## 典型场景 ##   删除水印模板&lt;br/&gt;  ## 接口功能 ##   删除水印模板&lt;br/&gt;  ## 接口约束 ##   无&lt;br/&gt; 
+     * 删除水印模板 
      *
      * @param DeleteWatermarkTemplateRequest 请求对象
      * @return DeleteWatermarkTemplateResponse
@@ -360,7 +404,7 @@ public class VodClient {
 
     /**
      * 删除水印模板
-     * ## 典型场景 ##   删除水印模板&lt;br/&gt;  ## 接口功能 ##   删除水印模板&lt;br/&gt;  ## 接口约束 ##   无&lt;br/&gt; 
+     * 删除水印模板 
      *
      * @param DeleteWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse>
@@ -415,7 +459,7 @@ public class VodClient {
 
     /**
      * 查询模板组列表
-     * ## 典型场景 ##   查询模板组列表调用此接口。&lt;br/&gt;  ## 接口功能 ##   查询模板组列表。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 查询模板组列表。
      *
      * @param ListTemplateGroupRequest 请求对象
      * @return ListTemplateGroupResponse
@@ -426,7 +470,7 @@ public class VodClient {
 
     /**
      * 查询模板组列表
-     * ## 典型场景 ##   查询模板组列表调用此接口。&lt;br/&gt;  ## 接口功能 ##   查询模板组列表。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 查询模板组列表。
      *
      * @param ListTemplateGroupRequest 请求对象
      * @return SyncInvoker<ListTemplateGroupRequest, ListTemplateGroupResponse>
@@ -459,7 +503,7 @@ public class VodClient {
 
     /**
      * 查询水印列表
-     * ## 典型场景 ##   查询水印模板&lt;br/&gt;  ## 接口功能 ##   查询水印模板&lt;br/&gt;  ## 接口约束 ##   查询所有水印&lt;br/&gt; 
+     * 查询水印模板
      *
      * @param ListWatermarkTemplateRequest 请求对象
      * @return ListWatermarkTemplateResponse
@@ -470,7 +514,7 @@ public class VodClient {
 
     /**
      * 查询水印列表
-     * ## 典型场景 ##   查询水印模板&lt;br/&gt;  ## 接口功能 ##   查询水印模板&lt;br/&gt;  ## 接口约束 ##   查询所有水印&lt;br/&gt; 
+     * 查询水印模板
      *
      * @param ListWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse>
@@ -481,7 +525,7 @@ public class VodClient {
 
     /**
      * 创建媒资：OBS转存方式
-     * ## 功能介绍 ##   若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。&lt;br/&gt;  ## 接口约束 ##   由于不同区域的云服务不能互连，所以待转存的OBS桶和点播服务必须在同一区域，如“华北-北京四”OBS桶中的音视频只能转存到“华北-北京四”点播服务中。&lt;br/&gt;
+     * 若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。
      *
      * @param PublishAssetFromObsRequest 请求对象
      * @return PublishAssetFromObsResponse
@@ -492,7 +536,7 @@ public class VodClient {
 
     /**
      * 创建媒资：OBS转存方式
-     * ## 功能介绍 ##   若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。&lt;br/&gt;  ## 接口约束 ##   由于不同区域的云服务不能互连，所以待转存的OBS桶和点播服务必须在同一区域，如“华北-北京四”OBS桶中的音视频只能转存到“华北-北京四”点播服务中。&lt;br/&gt;
+     * 若您在使用点播服务前，已经在OBS桶中存储了音视频文件，您可以使用该接口将存储在OBS桶中的音视频文件转存到点播服务中，使用点播服务的音视频管理功能。调用该接口前，您需要调用[桶授权](https://support.huaweicloud.com/api-vod/vod_04_0199.html)接口，将存储音视频文件的OBS桶授权给点播服务。
      *
      * @param PublishAssetFromObsRequest 请求对象
      * @return SyncInvoker<PublishAssetFromObsRequest, PublishAssetFromObsResponse>
@@ -503,7 +547,7 @@ public class VodClient {
 
     /**
      * 媒资发布
-     * 将媒资设置为发布状态。支持批量发布。 
+     * 将媒资设置为发布状态。支持批量发布。
      *
      * @param PublishAssetsRequest 请求对象
      * @return PublishAssetsResponse
@@ -514,13 +558,35 @@ public class VodClient {
 
     /**
      * 媒资发布
-     * 将媒资设置为发布状态。支持批量发布。 
+     * 将媒资设置为发布状态。支持批量发布。
      *
      * @param PublishAssetsRequest 请求对象
      * @return SyncInvoker<PublishAssetsRequest, PublishAssetsResponse>
      */
     public SyncInvoker<PublishAssetsRequest, PublishAssetsResponse> publishAssetsInvoker(PublishAssetsRequest request) {
         return new SyncInvoker<PublishAssetsRequest, PublishAssetsResponse>(request, VodMeta.publishAssets, hcClient);
+    }
+
+    /**
+     * 密钥查询接口
+     * 终端播放HLS加密视频时，向租户管理系统请求密钥，租户管理系统先查询其本地有没有已缓存的密钥，没有时则调用此接口向VOD查询。该接口的具体使用场景请参见[通过HLS加密防止视频泄露](https://support.huaweicloud.com/bestpractice-vod/vod_10_0004.html)。
+     *
+     * @param ShowAssetCipherRequest 请求对象
+     * @return ShowAssetCipherResponse
+     */
+    public ShowAssetCipherResponse showAssetCipher(ShowAssetCipherRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.showAssetCipher);
+    }
+
+    /**
+     * 密钥查询接口
+     * 终端播放HLS加密视频时，向租户管理系统请求密钥，租户管理系统先查询其本地有没有已缓存的密钥，没有时则调用此接口向VOD查询。该接口的具体使用场景请参见[通过HLS加密防止视频泄露](https://support.huaweicloud.com/bestpractice-vod/vod_10_0004.html)。
+     *
+     * @param ShowAssetCipherRequest 请求对象
+     * @return SyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse>
+     */
+    public SyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipherInvoker(ShowAssetCipherRequest request) {
+        return new SyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse>(request, VodMeta.showAssetCipher, hcClient);
     }
 
     /**
@@ -612,6 +678,28 @@ public class VodClient {
     }
 
     /**
+     * 查询CDN预热
+     * 查询预热结果。
+     *
+     * @param ShowPreheatingAssetRequest 请求对象
+     * @return ShowPreheatingAssetResponse
+     */
+    public ShowPreheatingAssetResponse showPreheatingAsset(ShowPreheatingAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.showPreheatingAsset);
+    }
+
+    /**
+     * 查询CDN预热
+     * 查询预热结果。
+     *
+     * @param ShowPreheatingAssetRequest 请求对象
+     * @return SyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse>
+     */
+    public SyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAssetInvoker(ShowPreheatingAssetRequest request) {
+        return new SyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse>(request, VodMeta.showPreheatingAsset, hcClient);
+    }
+
+    /**
      * 查询源站统计信息
      * 查询点播源站的统计数据，包括流量、存储空间、转码时长。
      *
@@ -635,7 +723,7 @@ public class VodClient {
 
     /**
      * 媒资发布取消
-     * 将媒资设置为未发布状态。 
+     * 将媒资设置为未发布状态。
      *
      * @param UnpublishAssetsRequest 请求对象
      * @return UnpublishAssetsResponse
@@ -646,7 +734,7 @@ public class VodClient {
 
     /**
      * 媒资发布取消
-     * 将媒资设置为未发布状态。 
+     * 将媒资设置为未发布状态。
      *
      * @param UnpublishAssetsRequest 请求对象
      * @return SyncInvoker<UnpublishAssetsRequest, UnpublishAssetsResponse>
@@ -657,7 +745,7 @@ public class VodClient {
 
     /**
      * 视频更新
-     * 媒资创建后，单独上传封面、更新视频文件或更新已有封面。 如果是更新视频文件，更新完后要通过[确认媒资上传](https://support.huaweicloud.com/api-vod/vod_04_0198.html)接口通知点播服务。 如果是更新封面或单独上传封面，则不需通知。 更新视频可以使用分段上传，具体方式可以参考[示例2：媒资分段上传（20M以上）](https://support.huaweicloud.com/api-vod/vod_04_0216.html)。
+     * 媒资创建后，单独上传封面、更新视频文件或更新已有封面。  如果是更新视频文件，更新完后要通过[确认媒资上传](https://support.huaweicloud.com/api-vod/vod_04_0198.html)接口通知点播服务。  如果是更新封面或单独上传封面，则不需通知。  更新视频可以使用分段上传，具体方式可以参考[示例2：媒资分段上传（20M以上）](https://support.huaweicloud.com/api-vod/vod_04_0216.html)。
      *
      * @param UpdateAssetRequest 请求对象
      * @return UpdateAssetResponse
@@ -668,7 +756,7 @@ public class VodClient {
 
     /**
      * 视频更新
-     * 媒资创建后，单独上传封面、更新视频文件或更新已有封面。 如果是更新视频文件，更新完后要通过[确认媒资上传](https://support.huaweicloud.com/api-vod/vod_04_0198.html)接口通知点播服务。 如果是更新封面或单独上传封面，则不需通知。 更新视频可以使用分段上传，具体方式可以参考[示例2：媒资分段上传（20M以上）](https://support.huaweicloud.com/api-vod/vod_04_0216.html)。
+     * 媒资创建后，单独上传封面、更新视频文件或更新已有封面。  如果是更新视频文件，更新完后要通过[确认媒资上传](https://support.huaweicloud.com/api-vod/vod_04_0198.html)接口通知点播服务。  如果是更新封面或单独上传封面，则不需通知。  更新视频可以使用分段上传，具体方式可以参考[示例2：媒资分段上传（20M以上）](https://support.huaweicloud.com/api-vod/vod_04_0216.html)。
      *
      * @param UpdateAssetRequest 请求对象
      * @return SyncInvoker<UpdateAssetRequest, UpdateAssetResponse>
@@ -679,7 +767,7 @@ public class VodClient {
 
     /**
      * 修改媒资分类
-     * 修改媒资分类。 
+     * 修改媒资分类。
      *
      * @param UpdateAssetCategoryRequest 请求对象
      * @return UpdateAssetCategoryResponse
@@ -690,7 +778,7 @@ public class VodClient {
 
     /**
      * 修改媒资分类
-     * 修改媒资分类。 
+     * 修改媒资分类。
      *
      * @param UpdateAssetCategoryRequest 请求对象
      * @return SyncInvoker<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse>
@@ -701,7 +789,7 @@ public class VodClient {
 
     /**
      * 修改媒资属性
-     * 修改媒资属性。 
+     * 修改媒资属性。
      *
      * @param UpdateAssetMetaRequest 请求对象
      * @return UpdateAssetMetaResponse
@@ -712,7 +800,7 @@ public class VodClient {
 
     /**
      * 修改媒资属性
-     * 修改媒资属性。 
+     * 修改媒资属性。
      *
      * @param UpdateAssetMetaRequest 请求对象
      * @return SyncInvoker<UpdateAssetMetaRequest, UpdateAssetMetaResponse>
@@ -723,7 +811,7 @@ public class VodClient {
 
     /**
      * 桶授权
-     * 用户可以通过该接口将OBS桶授权给点播服务或取消点播服务的授权。 
+     * 用户可以通过该接口将OBS桶授权给点播服务或取消点播服务的授权。
      *
      * @param UpdateBucketAuthorizedRequest 请求对象
      * @return UpdateBucketAuthorizedResponse
@@ -734,7 +822,7 @@ public class VodClient {
 
     /**
      * 桶授权
-     * 用户可以通过该接口将OBS桶授权给点播服务或取消点播服务的授权。 
+     * 用户可以通过该接口将OBS桶授权给点播服务或取消点播服务的授权。
      *
      * @param UpdateBucketAuthorizedRequest 请求对象
      * @return SyncInvoker<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse>
@@ -766,8 +854,8 @@ public class VodClient {
     }
 
     /**
-     * 修改模板组
-     * ## 典型场景 ##  修改模板组接口。&lt;br/&gt;  ## 接口功能 ##   修改模板组。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 修改自定义模板组
+     * 修改自定义模板组。 
      *
      * @param UpdateTemplateGroupRequest 请求对象
      * @return UpdateTemplateGroupResponse
@@ -777,8 +865,8 @@ public class VodClient {
     }
 
     /**
-     * 修改模板组
-     * ## 典型场景 ##  修改模板组接口。&lt;br/&gt;  ## 接口功能 ##   修改模板组。&lt;br/&gt;  ## 接口约束 ##   无。&lt;br/&gt; 
+     * 修改自定义模板组
+     * 修改自定义模板组。 
      *
      * @param UpdateTemplateGroupRequest 请求对象
      * @return SyncInvoker<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse>
@@ -789,7 +877,7 @@ public class VodClient {
 
     /**
      * 修改水印模板
-     * ## 典型场景 ##   修改水印模板&lt;br/&gt;  ## 接口功能 ##   修改水印模板&lt;br/&gt;  ## 接口约束 ##   无&lt;br/&gt; 
+     * 修改水印模板 
      *
      * @param UpdateWatermarkTemplateRequest 请求对象
      * @return UpdateWatermarkTemplateResponse
@@ -800,7 +888,7 @@ public class VodClient {
 
     /**
      * 修改水印模板
-     * ## 典型场景 ##   修改水印模板&lt;br/&gt;  ## 接口功能 ##   修改水印模板&lt;br/&gt;  ## 接口约束 ##   无&lt;br/&gt; 
+     * 修改水印模板 
      *
      * @param UpdateWatermarkTemplateRequest 请求对象
      * @return SyncInvoker<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse>
@@ -811,7 +899,7 @@ public class VodClient {
 
     /**
      * 创建媒资：URL拉取注入
-     * 基于音视频源文件URL，将音视频文件离线拉取上传到点播服务。 
+     * 基于音视频源文件URL，将音视频文件离线拉取上传到点播服务。
      *
      * @param UploadMetaDataByUrlRequest 请求对象
      * @return UploadMetaDataByUrlResponse
@@ -822,7 +910,7 @@ public class VodClient {
 
     /**
      * 创建媒资：URL拉取注入
-     * 基于音视频源文件URL，将音视频文件离线拉取上传到点播服务。 
+     * 基于音视频源文件URL，将音视频文件离线拉取上传到点播服务。
      *
      * @param UploadMetaDataByUrlRequest 请求对象
      * @return SyncInvoker<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse>
@@ -832,96 +920,8 @@ public class VodClient {
     }
 
     /**
-     * CDN预热
-     * 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。
-     *
-     * @param CreatePreheatingAssetRequest 请求对象
-     * @return CreatePreheatingAssetResponse
-     */
-    public CreatePreheatingAssetResponse createPreheatingAsset(CreatePreheatingAssetRequest request) {
-        return hcClient.syncInvokeHttp(request, VodMeta.createPreheatingAsset);
-    }
-
-    /**
-     * CDN预热
-     * 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。
-     *
-     * @param CreatePreheatingAssetRequest 请求对象
-     * @return SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse>
-     */
-    public SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAssetInvoker(CreatePreheatingAssetRequest request) {
-        return new SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse>(request, VodMeta.createPreheatingAsset, hcClient);
-    }
-
-    /**
-     * 查询CDN预热
-     * 查询预热结果。 
-     *
-     * @param ShowPreheatingAssetRequest 请求对象
-     * @return ShowPreheatingAssetResponse
-     */
-    public ShowPreheatingAssetResponse showPreheatingAsset(ShowPreheatingAssetRequest request) {
-        return hcClient.syncInvokeHttp(request, VodMeta.showPreheatingAsset);
-    }
-
-    /**
-     * 查询CDN预热
-     * 查询预热结果。 
-     *
-     * @param ShowPreheatingAssetRequest 请求对象
-     * @return SyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse>
-     */
-    public SyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAssetInvoker(ShowPreheatingAssetRequest request) {
-        return new SyncInvoker<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse>(request, VodMeta.showPreheatingAsset, hcClient);
-    }
-
-    /**
-     * 密钥查询接口
-     * 终端播放HLS加密视频时，向租户管理系统请求密钥，租户管理系统先查询其本地有没有已缓存的密钥，没有时则调用此接口向VOD查询。该接口的具体使用场景请参见[通过HLS加密防止视频泄露](https://support.huaweicloud.com/bestpractice-vod/vod_10_0004.html)。
-     *
-     * @param ShowAssetCipherRequest 请求对象
-     * @return ShowAssetCipherResponse
-     */
-    public ShowAssetCipherResponse showAssetCipher(ShowAssetCipherRequest request) {
-        return hcClient.syncInvokeHttp(request, VodMeta.showAssetCipher);
-    }
-
-    /**
-     * 密钥查询接口
-     * 终端播放HLS加密视频时，向租户管理系统请求密钥，租户管理系统先查询其本地有没有已缓存的密钥，没有时则调用此接口向VOD查询。该接口的具体使用场景请参见[通过HLS加密防止视频泄露](https://support.huaweicloud.com/bestpractice-vod/vod_10_0004.html)。
-     *
-     * @param ShowAssetCipherRequest 请求对象
-     * @return SyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse>
-     */
-    public SyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipherInvoker(ShowAssetCipherRequest request) {
-        return new SyncInvoker<ShowAssetCipherRequest, ShowAssetCipherResponse>(request, VodMeta.showAssetCipher, hcClient);
-    }
-
-    /**
-     * 创建媒资：OBS托管方式
-     * 通过存量托管的方式，将已存储在OBS桶中的音视频文件同步到点播服务。  OBS托管方式分为增量托管和存量托管，增量托管暂只支持通过视频点播控制台配置，配置后，若OBS有新增音视频文件，则会自动同步到点播服务中，具体请参见[增量托管](https://support.huaweicloud.com/usermanual-vod/vod010032.html)。两个托管方式都需要先将对应的OBS桶授权给点播服务，具体请参见[桶授权](https://support.huaweicloud.com/usermanual-vod/vod010031.html)。 
-     *
-     * @param CreateTakeOverTaskRequest 请求对象
-     * @return CreateTakeOverTaskResponse
-     */
-    public CreateTakeOverTaskResponse createTakeOverTask(CreateTakeOverTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, VodMeta.createTakeOverTask);
-    }
-
-    /**
-     * 创建媒资：OBS托管方式
-     * 通过存量托管的方式，将已存储在OBS桶中的音视频文件同步到点播服务。  OBS托管方式分为增量托管和存量托管，增量托管暂只支持通过视频点播控制台配置，配置后，若OBS有新增音视频文件，则会自动同步到点播服务中，具体请参见[增量托管](https://support.huaweicloud.com/usermanual-vod/vod010032.html)。两个托管方式都需要先将对应的OBS桶授权给点播服务，具体请参见[桶授权](https://support.huaweicloud.com/usermanual-vod/vod010031.html)。 
-     *
-     * @param CreateTakeOverTaskRequest 请求对象
-     * @return SyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse>
-     */
-    public SyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTaskInvoker(CreateTakeOverTaskRequest request) {
-        return new SyncInvoker<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse>(request, VodMeta.createTakeOverTask, hcClient);
-    }
-
-    /**
      * 查询托管任务
-     * ## 典型场景 ##   查询托管任务&lt;br/&gt;  ## 接口功能 ##   查询托管任务&lt;br/&gt;  ## 接口约束 ##&lt;br/&gt; 
+     * 查询托管任务
      *
      * @param ListTakeOverTaskRequest 请求对象
      * @return ListTakeOverTaskResponse
@@ -932,7 +932,7 @@ public class VodClient {
 
     /**
      * 查询托管任务
-     * ## 典型场景 ##   查询托管任务&lt;br/&gt;  ## 接口功能 ##   查询托管任务&lt;br/&gt;  ## 接口约束 ##&lt;br/&gt; 
+     * 查询托管任务
      *
      * @param ListTakeOverTaskRequest 请求对象
      * @return SyncInvoker<ListTakeOverTaskRequest, ListTakeOverTaskResponse>
@@ -943,7 +943,7 @@ public class VodClient {
 
     /**
      * 查询托管媒资详情
-     * ## 典型场景 ##   查询托管媒资详情&lt;br/&gt;  ## 接口功能 ##   查询托管媒资详情&lt;br/&gt;  ## 接口约束 ##&lt;br/&gt; 
+     * 查询托管媒资详情 
      *
      * @param ShowTakeOverAssetDetailsRequest 请求对象
      * @return ShowTakeOverAssetDetailsResponse
@@ -954,7 +954,7 @@ public class VodClient {
 
     /**
      * 查询托管媒资详情
-     * ## 典型场景 ##   查询托管媒资详情&lt;br/&gt;  ## 接口功能 ##   查询托管媒资详情&lt;br/&gt;  ## 接口约束 ##&lt;br/&gt; 
+     * 查询托管媒资详情 
      *
      * @param ShowTakeOverAssetDetailsRequest 请求对象
      * @return SyncInvoker<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse>
@@ -965,7 +965,7 @@ public class VodClient {
 
     /**
      * 查询托管任务详情
-     * ## 典型场景 ##   查询托管任务详情&lt;br/&gt;  ## 接口功能 ##   查询托管任务详情&lt;br/&gt;  ## 接口约束 ##&lt;br/&gt; 
+     * 查询托管任务详情
      *
      * @param ShowTakeOverTaskDetailsRequest 请求对象
      * @return ShowTakeOverTaskDetailsResponse
@@ -976,7 +976,7 @@ public class VodClient {
 
     /**
      * 查询托管任务详情
-     * ## 典型场景 ##   查询托管任务详情&lt;br/&gt;  ## 接口功能 ##   查询托管任务详情&lt;br/&gt;  ## 接口约束 ##&lt;br/&gt; 
+     * 查询托管任务详情
      *
      * @param ShowTakeOverTaskDetailsRequest 请求对象
      * @return SyncInvoker<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse>

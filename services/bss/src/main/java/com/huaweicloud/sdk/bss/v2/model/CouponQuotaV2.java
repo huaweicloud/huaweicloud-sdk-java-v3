@@ -357,7 +357,7 @@ public class CouponQuotaV2  {
     }
 
     /**
-     * 优惠券额度上的限制属性，具体参见表3。
+     * 优惠券额度上的限制属性，具体参见表2。
      * @return limitInfos
      */
     public List<QuotaLimitInfo> getLimitInfos() {

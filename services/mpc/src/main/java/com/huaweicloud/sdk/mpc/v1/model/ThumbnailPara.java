@@ -297,6 +297,8 @@ public class ThumbnailPara  {
 
     /**
      * 根据视频时长百分比间隔采样时的百分比值。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return percent
      */
     public Integer getPercent() {
@@ -497,6 +499,8 @@ public class ThumbnailPara  {
 
     /**
      * 图片宽度  取值范围：(96,3840]  单位：px 
+     * minimum: 0
+     * maximum: 3840
      * @return width
      */
     public Integer getWidth() {
@@ -519,6 +523,8 @@ public class ThumbnailPara  {
 
     /**
      * 图片高度  取值范围：(96,2160]  单位：px 
+     * minimum: 0
+     * maximum: 2160
      * @return height
      */
     public Integer getHeight() {

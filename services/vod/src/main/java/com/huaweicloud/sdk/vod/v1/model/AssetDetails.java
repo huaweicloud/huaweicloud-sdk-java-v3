@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * AssetDetails
+ * 
  */
 public class AssetDetails  {
 
@@ -31,7 +31,7 @@ public class AssetDetails  {
     
     private String assetId;
     /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
+     * 媒资状态。 - \"CREATING\"：上传中 - \"FAILED\"：上传失败 - \"CREATED\"：上传成功 - \"PUBLISHED\"：已发布 - \"DELETED\"：已删除
      */
     public static final class AssetStatusEnum {
 
@@ -133,7 +133,7 @@ public class AssetDetails  {
     
     private AssetStatusEnum assetStatus;
     /**
-     * 转码状态 \"UN_TRANSCODE\"        //未转码 \"WAITING_TRANSCODE\"   //等待转码，排队中 \"TRANSCODING\"          //转码中 \"TRANSCODE_SUCCEED\"    //转码成功 \"TRANSCODE_FAILED\"     //转码失败 
+     * 转码状态 - \"UN_TRANSCODE\"：未转码 - \"WAITING_TRANSCODE\"：等待转码，排队中 - \"TRANSCODING\"：转码中 - \"TRANSCODE_SUCCEED\"：转码成功 - \"TRANSCODE_FAILED\"：转码失败
      */
     public static final class TranscodeStatusEnum {
 
@@ -278,7 +278,7 @@ public class AssetDetails  {
 
 
     /**
-     * 媒资状态。 \"CREATING\"   //上传中 \"FAILED\"     //上传失败 \"CREATED\"  //上传成功 \"PUBLISHED\"  //已发布 \"DELETED\"  //已删除 
+     * 媒资状态。 - \"CREATING\"：上传中 - \"FAILED\"：上传失败 - \"CREATED\"：上传成功 - \"PUBLISHED\"：已发布 - \"DELETED\"：已删除
      * @return assetStatus
      */
     public AssetStatusEnum getAssetStatus() {
@@ -300,7 +300,7 @@ public class AssetDetails  {
 
 
     /**
-     * 转码状态 \"UN_TRANSCODE\"        //未转码 \"WAITING_TRANSCODE\"   //等待转码，排队中 \"TRANSCODING\"          //转码中 \"TRANSCODE_SUCCEED\"    //转码成功 \"TRANSCODE_FAILED\"     //转码失败 
+     * 转码状态 - \"UN_TRANSCODE\"：未转码 - \"WAITING_TRANSCODE\"：等待转码，排队中 - \"TRANSCODING\"：转码中 - \"TRANSCODE_SUCCEED\"：转码成功 - \"TRANSCODE_FAILED\"：转码失败
      * @return transcodeStatus
      */
     public TranscodeStatusEnum getTranscodeStatus() {

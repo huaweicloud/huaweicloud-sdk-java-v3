@@ -45,6 +45,8 @@ public class CaseLabelInfo  {
 
     /**
      * 标签标识
+     * minimum: 0
+     * maximum: 2147483647
      * @return labelId
      */
     public Integer getLabelId() {

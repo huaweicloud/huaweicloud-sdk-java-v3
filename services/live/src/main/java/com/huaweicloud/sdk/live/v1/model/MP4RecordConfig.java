@@ -45,6 +45,8 @@ public class MP4RecordConfig  {
 
     /**
      * 单位为秒，周期录制时长，最小1分钟，最大12小时。如果为0则整个流录制一个文件。
+     * minimum: 0
+     * maximum: 43200
      * @return recordCycle
      */
     public Integer getRecordCycle() {
@@ -89,6 +91,8 @@ public class MP4RecordConfig  {
 
     /**
      * 录制mp4拼接时长，如果流中断超过该时间，则生成新文件。单位秒。如果为0表示流中断就生成新文件。默认为0。
+     * minimum: 0
+     * maximum: 300
      * @return recordMaxDurationToMergeFile
      */
     public Integer getRecordMaxDurationToMergeFile() {

@@ -86,6 +86,8 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
 
     /**
      * 查询结果是否被截取。 - 1代表被截取，即还有结果未被返回，可以通过设置page和size参数继续查询。 - 0代表未被截取，即所有结果已被返回。 
+     * minimum: 0
+     * maximum: 1
      * @return isTruncated
      */
     public Integer getIsTruncated() {
@@ -108,6 +110,8 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
 
     /**
      * 查询结果的数量。 
+     * minimum: 0
+     * maximum: 2147483647
      * @return total
      */
     public Integer getTotal() {

@@ -57,7 +57,7 @@ public class ListTakeOverTaskResponse extends SdkResponse {
     }
 
     /**
-     * Get tasks
+     * 托管任务信息
      * @return tasks
      */
     public List<TakeOverTask> getTasks() {
@@ -79,7 +79,7 @@ public class ListTakeOverTaskResponse extends SdkResponse {
 
 
     /**
-     * Get total
+     * 任务数量。
      * @return total
      */
     public Integer getTotal() {

@@ -19,9 +19,67 @@ public class DeleteTemplateGroupRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
+
+    public DeleteTemplateGroupRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public DeleteTemplateGroupRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
 
     public DeleteTemplateGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -54,16 +112,20 @@ public class DeleteTemplateGroupRequest  {
             return false;
         }
         DeleteTemplateGroupRequest deleteTemplateGroupRequest = (DeleteTemplateGroupRequest) o;
-        return Objects.equals(this.groupId, deleteTemplateGroupRequest.groupId);
+        return Objects.equals(this.authorization, deleteTemplateGroupRequest.authorization) &&
+            Objects.equals(this.xSdkDate, deleteTemplateGroupRequest.xSdkDate) &&
+            Objects.equals(this.groupId, deleteTemplateGroupRequest.groupId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(groupId);
+        return Objects.hash(authorization, xSdkDate, groupId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteTemplateGroupRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();

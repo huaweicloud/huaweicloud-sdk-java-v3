@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.V3Node;
+import com.huaweicloud.sdk.cce.v3.model.Node;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -38,7 +38,7 @@ public class ListNodesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
     
-    private List<V3Node> items = null;
+    private List<Node> items = null;
     
     public ListNodesResponse withKind(String kind) {
         this.kind = kind;
@@ -84,13 +84,13 @@ public class ListNodesResponse extends SdkResponse {
 
     
 
-    public ListNodesResponse withItems(List<V3Node> items) {
+    public ListNodesResponse withItems(List<Node> items) {
         this.items = items;
         return this;
     }
 
     
-    public ListNodesResponse addItemsItem(V3Node itemsItem) {
+    public ListNodesResponse addItemsItem(Node itemsItem) {
         if(this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -98,7 +98,7 @@ public class ListNodesResponse extends SdkResponse {
         return this;
     }
 
-    public ListNodesResponse withItems(Consumer<List<V3Node>> itemsSetter) {
+    public ListNodesResponse withItems(Consumer<List<Node>> itemsSetter) {
         if(this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -110,11 +110,11 @@ public class ListNodesResponse extends SdkResponse {
      * 节点对象列表，包含了当前集群下所有节点的详细信息。可通过items.metadata.name下的值来找到对应的节点。
      * @return items
      */
-    public List<V3Node> getItems() {
+    public List<Node> getItems() {
         return items;
     }
 
-    public void setItems(List<V3Node> items) {
+    public void setItems(List<Node> items) {
         this.items = items;
     }
 

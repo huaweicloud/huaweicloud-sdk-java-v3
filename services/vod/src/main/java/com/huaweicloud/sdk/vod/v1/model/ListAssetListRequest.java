@@ -27,6 +27,18 @@ public class ListAssetListRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="asset_id")
     
     private List<String> assetId = null;
@@ -337,6 +349,52 @@ public class ListAssetListRequest  {
     
     private OrderEnum order;
 
+    public ListAssetListRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public ListAssetListRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
+
     public ListAssetListRequest withAssetId(List<String> assetId) {
         this.assetId = assetId;
         return this;
@@ -396,7 +454,7 @@ public class ListAssetListRequest  {
     }
 
     /**
-     * 媒资状态，同时查询多个状态的媒资。 取值如下： - CREATING：上传中 - FAILED：上传失败 - CREATED：上传成功 - PUBLISHED：已发布 - TRANSCODING：转码中 - TRANSCODE_SUCCEED：转码成功 - TRANSCODE_FAILED：转码失败 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败 - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS ：审核不过，待人工复审 - REVIEW_PASSED：审核通过 - REVIEW_FAILED：审核任务失败 - REVIEW_BLOCKED：已屏蔽
+     * 媒资状态，同时查询多个状态的媒资。  取值如下： - CREATING：上传中 - FAILED：上传失败 - CREATED：上传成功 - PUBLISHED：已发布 - TRANSCODING：转码中 - TRANSCODE_SUCCEED：转码成功 - TRANSCODE_FAILED：转码失败 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败 - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS ：审核不过，待人工复审 - REVIEW_PASSED：审核通过 - REVIEW_FAILED：审核任务失败 - REVIEW_BLOCKED：已屏蔽
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -418,7 +476,7 @@ public class ListAssetListRequest  {
 
 
     /**
-     * 起始时间。 格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
+     * 起始时间。  格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -440,7 +498,7 @@ public class ListAssetListRequest  {
 
 
     /**
-     * 结束时间。 格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
+     * 结束时间。  格式为yyyymmddhhm mss。必须是与时区无关的UTC时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -542,7 +600,7 @@ public class ListAssetListRequest  {
     }
 
     /**
-     * 音视频文件的格式，支持多格式查询，最多不超过20个。 取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG - 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
+     * 音视频文件的格式，支持多格式查询，最多不超过20个。  取值如下： - 视频文件格式：MP4、TS、MOV、MXF、MPG、FLV、WMV、AVI、M4V、F4V、MPEG - 音频文件格式：MP3、OGG、WAV、WMA、APE、FLAC、AAC、AC3、MMF、AMR、M4A、M4R、WV、MP2
      * @return mediaType
      */
     public List<String> getMediaType() {
@@ -564,7 +622,7 @@ public class ListAssetListRequest  {
 
 
     /**
-     * 分页编号。 默认值：0。
+     * 分页编号。  默认值：0。
      * @return page
      */
     public Integer getPage() {
@@ -586,7 +644,7 @@ public class ListAssetListRequest  {
 
 
     /**
-     * 每页记录数。 取值范围：[1,100]。 默认值：10。
+     * 每页记录数。  取值范围：[1,100]。  默认值：10。
      * @return size
      */
     public Integer getSize() {
@@ -630,7 +688,9 @@ public class ListAssetListRequest  {
             return false;
         }
         ListAssetListRequest listAssetListRequest = (ListAssetListRequest) o;
-        return Objects.equals(this.assetId, listAssetListRequest.assetId) &&
+        return Objects.equals(this.authorization, listAssetListRequest.authorization) &&
+            Objects.equals(this.xSdkDate, listAssetListRequest.xSdkDate) &&
+            Objects.equals(this.assetId, listAssetListRequest.assetId) &&
             Objects.equals(this.status, listAssetListRequest.status) &&
             Objects.equals(this.startTime, listAssetListRequest.startTime) &&
             Objects.equals(this.endTime, listAssetListRequest.endTime) &&
@@ -644,12 +704,14 @@ public class ListAssetListRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, status, startTime, endTime, categoryId, tags, queryString, mediaType, page, size, order);
+        return Objects.hash(authorization, xSdkDate, assetId, status, startTime, endTime, categoryId, tags, queryString, mediaType, page, size, order);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAssetListRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

@@ -13,8 +13,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -356,96 +354,12 @@ public class ChangeBaremetalNameResponsesServers  {
     @JsonProperty(value="OS-EXT-SRV-ATTR:instance_name")
     
     private String osEXTSRVATTRInstanceName;
-    /**
-     * 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
-     */
-    public static final class OsEXTSTSPowerStateEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final OsEXTSTSPowerStateEnum NUMBER_0 = new OsEXTSTSPowerStateEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final OsEXTSTSPowerStateEnum NUMBER_1 = new OsEXTSTSPowerStateEnum(1);
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final OsEXTSTSPowerStateEnum NUMBER_4 = new OsEXTSTSPowerStateEnum(4);
-        
-
-        private static final Map<Integer, OsEXTSTSPowerStateEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, OsEXTSTSPowerStateEnum> createStaticFields() {
-            Map<Integer, OsEXTSTSPowerStateEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(4, NUMBER_4);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        OsEXTSTSPowerStateEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OsEXTSTSPowerStateEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            OsEXTSTSPowerStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSPowerStateEnum(value);
-            }
-            return result;
-        }
-
-        public static OsEXTSTSPowerStateEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            OsEXTSTSPowerStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEXTSTSPowerStateEnum) {
-                return this.value.equals(((OsEXTSTSPowerStateEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="OS-EXT-STS:power_state")
     
-    private OsEXTSTSPowerStateEnum osEXTSTSPowerState;
+    private Integer osEXTSTSPowerState;
     /**
      * 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
      */
@@ -1381,7 +1295,7 @@ public class ChangeBaremetalNameResponsesServers  {
 
     
 
-    public ChangeBaremetalNameResponsesServers withOsEXTSTSPowerState(OsEXTSTSPowerStateEnum osEXTSTSPowerState) {
+    public ChangeBaremetalNameResponsesServers withOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
         return this;
     }
@@ -1393,11 +1307,11 @@ public class ChangeBaremetalNameResponsesServers  {
      * 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
      * @return osEXTSTSPowerState
      */
-    public OsEXTSTSPowerStateEnum getOsEXTSTSPowerState() {
+    public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
 
-    public void setOsEXTSTSPowerState(OsEXTSTSPowerStateEnum osEXTSTSPowerState) {
+    public void setOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 

@@ -35,6 +35,8 @@ public class ShowUserInstancesResponse extends SdkResponse {
 
     /**
      * 非默认用户主密钥个数。
+     * minimum: 0
+     * maximum: 100
      * @return instanceNum
      */
     public Integer getInstanceNum() {

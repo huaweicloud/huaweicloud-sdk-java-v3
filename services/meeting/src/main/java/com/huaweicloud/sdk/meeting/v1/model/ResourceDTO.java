@@ -123,6 +123,8 @@ public class ResourceDTO  {
 
     /**
      * 资源数量
+     * minimum: 1
+     * maximum: 2000000
      * @return count
      */
     public Integer getCount() {

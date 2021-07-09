@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,9 +11,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.vod.v1.model.Common;
 import com.huaweicloud.sdk.vod.v1.model.QualityInfo;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -48,90 +44,12 @@ public class TemplateGroup  {
     @JsonProperty(value="type")
     
     private String type;
-    /**
-     * 是否自动加密
-     */
-    public static final class AutoEncryptEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final AutoEncryptEnum NUMBER_0 = new AutoEncryptEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final AutoEncryptEnum NUMBER_1 = new AutoEncryptEnum(1);
-        
-
-        private static final Map<Integer, AutoEncryptEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, AutoEncryptEnum> createStaticFields() {
-            Map<Integer, AutoEncryptEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        AutoEncryptEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AutoEncryptEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            AutoEncryptEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AutoEncryptEnum(value);
-            }
-            return result;
-        }
-
-        public static AutoEncryptEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            AutoEncryptEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AutoEncryptEnum) {
-                return this.value.equals(((AutoEncryptEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_encrypt")
     
-    private AutoEncryptEnum autoEncrypt;
+    private Integer autoEncrypt;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -245,7 +163,7 @@ public class TemplateGroup  {
 
     
 
-    public TemplateGroup withAutoEncrypt(AutoEncryptEnum autoEncrypt) {
+    public TemplateGroup withAutoEncrypt(Integer autoEncrypt) {
         this.autoEncrypt = autoEncrypt;
         return this;
     }
@@ -254,14 +172,14 @@ public class TemplateGroup  {
 
 
     /**
-     * 是否自动加密
+     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出必须要为HLS。
      * @return autoEncrypt
      */
-    public AutoEncryptEnum getAutoEncrypt() {
+    public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
 
-    public void setAutoEncrypt(AutoEncryptEnum autoEncrypt) {
+    public void setAutoEncrypt(Integer autoEncrypt) {
         this.autoEncrypt = autoEncrypt;
     }
 

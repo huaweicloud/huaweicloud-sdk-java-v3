@@ -66,6 +66,12 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     
     private String currentContext;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Port-ID")
+    
+    private String portID;
+
     public CreateKubernetesClusterCertResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -262,6 +268,28 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
 
     
 
+    public CreateKubernetesClusterCertResponse withPortID(String portID) {
+        this.portID = portID;
+        return this;
+    }
+
+    
+
+
+    /**
+     * Get portID
+     * @return portID
+     */
+    public String getPortID() {
+        return portID;
+    }
+
+    public void setPortID(String portID) {
+        this.portID = portID;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -277,11 +305,12 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
             Objects.equals(this.clusters, createKubernetesClusterCertResponse.clusters) &&
             Objects.equals(this.users, createKubernetesClusterCertResponse.users) &&
             Objects.equals(this.contexts, createKubernetesClusterCertResponse.contexts) &&
-            Objects.equals(this.currentContext, createKubernetesClusterCertResponse.currentContext);
+            Objects.equals(this.currentContext, createKubernetesClusterCertResponse.currentContext) &&
+            Objects.equals(this.portID, createKubernetesClusterCertResponse.portID);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(kind, apiVersion, preferences, clusters, users, contexts, currentContext);
+        return Objects.hash(kind, apiVersion, preferences, clusters, users, contexts, currentContext, portID);
     }
     @Override
     public String toString() {
@@ -294,6 +323,7 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("    contexts: ").append(toIndentedString(contexts)).append("\n");
         sb.append("    currentContext: ").append(toIndentedString(currentContext)).append("\n");
+        sb.append("    portID: ").append(toIndentedString(portID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

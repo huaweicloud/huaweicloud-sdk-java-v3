@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.rabbitmq.v2.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -112,96 +110,12 @@ public class ResizeInstanceReq  {
     @JsonProperty(value="new_spec_code")
     
     private NewSpecCodeEnum newSpecCode;
-    /**
-     * 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
-     */
-    public static final class NewStorageSpaceEnum {
-
-        
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
-        public static final NewStorageSpaceEnum NUMBER_300 = new NewStorageSpaceEnum(300);
-        
-        /**
-         * Enum NUMBER_500 for value: 500
-         */
-        public static final NewStorageSpaceEnum NUMBER_500 = new NewStorageSpaceEnum(500);
-        
-        /**
-         * Enum NUMBER_700 for value: 700
-         */
-        public static final NewStorageSpaceEnum NUMBER_700 = new NewStorageSpaceEnum(700);
-        
-
-        private static final Map<Integer, NewStorageSpaceEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, NewStorageSpaceEnum> createStaticFields() {
-            Map<Integer, NewStorageSpaceEnum> map = new HashMap<>();
-            map.put(300, NUMBER_300);
-            map.put(500, NUMBER_500);
-            map.put(700, NUMBER_700);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        NewStorageSpaceEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static NewStorageSpaceEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            NewStorageSpaceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NewStorageSpaceEnum(value);
-            }
-            return result;
-        }
-
-        public static NewStorageSpaceEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            NewStorageSpaceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NewStorageSpaceEnum) {
-                return this.value.equals(((NewStorageSpaceEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="new_storage_space")
     
-    private NewStorageSpaceEnum newStorageSpace;
+    private Integer newStorageSpace;
 
     public ResizeInstanceReq withNewSpecCode(NewSpecCodeEnum newSpecCode) {
         this.newSpecCode = newSpecCode;
@@ -225,7 +139,7 @@ public class ResizeInstanceReq  {
 
     
 
-    public ResizeInstanceReq withNewStorageSpace(NewStorageSpaceEnum newStorageSpace) {
+    public ResizeInstanceReq withNewStorageSpace(Integer newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
         return this;
     }
@@ -237,11 +151,11 @@ public class ResizeInstanceReq  {
      * 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
      * @return newStorageSpace
      */
-    public NewStorageSpaceEnum getNewStorageSpace() {
+    public Integer getNewStorageSpace() {
         return newStorageSpace;
     }
 
-    public void setNewStorageSpace(NewStorageSpaceEnum newStorageSpace) {
+    public void setNewStorageSpace(Integer newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
     }
 

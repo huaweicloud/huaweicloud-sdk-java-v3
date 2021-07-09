@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.cce.v3.model.ClusterMetadata;
+import com.huaweicloud.sdk.cce.v3.model.ClusterSpec;
 import com.huaweicloud.sdk.cce.v3.model.ClusterStatus;
-import com.huaweicloud.sdk.cce.v3.model.ShowClusterMetadata;
-import com.huaweicloud.sdk.cce.v3.model.V3ClusterSpec;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -38,13 +38,13 @@ public class ShowClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
     
-    private ShowClusterMetadata metadata;
+    private ClusterMetadata metadata;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="spec")
     
-    private V3ClusterSpec spec;
+    private ClusterSpec spec;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -96,14 +96,14 @@ public class ShowClusterResponse extends SdkResponse {
 
     
 
-    public ShowClusterResponse withMetadata(ShowClusterMetadata metadata) {
+    public ShowClusterResponse withMetadata(ClusterMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ShowClusterResponse withMetadata(Consumer<ShowClusterMetadata> metadataSetter) {
+    public ShowClusterResponse withMetadata(Consumer<ClusterMetadata> metadataSetter) {
         if(this.metadata == null ){
-            this.metadata = new ShowClusterMetadata();
+            this.metadata = new ClusterMetadata();
             metadataSetter.accept(this.metadata);
         }
         
@@ -115,24 +115,24 @@ public class ShowClusterResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public ShowClusterMetadata getMetadata() {
+    public ClusterMetadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(ShowClusterMetadata metadata) {
+    public void setMetadata(ClusterMetadata metadata) {
         this.metadata = metadata;
     }
 
     
 
-    public ShowClusterResponse withSpec(V3ClusterSpec spec) {
+    public ShowClusterResponse withSpec(ClusterSpec spec) {
         this.spec = spec;
         return this;
     }
 
-    public ShowClusterResponse withSpec(Consumer<V3ClusterSpec> specSetter) {
+    public ShowClusterResponse withSpec(Consumer<ClusterSpec> specSetter) {
         if(this.spec == null ){
-            this.spec = new V3ClusterSpec();
+            this.spec = new ClusterSpec();
             specSetter.accept(this.spec);
         }
         
@@ -144,11 +144,11 @@ public class ShowClusterResponse extends SdkResponse {
      * Get spec
      * @return spec
      */
-    public V3ClusterSpec getSpec() {
+    public ClusterSpec getSpec() {
         return spec;
     }
 
-    public void setSpec(V3ClusterSpec spec) {
+    public void setSpec(ClusterSpec spec) {
         this.spec = spec;
     }
 

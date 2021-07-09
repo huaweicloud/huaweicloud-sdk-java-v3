@@ -51,6 +51,8 @@ public class Command  {
 
     /**
      * 命令所属服务id
+     * minimum: 0
+     * maximum: 999999999999999999
      * @return serviceId
      */
     public Integer getServiceId() {
@@ -73,6 +75,8 @@ public class Command  {
 
     /**
      * 命令id
+     * minimum: 0
+     * maximum: 999999999999999999
      * @return commandId
      */
     public Integer getCommandId() {

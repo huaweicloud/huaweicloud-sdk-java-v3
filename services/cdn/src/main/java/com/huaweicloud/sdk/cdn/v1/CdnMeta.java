@@ -488,6 +488,14 @@ public class CdnMeta {
                 req.setDomainName(v);
             })
         );
+        builder.withRequestField("service_area",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDomainItemDetailsRequest::getServiceArea, (req, v) -> {
+                req.setServiceArea(v);
+            })
+        );
         builder.withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1027,7 +1035,7 @@ public class CdnMeta {
         );
         builder.withRequestField("start_time",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             Long.class,
             f -> f.withMarshaller(ShowTopUrlRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
@@ -1035,7 +1043,7 @@ public class CdnMeta {
         );
         builder.withRequestField("end_time",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             Long.class,
             f -> f.withMarshaller(ShowTopUrlRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
@@ -1060,7 +1068,7 @@ public class CdnMeta {
         builder.withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            ShowTopUrlRequest.StatTypeEnum.class,
             f -> f.withMarshaller(ShowTopUrlRequest::getStatType, (req, v) -> {
                 req.setStatType(v);
             })

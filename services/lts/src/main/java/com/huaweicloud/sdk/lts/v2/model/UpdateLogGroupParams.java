@@ -33,6 +33,8 @@ public class UpdateLogGroupParams  {
 
     /**
      * 日志存储时间 天。 取值范围为 [1, 30]
+     * minimum: 1
+     * maximum: 30
      * @return ttlInDays
      */
     public Integer getTtlInDays() {

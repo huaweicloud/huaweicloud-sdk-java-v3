@@ -78,7 +78,7 @@ public class CdnIps  {
 
 
     /**
-     * 是否是华为云CDN节点。
+     * 是否是华为云CDN节点。（true:是华为云CDN节点，false:不是华为云CDN节点）
      * @return belongs
      */
     public Boolean getBelongs() {
@@ -100,7 +100,7 @@ public class CdnIps  {
 
 
     /**
-     * IP归属地。
+     * IP归属地省份。（Unknown:表示未知归属地）
      * @return region
      */
     public String getRegion() {
@@ -122,7 +122,7 @@ public class CdnIps  {
 
 
     /**
-     * 运营商。
+     * 运营商名称。如果IP归属地未知，该字段返回null。
      * @return isp
      */
     public String getIsp() {
@@ -144,7 +144,7 @@ public class CdnIps  {
 
 
     /**
-     * 平台。
+     * 平台。如果IP归属地未知，该字段返回null。
      * @return platform
      */
     public String getPlatform() {

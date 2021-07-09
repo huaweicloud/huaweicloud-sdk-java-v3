@@ -127,6 +127,7 @@ public class ThrottleSpecialCreate  {
 
     /**
      * 流控时间内特殊对象能够访问API的最大次数限制
+     * minimum: 1
      * @return callLimits
      */
     public Integer getCallLimits() {

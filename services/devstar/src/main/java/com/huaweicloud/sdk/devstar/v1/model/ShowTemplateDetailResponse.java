@@ -285,6 +285,8 @@ public class ShowTemplateDetailResponse extends SdkResponse {
 
     /**
      * 模板状态。
+     * minimum: 1
+     * maximum: 5
      * @return status
      */
     public Integer getStatus() {

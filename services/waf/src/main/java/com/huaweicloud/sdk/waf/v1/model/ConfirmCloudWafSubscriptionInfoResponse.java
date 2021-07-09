@@ -44,6 +44,8 @@ public class ConfirmCloudWafSubscriptionInfoResponse extends SdkResponse {
 
     /**
      * 云模式版本，-2：已冻结，-1：未订购，1：基础版，2：专业版，3：企业版，4：旗舰版，22：按需版本
+     * minimum: -2
+     * maximum: 30
      * @return type
      */
     public Integer getType() {

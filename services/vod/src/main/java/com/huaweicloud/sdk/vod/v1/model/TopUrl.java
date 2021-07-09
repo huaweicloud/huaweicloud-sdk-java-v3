@@ -122,7 +122,7 @@ public class TopUrl  {
 
 
     /**
-     * 媒资时长。 单位：秒。
+     * 媒资时长。  单位：秒。
      * @return duration
      */
     public Integer getDuration() {
@@ -144,7 +144,7 @@ public class TopUrl  {
 
 
     /**
-     * 媒资原始大小。 单位：字节。
+     * 媒资原始大小。  单位：字节。
      * @return size
      */
     public Long getSize() {

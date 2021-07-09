@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AuditReport;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
 import com.huaweicloud.sdk.mpc.v1.model.PicInfo;
 import com.huaweicloud.sdk.mpc.v1.model.TranscodeDetail;
@@ -237,12 +236,6 @@ public class QueryTranscodingsTaskResponse  {
     
     private List<PicInfo> picInfo = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audit_report")
-    
-    private AuditReport auditReport;
-
     public QueryTranscodingsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -687,35 +680,6 @@ public class QueryTranscodingsTaskResponse  {
 
     
 
-    public QueryTranscodingsTaskResponse withAuditReport(AuditReport auditReport) {
-        this.auditReport = auditReport;
-        return this;
-    }
-
-    public QueryTranscodingsTaskResponse withAuditReport(Consumer<AuditReport> auditReportSetter) {
-        if(this.auditReport == null ){
-            this.auditReport = new AuditReport();
-            auditReportSetter.accept(this.auditReport);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get auditReport
-     * @return auditReport
-     */
-    public AuditReport getAuditReport() {
-        return auditReport;
-    }
-
-    public void setAuditReport(AuditReport auditReport) {
-        this.auditReport = auditReport;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -741,12 +705,11 @@ public class QueryTranscodingsTaskResponse  {
             Objects.equals(this.transcodeDetail, queryTranscodingsTaskResponse.transcodeDetail) &&
             Objects.equals(this.thumbnailOutput, queryTranscodingsTaskResponse.thumbnailOutput) &&
             Objects.equals(this.thumbnailOutputname, queryTranscodingsTaskResponse.thumbnailOutputname) &&
-            Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo) &&
-            Objects.equals(this.auditReport, queryTranscodingsTaskResponse.auditReport);
+            Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, userData, errorCode, description, tips, outputUrl, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo, auditReport);
+        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, userData, errorCode, description, tips, outputUrl, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo);
     }
     @Override
     public String toString() {
@@ -769,7 +732,6 @@ public class QueryTranscodingsTaskResponse  {
         sb.append("    thumbnailOutput: ").append(toIndentedString(thumbnailOutput)).append("\n");
         sb.append("    thumbnailOutputname: ").append(toIndentedString(thumbnailOutputname)).append("\n");
         sb.append("    picInfo: ").append(toIndentedString(picInfo)).append("\n");
-        sb.append("    auditReport: ").append(toIndentedString(auditReport)).append("\n");
         sb.append("}");
         return sb.toString();
     }

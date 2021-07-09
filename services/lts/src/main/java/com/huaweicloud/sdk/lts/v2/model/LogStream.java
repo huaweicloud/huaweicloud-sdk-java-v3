@@ -119,6 +119,8 @@ public class LogStream  {
 
     /**
      * 过滤器个数 
+     * minimum: 0
+     * maximum: 5
      * @return filterCount
      */
     public Integer getFilterCount() {

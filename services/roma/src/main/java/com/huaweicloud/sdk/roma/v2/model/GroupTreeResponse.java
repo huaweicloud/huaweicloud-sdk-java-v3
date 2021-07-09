@@ -65,6 +65,8 @@ public class GroupTreeResponse  {
 
     /**
      * 分组id
+     * minimum: 1
+     * maximum: 99999999
      * @return id
      */
     public Integer getId() {
@@ -109,6 +111,8 @@ public class GroupTreeResponse  {
 
     /**
      * 父分组id
+     * minimum: 1
+     * maximum: 99999999
      * @return parentId
      */
     public Integer getParentId() {

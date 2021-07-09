@@ -7,8 +7,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,7 +24,7 @@ import java.util.Objects;
 public class Output  {
 
     /**
-     * 协议类型。 取值如下： - hls - dash - mp4
+     * 协议类型。  取值如下： - hls - dash - mp4
      */
     public static final class PlayTypeEnum {
 
@@ -133,92 +131,14 @@ public class Output  {
     @JsonProperty(value="url")
     
     private String url;
-    /**
-     * 标记流是否已被加密。 取值如下： - 0：表示未加密。 - 1：表示已被加密。
-     */
-    public static final class EncryptedEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final EncryptedEnum NUMBER_0 = new EncryptedEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final EncryptedEnum NUMBER_1 = new EncryptedEnum(1);
-        
-
-        private static final Map<Integer, EncryptedEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, EncryptedEnum> createStaticFields() {
-            Map<Integer, EncryptedEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        EncryptedEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EncryptedEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            EncryptedEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EncryptedEnum(value);
-            }
-            return result;
-        }
-
-        public static EncryptedEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            EncryptedEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EncryptedEnum) {
-                return this.value.equals(((EncryptedEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="encrypted")
     
-    private EncryptedEnum encrypted;
+    private Integer encrypted;
     /**
-     * 清晰度。 取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
+     * 清晰度。  取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
      */
     public static final class QualityEnum {
 
@@ -329,7 +249,7 @@ public class Output  {
 
 
     /**
-     * 协议类型。 取值如下： - hls - dash - mp4
+     * 协议类型。  取值如下： - hls - dash - mp4
      * @return playType
      */
     public PlayTypeEnum getPlayType() {
@@ -364,7 +284,7 @@ public class Output  {
 
     
 
-    public Output withEncrypted(EncryptedEnum encrypted) {
+    public Output withEncrypted(Integer encrypted) {
         this.encrypted = encrypted;
         return this;
     }
@@ -373,14 +293,14 @@ public class Output  {
 
 
     /**
-     * 标记流是否已被加密。 取值如下： - 0：表示未加密。 - 1：表示已被加密。
+     * 标记流是否已被加密。  取值如下： - 0：表示未加密。 - 1：表示已被加密。
      * @return encrypted
      */
-    public EncryptedEnum getEncrypted() {
+    public Integer getEncrypted() {
         return encrypted;
     }
 
-    public void setEncrypted(EncryptedEnum encrypted) {
+    public void setEncrypted(Integer encrypted) {
         this.encrypted = encrypted;
     }
 
@@ -395,7 +315,7 @@ public class Output  {
 
 
     /**
-     * 清晰度。 取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
+     * 清晰度。  取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
      * @return quality
      */
     public QualityEnum getQuality() {

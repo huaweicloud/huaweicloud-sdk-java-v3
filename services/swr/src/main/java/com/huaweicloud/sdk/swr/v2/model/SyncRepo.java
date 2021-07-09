@@ -73,9 +73,9 @@ public class SyncRepo  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="synAuto")
+    @JsonProperty(value="syncAuto")
     
-    private Boolean synAuto;
+    private Boolean syncAuto;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -281,8 +281,8 @@ public class SyncRepo  {
 
     
 
-    public SyncRepo withSynAuto(Boolean synAuto) {
-        this.synAuto = synAuto;
+    public SyncRepo withSyncAuto(Boolean syncAuto) {
+        this.syncAuto = syncAuto;
         return this;
     }
 
@@ -291,14 +291,14 @@ public class SyncRepo  {
 
     /**
      * 自动同步
-     * @return synAuto
+     * @return syncAuto
      */
-    public Boolean getSynAuto() {
-        return synAuto;
+    public Boolean getSyncAuto() {
+        return syncAuto;
     }
 
-    public void setSynAuto(Boolean synAuto) {
-        this.synAuto = synAuto;
+    public void setSyncAuto(Boolean syncAuto) {
+        this.syncAuto = syncAuto;
     }
 
     
@@ -343,12 +343,12 @@ public class SyncRepo  {
             Objects.equals(this.remoteNamespace, syncRepo.remoteNamespace) &&
             Objects.equals(this.remoteRegionId, syncRepo.remoteRegionId) &&
             Objects.equals(this.repoName, syncRepo.repoName) &&
-            Objects.equals(this.synAuto, syncRepo.synAuto) &&
+            Objects.equals(this.syncAuto, syncRepo.syncAuto) &&
             Objects.equals(this.updatedAt, syncRepo.updatedAt);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(createdAt, domainID, domainName, id, namespace, override, remoteNamespace, remoteRegionId, repoName, synAuto, updatedAt);
+        return Objects.hash(createdAt, domainID, domainName, id, namespace, override, remoteNamespace, remoteRegionId, repoName, syncAuto, updatedAt);
     }
     @Override
     public String toString() {
@@ -363,7 +363,7 @@ public class SyncRepo  {
         sb.append("    remoteNamespace: ").append(toIndentedString(remoteNamespace)).append("\n");
         sb.append("    remoteRegionId: ").append(toIndentedString(remoteRegionId)).append("\n");
         sb.append("    repoName: ").append(toIndentedString(repoName)).append("\n");
-        sb.append("    synAuto: ").append(toIndentedString(synAuto)).append("\n");
+        sb.append("    syncAuto: ").append(toIndentedString(syncAuto)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();

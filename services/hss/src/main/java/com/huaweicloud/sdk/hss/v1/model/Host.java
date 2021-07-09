@@ -1065,6 +1065,8 @@ public class Host  {
 
     /**
      * 资产风险个数
+     * minimum: 0
+     * maximum: 2097152
      * @return riskPortNum
      */
     public Integer getRiskPortNum() {
@@ -1087,6 +1089,8 @@ public class Host  {
 
     /**
      * 漏洞风险个数
+     * minimum: 0
+     * maximum: 2097152
      * @return riskVulNum
      */
     public Integer getRiskVulNum() {
@@ -1109,6 +1113,8 @@ public class Host  {
 
     /**
      * 入侵风险个数
+     * minimum: 0
+     * maximum: 2097152
      * @return riskIntrusionNum
      */
     public Integer getRiskIntrusionNum() {
@@ -1131,6 +1137,8 @@ public class Host  {
 
     /**
      * 基线风险个数
+     * minimum: 0
+     * maximum: 2097152
      * @return riskBaselineNum
      */
     public Integer getRiskBaselineNum() {

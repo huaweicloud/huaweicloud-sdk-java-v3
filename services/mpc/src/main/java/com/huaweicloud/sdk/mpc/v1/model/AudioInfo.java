@@ -113,6 +113,8 @@ public class AudioInfo  {
 
     /**
      * 音频采样率
+     * minimum: 0
+     * maximum: 2147483647
      * @return sample
      */
     public Integer getSample() {
@@ -135,6 +137,8 @@ public class AudioInfo  {
 
     /**
      * 音频信道
+     * minimum: 0
+     * maximum: 2147483647
      * @return channels
      */
     public Integer getChannels() {
@@ -157,6 +161,8 @@ public class AudioInfo  {
 
     /**
      * 是否开启了天空音。
+     * minimum: 0
+     * maximum: 1
      * @return skySwitch
      */
     public Integer getSkySwitch() {
@@ -179,6 +185,8 @@ public class AudioInfo  {
 
     /**
      * 音频码率，单位: kbit/s 
+     * minimum: 0
+     * maximum: 2147483647
      * @return bitrate
      */
     public Integer getBitrate() {

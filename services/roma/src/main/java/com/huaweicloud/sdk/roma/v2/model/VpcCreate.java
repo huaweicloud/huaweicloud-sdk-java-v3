@@ -5,10 +5,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -35,192 +31,24 @@ public class VpcCreate  {
     @JsonProperty(value="name")
     
     private String name;
-    /**
-     * VPC通道的类型。 - 1：私网ELB通道（待废弃） - 2：ROMA Connect APIC内置支持负载均衡功能的快速通道类型
-     */
-    public static final class TypeEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
-        
-
-        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, TypeEnum> createStaticFields() {
-            Map<Integer, TypeEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        TypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type;
+    private Integer type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="port")
     
     private Integer port;
-    /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
-     */
-    public static final class BalanceStrategyEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final BalanceStrategyEnum NUMBER_1 = new BalanceStrategyEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final BalanceStrategyEnum NUMBER_2 = new BalanceStrategyEnum(2);
-        
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final BalanceStrategyEnum NUMBER_3 = new BalanceStrategyEnum(3);
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final BalanceStrategyEnum NUMBER_4 = new BalanceStrategyEnum(4);
-        
-
-        private static final Map<Integer, BalanceStrategyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, BalanceStrategyEnum> createStaticFields() {
-            Map<Integer, BalanceStrategyEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
-            map.put(4, NUMBER_4);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        BalanceStrategyEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static BalanceStrategyEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
-        }
-
-        public static BalanceStrategyEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BalanceStrategyEnum) {
-                return this.value.equals(((BalanceStrategyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="balance_strategy")
     
-    private BalanceStrategyEnum balanceStrategy;
+    private Integer balanceStrategy;
     /**
      * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
      */
@@ -340,7 +168,7 @@ public class VpcCreate  {
 
     
 
-    public VpcCreate withType(TypeEnum type) {
+    public VpcCreate withType(Integer type) {
         this.type = type;
         return this;
     }
@@ -352,11 +180,11 @@ public class VpcCreate  {
      * VPC通道的类型。 - 1：私网ELB通道（待废弃） - 2：ROMA Connect APIC内置支持负载均衡功能的快速通道类型
      * @return type
      */
-    public TypeEnum getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
@@ -384,7 +212,7 @@ public class VpcCreate  {
 
     
 
-    public VpcCreate withBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
+    public VpcCreate withBalanceStrategy(Integer balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
     }
@@ -396,11 +224,11 @@ public class VpcCreate  {
      * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
      * @return balanceStrategy
      */
-    public BalanceStrategyEnum getBalanceStrategy() {
+    public Integer getBalanceStrategy() {
         return balanceStrategy;
     }
 
-    public void setBalanceStrategy(BalanceStrategyEnum balanceStrategy) {
+    public void setBalanceStrategy(Integer balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
     }
 

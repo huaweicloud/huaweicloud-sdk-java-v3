@@ -50,6 +50,8 @@ public class CheckAuthUsersOfAppResponse extends SdkResponse {
 
     /**
      * 应用的总成员数量
+     * minimum: 1
+     * maximum: 5
      * @return total
      */
     public Integer getTotal() {

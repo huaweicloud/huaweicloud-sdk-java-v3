@@ -249,6 +249,8 @@ public class TemplateQueryV2  {
 
     /**
      * 查所有模板时只处理上架的；查用户模板，需支持按状态查询，状态： - 0：审核中 - 1：上架 - 2：下架 不传表示查所有的（默认） 
+     * minimum: 0
+     * maximum: 2
      * @return status
      */
     public Integer getStatus() {
@@ -365,6 +367,8 @@ public class TemplateQueryV2  {
 
     /**
      * 偏移量，表示从此偏移量开始查询，offset大于等于0。
+     * minimum: 0
+     * maximum: 100000
      * @return offset
      */
     public Integer getOffset() {
@@ -387,6 +391,8 @@ public class TemplateQueryV2  {
 
     /**
      * 每页的模板条数。
+     * minimum: 1
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {
@@ -481,6 +487,8 @@ public class TemplateQueryV2  {
 
     /**
      * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
+     * minimum: 0
+     * maximum: 1
      * @return isStatic
      */
     public Integer getIsStatic() {

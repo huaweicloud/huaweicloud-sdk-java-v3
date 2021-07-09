@@ -175,7 +175,7 @@ public class PersistentVolumeClaimSpec  {
 
 
     /**
-     * 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。  - bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk) 。 - nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk) 。 - obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk) 。 [- efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
+     * 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。   - bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk) 。  - nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk) 。  - obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk) 。  [- efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
      * @return storageType
      */
     public String getStorageType() {

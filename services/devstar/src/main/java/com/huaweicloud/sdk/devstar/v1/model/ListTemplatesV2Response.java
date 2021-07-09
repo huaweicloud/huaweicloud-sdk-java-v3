@@ -50,6 +50,8 @@ public class ListTemplatesV2Response extends SdkResponse {
 
     /**
      * 返回模板的数量。
+     * minimum: 0
+     * maximum: 100
      * @return count
      */
     public Integer getCount() {
@@ -72,6 +74,8 @@ public class ListTemplatesV2Response extends SdkResponse {
 
     /**
      * 返回关联了失效资源的模板数量。
+     * minimum: 0
+     * maximum: 100
      * @return invalidCount
      */
     public Integer getInvalidCount() {

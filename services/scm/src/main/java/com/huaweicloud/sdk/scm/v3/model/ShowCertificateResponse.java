@@ -416,6 +416,8 @@ public class ShowCertificateResponse extends SdkResponse {
 
     /**
      * 证书有效期，按月为单位。
+     * minimum: 12
+     * maximum: 12
      * @return validityPeriod
      */
     public Integer getValidityPeriod() {
@@ -526,6 +528,8 @@ public class ShowCertificateResponse extends SdkResponse {
 
     /**
      * 证书可绑定域名个数。
+     * minimum: 1
+     * maximum: 100
      * @return domainCount
      */
     public Integer getDomainCount() {
@@ -548,6 +552,8 @@ public class ShowCertificateResponse extends SdkResponse {
 
     /**
      * 证书可绑定附加域名个数。
+     * minimum: 0
+     * maximum: 99
      * @return wildcardCount
      */
     public Integer getWildcardCount() {

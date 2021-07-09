@@ -24,7 +24,7 @@ import java.util.Objects;
 public class PictureReviewRet  {
 
     /**
-     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
      */
     public static final class SuggestionEnum {
 
@@ -153,7 +153,7 @@ public class PictureReviewRet  {
 
 
     /**
-     * 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
      * @return suggestion
      */
     public SuggestionEnum getSuggestion() {
@@ -175,7 +175,7 @@ public class PictureReviewRet  {
 
 
     /**
-     * 截图在视频中的时间偏移值。封面不涉及此字段 单位：秒。
+     * 截图在视频中的时间偏移值。封面不涉及此字段  单位：秒。
      * @return offset
      */
     public Integer getOffset() {

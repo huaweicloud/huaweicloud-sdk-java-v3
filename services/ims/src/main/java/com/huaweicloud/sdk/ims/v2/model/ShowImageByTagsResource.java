@@ -29,9 +29,9 @@ public class ShowImageByTagsResource  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resouce_detail")
+    @JsonProperty(value="resource_detail")
     
-    private QueryImageByTagsResourceDetail resouceDetail;
+    private QueryImageByTagsResourceDetail resourceDetail;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -67,15 +67,15 @@ public class ShowImageByTagsResource  {
 
     
 
-    public ShowImageByTagsResource withResouceDetail(QueryImageByTagsResourceDetail resouceDetail) {
-        this.resouceDetail = resouceDetail;
+    public ShowImageByTagsResource withResourceDetail(QueryImageByTagsResourceDetail resourceDetail) {
+        this.resourceDetail = resourceDetail;
         return this;
     }
 
-    public ShowImageByTagsResource withResouceDetail(Consumer<QueryImageByTagsResourceDetail> resouceDetailSetter) {
-        if(this.resouceDetail == null ){
-            this.resouceDetail = new QueryImageByTagsResourceDetail();
-            resouceDetailSetter.accept(this.resouceDetail);
+    public ShowImageByTagsResource withResourceDetail(Consumer<QueryImageByTagsResourceDetail> resourceDetailSetter) {
+        if(this.resourceDetail == null ){
+            this.resourceDetail = new QueryImageByTagsResourceDetail();
+            resourceDetailSetter.accept(this.resourceDetail);
         }
         
         return this;
@@ -83,15 +83,15 @@ public class ShowImageByTagsResource  {
 
 
     /**
-     * Get resouceDetail
-     * @return resouceDetail
+     * Get resourceDetail
+     * @return resourceDetail
      */
-    public QueryImageByTagsResourceDetail getResouceDetail() {
-        return resouceDetail;
+    public QueryImageByTagsResourceDetail getResourceDetail() {
+        return resourceDetail;
     }
 
-    public void setResouceDetail(QueryImageByTagsResourceDetail resouceDetail) {
-        this.resouceDetail = resouceDetail;
+    public void setResourceDetail(QueryImageByTagsResourceDetail resourceDetail) {
+        this.resourceDetail = resourceDetail;
     }
 
     
@@ -164,20 +164,20 @@ public class ShowImageByTagsResource  {
         }
         ShowImageByTagsResource showImageByTagsResource = (ShowImageByTagsResource) o;
         return Objects.equals(this.resourceId, showImageByTagsResource.resourceId) &&
-            Objects.equals(this.resouceDetail, showImageByTagsResource.resouceDetail) &&
+            Objects.equals(this.resourceDetail, showImageByTagsResource.resourceDetail) &&
             Objects.equals(this.tags, showImageByTagsResource.tags) &&
             Objects.equals(this.resourceName, showImageByTagsResource.resourceName);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resouceDetail, tags, resourceName);
+        return Objects.hash(resourceId, resourceDetail, tags, resourceName);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowImageByTagsResource {\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-        sb.append("    resouceDetail: ").append(toIndentedString(resouceDetail)).append("\n");
+        sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("}");

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.V3NodeCreateRequest;
+import com.huaweicloud.sdk.cce.v3.model.NodeCreateRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -110,7 +110,7 @@ public class CreateNodeRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private V3NodeCreateRequest body;
+    private NodeCreateRequest body;
 
     public CreateNodeRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -156,14 +156,14 @@ public class CreateNodeRequest  {
 
     
 
-    public CreateNodeRequest withBody(V3NodeCreateRequest body) {
+    public CreateNodeRequest withBody(NodeCreateRequest body) {
         this.body = body;
         return this;
     }
 
-    public CreateNodeRequest withBody(Consumer<V3NodeCreateRequest> bodySetter) {
+    public CreateNodeRequest withBody(Consumer<NodeCreateRequest> bodySetter) {
         if(this.body == null ){
-            this.body = new V3NodeCreateRequest();
+            this.body = new NodeCreateRequest();
             bodySetter.accept(this.body);
         }
         
@@ -175,11 +175,11 @@ public class CreateNodeRequest  {
      * Get body
      * @return body
      */
-    public V3NodeCreateRequest getBody() {
+    public NodeCreateRequest getBody() {
         return body;
     }
 
-    public void setBody(V3NodeCreateRequest body) {
+    public void setBody(NodeCreateRequest body) {
         this.body = body;
     }
 

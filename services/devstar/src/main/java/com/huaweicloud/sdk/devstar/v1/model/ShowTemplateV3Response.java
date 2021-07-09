@@ -327,6 +327,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 模板评分（点赞数）。
+     * minimum: 1
+     * maximum: 99999
      * @return score
      */
     public Integer getScore() {
@@ -349,6 +351,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
+     * minimum: 0
+     * maximum: 5
      * @return status
      */
     public Integer getStatus() {
@@ -371,6 +375,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 访问量。
+     * minimum: 1
+     * maximum: 99999
      * @return viewCount
      */
     public Integer getViewCount() {
@@ -393,6 +399,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 引用量。
+     * minimum: 1
+     * maximum: 99999
      * @return usageCount
      */
     public Integer getUsageCount() {
@@ -481,6 +489,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 点赞状态： - 1：点赞 - 0：未点赞 
+     * minimum: 0
+     * maximum: 1
      * @return favoriteState
      */
     public Integer getFavoriteState() {
@@ -539,6 +549,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 平台来源： - 0：codelabs - 1：devstar 
+     * minimum: 0
+     * maximum: 1
      * @return platformSource
      */
     public Integer getPlatformSource() {
@@ -641,6 +653,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 代码存储位置： - 0：codehub - 1：Obs - 2：efs - 3：网络公开代码仓 
+     * minimum: 0
+     * maximum: 9
      * @return store
      */
     public Integer getStore() {
@@ -685,6 +699,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 模板文件解压缩之后的大小(单位:KB)。
+     * minimum: 0
+     * maximum: 2147483647
      * @return fileSize
      */
     public Integer getFileSize() {
@@ -729,6 +745,8 @@ public class ShowTemplateV3Response extends SdkResponse {
 
     /**
      * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
+     * minimum: 0
+     * maximum: 1
      * @return isStatic
      */
     public Integer getIsStatic() {

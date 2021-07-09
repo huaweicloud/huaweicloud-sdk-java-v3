@@ -40,7 +40,7 @@ public class CreateConfTokenRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Login-Type")
     
-    private String xLoginType;
+    private Integer xLoginType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -118,7 +118,7 @@ public class CreateConfTokenRequest  {
 
     
 
-    public CreateConfTokenRequest withXLoginType(String xLoginType) {
+    public CreateConfTokenRequest withXLoginType(Integer xLoginType) {
         this.xLoginType = xLoginType;
         return this;
     }
@@ -127,16 +127,16 @@ public class CreateConfTokenRequest  {
 
 
     /**
-     * 区分请求类型。 - 0: 终端请求。 - 1: CloudPortal请求。
+     * 请求类型。 - 1: 业务固定为1。
      * @return xLoginType
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Login-Type")
-    public String getXLoginType() {
+    public Integer getXLoginType() {
         return xLoginType;
     }
 
-    public void setXLoginType(String xLoginType) {
+    public void setXLoginType(Integer xLoginType) {
         this.xLoginType = xLoginType;
     }
 

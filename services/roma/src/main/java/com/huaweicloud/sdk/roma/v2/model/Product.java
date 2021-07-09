@@ -3,10 +3,6 @@ package com.huaweicloud.sdk.roma.v2.model;
 
 
 
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,9 +12,7 @@ import com.huaweicloud.sdk.roma.v2.model.Authentication;
 import com.huaweicloud.sdk.roma.v2.model.CreatedUser;
 import com.huaweicloud.sdk.roma.v2.model.LastUpdatedUser;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -75,186 +69,24 @@ public class Product  {
     @JsonProperty(value="model")
     
     private String model;
-    /**
-     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
-     */
-    public static final class ProductTypeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ProductTypeEnum NUMBER_0 = new ProductTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ProductTypeEnum NUMBER_1 = new ProductTypeEnum(1);
-        
-
-        private static final Map<Integer, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ProductTypeEnum> createStaticFields() {
-            Map<Integer, ProductTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ProductTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProductTypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static ProductTypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProductTypeEnum) {
-                return this.value.equals(((ProductTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="product_type")
     
-    private ProductTypeEnum productType;
+    private Integer productType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="description")
     
     private String description;
-    /**
-     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
-     */
-    public static final class ProtocolTypeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final ProtocolTypeEnum NUMBER_4 = new ProtocolTypeEnum(4);
-        
-
-        private static final Map<Integer, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ProtocolTypeEnum> createStaticFields() {
-            Map<Integer, ProtocolTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(2, NUMBER_2);
-            map.put(4, NUMBER_4);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ProtocolTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtocolTypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static ProtocolTypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolTypeEnum) {
-                return this.value.equals(((ProtocolTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protocol_type")
     
-    private ProtocolTypeEnum protocolType;
+    private Integer protocolType;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -350,6 +182,8 @@ public class Product  {
 
     /**
      * 产品ID
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return id
      */
     public Integer getId() {
@@ -494,7 +328,7 @@ public class Product  {
 
     
 
-    public Product withProductType(ProductTypeEnum productType) {
+    public Product withProductType(Integer productType) {
         this.productType = productType;
         return this;
     }
@@ -504,13 +338,15 @@ public class Product  {
 
     /**
      * 产品类型，0-普通产品(不支持子设备) 1-网关产品
+     * minimum: 0
+     * maximum: 10
      * @return productType
      */
-    public ProductTypeEnum getProductType() {
+    public Integer getProductType() {
         return productType;
     }
 
-    public void setProductType(ProductTypeEnum productType) {
+    public void setProductType(Integer productType) {
         this.productType = productType;
     }
 
@@ -538,7 +374,7 @@ public class Product  {
 
     
 
-    public Product withProtocolType(ProtocolTypeEnum protocolType) {
+    public Product withProtocolType(Integer protocolType) {
         this.protocolType = protocolType;
         return this;
     }
@@ -548,13 +384,15 @@ public class Product  {
 
     /**
      * 产品的协议类型 0-mqtt 2-modbus 4-opcua
+     * minimum: 0
+     * maximum: 10
      * @return protocolType
      */
-    public ProtocolTypeEnum getProtocolType() {
+    public Integer getProtocolType() {
         return protocolType;
     }
 
-    public void setProtocolType(ProtocolTypeEnum protocolType) {
+    public void setProtocolType(Integer protocolType) {
         this.protocolType = protocolType;
     }
 
@@ -747,6 +585,8 @@ public class Product  {
 
     /**
      * data_format 0-JSON 1-USER_DEFINED
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return dataFormat
      */
     public Integer getDataFormat() {

@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.cce.v3.model.NodeManagement;
 import com.huaweicloud.sdk.cce.v3.model.NodePoolNodeAutoscaling;
-import com.huaweicloud.sdk.cce.v3.model.V3NodeSpec;
+import com.huaweicloud.sdk.cce.v3.model.NodeSpec;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -112,7 +112,7 @@ public class NodePoolSpec  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="nodeTemplate")
     
-    private V3NodeSpec nodeTemplate;
+    private NodeSpec nodeTemplate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -154,14 +154,14 @@ public class NodePoolSpec  {
 
     
 
-    public NodePoolSpec withNodeTemplate(V3NodeSpec nodeTemplate) {
+    public NodePoolSpec withNodeTemplate(NodeSpec nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
         return this;
     }
 
-    public NodePoolSpec withNodeTemplate(Consumer<V3NodeSpec> nodeTemplateSetter) {
+    public NodePoolSpec withNodeTemplate(Consumer<NodeSpec> nodeTemplateSetter) {
         if(this.nodeTemplate == null ){
-            this.nodeTemplate = new V3NodeSpec();
+            this.nodeTemplate = new NodeSpec();
             nodeTemplateSetter.accept(this.nodeTemplate);
         }
         
@@ -173,11 +173,11 @@ public class NodePoolSpec  {
      * Get nodeTemplate
      * @return nodeTemplate
      */
-    public V3NodeSpec getNodeTemplate() {
+    public NodeSpec getNodeTemplate() {
         return nodeTemplate;
     }
 
-    public void setNodeTemplate(V3NodeSpec nodeTemplate) {
+    public void setNodeTemplate(NodeSpec nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
     }
 

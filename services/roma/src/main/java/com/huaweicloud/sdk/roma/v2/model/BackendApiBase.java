@@ -7,8 +7,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -278,84 +276,12 @@ public class BackendApiBase  {
     @JsonProperty(value="id")
     
     private String id;
-    /**
-     * 后端状态   - 1： 有效
-     */
-    public static final class StatusEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-        
-
-        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, StatusEnum> createStaticFields() {
-            Map<Integer, StatusEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        StatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
-        }
-
-        public static StatusEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private StatusEnum status;
+    private Integer status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -533,6 +459,7 @@ public class BackendApiBase  {
 
     /**
      * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
+     * minimum: 1
      * @return timeout
      */
     public Integer getTimeout() {
@@ -589,7 +516,7 @@ public class BackendApiBase  {
 
     
 
-    public BackendApiBase withStatus(StatusEnum status) {
+    public BackendApiBase withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -601,11 +528,11 @@ public class BackendApiBase  {
      * 后端状态   - 1： 有效
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

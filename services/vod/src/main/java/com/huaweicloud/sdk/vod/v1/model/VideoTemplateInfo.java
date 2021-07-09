@@ -16,12 +16,12 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * VideoTemplateInfo
+ * 模板视频信息
  */
 public class VideoTemplateInfo  {
 
     /**
-     * 画质<br/> 
+     * 画质。
      */
     public static final class QualityEnum {
 
@@ -174,7 +174,7 @@ public class VideoTemplateInfo  {
 
 
     /**
-     * 画质<br/> 
+     * 画质。
      * @return quality
      */
     public QualityEnum getQuality() {
@@ -196,7 +196,7 @@ public class VideoTemplateInfo  {
 
 
     /**
-     * 视频宽度<br/> 
+     * 视频宽度。
      * @return width
      */
     public Integer getWidth() {
@@ -218,7 +218,7 @@ public class VideoTemplateInfo  {
 
 
     /**
-     * 视频高度<br/> 
+     * 视频高度。
      * @return height
      */
     public Integer getHeight() {
@@ -240,7 +240,7 @@ public class VideoTemplateInfo  {
 
 
     /**
-     * 码率<br/> 
+     * 码率。
      * @return bitrate
      */
     public Integer getBitrate() {
@@ -262,7 +262,7 @@ public class VideoTemplateInfo  {
 
 
     /**
-     * 帧率（默认为1，1代表自适应，单位是帧每秒）<br/> 
+     * 帧率（默认为1，1代表自适应，单位是帧每秒）。
      * @return frameRate
      */
     public Integer getFrameRate() {

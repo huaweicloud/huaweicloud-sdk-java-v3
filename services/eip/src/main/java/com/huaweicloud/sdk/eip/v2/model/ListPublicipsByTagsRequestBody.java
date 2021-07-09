@@ -203,6 +203,7 @@ public class ListPublicipsByTagsRequestBody  {
 
     /**
      * 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数）
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {

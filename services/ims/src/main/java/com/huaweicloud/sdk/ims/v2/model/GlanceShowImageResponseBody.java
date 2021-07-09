@@ -738,18 +738,6 @@ public class GlanceShowImageResponseBody  {
     @JsonProperty(value="created_at")
     
     private String createdAt;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted")
-    
-    private Boolean deleted;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted_at")
-    
-    private String deletedAt;
     /**
      * 镜像的格式，目前支持vhd，zvhd、raw，qcow2,zvhd2。默认值是vhd。
      */
@@ -1555,6 +1543,78 @@ public class GlanceShowImageResponseBody  {
     
     private IsOffshelvedEnum isOffshelved;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__lazyloading")
+    
+    private Boolean lazyloading;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__os_feature_list")
+    
+    private String osFeatureList;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__root_origin")
+    
+    private String rootOrigin;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__sequence_num")
+    
+    private String sequenceNum;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__support_agent_list")
+    
+    private String supportAgentList;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__system__cmkid")
+    
+    private String systemCmkid;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="active_at")
+    
+    private String activeAt;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hw_vif_multiqueue_enabled")
+    
+    private String hwVifMultiqueueEnabled;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="max_ram")
+    
+    private String maxRam;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__image_location")
+    
+    private String imageLocation;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__is_config_init")
+    
+    private String isConfigInit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__account_code")
+    
+    private String accountCode;
+
     public GlanceShowImageResponseBody withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2149,50 +2209,6 @@ public class GlanceShowImageResponseBody  {
 
     
 
-    public GlanceShowImageResponseBody withDeleted(Boolean deleted) {
-        this.deleted = deleted;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否是删除的镜像，取值为true或者false。
-     * @return deleted
-     */
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    
-
-    public GlanceShowImageResponseBody withDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 删除时间。格式为UTC时间
-     * @return deletedAt
-     */
-    public String getDeletedAt() {
-        return deletedAt;
-    }
-
-    public void setDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
-    }
-
-    
-
     public GlanceShowImageResponseBody withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
         return this;
@@ -2697,6 +2713,288 @@ public class GlanceShowImageResponseBody  {
 
     
 
+    public GlanceShowImageResponseBody withLazyloading(Boolean lazyloading) {
+        this.lazyloading = lazyloading;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像是否支持延迟加载。取值为“True”或“False”。
+     * @return lazyloading
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__lazyloading")
+    public Boolean getLazyloading() {
+        return lazyloading;
+    }
+
+    public void setLazyloading(Boolean lazyloading) {
+        this.lazyloading = lazyloading;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withOsFeatureList(String osFeatureList) {
+        this.osFeatureList = osFeatureList;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像附加属性。该属性采用JSON格式来标识镜像支持的高级特性清单。
+     * @return osFeatureList
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__os_feature_list")
+    public String getOsFeatureList() {
+        return osFeatureList;
+    }
+
+    public void setOsFeatureList(String osFeatureList) {
+        this.osFeatureList = osFeatureList;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withRootOrigin(String rootOrigin) {
+        this.rootOrigin = rootOrigin;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 表示当前镜像来源是从外部导入。取值：file。
+     * @return rootOrigin
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__root_origin")
+    public String getRootOrigin() {
+        return rootOrigin;
+    }
+
+    public void setRootOrigin(String rootOrigin) {
+        this.rootOrigin = rootOrigin;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withSequenceNum(String sequenceNum) {
+        this.sequenceNum = sequenceNum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 目前暂时不用
+     * @return sequenceNum
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__sequence_num")
+    public String getSequenceNum() {
+        return sequenceNum;
+    }
+
+    public void setSequenceNum(String sequenceNum) {
+        this.sequenceNum = sequenceNum;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withSupportAgentList(String supportAgentList) {
+        this.supportAgentList = supportAgentList;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像是否支持企业主机安全或主机监控。 hss：企业主机安全 ces：主机监控
+     * @return supportAgentList
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__support_agent_list")
+    public String getSupportAgentList() {
+        return supportAgentList;
+    }
+
+    public void setSupportAgentList(String supportAgentList) {
+        this.supportAgentList = supportAgentList;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withSystemCmkid(String systemCmkid) {
+        this.systemCmkid = systemCmkid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 加密镜像所使用的密钥ID。
+     * @return systemCmkid
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__system__cmkid")
+    public String getSystemCmkid() {
+        return systemCmkid;
+    }
+
+    public void setSystemCmkid(String systemCmkid) {
+        this.systemCmkid = systemCmkid;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withActiveAt(String activeAt) {
+        this.activeAt = activeAt;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像状态变为正常的时间。
+     * @return activeAt
+     */
+    public String getActiveAt() {
+        return activeAt;
+    }
+
+    public void setActiveAt(String activeAt) {
+        this.activeAt = activeAt;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
+        this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像是否支持网卡多队列。取值为true或者false。
+     * @return hwVifMultiqueueEnabled
+     */
+    public String getHwVifMultiqueueEnabled() {
+        return hwVifMultiqueueEnabled;
+    }
+
+    public void setHwVifMultiqueueEnabled(String hwVifMultiqueueEnabled) {
+        this.hwVifMultiqueueEnabled = hwVifMultiqueueEnabled;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withMaxRam(String maxRam) {
+        this.maxRam = maxRam;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像支持的最大内存，单位为MB。取值可以参考云服务器规格限制，一般不设置。
+     * @return maxRam
+     */
+    public String getMaxRam() {
+        return maxRam;
+    }
+
+    public void setMaxRam(String maxRam) {
+        this.maxRam = maxRam;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 镜像的存储位置。
+     * @return imageLocation
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__image_location")
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withIsConfigInit(String isConfigInit) {
+        this.isConfigInit = isConfigInit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否完成了初始化配置。取值为true或false
+     * @return isConfigInit
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__is_config_init")
+    public String getIsConfigInit() {
+        return isConfigInit;
+    }
+
+    public void setIsConfigInit(String isConfigInit) {
+        this.isConfigInit = isConfigInit;
+    }
+
+    
+
+    public GlanceShowImageResponseBody withAccountCode(String accountCode) {
+        this.accountCode = accountCode;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 收费镜像标识。
+     * @return accountCode
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="__account_code")
+    public String getAccountCode() {
+        return accountCode;
+    }
+
+    public void setAccountCode(String accountCode) {
+        this.accountCode = accountCode;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -2731,8 +3029,6 @@ public class GlanceShowImageResponseBody  {
             Objects.equals(this.checksum, glanceShowImageResponseBody.checksum) &&
             Objects.equals(this.containerFormat, glanceShowImageResponseBody.containerFormat) &&
             Objects.equals(this.createdAt, glanceShowImageResponseBody.createdAt) &&
-            Objects.equals(this.deleted, glanceShowImageResponseBody.deleted) &&
-            Objects.equals(this.deletedAt, glanceShowImageResponseBody.deletedAt) &&
             Objects.equals(this.diskFormat, glanceShowImageResponseBody.diskFormat) &&
             Objects.equals(this.file, glanceShowImageResponseBody.file) &&
             Objects.equals(this.id, glanceShowImageResponseBody.id) &&
@@ -2754,11 +3050,23 @@ public class GlanceShowImageResponseBody  {
             Objects.equals(this.enterpriseProjectId, glanceShowImageResponseBody.enterpriseProjectId) &&
             Objects.equals(this.hwFirmwareType, glanceShowImageResponseBody.hwFirmwareType) &&
             Objects.equals(this.supportArm, glanceShowImageResponseBody.supportArm) &&
-            Objects.equals(this.isOffshelved, glanceShowImageResponseBody.isOffshelved);
+            Objects.equals(this.isOffshelved, glanceShowImageResponseBody.isOffshelved) &&
+            Objects.equals(this.lazyloading, glanceShowImageResponseBody.lazyloading) &&
+            Objects.equals(this.osFeatureList, glanceShowImageResponseBody.osFeatureList) &&
+            Objects.equals(this.rootOrigin, glanceShowImageResponseBody.rootOrigin) &&
+            Objects.equals(this.sequenceNum, glanceShowImageResponseBody.sequenceNum) &&
+            Objects.equals(this.supportAgentList, glanceShowImageResponseBody.supportAgentList) &&
+            Objects.equals(this.systemCmkid, glanceShowImageResponseBody.systemCmkid) &&
+            Objects.equals(this.activeAt, glanceShowImageResponseBody.activeAt) &&
+            Objects.equals(this.hwVifMultiqueueEnabled, glanceShowImageResponseBody.hwVifMultiqueueEnabled) &&
+            Objects.equals(this.maxRam, glanceShowImageResponseBody.maxRam) &&
+            Objects.equals(this.imageLocation, glanceShowImageResponseBody.imageLocation) &&
+            Objects.equals(this.isConfigInit, glanceShowImageResponseBody.isConfigInit) &&
+            Objects.equals(this.accountCode, glanceShowImageResponseBody.accountCode);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(backupId, dataOrigin, description, imageSize, imageSourceType, imagetype, isregistered, originalimagename, osBit, osType, osVersion, platform, productcode, supportDiskintensive, supportHighperformance, supportKvm, supportKvmGpuType, supportKvmInfiniband, supportLargememory, supportXen, supportXenGpuType, supportXenHana, checksum, containerFormat, createdAt, deleted, deletedAt, diskFormat, file, id, minDisk, minRam, name, owner, _protected, schema, self, size, status, tags, updatedAt, virtualEnvType, virtualSize, visibility, supportFcInject, enterpriseProjectId, hwFirmwareType, supportArm, isOffshelved);
+        return Objects.hash(backupId, dataOrigin, description, imageSize, imageSourceType, imagetype, isregistered, originalimagename, osBit, osType, osVersion, platform, productcode, supportDiskintensive, supportHighperformance, supportKvm, supportKvmGpuType, supportKvmInfiniband, supportLargememory, supportXen, supportXenGpuType, supportXenHana, checksum, containerFormat, createdAt, diskFormat, file, id, minDisk, minRam, name, owner, _protected, schema, self, size, status, tags, updatedAt, virtualEnvType, virtualSize, visibility, supportFcInject, enterpriseProjectId, hwFirmwareType, supportArm, isOffshelved, lazyloading, osFeatureList, rootOrigin, sequenceNum, supportAgentList, systemCmkid, activeAt, hwVifMultiqueueEnabled, maxRam, imageLocation, isConfigInit, accountCode);
     }
     @Override
     public String toString() {
@@ -2789,8 +3097,6 @@ public class GlanceShowImageResponseBody  {
         sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
         sb.append("    containerFormat: ").append(toIndentedString(containerFormat)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
-        sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
         sb.append("    diskFormat: ").append(toIndentedString(diskFormat)).append("\n");
         sb.append("    file: ").append(toIndentedString(file)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -2813,6 +3119,18 @@ public class GlanceShowImageResponseBody  {
         sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("    supportArm: ").append(toIndentedString(supportArm)).append("\n");
         sb.append("    isOffshelved: ").append(toIndentedString(isOffshelved)).append("\n");
+        sb.append("    lazyloading: ").append(toIndentedString(lazyloading)).append("\n");
+        sb.append("    osFeatureList: ").append(toIndentedString(osFeatureList)).append("\n");
+        sb.append("    rootOrigin: ").append(toIndentedString(rootOrigin)).append("\n");
+        sb.append("    sequenceNum: ").append(toIndentedString(sequenceNum)).append("\n");
+        sb.append("    supportAgentList: ").append(toIndentedString(supportAgentList)).append("\n");
+        sb.append("    systemCmkid: ").append(toIndentedString(systemCmkid)).append("\n");
+        sb.append("    activeAt: ").append(toIndentedString(activeAt)).append("\n");
+        sb.append("    hwVifMultiqueueEnabled: ").append(toIndentedString(hwVifMultiqueueEnabled)).append("\n");
+        sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
+        sb.append("    imageLocation: ").append(toIndentedString(imageLocation)).append("\n");
+        sb.append("    isConfigInit: ").append(toIndentedString(isConfigInit)).append("\n");
+        sb.append("    accountCode: ").append(toIndentedString(accountCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

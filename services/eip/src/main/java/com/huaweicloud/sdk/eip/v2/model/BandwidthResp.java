@@ -365,6 +365,12 @@ public class BandwidthResp  {
     
     private String updatedAt;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="publicip_border_group")
+    
+    private String publicipBorderGroup;
+
     public BandwidthResp withBandwidthType(String bandwidthType) {
         this.bandwidthType = bandwidthType;
         return this;
@@ -653,6 +659,8 @@ public class BandwidthResp  {
 
     /**
      * 功能说明：带宽支持的最大分组规则数。（该字段仅在上海1局点返回）
+     * minimum: 0
+     * maximum: 1024
      * @return ruleQuota
      */
     public Integer getRuleQuota() {
@@ -745,6 +753,28 @@ public class BandwidthResp  {
 
     
 
+    public BandwidthResp withPublicipBorderGroup(String publicipBorderGroup) {
+        this.publicipBorderGroup = publicipBorderGroup;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域才会返回此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：publicip只能绑定该字段相同的资源
+     * @return publicipBorderGroup
+     */
+    public String getPublicipBorderGroup() {
+        return publicipBorderGroup;
+    }
+
+    public void setPublicipBorderGroup(String publicipBorderGroup) {
+        this.publicipBorderGroup = publicipBorderGroup;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -769,11 +799,12 @@ public class BandwidthResp  {
             Objects.equals(this.ruleQuota, bandwidthResp.ruleQuota) &&
             Objects.equals(this.bandwidthRules, bandwidthResp.bandwidthRules) &&
             Objects.equals(this.createdAt, bandwidthResp.createdAt) &&
-            Objects.equals(this.updatedAt, bandwidthResp.updatedAt);
+            Objects.equals(this.updatedAt, bandwidthResp.updatedAt) &&
+            Objects.equals(this.publicipBorderGroup, bandwidthResp.publicipBorderGroup);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthType, billingInfo, chargeMode, id, name, publicipInfo, shareType, size, tenantId, enterpriseProjectId, status, enableBandwidthRules, ruleQuota, bandwidthRules, createdAt, updatedAt);
+        return Objects.hash(bandwidthType, billingInfo, chargeMode, id, name, publicipInfo, shareType, size, tenantId, enterpriseProjectId, status, enableBandwidthRules, ruleQuota, bandwidthRules, createdAt, updatedAt, publicipBorderGroup);
     }
     @Override
     public String toString() {
@@ -795,6 +826,7 @@ public class BandwidthResp  {
         sb.append("    bandwidthRules: ").append(toIndentedString(bandwidthRules)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    publicipBorderGroup: ").append(toIndentedString(publicipBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

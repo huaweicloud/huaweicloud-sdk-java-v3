@@ -279,6 +279,8 @@ public class CreateLogDumpObsRequestBody  {
 
     /**
      * 转储周期的长度， 与 period_unit 拼接后必须在该列表中 [\"2min\",\"5min\",\"30min\",\"1hour\",\"3hour\",\"6hour\",\"12hour\"]。
+     * minimum: 1
+     * maximum: 30
      * @return period
      */
     public Integer getPeriod() {

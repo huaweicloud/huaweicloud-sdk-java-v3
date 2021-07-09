@@ -7,10 +7,6 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -33,90 +29,12 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
     @JsonProperty(value="bind_num")
     
     private Integer bindNum;
-    /**
-     * 是否包含特殊流控配置 - 1：包含 - 2：不包含
-     */
-    public static final class IsIncludeSpecialThrottleEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final IsIncludeSpecialThrottleEnum NUMBER_1 = new IsIncludeSpecialThrottleEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final IsIncludeSpecialThrottleEnum NUMBER_2 = new IsIncludeSpecialThrottleEnum(2);
-        
-
-        private static final Map<Integer, IsIncludeSpecialThrottleEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, IsIncludeSpecialThrottleEnum> createStaticFields() {
-            Map<Integer, IsIncludeSpecialThrottleEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        IsIncludeSpecialThrottleEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static IsIncludeSpecialThrottleEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            IsIncludeSpecialThrottleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsIncludeSpecialThrottleEnum(value);
-            }
-            return result;
-        }
-
-        public static IsIncludeSpecialThrottleEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            IsIncludeSpecialThrottleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsIncludeSpecialThrottleEnum) {
-                return this.value.equals(((IsIncludeSpecialThrottleEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="is_include_special_throttle")
     
-    private IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle;
+    private Integer isIncludeSpecialThrottle;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -129,90 +47,12 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
     @JsonProperty(value="remark")
     
     private String remark;
-    /**
-     * 流控策略的类型 - 1：独享，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次
-     */
-    public static final class TypeEnum {
-
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
-        
-
-        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, TypeEnum> createStaticFields() {
-            Map<Integer, TypeEnum> map = new HashMap<>();
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        TypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
-        }
-
-        public static TypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="type")
     
-    private TypeEnum type;
+    private Integer type;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -380,7 +220,7 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
 
     
 
-    public CreateRequestThrottlingPolicyV2Response withIsIncludeSpecialThrottle(IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle) {
+    public CreateRequestThrottlingPolicyV2Response withIsIncludeSpecialThrottle(Integer isIncludeSpecialThrottle) {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
         return this;
     }
@@ -392,11 +232,11 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
      * 是否包含特殊流控配置 - 1：包含 - 2：不包含
      * @return isIncludeSpecialThrottle
      */
-    public IsIncludeSpecialThrottleEnum getIsIncludeSpecialThrottle() {
+    public Integer getIsIncludeSpecialThrottle() {
         return isIncludeSpecialThrottle;
     }
 
-    public void setIsIncludeSpecialThrottle(IsIncludeSpecialThrottleEnum isIncludeSpecialThrottle) {
+    public void setIsIncludeSpecialThrottle(Integer isIncludeSpecialThrottle) {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
     }
 
@@ -446,7 +286,7 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
 
     
 
-    public CreateRequestThrottlingPolicyV2Response withType(TypeEnum type) {
+    public CreateRequestThrottlingPolicyV2Response withType(Integer type) {
         this.type = type;
         return this;
     }
@@ -458,11 +298,11 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
      * 流控策略的类型 - 1：独享，表示绑定到流控策略的单个API流控时间内能够被调用多少次。 - 2：共享，表示绑定到流控策略的所有API流控时间内能够被调用多少次
      * @return type
      */
-    public TypeEnum getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 

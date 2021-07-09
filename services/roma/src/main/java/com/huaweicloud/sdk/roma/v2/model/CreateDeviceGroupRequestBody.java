@@ -51,6 +51,8 @@ public class CreateDeviceGroupRequestBody  {
 
     /**
      * 父分组ID，自动向下取整
+     * minimum: 0
+     * maximum: 99999999999999999
      * @return parentId
      */
     public Integer getParentId() {

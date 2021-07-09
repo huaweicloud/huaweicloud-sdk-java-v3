@@ -119,7 +119,7 @@ public class CreatePublicipBandwidthOption  {
     
     private String name;
     /**
-     * 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：该字段为WHOLE时，必须指定带宽ID。
+     * 功能说明：带宽类型 取值范围：PER，WHOLE(PER为独占带宽，WHOLE是共享带宽)。 约束：该字段为WHOLE时，必须指定带宽ID。
      */
     public static final class ShareTypeEnum {
 
@@ -284,7 +284,7 @@ public class CreatePublicipBandwidthOption  {
 
 
     /**
-     * 功能说明：带宽类型 取值范围：PER，WHOLE。 约束：该字段为WHOLE时，必须指定带宽ID。
+     * 功能说明：带宽类型 取值范围：PER，WHOLE(PER为独占带宽，WHOLE是共享带宽)。 约束：该字段为WHOLE时，必须指定带宽ID。
      * @return shareType
      */
     public ShareTypeEnum getShareType() {

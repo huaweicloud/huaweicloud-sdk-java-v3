@@ -494,6 +494,8 @@ public class Event  {
 
     /**
      * 事件发生次数，默认为1，必填。
+     * minimum: 1
+     * maximum: 9223372036854775807
      * @return count
      */
     public Integer getCount() {
@@ -516,6 +518,8 @@ public class Event  {
 
     /**
      * 事件的置信度。置信度的定义旨在说明识别的行为或问题的可能性。 取值范围：0-100，0表示置信度为0%，100表示置信度为100%。
+     * minimum: 0
+     * maximum: 100
      * @return confidence
      */
     public Integer getConfidence() {
@@ -567,6 +571,8 @@ public class Event  {
 
     /**
      * 关键性，是指事件涉及的资源的重要性级别。 取值范围：0-100，0表示资源不关键，100表示最关键资源。
+     * minimum: 0
+     * maximum: 100
      * @return criticality
      */
     public Integer getCriticality() {

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.lts.v2.model.TimeRange;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -33,7 +34,7 @@ public class QueryLTSStructLogParamsNew  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="time_range")
     
-    private Object timeRange;
+    private TimeRange timeRange;
 
     public QueryLTSStructLogParamsNew withQuery(String query) {
         this.query = query;
@@ -79,23 +80,30 @@ public class QueryLTSStructLogParamsNew  {
 
     
 
-    public QueryLTSStructLogParamsNew withTimeRange(Object timeRange) {
+    public QueryLTSStructLogParamsNew withTimeRange(TimeRange timeRange) {
         this.timeRange = timeRange;
         return this;
     }
 
-    
+    public QueryLTSStructLogParamsNew withTimeRange(Consumer<TimeRange> timeRangeSetter) {
+        if(this.timeRange == null ){
+            this.timeRange = new TimeRange();
+            timeRangeSetter.accept(this.timeRange);
+        }
+        
+        return this;
+    }
 
 
     /**
-     * 时间范围信息。
+     * Get timeRange
      * @return timeRange
      */
-    public Object getTimeRange() {
+    public TimeRange getTimeRange() {
         return timeRange;
     }
 
-    public void setTimeRange(Object timeRange) {
+    public void setTimeRange(TimeRange timeRange) {
         this.timeRange = timeRange;
     }
 

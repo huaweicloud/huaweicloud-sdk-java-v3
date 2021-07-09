@@ -87,13 +87,13 @@ public class QosConferenceInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="startTime")
     
-    private String startTime;
+    private Long startTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="endTime")
     
-    private String endTime;
+    private Long endTime;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -355,7 +355,7 @@ public class QosConferenceInfo  {
 
     
 
-    public QosConferenceInfo withStartTime(String startTime) {
+    public QosConferenceInfo withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -364,20 +364,20 @@ public class QosConferenceInfo  {
 
 
     /**
-     * 会议开始时间。UTC时间，格式 YYYY-MM-DD HH:MM。
+     * 会议开始时间(UTC时间), Unix时间戳（单位毫秒）。
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
     
 
-    public QosConferenceInfo withEndTime(String endTime) {
+    public QosConferenceInfo withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -386,14 +386,14 @@ public class QosConferenceInfo  {
 
 
     /**
-     * 议结束时间。UTC时间，格式 YYYY-MM-DD HH:MM。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
+     * 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
@@ -409,6 +409,7 @@ public class QosConferenceInfo  {
 
     /**
      * 会议召开时长（分钟）。 说明： * 在线会议：会议召开中，duration = 0。 * 历史会议：会议已结束，duration = 会议实际召开时间。
+     * minimum: 0
      * @return duration
      */
     public Integer getDuration() {
@@ -431,6 +432,7 @@ public class QosConferenceInfo  {
 
     /**
      * 与会方数。 说明： * 同一用户多次进出会议属于不同的与会，与会方数计算多次。
+     * minimum: 0
      * @return participants
      */
     public Integer getParticipants() {

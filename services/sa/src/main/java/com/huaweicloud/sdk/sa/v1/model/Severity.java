@@ -67,6 +67,8 @@ public class Severity  {
 
     /**
      * 严重性评分取值范围：0-100； 与严重性等级的对应关系： TIPS 0； LOW 1-39； MEDIUM 40-69； HIGH 70-89； FATAL 90-100。
+     * minimum: 0
+     * maximum: 100
      * @return normalizeScore
      */
     public Integer getNormalizeScore() {
@@ -89,6 +91,8 @@ public class Severity  {
 
     /**
      * 严重性原始评分，指在数据源产品中的评分。
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return originalScore
      */
     public Integer getOriginalScore() {

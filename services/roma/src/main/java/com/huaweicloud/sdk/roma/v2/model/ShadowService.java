@@ -48,6 +48,8 @@ public class ShadowService  {
 
     /**
      * 服务ID
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return serviceId
      */
     public Integer getServiceId() {

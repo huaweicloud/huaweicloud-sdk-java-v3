@@ -10,7 +10,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.Certification;
+import com.huaweicloud.sdk.swr.v2.model.AuthInfo;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -24,32 +27,39 @@ public class CreateSecretResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auths")
     
-    private Certification auths;
-
-    public CreateSecretResponse withAuths(Certification auths) {
+    private Map<String, AuthInfo> auths = null;
+    
+    public CreateSecretResponse withAuths(Map<String, AuthInfo> auths) {
         this.auths = auths;
         return this;
     }
 
-    public CreateSecretResponse withAuths(Consumer<Certification> authsSetter) {
-        if(this.auths == null ){
-            this.auths = new Certification();
-            authsSetter.accept(this.auths);
+    
+
+    public CreateSecretResponse putAuthsItem(String key, AuthInfo authsItem) {
+        if(this.auths == null) {
+            this.auths = new HashMap<>();
         }
-        
+        this.auths.put(key, authsItem);
         return this;
     }
 
-
+    public CreateSecretResponse withAuths(Consumer<Map<String, AuthInfo>> authsSetter) {
+        if(this.auths == null) {
+            this.auths = new HashMap<>();
+        }
+        authsSetter.accept(this.auths);
+        return this;
+    }
     /**
-     * Get auths
+     * 认证信息
      * @return auths
      */
-    public Certification getAuths() {
+    public Map<String, AuthInfo> getAuths() {
         return auths;
     }
 
-    public void setAuths(Certification auths) {
+    public void setAuths(Map<String, AuthInfo> auths) {
         this.auths = auths;
     }
 

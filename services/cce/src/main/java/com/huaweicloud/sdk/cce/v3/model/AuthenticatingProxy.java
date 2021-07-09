@@ -44,7 +44,7 @@ public class AuthenticatingProxy  {
 
 
     /**
-     * authenticating_proxy模式配置的x509格式CA证书(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。 最大长度：1M
+     * authenticating_proxy模式配置的x509格式CA证书(base64编码)。当集群认证模式为authenticating_proxy时，此项必须填写。  最大长度：1M
      * @return ca
      */
     public String getCa() {

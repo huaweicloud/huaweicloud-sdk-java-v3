@@ -29,6 +29,18 @@ public class ShowAssetMetaRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="asset_id")
     
     private List<String> assetId = null;
@@ -405,6 +417,52 @@ public class ShowAssetMetaRequest  {
     
     private Integer size;
 
+    public ShowAssetMetaRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public ShowAssetMetaRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
+
     public ShowAssetMetaRequest withAssetId(List<String> assetId) {
         this.assetId = assetId;
         return this;
@@ -464,7 +522,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 媒资状态。 取值如下： - UNCREATED：未创建（媒资ID不存在 ） - DELETED：已删除 - CANCELLED：上传取消 - SERVER_ERROR：上传失败（点播服务端故障） - UPLOAD_FAILED：上传失败（向OBS上传失败） - CREATING：创建中 - PUBLISHED：已发布 - TRANSCODING：待发布（转码中） - TRANSCODE_FAILED：待发布（转码失败） - TRANSCODE_SUCCEED：待发布（转码成功） - CREATED：待发布（未转码）
+     * 媒资状态。  取值如下： - UNCREATED：未创建（媒资ID不存在 ） - DELETED：已删除 - CANCELLED：上传取消 - SERVER_ERROR：上传失败（点播服务端故障） - UPLOAD_FAILED：上传失败（向OBS上传失败） - CREATING：创建中 - PUBLISHED：已发布 - TRANSCODING：待发布（转码中） - TRANSCODE_FAILED：待发布（转码失败） - TRANSCODE_SUCCEED：待发布（转码成功） - CREATED：待发布（未转码）
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -500,7 +558,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 转码状态 取值如下： - TRANSCODING：转码中 - TRANSCODE_FAILED：转码失败 - TRANSCODE_SUCCEED：转码成功 - UN_TRANSCODE：未转码 - WAITING_TRANSCODE：等待转码
+     * 转码状态  取值如下： - TRANSCODING：转码中 - TRANSCODE_FAILED：转码失败 - TRANSCODE_SUCCEED：转码成功 - UN_TRANSCODE：未转码 - WAITING_TRANSCODE：等待转码
      * @return transcodeStatus
      */
     public List<TranscodeStatusEnum> getTranscodeStatus() {
@@ -536,7 +594,7 @@ public class ShowAssetMetaRequest  {
     }
 
     /**
-     * 媒资状态。 取值如下： - PUBLISHED：已发布 - CREATED：未发布
+     * 媒资状态。  取值如下： - PUBLISHED：已发布 - CREATED：未发布
      * @return assetStatus
      */
     public List<AssetStatusEnum> getAssetStatus() {
@@ -558,7 +616,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 起始时间，查询指定“**asset_id**”时，该参数无效。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * 起始时间，查询指定“**asset_id**”时，该参数无效。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return startTime
      */
     public String getStartTime() {
@@ -580,7 +638,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 结束时间，查询指定“**asset_id**”时，该参数无效。 格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
+     * 结束时间，查询指定“**asset_id**”时，该参数无效。  格式为yyyymmddhhmmss。必须是与时区无关的UTC时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -624,7 +682,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 媒资标签。 单个标签不超过16个字节，最多不超过16个标签。 多个用逗号分隔，UTF8编码。
+     * 媒资标签。  单个标签不超过16个字节，最多不超过16个标签。  多个用逗号分隔，UTF8编码。
      * @return tags
      */
     public String getTags() {
@@ -668,7 +726,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 分页编号，查询指定“asset_id”时，该参数无效。 默认值：0。
+     * 分页编号，查询指定“asset_id”时，该参数无效。  默认值：0。
      * minimum: 0
      * @return page
      */
@@ -691,7 +749,7 @@ public class ShowAssetMetaRequest  {
 
 
     /**
-     * 每页记录数，查询指定“**asset_id**”时，该参数无效。 取值范围：[1,100]。 默认值：10。
+     * 每页记录数，查询指定“**asset_id**”时，该参数无效。  取值范围：[1,100]。  默认值：10。
      * minimum: 1
      * maximum: 100
      * @return size
@@ -715,7 +773,9 @@ public class ShowAssetMetaRequest  {
             return false;
         }
         ShowAssetMetaRequest showAssetMetaRequest = (ShowAssetMetaRequest) o;
-        return Objects.equals(this.assetId, showAssetMetaRequest.assetId) &&
+        return Objects.equals(this.authorization, showAssetMetaRequest.authorization) &&
+            Objects.equals(this.xSdkDate, showAssetMetaRequest.xSdkDate) &&
+            Objects.equals(this.assetId, showAssetMetaRequest.assetId) &&
             Objects.equals(this.status, showAssetMetaRequest.status) &&
             Objects.equals(this.transcodeStatus, showAssetMetaRequest.transcodeStatus) &&
             Objects.equals(this.assetStatus, showAssetMetaRequest.assetStatus) &&
@@ -729,12 +789,14 @@ public class ShowAssetMetaRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, status, transcodeStatus, assetStatus, startTime, endTime, categoryId, tags, queryString, page, size);
+        return Objects.hash(authorization, xSdkDate, assetId, status, transcodeStatus, assetStatus, startTime, endTime, categoryId, tags, queryString, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAssetMetaRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    transcodeStatus: ").append(toIndentedString(transcodeStatus)).append("\n");

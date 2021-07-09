@@ -284,7 +284,7 @@ public class UploadAssetReq  {
     
     private Integer coverId;
     /**
-     * 封面图片格式类型。 取值如下： - JPG - PNG
+     * 封面图片格式类型。  取值如下： - JPG - PNG
      */
     public static final class CoverTypeEnum {
 
@@ -411,7 +411,7 @@ public class UploadAssetReq  {
 
 
     /**
-     * 视频文件MD5值。 建议参考[媒资上传和更新](https://support.huaweicloud.com/api-vod/vod_04_0212.html)生成对应的MD5值。
+     * 视频文件MD5值。  建议参考[媒资上传和更新](https://support.huaweicloud.com/api-vod/vod_04_0212.html)生成对应的MD5值。
      * @return videoMd5
      */
     public String getVideoMd5() {
@@ -433,7 +433,7 @@ public class UploadAssetReq  {
 
 
     /**
-     * 视频文件名。 文件名后缀为可选。
+     * 视频文件名。  文件名后缀为可选。
      * @return videoName
      */
     public String getVideoName() {
@@ -477,7 +477,7 @@ public class UploadAssetReq  {
 
 
     /**
-     * 封面ID。 取值范围：[0,7]。 当前只支持一张封面，只能设置为0。
+     * 封面ID。  取值范围：[0,7]。  当前只支持一张封面，只能设置为0。
      * @return coverId
      */
     public Integer getCoverId() {
@@ -499,7 +499,7 @@ public class UploadAssetReq  {
 
 
     /**
-     * 封面图片格式类型。 取值如下： - JPG - PNG
+     * 封面图片格式类型。  取值如下： - JPG - PNG
      * @return coverType
      */
     public CoverTypeEnum getCoverType() {

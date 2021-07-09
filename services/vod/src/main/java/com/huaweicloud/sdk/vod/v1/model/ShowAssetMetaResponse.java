@@ -85,7 +85,7 @@ public class ShowAssetMetaResponse extends SdkResponse {
 
 
     /**
-     * 列表是否被截断。 取值如下： - 1：表示本次查询未返回全部结果。 - 0：表示本次查询已经返回了全部结果。
+     * 列表是否被截断。  取值如下： - 1：表示本次查询未返回全部结果。 - 0：表示本次查询已经返回了全部结果。
      * @return isTruncated
      */
     public Integer getIsTruncated() {
@@ -107,7 +107,7 @@ public class ShowAssetMetaResponse extends SdkResponse {
 
 
     /**
-     * 查询媒资总数。  **说明：** 暂只能统计2万个媒资，若您需要查询具体的媒资总数，请[提交工单](https://console.huaweicloud.com/ticket/?#/ticketindex/business?productTypeId=462902cc39a04ab3a429df872021f970)申请。
+     * 查询媒资总数。  > 暂只能统计2万个媒资，若您需要查询具体的媒资总数，请[提交工单](https://console.huaweicloud.com/ticket/?#/ticketindex/business?productTypeId=462902cc39a04ab3a429df872021f970)申请。
      * @return total
      */
     public Integer getTotal() {

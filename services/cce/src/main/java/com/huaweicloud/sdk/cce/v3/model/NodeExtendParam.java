@@ -79,12 +79,6 @@ public class NodeExtendParam  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offloadNode")
-    
-    private String offloadNode;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="publicKey")
     
     private String publicKey;
@@ -128,7 +122,7 @@ public class NodeExtendParam  {
 
 
     /**
-     * 云服务器规格的分类。裸金属节点无该字段。
+     * 云服务器规格的分类。响应中会返回此字段。
      * @return ecsPerformancetype
      */
     public String getEcsPerformancetype() {
@@ -339,28 +333,6 @@ public class NodeExtendParam  {
 
     
 
-    public NodeExtendParam withOffloadNode(String offloadNode) {
-        this.offloadNode = offloadNode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 是否为CCE Turbo集群节点。
-     * @return offloadNode
-     */
-    public String getOffloadNode() {
-        return offloadNode;
-    }
-
-    public void setOffloadNode(String offloadNode) {
-        this.offloadNode = offloadNode;
-    }
-
-    
-
     public NodeExtendParam withPublicKey(String publicKey) {
         this.publicKey = publicKey;
         return this;
@@ -512,7 +484,6 @@ public class NodeExtendParam  {
             Objects.equals(this.isAutoPay, nodeExtendParam.isAutoPay) &&
             Objects.equals(this.dockerLVMConfigOverride, nodeExtendParam.dockerLVMConfigOverride) &&
             Objects.equals(this.dockerBaseSize, nodeExtendParam.dockerBaseSize) &&
-            Objects.equals(this.offloadNode, nodeExtendParam.offloadNode) &&
             Objects.equals(this.publicKey, nodeExtendParam.publicKey) &&
             Objects.equals(this.alphaCcePreInstall, nodeExtendParam.alphaCcePreInstall) &&
             Objects.equals(this.alphaCcePostInstall, nodeExtendParam.alphaCcePostInstall) &&
@@ -522,7 +493,7 @@ public class NodeExtendParam  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(ecsPerformancetype, orderID, productID, maxPods, periodType, periodNum, isAutoRenew, isAutoPay, dockerLVMConfigOverride, dockerBaseSize, offloadNode, publicKey, alphaCcePreInstall, alphaCcePostInstall, alphaCceNodeImageID, nicMultiqueue, nicThreshold);
+        return Objects.hash(ecsPerformancetype, orderID, productID, maxPods, periodType, periodNum, isAutoRenew, isAutoPay, dockerLVMConfigOverride, dockerBaseSize, publicKey, alphaCcePreInstall, alphaCcePostInstall, alphaCceNodeImageID, nicMultiqueue, nicThreshold);
     }
     @Override
     public String toString() {
@@ -538,7 +509,6 @@ public class NodeExtendParam  {
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    dockerLVMConfigOverride: ").append(toIndentedString(dockerLVMConfigOverride)).append("\n");
         sb.append("    dockerBaseSize: ").append(toIndentedString(dockerBaseSize)).append("\n");
-        sb.append("    offloadNode: ").append(toIndentedString(offloadNode)).append("\n");
         sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
         sb.append("    alphaCcePreInstall: ").append(toIndentedString(alphaCcePreInstall)).append("\n");
         sb.append("    alphaCcePostInstall: ").append(toIndentedString(alphaCcePostInstall)).append("\n");

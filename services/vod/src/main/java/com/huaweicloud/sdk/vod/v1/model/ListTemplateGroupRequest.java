@@ -19,6 +19,18 @@ public class ListTemplateGroupRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="Authorization")
+    
+    private String authorization;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    
+    private String xSdkDate;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="group_id")
     
     private String groupId;
@@ -41,6 +53,52 @@ public class ListTemplateGroupRequest  {
     
     private Integer size;
 
+    public ListTemplateGroupRequest withAuthorization(String authorization) {
+        this.authorization = authorization;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
+     * @return authorization
+     */
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
+
+    
+
+    public ListTemplateGroupRequest withXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 使用AK/SK方式认证时必选，请求的发生时间。 
+     * @return xSdkDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="X-Sdk-Date")
+    public String getXSdkDate() {
+        return xSdkDate;
+    }
+
+    public void setXSdkDate(String xSdkDate) {
+        this.xSdkDate = xSdkDate;
+    }
+
+    
+
     public ListTemplateGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -50,7 +108,7 @@ public class ListTemplateGroupRequest  {
 
 
     /**
-     * 模板组id 
+     * 模板组id
      * @return groupId
      */
     public String getGroupId() {
@@ -72,7 +130,7 @@ public class ListTemplateGroupRequest  {
 
 
     /**
-     * 模板启用状态 
+     * 模板启用状态
      * @return status
      */
     public String getStatus() {
@@ -94,7 +152,7 @@ public class ListTemplateGroupRequest  {
 
 
     /**
-     * 分页编号。默认为0。指定group_id时该参数无效。<br/> 
+     * 分页编号。  默认为0，指定group_id时该参数无效。
      * @return page
      */
     public Integer getPage() {
@@ -116,7 +174,7 @@ public class ListTemplateGroupRequest  {
 
 
     /**
-     * 每页记录数。默认为10，范围[1,100]。指定group_id时该参数无效。<br/> 
+     * 每页记录数。  默认为10，范围[1,100]。指定group_id时该参数无效。
      * @return size
      */
     public Integer getSize() {
@@ -138,19 +196,23 @@ public class ListTemplateGroupRequest  {
             return false;
         }
         ListTemplateGroupRequest listTemplateGroupRequest = (ListTemplateGroupRequest) o;
-        return Objects.equals(this.groupId, listTemplateGroupRequest.groupId) &&
+        return Objects.equals(this.authorization, listTemplateGroupRequest.authorization) &&
+            Objects.equals(this.xSdkDate, listTemplateGroupRequest.xSdkDate) &&
+            Objects.equals(this.groupId, listTemplateGroupRequest.groupId) &&
             Objects.equals(this.status, listTemplateGroupRequest.status) &&
             Objects.equals(this.page, listTemplateGroupRequest.page) &&
             Objects.equals(this.size, listTemplateGroupRequest.size);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, status, page, size);
+        return Objects.hash(authorization, xSdkDate, groupId, status, page, size);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTemplateGroupRequest {\n");
+        sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
+        sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");

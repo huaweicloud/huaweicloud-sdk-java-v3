@@ -183,6 +183,8 @@ public class ScalingPolicyActionV1  {
 
     /**
      * 操作实例百分比，将当前组容量增加、减少或设置为指定的百分比。当instance_number和instance_percentage参数均无配置时，则操作实例个数为1。配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
+     * minimum: 0
+     * maximum: 100
      * @return instancePercentage
      */
     public Integer getInstancePercentage() {

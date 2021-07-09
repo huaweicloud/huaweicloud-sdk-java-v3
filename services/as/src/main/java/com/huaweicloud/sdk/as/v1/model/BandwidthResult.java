@@ -213,6 +213,8 @@ public class BandwidthResult  {
 
     /**
      * 带宽（Mbit/s）。
+     * minimum: 1
+     * maximum: 300
      * @return size
      */
     public Integer getSize() {

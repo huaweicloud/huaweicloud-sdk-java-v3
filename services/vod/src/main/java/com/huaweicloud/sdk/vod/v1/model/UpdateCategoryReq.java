@@ -61,6 +61,7 @@ public class UpdateCategoryReq  {
 
     /**
      * 媒资分类ID。
+     * minimum: 0
      * @return id
      */
     public Integer getId() {

@@ -490,6 +490,8 @@ public class TemplateInfo  {
 
     /**
      * 模板评分（点赞数）。
+     * minimum: 1
+     * maximum: 99999
      * @return score
      */
     public Integer getScore() {
@@ -534,6 +536,8 @@ public class TemplateInfo  {
 
     /**
      * 代码存储位置。
+     * minimum: 0
+     * maximum: 9
      * @return store
      */
     public Integer getStore() {
@@ -578,6 +582,8 @@ public class TemplateInfo  {
 
     /**
      * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
+     * minimum: 0
+     * maximum: 5
      * @return status
      */
     public Integer getStatus() {
@@ -600,6 +606,8 @@ public class TemplateInfo  {
 
     /**
      * 访问量。
+     * minimum: 1
+     * maximum: 99999
      * @return viewCount
      */
     public Integer getViewCount() {
@@ -622,6 +630,8 @@ public class TemplateInfo  {
 
     /**
      * 引用量。
+     * minimum: 1
+     * maximum: 99999
      * @return usageCount
      */
     public Integer getUsageCount() {
@@ -710,6 +720,8 @@ public class TemplateInfo  {
 
     /**
      * 点赞状态： - 1：点赞 - 0：未点赞 
+     * minimum: 0
+     * maximum: 1
      * @return favoriteState
      */
     public Integer getFavoriteState() {
@@ -768,6 +780,8 @@ public class TemplateInfo  {
 
     /**
      * 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 四种 
+     * minimum: 0
+     * maximum: 3
      * @return type
      */
     public Integer getType() {
@@ -790,6 +804,8 @@ public class TemplateInfo  {
 
     /**
      * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
+     * minimum: 0
+     * maximum: 1
      * @return isStatic
      */
     public Integer getIsStatic() {
@@ -877,6 +893,8 @@ public class TemplateInfo  {
 
     /**
      * 平台来源： - 0：codelabs - 1：devstar 
+     * minimum: 0
+     * maximum: 1
      * @return platformSource
      */
     public Integer getPlatformSource() {
@@ -1015,6 +1033,8 @@ public class TemplateInfo  {
 
     /**
      * 关联论坛板块id。
+     * minimum: 0
+     * maximum: 100000
      * @return forumId
      */
     public Integer getForumId() {
@@ -1037,6 +1057,8 @@ public class TemplateInfo  {
 
     /**
      * 模板文件解压缩之后的大小(单位:KB)。
+     * minimum: 0
+     * maximum: 2147483647
      * @return fileSize
      */
     public Integer getFileSize() {

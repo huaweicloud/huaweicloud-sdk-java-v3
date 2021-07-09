@@ -50,6 +50,8 @@ public class ListMonitorLogResponse extends SdkResponse {
 
     /**
      * 总数
+     * minimum: 1
+     * maximum: 99999
      * @return total
      */
     public Integer getTotal() {
@@ -72,6 +74,8 @@ public class ListMonitorLogResponse extends SdkResponse {
 
     /**
      * 当前页日志数量
+     * minimum: 1
+     * maximum: 99999
      * @return size
      */
     public Integer getSize() {

@@ -348,6 +348,9 @@ public class HcClient implements CustomizationConfigure {
             } else {
                 if (!reqDef.hasResponseField(Constants.BODY)) {
                     resT = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
+                    if (Objects.isNull(resT)) {
+                        resT = reqDef.getResponseType().newInstance();
+                    }
 
                     if (reqDef.hasResponseField(String.valueOf(code))) {
                         Field<ResT, ?> resTField = reqDef.getResponseField(String.valueOf(code));
@@ -367,10 +370,6 @@ public class HcClient implements CustomizationConfigure {
                         resTField.writeValueSafe(resT, obj, resTField.getFieldType());
                     }
                 }
-            }
-
-            if (Objects.isNull(resT)) {
-                resT = reqDef.getResponseType().newInstance();
             }
 
             ResT finalResT = resT;

@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 转码生成文件信息。  **说明：** 仅当转码成功后才能查询到此信息，未转码、正在转码以及转码失败时，无此字段信息。
+ * 转码生成文件信息。  &gt; 仅当转码成功后才能查询到此信息，未转码、正在转码以及转码失败时，无此字段信息。
  */
 public class TranscodeInfo  {
 
@@ -133,7 +133,7 @@ public class TranscodeInfo  {
 
 
     /**
-     * 转码状态。 取值如下： - UN_TRANSCODE：未转码 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中 - TRANSCODE_SUCCEED：转码成功 - TRANSCODE_FAILED：转码失败
+     * 转码状态。  取值如下： - UN_TRANSCODE：未转码 - WAITING_TRANSCODE：待转码 - TRANSCODING：转码中 - TRANSCODE_SUCCEED：转码成功 - TRANSCODE_FAILED：转码失败
      * @return transcodeStatus
      */
     public String getTranscodeStatus() {

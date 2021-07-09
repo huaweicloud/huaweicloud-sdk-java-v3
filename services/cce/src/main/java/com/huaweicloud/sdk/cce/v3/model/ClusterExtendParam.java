@@ -126,7 +126,7 @@ public class ClusterExtendParam  {
 
 
     /**
-     * 用于指定控制节点的系统盘和数据盘使用专属分布式存储，未指定或者值为空时，默认使用EVS云硬盘。 如果配置专属CCE集群，该字段为必选，请按照如下格式设置： ``` <rootVol.dssPoolID>.<rootVol.volType>;<dataVol.dssPoolID>.<dataVol.volType> ``` 字段说明： rootVol为系统盘；dataVol为数据盘； dssPoolID为专属分布式存储池ID； volType为专属分布式存储池的存储类型，如SAS、SSD。 样例：c950ee97-587c-4f24-8a74-3367e3da570f.sas;6edbc2f4-1507-44f8-ac0d-eed1d2608d38.ssd 非专属CCE集群不支持配置该字段。 
+     * 用于指定控制节点的系统盘和数据盘使用专属分布式存储，未指定或者值为空时，默认使用EVS云硬盘。 如果配置专属CCE集群，该字段为必选，请按照如下格式设置： ``` <rootVol.dssPoolID>.<rootVol.volType>;<dataVol.dssPoolID>.<dataVol.volType> ``` 字段说明： - rootVol为系统盘；dataVol为数据盘； - dssPoolID为专属分布式存储池ID； - volType为专属分布式存储池的存储类型，如SAS、SSD。  样例：c950ee97-587c-4f24-8a74-3367e3da570f.sas;6edbc2f4-1507-44f8-ac0d-eed1d2608d38.ssd > 非专属CCE集群不支持配置该字段。 
      * @return dssMasterVolumes
      */
     public String getDssMasterVolumes() {
@@ -280,7 +280,7 @@ public class ClusterExtendParam  {
 
 
     /**
-     * 集群CPU管理策略。取值为none或static，默认为none。 - none：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多 - static：支持给工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载。 
+     * 集群CPU管理策略。取值为none或static，默认为none。 - none：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多 - static：支持给节点上的工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载，Turbo集群下仅对普通容器节点有效，安全容器节点无效。 
      * @return kubernetesIoCpuManagerPolicy
      */
     public String getKubernetesIoCpuManagerPolicy() {

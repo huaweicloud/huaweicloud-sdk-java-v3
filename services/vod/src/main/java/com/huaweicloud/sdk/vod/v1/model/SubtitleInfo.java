@@ -50,7 +50,7 @@ public class SubtitleInfo  {
 
 
     /**
-     * 字幕文件的下载地址<br/> 
+     * 字幕文件的下载地址 
      * @return url
      */
     public String getUrl() {
@@ -72,7 +72,7 @@ public class SubtitleInfo  {
 
 
     /**
-     * 字幕文件id<br/> 
+     * 字幕文件id 
      * @return id
      */
     public Integer getId() {
@@ -94,7 +94,7 @@ public class SubtitleInfo  {
 
 
     /**
-     * 字幕文件类型<br/> 
+     * 字幕文件类型 
      * @return type
      */
     public String getType() {
@@ -116,7 +116,7 @@ public class SubtitleInfo  {
 
 
     /**
-     * 字幕文件语言种类<br/> 
+     * 字幕文件语言种类 
      * @return language
      */
     public String getLanguage() {

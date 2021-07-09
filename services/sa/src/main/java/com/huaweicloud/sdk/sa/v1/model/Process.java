@@ -108,6 +108,8 @@ public class Process  {
 
     /**
      * 进程ID。
+     * minimum: 0
+     * maximum: 65535
      * @return pid
      */
     public Integer getPid() {
@@ -130,6 +132,8 @@ public class Process  {
 
     /**
      * 父进程ID。
+     * minimum: 0
+     * maximum: 65535
      * @return parentPid
      */
     public Integer getParentPid() {

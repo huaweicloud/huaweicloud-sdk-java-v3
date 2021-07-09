@@ -81,6 +81,7 @@ public class UpdateAssetCategoryResponse extends SdkResponse {
 
     /**
      * 父分类ID。 一级分类父ID为0。
+     * minimum: 0
      * @return parentId
      */
     public Integer getParentId() {
@@ -124,7 +125,7 @@ public class UpdateAssetCategoryResponse extends SdkResponse {
 
 
     /**
-     * 媒资分类层级。 取值如下： - 1：一级分类层级。 - 2：二级分类层级。 - 3：三级分类层级。
+     * 媒资分类层级。  取值如下： - 1：一级分类层级。 - 2：二级分类层级。 - 3：三级分类层级。
      * @return level
      */
     public Integer getLevel() {

@@ -423,6 +423,12 @@ public class PublicipShowResp  {
     
     private IpVersionEnum ipVersion;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="publicip_border_group")
+    
+    private String publicipBorderGroup;
+
     public PublicipShowResp withBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
         return this;
@@ -783,6 +789,28 @@ public class PublicipShowResp  {
 
     
 
+    public PublicipShowResp withPublicipBorderGroup(String publicipBorderGroup) {
+        this.publicipBorderGroup = publicipBorderGroup;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：表示中心站点资源或者边缘站点资源，对接了边缘站点的区域才会返回此字段 取值范围： center、边缘站点名称 上线区域：华北-乌兰察布一，华南-广州 约束：publicip只能绑定该字段相同的资源
+     * @return publicipBorderGroup
+     */
+    public String getPublicipBorderGroup() {
+        return publicipBorderGroup;
+    }
+
+    public void setPublicipBorderGroup(String publicipBorderGroup) {
+        this.publicipBorderGroup = publicipBorderGroup;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -807,11 +835,12 @@ public class PublicipShowResp  {
             Objects.equals(this.tenantId, publicipShowResp.tenantId) &&
             Objects.equals(this.type, publicipShowResp.type) &&
             Objects.equals(this.publicIpv6Address, publicipShowResp.publicIpv6Address) &&
-            Objects.equals(this.ipVersion, publicipShowResp.ipVersion);
+            Objects.equals(this.ipVersion, publicipShowResp.ipVersion) &&
+            Objects.equals(this.publicipBorderGroup, publicipShowResp.publicipBorderGroup);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthId, bandwidthName, bandwidthShareType, bandwidthSize, createTime, enterpriseProjectId, id, portId, privateIpAddress, profile, publicIpAddress, status, tenantId, type, publicIpv6Address, ipVersion);
+        return Objects.hash(bandwidthId, bandwidthName, bandwidthShareType, bandwidthSize, createTime, enterpriseProjectId, id, portId, privateIpAddress, profile, publicIpAddress, status, tenantId, type, publicIpv6Address, ipVersion, publicipBorderGroup);
     }
     @Override
     public String toString() {
@@ -833,6 +862,7 @@ public class PublicipShowResp  {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    publicIpv6Address: ").append(toIndentedString(publicIpv6Address)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    publicipBorderGroup: ").append(toIndentedString(publicipBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

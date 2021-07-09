@@ -219,66 +219,66 @@ public class LtsClient {
      * 查询日志
      * 该接口用于查询指定日志流下的日志内容。
      *
-     * @param UpdateLogContentsRequest 请求对象
-     * @return UpdateLogContentsResponse
+     * @param ListLogsRequest 请求对象
+     * @return ListLogsResponse
      */
-    public UpdateLogContentsResponse updateLogContents(UpdateLogContentsRequest request) {
-        return hcClient.syncInvokeHttp(request, LtsMeta.updateLogContents);
+    public ListLogsResponse listLogs(ListLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listLogs);
     }
 
     /**
      * 查询日志
      * 该接口用于查询指定日志流下的日志内容。
      *
-     * @param UpdateLogContentsRequest 请求对象
-     * @return SyncInvoker<UpdateLogContentsRequest, UpdateLogContentsResponse>
+     * @param ListLogsRequest 请求对象
+     * @return SyncInvoker<ListLogsRequest, ListLogsResponse>
      */
-    public SyncInvoker<UpdateLogContentsRequest, UpdateLogContentsResponse> updateLogContentsInvoker(UpdateLogContentsRequest request) {
-        return new SyncInvoker<UpdateLogContentsRequest, UpdateLogContentsResponse>(request, LtsMeta.updateLogContents, hcClient);
+    public SyncInvoker<ListLogsRequest, ListLogsResponse> listLogsInvoker(ListLogsRequest request) {
+        return new SyncInvoker<ListLogsRequest, ListLogsResponse>(request, LtsMeta.listLogs, hcClient);
     }
 
     /**
      * 查询结构化日志
      * 该接口用于查询指定日志流下的结构化日志内容。
      *
-     * @param UpdateLogContents2Request 请求对象
-     * @return UpdateLogContents2Response
+     * @param ListQueryStructuredLogsRequest 请求对象
+     * @return ListQueryStructuredLogsResponse
      */
-    public UpdateLogContents2Response updateLogContents2(UpdateLogContents2Request request) {
-        return hcClient.syncInvokeHttp(request, LtsMeta.updateLogContents2);
+    public ListQueryStructuredLogsResponse listQueryStructuredLogs(ListQueryStructuredLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listQueryStructuredLogs);
     }
 
     /**
      * 查询结构化日志
      * 该接口用于查询指定日志流下的结构化日志内容。
      *
-     * @param UpdateLogContents2Request 请求对象
-     * @return SyncInvoker<UpdateLogContents2Request, UpdateLogContents2Response>
+     * @param ListQueryStructuredLogsRequest 请求对象
+     * @return SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>
      */
-    public SyncInvoker<UpdateLogContents2Request, UpdateLogContents2Response> updateLogContents2Invoker(UpdateLogContents2Request request) {
-        return new SyncInvoker<UpdateLogContents2Request, UpdateLogContents2Response>(request, LtsMeta.updateLogContents2, hcClient);
+    public SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogsInvoker(ListQueryStructuredLogsRequest request) {
+        return new SyncInvoker<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse>(request, LtsMeta.listQueryStructuredLogs, hcClient);
     }
 
     /**
      * 查询结构化日志（新版）
      * 该接口用于查询指定日志流下的结构化日志内容（新版）。
      *
-     * @param UpdateLogContents3Request 请求对象
-     * @return UpdateLogContents3Response
+     * @param ListStructuredLogsWithTimeRangeRequest 请求对象
+     * @return ListStructuredLogsWithTimeRangeResponse
      */
-    public UpdateLogContents3Response updateLogContents3(UpdateLogContents3Request request) {
-        return hcClient.syncInvokeHttp(request, LtsMeta.updateLogContents3);
+    public ListStructuredLogsWithTimeRangeResponse listStructuredLogsWithTimeRange(ListStructuredLogsWithTimeRangeRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listStructuredLogsWithTimeRange);
     }
 
     /**
      * 查询结构化日志（新版）
      * 该接口用于查询指定日志流下的结构化日志内容（新版）。
      *
-     * @param UpdateLogContents3Request 请求对象
-     * @return SyncInvoker<UpdateLogContents3Request, UpdateLogContents3Response>
+     * @param ListStructuredLogsWithTimeRangeRequest 请求对象
+     * @return SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>
      */
-    public SyncInvoker<UpdateLogContents3Request, UpdateLogContents3Response> updateLogContents3Invoker(UpdateLogContents3Request request) {
-        return new SyncInvoker<UpdateLogContents3Request, UpdateLogContents3Response>(request, LtsMeta.updateLogContents3, hcClient);
+    public SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRangeInvoker(ListStructuredLogsWithTimeRangeRequest request) {
+        return new SyncInvoker<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse>(request, LtsMeta.listStructuredLogsWithTimeRange, hcClient);
     }
 
     /**

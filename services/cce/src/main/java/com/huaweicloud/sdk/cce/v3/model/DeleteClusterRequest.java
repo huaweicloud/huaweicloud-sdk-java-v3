@@ -15,6 +15,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -139,7 +141,7 @@ public class DeleteClusterRequest  {
     
     private DeleteEfsEnum deleteEfs;
     /**
-     * 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
      */
     public static final class DeleteEniEnum {
 
@@ -343,7 +345,7 @@ public class DeleteClusterRequest  {
     
     private DeleteEvsEnum deleteEvs;
     /**
-     * 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
      */
     public static final class DeleteNetEnum {
 
@@ -648,6 +650,84 @@ public class DeleteClusterRequest  {
     @JsonProperty(value="delete_sfs")
     
     private DeleteSfsEnum deleteSfs;
+    /**
+     * 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
+     */
+    public static final class TobedeletedEnum {
+
+        
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final TobedeletedEnum TRUE = new TobedeletedEnum("true");
+        
+
+        private static final Map<String, TobedeletedEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TobedeletedEnum> createStaticFields() {
+            Map<String, TobedeletedEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TobedeletedEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TobedeletedEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TobedeletedEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TobedeletedEnum(value);
+            }
+            return result;
+        }
+
+        public static TobedeletedEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TobedeletedEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TobedeletedEnum) {
+                return this.value.equals(((TobedeletedEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="tobedeleted")
+    
+    private TobedeletedEnum tobedeleted;
 
     public DeleteClusterRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -702,7 +782,7 @@ public class DeleteClusterRequest  {
 
 
     /**
-     * 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * 是否删除eni ports（原生弹性网卡）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
      * @return deleteEni
      */
     public DeleteEniEnum getDeleteEni() {
@@ -746,7 +826,7 @@ public class DeleteClusterRequest  {
 
 
     /**
-     * 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * 是否删除elb（弹性负载均衡）等集群Service/Ingress相关资源。 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程，默认选项) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程)
      * @return deleteNet
      */
     public DeleteNetEnum getDeleteNet() {
@@ -803,6 +883,28 @@ public class DeleteClusterRequest  {
 
     
 
+    public DeleteClusterRequest withTobedeleted(TobedeletedEnum tobedeleted) {
+        this.tobedeleted = tobedeleted;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否使用包周期集群删除参数预置模式（仅对包周期集群生效）。 需要和其他删除选项参数一起使用，未指定的参数，则使用默认值。 使用该参数，集群不执行真正的删除，仅将本次请求的全部query参数都预置到集群数据库中，用于包周期集群退订时识别用户要删除的资源。 允许重复执行，覆盖预置的删除参数。 枚举取值： - true  (预置模式，仅预置query参数，不执行删除)
+     * @return tobedeleted
+     */
+    public TobedeletedEnum getTobedeleted() {
+        return tobedeleted;
+    }
+
+    public void setTobedeleted(TobedeletedEnum tobedeleted) {
+        this.tobedeleted = tobedeleted;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -818,11 +920,12 @@ public class DeleteClusterRequest  {
             Objects.equals(this.deleteEvs, deleteClusterRequest.deleteEvs) &&
             Objects.equals(this.deleteNet, deleteClusterRequest.deleteNet) &&
             Objects.equals(this.deleteObs, deleteClusterRequest.deleteObs) &&
-            Objects.equals(this.deleteSfs, deleteClusterRequest.deleteSfs);
+            Objects.equals(this.deleteSfs, deleteClusterRequest.deleteSfs) &&
+            Objects.equals(this.tobedeleted, deleteClusterRequest.tobedeleted);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, deleteEfs, deleteEni, deleteEvs, deleteNet, deleteObs, deleteSfs);
+        return Objects.hash(clusterId, deleteEfs, deleteEni, deleteEvs, deleteNet, deleteObs, deleteSfs, tobedeleted);
     }
     @Override
     public String toString() {
@@ -835,6 +938,7 @@ public class DeleteClusterRequest  {
         sb.append("    deleteNet: ").append(toIndentedString(deleteNet)).append("\n");
         sb.append("    deleteObs: ").append(toIndentedString(deleteObs)).append("\n");
         sb.append("    deleteSfs: ").append(toIndentedString(deleteSfs)).append("\n");
+        sb.append("    tobedeleted: ").append(toIndentedString(tobedeleted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

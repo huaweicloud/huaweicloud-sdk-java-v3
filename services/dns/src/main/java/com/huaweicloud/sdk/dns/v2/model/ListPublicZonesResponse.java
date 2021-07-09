@@ -12,6 +12,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dns.v2.model.Metedata;
 import com.huaweicloud.sdk.dns.v2.model.PageLink;
+import com.huaweicloud.sdk.dns.v2.model.PublicZoneResp;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -31,8 +34,8 @@ public class ListPublicZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="zones")
     
-    private String zones;
-
+    private List<PublicZoneResp> zones = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="metadata")
@@ -68,23 +71,37 @@ public class ListPublicZonesResponse extends SdkResponse {
 
     
 
-    public ListPublicZonesResponse withZones(String zones) {
+    public ListPublicZonesResponse withZones(List<PublicZoneResp> zones) {
         this.zones = zones;
         return this;
     }
 
     
+    public ListPublicZonesResponse addZonesItem(PublicZoneResp zonesItem) {
+        if(this.zones == null) {
+            this.zones = new ArrayList<>();
+        }
+        this.zones.add(zonesItem);
+        return this;
+    }
 
+    public ListPublicZonesResponse withZones(Consumer<List<PublicZoneResp>> zonesSetter) {
+        if(this.zones == null) {
+            this.zones = new ArrayList<>();
+        }
+        zonesSetter.accept(this.zones);
+        return this;
+    }
 
     /**
-     * Get zones
+     * 查询公网Zone的列表响应。
      * @return zones
      */
-    public String getZones() {
+    public List<PublicZoneResp> getZones() {
         return zones;
     }
 
-    public void setZones(String zones) {
+    public void setZones(List<PublicZoneResp> zones) {
         this.zones = zones;
     }
 

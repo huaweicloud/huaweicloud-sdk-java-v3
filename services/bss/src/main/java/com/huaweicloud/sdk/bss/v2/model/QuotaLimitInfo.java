@@ -77,7 +77,7 @@ public class QuotaLimitInfo  {
     }
 
     /**
-     * 属性值，具体参见表4。
+     * 属性值，具体参见表3。
      * @return limitValues
      */
     public List<LimitValue> getLimitValues() {

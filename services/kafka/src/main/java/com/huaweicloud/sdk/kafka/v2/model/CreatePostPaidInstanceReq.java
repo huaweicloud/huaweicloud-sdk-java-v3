@@ -13,8 +13,6 @@ import java.util.Collections;
 
 import java.util.Collections;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -309,96 +307,12 @@ public class CreatePostPaidInstanceReq  {
     @JsonProperty(value="storage_space")
     
     private Integer storageSpace;
-    /**
-     * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
-     */
-    public static final class PartitionNumEnum {
-
-        
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
-        public static final PartitionNumEnum NUMBER_300 = new PartitionNumEnum(300);
-        
-        /**
-         * Enum NUMBER_900 for value: 900
-         */
-        public static final PartitionNumEnum NUMBER_900 = new PartitionNumEnum(900);
-        
-        /**
-         * Enum NUMBER_1800 for value: 1800
-         */
-        public static final PartitionNumEnum NUMBER_1800 = new PartitionNumEnum(1800);
-        
-
-        private static final Map<Integer, PartitionNumEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, PartitionNumEnum> createStaticFields() {
-            Map<Integer, PartitionNumEnum> map = new HashMap<>();
-            map.put(300, NUMBER_300);
-            map.put(900, NUMBER_900);
-            map.put(1800, NUMBER_1800);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        PartitionNumEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PartitionNumEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            PartitionNumEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PartitionNumEnum(value);
-            }
-            return result;
-        }
-
-        public static PartitionNumEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            PartitionNumEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PartitionNumEnum) {
-                return this.value.equals(((PartitionNumEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="partition_num")
     
-    private PartitionNumEnum partitionNum;
+    private Integer partitionNum;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -820,7 +734,7 @@ public class CreatePostPaidInstanceReq  {
 
     
 
-    public CreatePostPaidInstanceReq withPartitionNum(PartitionNumEnum partitionNum) {
+    public CreatePostPaidInstanceReq withPartitionNum(Integer partitionNum) {
         this.partitionNum = partitionNum;
         return this;
     }
@@ -832,11 +746,11 @@ public class CreatePostPaidInstanceReq  {
      * Kafka实例的最大分区数量。   - 参数specification为100MB时，取值300   - 参数specification为300MB时，取值900   - 参数specification为600MB时，取值1800   - 参数specification为1200MB时，取值1800
      * @return partitionNum
      */
-    public PartitionNumEnum getPartitionNum() {
+    public Integer getPartitionNum() {
         return partitionNum;
     }
 
-    public void setPartitionNum(PartitionNumEnum partitionNum) {
+    public void setPartitionNum(Integer partitionNum) {
         this.partitionNum = partitionNum;
     }
 

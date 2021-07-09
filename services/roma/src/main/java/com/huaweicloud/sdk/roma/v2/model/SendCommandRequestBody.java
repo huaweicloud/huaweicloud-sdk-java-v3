@@ -54,6 +54,8 @@ public class SendCommandRequestBody  {
 
     /**
      * 服务ID，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return serviceId
      */
     public Integer getServiceId() {
@@ -76,6 +78,8 @@ public class SendCommandRequestBody  {
 
     /**
      * 命令ID，自动向下取整
+     * minimum: 1
+     * maximum: 999999999999999999
      * @return commandId
      */
     public Integer getCommandId() {

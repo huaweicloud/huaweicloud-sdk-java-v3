@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * TakeOverTask
+ * 
  */
 public class TakeOverTask  {
 
@@ -83,7 +83,7 @@ public class TakeOverTask  {
     
     private String endTime;
     /**
-     * Gets or Sets status
+     * 任务状态。
      */
     public static final class StatusEnum {
 
@@ -188,7 +188,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 桶 <br/> 
+     * 桶名。
      * @return bucket
      */
     public String getBucket() {
@@ -210,7 +210,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 目录 
+     * 目录/文件名。
      * @return _object
      */
     public String getObject() {
@@ -232,7 +232,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 托管类型：0表示存储到点播桶 1表示存储在租户桶  2表示存储到租户桶，并且源文件名跟随<br/> 
+     * 托管类型： - 0：表示存储到点播桶 - 1：表示存储在租户桶 - 2：表示存储到租户桶，并且源文件名跟随
      * @return hostType
      */
     public Integer getHostType() {
@@ -254,7 +254,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 输出桶 <br/> 
+     * 输出桶 。
      * @return outputBucket
      */
     public String getOutputBucket() {
@@ -276,7 +276,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 输出路径 <br/> 
+     * 输出路径 。
      * @return outputPath
      */
     public String getOutputPath() {
@@ -298,7 +298,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 任务ID <br/> 
+     * 任务ID。
      * @return taskId
      */
     public String getTaskId() {
@@ -334,7 +334,7 @@ public class TakeOverTask  {
     }
 
     /**
-     * Get suffix
+     * 托管文件类型。
      * @return suffix
      */
     public List<String> getSuffix() {
@@ -356,7 +356,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 转码模板组 <br/> 
+     * 转码模板组 。
      * @return templateGroupName
      */
     public String getTemplateGroupName() {
@@ -378,7 +378,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 创建时间<br/> 
+     * 创建时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -400,7 +400,7 @@ public class TakeOverTask  {
 
 
     /**
-     * 结束时间<br/> 
+     * 结束时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -422,7 +422,7 @@ public class TakeOverTask  {
 
 
     /**
-     * Get status
+     * 任务状态。
      * @return status
      */
     public StatusEnum getStatus() {

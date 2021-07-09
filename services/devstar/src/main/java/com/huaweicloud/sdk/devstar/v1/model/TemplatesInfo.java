@@ -77,6 +77,8 @@ public class TemplatesInfo  {
 
     /**
      * 平台来源： - 0：codelabs - 1：devstar 
+     * minimum: 0
+     * maximum: 1
      * @return platformSource
      */
     public Integer getPlatformSource() {

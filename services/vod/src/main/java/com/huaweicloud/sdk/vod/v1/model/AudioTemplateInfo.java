@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * AudioTemplateInfo
+ * 模板音频信息
  */
 public class AudioTemplateInfo  {
 
@@ -44,7 +44,7 @@ public class AudioTemplateInfo  {
 
 
     /**
-     * 音频采样率(有效值范围)<br/>  AUDIO_SAMPLE_AUTO=1 (default), AUDIO_SAMPLE_22050=2<br/> AUDIO_SAMPLE_32000=3<br/> AUDIO_SAMPLE_44100=4<br/> AUDIO_SAMPLE_48000=5<br/> AUDIO_SAMPLE_96000=6<br/> 
+     * 音频采样率(有效值范围) - 1：AUDIO_SAMPLE_AUTO - 2：AUDIO_SAMPLE_22050 - 3：AUDIO_SAMPLE_32000 - 4：AUDIO_SAMPLE_44100 - 5：AUDIO_SAMPLE_48000 - 6：AUDIO_SAMPLE_96000  默认值为1。
      * @return sampleRate
      */
     public Integer getSampleRate() {
@@ -66,7 +66,7 @@ public class AudioTemplateInfo  {
 
 
     /**
-     * 音频码率（单位：Kbps）<br/> 
+     * 音频码率（单位：Kbps）。
      * @return bitrate
      */
     public Integer getBitrate() {
@@ -88,7 +88,7 @@ public class AudioTemplateInfo  {
 
 
     /**
-     * 声道数(有效值范围)<br/> AUDIO_CHANNELS_1=1<br/> AUDIO_CHANNELS_2=2<br/> 
+     * 声道数(有效值范围) - 1：AUDIO_CHANNELS_1 - 2：AUDIO_CHANNELS_2
      * @return channels
      */
     public Integer getChannels() {

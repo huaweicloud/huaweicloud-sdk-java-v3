@@ -44,6 +44,8 @@ public class ListValueListResponse extends SdkResponse {
 
     /**
      * 引用表条数
+     * minimum: 0
+     * maximum: 500
      * @return total
      */
     public Integer getTotal() {

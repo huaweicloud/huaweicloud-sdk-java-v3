@@ -33,6 +33,8 @@ public class ProductTemplatesCalculation  {
 
     /**
      * 产品模板数量
+     * minimum: 0
+     * maximum: 999999999
      * @return productTemplatesNumbers
      */
     public Integer getProductTemplatesNumbers() {
