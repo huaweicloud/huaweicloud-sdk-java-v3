@@ -347,6 +347,12 @@ public class ScalingV2PolicyDetail  {
     
     private ScalingPolicyV2MetaData metaData;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public ScalingV2PolicyDetail withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
@@ -633,6 +639,28 @@ public class ScalingV2PolicyDetail  {
 
     
 
+    public ScalingV2PolicyDetail withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩策略描述（1-256个字符）
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -653,11 +681,12 @@ public class ScalingV2PolicyDetail  {
             Objects.equals(this.scalingPolicyAction, scalingV2PolicyDetail.scalingPolicyAction) &&
             Objects.equals(this.coolDownTime, scalingV2PolicyDetail.coolDownTime) &&
             Objects.equals(this.createTime, scalingV2PolicyDetail.createTime) &&
-            Objects.equals(this.metaData, scalingV2PolicyDetail.metaData);
+            Objects.equals(this.metaData, scalingV2PolicyDetail.metaData) &&
+            Objects.equals(this.description, scalingV2PolicyDetail.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingPolicyName, scalingPolicyId, scalingResourceId, scalingResourceType, policyStatus, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime, createTime, metaData);
+        return Objects.hash(scalingPolicyName, scalingPolicyId, scalingResourceId, scalingResourceType, policyStatus, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime, createTime, metaData, description);
     }
     @Override
     public String toString() {
@@ -675,6 +704,7 @@ public class ScalingV2PolicyDetail  {
         sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    metaData: ").append(toIndentedString(metaData)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,7 +35,7 @@ public class DomainRegionIspDetail  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flux")
     
-    private List<Integer> flux = null;
+    private List<Long> flux = null;
     
     public DomainRegionIspDetail withRegion(String region) {
         this.region = region;
@@ -81,13 +81,13 @@ public class DomainRegionIspDetail  {
 
     
 
-    public DomainRegionIspDetail withFlux(List<Integer> flux) {
+    public DomainRegionIspDetail withFlux(List<Long> flux) {
         this.flux = flux;
         return this;
     }
 
     
-    public DomainRegionIspDetail addFluxItem(Integer fluxItem) {
+    public DomainRegionIspDetail addFluxItem(Long fluxItem) {
         if(this.flux == null) {
             this.flux = new ArrayList<>();
         }
@@ -95,7 +95,7 @@ public class DomainRegionIspDetail  {
         return this;
     }
 
-    public DomainRegionIspDetail withFlux(Consumer<List<Integer>> fluxSetter) {
+    public DomainRegionIspDetail withFlux(Consumer<List<Long>> fluxSetter) {
         if(this.flux == null) {
             this.flux = new ArrayList<>();
         }
@@ -107,11 +107,11 @@ public class DomainRegionIspDetail  {
      * 流量
      * @return flux
      */
-    public List<Integer> getFlux() {
+    public List<Long> getFlux() {
         return flux;
     }
 
-    public void setFlux(List<Integer> flux) {
+    public void setFlux(List<Long> flux) {
         this.flux = flux;
     }
 

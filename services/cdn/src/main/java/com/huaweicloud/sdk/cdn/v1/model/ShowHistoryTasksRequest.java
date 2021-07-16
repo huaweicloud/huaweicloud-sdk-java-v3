@@ -129,13 +129,13 @@ public class ShowHistoryTasksRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="start_date")
     
-    private Integer startDate;
+    private Long startDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="end_date")
     
-    private Integer endDate;
+    private Long endDate;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -337,7 +337,7 @@ public class ShowHistoryTasksRequest  {
 
     
 
-    public ShowHistoryTasksRequest withStartDate(Integer startDate) {
+    public ShowHistoryTasksRequest withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -349,17 +349,17 @@ public class ShowHistoryTasksRequest  {
      * 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
      * @return startDate
      */
-    public Integer getStartDate() {
+    public Long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Integer startDate) {
+    public void setStartDate(Long startDate) {
         this.startDate = startDate;
     }
 
     
 
-    public ShowHistoryTasksRequest withEndDate(Integer endDate) {
+    public ShowHistoryTasksRequest withEndDate(Long endDate) {
         this.endDate = endDate;
         return this;
     }
@@ -371,11 +371,11 @@ public class ShowHistoryTasksRequest  {
      * 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
      * @return endDate
      */
-    public Integer getEndDate() {
+    public Long getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Integer endDate) {
+    public void setEndDate(Long endDate) {
         this.endDate = endDate;
     }
 

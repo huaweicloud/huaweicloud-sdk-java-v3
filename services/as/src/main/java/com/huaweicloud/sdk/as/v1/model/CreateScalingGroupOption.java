@@ -402,6 +402,12 @@ public class CreateScalingGroupOption  {
     
     private MultiAzPriorityPolicyEnum multiAzPriorityPolicy;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public CreateScalingGroupOption withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -652,7 +658,7 @@ public class CreateScalingGroupOption  {
     }
 
     /**
-     * 网络信息，最多支持选择5个子网，传入的第一个子网默认作为云服务器的主网卡。使用vpc_id通过查询VPC服务子网列表接口获取， 查询子网列表”。
+     * 网络信息，最多支持选择5个子网，传入的第一个子网默认作为云服务器的主网卡。获取子网信息请参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
      * @return networks
      */
     public List<Networks> getNetworks() {
@@ -936,6 +942,28 @@ public class CreateScalingGroupOption  {
 
     
 
+    public CreateScalingGroupOption withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩组描述信息(0-256个字符)
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -965,11 +993,12 @@ public class CreateScalingGroupOption  {
             Objects.equals(this.deletePublicip, createScalingGroupOption.deletePublicip) &&
             Objects.equals(this.deleteVolume, createScalingGroupOption.deleteVolume) &&
             Objects.equals(this.enterpriseProjectId, createScalingGroupOption.enterpriseProjectId) &&
-            Objects.equals(this.multiAzPriorityPolicy, createScalingGroupOption.multiAzPriorityPolicy);
+            Objects.equals(this.multiAzPriorityPolicy, createScalingGroupOption.multiAzPriorityPolicy) &&
+            Objects.equals(this.description, createScalingGroupOption.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupName, scalingConfigurationId, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, lbListenerId, lbaasListeners, availableZones, networks, securityGroups, vpcId, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, notifications, deletePublicip, deleteVolume, enterpriseProjectId, multiAzPriorityPolicy);
+        return Objects.hash(scalingGroupName, scalingConfigurationId, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, lbListenerId, lbaasListeners, availableZones, networks, securityGroups, vpcId, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, notifications, deletePublicip, deleteVolume, enterpriseProjectId, multiAzPriorityPolicy, description);
     }
     @Override
     public String toString() {
@@ -996,6 +1025,7 @@ public class CreateScalingGroupOption  {
         sb.append("    deleteVolume: ").append(toIndentedString(deleteVolume)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

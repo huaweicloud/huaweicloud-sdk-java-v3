@@ -171,6 +171,41 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTask = genForcreateDiagnosisTask();
+
+    private static HttpRequestDef<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> genForcreateDiagnosisTask() {
+        // basic
+        HttpRequestDef.Builder<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDiagnosisTaskRequest.class, CreateDiagnosisTaskResponse.class)
+                .withName("CreateDiagnosisTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/diagnosis")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            CreateDiagnosisTaskBody.class,
+            f -> f.withMarshaller(CreateDiagnosisTaskRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> createHotkeyScanTask = genForcreateHotkeyScanTask();
 
     private static HttpRequestDef<CreateHotkeyScanTaskRequest, CreateHotkeyScanTaskResponse> genForcreateHotkeyScanTask() {
@@ -242,6 +277,92 @@ public class DcsMeta {
             CreateMigrationTaskBody.class,
             f -> f.withMarshaller(CreateMigrationTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRedislogRequest, CreateRedislogResponse> createRedislog = genForcreateRedislog();
+
+    private static HttpRequestDef<CreateRedislogRequest, CreateRedislogResponse> genForcreateRedislog() {
+        // basic
+        HttpRequestDef.Builder<CreateRedislogRequest, CreateRedislogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRedislogRequest.class, CreateRedislogResponse.class)
+                .withName("CreateRedislog")
+                .withUri("/v2/{project_id}/instances/{instance_id}/redislog")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateRedislogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("query_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(CreateRedislogRequest::getQueryTime, (req, v) -> {
+                req.setQueryTime(v);
+            })
+        );
+        builder.withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateRedislogRequest::getLogType, (req, v) -> {
+                req.setLogType(v);
+            })
+        );
+        builder.withRequestField("replication_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateRedislogRequest::getReplicationId, (req, v) -> {
+                req.setReplicationId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> createRedislogDownloadLink = genForcreateRedislogDownloadLink();
+
+    private static HttpRequestDef<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> genForcreateRedislogDownloadLink() {
+        // basic
+        HttpRequestDef.Builder<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRedislogDownloadLinkRequest.class, CreateRedislogDownloadLinkResponse.class)
+                .withName("CreateRedislogDownloadLink")
+                .withUri("/v2/{project_id}/instances/{instance_id}/redislog/{id}/links")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(CreateRedislogDownloadLinkRequest::getId, (req, v) -> {
+                req.setId(v);
             })
         );
 
@@ -747,6 +868,49 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasks = genForlistDiagnosisTasks();
+
+    private static HttpRequestDef<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> genForlistDiagnosisTasks() {
+        // basic
+        HttpRequestDef.Builder<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDiagnosisTasksRequest.class, ListDiagnosisTasksResponse.class)
+                .withName("ListDiagnosisTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/diagnosis")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListDiagnosisTasksRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForlistFlavors();
 
     private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForlistFlavors() {
@@ -917,6 +1081,14 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, (req, v) -> {
                 req.setIncludeFailure(v);
+            })
+        );
+        builder.withRequestField("include_delete",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInstancesRequest::getIncludeDelete, (req, v) -> {
+                req.setIncludeDelete(v);
             })
         );
         builder.withRequestField("name",
@@ -1150,6 +1322,57 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRedislogRequest, ListRedislogResponse> listRedislog = genForlistRedislog();
+
+    private static HttpRequestDef<ListRedislogRequest, ListRedislogResponse> genForlistRedislog() {
+        // basic
+        HttpRequestDef.Builder<ListRedislogRequest, ListRedislogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRedislogRequest.class, ListRedislogResponse.class)
+                .withName("ListRedislog")
+                .withUri("/v2/{project_id}/instances/{instance_id}/redislog")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListRedislogRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRedislogRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListRedislogRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("log_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListRedislogRequest::getLogType, (req, v) -> {
+                req.setLogType(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRestoreRecordsRequest, ListRestoreRecordsResponse> listRestoreRecords = genForlistRestoreRecords();
 
     private static HttpRequestDef<ListRestoreRecordsRequest, ListRestoreRecordsResponse> genForlistRestoreRecords() {
@@ -1322,6 +1545,41 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance = genForresizeInstance();
+
+    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
+        // basic
+        HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
+                .withName("ResizeInstance")
+                .withUri("/v2/{project_id}/instances/{instance_id}/resize")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            })
+        );
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            ResizeInstanceBody.class,
+            f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> restartOrFlushInstances = genForrestartOrFlushInstances();
 
     private static HttpRequestDef<RestartOrFlushInstancesRequest, RestartOrFlushInstancesResponse> genForrestartOrFlushInstances() {
@@ -1436,6 +1694,33 @@ public class DcsMeta {
             String.class,
             f -> f.withMarshaller(ShowBigkeyScanTaskDetailsRequest::getBigkeyId, (req, v) -> {
                 req.setBigkeyId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> showDiagnosisTaskDetails = genForshowDiagnosisTaskDetails();
+
+    private static HttpRequestDef<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> genForshowDiagnosisTaskDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDiagnosisTaskDetailsRequest.class, ShowDiagnosisTaskDetailsResponse.class)
+                .withName("ShowDiagnosisTaskDetails")
+                .withUri("/v2/{project_id}/diagnosis/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowDiagnosisTaskDetailsRequest::getReportId, (req, v) -> {
+                req.setReportId(v);
             })
         );
 

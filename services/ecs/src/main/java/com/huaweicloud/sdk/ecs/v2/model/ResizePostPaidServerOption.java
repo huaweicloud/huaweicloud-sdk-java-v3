@@ -38,7 +38,7 @@ public class ResizePostPaidServerOption  {
 
 
     /**
-     * 变更后的云服务器规格ID。
+     * 变更后的云服务器规格ID。  可通过[查询云服务器规格变更支持列表](https://support.huaweicloud.com/api-ecs/ecs_02_0402.html)接口查询允许变更的规格列表。
      * @return flavorRef
      */
     public String getFlavorRef() {

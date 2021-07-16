@@ -1399,7 +1399,7 @@ public class ImageInfo  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__lazyloading")
     
-    private Boolean lazyloading;
+    private String lazyloading;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2665,7 +2665,7 @@ public class ImageInfo  {
 
     
 
-    public ImageInfo withLazyloading(Boolean lazyloading) {
+    public ImageInfo withLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
         return this;
     }
@@ -2679,11 +2679,11 @@ public class ImageInfo  {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__lazyloading")
-    public Boolean getLazyloading() {
+    public String getLazyloading() {
         return lazyloading;
     }
 
-    public void setLazyloading(Boolean lazyloading) {
+    public void setLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
     }
 

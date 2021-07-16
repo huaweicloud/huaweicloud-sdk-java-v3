@@ -1547,7 +1547,7 @@ public class GlanceShowImageResponseBody  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__lazyloading")
     
-    private Boolean lazyloading;
+    private String lazyloading;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2713,7 +2713,7 @@ public class GlanceShowImageResponseBody  {
 
     
 
-    public GlanceShowImageResponseBody withLazyloading(Boolean lazyloading) {
+    public GlanceShowImageResponseBody withLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
         return this;
     }
@@ -2722,16 +2722,16 @@ public class GlanceShowImageResponseBody  {
 
 
     /**
-     * 镜像是否支持延迟加载。取值为“True”或“False”。
+     * 镜像是否支持延迟加载。取值为True或False。
      * @return lazyloading
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__lazyloading")
-    public Boolean getLazyloading() {
+    public String getLazyloading() {
         return lazyloading;
     }
 
-    public void setLazyloading(Boolean lazyloading) {
+    public void setLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
     }
 

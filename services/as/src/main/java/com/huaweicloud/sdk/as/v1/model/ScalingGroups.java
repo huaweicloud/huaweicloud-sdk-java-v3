@@ -475,6 +475,12 @@ public class ScalingGroups  {
     
     private String multiAzPriorityPolicy;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public ScalingGroups withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -1207,6 +1213,28 @@ public class ScalingGroups  {
 
     
 
+    public ScalingGroups withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩组描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1245,11 +1273,12 @@ public class ScalingGroups  {
             Objects.equals(this.cloudLocationId, scalingGroups.cloudLocationId) &&
             Objects.equals(this.enterpriseProjectId, scalingGroups.enterpriseProjectId) &&
             Objects.equals(this.activityType, scalingGroups.activityType) &&
-            Objects.equals(this.multiAzPriorityPolicy, scalingGroups.multiAzPriorityPolicy);
+            Objects.equals(this.multiAzPriorityPolicy, scalingGroups.multiAzPriorityPolicy) &&
+            Objects.equals(this.description, scalingGroups.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupName, scalingGroupId, scalingGroupStatus, scalingConfigurationId, scalingConfigurationName, currentInstanceNumber, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, lbListenerId, lbaasListeners, availableZones, networks, securityGroups, createTime, vpcId, detail, isScaling, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, notifications, deletePublicip, deleteVolume, cloudLocationId, enterpriseProjectId, activityType, multiAzPriorityPolicy);
+        return Objects.hash(scalingGroupName, scalingGroupId, scalingGroupStatus, scalingConfigurationId, scalingConfigurationName, currentInstanceNumber, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, lbListenerId, lbaasListeners, availableZones, networks, securityGroups, createTime, vpcId, detail, isScaling, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, notifications, deletePublicip, deleteVolume, cloudLocationId, enterpriseProjectId, activityType, multiAzPriorityPolicy, description);
     }
     @Override
     public String toString() {
@@ -1285,6 +1314,7 @@ public class ScalingGroups  {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    activityType: ").append(toIndentedString(activityType)).append("\n");
         sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

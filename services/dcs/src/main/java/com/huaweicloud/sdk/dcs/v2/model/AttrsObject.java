@@ -44,7 +44,7 @@ public class AttrsObject  {
 
 
     /**
-     * 缓存容量。
+     * 缓存容量（G Byte）。
      * @return capacity
      */
     public String getCapacity() {

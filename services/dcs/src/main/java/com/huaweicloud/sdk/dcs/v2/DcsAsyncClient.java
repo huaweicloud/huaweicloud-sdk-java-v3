@@ -130,6 +130,28 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 创建实例诊断任务
+     * 诊断指定的缓存实例。
+     *
+     * @param CreateDiagnosisTaskRequest 请求对象
+     * @return CompletableFuture<CreateDiagnosisTaskResponse>
+     */
+    public CompletableFuture<CreateDiagnosisTaskResponse> createDiagnosisTaskAsync(CreateDiagnosisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createDiagnosisTask);
+    }
+
+    /**
+     * 创建实例诊断任务
+     * 诊断指定的缓存实例。
+     *
+     * @param CreateDiagnosisTaskRequest 请求对象
+     * @return AsyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>
+     */
+    public AsyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse> createDiagnosisTaskAsyncInvoker(CreateDiagnosisTaskRequest request) {
+        return new AsyncInvoker<CreateDiagnosisTaskRequest, CreateDiagnosisTaskResponse>(request, DcsMeta.createDiagnosisTask, hcClient);
+    }
+
+    /**
      * 创建热key分析任务
      * 创建热key分析任务，Redis 3.0 不支持热key分析。  热key分析需要将缓存实例配置参数maxmemory-policy设置为allkeys-lfu或volatile-lfu。 
      *
@@ -193,6 +215,50 @@ public class DcsAsyncClient {
      */
     public AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse> createMigrationTaskAsyncInvoker(CreateMigrationTaskRequest request) {
         return new AsyncInvoker<CreateMigrationTaskRequest, CreateMigrationTaskResponse>(request, DcsMeta.createMigrationTask, hcClient);
+    }
+
+    /**
+     * 采集Redis运行日志
+     * 采集Redis运行日志。
+     *
+     * @param CreateRedislogRequest 请求对象
+     * @return CompletableFuture<CreateRedislogResponse>
+     */
+    public CompletableFuture<CreateRedislogResponse> createRedislogAsync(CreateRedislogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createRedislog);
+    }
+
+    /**
+     * 采集Redis运行日志
+     * 采集Redis运行日志。
+     *
+     * @param CreateRedislogRequest 请求对象
+     * @return AsyncInvoker<CreateRedislogRequest, CreateRedislogResponse>
+     */
+    public AsyncInvoker<CreateRedislogRequest, CreateRedislogResponse> createRedislogAsyncInvoker(CreateRedislogRequest request) {
+        return new AsyncInvoker<CreateRedislogRequest, CreateRedislogResponse>(request, DcsMeta.createRedislog, hcClient);
+    }
+
+    /**
+     * 获取日志下载链接
+     * 获取日志下载链接。
+     *
+     * @param CreateRedislogDownloadLinkRequest 请求对象
+     * @return CompletableFuture<CreateRedislogDownloadLinkResponse>
+     */
+    public CompletableFuture<CreateRedislogDownloadLinkResponse> createRedislogDownloadLinkAsync(CreateRedislogDownloadLinkRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createRedislogDownloadLink);
+    }
+
+    /**
+     * 获取日志下载链接
+     * 获取日志下载链接。
+     *
+     * @param CreateRedislogDownloadLinkRequest 请求对象
+     * @return AsyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse>
+     */
+    public AsyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse> createRedislogDownloadLinkAsyncInvoker(CreateRedislogDownloadLinkRequest request) {
+        return new AsyncInvoker<CreateRedislogDownloadLinkRequest, CreateRedislogDownloadLinkResponse>(request, DcsMeta.createRedislogDownloadLink, hcClient);
     }
 
     /**
@@ -482,6 +548,28 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例诊断任务列表
+     * 查询指定缓存实例诊断任务列表。
+     *
+     * @param ListDiagnosisTasksRequest 请求对象
+     * @return CompletableFuture<ListDiagnosisTasksResponse>
+     */
+    public CompletableFuture<ListDiagnosisTasksResponse> listDiagnosisTasksAsync(ListDiagnosisTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listDiagnosisTasks);
+    }
+
+    /**
+     * 查询实例诊断任务列表
+     * 查询指定缓存实例诊断任务列表。
+     *
+     * @param ListDiagnosisTasksRequest 请求对象
+     * @return AsyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>
+     */
+    public AsyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse> listDiagnosisTasksAsyncInvoker(ListDiagnosisTasksRequest request) {
+        return new AsyncInvoker<ListDiagnosisTasksRequest, ListDiagnosisTasksResponse>(request, DcsMeta.listDiagnosisTasks, hcClient);
+    }
+
+    /**
      * 查询产品规格
      * 在创建缓存实例时，需要配置订购的产品规格编码（spec_code），可通过该接口查询产品规格，查询条件不选时默认查询全部。
      *
@@ -680,6 +768,28 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询Redis运行日志列表
+     * 查询Redis运行日志列表。
+     *
+     * @param ListRedislogRequest 请求对象
+     * @return CompletableFuture<ListRedislogResponse>
+     */
+    public CompletableFuture<ListRedislogResponse> listRedislogAsync(ListRedislogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listRedislog);
+    }
+
+    /**
+     * 查询Redis运行日志列表
+     * 查询Redis运行日志列表。
+     *
+     * @param ListRedislogRequest 请求对象
+     * @return AsyncInvoker<ListRedislogRequest, ListRedislogResponse>
+     */
+    public AsyncInvoker<ListRedislogRequest, ListRedislogResponse> listRedislogAsyncInvoker(ListRedislogRequest request) {
+        return new AsyncInvoker<ListRedislogRequest, ListRedislogResponse>(request, DcsMeta.listRedislog, hcClient);
+    }
+
+    /**
      * 查询实例恢复记录
      * 查询指定缓存实例的恢复记录列表。
      *
@@ -768,6 +878,28 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 变更实例规格
+     * 用户可以为状态为“运行中”的DCS缓存实例进行规格变更，当前仅能支持按需实例的同副本或分片数量的实例规格变更。
+     *
+     * @param ResizeInstanceRequest 请求对象
+     * @return CompletableFuture<ResizeInstanceResponse>
+     */
+    public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.resizeInstance);
+    }
+
+    /**
+     * 变更实例规格
+     * 用户可以为状态为“运行中”的DCS缓存实例进行规格变更，当前仅能支持按需实例的同副本或分片数量的实例规格变更。
+     *
+     * @param ResizeInstanceRequest 请求对象
+     * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
+     */
+    public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(ResizeInstanceRequest request) {
+        return new AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>(request, DcsMeta.resizeInstance, hcClient);
+    }
+
+    /**
      * 重启实例或清空数据
      * 重启运行中的DCS缓存实例。  清空Redis4.0/Redis5.0的实例数据，数据清空后，无法撤销，且无法恢复，请谨慎操作。 
      *
@@ -853,6 +985,28 @@ public class DcsAsyncClient {
      */
     public AsyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse> showBigkeyScanTaskDetailsAsyncInvoker(ShowBigkeyScanTaskDetailsRequest request) {
         return new AsyncInvoker<ShowBigkeyScanTaskDetailsRequest, ShowBigkeyScanTaskDetailsResponse>(request, DcsMeta.showBigkeyScanTaskDetails, hcClient);
+    }
+
+    /**
+     * 查询指定诊断报告
+     * 通过报告ID查询诊断报告的详细信息。
+     *
+     * @param ShowDiagnosisTaskDetailsRequest 请求对象
+     * @return CompletableFuture<ShowDiagnosisTaskDetailsResponse>
+     */
+    public CompletableFuture<ShowDiagnosisTaskDetailsResponse> showDiagnosisTaskDetailsAsync(ShowDiagnosisTaskDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showDiagnosisTaskDetails);
+    }
+
+    /**
+     * 查询指定诊断报告
+     * 通过报告ID查询诊断报告的详细信息。
+     *
+     * @param ShowDiagnosisTaskDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse>
+     */
+    public AsyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse> showDiagnosisTaskDetailsAsyncInvoker(ShowDiagnosisTaskDetailsRequest request) {
+        return new AsyncInvoker<ShowDiagnosisTaskDetailsRequest, ShowDiagnosisTaskDetailsResponse>(request, DcsMeta.showDiagnosisTaskDetails, hcClient);
     }
 
     /**

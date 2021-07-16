@@ -306,50 +306,6 @@ public class DdmAsyncClient {
     }
 
     /**
-     * 读写比例监控
-     * 查询指定时间段内在DDM实例的读写次数。
-     *
-     * @param ListReadWriteRatioRequest 请求对象
-     * @return CompletableFuture<ListReadWriteRatioResponse>
-     */
-    public CompletableFuture<ListReadWriteRatioResponse> listReadWriteRatioAsync(ListReadWriteRatioRequest request) {
-        return hcClient.asyncInvokeHttp(request, DdmMeta.listReadWriteRatio);
-    }
-
-    /**
-     * 读写比例监控
-     * 查询指定时间段内在DDM实例的读写次数。
-     *
-     * @param ListReadWriteRatioRequest 请求对象
-     * @return AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse>
-     */
-    public AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse> listReadWriteRatioAsyncInvoker(ListReadWriteRatioRequest request) {
-        return new AsyncInvoker<ListReadWriteRatioRequest, ListReadWriteRatioResponse>(request, DdmMeta.listReadWriteRatio, hcClient);
-    }
-
-    /**
-     * 慢日志监控
-     * 查询指定时间段内在DDM实例上执行过的慢sql相关信息。
-     *
-     * @param ListSlowLogRequest 请求对象
-     * @return CompletableFuture<ListSlowLogResponse>
-     */
-    public CompletableFuture<ListSlowLogResponse> listSlowLogAsync(ListSlowLogRequest request) {
-        return hcClient.asyncInvokeHttp(request, DdmMeta.listSlowLog);
-    }
-
-    /**
-     * 慢日志监控
-     * 查询指定时间段内在DDM实例上执行过的慢sql相关信息。
-     *
-     * @param ListSlowLogRequest 请求对象
-     * @return AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse>
-     */
-    public AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse> listSlowLogAsyncInvoker(ListSlowLogRequest request) {
-        return new AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse>(request, DdmMeta.listSlowLog, hcClient);
-    }
-
-    /**
      * 查询DDM帐号列表
      * 查询DDM帐号列表。
      *

@@ -308,7 +308,7 @@ public class ServerDetail  {
 
 
     /**
-     * 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
+     * 弹性云服务器状态。  取值范围：  ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
      * @return status
      */
     public String getStatus() {
@@ -505,7 +505,7 @@ public class ServerDetail  {
 
 
     /**
-     * 扩展属性，弹性云服务器当前任务的状态。
+     * 扩展属性，弹性云服务器当前任务的状态。  取值范围请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)表3。
      * @return osEXTSTSTaskState
      */
     public String getOsEXTSTSTaskState() {
@@ -527,7 +527,7 @@ public class ServerDetail  {
 
 
     /**
-     * 扩展属性，弹性云服务器当前状态。
+     * 扩展属性，弹性云服务器当前状态。  云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)。
      * @return osEXTSTSVmState
      */
     public String getOsEXTSTSVmState() {

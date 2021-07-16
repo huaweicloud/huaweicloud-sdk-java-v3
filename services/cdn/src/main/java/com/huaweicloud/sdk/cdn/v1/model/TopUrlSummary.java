@@ -27,7 +27,7 @@ public class TopUrlSummary  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="value")
     
-    private Integer value;
+    private Long value;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -69,7 +69,7 @@ public class TopUrlSummary  {
 
     
 
-    public TopUrlSummary withValue(Integer value) {
+    public TopUrlSummary withValue(Long value) {
         this.value = value;
         return this;
     }
@@ -81,11 +81,11 @@ public class TopUrlSummary  {
      * 对应查询类型的值。（流量单位：Byte）
      * @return value
      */
-    public Integer getValue() {
+    public Long getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(Long value) {
         this.value = value;
     }
 

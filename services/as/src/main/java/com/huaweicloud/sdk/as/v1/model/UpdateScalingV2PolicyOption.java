@@ -235,6 +235,12 @@ public class UpdateScalingV2PolicyOption  {
     
     private Integer coolDownTime;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public UpdateScalingV2PolicyOption withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
@@ -426,6 +432,28 @@ public class UpdateScalingV2PolicyOption  {
 
     
 
+    public UpdateScalingV2PolicyOption withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩策略描述（1-256个字符）
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -442,11 +470,12 @@ public class UpdateScalingV2PolicyOption  {
             Objects.equals(this.alarmId, updateScalingV2PolicyOption.alarmId) &&
             Objects.equals(this.scheduledPolicy, updateScalingV2PolicyOption.scheduledPolicy) &&
             Objects.equals(this.scalingPolicyAction, updateScalingV2PolicyOption.scalingPolicyAction) &&
-            Objects.equals(this.coolDownTime, updateScalingV2PolicyOption.coolDownTime);
+            Objects.equals(this.coolDownTime, updateScalingV2PolicyOption.coolDownTime) &&
+            Objects.equals(this.description, updateScalingV2PolicyOption.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingPolicyName, scalingResourceId, scalingResourceType, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime);
+        return Objects.hash(scalingPolicyName, scalingResourceId, scalingResourceType, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime, description);
     }
     @Override
     public String toString() {
@@ -460,6 +489,7 @@ public class UpdateScalingV2PolicyOption  {
         sb.append("    scheduledPolicy: ").append(toIndentedString(scheduledPolicy)).append("\n");
         sb.append("    scalingPolicyAction: ").append(toIndentedString(scalingPolicyAction)).append("\n");
         sb.append("    coolDownTime: ").append(toIndentedString(coolDownTime)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

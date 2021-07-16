@@ -31,6 +31,12 @@ public class ListInstancesRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="include_delete")
+    
+    private String includeDelete;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="name")
     
     private String name;
@@ -102,7 +108,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。 
+     * 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
      * @return includeFailure
      */
     public String getIncludeFailure() {
@@ -111,6 +117,28 @@ public class ListInstancesRequest  {
 
     public void setIncludeFailure(String includeFailure) {
         this.includeFailure = includeFailure;
+    }
+
+    
+
+    public ListInstancesRequest withIncludeDelete(String includeDelete) {
+        this.includeDelete = includeDelete;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否返回已删除的实例数。 当参数值为“true”时，返回已删除的实例数。参数值为“false”或者其他值，不返回已删除的实例数。
+     * @return includeDelete
+     */
+    public String getIncludeDelete() {
+        return includeDelete;
+    }
+
+    public void setIncludeDelete(String includeDelete) {
+        this.includeDelete = includeDelete;
     }
 
     
@@ -212,7 +240,7 @@ public class ListInstancesRequest  {
 
 
     /**
-     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。 
+     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
      * @return nameEqual
      */
     public String getNameEqual() {
@@ -280,6 +308,7 @@ public class ListInstancesRequest  {
         ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
         return Objects.equals(this.instanceId, listInstancesRequest.instanceId) &&
             Objects.equals(this.includeFailure, listInstancesRequest.includeFailure) &&
+            Objects.equals(this.includeDelete, listInstancesRequest.includeDelete) &&
             Objects.equals(this.name, listInstancesRequest.name) &&
             Objects.equals(this.offset, listInstancesRequest.offset) &&
             Objects.equals(this.limit, listInstancesRequest.limit) &&
@@ -290,7 +319,7 @@ public class ListInstancesRequest  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, includeFailure, name, offset, limit, status, nameEqual, tags, ip);
+        return Objects.hash(instanceId, includeFailure, includeDelete, name, offset, limit, status, nameEqual, tags, ip);
     }
     @Override
     public String toString() {
@@ -298,6 +327,7 @@ public class ListInstancesRequest  {
         sb.append("class ListInstancesRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    includeFailure: ").append(toIndentedString(includeFailure)).append("\n");
+        sb.append("    includeDelete: ").append(toIndentedString(includeDelete)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

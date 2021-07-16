@@ -45,7 +45,7 @@ public class Networks  {
 
 
     /**
-     * 网络ID。
+     * 子网的网络id。
      * @return id
      */
     public String getId() {

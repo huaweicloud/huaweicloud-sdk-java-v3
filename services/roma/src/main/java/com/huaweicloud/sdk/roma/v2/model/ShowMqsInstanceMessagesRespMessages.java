@@ -43,9 +43,27 @@ public class ShowMqsInstanceMessagesRespMessages  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="size")
+    
+    private Long size;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="timestamp")
+    
+    private Long timestamp;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="huge_message")
     
     private Boolean hugeMessage;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="message_offset")
+    
+    private Long messageOffset;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -153,6 +171,50 @@ public class ShowMqsInstanceMessagesRespMessages  {
 
     
 
+    public ShowMqsInstanceMessagesRespMessages withSize(Long size) {
+        this.size = size;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 消息大小。
+     * @return size
+     */
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    
+
+    public ShowMqsInstanceMessagesRespMessages withTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+        return this;
+    }
+
+    
+
+
+    /**
+     * topic名称。
+     * @return timestamp
+     */
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    
+
     public ShowMqsInstanceMessagesRespMessages withHugeMessage(Boolean hugeMessage) {
         this.hugeMessage = hugeMessage;
         return this;
@@ -171,6 +233,28 @@ public class ShowMqsInstanceMessagesRespMessages  {
 
     public void setHugeMessage(Boolean hugeMessage) {
         this.hugeMessage = hugeMessage;
+    }
+
+    
+
+    public ShowMqsInstanceMessagesRespMessages withMessageOffset(Long messageOffset) {
+        this.messageOffset = messageOffset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 消息偏移量。
+     * @return messageOffset
+     */
+    public Long getMessageOffset() {
+        return messageOffset;
+    }
+
+    public void setMessageOffset(Long messageOffset) {
+        this.messageOffset = messageOffset;
     }
 
     
@@ -254,14 +338,17 @@ public class ShowMqsInstanceMessagesRespMessages  {
             Objects.equals(this.partition, showMqsInstanceMessagesRespMessages.partition) &&
             Objects.equals(this.key, showMqsInstanceMessagesRespMessages.key) &&
             Objects.equals(this.value, showMqsInstanceMessagesRespMessages.value) &&
+            Objects.equals(this.size, showMqsInstanceMessagesRespMessages.size) &&
+            Objects.equals(this.timestamp, showMqsInstanceMessagesRespMessages.timestamp) &&
             Objects.equals(this.hugeMessage, showMqsInstanceMessagesRespMessages.hugeMessage) &&
+            Objects.equals(this.messageOffset, showMqsInstanceMessagesRespMessages.messageOffset) &&
             Objects.equals(this.messageId, showMqsInstanceMessagesRespMessages.messageId) &&
             Objects.equals(this.appId, showMqsInstanceMessagesRespMessages.appId) &&
             Objects.equals(this.tag, showMqsInstanceMessagesRespMessages.tag);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, key, value, hugeMessage, messageId, appId, tag);
+        return Objects.hash(topic, partition, key, value, size, timestamp, hugeMessage, messageOffset, messageId, appId, tag);
     }
     @Override
     public String toString() {
@@ -271,7 +358,10 @@ public class ShowMqsInstanceMessagesRespMessages  {
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    hugeMessage: ").append(toIndentedString(hugeMessage)).append("\n");
+        sb.append("    messageOffset: ").append(toIndentedString(messageOffset)).append("\n");
         sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");

@@ -454,9 +454,9 @@ public class ListImagesRequest  {
         public static final PlatformEnum COREOS = new PlatformEnum("CoreOS");
         
         /**
-         * Enum EULEOS for value: "EuleOS"
+         * Enum EULEROS for value: "EulerOS"
          */
-        public static final PlatformEnum EULEOS = new PlatformEnum("EuleOS");
+        public static final PlatformEnum EULEROS = new PlatformEnum("EulerOS");
         
 
         private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
@@ -474,7 +474,7 @@ public class ListImagesRequest  {
             map.put("Fedora", FEDORA);
             map.put("Other", OTHER);
             map.put("CoreOS", COREOS);
-            map.put("EuleOS", EULEOS);
+            map.put("EulerOS", EULEROS);
             return Collections.unmodifiableMap(map);
         }
 

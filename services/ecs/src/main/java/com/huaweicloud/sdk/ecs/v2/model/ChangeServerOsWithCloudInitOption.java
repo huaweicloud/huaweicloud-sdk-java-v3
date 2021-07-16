@@ -85,7 +85,7 @@ public class ChangeServerOsWithCloudInitOption  {
 
 
     /**
-     * 密钥名称。
+     * 密钥名称。  密钥可以通过密钥创建接口进行创建（请参见[创建和导入SSH密钥](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212678.html)），或使用SSH密钥查询接口查询已有的密钥（请参见[查询SSH密钥列表](https://support.huaweicloud.com/api-ecs/ecs_03_1201.html) ）。
      * @return keyname
      */
     public String getKeyname() {
@@ -129,7 +129,7 @@ public class ChangeServerOsWithCloudInitOption  {
 
 
     /**
-     * 切换系统所使用的新镜像的ID，格式为UUID。
+     * 切换系统所使用的新镜像的ID，格式为UUID。  镜像的ID可以从控制台或者参考[《镜像服务API参考》](https://support.huaweicloud.com/api-ims/ims_03_0702.html)的“查询镜像列表”的章节获取。
      * @return imageid
      */
     public String getImageid() {

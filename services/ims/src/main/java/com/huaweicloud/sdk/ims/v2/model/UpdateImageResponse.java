@@ -1401,7 +1401,7 @@ public class UpdateImageResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__lazyloading")
     
-    private Boolean lazyloading;
+    private String lazyloading;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2667,7 +2667,7 @@ public class UpdateImageResponse extends SdkResponse {
 
     
 
-    public UpdateImageResponse withLazyloading(Boolean lazyloading) {
+    public UpdateImageResponse withLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
         return this;
     }
@@ -2681,11 +2681,11 @@ public class UpdateImageResponse extends SdkResponse {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="__lazyloading")
-    public Boolean getLazyloading() {
+    public String getLazyloading() {
         return lazyloading;
     }
 
-    public void setLazyloading(Boolean lazyloading) {
+    public void setLazyloading(String lazyloading) {
         this.lazyloading = lazyloading;
     }
 

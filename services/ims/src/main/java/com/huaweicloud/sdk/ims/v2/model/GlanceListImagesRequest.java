@@ -303,7 +303,7 @@ public class GlanceListImagesRequest  {
     
     private OsTypeEnum osType;
     /**
-     * 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS
+     * 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS
      */
     public static final class PlatformEnum {
 
@@ -364,9 +364,9 @@ public class GlanceListImagesRequest  {
         public static final PlatformEnum COREOS = new PlatformEnum("CoreOS");
         
         /**
-         * Enum EULEOS for value: "EuleOS"
+         * Enum EULEROS for value: "EulerOS"
          */
-        public static final PlatformEnum EULEOS = new PlatformEnum("EuleOS");
+        public static final PlatformEnum EULEROS = new PlatformEnum("EulerOS");
         
 
         private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
@@ -384,7 +384,7 @@ public class GlanceListImagesRequest  {
             map.put("Fedora", FEDORA);
             map.put("Other", OTHER);
             map.put("CoreOS", COREOS);
-            map.put("EuleOS", EULEOS);
+            map.put("EulerOS", EULEROS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -984,7 +984,7 @@ public class GlanceListImagesRequest  {
 
 
     /**
-     * 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EuleOS
+     * 镜像平台分类，取值为Windows，Ubuntu，RedHat，SUSE，CentOS，Debian，OpenSUSE, Oracle Linux，Fedora，Other，CoreOS和EulerOS
      * @return platform
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

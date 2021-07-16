@@ -316,6 +316,12 @@ public class UpdateScalingGroupOption  {
     
     private String multiAzPriorityPolicy;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
     public UpdateScalingGroupOption withScalingGroupName(String scalingGroupName) {
         this.scalingGroupName = scalingGroupName;
         return this;
@@ -771,7 +777,7 @@ public class UpdateScalingGroupOption  {
 
 
     /**
-     *  配置删除云服务器时是否删除云服务器绑定的数据盘。取值为true或false，默认为false。  true：删除云服务器时，会同时删除绑定在云服务器上的数据盘。当数据盘的计费方式为包年包月时，不会被删除。 false：删除务器时，仅云服解绑定在云服务器上的数据盘，不删除数据盘。
+     * 配置删除云服务器时是否删除云服务器绑定的数据盘。取值为true或false，默认为false。  true：删除云服务器时，会同时删除绑定在云服务器上的数据盘。当数据盘的计费方式为包年包月时，不会被删除。 false：删除务器时，仅云服解绑定在云服务器上的数据盘，不删除数据盘。
      * @return deleteVolume
      */
     public Boolean getDeleteVolume() {
@@ -828,6 +834,28 @@ public class UpdateScalingGroupOption  {
 
     
 
+    public UpdateScalingGroupOption withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 伸缩组描述信息(0-256个字符)
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -856,11 +884,12 @@ public class UpdateScalingGroupOption  {
             Objects.equals(this.deletePublicip, updateScalingGroupOption.deletePublicip) &&
             Objects.equals(this.deleteVolume, updateScalingGroupOption.deleteVolume) &&
             Objects.equals(this.enterpriseProjectId, updateScalingGroupOption.enterpriseProjectId) &&
-            Objects.equals(this.multiAzPriorityPolicy, updateScalingGroupOption.multiAzPriorityPolicy);
+            Objects.equals(this.multiAzPriorityPolicy, updateScalingGroupOption.multiAzPriorityPolicy) &&
+            Objects.equals(this.description, updateScalingGroupOption.description);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupName, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, availableZones, networks, securityGroups, lbListenerId, lbaasListeners, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, scalingConfigurationId, notifications, deletePublicip, deleteVolume, enterpriseProjectId, multiAzPriorityPolicy);
+        return Objects.hash(scalingGroupName, desireInstanceNumber, minInstanceNumber, maxInstanceNumber, coolDownTime, availableZones, networks, securityGroups, lbListenerId, lbaasListeners, healthPeriodicAuditMethod, healthPeriodicAuditTime, healthPeriodicAuditGracePeriod, instanceTerminatePolicy, scalingConfigurationId, notifications, deletePublicip, deleteVolume, enterpriseProjectId, multiAzPriorityPolicy, description);
     }
     @Override
     public String toString() {
@@ -886,6 +915,7 @@ public class UpdateScalingGroupOption  {
         sb.append("    deleteVolume: ").append(toIndentedString(deleteVolume)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    multiAzPriorityPolicy: ").append(toIndentedString(multiAzPriorityPolicy)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

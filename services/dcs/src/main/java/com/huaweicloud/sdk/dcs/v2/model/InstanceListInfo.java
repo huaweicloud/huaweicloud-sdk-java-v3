@@ -218,6 +218,24 @@ public class InstanceListInfo  {
     
     private String enterpriseProjectId;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="cpu_type")
+    
+    private String cpuType;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="az_codes")
+    
+    private List<String> azCodes = null;
+    
     public InstanceListInfo withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -958,6 +976,86 @@ public class InstanceListInfo  {
 
     
 
+    public InstanceListInfo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例描述备注
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+
+    public InstanceListInfo withCpuType(String cpuType) {
+        this.cpuType = cpuType;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 实例CPU类型，通常为x86_64或aarch64
+     * @return cpuType
+     */
+    public String getCpuType() {
+        return cpuType;
+    }
+
+    public void setCpuType(String cpuType) {
+        this.cpuType = cpuType;
+    }
+
+    
+
+    public InstanceListInfo withAzCodes(List<String> azCodes) {
+        this.azCodes = azCodes;
+        return this;
+    }
+
+    
+    public InstanceListInfo addAzCodesItem(String azCodesItem) {
+        if(this.azCodes == null) {
+            this.azCodes = new ArrayList<>();
+        }
+        this.azCodes.add(azCodesItem);
+        return this;
+    }
+
+    public InstanceListInfo withAzCodes(Consumer<List<String>> azCodesSetter) {
+        if(this.azCodes == null) {
+            this.azCodes = new ArrayList<>();
+        }
+        azCodesSetter.accept(this.azCodes);
+        return this;
+    }
+
+    /**
+     * 有资源的可用区编码。
+     * @return azCodes
+     */
+    public List<String> getAzCodes() {
+        return azCodes;
+    }
+
+    public void setAzCodes(List<String> azCodes) {
+        this.azCodes = azCodes;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -999,11 +1097,14 @@ public class InstanceListInfo  {
             Objects.equals(this.specCode, instanceListInfo.specCode) &&
             Objects.equals(this.status, instanceListInfo.status) &&
             Objects.equals(this.tags, instanceListInfo.tags) &&
-            Objects.equals(this.enterpriseProjectId, instanceListInfo.enterpriseProjectId);
+            Objects.equals(this.enterpriseProjectId, instanceListInfo.enterpriseProjectId) &&
+            Objects.equals(this.description, instanceListInfo.description) &&
+            Objects.equals(this.cpuType, instanceListInfo.cpuType) &&
+            Objects.equals(this.azCodes, instanceListInfo.azCodes);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(publicipId, vpcName, chargingMode, vpcId, subnetId, securityGroupId, createdAt, enableSsl, maxMemory, usedMemory, publicipAddress, capacity, capacityMinor, maintainBegin, maintainEnd, engine, engineVersion, serviceUpgrade, noPasswordAccess, serviceTaskId, ip, accessUser, instanceId, enablePublicip, port, userId, userName, domainName, name, specCode, status, tags, enterpriseProjectId);
+        return Objects.hash(publicipId, vpcName, chargingMode, vpcId, subnetId, securityGroupId, createdAt, enableSsl, maxMemory, usedMemory, publicipAddress, capacity, capacityMinor, maintainBegin, maintainEnd, engine, engineVersion, serviceUpgrade, noPasswordAccess, serviceTaskId, ip, accessUser, instanceId, enablePublicip, port, userId, userName, domainName, name, specCode, status, tags, enterpriseProjectId, description, cpuType, azCodes);
     }
     @Override
     public String toString() {
@@ -1042,6 +1143,9 @@ public class InstanceListInfo  {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    cpuType: ").append(toIndentedString(cpuType)).append("\n");
+        sb.append("    azCodes: ").append(toIndentedString(azCodes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

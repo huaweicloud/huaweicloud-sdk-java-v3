@@ -29,7 +29,7 @@ public class DomainObject  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="flux")
     
-    private List<Integer> flux = null;
+    private List<Long> flux = null;
     
     public DomainObject withDomainName(String domainName) {
         this.domainName = domainName;
@@ -53,13 +53,13 @@ public class DomainObject  {
 
     
 
-    public DomainObject withFlux(List<Integer> flux) {
+    public DomainObject withFlux(List<Long> flux) {
         this.flux = flux;
         return this;
     }
 
     
-    public DomainObject addFluxItem(Integer fluxItem) {
+    public DomainObject addFluxItem(Long fluxItem) {
         if(this.flux == null) {
             this.flux = new ArrayList<>();
         }
@@ -67,7 +67,7 @@ public class DomainObject  {
         return this;
     }
 
-    public DomainObject withFlux(Consumer<List<Integer>> fluxSetter) {
+    public DomainObject withFlux(Consumer<List<Long>> fluxSetter) {
         if(this.flux == null) {
             this.flux = new ArrayList<>();
         }
@@ -79,11 +79,11 @@ public class DomainObject  {
      * 数据结束时间戳，可能与请求时间不一致，可能不返回
      * @return flux
      */
-    public List<Integer> getFlux() {
+    public List<Long> getFlux() {
         return flux;
     }
 
-    public void setFlux(List<Integer> flux) {
+    public void setFlux(List<Long> flux) {
         this.flux = flux;
     }
 

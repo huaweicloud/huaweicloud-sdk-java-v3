@@ -62,7 +62,7 @@ public class PrePaidServerDataVolumeMetadata  {
 
 
     /**
-     * metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。
+     * metadata中的加密cmkid字段，与__system__encrypted配合表示需要加密，cmkid长度固定为36个字节。  > 说明：  - 请参考[查询密钥列表](https://support.huaweicloud.com/api-dew/ListKeys.html)，通过HTTPS请求获取密钥ID。
      * @return systemCmkid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

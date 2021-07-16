@@ -21,7 +21,7 @@ public class ImageTaggingReq  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image")
     
-    private byte[] image;
+    private String image;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -47,7 +47,7 @@ public class ImageTaggingReq  {
     
     private Integer limit;
 
-    public ImageTaggingReq withImage(byte[] image) {
+    public ImageTaggingReq withImage(String image) {
         this.image = image;
         return this;
     }
@@ -59,11 +59,11 @@ public class ImageTaggingReq  {
      * 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10M，最短边至少15px，最长边最大4096px，支持JPG/PNG/BMP格式。 
      * @return image
      */
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

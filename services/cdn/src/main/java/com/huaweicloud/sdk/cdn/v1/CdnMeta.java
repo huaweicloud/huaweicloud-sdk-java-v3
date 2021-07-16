@@ -700,7 +700,7 @@ public class CdnMeta {
         builder.withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            Long.class,
             f -> f.withMarshaller(ShowHistoryTasksRequest::getStartDate, (req, v) -> {
                 req.setStartDate(v);
             })
@@ -708,7 +708,7 @@ public class CdnMeta {
         builder.withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            Long.class,
             f -> f.withMarshaller(ShowHistoryTasksRequest::getEndDate, (req, v) -> {
                 req.setEndDate(v);
             })
