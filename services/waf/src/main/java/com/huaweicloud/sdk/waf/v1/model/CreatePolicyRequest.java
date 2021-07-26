@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.CreatePolicyBody;
+import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -22,16 +22,16 @@ public class CreatePolicyRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private CreatePolicyBody body;
+    private CreatePolicyRequestBody body;
 
-    public CreatePolicyRequest withBody(CreatePolicyBody body) {
+    public CreatePolicyRequest withBody(CreatePolicyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreatePolicyRequest withBody(Consumer<CreatePolicyBody> bodySetter) {
+    public CreatePolicyRequest withBody(Consumer<CreatePolicyRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new CreatePolicyBody();
+            this.body = new CreatePolicyRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -43,11 +43,11 @@ public class CreatePolicyRequest  {
      * Get body
      * @return body
      */
-    public CreatePolicyBody getBody() {
+    public CreatePolicyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreatePolicyBody body) {
+    public void setBody(CreatePolicyRequestBody body) {
         this.body = body;
     }
 

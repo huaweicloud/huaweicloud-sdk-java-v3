@@ -144,7 +144,7 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * page
+     * 页码
      * @return page
      */
     public Integer getPage() {
@@ -166,7 +166,7 @@ public class ListCertificatesRequest  {
 
 
     /**
-     * pagesize
+     * 每页条数
      * @return pagesize
      */
     public Integer getPagesize() {

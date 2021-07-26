@@ -27,6 +27,12 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="policyid")
+    
+    private String policyid;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="geoip")
     
     private String geoip;
@@ -36,12 +42,6 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
     @JsonProperty(value="white")
     
     private Integer white;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
-    private Long timestamp;
 
     public UpdateGeoipRuleResponse withId(String id) {
         this.id = id;
@@ -61,6 +61,28 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    
+
+    public UpdateGeoipRuleResponse withPolicyid(String policyid) {
+        this.policyid = policyid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 策略id
+     * @return policyid
+     */
+    public String getPolicyid() {
+        return policyid;
+    }
+
+    public void setPolicyid(String policyid) {
+        this.policyid = policyid;
     }
 
     
@@ -96,7 +118,7 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
 
 
     /**
-     * 放行或者拦截
+     * 放行或者拦截（0拦截，1放行）
      * @return white
      */
     public Integer getWhite() {
@@ -105,28 +127,6 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
 
     public void setWhite(Integer white) {
         this.white = white;
-    }
-
-    
-
-    public UpdateGeoipRuleResponse withTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 创建规则时间戳
-     * @return timestamp
-     */
-    public Long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
     }
 
     
@@ -141,22 +141,22 @@ public class UpdateGeoipRuleResponse extends SdkResponse {
         }
         UpdateGeoipRuleResponse updateGeoipRuleResponse = (UpdateGeoipRuleResponse) o;
         return Objects.equals(this.id, updateGeoipRuleResponse.id) &&
+            Objects.equals(this.policyid, updateGeoipRuleResponse.policyid) &&
             Objects.equals(this.geoip, updateGeoipRuleResponse.geoip) &&
-            Objects.equals(this.white, updateGeoipRuleResponse.white) &&
-            Objects.equals(this.timestamp, updateGeoipRuleResponse.timestamp);
+            Objects.equals(this.white, updateGeoipRuleResponse.white);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, geoip, white, timestamp);
+        return Objects.hash(id, policyid, geoip, white);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateGeoipRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

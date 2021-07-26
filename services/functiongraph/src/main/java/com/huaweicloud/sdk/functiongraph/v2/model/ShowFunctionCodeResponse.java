@@ -321,12 +321,6 @@ public class ShowFunctionCodeResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="concurrency")
-    
-    private Integer concurrency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="depend_list")
     
     private List<String> dependList = null;
@@ -592,28 +586,6 @@ public class ShowFunctionCodeResponse extends SdkResponse {
 
     
 
-    public ShowFunctionCodeResponse withConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get concurrency
-     * @return concurrency
-     */
-    public Integer getConcurrency() {
-        return concurrency;
-    }
-
-    public void setConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-    }
-
-    
-
     public ShowFunctionCodeResponse withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
@@ -735,14 +707,13 @@ public class ShowFunctionCodeResponse extends SdkResponse {
             Objects.equals(this.digest, showFunctionCodeResponse.digest) &&
             Objects.equals(this.lastModified, showFunctionCodeResponse.lastModified) &&
             Objects.equals(this.funcCode, showFunctionCodeResponse.funcCode) &&
-            Objects.equals(this.concurrency, showFunctionCodeResponse.concurrency) &&
             Objects.equals(this.dependList, showFunctionCodeResponse.dependList) &&
             Objects.equals(this.strategyConfig, showFunctionCodeResponse.strategyConfig) &&
             Objects.equals(this.dependencies, showFunctionCodeResponse.dependencies);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn, funcName, domainId, runtime, codeType, codeUrl, codeFilename, codeSize, digest, lastModified, funcCode, concurrency, dependList, strategyConfig, dependencies);
+        return Objects.hash(funcUrn, funcName, domainId, runtime, codeType, codeUrl, codeFilename, codeSize, digest, lastModified, funcCode, dependList, strategyConfig, dependencies);
     }
     @Override
     public String toString() {
@@ -759,7 +730,6 @@ public class ShowFunctionCodeResponse extends SdkResponse {
         sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
-        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");

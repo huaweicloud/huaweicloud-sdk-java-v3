@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mpc.v1.model.WatermarkTemplate;
-import com.huaweicloud.sdk.mpc.v1.model.XCodeError;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -35,12 +34,6 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
     
     private List<WatermarkTemplate> templates = null;
     
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error")
-    
-    private XCodeError error;
-
     public ListWatermarkTemplateResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -101,35 +94,6 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
 
     
 
-    public ListWatermarkTemplateResponse withError(XCodeError error) {
-        this.error = error;
-        return this;
-    }
-
-    public ListWatermarkTemplateResponse withError(Consumer<XCodeError> errorSetter) {
-        if(this.error == null ){
-            this.error = new XCodeError();
-            errorSetter.accept(this.error);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get error
-     * @return error
-     */
-    public XCodeError getError() {
-        return error;
-    }
-
-    public void setError(XCodeError error) {
-        this.error = error;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -140,12 +104,11 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
         }
         ListWatermarkTemplateResponse listWatermarkTemplateResponse = (ListWatermarkTemplateResponse) o;
         return Objects.equals(this.total, listWatermarkTemplateResponse.total) &&
-            Objects.equals(this.templates, listWatermarkTemplateResponse.templates) &&
-            Objects.equals(this.error, listWatermarkTemplateResponse.error);
+            Objects.equals(this.templates, listWatermarkTemplateResponse.templates);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(total, templates, error);
+        return Objects.hash(total, templates);
     }
     @Override
     public String toString() {
@@ -153,7 +116,6 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
         sb.append("class ListWatermarkTemplateResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    templates: ").append(toIndentedString(templates)).append("\n");
-        sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("}");
         return sb.toString();
     }

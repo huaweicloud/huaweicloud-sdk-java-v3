@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mpc.v1.model.QueryTransTemplate;
-import com.huaweicloud.sdk.mpc.v1.model.XCodeError;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,12 +29,6 @@ public class TemplateInfo  {
     @JsonProperty(value="template")
     
     private QueryTransTemplate template;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error")
-    
-    private XCodeError error;
 
     public TemplateInfo withTemplateId(Integer templateId) {
         this.templateId = templateId;
@@ -90,35 +83,6 @@ public class TemplateInfo  {
 
     
 
-    public TemplateInfo withError(XCodeError error) {
-        this.error = error;
-        return this;
-    }
-
-    public TemplateInfo withError(Consumer<XCodeError> errorSetter) {
-        if(this.error == null ){
-            this.error = new XCodeError();
-            errorSetter.accept(this.error);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get error
-     * @return error
-     */
-    public XCodeError getError() {
-        return error;
-    }
-
-    public void setError(XCodeError error) {
-        this.error = error;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -129,12 +93,11 @@ public class TemplateInfo  {
         }
         TemplateInfo templateInfo = (TemplateInfo) o;
         return Objects.equals(this.templateId, templateInfo.templateId) &&
-            Objects.equals(this.template, templateInfo.template) &&
-            Objects.equals(this.error, templateInfo.error);
+            Objects.equals(this.template, templateInfo.template);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, template, error);
+        return Objects.hash(templateId, template);
     }
     @Override
     public String toString() {
@@ -142,7 +105,6 @@ public class TemplateInfo  {
         sb.append("class TemplateInfo {\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    template: ").append(toIndentedString(template)).append("\n");
-        sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("}");
         return sb.toString();
     }

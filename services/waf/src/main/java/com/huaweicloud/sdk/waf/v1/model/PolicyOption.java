@@ -198,7 +198,7 @@ public class PolicyOption  {
 
 
     /**
-     * 扫描器是否开启
+     * 反爬虫检测是否开启
      * @return crawlerScanner
      */
     public Boolean getCrawlerScanner() {

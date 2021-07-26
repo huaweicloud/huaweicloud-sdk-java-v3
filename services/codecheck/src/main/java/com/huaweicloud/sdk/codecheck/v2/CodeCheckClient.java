@@ -18,135 +18,267 @@ public class CodeCheckClient {
 
 
     /**
-     * 新建检查任务
-     * 新建检查任务但是不执行。
+     * 记录事件发生次数与服务质量
+     * 记录用户在前端使用的行为
      *
-     * @param CreateTaskV2Request 请求对象
-     * @return CreateTaskV2Response
+     * @param CollectPluginRecordRequest 请求对象
+     * @return CollectPluginRecordResponse
      */
-    public CreateTaskV2Response createTaskV2(CreateTaskV2Request request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.createTaskV2);
+    public CollectPluginRecordResponse collectPluginRecord(CollectPluginRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.collectPluginRecord);
+    }
+
+    /**
+     * 记录事件发生次数与服务质量
+     * 记录用户在前端使用的行为
+     *
+     * @param CollectPluginRecordRequest 请求对象
+     * @return SyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse>
+     */
+    public SyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse> collectPluginRecordInvoker(CollectPluginRecordRequest request) {
+        return new SyncInvoker<CollectPluginRecordRequest, CollectPluginRecordResponse>(request, CodeCheckMeta.collectPluginRecord, hcClient);
     }
 
     /**
      * 新建检查任务
      * 新建检查任务但是不执行。
      *
-     * @param CreateTaskV2Request 请求对象
-     * @return SyncInvoker<CreateTaskV2Request, CreateTaskV2Response>
+     * @param CreateTaskRequest 请求对象
+     * @return CreateTaskResponse
      */
-    public SyncInvoker<CreateTaskV2Request, CreateTaskV2Response> createTaskV2Invoker(CreateTaskV2Request request) {
-        return new SyncInvoker<CreateTaskV2Request, CreateTaskV2Response>(request, CodeCheckMeta.createTaskV2, hcClient);
+    public CreateTaskResponse createTask(CreateTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.createTask);
+    }
+
+    /**
+     * 新建检查任务
+     * 新建检查任务但是不执行。
+     *
+     * @param CreateTaskRequest 请求对象
+     * @return SyncInvoker<CreateTaskRequest, CreateTaskResponse>
+     */
+    public SyncInvoker<CreateTaskRequest, CreateTaskResponse> createTaskInvoker(CreateTaskRequest request) {
+        return new SyncInvoker<CreateTaskRequest, CreateTaskResponse>(request, CodeCheckMeta.createTask, hcClient);
+    }
+
+    /**
+     * 获取一个三方库的中所有代码的详细信息
+     * 获取指定库的详细内部信息，包括类、方法字段等。
+     *
+     * @param DownloadLibCodeAnalysisReportRequest 请求对象
+     * @return DownloadLibCodeAnalysisReportResponse
+     */
+    public DownloadLibCodeAnalysisReportResponse downloadLibCodeAnalysisReport(DownloadLibCodeAnalysisReportRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.downloadLibCodeAnalysisReport);
+    }
+
+    /**
+     * 获取一个三方库的中所有代码的详细信息
+     * 获取指定库的详细内部信息，包括类、方法字段等。
+     *
+     * @param DownloadLibCodeAnalysisReportRequest 请求对象
+     * @return SyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse>
+     */
+    public SyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReportInvoker(DownloadLibCodeAnalysisReportRequest request) {
+        return new SyncInvoker<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse>(request, CodeCheckMeta.downloadLibCodeAnalysisReport, hcClient);
+    }
+
+    /**
+     * 获取依赖列表里所有java库的信息，主要是漏洞信息
+     * 对依赖列表进行扫描，返回其中包含的漏洞库，和对应的升级替换建议
+     *
+     * @param ListJavaLibUpdateSuggestionRequest 请求对象
+     * @return ListJavaLibUpdateSuggestionResponse
+     */
+    public ListJavaLibUpdateSuggestionResponse listJavaLibUpdateSuggestion(ListJavaLibUpdateSuggestionRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.listJavaLibUpdateSuggestion);
+    }
+
+    /**
+     * 获取依赖列表里所有java库的信息，主要是漏洞信息
+     * 对依赖列表进行扫描，返回其中包含的漏洞库，和对应的升级替换建议
+     *
+     * @param ListJavaLibUpdateSuggestionRequest 请求对象
+     * @return SyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse>
+     */
+    public SyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestionInvoker(ListJavaLibUpdateSuggestionRequest request) {
+        return new SyncInvoker<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse>(request, CodeCheckMeta.listJavaLibUpdateSuggestion, hcClient);
     }
 
     /**
      * 执行检查任务
      * 执行检查任务。
      *
-     * @param RunTaskV2Request 请求对象
-     * @return RunTaskV2Response
+     * @param RunTaskRequest 请求对象
+     * @return RunTaskResponse
      */
-    public RunTaskV2Response runTaskV2(RunTaskV2Request request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.runTaskV2);
+    public RunTaskResponse runTask(RunTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.runTask);
     }
 
     /**
      * 执行检查任务
      * 执行检查任务。
      *
-     * @param RunTaskV2Request 请求对象
-     * @return SyncInvoker<RunTaskV2Request, RunTaskV2Response>
+     * @param RunTaskRequest 请求对象
+     * @return SyncInvoker<RunTaskRequest, RunTaskResponse>
      */
-    public SyncInvoker<RunTaskV2Request, RunTaskV2Response> runTaskV2Invoker(RunTaskV2Request request) {
-        return new SyncInvoker<RunTaskV2Request, RunTaskV2Response>(request, CodeCheckMeta.runTaskV2, hcClient);
+    public SyncInvoker<RunTaskRequest, RunTaskResponse> runTaskInvoker(RunTaskRequest request) {
+        return new SyncInvoker<RunTaskRequest, RunTaskResponse>(request, CodeCheckMeta.runTask, hcClient);
     }
 
     /**
      * 查询任务执行状态
      * 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
      *
-     * @param ShowProgressDetailV2Request 请求对象
-     * @return ShowProgressDetailV2Response
+     * @param ShowProgressDetailRequest 请求对象
+     * @return ShowProgressDetailResponse
      */
-    public ShowProgressDetailV2Response showProgressDetailV2(ShowProgressDetailV2Request request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showProgressDetailV2);
+    public ShowProgressDetailResponse showProgressDetail(ShowProgressDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showProgressDetail);
     }
 
     /**
      * 查询任务执行状态
      * 根据任务ID查询任务执行状态。任务状态：0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止。只有正在检查中才有进度的详细信息。
      *
-     * @param ShowProgressDetailV2Request 请求对象
-     * @return SyncInvoker<ShowProgressDetailV2Request, ShowProgressDetailV2Response>
+     * @param ShowProgressDetailRequest 请求对象
+     * @return SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>
      */
-    public SyncInvoker<ShowProgressDetailV2Request, ShowProgressDetailV2Response> showProgressDetailV2Invoker(ShowProgressDetailV2Request request) {
-        return new SyncInvoker<ShowProgressDetailV2Request, ShowProgressDetailV2Response>(request, CodeCheckMeta.showProgressDetailV2, hcClient);
+    public SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse> showProgressDetailInvoker(ShowProgressDetailRequest request) {
+        return new SyncInvoker<ShowProgressDetailRequest, ShowProgressDetailResponse>(request, CodeCheckMeta.showProgressDetail, hcClient);
+    }
+
+    /**
+     * 查询缺陷详情
+     * 根据检查任务ID分页查询缺陷结果详情。
+     *
+     * @param ShowTaskDefectsRequest 请求对象
+     * @return ShowTaskDefectsResponse
+     */
+    public ShowTaskDefectsResponse showTaskDefects(ShowTaskDefectsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDefects);
+    }
+
+    /**
+     * 查询缺陷详情
+     * 根据检查任务ID分页查询缺陷结果详情。
+     *
+     * @param ShowTaskDefectsRequest 请求对象
+     * @return SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>
+     */
+    public SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse> showTaskDefectsInvoker(ShowTaskDefectsRequest request) {
+        return new SyncInvoker<ShowTaskDefectsRequest, ShowTaskDefectsResponse>(request, CodeCheckMeta.showTaskDefects, hcClient);
+    }
+
+    /**
+     * 查询缺陷详情的统计
+     * 根据检查任务ID查询缺陷详情的统计
+     *
+     * @param ShowTaskDefectsStatisticRequest 请求对象
+     * @return ShowTaskDefectsStatisticResponse
+     */
+    public ShowTaskDefectsStatisticResponse showTaskDefectsStatistic(ShowTaskDefectsStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDefectsStatistic);
+    }
+
+    /**
+     * 查询缺陷详情的统计
+     * 根据检查任务ID查询缺陷详情的统计
+     *
+     * @param ShowTaskDefectsStatisticRequest 请求对象
+     * @return SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>
+     */
+    public SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> showTaskDefectsStatisticInvoker(ShowTaskDefectsStatisticRequest request) {
+        return new SyncInvoker<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse>(request, CodeCheckMeta.showTaskDefectsStatistic, hcClient);
     }
 
     /**
      * 查询缺陷概要
      * 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
      *
-     * @param ShowTaskDetailV2Request 请求对象
-     * @return ShowTaskDetailV2Response
+     * @param ShowTaskDetailRequest 请求对象
+     * @return ShowTaskDetailResponse
      */
-    public ShowTaskDetailV2Response showTaskDetailV2(ShowTaskDetailV2Request request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDetailV2);
+    public ShowTaskDetailResponse showTaskDetail(ShowTaskDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskDetail);
     }
 
     /**
      * 查询缺陷概要
      * 根据检查任务ID查询缺陷结果的概要。包括问题概述、问题状态、圈复杂度、代码重复率等。
      *
-     * @param ShowTaskDetailV2Request 请求对象
-     * @return SyncInvoker<ShowTaskDetailV2Request, ShowTaskDetailV2Response>
+     * @param ShowTaskDetailRequest 请求对象
+     * @return SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>
      */
-    public SyncInvoker<ShowTaskDetailV2Request, ShowTaskDetailV2Response> showTaskDetailV2Invoker(ShowTaskDetailV2Request request) {
-        return new SyncInvoker<ShowTaskDetailV2Request, ShowTaskDetailV2Response>(request, CodeCheckMeta.showTaskDetailV2, hcClient);
+    public SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetailInvoker(ShowTaskDetailRequest request) {
+        return new SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>(request, CodeCheckMeta.showTaskDetail, hcClient);
     }
 
     /**
      * 查询任务列表
      * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
      *
-     * @param ShowTaskListByProjectIdV2Request 请求对象
-     * @return ShowTaskListByProjectIdV2Response
+     * @param ShowTaskListByProjectIdRequest 请求对象
+     * @return ShowTaskListByProjectIdResponse
      */
-    public ShowTaskListByProjectIdV2Response showTaskListByProjectIdV2(ShowTaskListByProjectIdV2Request request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskListByProjectIdV2);
+    public ShowTaskListByProjectIdResponse showTaskListByProjectId(ShowTaskListByProjectIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.showTaskListByProjectId);
     }
 
     /**
      * 查询任务列表
      * 根据DEVCLOUD_PROJECT_UUID查询该项目下的任务列表。
      *
-     * @param ShowTaskListByProjectIdV2Request 请求对象
-     * @return SyncInvoker<ShowTaskListByProjectIdV2Request, ShowTaskListByProjectIdV2Response>
+     * @param ShowTaskListByProjectIdRequest 请求对象
+     * @return SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>
      */
-    public SyncInvoker<ShowTaskListByProjectIdV2Request, ShowTaskListByProjectIdV2Response> showTaskListByProjectIdV2Invoker(ShowTaskListByProjectIdV2Request request) {
-        return new SyncInvoker<ShowTaskListByProjectIdV2Request, ShowTaskListByProjectIdV2Response>(request, CodeCheckMeta.showTaskListByProjectIdV2, hcClient);
+    public SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> showTaskListByProjectIdInvoker(ShowTaskListByProjectIdRequest request) {
+        return new SyncInvoker<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse>(request, CodeCheckMeta.showTaskListByProjectId, hcClient);
     }
 
     /**
      * 终止检查任务
      * 根据任务ID终止检查任务。
      *
-     * @param StopTaskByIdV2Request 请求对象
-     * @return StopTaskByIdV2Response
+     * @param StopTaskByIdRequest 请求对象
+     * @return StopTaskByIdResponse
      */
-    public StopTaskByIdV2Response stopTaskByIdV2(StopTaskByIdV2Request request) {
-        return hcClient.syncInvokeHttp(request, CodeCheckMeta.stopTaskByIdV2);
+    public StopTaskByIdResponse stopTaskById(StopTaskByIdRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.stopTaskById);
     }
 
     /**
      * 终止检查任务
      * 根据任务ID终止检查任务。
      *
-     * @param StopTaskByIdV2Request 请求对象
-     * @return SyncInvoker<StopTaskByIdV2Request, StopTaskByIdV2Response>
+     * @param StopTaskByIdRequest 请求对象
+     * @return SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>
      */
-    public SyncInvoker<StopTaskByIdV2Request, StopTaskByIdV2Response> stopTaskByIdV2Invoker(StopTaskByIdV2Request request) {
-        return new SyncInvoker<StopTaskByIdV2Request, StopTaskByIdV2Response>(request, CodeCheckMeta.stopTaskByIdV2, hcClient);
+    public SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse> stopTaskByIdInvoker(StopTaskByIdRequest request) {
+        return new SyncInvoker<StopTaskByIdRequest, StopTaskByIdResponse>(request, CodeCheckMeta.stopTaskById, hcClient);
+    }
+
+    /**
+     * 修改缺陷状态
+     * 修改检查出的缺陷的状态为已解决、已忽略
+     *
+     * @param UpdateDefectStatusRequest 请求对象
+     * @return UpdateDefectStatusResponse
+     */
+    public UpdateDefectStatusResponse updateDefectStatus(UpdateDefectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeCheckMeta.updateDefectStatus);
+    }
+
+    /**
+     * 修改缺陷状态
+     * 修改检查出的缺陷的状态为已解决、已忽略
+     *
+     * @param UpdateDefectStatusRequest 请求对象
+     * @return SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>
+     */
+    public SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse> updateDefectStatusInvoker(UpdateDefectStatusRequest request) {
+        return new SyncInvoker<UpdateDefectStatusRequest, UpdateDefectStatusResponse>(request, CodeCheckMeta.updateDefectStatus, hcClient);
     }
 
 }

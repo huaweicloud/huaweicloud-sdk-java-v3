@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.mpc.v1.model;
 
 
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,9 +11,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mpc.v1.model.MulInputFileInfo;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -36,96 +32,12 @@ public class Subtitle  {
     @JsonProperty(value="inputs")
     
     private List<MulInputFileInfo> inputs = null;
-        /**
-     * 字幕类型。取值如下：  - 0，表示不输出字幕 - 1，表示外部字幕文件嵌入视频流 - 2，表示输出WebVTT格式字幕 
-     */
-    public static final class SubtitleTypeEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final SubtitleTypeEnum NUMBER_0 = new SubtitleTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final SubtitleTypeEnum NUMBER_1 = new SubtitleTypeEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final SubtitleTypeEnum NUMBER_2 = new SubtitleTypeEnum(2);
-        
-
-        private static final Map<Integer, SubtitleTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, SubtitleTypeEnum> createStaticFields() {
-            Map<Integer, SubtitleTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        SubtitleTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SubtitleTypeEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            SubtitleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SubtitleTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static SubtitleTypeEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            SubtitleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SubtitleTypeEnum) {
-                return this.value.equals(((SubtitleTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="subtitle_type")
     
-    private SubtitleTypeEnum subtitleType;
+    private Integer subtitleType;
 
     public Subtitle withInput(ObsObjInfo input) {
         this.input = input;
@@ -192,7 +104,7 @@ public class Subtitle  {
 
     
 
-    public Subtitle withSubtitleType(SubtitleTypeEnum subtitleType) {
+    public Subtitle withSubtitleType(Integer subtitleType) {
         this.subtitleType = subtitleType;
         return this;
     }
@@ -203,14 +115,14 @@ public class Subtitle  {
     /**
      * 字幕类型。取值如下：  - 0，表示不输出字幕 - 1，表示外部字幕文件嵌入视频流 - 2，表示输出WebVTT格式字幕 
      * minimum: 0
-     * maximum: 2
+     * maximum: 3
      * @return subtitleType
      */
-    public SubtitleTypeEnum getSubtitleType() {
+    public Integer getSubtitleType() {
         return subtitleType;
     }
 
-    public void setSubtitleType(SubtitleTypeEnum subtitleType) {
+    public void setSubtitleType(Integer subtitleType) {
         this.subtitleType = subtitleType;
     }
 

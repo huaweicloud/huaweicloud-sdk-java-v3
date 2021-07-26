@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v1.model.DomainSourceInfo;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -210,12 +209,6 @@ public class LiveDomainCreateReq  {
     
     private ServiceAreaEnum serviceArea;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_source")
-    
-    private DomainSourceInfo domainSource;
-
     public LiveDomainCreateReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -304,35 +297,6 @@ public class LiveDomainCreateReq  {
 
     
 
-    public LiveDomainCreateReq withDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
-        return this;
-    }
-
-    public LiveDomainCreateReq withDomainSource(Consumer<DomainSourceInfo> domainSourceSetter) {
-        if(this.domainSource == null ){
-            this.domainSource = new DomainSourceInfo();
-            domainSourceSetter.accept(this.domainSource);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get domainSource
-     * @return domainSource
-     */
-    public DomainSourceInfo getDomainSource() {
-        return domainSource;
-    }
-
-    public void setDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -345,12 +309,11 @@ public class LiveDomainCreateReq  {
         return Objects.equals(this.domain, liveDomainCreateReq.domain) &&
             Objects.equals(this.domainType, liveDomainCreateReq.domainType) &&
             Objects.equals(this.region, liveDomainCreateReq.region) &&
-            Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea) &&
-            Objects.equals(this.domainSource, liveDomainCreateReq.domainSource);
+            Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, region, serviceArea, domainSource);
+        return Objects.hash(domain, domainType, region, serviceArea);
     }
     @Override
     public String toString() {
@@ -360,7 +323,6 @@ public class LiveDomainCreateReq  {
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
-        sb.append("    domainSource: ").append(toIndentedString(domainSource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -165,7 +165,7 @@ public class GetUsersListDetailResponses  {
     }
 
     /**
-     * DDM实例帐号的扩展权限。  取值为：fulltableDelete、fulltableSelect、fulltableUpdate
+     * DDM实例帐号的扩展权限。2021年8月开始不支持该字段，9月会去掉该字段。  取值为：fulltableDelete、fulltableSelect、fulltableUpdate
      * @return extendAuthority
      */
     public List<String> getExtendAuthority() {

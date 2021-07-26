@@ -304,6 +304,28 @@ public class FunctionGraphClient {
     }
 
     /**
+     * 开通lts日志上报功能。
+     * 开通lts日志上报功能。
+     *
+     * @param EnableLtsLogsRequest 请求对象
+     * @return EnableLtsLogsResponse
+     */
+    public EnableLtsLogsResponse enableLtsLogs(EnableLtsLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.enableLtsLogs);
+    }
+
+    /**
+     * 开通lts日志上报功能。
+     * 开通lts日志上报功能。
+     *
+     * @param EnableLtsLogsRequest 请求对象
+     * @return SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>
+     */
+    public SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogsInvoker(EnableLtsLogsRequest request) {
+        return new SyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>(request, FunctionGraphMeta.enableLtsLogs, hcClient);
+    }
+
+    /**
      * 导出函数。
      * 导出函数。
      *
@@ -675,6 +697,28 @@ public class FunctionGraphClient {
      */
     public SyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse> showFunctionConfigInvoker(ShowFunctionConfigRequest request) {
         return new SyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse>(request, FunctionGraphMeta.showFunctionConfig, hcClient);
+    }
+
+    /**
+     * 获取指定函数的lts日志组日志流配置。
+     * 获取指定函数的lts日志组日志流配置。
+     *
+     * @param ShowLtsLogDetailsRequest 请求对象
+     * @return ShowLtsLogDetailsResponse
+     */
+    public ShowLtsLogDetailsResponse showLtsLogDetails(ShowLtsLogDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, FunctionGraphMeta.showLtsLogDetails);
+    }
+
+    /**
+     * 获取指定函数的lts日志组日志流配置。
+     * 获取指定函数的lts日志组日志流配置。
+     *
+     * @param ShowLtsLogDetailsRequest 请求对象
+     * @return SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>
+     */
+    public SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse> showLtsLogDetailsInvoker(ShowLtsLogDetailsRequest request) {
+        return new SyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request, FunctionGraphMeta.showLtsLogDetails, hcClient);
     }
 
     /**

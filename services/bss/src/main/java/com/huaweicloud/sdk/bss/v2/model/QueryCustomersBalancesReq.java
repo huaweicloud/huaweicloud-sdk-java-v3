@@ -77,7 +77,7 @@ public class QueryCustomersBalancesReq  {
 
 
     /**
-     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

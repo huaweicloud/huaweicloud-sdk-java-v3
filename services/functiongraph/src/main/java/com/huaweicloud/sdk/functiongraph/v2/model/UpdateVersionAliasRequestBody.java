@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,12 +19,6 @@ import java.util.Objects;
  */
 public class UpdateVersionAliasRequestBody  {
 
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
-    private String name;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,44 +34,10 @@ public class UpdateVersionAliasRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified")
-    
-    private OffsetDateTime lastModified;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias_urn")
-    
-    private String aliasUrn;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="additional_version_weights")
     
     private Map<String, Integer> additionalVersionWeights = null;
     
-    public UpdateVersionAliasRequestBody withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 要获取的别名名称。
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-
     public UpdateVersionAliasRequestBody withVersion(String version) {
         this.version = version;
         return this;
@@ -119,50 +78,6 @@ public class UpdateVersionAliasRequestBody  {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    
-
-    public UpdateVersionAliasRequestBody withLastModified(OffsetDateTime lastModified) {
-        this.lastModified = lastModified;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 别名最后修改时间。
-     * @return lastModified
-     */
-    public OffsetDateTime getLastModified() {
-        return lastModified;
-    }
-
-    public void setLastModified(OffsetDateTime lastModified) {
-        this.lastModified = lastModified;
-    }
-
-    
-
-    public UpdateVersionAliasRequestBody withAliasUrn(String aliasUrn) {
-        this.aliasUrn = aliasUrn;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 版本别名唯一标识。
-     * @return aliasUrn
-     */
-    public String getAliasUrn() {
-        return aliasUrn;
-    }
-
-    public void setAliasUrn(String aliasUrn) {
-        this.aliasUrn = aliasUrn;
     }
 
     
@@ -212,26 +127,20 @@ public class UpdateVersionAliasRequestBody  {
             return false;
         }
         UpdateVersionAliasRequestBody updateVersionAliasRequestBody = (UpdateVersionAliasRequestBody) o;
-        return Objects.equals(this.name, updateVersionAliasRequestBody.name) &&
-            Objects.equals(this.version, updateVersionAliasRequestBody.version) &&
+        return Objects.equals(this.version, updateVersionAliasRequestBody.version) &&
             Objects.equals(this.description, updateVersionAliasRequestBody.description) &&
-            Objects.equals(this.lastModified, updateVersionAliasRequestBody.lastModified) &&
-            Objects.equals(this.aliasUrn, updateVersionAliasRequestBody.aliasUrn) &&
             Objects.equals(this.additionalVersionWeights, updateVersionAliasRequestBody.additionalVersionWeights);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, version, description, lastModified, aliasUrn, additionalVersionWeights);
+        return Objects.hash(version, description, additionalVersionWeights);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateVersionAliasRequestBody {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-        sb.append("    aliasUrn: ").append(toIndentedString(aliasUrn)).append("\n");
         sb.append("    additionalVersionWeights: ").append(toIndentedString(additionalVersionWeights)).append("\n");
         sb.append("}");
         return sb.toString();

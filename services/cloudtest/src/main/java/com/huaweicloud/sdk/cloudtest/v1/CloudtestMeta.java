@@ -168,6 +168,74 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPlansRequest, ShowPlansResponse> showPlans = genForshowPlans();
+
+    private static HttpRequestDef<ShowPlansRequest, ShowPlansResponse> genForshowPlans() {
+        // basic
+        HttpRequestDef.Builder<ShowPlansRequest, ShowPlansResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPlansRequest.class, ShowPlansResponse.class)
+                .withName("ShowPlans")
+                .withUri("/v1/projects/{project_id}/plans")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowPlansRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ShowPlansRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            Long.class,
+            f -> f.withMarshaller(ShowPlansRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPlansRequest::getName, (req, v) -> {
+                req.setName(v);
+            })
+        );
+        builder.withRequestField("current_stage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPlansRequest::getCurrentStage, (req, v) -> {
+                req.setCurrentStage(v);
+            })
+        );
+
+        // response
+        
+        builder.withResponseField(
+            "body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            List.class,
+            f -> f.withMarshaller(ShowPlansResponse::getBody, (response, data)->{
+                response.setBody(data);
+            }).withInnerContainerType(ShowPlansResponseBody.class)
+        );
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateServiceRequest, CreateServiceResponse> createService = genForcreateService();
 
     private static HttpRequestDef<CreateServiceRequest, CreateServiceResponse> genForcreateService() {

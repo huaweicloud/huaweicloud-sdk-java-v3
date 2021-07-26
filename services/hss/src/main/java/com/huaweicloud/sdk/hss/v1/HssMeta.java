@@ -12,6 +12,81 @@ import java.time.OffsetDateTime;
 @SuppressWarnings("unchecked")
 public class HssMeta {
 
+    public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForlistEvents();
+
+    private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForlistEvents() {
+        // basic
+        HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
+                .withName("ListEvents")
+                .withUri("/hss/v1/{project_id}/api/event-management/events")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListEventsRequest::getBeginTime, (req, v) -> {
+                req.setBeginTime(v);
+            })
+        );
+        builder.withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ListEventsRequest::getEndTime, (req, v) -> {
+                req.setEndTime(v);
+            })
+        );
+        builder.withRequestField("host_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventsRequest::getHostName, (req, v) -> {
+                req.setHostName(v);
+            })
+        );
+        builder.withRequestField("event_types",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            List.class,
+            f -> f.withMarshaller(ListEventsRequest::getEventTypes, (req, v) -> {
+                req.setEventTypes(v);
+            })
+        );
+        builder.withRequestField("handle_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListEventsRequest::getHandleStatus, (req, v) -> {
+                req.setHandleStatus(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEventsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ListEventsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListHostsRequest, ListHostsResponse> listHosts = genForlistHosts();
 
     private static HttpRequestDef<ListHostsRequest, ListHostsResponse> genForlistHosts() {
@@ -26,7 +101,7 @@ public class HssMeta {
         builder.withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListHostsRequest.VersionEnum.class,
+            String.class,
             f -> f.withMarshaller(ListHostsRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
             })
@@ -34,7 +109,7 @@ public class HssMeta {
         builder.withRequestField("agent_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListHostsRequest.AgentStatusEnum.class,
+            String.class,
             f -> f.withMarshaller(ListHostsRequest::getAgentStatus, (req, v) -> {
                 req.setAgentStatus(v);
             })
@@ -42,7 +117,7 @@ public class HssMeta {
         builder.withRequestField("host_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListHostsRequest.HostStatusEnum.class,
+            String.class,
             f -> f.withMarshaller(ListHostsRequest::getHostStatus, (req, v) -> {
                 req.setHostStatus(v);
             })
@@ -50,7 +125,7 @@ public class HssMeta {
         builder.withRequestField("protect_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListHostsRequest.ProtectStatusEnum.class,
+            String.class,
             f -> f.withMarshaller(ListHostsRequest::getProtectStatus, (req, v) -> {
                 req.setProtectStatus(v);
             })
@@ -58,7 +133,7 @@ public class HssMeta {
         builder.withRequestField("detect_result",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListHostsRequest.DetectResultEnum.class,
+            String.class,
             f -> f.withMarshaller(ListHostsRequest::getDetectResult, (req, v) -> {
                 req.setDetectResult(v);
             })
@@ -98,7 +173,7 @@ public class HssMeta {
         builder.withRequestField("charging_mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListHostsRequest.ChargingModeEnum.class,
+            String.class,
             f -> f.withMarshaller(ListHostsRequest::getChargingMode, (req, v) -> {
                 req.setChargingMode(v);
             })

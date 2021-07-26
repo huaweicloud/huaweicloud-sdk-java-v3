@@ -44,7 +44,7 @@ public class ListPolicyRequest  {
 
 
     /**
-     * page
+     * 页码
      * @return page
      */
     public Integer getPage() {
@@ -66,7 +66,7 @@ public class ListPolicyRequest  {
 
 
     /**
-     * pagesize
+     * 每页条数
      * @return pagesize
      */
     public Integer getPagesize() {
@@ -88,7 +88,7 @@ public class ListPolicyRequest  {
 
 
     /**
-     * name
+     * 策略名称
      * @return name
      */
     public String getName() {

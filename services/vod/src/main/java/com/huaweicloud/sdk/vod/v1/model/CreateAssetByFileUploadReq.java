@@ -5,6 +5,8 @@ package com.huaweicloud.sdk.vod.v1.model;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,7 +23,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 
+ * CreateAssetByFileUploadReq
  */
 public class CreateAssetByFileUploadReq  {
 
@@ -163,12 +165,90 @@ public class CreateAssetByFileUploadReq  {
     @JsonProperty(value="tags")
     
     private String tags;
+    /**
+     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+     */
+    public static final class AutoPublishEnum {
+
+        
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final AutoPublishEnum NUMBER_0 = new AutoPublishEnum(0);
+        
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final AutoPublishEnum NUMBER_1 = new AutoPublishEnum(1);
+        
+
+        private static final Map<Integer, AutoPublishEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, AutoPublishEnum> createStaticFields() {
+            Map<Integer, AutoPublishEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        AutoPublishEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return Integer.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AutoPublishEnum fromValue(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            AutoPublishEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new AutoPublishEnum(value);
+            }
+            return result;
+        }
+
+        public static AutoPublishEnum valueOf(Integer value) {
+            if( value == null ){
+                return null;
+            }
+            AutoPublishEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof AutoPublishEnum) {
+                return this.value.equals(((AutoPublishEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="auto_publish")
     
-    private String autoPublish;
+    private AutoPublishEnum autoPublish;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -440,7 +520,7 @@ public class CreateAssetByFileUploadReq  {
 
     
 
-    public CreateAssetByFileUploadReq withAutoPublish(String autoPublish) {
+    public CreateAssetByFileUploadReq withAutoPublish(AutoPublishEnum autoPublish) {
         this.autoPublish = autoPublish;
         return this;
     }
@@ -452,11 +532,11 @@ public class CreateAssetByFileUploadReq  {
      * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
      * @return autoPublish
      */
-    public String getAutoPublish() {
+    public AutoPublishEnum getAutoPublish() {
         return autoPublish;
     }
 
-    public void setAutoPublish(String autoPublish) {
+    public void setAutoPublish(AutoPublishEnum autoPublish) {
         this.autoPublish = autoPublish;
     }
 

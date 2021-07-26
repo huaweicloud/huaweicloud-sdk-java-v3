@@ -262,7 +262,7 @@ public class CreateCustomerV2Req  {
 
 
     /**
-     * 精英服务商ID。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

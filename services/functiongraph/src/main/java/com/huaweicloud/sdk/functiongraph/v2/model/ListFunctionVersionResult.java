@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.functiongraph.v2.model.Dependency;
-import com.huaweicloud.sdk.functiongraph.v2.model.FuncCode;
 import com.huaweicloud.sdk.functiongraph.v2.model.FuncVpc;
 import com.huaweicloud.sdk.functiongraph.v2.model.MountConfig;
 import com.huaweicloud.sdk.functiongraph.v2.model.StrategyConfig;
@@ -396,18 +395,6 @@ public class ListFunctionVersionResult  {
     @JsonProperty(value="last_modified")
     
     private OffsetDateTime lastModified;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified_utc")
-    
-    private Long lastModifiedUtc;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_code")
-    
-    private FuncCode funcCode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -997,57 +984,6 @@ public class ListFunctionVersionResult  {
 
     
 
-    public ListFunctionVersionResult withLastModifiedUtc(Long lastModifiedUtc) {
-        this.lastModifiedUtc = lastModifiedUtc;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数最后一次更新utc时间。
-     * @return lastModifiedUtc
-     */
-    public Long getLastModifiedUtc() {
-        return lastModifiedUtc;
-    }
-
-    public void setLastModifiedUtc(Long lastModifiedUtc) {
-        this.lastModifiedUtc = lastModifiedUtc;
-    }
-
-    
-
-    public ListFunctionVersionResult withFuncCode(FuncCode funcCode) {
-        this.funcCode = funcCode;
-        return this;
-    }
-
-    public ListFunctionVersionResult withFuncCode(Consumer<FuncCode> funcCodeSetter) {
-        if(this.funcCode == null ){
-            this.funcCode = new FuncCode();
-            funcCodeSetter.accept(this.funcCode);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get funcCode
-     * @return funcCode
-     */
-    public FuncCode getFuncCode() {
-        return funcCode;
-    }
-
-    public void setFuncCode(FuncCode funcCode) {
-        this.funcCode = funcCode;
-    }
-
-    
-
     public ListFunctionVersionResult withFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
         return this;
@@ -1350,8 +1286,6 @@ public class ListFunctionVersionResult  {
             Objects.equals(this.description, listFunctionVersionResult.description) &&
             Objects.equals(this.versionDescription, listFunctionVersionResult.versionDescription) &&
             Objects.equals(this.lastModified, listFunctionVersionResult.lastModified) &&
-            Objects.equals(this.lastModifiedUtc, listFunctionVersionResult.lastModifiedUtc) &&
-            Objects.equals(this.funcCode, listFunctionVersionResult.funcCode) &&
             Objects.equals(this.funcVpc, listFunctionVersionResult.funcVpc) &&
             Objects.equals(this.mountConfig, listFunctionVersionResult.mountConfig) &&
             Objects.equals(this.concurrency, listFunctionVersionResult.concurrency) &&
@@ -1365,7 +1299,7 @@ public class ListFunctionVersionResult  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, digest, version, imageName, xrole, appXrole, description, versionDescription, lastModified, lastModifiedUtc, funcCode, funcVpc, mountConfig, concurrency, dependList, strategyConfig, extendConfig, dependencies, initializerHandler, initializerTimeout, enterpriseProjectId);
+        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, digest, version, imageName, xrole, appXrole, description, versionDescription, lastModified, funcVpc, mountConfig, concurrency, dependList, strategyConfig, extendConfig, dependencies, initializerHandler, initializerTimeout, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -1395,8 +1329,6 @@ public class ListFunctionVersionResult  {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
-        sb.append("    lastModifiedUtc: ").append(toIndentedString(lastModifiedUtc)).append("\n");
-        sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");

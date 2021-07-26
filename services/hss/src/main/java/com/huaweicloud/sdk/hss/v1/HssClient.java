@@ -18,6 +18,28 @@ public class HssClient {
 
 
     /**
+     * 查入侵事件列表
+     * 查入侵事件列表
+     *
+     * @param ListEventsRequest 请求对象
+     * @return ListEventsResponse
+     */
+    public ListEventsResponse listEvents(ListEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listEvents);
+    }
+
+    /**
+     * 查入侵事件列表
+     * 查入侵事件列表
+     *
+     * @param ListEventsRequest 请求对象
+     * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
+    public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
+        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, HssMeta.listEvents, hcClient);
+    }
+
+    /**
      * 查询弹性云服务器状态列表
      * 查询弹性云服务器状态列表
      *

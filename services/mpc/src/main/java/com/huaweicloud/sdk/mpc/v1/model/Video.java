@@ -180,12 +180,6 @@ public class Video  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_ratio")
-    
-    private Integer aspectRatio;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="black_cut")
     
     private Integer blackCut;
@@ -476,30 +470,6 @@ public class Video  {
 
     
 
-    public Video withAspectRatio(Integer aspectRatio) {
-        this.aspectRatio = aspectRatio;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 纵横比，图像缩放方式。  取值如下： - 0：自适应，保持原有宽高比 - 1：补黑边（16:9） - 2：裁黑边（18:9） 
-     * minimum: 0
-     * maximum: 2
-     * @return aspectRatio
-     */
-    public Integer getAspectRatio() {
-        return aspectRatio;
-    }
-
-    public void setAspectRatio(Integer aspectRatio) {
-        this.aspectRatio = aspectRatio;
-    }
-
-    
-
     public Video withBlackCut(Integer blackCut) {
         this.blackCut = blackCut;
         return this;
@@ -545,12 +515,11 @@ public class Video  {
             Objects.equals(this.frameRate, video.frameRate) &&
             Objects.equals(this.width, video.width) &&
             Objects.equals(this.height, video.height) &&
-            Objects.equals(this.aspectRatio, video.aspectRatio) &&
             Objects.equals(this.blackCut, video.blackCut);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, width, height, aspectRatio, blackCut);
+        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, width, height, blackCut);
     }
     @Override
     public String toString() {
@@ -568,7 +537,6 @@ public class Video  {
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
-        sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    blackCut: ").append(toIndentedString(blackCut)).append("\n");
         sb.append("}");
         return sb.toString();

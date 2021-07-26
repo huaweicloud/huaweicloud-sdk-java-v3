@@ -12,9 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
@@ -150,13 +148,7 @@ public class TasksObject  {
     @JsonProperty(value="create_time")
     
     private Long createTime;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="urls")
-    
-    private List<String> urls = null;
-        /**
+    /**
      * 默认是文件file。file：文件,directory：目录。
      */
     public static final class FileTypeEnum {
@@ -240,12 +232,6 @@ public class TasksObject  {
     @JsonProperty(value="file_type")
     
     private FileTypeEnum fileType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
-    private String taskId;
 
     public TasksObject withId(String id) {
         this.id = id;
@@ -423,42 +409,6 @@ public class TasksObject  {
 
     
 
-    public TasksObject withUrls(List<String> urls) {
-        this.urls = urls;
-        return this;
-    }
-
-    
-    public TasksObject addUrlsItem(String urlsItem) {
-        if(this.urls == null) {
-            this.urls = new ArrayList<>();
-        }
-        this.urls.add(urlsItem);
-        return this;
-    }
-
-    public TasksObject withUrls(Consumer<List<String>> urlsSetter) {
-        if(this.urls == null) {
-            this.urls = new ArrayList<>();
-        }
-        urlsSetter.accept(this.urls);
-        return this;
-    }
-
-    /**
-     * 刷新预热的url。
-     * @return urls
-     */
-    public List<String> getUrls() {
-        return urls;
-    }
-
-    public void setUrls(List<String> urls) {
-        this.urls = urls;
-    }
-
-    
-
     public TasksObject withFileType(FileTypeEnum fileType) {
         this.fileType = fileType;
         return this;
@@ -481,28 +431,6 @@ public class TasksObject  {
 
     
 
-    public TasksObject withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务id。
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -520,13 +448,11 @@ public class TasksObject  {
             Objects.equals(this.failed, tasksObject.failed) &&
             Objects.equals(this.total, tasksObject.total) &&
             Objects.equals(this.createTime, tasksObject.createTime) &&
-            Objects.equals(this.urls, tasksObject.urls) &&
-            Objects.equals(this.fileType, tasksObject.fileType) &&
-            Objects.equals(this.taskId, tasksObject.taskId);
+            Objects.equals(this.fileType, tasksObject.fileType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, taskType, status, processing, succeed, failed, total, createTime, urls, fileType, taskId);
+        return Objects.hash(id, taskType, status, processing, succeed, failed, total, createTime, fileType);
     }
     @Override
     public String toString() {
@@ -540,9 +466,7 @@ public class TasksObject  {
         sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

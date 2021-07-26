@@ -37,18 +37,6 @@ public class UpdatePolicyRequestBody  {
     
     private PolicyOption options;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
-    private Integer level;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="full_detection")
-    
-    private Boolean fullDetection;
-
     public UpdatePolicyRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -129,50 +117,6 @@ public class UpdatePolicyRequestBody  {
 
     
 
-    public UpdatePolicyRequestBody withLevel(Integer level) {
-        this.level = level;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 防护等级
-     * @return level
-     */
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-    
-
-    public UpdatePolicyRequestBody withFullDetection(Boolean fullDetection) {
-        this.fullDetection = fullDetection;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 精准防护中的检测模式
-     * @return fullDetection
-     */
-    public Boolean getFullDetection() {
-        return fullDetection;
-    }
-
-    public void setFullDetection(Boolean fullDetection) {
-        this.fullDetection = fullDetection;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -184,13 +128,11 @@ public class UpdatePolicyRequestBody  {
         UpdatePolicyRequestBody updatePolicyRequestBody = (UpdatePolicyRequestBody) o;
         return Objects.equals(this.name, updatePolicyRequestBody.name) &&
             Objects.equals(this.action, updatePolicyRequestBody.action) &&
-            Objects.equals(this.options, updatePolicyRequestBody.options) &&
-            Objects.equals(this.level, updatePolicyRequestBody.level) &&
-            Objects.equals(this.fullDetection, updatePolicyRequestBody.fullDetection);
+            Objects.equals(this.options, updatePolicyRequestBody.options);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, action, options, level, fullDetection);
+        return Objects.hash(name, action, options);
     }
     @Override
     public String toString() {
@@ -199,8 +141,6 @@ public class UpdatePolicyRequestBody  {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
-        sb.append("    level: ").append(toIndentedString(level)).append("\n");
-        sb.append("    fullDetection: ").append(toIndentedString(fullDetection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

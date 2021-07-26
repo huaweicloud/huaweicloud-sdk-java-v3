@@ -330,7 +330,7 @@ public class ListSubCustomerResFeeRecordsRequest  {
 
 
     /**
-     * 精英服务商ID。如果华为云伙伴能力中心需要查询客户在精英服务商关联期间的消费，需要携带该字段；否则只能查询该客户在与自己关联期间的消费。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。如果华为云伙伴能力中心需要查询客户在精英服务商关联期间的消费，需要携带该字段；否则只能查询该客户在与自己关联期间的消费。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

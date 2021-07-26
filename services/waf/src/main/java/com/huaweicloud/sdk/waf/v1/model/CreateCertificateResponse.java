@@ -5,8 +5,6 @@ package com.huaweicloud.sdk.waf.v1.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,9 +12,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.waf.v1.model.BindHost;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -55,96 +51,12 @@ public class CreateCertificateResponse extends SdkResponse {
     @JsonProperty(value="expire_time")
     
     private Long expireTime;
-    /**
-     * 证书过期状态，0-未过期，1-已过期，2-即将过期
-     */
-    public static final class ExpStatusEnum {
-
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ExpStatusEnum NUMBER_0 = new ExpStatusEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ExpStatusEnum NUMBER_1 = new ExpStatusEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final ExpStatusEnum NUMBER_2 = new ExpStatusEnum(2);
-        
-
-        private static final Map<Integer, ExpStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ExpStatusEnum> createStaticFields() {
-            Map<Integer, ExpStatusEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ExpStatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return Integer.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ExpStatusEnum fromValue(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ExpStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExpStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static ExpStatusEnum valueOf(Integer value) {
-            if( value == null ){
-                return null;
-            }
-            ExpStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExpStatusEnum) {
-                return this.value.equals(((ExpStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="exp_status")
     
-    private ExpStatusEnum expStatus;
+    private Integer expStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -268,7 +180,7 @@ public class CreateCertificateResponse extends SdkResponse {
 
     
 
-    public CreateCertificateResponse withExpStatus(ExpStatusEnum expStatus) {
+    public CreateCertificateResponse withExpStatus(Integer expStatus) {
         this.expStatus = expStatus;
         return this;
     }
@@ -280,11 +192,11 @@ public class CreateCertificateResponse extends SdkResponse {
      * 证书过期状态，0-未过期，1-已过期，2-即将过期
      * @return expStatus
      */
-    public ExpStatusEnum getExpStatus() {
+    public Integer getExpStatus() {
         return expStatus;
     }
 
-    public void setExpStatus(ExpStatusEnum expStatus) {
+    public void setExpStatus(Integer expStatus) {
         this.expStatus = expStatus;
     }
 

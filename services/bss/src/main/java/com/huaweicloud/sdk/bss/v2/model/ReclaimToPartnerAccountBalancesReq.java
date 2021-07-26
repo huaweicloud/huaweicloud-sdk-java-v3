@@ -90,7 +90,7 @@ public class ReclaimToPartnerAccountBalancesReq  {
 
 
     /**
-     * 精英服务商ID。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

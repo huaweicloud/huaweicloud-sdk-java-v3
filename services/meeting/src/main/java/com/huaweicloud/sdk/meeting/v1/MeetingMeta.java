@@ -6094,6 +6094,22 @@ public class MeetingMeta {
                 req.setConfUUID(v);
             })
         );
+        builder.withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getOffset, (req, v) -> {
+                req.setOffset(v);
+            })
+        );
+        builder.withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Integer.class,
+            f -> f.withMarshaller(ShowRecordingFileDownloadUrlsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            })
+        );
         builder.withRequestField("X-Authorization-Type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

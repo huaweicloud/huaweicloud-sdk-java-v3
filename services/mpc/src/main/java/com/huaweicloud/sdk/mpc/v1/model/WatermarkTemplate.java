@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.mpc.v1.model.ImageWatermark;
-import com.huaweicloud.sdk.mpc.v1.model.XCodeError;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -157,12 +156,6 @@ public class WatermarkTemplate  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
-    private Integer templateId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="template_name")
     
     private String templateName;
@@ -172,12 +165,6 @@ public class WatermarkTemplate  {
     @JsonProperty(value="type")
     
     private String type;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error")
-    
-    private XCodeError error;
 
     public WatermarkTemplate withDx(String dx) {
         this.dx = dx;
@@ -377,30 +364,6 @@ public class WatermarkTemplate  {
 
     
 
-    public WatermarkTemplate withTemplateId(Integer templateId) {
-        this.templateId = templateId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 水印模板ID
-     * minimum: 0
-     * maximum: 2147483647
-     * @return templateId
-     */
-    public Integer getTemplateId() {
-        return templateId;
-    }
-
-    public void setTemplateId(Integer templateId) {
-        this.templateId = templateId;
-    }
-
-    
-
     public WatermarkTemplate withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
@@ -445,35 +408,6 @@ public class WatermarkTemplate  {
 
     
 
-    public WatermarkTemplate withError(XCodeError error) {
-        this.error = error;
-        return this;
-    }
-
-    public WatermarkTemplate withError(Consumer<XCodeError> errorSetter) {
-        if(this.error == null ){
-            this.error = new XCodeError();
-            errorSetter.accept(this.error);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get error
-     * @return error
-     */
-    public XCodeError getError() {
-        return error;
-    }
-
-    public void setError(XCodeError error) {
-        this.error = error;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -492,14 +426,12 @@ public class WatermarkTemplate  {
             Objects.equals(this.width, watermarkTemplate.width) &&
             Objects.equals(this.height, watermarkTemplate.height) &&
             Objects.equals(this.base, watermarkTemplate.base) &&
-            Objects.equals(this.templateId, watermarkTemplate.templateId) &&
             Objects.equals(this.templateName, watermarkTemplate.templateName) &&
-            Objects.equals(this.type, watermarkTemplate.type) &&
-            Objects.equals(this.error, watermarkTemplate.error);
+            Objects.equals(this.type, watermarkTemplate.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, imageProcess, width, height, base, templateId, templateName, type, error);
+        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, imageProcess, width, height, base, templateName, type);
     }
     @Override
     public String toString() {
@@ -514,10 +446,8 @@ public class WatermarkTemplate  {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    base: ").append(toIndentedString(base)).append("\n");
-        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("}");
         return sb.toString();
     }

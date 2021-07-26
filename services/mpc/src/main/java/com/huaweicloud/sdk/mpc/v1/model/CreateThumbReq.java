@@ -61,30 +61,6 @@ public class CreateThumbReq  {
     
     private Integer originalDir;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
-    private String projectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_project_id")
-    
-    private String tenantProjectId;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
-    private String domainName;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="canonical_grant_id")
-    
-    private String canonicalGrantId;
-
     public CreateThumbReq withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -266,94 +242,6 @@ public class CreateThumbReq  {
 
     
 
-    public CreateThumbReq withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 租户Id
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    
-
-    public CreateThumbReq withTenantProjectId(String tenantProjectId) {
-        this.tenantProjectId = tenantProjectId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * vod租户Id
-     * @return tenantProjectId
-     */
-    public String getTenantProjectId() {
-        return tenantProjectId;
-    }
-
-    public void setTenantProjectId(String tenantProjectId) {
-        this.tenantProjectId = tenantProjectId;
-    }
-
-    
-
-    public CreateThumbReq withDomainName(String domainName) {
-        this.domainName = domainName;
-        return this;
-    }
-
-    
-
-
-    /**
-     * domain名称
-     * @return domainName
-     */
-    public String getDomainName() {
-        return domainName;
-    }
-
-    public void setDomainName(String domainName) {
-        this.domainName = domainName;
-    }
-
-    
-
-    public CreateThumbReq withCanonicalGrantId(String canonicalGrantId) {
-        this.canonicalGrantId = canonicalGrantId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 用户domainId
-     * @return canonicalGrantId
-     */
-    public String getCanonicalGrantId() {
-        return canonicalGrantId;
-    }
-
-    public void setCanonicalGrantId(String canonicalGrantId) {
-        this.canonicalGrantId = canonicalGrantId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -369,15 +257,11 @@ public class CreateThumbReq  {
             Objects.equals(this.thumbnailPara, createThumbReq.thumbnailPara) &&
             Objects.equals(this.tar, createThumbReq.tar) &&
             Objects.equals(this.sync, createThumbReq.sync) &&
-            Objects.equals(this.originalDir, createThumbReq.originalDir) &&
-            Objects.equals(this.projectId, createThumbReq.projectId) &&
-            Objects.equals(this.tenantProjectId, createThumbReq.tenantProjectId) &&
-            Objects.equals(this.domainName, createThumbReq.domainName) &&
-            Objects.equals(this.canonicalGrantId, createThumbReq.canonicalGrantId);
+            Objects.equals(this.originalDir, createThumbReq.originalDir);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, userData, thumbnailPara, tar, sync, originalDir, projectId, tenantProjectId, domainName, canonicalGrantId);
+        return Objects.hash(input, output, userData, thumbnailPara, tar, sync, originalDir);
     }
     @Override
     public String toString() {
@@ -390,10 +274,6 @@ public class CreateThumbReq  {
         sb.append("    tar: ").append(toIndentedString(tar)).append("\n");
         sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
         sb.append("    originalDir: ").append(toIndentedString(originalDir)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    tenantProjectId: ").append(toIndentedString(tenantProjectId)).append("\n");
-        sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-        sb.append("    canonicalGrantId: ").append(toIndentedString(canonicalGrantId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

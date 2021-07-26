@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v1.model.DomainSourceInfo;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -357,12 +356,6 @@ public class DecoupledLiveDomainInfo  {
     
     private OffsetDateTime createTime;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_source")
-    
-    private DomainSourceInfo domainSource;
-
     public DecoupledLiveDomainInfo withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -539,35 +532,6 @@ public class DecoupledLiveDomainInfo  {
 
     
 
-    public DecoupledLiveDomainInfo withDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
-        return this;
-    }
-
-    public DecoupledLiveDomainInfo withDomainSource(Consumer<DomainSourceInfo> domainSourceSetter) {
-        if(this.domainSource == null ){
-            this.domainSource = new DomainSourceInfo();
-            domainSourceSetter.accept(this.domainSource);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get domainSource
-     * @return domainSource
-     */
-    public DomainSourceInfo getDomainSource() {
-        return domainSource;
-    }
-
-    public void setDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -584,12 +548,11 @@ public class DecoupledLiveDomainInfo  {
             Objects.equals(this.domainCname, decoupledLiveDomainInfo.domainCname) &&
             Objects.equals(this.status, decoupledLiveDomainInfo.status) &&
             Objects.equals(this.relatedDomain, decoupledLiveDomainInfo.relatedDomain) &&
-            Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime) &&
-            Objects.equals(this.domainSource, decoupledLiveDomainInfo.domainSource);
+            Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domain, domainType, vendor, region, domainCname, status, relatedDomain, createTime, domainSource);
+        return Objects.hash(domain, domainType, vendor, region, domainCname, status, relatedDomain, createTime);
     }
     @Override
     public String toString() {
@@ -603,7 +566,6 @@ public class DecoupledLiveDomainInfo  {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    relatedDomain: ").append(toIndentedString(relatedDomain)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    domainSource: ").append(toIndentedString(domainSource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

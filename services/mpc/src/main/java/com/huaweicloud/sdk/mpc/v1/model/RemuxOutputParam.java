@@ -90,7 +90,7 @@ public class RemuxOutputParam  {
 
 
     /**
-     * 输出媒体是否去除片源的中metadata信息。 
+     * 输出媒体是否去除片源的中metadata自定义信息。默认值：false 
      * @return removeMeta
      */
     public Boolean getRemoveMeta() {

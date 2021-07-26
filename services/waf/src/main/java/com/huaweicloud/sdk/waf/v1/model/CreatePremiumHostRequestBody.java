@@ -22,6 +22,18 @@ public class CreatePremiumHostRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="certificateid")
+    
+    private String certificateid;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="certificatename")
+    
+    private String certificatename;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="hostname")
     
     private String hostname;
@@ -40,34 +52,54 @@ public class CreatePremiumHostRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificateid")
-    
-    private String certificateid;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificatename")
-    
-    private String certificatename;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="server")
     
     private List<PremiumWafServer> server = null;
     
+    public CreatePremiumHostRequestBody withCertificateid(String certificateid) {
+        this.certificateid = certificateid;
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
     
-    private String mode;
 
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_ids")
+    /**
+     * 证书id
+     * @return certificateid
+     */
+    public String getCertificateid() {
+        return certificateid;
+    }
+
+    public void setCertificateid(String certificateid) {
+        this.certificateid = certificateid;
+    }
+
     
-    private List<String> poolIds = null;
+
+    public CreatePremiumHostRequestBody withCertificatename(String certificatename) {
+        this.certificatename = certificatename;
+        return this;
+    }
+
     
+
+
+    /**
+     * 证书名称
+     * @return certificatename
+     */
+    public String getCertificatename() {
+        return certificatename;
+    }
+
+    public void setCertificatename(String certificatename) {
+        this.certificatename = certificatename;
+    }
+
+    
+
     public CreatePremiumHostRequestBody withHostname(String hostname) {
         this.hostname = hostname;
         return this;
@@ -134,50 +166,6 @@ public class CreatePremiumHostRequestBody  {
 
     
 
-    public CreatePremiumHostRequestBody withCertificateid(String certificateid) {
-        this.certificateid = certificateid;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 证书ID
-     * @return certificateid
-     */
-    public String getCertificateid() {
-        return certificateid;
-    }
-
-    public void setCertificateid(String certificateid) {
-        this.certificateid = certificateid;
-    }
-
-    
-
-    public CreatePremiumHostRequestBody withCertificatename(String certificatename) {
-        this.certificatename = certificatename;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 证书名称
-     * @return certificatename
-     */
-    public String getCertificatename() {
-        return certificatename;
-    }
-
-    public void setCertificatename(String certificatename) {
-        this.certificatename = certificatename;
-    }
-
-    
-
     public CreatePremiumHostRequestBody withServer(List<PremiumWafServer> server) {
         this.server = server;
         return this;
@@ -214,64 +202,6 @@ public class CreatePremiumHostRequestBody  {
 
     
 
-    public CreatePremiumHostRequestBody withMode(String mode) {
-        this.mode = mode;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 独享模式特殊域名模式（仅特殊模式需要，如elb）
-     * @return mode
-     */
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    
-
-    public CreatePremiumHostRequestBody withPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
-        return this;
-    }
-
-    
-    public CreatePremiumHostRequestBody addPoolIdsItem(String poolIdsItem) {
-        if(this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        this.poolIds.add(poolIdsItem);
-        return this;
-    }
-
-    public CreatePremiumHostRequestBody withPoolIds(Consumer<List<String>> poolIdsSetter) {
-        if(this.poolIds == null) {
-            this.poolIds = new ArrayList<>();
-        }
-        poolIdsSetter.accept(this.poolIds);
-        return this;
-    }
-
-    /**
-     * 域名关联的组ID（仅特殊模式需要，如elb）
-     * @return poolIds
-     */
-    public List<String> getPoolIds() {
-        return poolIds;
-    }
-
-    public void setPoolIds(List<String> poolIds) {
-        this.poolIds = poolIds;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -281,31 +211,27 @@ public class CreatePremiumHostRequestBody  {
             return false;
         }
         CreatePremiumHostRequestBody createPremiumHostRequestBody = (CreatePremiumHostRequestBody) o;
-        return Objects.equals(this.hostname, createPremiumHostRequestBody.hostname) &&
+        return Objects.equals(this.certificateid, createPremiumHostRequestBody.certificateid) &&
+            Objects.equals(this.certificatename, createPremiumHostRequestBody.certificatename) &&
+            Objects.equals(this.hostname, createPremiumHostRequestBody.hostname) &&
             Objects.equals(this.proxy, createPremiumHostRequestBody.proxy) &&
             Objects.equals(this.policyid, createPremiumHostRequestBody.policyid) &&
-            Objects.equals(this.certificateid, createPremiumHostRequestBody.certificateid) &&
-            Objects.equals(this.certificatename, createPremiumHostRequestBody.certificatename) &&
-            Objects.equals(this.server, createPremiumHostRequestBody.server) &&
-            Objects.equals(this.mode, createPremiumHostRequestBody.mode) &&
-            Objects.equals(this.poolIds, createPremiumHostRequestBody.poolIds);
+            Objects.equals(this.server, createPremiumHostRequestBody.server);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(hostname, proxy, policyid, certificateid, certificatename, server, mode, poolIds);
+        return Objects.hash(certificateid, certificatename, hostname, proxy, policyid, server);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePremiumHostRequestBody {\n");
+        sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
+        sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
-        sb.append("    certificateid: ").append(toIndentedString(certificateid)).append("\n");
-        sb.append("    certificatename: ").append(toIndentedString(certificatename)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
-        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -208,12 +208,6 @@ public class QueryTranscodingsTaskResponse  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_url")
-    
-    private String outputUrl;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="transcode_detail")
     
     private TranscodeDetail transcodeDetail;
@@ -542,28 +536,6 @@ public class QueryTranscodingsTaskResponse  {
 
     
 
-    public QueryTranscodingsTaskResponse withOutputUrl(String outputUrl) {
-        this.outputUrl = outputUrl;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 质检文件输出路径 
-     * @return outputUrl
-     */
-    public String getOutputUrl() {
-        return outputUrl;
-    }
-
-    public void setOutputUrl(String outputUrl) {
-        this.outputUrl = outputUrl;
-    }
-
-    
-
     public QueryTranscodingsTaskResponse withTranscodeDetail(TranscodeDetail transcodeDetail) {
         this.transcodeDetail = transcodeDetail;
         return this;
@@ -701,7 +673,6 @@ public class QueryTranscodingsTaskResponse  {
             Objects.equals(this.errorCode, queryTranscodingsTaskResponse.errorCode) &&
             Objects.equals(this.description, queryTranscodingsTaskResponse.description) &&
             Objects.equals(this.tips, queryTranscodingsTaskResponse.tips) &&
-            Objects.equals(this.outputUrl, queryTranscodingsTaskResponse.outputUrl) &&
             Objects.equals(this.transcodeDetail, queryTranscodingsTaskResponse.transcodeDetail) &&
             Objects.equals(this.thumbnailOutput, queryTranscodingsTaskResponse.thumbnailOutput) &&
             Objects.equals(this.thumbnailOutputname, queryTranscodingsTaskResponse.thumbnailOutputname) &&
@@ -709,7 +680,7 @@ public class QueryTranscodingsTaskResponse  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, userData, errorCode, description, tips, outputUrl, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo);
+        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, userData, errorCode, description, tips, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo);
     }
     @Override
     public String toString() {
@@ -727,7 +698,6 @@ public class QueryTranscodingsTaskResponse  {
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    tips: ").append(toIndentedString(tips)).append("\n");
-        sb.append("    outputUrl: ").append(toIndentedString(outputUrl)).append("\n");
         sb.append("    transcodeDetail: ").append(toIndentedString(transcodeDetail)).append("\n");
         sb.append("    thumbnailOutput: ").append(toIndentedString(thumbnailOutput)).append("\n");
         sb.append("    thumbnailOutputname: ").append(toIndentedString(thumbnailOutputname)).append("\n");

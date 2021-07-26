@@ -232,7 +232,7 @@ public class ListPartnerAdjustRecordsRequest  {
 
 
     /**
-     * 精英服务商ID。华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）的子客户调账记录时，需携带此参数；否则只能查询自己的子客户调账记录。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）的子客户调账记录时，需携带此参数；否则只能查询自己的子客户调账记录。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

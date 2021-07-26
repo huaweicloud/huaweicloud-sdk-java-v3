@@ -20,6 +20,28 @@ public class HssAsyncClient {
 
 
     /**
+     * 查入侵事件列表
+     * 查入侵事件列表
+     *
+     * @param ListEventsRequest 请求对象
+     * @return CompletableFuture<ListEventsResponse>
+     */
+    public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listEvents);
+    }
+
+    /**
+     * 查入侵事件列表
+     * 查入侵事件列表
+     *
+     * @param ListEventsRequest 请求对象
+     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
+    public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
+        return new AsyncInvoker<ListEventsRequest, ListEventsResponse>(request, HssMeta.listEvents, hcClient);
+    }
+
+    /**
      * 查询弹性云服务器状态列表
      * 查询弹性云服务器状态列表
      *

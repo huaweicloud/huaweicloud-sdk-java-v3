@@ -9,6 +9,8 @@ import java.util.Collections;
 
 import java.util.Collections;
 
+import java.util.Collections;
+
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -352,6 +354,12 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="encrypted_user_data")
+    
+    private String encryptedUserData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="digest")
     
     private String digest;
@@ -388,12 +396,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_description")
-    
-    private String versionDescription;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
     private OffsetDateTime lastModified;
@@ -410,18 +412,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     
     private MountConfig mountConfig;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="concurrency")
-    
-    private Integer concurrency;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="depend_list")
-    
-    private List<String> dependList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="strategy_config")
@@ -457,6 +447,108 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value="enterprise_project_id")
     
     private String enterpriseProjectId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="long_time")
+    
+    private Boolean longTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="log_group_id")
+    
+    private String logGroupId;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="log_stream_id")
+    
+    private String logStreamId;
+    /**
+     * v2表示为公测版本,v1为原来版本。
+     */
+    public static final class TypeEnum {
+
+        
+        /**
+         * Enum V1 for value: "v1"
+         */
+        public static final TypeEnum V1 = new TypeEnum("v1");
+        
+        /**
+         * Enum V2 for value: "v2"
+         */
+        public static final TypeEnum V2 = new TypeEnum("v2");
+        
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("v1", V1);
+            map.put("v2", V2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result == null) {
+                result = new TypeEnum(value);
+            }
+            return result;
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if( value == null ){
+                return null;
+            }
+            TypeEnum result = STATIC_FIELDS.get(value);
+            if (result != null) {
+                return result;
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj != null && obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="type")
+    
+    private TypeEnum type;
 
     public UpdateFunctionConfigResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
@@ -810,6 +902,28 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     
 
+    public UpdateFunctionConfigResponse withEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义的name/value信息，用于需要加密的配置。
+     * @return encryptedUserData
+     */
+    public String getEncryptedUserData() {
+        return encryptedUserData;
+    }
+
+    public void setEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+    }
+
+    
+
     public UpdateFunctionConfigResponse withDigest(String digest) {
         this.digest = digest;
         return this;
@@ -942,28 +1056,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     
 
-    public UpdateFunctionConfigResponse withVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数版本描述。
-     * @return versionDescription
-     */
-    public String getVersionDescription() {
-        return versionDescription;
-    }
-
-    public void setVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-    }
-
-    
-
     public UpdateFunctionConfigResponse withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -1040,64 +1132,6 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     public void setMountConfig(MountConfig mountConfig) {
         this.mountConfig = mountConfig;
-    }
-
-    
-
-    public UpdateFunctionConfigResponse withConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get concurrency
-     * @return concurrency
-     */
-    public Integer getConcurrency() {
-        return concurrency;
-    }
-
-    public void setConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-    }
-
-    
-
-    public UpdateFunctionConfigResponse withDependList(List<String> dependList) {
-        this.dependList = dependList;
-        return this;
-    }
-
-    
-    public UpdateFunctionConfigResponse addDependListItem(String dependListItem) {
-        if(this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        this.dependList.add(dependListItem);
-        return this;
-    }
-
-    public UpdateFunctionConfigResponse withDependList(Consumer<List<String>> dependListSetter) {
-        if(this.dependList == null) {
-            this.dependList = new ArrayList<>();
-        }
-        dependListSetter.accept(this.dependList);
-        return this;
-    }
-
-    /**
-     * 依赖id列表
-     * @return dependList
-     */
-    public List<String> getDependList() {
-        return dependList;
-    }
-
-    public void setDependList(List<String> dependList) {
-        this.dependList = dependList;
     }
 
     
@@ -1255,6 +1289,94 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     
 
+    public UpdateFunctionConfigResponse withLongTime(Boolean longTime) {
+        this.longTime = longTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否允许进行长时间超时设置。
+     * @return longTime
+     */
+    public Boolean getLongTime() {
+        return longTime;
+    }
+
+    public void setLongTime(Boolean longTime) {
+        this.longTime = longTime;
+    }
+
+    
+
+    public UpdateFunctionConfigResponse withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 自定义日志查询组id
+     * @return logGroupId
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
+    
+
+    public UpdateFunctionConfigResponse withLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 自定义日志查询流id
+     * @return logStreamId
+     */
+    public String getLogStreamId() {
+        return logStreamId;
+    }
+
+    public void setLogStreamId(String logStreamId) {
+        this.logStreamId = logStreamId;
+    }
+
+    
+
+    public UpdateFunctionConfigResponse withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    
+
+
+    /**
+     * v2表示为公测版本,v1为原来版本。
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -1280,28 +1402,30 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             Objects.equals(this.codeFilename, updateFunctionConfigResponse.codeFilename) &&
             Objects.equals(this.codeSize, updateFunctionConfigResponse.codeSize) &&
             Objects.equals(this.userData, updateFunctionConfigResponse.userData) &&
+            Objects.equals(this.encryptedUserData, updateFunctionConfigResponse.encryptedUserData) &&
             Objects.equals(this.digest, updateFunctionConfigResponse.digest) &&
             Objects.equals(this.version, updateFunctionConfigResponse.version) &&
             Objects.equals(this.imageName, updateFunctionConfigResponse.imageName) &&
             Objects.equals(this.xrole, updateFunctionConfigResponse.xrole) &&
             Objects.equals(this.appXrole, updateFunctionConfigResponse.appXrole) &&
             Objects.equals(this.description, updateFunctionConfigResponse.description) &&
-            Objects.equals(this.versionDescription, updateFunctionConfigResponse.versionDescription) &&
             Objects.equals(this.lastModified, updateFunctionConfigResponse.lastModified) &&
             Objects.equals(this.funcVpc, updateFunctionConfigResponse.funcVpc) &&
             Objects.equals(this.mountConfig, updateFunctionConfigResponse.mountConfig) &&
-            Objects.equals(this.concurrency, updateFunctionConfigResponse.concurrency) &&
-            Objects.equals(this.dependList, updateFunctionConfigResponse.dependList) &&
             Objects.equals(this.strategyConfig, updateFunctionConfigResponse.strategyConfig) &&
             Objects.equals(this.extendConfig, updateFunctionConfigResponse.extendConfig) &&
             Objects.equals(this.dependencies, updateFunctionConfigResponse.dependencies) &&
             Objects.equals(this.initializerHandler, updateFunctionConfigResponse.initializerHandler) &&
             Objects.equals(this.initializerTimeout, updateFunctionConfigResponse.initializerTimeout) &&
-            Objects.equals(this.enterpriseProjectId, updateFunctionConfigResponse.enterpriseProjectId);
+            Objects.equals(this.enterpriseProjectId, updateFunctionConfigResponse.enterpriseProjectId) &&
+            Objects.equals(this.longTime, updateFunctionConfigResponse.longTime) &&
+            Objects.equals(this.logGroupId, updateFunctionConfigResponse.logGroupId) &&
+            Objects.equals(this.logStreamId, updateFunctionConfigResponse.logStreamId) &&
+            Objects.equals(this.type, updateFunctionConfigResponse.type);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, digest, version, imageName, xrole, appXrole, description, versionDescription, lastModified, funcVpc, mountConfig, concurrency, dependList, strategyConfig, extendConfig, dependencies, initializerHandler, initializerTimeout, enterpriseProjectId);
+        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, encryptedUserData, digest, version, imageName, xrole, appXrole, description, lastModified, funcVpc, mountConfig, strategyConfig, extendConfig, dependencies, initializerHandler, initializerTimeout, enterpriseProjectId, longTime, logGroupId, logStreamId, type);
     }
     @Override
     public String toString() {
@@ -1323,24 +1447,26 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
-        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
-        sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    longTime: ").append(toIndentedString(longTime)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
+        sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -38,7 +38,7 @@ public class DeleteGeoipRuleRequest  {
 
 
     /**
-     * policyid
+     * 策略id（策略id从查询防护策略列表接口获取）
      * @return policyId
      */
     public String getPolicyId() {

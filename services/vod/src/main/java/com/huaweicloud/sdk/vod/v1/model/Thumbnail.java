@@ -34,11 +34,6 @@ public class Thumbnail  {
         public static final TypeEnum TIME = new TypeEnum("time");
         
         /**
-         * Enum PERCENT for value: "percent"
-         */
-        public static final TypeEnum PERCENT = new TypeEnum("percent");
-        
-        /**
          * Enum DOTS for value: "dots"
          */
         public static final TypeEnum DOTS = new TypeEnum("dots");
@@ -49,7 +44,6 @@ public class Thumbnail  {
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("time", TIME);
-            map.put("percent", PERCENT);
             map.put("dots", DOTS);
             return Collections.unmodifiableMap(map);
         }
@@ -180,7 +174,7 @@ public class Thumbnail  {
 
 
     /**
-     * 根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
+     * **type**取值为time时必填。根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
      * @return time
      */
     public Integer getTime() {
@@ -216,7 +210,7 @@ public class Thumbnail  {
     }
 
     /**
-     * 指定时间截图时的时间点数组。
+     * **type**取值为dots时必填。指定时间截图时的时间点数组。
      * @return dots
      */
     public List<Integer> getDots() {

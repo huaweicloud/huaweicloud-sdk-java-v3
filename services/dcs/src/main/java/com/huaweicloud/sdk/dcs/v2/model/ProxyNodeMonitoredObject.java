@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
- * 监控对象结构
+ * Redis 3.0 proxy集群中proxy节点监控对象结构
  */
 public class ProxyNodeMonitoredObject  {
 

@@ -53,7 +53,7 @@ public class ShowDependencyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="size")
     
-    private String size;
+    private Long size;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -183,7 +183,7 @@ public class ShowDependencyResponse extends SdkResponse {
 
     
 
-    public ShowDependencyResponse withSize(String size) {
+    public ShowDependencyResponse withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -195,11 +195,11 @@ public class ShowDependencyResponse extends SdkResponse {
      * 依赖包大小。
      * @return size
      */
-    public String getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

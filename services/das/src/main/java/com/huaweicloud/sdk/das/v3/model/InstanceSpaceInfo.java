@@ -62,7 +62,7 @@ public class InstanceSpaceInfo  {
 
 
     /**
-     * 实例总空间，已字节为单位。GaussDB(for MySQL)不会返回总空间
+     * 实例总空间，以字节为单位。GaussDB(for MySQL)不会返回总空间
      * @return totalSize
      */
     public Long getTotalSize() {
@@ -84,7 +84,7 @@ public class InstanceSpaceInfo  {
 
 
     /**
-     * 已使用空间，已字节为单位
+     * 已使用空间，以字节为单位
      * @return usedSize
      */
     public Long getUsedSize() {
@@ -106,7 +106,7 @@ public class InstanceSpaceInfo  {
 
 
     /**
-     * 数据空间，已字节为单位
+     * 数据空间，以字节为单位
      * @return dataSize
      */
     public Long getDataSize() {
@@ -128,7 +128,7 @@ public class InstanceSpaceInfo  {
 
 
     /**
-     * 日志空间，已字节为单位
+     * 日志空间，以字节为单位
      * @return logSize
      */
     public Long getLogSize() {
@@ -150,7 +150,7 @@ public class InstanceSpaceInfo  {
 
 
     /**
-     * 近七日的数据平均日增长量，已字节为单位
+     * 近七日的数据平均日增长量，以字节为单位
      * @return avgDailyGrowth
      */
     public Long getAvgDailyGrowth() {

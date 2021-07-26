@@ -427,6 +427,25 @@ public class FunctionGraphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogs = genForenableLtsLogs();
+
+    private static HttpRequestDef<EnableLtsLogsRequest, EnableLtsLogsResponse> genForenableLtsLogs() {
+        // basic
+        HttpRequestDef.Builder<EnableLtsLogsRequest, EnableLtsLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableLtsLogsRequest.class, EnableLtsLogsResponse.class)
+                .withName("EnableLtsLogs")
+                .withUri("/v2/{project_id}/fgs/functions/enable-lts-logs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExportFunctionRequest, ExportFunctionResponse> exportFunction = genForexportFunction();
 
     private static HttpRequestDef<ExportFunctionRequest, ExportFunctionResponse> genForexportFunction() {
@@ -1020,6 +1039,33 @@ public class FunctionGraphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             String.class,
             f -> f.withMarshaller(ShowFunctionConfigRequest::getFunctionUrn, (req, v) -> {
+                req.setFunctionUrn(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse> showLtsLogDetails = genForshowLtsLogDetails();
+
+    private static HttpRequestDef<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse> genForshowLtsLogDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLtsLogDetailsRequest.class, ShowLtsLogDetailsResponse.class)
+                .withName("ShowLtsLogDetails")
+                .withUri("/v2/{project_id}/fgs/functions/{function_urn}/lts-log-detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("function_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowLtsLogDetailsRequest::getFunctionUrn, (req, v) -> {
                 req.setFunctionUrn(v);
             })
         );

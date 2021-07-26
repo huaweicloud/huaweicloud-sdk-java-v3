@@ -64,6 +64,28 @@ public class CloudPipelineAsyncClient {
     }
 
     /**
+     * 获取流水线列表接口
+     * 获取流水线列表接口
+     *
+     * @param ListPipelineSimpleInfoRequest 请求对象
+     * @return CompletableFuture<ListPipelineSimpleInfoResponse>
+     */
+    public CompletableFuture<ListPipelineSimpleInfoResponse> listPipelineSimpleInfoAsync(ListPipelineSimpleInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudPipelineMeta.listPipelineSimpleInfo);
+    }
+
+    /**
+     * 获取流水线列表接口
+     * 获取流水线列表接口
+     *
+     * @param ListPipelineSimpleInfoRequest 请求对象
+     * @return AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>
+     */
+    public AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfoAsyncInvoker(ListPipelineSimpleInfoRequest request) {
+        return new AsyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>(request, CloudPipelineMeta.listPipelineSimpleInfo, hcClient);
+    }
+
+    /**
      * 获取项目下流水线执行状况
      * 获取项目下流水线执行状况
      *

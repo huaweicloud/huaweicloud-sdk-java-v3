@@ -302,7 +302,7 @@ public class CreatePartnerCouponsReq  {
 
 
     /**
-     * 精英服务商ID。 精英服务商给子客户发放优惠券时，需要携带该参数。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商给子客户发放优惠券时，需要携带该参数。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

@@ -1274,6 +1274,28 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 副本集跨网段访问配置。
+     * 副本集跨网段访问配置。
+     *
+     * @param UpdateClientNetworkRequest 请求对象
+     * @return CompletableFuture<UpdateClientNetworkResponse>
+     */
+    public CompletableFuture<UpdateClientNetworkResponse> updateClientNetworkAsync(UpdateClientNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.updateClientNetwork);
+    }
+
+    /**
+     * 副本集跨网段访问配置。
+     * 副本集跨网段访问配置。
+     *
+     * @param UpdateClientNetworkRequest 请求对象
+     * @return AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>
+     */
+    public AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetworkAsyncInvoker(UpdateClientNetworkRequest request) {
+        return new AsyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>(request, DdsMeta.updateClientNetwork, hcClient);
+    }
+
+    /**
      * 修改实例名称
      * 修改实例名称
      *

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.GeoIpBody;
+import com.huaweicloud.sdk.waf.v1.model.UpdateGeoipRuleRequestBody;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public class UpdateGeoipRuleRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="body")
     
-    private GeoIpBody body;
+    private UpdateGeoipRuleRequestBody body;
 
     public UpdateGeoipRuleRequest withPolicyId(String policyId) {
         this.policyId = policyId;
@@ -45,7 +45,7 @@ public class UpdateGeoipRuleRequest  {
 
 
     /**
-     * policyid
+     * 策略id（策略id从查询防护策略列表接口获取）
      * @return policyId
      */
     public String getPolicyId() {
@@ -80,14 +80,14 @@ public class UpdateGeoipRuleRequest  {
 
     
 
-    public UpdateGeoipRuleRequest withBody(GeoIpBody body) {
+    public UpdateGeoipRuleRequest withBody(UpdateGeoipRuleRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateGeoipRuleRequest withBody(Consumer<GeoIpBody> bodySetter) {
+    public UpdateGeoipRuleRequest withBody(Consumer<UpdateGeoipRuleRequestBody> bodySetter) {
         if(this.body == null ){
-            this.body = new GeoIpBody();
+            this.body = new UpdateGeoipRuleRequestBody();
             bodySetter.accept(this.body);
         }
         
@@ -99,11 +99,11 @@ public class UpdateGeoipRuleRequest  {
      * Get body
      * @return body
      */
-    public GeoIpBody getBody() {
+    public UpdateGeoipRuleRequestBody getBody() {
         return body;
     }
 
-    public void setBody(GeoIpBody body) {
+    public void setBody(UpdateGeoipRuleRequestBody body) {
         this.body = body;
     }
 

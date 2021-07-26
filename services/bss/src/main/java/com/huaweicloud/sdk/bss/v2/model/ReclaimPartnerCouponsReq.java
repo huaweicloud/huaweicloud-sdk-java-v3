@@ -60,7 +60,7 @@ public class ReclaimPartnerCouponsReq  {
 
 
     /**
-     * 精英服务商ID。 精英服务商回收给子客户发放的优惠券时，需要携带该字段。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商回收给子客户发放的优惠券时，需要携带该字段。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

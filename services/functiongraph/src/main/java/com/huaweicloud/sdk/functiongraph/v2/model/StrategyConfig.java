@@ -23,6 +23,12 @@ public class StrategyConfig  {
     
     private Integer concurrency;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="concurrent_num")
+    
+    private Integer concurrentNum;
+
     public StrategyConfig withConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
         return this;
@@ -45,6 +51,28 @@ public class StrategyConfig  {
 
     
 
+    public StrategyConfig withConcurrentNum(Integer concurrentNum) {
+        this.concurrentNum = concurrentNum;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 函数并发数
+     * @return concurrentNum
+     */
+    public Integer getConcurrentNum() {
+        return concurrentNum;
+    }
+
+    public void setConcurrentNum(Integer concurrentNum) {
+        this.concurrentNum = concurrentNum;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -54,17 +82,19 @@ public class StrategyConfig  {
             return false;
         }
         StrategyConfig strategyConfig = (StrategyConfig) o;
-        return Objects.equals(this.concurrency, strategyConfig.concurrency);
+        return Objects.equals(this.concurrency, strategyConfig.concurrency) &&
+            Objects.equals(this.concurrentNum, strategyConfig.concurrentNum);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(concurrency);
+        return Objects.hash(concurrency, concurrentNum);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StrategyConfig {\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    concurrentNum: ").append(toIndentedString(concurrentNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

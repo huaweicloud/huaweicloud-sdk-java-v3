@@ -12,15 +12,10 @@ import com.huaweicloud.sdk.mpc.v1.model.AudioProcess;
 import com.huaweicloud.sdk.mpc.v1.model.AudioTrack;
 import com.huaweicloud.sdk.mpc.v1.model.AvParameters;
 import com.huaweicloud.sdk.mpc.v1.model.Crop;
-import com.huaweicloud.sdk.mpc.v1.model.DigitalWatermark;
 import com.huaweicloud.sdk.mpc.v1.model.Encryption;
 import com.huaweicloud.sdk.mpc.v1.model.MultiAudio;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import com.huaweicloud.sdk.mpc.v1.model.QualityEnhance;
-import com.huaweicloud.sdk.mpc.v1.model.SpecialEffect;
 import com.huaweicloud.sdk.mpc.v1.model.Subtitle;
-import com.huaweicloud.sdk.mpc.v1.model.SystemProcess;
-import com.huaweicloud.sdk.mpc.v1.model.TemplateExtend;
 import com.huaweicloud.sdk.mpc.v1.model.Thumbnail;
 import com.huaweicloud.sdk.mpc.v1.model.VideoProcess;
 import com.huaweicloud.sdk.mpc.v1.model.WatermarkRequest;
@@ -85,12 +80,6 @@ public class CreateTranscodingReq  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="digital_watermark")
-    
-    private DigitalWatermark digitalWatermark;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="priority")
     
     private Integer priority;
@@ -100,12 +89,6 @@ public class CreateTranscodingReq  {
     @JsonProperty(value="subtitle")
     
     private Subtitle subtitle;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="special_effect")
-    
-    private SpecialEffect specialEffect;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -142,24 +125,6 @@ public class CreateTranscodingReq  {
     @JsonProperty(value="audio_process")
     
     private AudioProcess audioProcess;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality_enhance")
-    
-    private QualityEnhance qualityEnhance;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="system_process")
-    
-    private SystemProcess systemProcess;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_extend")
-    
-    private TemplateExtend templateExtend;
 
     public CreateTranscodingReq withInput(ObsObjInfo input) {
         this.input = input;
@@ -414,35 +379,6 @@ public class CreateTranscodingReq  {
 
     
 
-    public CreateTranscodingReq withDigitalWatermark(DigitalWatermark digitalWatermark) {
-        this.digitalWatermark = digitalWatermark;
-        return this;
-    }
-
-    public CreateTranscodingReq withDigitalWatermark(Consumer<DigitalWatermark> digitalWatermarkSetter) {
-        if(this.digitalWatermark == null ){
-            this.digitalWatermark = new DigitalWatermark();
-            digitalWatermarkSetter.accept(this.digitalWatermark);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get digitalWatermark
-     * @return digitalWatermark
-     */
-    public DigitalWatermark getDigitalWatermark() {
-        return digitalWatermark;
-    }
-
-    public void setDigitalWatermark(DigitalWatermark digitalWatermark) {
-        this.digitalWatermark = digitalWatermark;
-    }
-
-    
-
     public CreateTranscodingReq withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -492,35 +428,6 @@ public class CreateTranscodingReq  {
 
     public void setSubtitle(Subtitle subtitle) {
         this.subtitle = subtitle;
-    }
-
-    
-
-    public CreateTranscodingReq withSpecialEffect(SpecialEffect specialEffect) {
-        this.specialEffect = specialEffect;
-        return this;
-    }
-
-    public CreateTranscodingReq withSpecialEffect(Consumer<SpecialEffect> specialEffectSetter) {
-        if(this.specialEffect == null ){
-            this.specialEffect = new SpecialEffect();
-            specialEffectSetter.accept(this.specialEffect);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get specialEffect
-     * @return specialEffect
-     */
-    public SpecialEffect getSpecialEffect() {
-        return specialEffect;
-    }
-
-    public void setSpecialEffect(SpecialEffect specialEffect) {
-        this.specialEffect = specialEffect;
     }
 
     
@@ -699,93 +606,6 @@ public class CreateTranscodingReq  {
 
     
 
-    public CreateTranscodingReq withQualityEnhance(QualityEnhance qualityEnhance) {
-        this.qualityEnhance = qualityEnhance;
-        return this;
-    }
-
-    public CreateTranscodingReq withQualityEnhance(Consumer<QualityEnhance> qualityEnhanceSetter) {
-        if(this.qualityEnhance == null ){
-            this.qualityEnhance = new QualityEnhance();
-            qualityEnhanceSetter.accept(this.qualityEnhance);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get qualityEnhance
-     * @return qualityEnhance
-     */
-    public QualityEnhance getQualityEnhance() {
-        return qualityEnhance;
-    }
-
-    public void setQualityEnhance(QualityEnhance qualityEnhance) {
-        this.qualityEnhance = qualityEnhance;
-    }
-
-    
-
-    public CreateTranscodingReq withSystemProcess(SystemProcess systemProcess) {
-        this.systemProcess = systemProcess;
-        return this;
-    }
-
-    public CreateTranscodingReq withSystemProcess(Consumer<SystemProcess> systemProcessSetter) {
-        if(this.systemProcess == null ){
-            this.systemProcess = new SystemProcess();
-            systemProcessSetter.accept(this.systemProcess);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get systemProcess
-     * @return systemProcess
-     */
-    public SystemProcess getSystemProcess() {
-        return systemProcess;
-    }
-
-    public void setSystemProcess(SystemProcess systemProcess) {
-        this.systemProcess = systemProcess;
-    }
-
-    
-
-    public CreateTranscodingReq withTemplateExtend(TemplateExtend templateExtend) {
-        this.templateExtend = templateExtend;
-        return this;
-    }
-
-    public CreateTranscodingReq withTemplateExtend(Consumer<TemplateExtend> templateExtendSetter) {
-        if(this.templateExtend == null ){
-            this.templateExtend = new TemplateExtend();
-            templateExtendSetter.accept(this.templateExtend);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get templateExtend
-     * @return templateExtend
-     */
-    public TemplateExtend getTemplateExtend() {
-        return templateExtend;
-    }
-
-    public void setTemplateExtend(TemplateExtend templateExtend) {
-        this.templateExtend = templateExtend;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -803,23 +623,18 @@ public class CreateTranscodingReq  {
             Objects.equals(this.userData, createTranscodingReq.userData) &&
             Objects.equals(this.watermarks, createTranscodingReq.watermarks) &&
             Objects.equals(this.thumbnail, createTranscodingReq.thumbnail) &&
-            Objects.equals(this.digitalWatermark, createTranscodingReq.digitalWatermark) &&
             Objects.equals(this.priority, createTranscodingReq.priority) &&
             Objects.equals(this.subtitle, createTranscodingReq.subtitle) &&
-            Objects.equals(this.specialEffect, createTranscodingReq.specialEffect) &&
             Objects.equals(this.encryption, createTranscodingReq.encryption) &&
             Objects.equals(this.crop, createTranscodingReq.crop) &&
             Objects.equals(this.audioTrack, createTranscodingReq.audioTrack) &&
             Objects.equals(this.multiAudio, createTranscodingReq.multiAudio) &&
             Objects.equals(this.videoProcess, createTranscodingReq.videoProcess) &&
-            Objects.equals(this.audioProcess, createTranscodingReq.audioProcess) &&
-            Objects.equals(this.qualityEnhance, createTranscodingReq.qualityEnhance) &&
-            Objects.equals(this.systemProcess, createTranscodingReq.systemProcess) &&
-            Objects.equals(this.templateExtend, createTranscodingReq.templateExtend);
+            Objects.equals(this.audioProcess, createTranscodingReq.audioProcess);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, digitalWatermark, priority, subtitle, specialEffect, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess, qualityEnhance, systemProcess, templateExtend);
+        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, priority, subtitle, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess);
     }
     @Override
     public String toString() {
@@ -833,19 +648,14 @@ public class CreateTranscodingReq  {
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    watermarks: ").append(toIndentedString(watermarks)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
-        sb.append("    digitalWatermark: ").append(toIndentedString(digitalWatermark)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
-        sb.append("    specialEffect: ").append(toIndentedString(specialEffect)).append("\n");
         sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");
         sb.append("    crop: ").append(toIndentedString(crop)).append("\n");
         sb.append("    audioTrack: ").append(toIndentedString(audioTrack)).append("\n");
         sb.append("    multiAudio: ").append(toIndentedString(multiAudio)).append("\n");
         sb.append("    videoProcess: ").append(toIndentedString(videoProcess)).append("\n");
         sb.append("    audioProcess: ").append(toIndentedString(audioProcess)).append("\n");
-        sb.append("    qualityEnhance: ").append(toIndentedString(qualityEnhance)).append("\n");
-        sb.append("    systemProcess: ").append(toIndentedString(systemProcess)).append("\n");
-        sb.append("    templateExtend: ").append(toIndentedString(templateExtend)).append("\n");
         sb.append("}");
         return sb.toString();
     }

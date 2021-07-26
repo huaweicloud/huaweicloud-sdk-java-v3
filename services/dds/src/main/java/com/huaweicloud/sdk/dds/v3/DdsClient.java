@@ -1272,6 +1272,28 @@ public class DdsClient {
     }
 
     /**
+     * 副本集跨网段访问配置。
+     * 副本集跨网段访问配置。
+     *
+     * @param UpdateClientNetworkRequest 请求对象
+     * @return UpdateClientNetworkResponse
+     */
+    public UpdateClientNetworkResponse updateClientNetwork(UpdateClientNetworkRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.updateClientNetwork);
+    }
+
+    /**
+     * 副本集跨网段访问配置。
+     * 副本集跨网段访问配置。
+     *
+     * @param UpdateClientNetworkRequest 请求对象
+     * @return SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>
+     */
+    public SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetworkInvoker(UpdateClientNetworkRequest request) {
+        return new SyncInvoker<UpdateClientNetworkRequest, UpdateClientNetworkResponse>(request, DdsMeta.updateClientNetwork, hcClient);
+    }
+
+    /**
      * 修改实例名称
      * 修改实例名称
      *

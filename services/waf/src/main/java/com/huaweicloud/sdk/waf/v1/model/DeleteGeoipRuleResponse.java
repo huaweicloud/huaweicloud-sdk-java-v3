@@ -27,6 +27,12 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="policyid")
+    
+    private String policyid;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="geoip")
     
     private String geoip;
@@ -36,6 +42,12 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
     @JsonProperty(value="white")
     
     private Integer white;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="description")
+    
+    private String description;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,6 +73,28 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    
+
+    public DeleteGeoipRuleResponse withPolicyid(String policyid) {
+        this.policyid = policyid;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 策略id
+     * @return policyid
+     */
+    public String getPolicyid() {
+        return policyid;
+    }
+
+    public void setPolicyid(String policyid) {
+        this.policyid = policyid;
     }
 
     
@@ -96,7 +130,7 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
 
 
     /**
-     * 放行或者拦截
+     * 放行或者拦截（0拦截，1放行）
      * @return white
      */
     public Integer getWhite() {
@@ -105,6 +139,28 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
 
     public void setWhite(Integer white) {
         this.white = white;
+    }
+
+    
+
+    public DeleteGeoipRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     
@@ -141,21 +197,25 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
         }
         DeleteGeoipRuleResponse deleteGeoipRuleResponse = (DeleteGeoipRuleResponse) o;
         return Objects.equals(this.id, deleteGeoipRuleResponse.id) &&
+            Objects.equals(this.policyid, deleteGeoipRuleResponse.policyid) &&
             Objects.equals(this.geoip, deleteGeoipRuleResponse.geoip) &&
             Objects.equals(this.white, deleteGeoipRuleResponse.white) &&
+            Objects.equals(this.description, deleteGeoipRuleResponse.description) &&
             Objects.equals(this.timestamp, deleteGeoipRuleResponse.timestamp);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, geoip, white, timestamp);
+        return Objects.hash(id, policyid, geoip, white, description, timestamp);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteGeoipRuleResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();

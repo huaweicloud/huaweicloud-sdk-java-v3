@@ -108,6 +108,28 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 项目下查询测试计划列表
+     * 项目下查询测试计划列表
+     *
+     * @param ShowPlansRequest 请求对象
+     * @return CompletableFuture<ShowPlansResponse>
+     */
+    public CompletableFuture<ShowPlansResponse> showPlansAsync(ShowPlansRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showPlans);
+    }
+
+    /**
+     * 项目下查询测试计划列表
+     * 项目下查询测试计划列表
+     *
+     * @param ShowPlansRequest 请求对象
+     * @return AsyncInvoker<ShowPlansRequest, ShowPlansResponse>
+     */
+    public AsyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansAsyncInvoker(ShowPlansRequest request) {
+        return new AsyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+    }
+
+    /**
      * 新测试类型服务注册到云测
      * 新测试类型服务注册到云测
      *

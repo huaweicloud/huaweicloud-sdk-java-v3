@@ -404,7 +404,7 @@ public class ListIssuedPartnerCouponsRequest  {
 
 
     /**
-     * 精英服务商ID。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。华为云伙伴能力中心（一级经销商）查询精英服务商发放给子客户的优惠券时，需要携带该参数；否则只能查询发放给自己子客户的优惠券。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

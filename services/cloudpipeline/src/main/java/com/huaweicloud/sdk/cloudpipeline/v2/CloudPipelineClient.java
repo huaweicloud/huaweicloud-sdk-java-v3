@@ -62,6 +62,28 @@ public class CloudPipelineClient {
     }
 
     /**
+     * 获取流水线列表接口
+     * 获取流水线列表接口
+     *
+     * @param ListPipelineSimpleInfoRequest 请求对象
+     * @return ListPipelineSimpleInfoResponse
+     */
+    public ListPipelineSimpleInfoResponse listPipelineSimpleInfo(ListPipelineSimpleInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudPipelineMeta.listPipelineSimpleInfo);
+    }
+
+    /**
+     * 获取流水线列表接口
+     * 获取流水线列表接口
+     *
+     * @param ListPipelineSimpleInfoRequest 请求对象
+     * @return SyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>
+     */
+    public SyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfoInvoker(ListPipelineSimpleInfoRequest request) {
+        return new SyncInvoker<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse>(request, CloudPipelineMeta.listPipelineSimpleInfo, hcClient);
+    }
+
+    /**
      * 获取项目下流水线执行状况
      * 获取项目下流水线执行状况
      *

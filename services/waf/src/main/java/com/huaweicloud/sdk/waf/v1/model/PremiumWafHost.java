@@ -241,7 +241,7 @@ public class PremiumWafHost  {
 
 
     /**
-     * 用户Project ID
+     * 用户的project_id
      * @return projectId
      */
     public String getProjectId() {
@@ -263,7 +263,7 @@ public class PremiumWafHost  {
 
 
     /**
-     * cname
+     * cname前缀
      * @return accessCode
      */
     public String getAccessCode() {
@@ -285,7 +285,7 @@ public class PremiumWafHost  {
 
 
     /**
-     * 返回的客户端协议类型
+     * http协议类型
      * @return protocol
      */
     public String getProtocol() {

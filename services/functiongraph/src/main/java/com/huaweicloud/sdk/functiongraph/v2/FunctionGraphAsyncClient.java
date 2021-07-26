@@ -306,6 +306,28 @@ public class FunctionGraphAsyncClient {
     }
 
     /**
+     * 开通lts日志上报功能。
+     * 开通lts日志上报功能。
+     *
+     * @param EnableLtsLogsRequest 请求对象
+     * @return CompletableFuture<EnableLtsLogsResponse>
+     */
+    public CompletableFuture<EnableLtsLogsResponse> enableLtsLogsAsync(EnableLtsLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.enableLtsLogs);
+    }
+
+    /**
+     * 开通lts日志上报功能。
+     * 开通lts日志上报功能。
+     *
+     * @param EnableLtsLogsRequest 请求对象
+     * @return AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>
+     */
+    public AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse> enableLtsLogsAsyncInvoker(EnableLtsLogsRequest request) {
+        return new AsyncInvoker<EnableLtsLogsRequest, EnableLtsLogsResponse>(request, FunctionGraphMeta.enableLtsLogs, hcClient);
+    }
+
+    /**
      * 导出函数。
      * 导出函数。
      *
@@ -677,6 +699,28 @@ public class FunctionGraphAsyncClient {
      */
     public AsyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse> showFunctionConfigAsyncInvoker(ShowFunctionConfigRequest request) {
         return new AsyncInvoker<ShowFunctionConfigRequest, ShowFunctionConfigResponse>(request, FunctionGraphMeta.showFunctionConfig, hcClient);
+    }
+
+    /**
+     * 获取指定函数的lts日志组日志流配置。
+     * 获取指定函数的lts日志组日志流配置。
+     *
+     * @param ShowLtsLogDetailsRequest 请求对象
+     * @return CompletableFuture<ShowLtsLogDetailsResponse>
+     */
+    public CompletableFuture<ShowLtsLogDetailsResponse> showLtsLogDetailsAsync(ShowLtsLogDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, FunctionGraphMeta.showLtsLogDetails);
+    }
+
+    /**
+     * 获取指定函数的lts日志组日志流配置。
+     * 获取指定函数的lts日志组日志流配置。
+     *
+     * @param ShowLtsLogDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>
+     */
+    public AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse> showLtsLogDetailsAsyncInvoker(ShowLtsLogDetailsRequest request) {
+        return new AsyncInvoker<ShowLtsLogDetailsRequest, ShowLtsLogDetailsResponse>(request, FunctionGraphMeta.showLtsLogDetails, hcClient);
     }
 
     /**

@@ -74,7 +74,7 @@ public class EmChildNodeV2  {
 
 
     /**
-     * 节点ID。
+     * 节点ID（即组织单元的Party ID）。
      * @return id
      */
     public String getId() {

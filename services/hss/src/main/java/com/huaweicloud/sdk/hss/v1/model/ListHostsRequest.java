@@ -3,25 +3,11 @@ package com.huaweicloud.sdk.hss.v1.model;
 
 
 
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -30,468 +16,36 @@ import java.util.Objects;
  */
 public class ListHostsRequest  {
 
-    /**
-     * 主机开通的版本
-     */
-    public static final class VersionEnum {
-
-        
-        /**
-         * Enum HSS_VERSION_NULL_VERSION_NULL for value: "hss.version.null#VERSION_NULL"
-         */
-        public static final VersionEnum HSS_VERSION_NULL_VERSION_NULL = new VersionEnum("hss.version.null#VERSION_NULL");
-        
-        /**
-         * Enum HSS_VERSION_BASIC_VERSION_BASIC for value: "hss.version.basic#VERSION_BASIC"
-         */
-        public static final VersionEnum HSS_VERSION_BASIC_VERSION_BASIC = new VersionEnum("hss.version.basic#VERSION_BASIC");
-        
-        /**
-         * Enum HSS_VERSION_ENTERPRISE_VERSION_ENTERPRISE for value: "hss.version.enterprise#VERSION_ENTERPRISE"
-         */
-        public static final VersionEnum HSS_VERSION_ENTERPRISE_VERSION_ENTERPRISE = new VersionEnum("hss.version.enterprise#VERSION_ENTERPRISE");
-        
-        /**
-         * Enum HSS_VERSION_PREMIUM_VERSION_PREMIUM for value: "hss.version.premium#VERSION_PREMIUM"
-         */
-        public static final VersionEnum HSS_VERSION_PREMIUM_VERSION_PREMIUM = new VersionEnum("hss.version.premium#VERSION_PREMIUM");
-        
-        /**
-         * Enum HSS_VERSION_WTP_VERSION_WTP for value: "hss.version.wtp#VERSION_WTP"
-         */
-        public static final VersionEnum HSS_VERSION_WTP_VERSION_WTP = new VersionEnum("hss.version.wtp#VERSION_WTP");
-        
-
-        private static final Map<String, VersionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, VersionEnum> createStaticFields() {
-            Map<String, VersionEnum> map = new HashMap<>();
-            map.put("hss.version.null#VERSION_NULL", HSS_VERSION_NULL_VERSION_NULL);
-            map.put("hss.version.basic#VERSION_BASIC", HSS_VERSION_BASIC_VERSION_BASIC);
-            map.put("hss.version.enterprise#VERSION_ENTERPRISE", HSS_VERSION_ENTERPRISE_VERSION_ENTERPRISE);
-            map.put("hss.version.premium#VERSION_PREMIUM", HSS_VERSION_PREMIUM_VERSION_PREMIUM);
-            map.put("hss.version.wtp#VERSION_WTP", HSS_VERSION_WTP_VERSION_WTP);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        VersionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VersionEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            VersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VersionEnum(value);
-            }
-            return result;
-        }
-
-        public static VersionEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            VersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VersionEnum) {
-                return this.value.equals(((VersionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="version")
     
-    private VersionEnum version;
-    /**
-     * Agent状态，未注册：uninstall；在线：online；离线：offline；
-     */
-    public static final class AgentStatusEnum {
-
-        
-        /**
-         * Enum UNINSTALL_AGENT_STATUS_UNINSTALL for value: "uninstall#AGENT_STATUS_UNINSTALL"
-         */
-        public static final AgentStatusEnum UNINSTALL_AGENT_STATUS_UNINSTALL = new AgentStatusEnum("uninstall#AGENT_STATUS_UNINSTALL");
-        
-        /**
-         * Enum ONLINE_AGENT_STATUS_ONLINE for value: "online#AGENT_STATUS_ONLINE"
-         */
-        public static final AgentStatusEnum ONLINE_AGENT_STATUS_ONLINE = new AgentStatusEnum("online#AGENT_STATUS_ONLINE");
-        
-        /**
-         * Enum OFFLINE_AGENT_STATUS_OFFLINE for value: "offline#AGENT_STATUS_OFFLINE"
-         */
-        public static final AgentStatusEnum OFFLINE_AGENT_STATUS_OFFLINE = new AgentStatusEnum("offline#AGENT_STATUS_OFFLINE");
-        
-
-        private static final Map<String, AgentStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AgentStatusEnum> createStaticFields() {
-            Map<String, AgentStatusEnum> map = new HashMap<>();
-            map.put("uninstall#AGENT_STATUS_UNINSTALL", UNINSTALL_AGENT_STATUS_UNINSTALL);
-            map.put("online#AGENT_STATUS_ONLINE", ONLINE_AGENT_STATUS_ONLINE);
-            map.put("offline#AGENT_STATUS_OFFLINE", OFFLINE_AGENT_STATUS_OFFLINE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AgentStatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AgentStatusEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            AgentStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AgentStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static AgentStatusEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            AgentStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AgentStatusEnum) {
-                return this.value.equals(((AgentStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String version;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="agent_status")
     
-    private AgentStatusEnum agentStatus;
-    /**
-     * 云主机状态：正在运行：active；关机：shutoff；创建中：building；故障：error
-     */
-    public static final class HostStatusEnum {
-
-        
-        /**
-         * Enum ACTIVE_HOST_STATUS_ACTIVE for value: "active#HOST_STATUS_ACTIVE"
-         */
-        public static final HostStatusEnum ACTIVE_HOST_STATUS_ACTIVE = new HostStatusEnum("active#HOST_STATUS_ACTIVE");
-        
-        /**
-         * Enum SHUTOFF_HOST_STATUS_SHUTOFF for value: "shutoff#HOST_STATUS_SHUTOFF"
-         */
-        public static final HostStatusEnum SHUTOFF_HOST_STATUS_SHUTOFF = new HostStatusEnum("shutoff#HOST_STATUS_SHUTOFF");
-        
-        /**
-         * Enum BUILDING_HOST_STATUS_BUILDING for value: "building#HOST_STATUS_BUILDING"
-         */
-        public static final HostStatusEnum BUILDING_HOST_STATUS_BUILDING = new HostStatusEnum("building#HOST_STATUS_BUILDING");
-        
-        /**
-         * Enum ERROR_HOST_STATUS_ERROR for value: "error#HOST_STATUS_ERROR"
-         */
-        public static final HostStatusEnum ERROR_HOST_STATUS_ERROR = new HostStatusEnum("error#HOST_STATUS_ERROR");
-        
-
-        private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, HostStatusEnum> createStaticFields() {
-            Map<String, HostStatusEnum> map = new HashMap<>();
-            map.put("active#HOST_STATUS_ACTIVE", ACTIVE_HOST_STATUS_ACTIVE);
-            map.put("shutoff#HOST_STATUS_SHUTOFF", SHUTOFF_HOST_STATUS_SHUTOFF);
-            map.put("building#HOST_STATUS_BUILDING", BUILDING_HOST_STATUS_BUILDING);
-            map.put("error#HOST_STATUS_ERROR", ERROR_HOST_STATUS_ERROR);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        HostStatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static HostStatusEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static HostStatusEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HostStatusEnum) {
-                return this.value.equals(((HostStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String agentStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="host_status")
     
-    private HostStatusEnum hostStatus;
-    /**
-     * 防护状态：closed关闭；opened开启
-     */
-    public static final class ProtectStatusEnum {
-
-        
-        /**
-         * Enum CLOSED_PROTECT_STATUS_CLOSED for value: "closed#PROTECT_STATUS_CLOSED"
-         */
-        public static final ProtectStatusEnum CLOSED_PROTECT_STATUS_CLOSED = new ProtectStatusEnum("closed#PROTECT_STATUS_CLOSED");
-        
-        /**
-         * Enum OPENED_PROTECT_STATUS_OPENED for value: "opened#PROTECT_STATUS_OPENED"
-         */
-        public static final ProtectStatusEnum OPENED_PROTECT_STATUS_OPENED = new ProtectStatusEnum("opened#PROTECT_STATUS_OPENED");
-        
-
-        private static final Map<String, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProtectStatusEnum> createStaticFields() {
-            Map<String, ProtectStatusEnum> map = new HashMap<>();
-            map.put("closed#PROTECT_STATUS_CLOSED", CLOSED_PROTECT_STATUS_CLOSED);
-            map.put("opened#PROTECT_STATUS_OPENED", OPENED_PROTECT_STATUS_OPENED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProtectStatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtectStatusEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectStatusEnum(value);
-            }
-            return result;
-        }
-
-        public static ProtectStatusEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectStatusEnum) {
-                return this.value.equals(((ProtectStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String hostStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="protect_status")
     
-    private ProtectStatusEnum protectStatus;
-    /**
-     * 检测结果，undetect：未检测，clean：无风险，risk：有风险
-     */
-    public static final class DetectResultEnum {
-
-        
-        /**
-         * Enum UNDETECT_DETECT_RESULT_UNDETECT for value: "undetect#DETECT_RESULT_UNDETECT"
-         */
-        public static final DetectResultEnum UNDETECT_DETECT_RESULT_UNDETECT = new DetectResultEnum("undetect#DETECT_RESULT_UNDETECT");
-        
-        /**
-         * Enum CLEAN_DETECT_RESULT_CLEAN for value: "clean#DETECT_RESULT_CLEAN"
-         */
-        public static final DetectResultEnum CLEAN_DETECT_RESULT_CLEAN = new DetectResultEnum("clean#DETECT_RESULT_CLEAN");
-        
-        /**
-         * Enum RISK_DETECT_RESULT_RISK for value: "risk#DETECT_RESULT_RISK"
-         */
-        public static final DetectResultEnum RISK_DETECT_RESULT_RISK = new DetectResultEnum("risk#DETECT_RESULT_RISK");
-        
-
-        private static final Map<String, DetectResultEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DetectResultEnum> createStaticFields() {
-            Map<String, DetectResultEnum> map = new HashMap<>();
-            map.put("undetect#DETECT_RESULT_UNDETECT", UNDETECT_DETECT_RESULT_UNDETECT);
-            map.put("clean#DETECT_RESULT_CLEAN", CLEAN_DETECT_RESULT_CLEAN);
-            map.put("risk#DETECT_RESULT_RISK", RISK_DETECT_RESULT_RISK);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DetectResultEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DetectResultEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            DetectResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DetectResultEnum(value);
-            }
-            return result;
-        }
-
-        public static DetectResultEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            DetectResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DetectResultEnum) {
-                return this.value.equals(((DetectResultEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String protectStatus;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="detect_result")
     
-    private DetectResultEnum detectResult;
+    private String detectResult;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -516,90 +70,12 @@ public class ListHostsRequest  {
     @JsonProperty(value="os_type")
     
     private String osType;
-    /**
-     * 收费模式
-     */
-    public static final class ChargingModeEnum {
-
-        
-        /**
-         * Enum PACKET_CYCLE_CHARGING_MODE_PACKET_CYCLE for value: "packet_cycle#CHARGING_MODE_PACKET_CYCLE"
-         */
-        public static final ChargingModeEnum PACKET_CYCLE_CHARGING_MODE_PACKET_CYCLE = new ChargingModeEnum("packet_cycle#CHARGING_MODE_PACKET_CYCLE");
-        
-        /**
-         * Enum ON_DEMAND_CHARGING_MODE_ON_DEMAND for value: "on_demand#CHARGING_MODE_ON_DEMAND"
-         */
-        public static final ChargingModeEnum ON_DEMAND_CHARGING_MODE_ON_DEMAND = new ChargingModeEnum("on_demand#CHARGING_MODE_ON_DEMAND");
-        
-
-        private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ChargingModeEnum> createStaticFields() {
-            Map<String, ChargingModeEnum> map = new HashMap<>();
-            map.put("packet_cycle#CHARGING_MODE_PACKET_CYCLE", PACKET_CYCLE_CHARGING_MODE_PACKET_CYCLE);
-            map.put("on_demand#CHARGING_MODE_ON_DEMAND", ON_DEMAND_CHARGING_MODE_ON_DEMAND);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ChargingModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ChargingModeEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
-        }
-
-        public static ChargingModeEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
-                return this.value.equals(((ChargingModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="charging_mode")
     
-    private ChargingModeEnum chargingMode;
+    private String chargingMode;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -613,7 +89,7 @@ public class ListHostsRequest  {
     
     private Integer offset;
 
-    public ListHostsRequest withVersion(VersionEnum version) {
+    public ListHostsRequest withVersion(String version) {
         this.version = version;
         return this;
     }
@@ -622,20 +98,20 @@ public class ListHostsRequest  {
 
 
     /**
-     * 主机开通的版本
+     * 主机开通的版本，包含如下5种输入。   - hss.version.null ：无。   - hss.version.basic ：基础版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
      * @return version
      */
-    public VersionEnum getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(VersionEnum version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 
     
 
-    public ListHostsRequest withAgentStatus(AgentStatusEnum agentStatus) {
+    public ListHostsRequest withAgentStatus(String agentStatus) {
         this.agentStatus = agentStatus;
         return this;
     }
@@ -644,20 +120,20 @@ public class ListHostsRequest  {
 
 
     /**
-     * Agent状态，未注册：uninstall；在线：online；离线：offline；
+     * Agent状态，包含如下3种。   - not_register ：未注册。   - online ：在线。   - offline ：离线。
      * @return agentStatus
      */
-    public AgentStatusEnum getAgentStatus() {
+    public String getAgentStatus() {
         return agentStatus;
     }
 
-    public void setAgentStatus(AgentStatusEnum agentStatus) {
+    public void setAgentStatus(String agentStatus) {
         this.agentStatus = agentStatus;
     }
 
     
 
-    public ListHostsRequest withHostStatus(HostStatusEnum hostStatus) {
+    public ListHostsRequest withHostStatus(String hostStatus) {
         this.hostStatus = hostStatus;
         return this;
     }
@@ -666,20 +142,20 @@ public class ListHostsRequest  {
 
 
     /**
-     * 云主机状态：正在运行：active；关机：shutoff；创建中：building；故障：error
+     * Agent状态，包含如下4种。   - ACTIVE ：正在运行。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
      * @return hostStatus
      */
-    public HostStatusEnum getHostStatus() {
+    public String getHostStatus() {
         return hostStatus;
     }
 
-    public void setHostStatus(HostStatusEnum hostStatus) {
+    public void setHostStatus(String hostStatus) {
         this.hostStatus = hostStatus;
     }
 
     
 
-    public ListHostsRequest withProtectStatus(ProtectStatusEnum protectStatus) {
+    public ListHostsRequest withProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
@@ -688,20 +164,20 @@ public class ListHostsRequest  {
 
 
     /**
-     * 防护状态：closed关闭；opened开启
+     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
      * @return protectStatus
      */
-    public ProtectStatusEnum getProtectStatus() {
+    public String getProtectStatus() {
         return protectStatus;
     }
 
-    public void setProtectStatus(ProtectStatusEnum protectStatus) {
+    public void setProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
     }
 
     
 
-    public ListHostsRequest withDetectResult(DetectResultEnum detectResult) {
+    public ListHostsRequest withDetectResult(String detectResult) {
         this.detectResult = detectResult;
         return this;
     }
@@ -710,14 +186,14 @@ public class ListHostsRequest  {
 
 
     /**
-     * 检测结果，undetect：未检测，clean：无风险，risk：有风险
+     * 防护状态，包含如下3种。   - undetect ：未检测。   - clean ：无风险。   - risk ：有风险。
      * @return detectResult
      */
-    public DetectResultEnum getDetectResult() {
+    public String getDetectResult() {
         return detectResult;
     }
 
-    public void setDetectResult(DetectResultEnum detectResult) {
+    public void setDetectResult(String detectResult) {
         this.detectResult = detectResult;
     }
 
@@ -811,7 +287,7 @@ public class ListHostsRequest  {
 
     
 
-    public ListHostsRequest withChargingMode(ChargingModeEnum chargingMode) {
+    public ListHostsRequest withChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
@@ -820,14 +296,14 @@ public class ListHostsRequest  {
 
 
     /**
-     * 收费模式
+     * 收费模式，包含如下2种。   - packet_cycle ：包年/包月。   - on_demand ：按需。
      * @return chargingMode
      */
-    public ChargingModeEnum getChargingMode() {
+    public String getChargingMode() {
         return chargingMode;
     }
 
-    public void setChargingMode(ChargingModeEnum chargingMode) {
+    public void setChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
     }
 
@@ -844,7 +320,7 @@ public class ListHostsRequest  {
     /**
      * 默认10
      * minimum: 0
-     * maximum: 10240
+     * maximum: 10000
      * @return limit
      */
     public Integer getLimit() {
@@ -868,7 +344,7 @@ public class ListHostsRequest  {
     /**
      * 默认0
      * minimum: 0
-     * maximum: 10240
+     * maximum: 100000
      * @return offset
      */
     public Integer getOffset() {

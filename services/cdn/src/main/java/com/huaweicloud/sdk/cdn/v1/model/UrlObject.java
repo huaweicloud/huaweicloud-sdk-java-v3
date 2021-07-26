@@ -47,12 +47,6 @@ public class UrlObject  {
     
     private String taskId;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="process_reason")
-    
-    private String processReason;
-
     public UrlObject withId(String id) {
         this.id = id;
         return this;
@@ -62,7 +56,7 @@ public class UrlObject  {
 
 
     /**
-     * 任务id
+     * url的id
      * @return id
      */
     public String getId() {
@@ -106,7 +100,7 @@ public class UrlObject  {
 
 
     /**
-     * url的状态 processing， succeed， failed，分别表示处理中，完成，失败。
+     * url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
      * @return status
      */
     public String getStatus() {
@@ -150,7 +144,7 @@ public class UrlObject  {
 
 
     /**
-     * url所属task的id。
+     * 任务id。
      * @return taskId
      */
     public String getTaskId() {
@@ -159,28 +153,6 @@ public class UrlObject  {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
-    }
-
-    
-
-    public UrlObject withProcessReason(String processReason) {
-        this.processReason = processReason;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 标记处理原因。
-     * @return processReason
-     */
-    public String getProcessReason() {
-        return processReason;
-    }
-
-    public void setProcessReason(String processReason) {
-        this.processReason = processReason;
     }
 
     
@@ -198,12 +170,11 @@ public class UrlObject  {
             Objects.equals(this.url, urlObject.url) &&
             Objects.equals(this.status, urlObject.status) &&
             Objects.equals(this.createTime, urlObject.createTime) &&
-            Objects.equals(this.taskId, urlObject.taskId) &&
-            Objects.equals(this.processReason, urlObject.processReason);
+            Objects.equals(this.taskId, urlObject.taskId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, url, status, createTime, taskId, processReason);
+        return Objects.hash(id, url, status, createTime, taskId);
     }
     @Override
     public String toString() {
@@ -214,7 +185,6 @@ public class UrlObject  {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-        sb.append("    processReason: ").append(toIndentedString(processReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

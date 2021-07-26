@@ -45,7 +45,7 @@ public class ShowHistoryTaskDetailsRequest  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="status")
     
-    private Integer status;
+    private String status;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -106,7 +106,7 @@ public class ShowHistoryTaskDetailsRequest  {
 
 
     /**
-     * 刷新预热的urls所显示单页最大数量，取值范围为1-10000。
+     * 刷新预热的urls所显示单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。
      * minimum: 1
      * maximum: 10000
      * @return pageSize
@@ -130,7 +130,7 @@ public class ShowHistoryTaskDetailsRequest  {
 
 
     /**
-     * 刷新预热的urls当前查询为第几页，取值范围为1-65535。
+     * 刷新预热的urls当前查询为第几页，取值范围为1-65535。默认值1。
      * minimum: 1
      * maximum: 65535
      * @return pageNumber
@@ -145,7 +145,7 @@ public class ShowHistoryTaskDetailsRequest  {
 
     
 
-    public ShowHistoryTaskDetailsRequest withStatus(Integer status) {
+    public ShowHistoryTaskDetailsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -154,16 +154,14 @@ public class ShowHistoryTaskDetailsRequest  {
 
 
     /**
-     * url的状态 processing， succeed， failed，分别表示处理中，完成，失败。
-     * minimum: 1
-     * maximum: 65535
+     * url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
      * @return status
      */
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -178,7 +176,7 @@ public class ShowHistoryTaskDetailsRequest  {
 
 
     /**
-     * url的地址，支持同一任务id的多个url,多个url用分号隔开。
+     * url的地址。
      * @return url
      */
     public String getUrl() {

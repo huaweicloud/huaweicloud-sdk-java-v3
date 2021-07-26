@@ -133,6 +133,12 @@ public class ResFeeRecordV2  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="trade_time")
+    
+    private String tradeTime;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="enterprise_project_id")
     
     private String enterpriseProjectId;
@@ -701,6 +707,28 @@ public class ResFeeRecordV2  {
 
     public void setTradeId(String tradeId) {
         this.tradeId = tradeId;
+    }
+
+    
+
+    public ResFeeRecordV2 withTradeTime(String tradeTime) {
+        this.tradeTime = tradeTime;
+        return this;
+    }
+
+    
+
+
+    /**
+     * |参数名称：交易时间| |参数名称：交易时间，某条消费记录对应的扣费时间。|
+     * @return tradeTime
+     */
+    public String getTradeTime() {
+        return tradeTime;
+    }
+
+    public void setTradeTime(String tradeTime) {
+        this.tradeTime = tradeTime;
     }
 
     
@@ -1305,6 +1333,7 @@ public class ResFeeRecordV2  {
             Objects.equals(this.specSize, resFeeRecordV2.specSize) &&
             Objects.equals(this.specSizeMeasureId, resFeeRecordV2.specSizeMeasureId) &&
             Objects.equals(this.tradeId, resFeeRecordV2.tradeId) &&
+            Objects.equals(this.tradeTime, resFeeRecordV2.tradeTime) &&
             Objects.equals(this.enterpriseProjectId, resFeeRecordV2.enterpriseProjectId) &&
             Objects.equals(this.enterpriseProjectName, resFeeRecordV2.enterpriseProjectName) &&
             Objects.equals(this.chargeMode, resFeeRecordV2.chargeMode) &&
@@ -1334,7 +1363,7 @@ public class ResFeeRecordV2  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(billDate, billType, customerId, region, regionName, cloudServiceType, resourceType, effectiveTime, expireTime, resourceId, resourceName, resourceTag, productId, productName, productSpecDesc, skuCode, specSize, specSizeMeasureId, tradeId, enterpriseProjectId, enterpriseProjectName, chargeMode, orderId, periodType, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, riUsage, riUsageMeasureId, unitPrice, unit, officialAmount, discountAmount, amount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, measureId);
+        return Objects.hash(billDate, billType, customerId, region, regionName, cloudServiceType, resourceType, effectiveTime, expireTime, resourceId, resourceName, resourceTag, productId, productName, productSpecDesc, skuCode, specSize, specSizeMeasureId, tradeId, tradeTime, enterpriseProjectId, enterpriseProjectName, chargeMode, orderId, periodType, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, riUsage, riUsageMeasureId, unitPrice, unit, officialAmount, discountAmount, amount, cashAmount, creditAmount, couponAmount, flexipurchaseCouponAmount, storedCardAmount, bonusAmount, debtAmount, adjustmentAmount, measureId);
     }
     @Override
     public String toString() {
@@ -1359,6 +1388,7 @@ public class ResFeeRecordV2  {
         sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
         sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
         sb.append("    tradeId: ").append(toIndentedString(tradeId)).append("\n");
+        sb.append("    tradeTime: ").append(toIndentedString(tradeTime)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");

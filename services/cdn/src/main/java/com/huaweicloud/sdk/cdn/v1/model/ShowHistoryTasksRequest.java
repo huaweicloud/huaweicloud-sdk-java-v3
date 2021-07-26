@@ -148,12 +148,6 @@ public class ShowHistoryTasksRequest  {
     @JsonProperty(value="order_type")
     
     private String orderType;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_domain_id")
-    
-    private String userDomainId;
     /**
      * 默认是文件file。file：文件,directory：目录。
      */
@@ -239,12 +233,6 @@ public class ShowHistoryTasksRequest  {
     
     private FileTypeEnum fileType;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
-    private String taskId;
-
     public ShowHistoryTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -276,7 +264,7 @@ public class ShowHistoryTasksRequest  {
 
 
     /**
-     * 单页最大数量，取值范围为1-10000。
+     * 单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。
      * minimum: 1
      * maximum: 10000
      * @return pageSize
@@ -300,7 +288,7 @@ public class ShowHistoryTasksRequest  {
 
 
     /**
-     * 当前查询第几页，取值范围为1-65535。
+     * 当前查询第几页，取值范围为1-65535。默认值1。
      * minimum: 1
      * maximum: 65535
      * @return pageNumber
@@ -390,7 +378,7 @@ public class ShowHistoryTasksRequest  {
 
 
     /**
-     * 用来排序的字段，支持的字段有“task_type”，“total”，“processing”， “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值。
+     * 用来排序的字段，支持的字段有“task_type”，“total”，“processing”， “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"。
      * @return orderField
      */
     public String getOrderField() {
@@ -412,7 +400,7 @@ public class ShowHistoryTasksRequest  {
 
 
     /**
-     * desc 或者asc。
+     * desc 或者asc。默认值desc。
      * @return orderType
      */
     public String getOrderType() {
@@ -421,28 +409,6 @@ public class ShowHistoryTasksRequest  {
 
     public void setOrderType(String orderType) {
         this.orderType = orderType;
-    }
-
-    
-
-    public ShowHistoryTasksRequest withUserDomainId(String userDomainId) {
-        this.userDomainId = userDomainId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 指定用户的域id。
-     * @return userDomainId
-     */
-    public String getUserDomainId() {
-        return userDomainId;
-    }
-
-    public void setUserDomainId(String userDomainId) {
-        this.userDomainId = userDomainId;
     }
 
     
@@ -469,28 +435,6 @@ public class ShowHistoryTasksRequest  {
 
     
 
-    public ShowHistoryTasksRequest withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务id。
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -508,13 +452,11 @@ public class ShowHistoryTasksRequest  {
             Objects.equals(this.endDate, showHistoryTasksRequest.endDate) &&
             Objects.equals(this.orderField, showHistoryTasksRequest.orderField) &&
             Objects.equals(this.orderType, showHistoryTasksRequest.orderType) &&
-            Objects.equals(this.userDomainId, showHistoryTasksRequest.userDomainId) &&
-            Objects.equals(this.fileType, showHistoryTasksRequest.fileType) &&
-            Objects.equals(this.taskId, showHistoryTasksRequest.taskId);
+            Objects.equals(this.fileType, showHistoryTasksRequest.fileType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, pageSize, pageNumber, status, startDate, endDate, orderField, orderType, userDomainId, fileType, taskId);
+        return Objects.hash(enterpriseProjectId, pageSize, pageNumber, status, startDate, endDate, orderField, orderType, fileType);
     }
     @Override
     public String toString() {
@@ -528,9 +470,7 @@ public class ShowHistoryTasksRequest  {
         sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
         sb.append("    orderField: ").append(toIndentedString(orderField)).append("\n");
         sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
-        sb.append("    userDomainId: ").append(toIndentedString(userDomainId)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

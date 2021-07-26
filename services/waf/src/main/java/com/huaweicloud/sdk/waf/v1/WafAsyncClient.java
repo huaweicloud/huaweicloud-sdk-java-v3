@@ -20,113 +20,47 @@ public class WafAsyncClient {
 
 
     /**
-     * 查询租户云模式订购信息
-     * 查询租户云模式订购信息，包括包周期、按需计费
+     * 绑定证书到域名
+     * 绑定证书到域名
      *
-     * @param ConfirmCloudWafSubscriptionInfoRequest 请求对象
-     * @return CompletableFuture<ConfirmCloudWafSubscriptionInfoResponse>
+     * @param ApplyCertificateToHostRequest 请求对象
+     * @return CompletableFuture<ApplyCertificateToHostResponse>
      */
-    public CompletableFuture<ConfirmCloudWafSubscriptionInfoResponse> confirmCloudWafSubscriptionInfoAsync(ConfirmCloudWafSubscriptionInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.confirmCloudWafSubscriptionInfo);
+    public CompletableFuture<ApplyCertificateToHostResponse> applyCertificateToHostAsync(ApplyCertificateToHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.applyCertificateToHost);
     }
 
     /**
-     * 查询租户云模式订购信息
-     * 查询租户云模式订购信息，包括包周期、按需计费
+     * 绑定证书到域名
+     * 绑定证书到域名
      *
-     * @param ConfirmCloudWafSubscriptionInfoRequest 请求对象
-     * @return AsyncInvoker<ConfirmCloudWafSubscriptionInfoRequest, ConfirmCloudWafSubscriptionInfoResponse>
+     * @param ApplyCertificateToHostRequest 请求对象
+     * @return AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>
      */
-    public AsyncInvoker<ConfirmCloudWafSubscriptionInfoRequest, ConfirmCloudWafSubscriptionInfoResponse> confirmCloudWafSubscriptionInfoAsyncInvoker(ConfirmCloudWafSubscriptionInfoRequest request) {
-        return new AsyncInvoker<ConfirmCloudWafSubscriptionInfoRequest, ConfirmCloudWafSubscriptionInfoResponse>(request, WafMeta.confirmCloudWafSubscriptionInfo, hcClient);
+    public AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse> applyCertificateToHostAsyncInvoker(ApplyCertificateToHostRequest request) {
+        return new AsyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>(request, WafMeta.applyCertificateToHost, hcClient);
     }
 
     /**
-     * 获取用户套餐信息
-     * 获取用户购买的WAF规格信息
+     * 创建防篡改规则
+     * 创建防篡改规则
      *
-     * @param ConfirmUserBundleRequest 请求对象
-     * @return CompletableFuture<ConfirmUserBundleResponse>
+     * @param CreateAntiTamperRuleRequest 请求对象
+     * @return CompletableFuture<CreateAntiTamperRuleResponse>
      */
-    public CompletableFuture<ConfirmUserBundleResponse> confirmUserBundleAsync(ConfirmUserBundleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.confirmUserBundle);
+    public CompletableFuture<CreateAntiTamperRuleResponse> createAntiTamperRuleAsync(CreateAntiTamperRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createAntiTamperRule);
     }
 
     /**
-     * 获取用户套餐信息
-     * 获取用户购买的WAF规格信息
+     * 创建防篡改规则
+     * 创建防篡改规则
      *
-     * @param ConfirmUserBundleRequest 请求对象
-     * @return AsyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse>
+     * @param CreateAntiTamperRuleRequest 请求对象
+     * @return AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>
      */
-    public AsyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse> confirmUserBundleAsyncInvoker(ConfirmUserBundleRequest request) {
-        return new AsyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse>(request, WafMeta.confirmUserBundle, hcClient);
-    }
-
-    /**
-     * 创建反爬虫规则
-     * 创建反爬虫规则
-     *
-     * @param CreateAnticrawlerRulesRequest 请求对象
-     * @return CompletableFuture<CreateAnticrawlerRulesResponse>
-     */
-    public CompletableFuture<CreateAnticrawlerRulesResponse> createAnticrawlerRulesAsync(CreateAnticrawlerRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createAnticrawlerRules);
-    }
-
-    /**
-     * 创建反爬虫规则
-     * 创建反爬虫规则
-     *
-     * @param CreateAnticrawlerRulesRequest 请求对象
-     * @return AsyncInvoker<CreateAnticrawlerRulesRequest, CreateAnticrawlerRulesResponse>
-     */
-    public AsyncInvoker<CreateAnticrawlerRulesRequest, CreateAnticrawlerRulesResponse> createAnticrawlerRulesAsyncInvoker(CreateAnticrawlerRulesRequest request) {
-        return new AsyncInvoker<CreateAnticrawlerRulesRequest, CreateAnticrawlerRulesResponse>(request, WafMeta.createAnticrawlerRules, hcClient);
-    }
-
-    /**
-     * 创建防敏感信息泄露规则
-     * 创建防敏感信息泄露规则
-     *
-     * @param CreateAntileakageRulesRequest 请求对象
-     * @return CompletableFuture<CreateAntileakageRulesResponse>
-     */
-    public CompletableFuture<CreateAntileakageRulesResponse> createAntileakageRulesAsync(CreateAntileakageRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createAntileakageRules);
-    }
-
-    /**
-     * 创建防敏感信息泄露规则
-     * 创建防敏感信息泄露规则
-     *
-     * @param CreateAntileakageRulesRequest 请求对象
-     * @return AsyncInvoker<CreateAntileakageRulesRequest, CreateAntileakageRulesResponse>
-     */
-    public AsyncInvoker<CreateAntileakageRulesRequest, CreateAntileakageRulesResponse> createAntileakageRulesAsyncInvoker(CreateAntileakageRulesRequest request) {
-        return new AsyncInvoker<CreateAntileakageRulesRequest, CreateAntileakageRulesResponse>(request, WafMeta.createAntileakageRules, hcClient);
-    }
-
-    /**
-     * 创建cc规则
-     * 创建cc规则
-     *
-     * @param CreateCcRuleRequest 请求对象
-     * @return CompletableFuture<CreateCcRuleResponse>
-     */
-    public CompletableFuture<CreateCcRuleResponse> createCcRuleAsync(CreateCcRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createCcRule);
-    }
-
-    /**
-     * 创建cc规则
-     * 创建cc规则
-     *
-     * @param CreateCcRuleRequest 请求对象
-     * @return AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>
-     */
-    public AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse> createCcRuleAsyncInvoker(CreateCcRuleRequest request) {
-        return new AsyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>(request, WafMeta.createCcRule, hcClient);
+    public AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse> createAntiTamperRuleAsyncInvoker(CreateAntiTamperRuleRequest request) {
+        return new AsyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>(request, WafMeta.createAntiTamperRule, hcClient);
     }
 
     /**
@@ -152,69 +86,47 @@ public class WafAsyncClient {
     }
 
     /**
-     * 创建精准防护规则
-     * 创建精准防护规则
+     * 创建地理位置规则
+     * 创建地理位置规则
      *
-     * @param CreateCustomRulesRequest 请求对象
-     * @return CompletableFuture<CreateCustomRulesResponse>
+     * @param CreateGeoipRuleRequest 请求对象
+     * @return CompletableFuture<CreateGeoipRuleResponse>
      */
-    public CompletableFuture<CreateCustomRulesResponse> createCustomRulesAsync(CreateCustomRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createCustomRules);
-    }
-
-    /**
-     * 创建精准防护规则
-     * 创建精准防护规则
-     *
-     * @param CreateCustomRulesRequest 请求对象
-     * @return AsyncInvoker<CreateCustomRulesRequest, CreateCustomRulesResponse>
-     */
-    public AsyncInvoker<CreateCustomRulesRequest, CreateCustomRulesResponse> createCustomRulesAsyncInvoker(CreateCustomRulesRequest request) {
-        return new AsyncInvoker<CreateCustomRulesRequest, CreateCustomRulesResponse>(request, WafMeta.createCustomRules, hcClient);
+    public CompletableFuture<CreateGeoipRuleResponse> createGeoipRuleAsync(CreateGeoipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createGeoipRule);
     }
 
     /**
      * 创建地理位置规则
      * 创建地理位置规则
      *
-     * @param CreateGeoipRulesRequest 请求对象
-     * @return CompletableFuture<CreateGeoipRulesResponse>
+     * @param CreateGeoipRuleRequest 请求对象
+     * @return AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>
      */
-    public CompletableFuture<CreateGeoipRulesResponse> createGeoipRulesAsync(CreateGeoipRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createGeoipRules);
-    }
-
-    /**
-     * 创建地理位置规则
-     * 创建地理位置规则
-     *
-     * @param CreateGeoipRulesRequest 请求对象
-     * @return AsyncInvoker<CreateGeoipRulesRequest, CreateGeoipRulesResponse>
-     */
-    public AsyncInvoker<CreateGeoipRulesRequest, CreateGeoipRulesResponse> createGeoipRulesAsyncInvoker(CreateGeoipRulesRequest request) {
-        return new AsyncInvoker<CreateGeoipRulesRequest, CreateGeoipRulesResponse>(request, WafMeta.createGeoipRules, hcClient);
+    public AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse> createGeoipRuleAsyncInvoker(CreateGeoipRuleRequest request) {
+        return new AsyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>(request, WafMeta.createGeoipRule, hcClient);
     }
 
     /**
      * 创建云模式防护域名
      * 创建云模式防护域名
      *
-     * @param CreateInstaneRequest 请求对象
-     * @return CompletableFuture<CreateInstaneResponse>
+     * @param CreateHostRequest 请求对象
+     * @return CompletableFuture<CreateHostResponse>
      */
-    public CompletableFuture<CreateInstaneResponse> createInstaneAsync(CreateInstaneRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createInstane);
+    public CompletableFuture<CreateHostResponse> createHostAsync(CreateHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createHost);
     }
 
     /**
      * 创建云模式防护域名
      * 创建云模式防护域名
      *
-     * @param CreateInstaneRequest 请求对象
-     * @return AsyncInvoker<CreateInstaneRequest, CreateInstaneResponse>
+     * @param CreateHostRequest 请求对象
+     * @return AsyncInvoker<CreateHostRequest, CreateHostResponse>
      */
-    public AsyncInvoker<CreateInstaneRequest, CreateInstaneResponse> createInstaneAsyncInvoker(CreateInstaneRequest request) {
-        return new AsyncInvoker<CreateInstaneRequest, CreateInstaneResponse>(request, WafMeta.createInstane, hcClient);
+    public AsyncInvoker<CreateHostRequest, CreateHostResponse> createHostAsyncInvoker(CreateHostRequest request) {
+        return new AsyncInvoker<CreateHostRequest, CreateHostResponse>(request, WafMeta.createHost, hcClient);
     }
 
     /**
@@ -262,69 +174,91 @@ public class WafAsyncClient {
     }
 
     /**
-     * 删除反爬虫防护规则
-     * 删除反爬虫防护规则
+     * 创建隐私屏蔽防护规则
+     * 创建隐私屏蔽防护规则
      *
-     * @param DeleteAnticrawlerRuleRequest 请求对象
-     * @return CompletableFuture<DeleteAnticrawlerRuleResponse>
+     * @param CreatePrivacyRuleRequest 请求对象
+     * @return CompletableFuture<CreatePrivacyRuleResponse>
      */
-    public CompletableFuture<DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleAsync(DeleteAnticrawlerRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAnticrawlerRule);
+    public CompletableFuture<CreatePrivacyRuleResponse> createPrivacyRuleAsync(CreatePrivacyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createPrivacyRule);
     }
 
     /**
-     * 删除反爬虫防护规则
-     * 删除反爬虫防护规则
+     * 创建隐私屏蔽防护规则
+     * 创建隐私屏蔽防护规则
      *
-     * @param DeleteAnticrawlerRuleRequest 请求对象
-     * @return AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>
+     * @param CreatePrivacyRuleRequest 请求对象
+     * @return AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>
      */
-    public AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleAsyncInvoker(DeleteAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>(request, WafMeta.deleteAnticrawlerRule, hcClient);
+    public AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse> createPrivacyRuleAsyncInvoker(CreatePrivacyRuleRequest request) {
+        return new AsyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>(request, WafMeta.createPrivacyRule, hcClient);
     }
 
     /**
-     * 删除防敏感信息泄露防护规则
-     * 删除防敏感信息泄露防护规则
+     * 创建引用表
+     * 创建引用表
      *
-     * @param DeleteAntileakageRuleRequest 请求对象
-     * @return CompletableFuture<DeleteAntileakageRuleResponse>
+     * @param CreateValueListRequest 请求对象
+     * @return CompletableFuture<CreateValueListResponse>
      */
-    public CompletableFuture<DeleteAntileakageRuleResponse> deleteAntileakageRuleAsync(DeleteAntileakageRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAntileakageRule);
+    public CompletableFuture<CreateValueListResponse> createValueListAsync(CreateValueListRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createValueList);
     }
 
     /**
-     * 删除防敏感信息泄露防护规则
-     * 删除防敏感信息泄露防护规则
+     * 创建引用表
+     * 创建引用表
      *
-     * @param DeleteAntileakageRuleRequest 请求对象
-     * @return AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>
+     * @param CreateValueListRequest 请求对象
+     * @return AsyncInvoker<CreateValueListRequest, CreateValueListResponse>
      */
-    public AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse> deleteAntileakageRuleAsyncInvoker(DeleteAntileakageRuleRequest request) {
-        return new AsyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>(request, WafMeta.deleteAntileakageRule, hcClient);
+    public AsyncInvoker<CreateValueListRequest, CreateValueListResponse> createValueListAsyncInvoker(CreateValueListRequest request) {
+        return new AsyncInvoker<CreateValueListRequest, CreateValueListResponse>(request, WafMeta.createValueList, hcClient);
     }
 
     /**
-     * 删除cc防护规则
-     * 删除cc防护规则
+     * 创建黑白名单规则
+     * 创建黑白名单规则
      *
-     * @param DeleteCcRuleRequest 请求对象
-     * @return CompletableFuture<DeleteCcRuleResponse>
+     * @param CreateWhiteblackipRuleRequest 请求对象
+     * @return CompletableFuture<CreateWhiteblackipRuleResponse>
      */
-    public CompletableFuture<DeleteCcRuleResponse> deleteCcRuleAsync(DeleteCcRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCcRule);
+    public CompletableFuture<CreateWhiteblackipRuleResponse> createWhiteblackipRuleAsync(CreateWhiteblackipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createWhiteblackipRule);
     }
 
     /**
-     * 删除cc防护规则
-     * 删除cc防护规则
+     * 创建黑白名单规则
+     * 创建黑白名单规则
      *
-     * @param DeleteCcRuleRequest 请求对象
-     * @return AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>
+     * @param CreateWhiteblackipRuleRequest 请求对象
+     * @return AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>
      */
-    public AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRuleAsyncInvoker(DeleteCcRuleRequest request) {
-        return new AsyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>(request, WafMeta.deleteCcRule, hcClient);
+    public AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse> createWhiteblackipRuleAsyncInvoker(CreateWhiteblackipRuleRequest request) {
+        return new AsyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>(request, WafMeta.createWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 删除防篡改防护规则
+     * 删除防篡改防护规则
+     *
+     * @param DeleteAntitamperRuleRequest 请求对象
+     * @return CompletableFuture<DeleteAntitamperRuleResponse>
+     */
+    public CompletableFuture<DeleteAntitamperRuleResponse> deleteAntitamperRuleAsync(DeleteAntitamperRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAntitamperRule);
+    }
+
+    /**
+     * 删除防篡改防护规则
+     * 删除防篡改防护规则
+     *
+     * @param DeleteAntitamperRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>
+     */
+    public AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse> deleteAntitamperRuleAsyncInvoker(DeleteAntitamperRuleRequest request) {
+        return new AsyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>(request, WafMeta.deleteAntitamperRule, hcClient);
     }
 
     /**
@@ -347,28 +281,6 @@ public class WafAsyncClient {
      */
     public AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateAsyncInvoker(DeleteCertificateRequest request) {
         return new AsyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, WafMeta.deleteCertificate, hcClient);
-    }
-
-    /**
-     * 删除精准防护规则
-     * 删除精准防护规则
-     *
-     * @param DeleteCustomRuleRequest 请求对象
-     * @return CompletableFuture<DeleteCustomRuleResponse>
-     */
-    public CompletableFuture<DeleteCustomRuleResponse> deleteCustomRuleAsync(DeleteCustomRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.deleteCustomRule);
-    }
-
-    /**
-     * 删除精准防护规则
-     * 删除精准防护规则
-     *
-     * @param DeleteCustomRuleRequest 请求对象
-     * @return AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>
-     */
-    public AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse> deleteCustomRuleAsyncInvoker(DeleteCustomRuleRequest request) {
-        return new AsyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>(request, WafMeta.deleteCustomRule, hcClient);
     }
 
     /**
@@ -397,22 +309,22 @@ public class WafAsyncClient {
      * 删除云模式防护域名
      * 删除云模式防护域名
      *
-     * @param DeleteInstaneRequest 请求对象
-     * @return CompletableFuture<DeleteInstaneResponse>
+     * @param DeleteHostRequest 请求对象
+     * @return CompletableFuture<DeleteHostResponse>
      */
-    public CompletableFuture<DeleteInstaneResponse> deleteInstaneAsync(DeleteInstaneRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.deleteInstane);
+    public CompletableFuture<DeleteHostResponse> deleteHostAsync(DeleteHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteHost);
     }
 
     /**
      * 删除云模式防护域名
      * 删除云模式防护域名
      *
-     * @param DeleteInstaneRequest 请求对象
-     * @return AsyncInvoker<DeleteInstaneRequest, DeleteInstaneResponse>
+     * @param DeleteHostRequest 请求对象
+     * @return AsyncInvoker<DeleteHostRequest, DeleteHostResponse>
      */
-    public AsyncInvoker<DeleteInstaneRequest, DeleteInstaneResponse> deleteInstaneAsyncInvoker(DeleteInstaneRequest request) {
-        return new AsyncInvoker<DeleteInstaneRequest, DeleteInstaneResponse>(request, WafMeta.deleteInstane, hcClient);
+    public AsyncInvoker<DeleteHostRequest, DeleteHostResponse> deleteHostAsyncInvoker(DeleteHostRequest request) {
+        return new AsyncInvoker<DeleteHostRequest, DeleteHostResponse>(request, WafMeta.deleteHost, hcClient);
     }
 
     /**
@@ -460,135 +372,91 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询反爬虫规则列表
-     * 查询反爬虫规则列表
+     * 删除隐私屏蔽防护规则
+     * 删除隐私屏蔽防护规则
      *
-     * @param ListAnticrawlerRulesRequest 请求对象
-     * @return CompletableFuture<ListAnticrawlerRulesResponse>
+     * @param DeletePrivacyRuleRequest 请求对象
+     * @return CompletableFuture<DeletePrivacyRuleResponse>
      */
-    public CompletableFuture<ListAnticrawlerRulesResponse> listAnticrawlerRulesAsync(ListAnticrawlerRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listAnticrawlerRules);
+    public CompletableFuture<DeletePrivacyRuleResponse> deletePrivacyRuleAsync(DeletePrivacyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deletePrivacyRule);
     }
 
     /**
-     * 查询反爬虫规则列表
-     * 查询反爬虫规则列表
+     * 删除隐私屏蔽防护规则
+     * 删除隐私屏蔽防护规则
      *
-     * @param ListAnticrawlerRulesRequest 请求对象
-     * @return AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>
+     * @param DeletePrivacyRuleRequest 请求对象
+     * @return AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>
      */
-    public AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRulesAsyncInvoker(ListAnticrawlerRulesRequest request) {
-        return new AsyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>(request, WafMeta.listAnticrawlerRules, hcClient);
+    public AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse> deletePrivacyRuleAsyncInvoker(DeletePrivacyRuleRequest request) {
+        return new AsyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>(request, WafMeta.deletePrivacyRule, hcClient);
     }
 
     /**
-     * 查询防敏感信息泄露规则列表
-     * 查询防敏感信息泄露规则列表
+     * 删除引用表
+     * 删除引用表
      *
-     * @param ListAntileakageRulesRequest 请求对象
-     * @return CompletableFuture<ListAntileakageRulesResponse>
+     * @param DeleteValueListRequest 请求对象
+     * @return CompletableFuture<DeleteValueListResponse>
      */
-    public CompletableFuture<ListAntileakageRulesResponse> listAntileakageRulesAsync(ListAntileakageRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listAntileakageRules);
+    public CompletableFuture<DeleteValueListResponse> deleteValueListAsync(DeleteValueListRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteValueList);
     }
 
     /**
-     * 查询防敏感信息泄露规则列表
-     * 查询防敏感信息泄露规则列表
+     * 删除引用表
+     * 删除引用表
      *
-     * @param ListAntileakageRulesRequest 请求对象
-     * @return AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>
+     * @param DeleteValueListRequest 请求对象
+     * @return AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse>
      */
-    public AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse> listAntileakageRulesAsyncInvoker(ListAntileakageRulesRequest request) {
-        return new AsyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>(request, WafMeta.listAntileakageRules, hcClient);
+    public AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse> deleteValueListAsyncInvoker(DeleteValueListRequest request) {
+        return new AsyncInvoker<DeleteValueListRequest, DeleteValueListResponse>(request, WafMeta.deleteValueList, hcClient);
     }
 
     /**
-     * 查询攻击防护类型
-     * 查询攻击防护类型
+     * 删除黑白名单防护规则
+     * 删除黑白名单防护规则
      *
-     * @param ListAttackActionRequest 请求对象
-     * @return CompletableFuture<ListAttackActionResponse>
+     * @param DeleteWhiteBlackIpRuleRequest 请求对象
+     * @return CompletableFuture<DeleteWhiteBlackIpRuleResponse>
      */
-    public CompletableFuture<ListAttackActionResponse> listAttackActionAsync(ListAttackActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listAttackAction);
+    public CompletableFuture<DeleteWhiteBlackIpRuleResponse> deleteWhiteBlackIpRuleAsync(DeleteWhiteBlackIpRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteWhiteBlackIpRule);
     }
 
     /**
-     * 查询攻击防护类型
-     * 查询攻击防护类型
+     * 删除黑白名单防护规则
+     * 删除黑白名单防护规则
      *
-     * @param ListAttackActionRequest 请求对象
-     * @return AsyncInvoker<ListAttackActionRequest, ListAttackActionResponse>
+     * @param DeleteWhiteBlackIpRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>
      */
-    public AsyncInvoker<ListAttackActionRequest, ListAttackActionResponse> listAttackActionAsyncInvoker(ListAttackActionRequest request) {
-        return new AsyncInvoker<ListAttackActionRequest, ListAttackActionResponse>(request, WafMeta.listAttackAction, hcClient);
+    public AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse> deleteWhiteBlackIpRuleAsyncInvoker(DeleteWhiteBlackIpRuleRequest request) {
+        return new AsyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>(request, WafMeta.deleteWhiteBlackIpRule, hcClient);
     }
 
     /**
-     * 查询攻击事件分布
-     * 查询攻击事件分布
+     * 查询防篡改规则列表
+     * 查询防篡改规则列表
      *
-     * @param ListAttackDistributionRequest 请求对象
-     * @return CompletableFuture<ListAttackDistributionResponse>
+     * @param ListAntitamperRuleRequest 请求对象
+     * @return CompletableFuture<ListAntitamperRuleResponse>
      */
-    public CompletableFuture<ListAttackDistributionResponse> listAttackDistributionAsync(ListAttackDistributionRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listAttackDistribution);
+    public CompletableFuture<ListAntitamperRuleResponse> listAntitamperRuleAsync(ListAntitamperRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listAntitamperRule);
     }
 
     /**
-     * 查询攻击事件分布
-     * 查询攻击事件分布
+     * 查询防篡改规则列表
+     * 查询防篡改规则列表
      *
-     * @param ListAttackDistributionRequest 请求对象
-     * @return AsyncInvoker<ListAttackDistributionRequest, ListAttackDistributionResponse>
+     * @param ListAntitamperRuleRequest 请求对象
+     * @return AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>
      */
-    public AsyncInvoker<ListAttackDistributionRequest, ListAttackDistributionResponse> listAttackDistributionAsyncInvoker(ListAttackDistributionRequest request) {
-        return new AsyncInvoker<ListAttackDistributionRequest, ListAttackDistributionResponse>(request, WafMeta.listAttackDistribution, hcClient);
-    }
-
-    /**
-     * 查询安全统计带宽数据
-     * 查询安全统计带宽数据
-     *
-     * @param ListBandwidthTimelineRequest 请求对象
-     * @return CompletableFuture<ListBandwidthTimelineResponse>
-     */
-    public CompletableFuture<ListBandwidthTimelineResponse> listBandwidthTimelineAsync(ListBandwidthTimelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listBandwidthTimeline);
-    }
-
-    /**
-     * 查询安全统计带宽数据
-     * 查询安全统计带宽数据
-     *
-     * @param ListBandwidthTimelineRequest 请求对象
-     * @return AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>
-     */
-    public AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimelineAsyncInvoker(ListBandwidthTimelineRequest request) {
-        return new AsyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>(request, WafMeta.listBandwidthTimeline, hcClient);
-    }
-
-    /**
-     * 查询cc规则列表
-     * 查询cc规则列表
-     *
-     * @param ListCcRulesRequest 请求对象
-     * @return CompletableFuture<ListCcRulesResponse>
-     */
-    public CompletableFuture<ListCcRulesResponse> listCcRulesAsync(ListCcRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listCcRules);
-    }
-
-    /**
-     * 查询cc规则列表
-     * 查询cc规则列表
-     *
-     * @param ListCcRulesRequest 请求对象
-     * @return AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse>
-     */
-    public AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse> listCcRulesAsyncInvoker(ListCcRulesRequest request) {
-        return new AsyncInvoker<ListCcRulesRequest, ListCcRulesResponse>(request, WafMeta.listCcRules, hcClient);
+    public AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse> listAntitamperRuleAsyncInvoker(ListAntitamperRuleRequest request) {
+        return new AsyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>(request, WafMeta.listAntitamperRule, hcClient);
     }
 
     /**
@@ -614,135 +482,113 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询精准防护规则列表
-     * 查询精准防护规则列表
+     * 查询全部防护域名列表
+     * 查询全部防护域名列表
      *
-     * @param ListCustomRulesRequest 请求对象
-     * @return CompletableFuture<ListCustomRulesResponse>
+     * @param ListCompositeHostsRequest 请求对象
+     * @return CompletableFuture<ListCompositeHostsResponse>
      */
-    public CompletableFuture<ListCustomRulesResponse> listCustomRulesAsync(ListCustomRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listCustomRules);
+    public CompletableFuture<ListCompositeHostsResponse> listCompositeHostsAsync(ListCompositeHostsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listCompositeHosts);
     }
 
     /**
-     * 查询精准防护规则列表
-     * 查询精准防护规则列表
+     * 查询全部防护域名列表
+     * 查询全部防护域名列表
      *
-     * @param ListCustomRulesRequest 请求对象
-     * @return AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>
+     * @param ListCompositeHostsRequest 请求对象
+     * @return AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>
      */
-    public AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse> listCustomRulesAsyncInvoker(ListCustomRulesRequest request) {
-        return new AsyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>(request, WafMeta.listCustomRules, hcClient);
+    public AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse> listCompositeHostsAsyncInvoker(ListCompositeHostsRequest request) {
+        return new AsyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>(request, WafMeta.listCompositeHosts, hcClient);
     }
 
     /**
-     * 查询请求/攻击数量统计
-     * 查询请求/攻击数量统计。
+     * 查询攻击事件列表
+     * 查询攻击事件列表
      *
-     * @param ListEventByTimelineRequest 请求对象
-     * @return CompletableFuture<ListEventByTimelineResponse>
+     * @param ListEventRequest 请求对象
+     * @return CompletableFuture<ListEventResponse>
      */
-    public CompletableFuture<ListEventByTimelineResponse> listEventByTimelineAsync(ListEventByTimelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listEventByTimeline);
+    public CompletableFuture<ListEventResponse> listEventAsync(ListEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listEvent);
     }
 
     /**
-     * 查询请求/攻击数量统计
-     * 查询请求/攻击数量统计。
+     * 查询攻击事件列表
+     * 查询攻击事件列表
      *
-     * @param ListEventByTimelineRequest 请求对象
-     * @return AsyncInvoker<ListEventByTimelineRequest, ListEventByTimelineResponse>
+     * @param ListEventRequest 请求对象
+     * @return AsyncInvoker<ListEventRequest, ListEventResponse>
      */
-    public AsyncInvoker<ListEventByTimelineRequest, ListEventByTimelineResponse> listEventByTimelineAsyncInvoker(ListEventByTimelineRequest request) {
-        return new AsyncInvoker<ListEventByTimelineRequest, ListEventByTimelineResponse>(request, WafMeta.listEventByTimeline, hcClient);
-    }
-
-    /**
-     * 查询攻击事件详情列表
-     * 查询攻击事件详情列表
-     *
-     * @param ListEventsRequest 请求对象
-     * @return CompletableFuture<ListEventsResponse>
-     */
-    public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listEvents);
-    }
-
-    /**
-     * 查询攻击事件详情列表
-     * 查询攻击事件详情列表
-     *
-     * @param ListEventsRequest 请求对象
-     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
-     */
-    public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
-        return new AsyncInvoker<ListEventsRequest, ListEventsResponse>(request, WafMeta.listEvents, hcClient);
+    public AsyncInvoker<ListEventRequest, ListEventResponse> listEventAsyncInvoker(ListEventRequest request) {
+        return new AsyncInvoker<ListEventRequest, ListEventResponse>(request, WafMeta.listEvent, hcClient);
     }
 
     /**
      * 查询地理位置规则列表
      * 查询地理位置规则列表
      *
-     * @param ListGeoipRulesRequest 请求对象
-     * @return CompletableFuture<ListGeoipRulesResponse>
+     * @param ListGeoipRuleRequest 请求对象
+     * @return CompletableFuture<ListGeoipRuleResponse>
      */
-    public CompletableFuture<ListGeoipRulesResponse> listGeoipRulesAsync(ListGeoipRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listGeoipRules);
+    public CompletableFuture<ListGeoipRuleResponse> listGeoipRuleAsync(ListGeoipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listGeoipRule);
     }
 
     /**
      * 查询地理位置规则列表
      * 查询地理位置规则列表
      *
-     * @param ListGeoipRulesRequest 请求对象
-     * @return AsyncInvoker<ListGeoipRulesRequest, ListGeoipRulesResponse>
+     * @param ListGeoipRuleRequest 请求对象
+     * @return AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>
      */
-    public AsyncInvoker<ListGeoipRulesRequest, ListGeoipRulesResponse> listGeoipRulesAsyncInvoker(ListGeoipRulesRequest request) {
-        return new AsyncInvoker<ListGeoipRulesRequest, ListGeoipRulesResponse>(request, WafMeta.listGeoipRules, hcClient);
-    }
-
-    /**
-     * 查询WAF独享引擎列表
-     * 查询WAF独享引擎列表
-     *
-     * @param ListInstanceRequest 请求对象
-     * @return CompletableFuture<ListInstanceResponse>
-     */
-    public CompletableFuture<ListInstanceResponse> listInstanceAsync(ListInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listInstance);
-    }
-
-    /**
-     * 查询WAF独享引擎列表
-     * 查询WAF独享引擎列表
-     *
-     * @param ListInstanceRequest 请求对象
-     * @return AsyncInvoker<ListInstanceRequest, ListInstanceResponse>
-     */
-    public AsyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceAsyncInvoker(ListInstanceRequest request) {
-        return new AsyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, WafMeta.listInstance, hcClient);
+    public AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse> listGeoipRuleAsyncInvoker(ListGeoipRuleRequest request) {
+        return new AsyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>(request, WafMeta.listGeoipRule, hcClient);
     }
 
     /**
      * 查询云模式防护域名列表
      * 查询云模式防护域名列表
      *
-     * @param ListInstanesRequest 请求对象
-     * @return CompletableFuture<ListInstanesResponse>
+     * @param ListHostRequest 请求对象
+     * @return CompletableFuture<ListHostResponse>
      */
-    public CompletableFuture<ListInstanesResponse> listInstanesAsync(ListInstanesRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listInstanes);
+    public CompletableFuture<ListHostResponse> listHostAsync(ListHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listHost);
     }
 
     /**
      * 查询云模式防护域名列表
      * 查询云模式防护域名列表
      *
-     * @param ListInstanesRequest 请求对象
-     * @return AsyncInvoker<ListInstanesRequest, ListInstanesResponse>
+     * @param ListHostRequest 请求对象
+     * @return AsyncInvoker<ListHostRequest, ListHostResponse>
      */
-    public AsyncInvoker<ListInstanesRequest, ListInstanesResponse> listInstanesAsyncInvoker(ListInstanesRequest request) {
-        return new AsyncInvoker<ListInstanesRequest, ListInstanesResponse>(request, WafMeta.listInstanes, hcClient);
+    public AsyncInvoker<ListHostRequest, ListHostResponse> listHostAsyncInvoker(ListHostRequest request) {
+        return new AsyncInvoker<ListHostRequest, ListHostResponse>(request, WafMeta.listHost, hcClient);
+    }
+
+    /**
+     * 获取云模式域名路由信息
+     * 返回路由信息
+     *
+     * @param ListHostRouteRequest 请求对象
+     * @return CompletableFuture<ListHostRouteResponse>
+     */
+    public CompletableFuture<ListHostRouteResponse> listHostRouteAsync(ListHostRouteRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listHostRoute);
+    }
+
+    /**
+     * 获取云模式域名路由信息
+     * 返回路由信息
+     *
+     * @param ListHostRouteRequest 请求对象
+     * @return AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse>
+     */
+    public AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse> listHostRouteAsyncInvoker(ListHostRouteRequest request) {
+        return new AsyncInvoker<ListHostRouteRequest, ListHostRouteResponse>(request, WafMeta.listHostRoute, hcClient);
     }
 
     /**
@@ -790,355 +636,25 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询QPS
-     * 查询QPS。
+     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则
      *
-     * @param ListQpsRequest 请求对象
-     * @return CompletableFuture<ListQpsResponse>
+     * @param ListPrivacyRuleRequest 请求对象
+     * @return CompletableFuture<ListPrivacyRuleResponse>
      */
-    public CompletableFuture<ListQpsResponse> listQpsAsync(ListQpsRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listQps);
+    public CompletableFuture<ListPrivacyRuleResponse> listPrivacyRuleAsync(ListPrivacyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listPrivacyRule);
     }
 
     /**
-     * 查询QPS
-     * 查询QPS。
+     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则
      *
-     * @param ListQpsRequest 请求对象
-     * @return AsyncInvoker<ListQpsRequest, ListQpsResponse>
+     * @param ListPrivacyRuleRequest 请求对象
+     * @return AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>
      */
-    public AsyncInvoker<ListQpsRequest, ListQpsResponse> listQpsAsyncInvoker(ListQpsRequest request) {
-        return new AsyncInvoker<ListQpsRequest, ListQpsResponse>(request, WafMeta.listQps, hcClient);
-    }
-
-    /**
-     * 查询安全统计qps次数
-     * 查询安全统计qps次数
-     *
-     * @param ListQpsTimelineRequest 请求对象
-     * @return CompletableFuture<ListQpsTimelineResponse>
-     */
-    public CompletableFuture<ListQpsTimelineResponse> listQpsTimelineAsync(ListQpsTimelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listQpsTimeline);
-    }
-
-    /**
-     * 查询安全统计qps次数
-     * 查询安全统计qps次数
-     *
-     * @param ListQpsTimelineRequest 请求对象
-     * @return AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>
-     */
-    public AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> listQpsTimelineAsyncInvoker(ListQpsTimelineRequest request) {
-        return new AsyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>(request, WafMeta.listQpsTimeline, hcClient);
-    }
-
-    /**
-     * 查询安全统计请求次数
-     * 查询安全统计请求次数
-     *
-     * @param ListRequestTimelineRequest 请求对象
-     * @return CompletableFuture<ListRequestTimelineResponse>
-     */
-    public CompletableFuture<ListRequestTimelineResponse> listRequestTimelineAsync(ListRequestTimelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listRequestTimeline);
-    }
-
-    /**
-     * 查询安全统计请求次数
-     * 查询安全统计请求次数
-     *
-     * @param ListRequestTimelineRequest 请求对象
-     * @return AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>
-     */
-    public AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse> listRequestTimelineAsyncInvoker(ListRequestTimelineRequest request) {
-        return new AsyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>(request, WafMeta.listRequestTimeline, hcClient);
-    }
-
-    /**
-     * 查询安全统计响应码数据
-     * 查询安全统计响应码数据
-     *
-     * @param ListResponseCodeTimelineRequest 请求对象
-     * @return CompletableFuture<ListResponseCodeTimelineResponse>
-     */
-    public CompletableFuture<ListResponseCodeTimelineResponse> listResponseCodeTimelineAsync(ListResponseCodeTimelineRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listResponseCodeTimeline);
-    }
-
-    /**
-     * 查询安全统计响应码数据
-     * 查询安全统计响应码数据
-     *
-     * @param ListResponseCodeTimelineRequest 请求对象
-     * @return AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>
-     */
-    public AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimelineAsyncInvoker(ListResponseCodeTimelineRequest request) {
-        return new AsyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>(request, WafMeta.listResponseCodeTimeline, hcClient);
-    }
-
-    /**
-     * 查询被攻击次数前五的域名
-     * 查询被攻击次数前五的域名
-     *
-     * @param ListSourceDomainTop5Request 请求对象
-     * @return CompletableFuture<ListSourceDomainTop5Response>
-     */
-    public CompletableFuture<ListSourceDomainTop5Response> listSourceDomainTop5Async(ListSourceDomainTop5Request request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listSourceDomainTop5);
-    }
-
-    /**
-     * 查询被攻击次数前五的域名
-     * 查询被攻击次数前五的域名
-     *
-     * @param ListSourceDomainTop5Request 请求对象
-     * @return AsyncInvoker<ListSourceDomainTop5Request, ListSourceDomainTop5Response>
-     */
-    public AsyncInvoker<ListSourceDomainTop5Request, ListSourceDomainTop5Response> listSourceDomainTop5AsyncInvoker(ListSourceDomainTop5Request request) {
-        return new AsyncInvoker<ListSourceDomainTop5Request, ListSourceDomainTop5Response>(request, WafMeta.listSourceDomainTop5, hcClient);
-    }
-
-    /**
-     * 查询攻击源IP的个数
-     * 查询攻击源IP的个数。
-     *
-     * @param ListSourceIpNumRequest 请求对象
-     * @return CompletableFuture<ListSourceIpNumResponse>
-     */
-    public CompletableFuture<ListSourceIpNumResponse> listSourceIpNumAsync(ListSourceIpNumRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listSourceIpNum);
-    }
-
-    /**
-     * 查询攻击源IP的个数
-     * 查询攻击源IP的个数。
-     *
-     * @param ListSourceIpNumRequest 请求对象
-     * @return AsyncInvoker<ListSourceIpNumRequest, ListSourceIpNumResponse>
-     */
-    public AsyncInvoker<ListSourceIpNumRequest, ListSourceIpNumResponse> listSourceIpNumAsyncInvoker(ListSourceIpNumRequest request) {
-        return new AsyncInvoker<ListSourceIpNumRequest, ListSourceIpNumResponse>(request, WafMeta.listSourceIpNum, hcClient);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListSourceIpTop5Request 请求对象
-     * @return CompletableFuture<ListSourceIpTop5Response>
-     */
-    public CompletableFuture<ListSourceIpTop5Response> listSourceIpTop5Async(ListSourceIpTop5Request request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listSourceIpTop5);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListSourceIpTop5Request 请求对象
-     * @return AsyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response>
-     */
-    public AsyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response> listSourceIpTop5AsyncInvoker(ListSourceIpTop5Request request) {
-        return new AsyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response>(request, WafMeta.listSourceIpTop5, hcClient);
-    }
-
-    /**
-     * 查询被攻击次数前五的url
-     * 查询被攻击次数前五的url
-     *
-     * @param ListSourceUrlTop5Request 请求对象
-     * @return CompletableFuture<ListSourceUrlTop5Response>
-     */
-    public CompletableFuture<ListSourceUrlTop5Response> listSourceUrlTop5Async(ListSourceUrlTop5Request request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listSourceUrlTop5);
-    }
-
-    /**
-     * 查询被攻击次数前五的url
-     * 查询被攻击次数前五的url
-     *
-     * @param ListSourceUrlTop5Request 请求对象
-     * @return AsyncInvoker<ListSourceUrlTop5Request, ListSourceUrlTop5Response>
-     */
-    public AsyncInvoker<ListSourceUrlTop5Request, ListSourceUrlTop5Response> listSourceUrlTop5AsyncInvoker(ListSourceUrlTop5Request request) {
-        return new AsyncInvoker<ListSourceUrlTop5Request, ListSourceUrlTop5Response>(request, WafMeta.listSourceUrlTop5, hcClient);
-    }
-
-    /**
-     * 查询安全总览请求数据
-     * 查询安全总览请求数据
-     *
-     * @param ListStatisticsRequest 请求对象
-     * @return CompletableFuture<ListStatisticsResponse>
-     */
-    public CompletableFuture<ListStatisticsResponse> listStatisticsAsync(ListStatisticsRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listStatistics);
-    }
-
-    /**
-     * 查询安全总览请求数据
-     * 查询安全总览请求数据
-     *
-     * @param ListStatisticsRequest 请求对象
-     * @return AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
-     */
-    public AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsAsyncInvoker(ListStatisticsRequest request) {
-        return new AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, WafMeta.listStatistics, hcClient);
-    }
-
-    /**
-     * 查询攻击事件分布类型
-     * 查询攻击事件分布类型。
-     *
-     * @param ListThreatsRequest 请求对象
-     * @return CompletableFuture<ListThreatsResponse>
-     */
-    public CompletableFuture<ListThreatsResponse> listThreatsAsync(ListThreatsRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listThreats);
-    }
-
-    /**
-     * 查询攻击事件分布类型
-     * 查询攻击事件分布类型。
-     *
-     * @param ListThreatsRequest 请求对象
-     * @return AsyncInvoker<ListThreatsRequest, ListThreatsResponse>
-     */
-    public AsyncInvoker<ListThreatsRequest, ListThreatsResponse> listThreatsAsyncInvoker(ListThreatsRequest request) {
-        return new AsyncInvoker<ListThreatsRequest, ListThreatsResponse>(request, WafMeta.listThreats, hcClient);
-    }
-
-    /**
-     * 查询业务异常监控
-     * 查询业务异常监控
-     *
-     * @param ListTopAbnormalRequest 请求对象
-     * @return CompletableFuture<ListTopAbnormalResponse>
-     */
-    public CompletableFuture<ListTopAbnormalResponse> listTopAbnormalAsync(ListTopAbnormalRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listTopAbnormal);
-    }
-
-    /**
-     * 查询业务异常监控
-     * 查询业务异常监控
-     *
-     * @param ListTopAbnormalRequest 请求对象
-     * @return AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>
-     */
-    public AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> listTopAbnormalAsyncInvoker(ListTopAbnormalRequest request) {
-        return new AsyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>(request, WafMeta.listTopAbnormal, hcClient);
-    }
-
-    /**
-     * 查询攻击域名
-     * 查询攻击域名
-     *
-     * @param ListTopDomainRequest 请求对象
-     * @return CompletableFuture<ListTopDomainResponse>
-     */
-    public CompletableFuture<ListTopDomainResponse> listTopDomainAsync(ListTopDomainRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listTopDomain);
-    }
-
-    /**
-     * 查询攻击域名
-     * 查询攻击域名
-     *
-     * @param ListTopDomainRequest 请求对象
-     * @return AsyncInvoker<ListTopDomainRequest, ListTopDomainResponse>
-     */
-    public AsyncInvoker<ListTopDomainRequest, ListTopDomainResponse> listTopDomainAsyncInvoker(ListTopDomainRequest request) {
-        return new AsyncInvoker<ListTopDomainRequest, ListTopDomainResponse>(request, WafMeta.listTopDomain, hcClient);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListTopIpRequest 请求对象
-     * @return CompletableFuture<ListTopIpResponse>
-     */
-    public CompletableFuture<ListTopIpResponse> listTopIpAsync(ListTopIpRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listTopIp);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListTopIpRequest 请求对象
-     * @return AsyncInvoker<ListTopIpRequest, ListTopIpResponse>
-     */
-    public AsyncInvoker<ListTopIpRequest, ListTopIpResponse> listTopIpAsyncInvoker(ListTopIpRequest request) {
-        return new AsyncInvoker<ListTopIpRequest, ListTopIpResponse>(request, WafMeta.listTopIp, hcClient);
-    }
-
-    /**
-     * 查询攻击来源区域
-     * 查询攻击来源区域
-     *
-     * @param ListTopRegionRequest 请求对象
-     * @return CompletableFuture<ListTopRegionResponse>
-     */
-    public CompletableFuture<ListTopRegionResponse> listTopRegionAsync(ListTopRegionRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listTopRegion);
-    }
-
-    /**
-     * 查询攻击来源区域
-     * 查询攻击来源区域
-     *
-     * @param ListTopRegionRequest 请求对象
-     * @return AsyncInvoker<ListTopRegionRequest, ListTopRegionResponse>
-     */
-    public AsyncInvoker<ListTopRegionRequest, ListTopRegionResponse> listTopRegionAsyncInvoker(ListTopRegionRequest request) {
-        return new AsyncInvoker<ListTopRegionRequest, ListTopRegionResponse>(request, WafMeta.listTopRegion, hcClient);
-    }
-
-    /**
-     * 查询被攻击url
-     * 查询被攻击url
-     *
-     * @param ListTopUrlRequest 请求对象
-     * @return CompletableFuture<ListTopUrlResponse>
-     */
-    public CompletableFuture<ListTopUrlResponse> listTopUrlAsync(ListTopUrlRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listTopUrl);
-    }
-
-    /**
-     * 查询被攻击url
-     * 查询被攻击url
-     *
-     * @param ListTopUrlRequest 请求对象
-     * @return AsyncInvoker<ListTopUrlRequest, ListTopUrlResponse>
-     */
-    public AsyncInvoker<ListTopUrlRequest, ListTopUrlResponse> listTopUrlAsyncInvoker(ListTopUrlRequest request) {
-        return new AsyncInvoker<ListTopUrlRequest, ListTopUrlResponse>(request, WafMeta.listTopUrl, hcClient);
-    }
-
-    /**
-     * 查询事件日志中的url
-     * 查询QPS。
-     *
-     * @param ListUrlRequest 请求对象
-     * @return CompletableFuture<ListUrlResponse>
-     */
-    public CompletableFuture<ListUrlResponse> listUrlAsync(ListUrlRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listUrl);
-    }
-
-    /**
-     * 查询事件日志中的url
-     * 查询QPS。
-     *
-     * @param ListUrlRequest 请求对象
-     * @return AsyncInvoker<ListUrlRequest, ListUrlResponse>
-     */
-    public AsyncInvoker<ListUrlRequest, ListUrlResponse> listUrlAsyncInvoker(ListUrlRequest request) {
-        return new AsyncInvoker<ListUrlRequest, ListUrlResponse>(request, WafMeta.listUrl, hcClient);
+    public AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse> listPrivacyRuleAsyncInvoker(ListPrivacyRuleRequest request) {
+        return new AsyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>(request, WafMeta.listPrivacyRule, hcClient);
     }
 
     /**
@@ -1164,69 +680,25 @@ public class WafAsyncClient {
     }
 
     /**
-     * 查询反爬虫防护规则
-     * 根据Id查询反爬虫防护规则
+     * 查询黑白名单规则列表
+     * 查询黑白名单规则列表
      *
-     * @param ShowAnticrawlerRuleRequest 请求对象
-     * @return CompletableFuture<ShowAnticrawlerRuleResponse>
+     * @param ListWhiteblackipRuleRequest 请求对象
+     * @return CompletableFuture<ListWhiteblackipRuleResponse>
      */
-    public CompletableFuture<ShowAnticrawlerRuleResponse> showAnticrawlerRuleAsync(ShowAnticrawlerRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showAnticrawlerRule);
+    public CompletableFuture<ListWhiteblackipRuleResponse> listWhiteblackipRuleAsync(ListWhiteblackipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listWhiteblackipRule);
     }
 
     /**
-     * 查询反爬虫防护规则
-     * 根据Id查询反爬虫防护规则
+     * 查询黑白名单规则列表
+     * 查询黑白名单规则列表
      *
-     * @param ShowAnticrawlerRuleRequest 请求对象
-     * @return AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>
+     * @param ListWhiteblackipRuleRequest 请求对象
+     * @return AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>
      */
-    public AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRuleAsyncInvoker(ShowAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>(request, WafMeta.showAnticrawlerRule, hcClient);
-    }
-
-    /**
-     * 查询防敏感信息泄露防护规则
-     * 根据Id查询防敏感信息泄露防护规则
-     *
-     * @param ShowAntileakageRuleRequest 请求对象
-     * @return CompletableFuture<ShowAntileakageRuleResponse>
-     */
-    public CompletableFuture<ShowAntileakageRuleResponse> showAntileakageRuleAsync(ShowAntileakageRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showAntileakageRule);
-    }
-
-    /**
-     * 查询防敏感信息泄露防护规则
-     * 根据Id查询防敏感信息泄露防护规则
-     *
-     * @param ShowAntileakageRuleRequest 请求对象
-     * @return AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>
-     */
-    public AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse> showAntileakageRuleAsyncInvoker(ShowAntileakageRuleRequest request) {
-        return new AsyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>(request, WafMeta.showAntileakageRule, hcClient);
-    }
-
-    /**
-     * 根据Id查询cc防护规则
-     * 根据Id查询cc防护规则
-     *
-     * @param ShowCcRuleRequest 请求对象
-     * @return CompletableFuture<ShowCcRuleResponse>
-     */
-    public CompletableFuture<ShowCcRuleResponse> showCcRuleAsync(ShowCcRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showCcRule);
-    }
-
-    /**
-     * 根据Id查询cc防护规则
-     * 根据Id查询cc防护规则
-     *
-     * @param ShowCcRuleRequest 请求对象
-     * @return AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>
-     */
-    public AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse> showCcRuleAsyncInvoker(ShowCcRuleRequest request) {
-        return new AsyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>(request, WafMeta.showCcRule, hcClient);
+    public AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse> listWhiteblackipRuleAsyncInvoker(ListWhiteblackipRuleRequest request) {
+        return new AsyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>(request, WafMeta.listWhiteblackipRule, hcClient);
     }
 
     /**
@@ -1252,91 +724,91 @@ public class WafAsyncClient {
     }
 
     /**
-     * 根据Id查询精准防护规则
-     * 根据Id查询精准防护规则
+     * 根据Id查询防护域名
+     * 根据Id查询防护域名
      *
-     * @param ShowCustomRuleRequest 请求对象
-     * @return CompletableFuture<ShowCustomRuleResponse>
+     * @param ShowCompositeHostRequest 请求对象
+     * @return CompletableFuture<ShowCompositeHostResponse>
      */
-    public CompletableFuture<ShowCustomRuleResponse> showCustomRuleAsync(ShowCustomRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showCustomRule);
+    public CompletableFuture<ShowCompositeHostResponse> showCompositeHostAsync(ShowCompositeHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showCompositeHost);
     }
 
     /**
-     * 根据Id查询精准防护规则
-     * 根据Id查询精准防护规则
+     * 根据Id查询防护域名
+     * 根据Id查询防护域名
      *
-     * @param ShowCustomRuleRequest 请求对象
-     * @return AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>
+     * @param ShowCompositeHostRequest 请求对象
+     * @return AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>
      */
-    public AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse> showCustomRuleAsyncInvoker(ShowCustomRuleRequest request) {
-        return new AsyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>(request, WafMeta.showCustomRule, hcClient);
+    public AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse> showCompositeHostAsyncInvoker(ShowCompositeHostRequest request) {
+        return new AsyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>(request, WafMeta.showCompositeHost, hcClient);
     }
 
     /**
-     * 根据Id查询地理位置防护规则
-     * 根据Id查询地理位置防护规则
+     * 查询攻击事件详情
+     * 查询攻击事件详情
      *
-     * @param ShowGeoipRuleRequest 请求对象
-     * @return CompletableFuture<ShowGeoipRuleResponse>
+     * @param ShowEventRequest 请求对象
+     * @return CompletableFuture<ShowEventResponse>
      */
-    public CompletableFuture<ShowGeoipRuleResponse> showGeoipRuleAsync(ShowGeoipRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showGeoipRule);
+    public CompletableFuture<ShowEventResponse> showEventAsync(ShowEventRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showEvent);
     }
 
     /**
-     * 根据Id查询地理位置防护规则
-     * 根据Id查询地理位置防护规则
+     * 查询攻击事件详情
+     * 查询攻击事件详情
      *
-     * @param ShowGeoipRuleRequest 请求对象
-     * @return AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>
+     * @param ShowEventRequest 请求对象
+     * @return AsyncInvoker<ShowEventRequest, ShowEventResponse>
      */
-    public AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse> showGeoipRuleAsyncInvoker(ShowGeoipRuleRequest request) {
-        return new AsyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>(request, WafMeta.showGeoipRule, hcClient);
-    }
-
-    /**
-     * 根据Id查询云模式防护域名
-     * 根据Id查询云模式防护域名
-     *
-     * @param ShowInstanceRequest 请求对象
-     * @return CompletableFuture<ShowInstanceResponse>
-     */
-    public CompletableFuture<ShowInstanceResponse> showInstanceAsync(ShowInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showInstance);
+    public AsyncInvoker<ShowEventRequest, ShowEventResponse> showEventAsyncInvoker(ShowEventRequest request) {
+        return new AsyncInvoker<ShowEventRequest, ShowEventResponse>(request, WafMeta.showEvent, hcClient);
     }
 
     /**
      * 根据Id查询云模式防护域名
      * 根据Id查询云模式防护域名
      *
-     * @param ShowInstanceRequest 请求对象
-     * @return AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     * @param ShowHostRequest 请求对象
+     * @return CompletableFuture<ShowHostResponse>
      */
-    public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(ShowInstanceRequest request) {
-        return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, WafMeta.showInstance, hcClient);
+    public CompletableFuture<ShowHostResponse> showHostAsync(ShowHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showHost);
     }
 
     /**
-     * 获取云模式域名路由信息
-     * 返回路由信息
+     * 根据Id查询云模式防护域名
+     * 根据Id查询云模式防护域名
      *
-     * @param ShowInstanceRouteRequest 请求对象
-     * @return CompletableFuture<ShowInstanceRouteResponse>
+     * @param ShowHostRequest 请求对象
+     * @return AsyncInvoker<ShowHostRequest, ShowHostResponse>
      */
-    public CompletableFuture<ShowInstanceRouteResponse> showInstanceRouteAsync(ShowInstanceRouteRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showInstanceRoute);
+    public AsyncInvoker<ShowHostRequest, ShowHostResponse> showHostAsyncInvoker(ShowHostRequest request) {
+        return new AsyncInvoker<ShowHostRequest, ShowHostResponse>(request, WafMeta.showHost, hcClient);
     }
 
     /**
-     * 获取云模式域名路由信息
-     * 返回路由信息
+     * 根据Id查询防护策略
+     * 根据Id查询防护策略
      *
-     * @param ShowInstanceRouteRequest 请求对象
-     * @return AsyncInvoker<ShowInstanceRouteRequest, ShowInstanceRouteResponse>
+     * @param ShowPolicyRequest 请求对象
+     * @return CompletableFuture<ShowPolicyResponse>
      */
-    public AsyncInvoker<ShowInstanceRouteRequest, ShowInstanceRouteResponse> showInstanceRouteAsyncInvoker(ShowInstanceRouteRequest request) {
-        return new AsyncInvoker<ShowInstanceRouteRequest, ShowInstanceRouteResponse>(request, WafMeta.showInstanceRoute, hcClient);
+    public CompletableFuture<ShowPolicyResponse> showPolicyAsync(ShowPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showPolicy);
+    }
+
+    /**
+     * 根据Id查询防护策略
+     * 根据Id查询防护策略
+     *
+     * @param ShowPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
+     */
+    public AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyAsyncInvoker(ShowPolicyRequest request) {
+        return new AsyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, WafMeta.showPolicy, hcClient);
     }
 
     /**
@@ -1362,72 +834,6 @@ public class WafAsyncClient {
     }
 
     /**
-     * 更新反爬虫防护规则
-     * 更新反爬虫防护规则
-     *
-     * @param UpdateAnticrawlerRuleRequest 请求对象
-     * @return CompletableFuture<UpdateAnticrawlerRuleResponse>
-     */
-    public CompletableFuture<UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleAsync(UpdateAnticrawlerRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updateAnticrawlerRule);
-    }
-
-    /**
-     * 更新反爬虫防护规则
-     * 更新反爬虫防护规则
-     *
-     * @param UpdateAnticrawlerRuleRequest 请求对象
-     * @return AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>
-     */
-    public AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleAsyncInvoker(UpdateAnticrawlerRuleRequest request) {
-        return new AsyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>(request, WafMeta.updateAnticrawlerRule, hcClient);
-    }
-
-    /**
-     * 更新防敏感信息泄露防护规则
-     * 更新防敏感信息泄露防护规则
-     *
-     * @param UpdateAntileakageRuleRequest 请求对象
-     * @return CompletableFuture<UpdateAntileakageRuleResponse>
-     */
-    public CompletableFuture<UpdateAntileakageRuleResponse> updateAntileakageRuleAsync(UpdateAntileakageRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updateAntileakageRule);
-    }
-
-    /**
-     * 更新防敏感信息泄露防护规则
-     * 更新防敏感信息泄露防护规则
-     *
-     * @param UpdateAntileakageRuleRequest 请求对象
-     * @return AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>
-     */
-    public AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse> updateAntileakageRuleAsyncInvoker(UpdateAntileakageRuleRequest request) {
-        return new AsyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>(request, WafMeta.updateAntileakageRule, hcClient);
-    }
-
-    /**
-     * 更新cc防护规则
-     * 更新cc防护规则
-     *
-     * @param UpdateCcRuleRequest 请求对象
-     * @return CompletableFuture<UpdateCcRuleResponse>
-     */
-    public CompletableFuture<UpdateCcRuleResponse> updateCcRuleAsync(UpdateCcRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updateCcRule);
-    }
-
-    /**
-     * 更新cc防护规则
-     * 更新cc防护规则
-     *
-     * @param UpdateCcRuleRequest 请求对象
-     * @return AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>
-     */
-    public AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRuleAsyncInvoker(UpdateCcRuleRequest request) {
-        return new AsyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>(request, WafMeta.updateCcRule, hcClient);
-    }
-
-    /**
      * 修改证书
      * 修改证书
      *
@@ -1447,28 +853,6 @@ public class WafAsyncClient {
      */
     public AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateAsyncInvoker(UpdateCertificateRequest request) {
         return new AsyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, WafMeta.updateCertificate, hcClient);
-    }
-
-    /**
-     * 更新精准防护规则
-     * 更新精准防护规则
-     *
-     * @param UpdateCustomRuleRequest 请求对象
-     * @return CompletableFuture<UpdateCustomRuleResponse>
-     */
-    public CompletableFuture<UpdateCustomRuleResponse> updateCustomRuleAsync(UpdateCustomRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updateCustomRule);
-    }
-
-    /**
-     * 更新精准防护规则
-     * 更新精准防护规则
-     *
-     * @param UpdateCustomRuleRequest 请求对象
-     * @return AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>
-     */
-    public AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse> updateCustomRuleAsyncInvoker(UpdateCustomRuleRequest request) {
-        return new AsyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>(request, WafMeta.updateCustomRule, hcClient);
     }
 
     /**
@@ -1497,44 +881,110 @@ public class WafAsyncClient {
      * 更新云模式防护域名
      * 更新云模式防护域名
      *
-     * @param UpdateInstanceRequest 请求对象
-     * @return CompletableFuture<UpdateInstanceResponse>
+     * @param UpdateHostRequest 请求对象
+     * @return CompletableFuture<UpdateHostResponse>
      */
-    public CompletableFuture<UpdateInstanceResponse> updateInstanceAsync(UpdateInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updateInstance);
+    public CompletableFuture<UpdateHostResponse> updateHostAsync(UpdateHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateHost);
     }
 
     /**
      * 更新云模式防护域名
      * 更新云模式防护域名
      *
-     * @param UpdateInstanceRequest 请求对象
-     * @return AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
+     * @param UpdateHostRequest 请求对象
+     * @return AsyncInvoker<UpdateHostRequest, UpdateHostResponse>
      */
-    public AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceAsyncInvoker(UpdateInstanceRequest request) {
-        return new AsyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, WafMeta.updateInstance, hcClient);
+    public AsyncInvoker<UpdateHostRequest, UpdateHostResponse> updateHostAsyncInvoker(UpdateHostRequest request) {
+        return new AsyncInvoker<UpdateHostRequest, UpdateHostResponse>(request, WafMeta.updateHost, hcClient);
+    }
+
+    /**
+     * 修改域名防护状态
+     * 返回路由信息
+     *
+     * @param UpdateHostProtectStatusRequest 请求对象
+     * @return CompletableFuture<UpdateHostProtectStatusResponse>
+     */
+    public CompletableFuture<UpdateHostProtectStatusResponse> updateHostProtectStatusAsync(UpdateHostProtectStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateHostProtectStatus);
+    }
+
+    /**
+     * 修改域名防护状态
+     * 返回路由信息
+     *
+     * @param UpdateHostProtectStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>
+     */
+    public AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse> updateHostProtectStatusAsyncInvoker(UpdateHostProtectStatusRequest request) {
+        return new AsyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>(request, WafMeta.updateHostProtectStatus, hcClient);
     }
 
     /**
      * 更新防护策略
      * 更新防护策略，请求体可只传需要更新的部分
      *
-     * @param UpdatePatchPolicyRequest 请求对象
-     * @return CompletableFuture<UpdatePatchPolicyResponse>
+     * @param UpdatePolicyRequest 请求对象
+     * @return CompletableFuture<UpdatePolicyResponse>
      */
-    public CompletableFuture<UpdatePatchPolicyResponse> updatePatchPolicyAsync(UpdatePatchPolicyRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updatePatchPolicy);
+    public CompletableFuture<UpdatePolicyResponse> updatePolicyAsync(UpdatePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updatePolicy);
     }
 
     /**
      * 更新防护策略
      * 更新防护策略，请求体可只传需要更新的部分
      *
-     * @param UpdatePatchPolicyRequest 请求对象
-     * @return AsyncInvoker<UpdatePatchPolicyRequest, UpdatePatchPolicyResponse>
+     * @param UpdatePolicyRequest 请求对象
+     * @return AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
-    public AsyncInvoker<UpdatePatchPolicyRequest, UpdatePatchPolicyResponse> updatePatchPolicyAsyncInvoker(UpdatePatchPolicyRequest request) {
-        return new AsyncInvoker<UpdatePatchPolicyRequest, UpdatePatchPolicyResponse>(request, WafMeta.updatePatchPolicy, hcClient);
+    public AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyAsyncInvoker(UpdatePolicyRequest request) {
+        return new AsyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, WafMeta.updatePolicy, hcClient);
+    }
+
+    /**
+     * 更新防护策略的域名
+     * 更新防护策略的防护域名
+     *
+     * @param UpdatePolicyProtectHostRequest 请求对象
+     * @return CompletableFuture<UpdatePolicyProtectHostResponse>
+     */
+    public CompletableFuture<UpdatePolicyProtectHostResponse> updatePolicyProtectHostAsync(UpdatePolicyProtectHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updatePolicyProtectHost);
+    }
+
+    /**
+     * 更新防护策略的域名
+     * 更新防护策略的防护域名
+     *
+     * @param UpdatePolicyProtectHostRequest 请求对象
+     * @return AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>
+     */
+    public AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse> updatePolicyProtectHostAsyncInvoker(UpdatePolicyProtectHostRequest request) {
+        return new AsyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>(request, WafMeta.updatePolicyProtectHost, hcClient);
+    }
+
+    /**
+     * 修改单条规则的状态
+     * 查询敏感信息选项的详细信息。
+     *
+     * @param UpdatePolicyRuleStatusRequest 请求对象
+     * @return CompletableFuture<UpdatePolicyRuleStatusResponse>
+     */
+    public CompletableFuture<UpdatePolicyRuleStatusResponse> updatePolicyRuleStatusAsync(UpdatePolicyRuleStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updatePolicyRuleStatus);
+    }
+
+    /**
+     * 修改单条规则的状态
+     * 查询敏感信息选项的详细信息。
+     *
+     * @param UpdatePolicyRuleStatusRequest 请求对象
+     * @return AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>
+     */
+    public AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse> updatePolicyRuleStatusAsyncInvoker(UpdatePolicyRuleStatusRequest request) {
+        return new AsyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>(request, WafMeta.updatePolicyRuleStatus, hcClient);
     }
 
     /**
@@ -1560,28 +1010,6 @@ public class WafAsyncClient {
     }
 
     /**
-     * 修改独享模式域名接入状态
-     * 修改独享模式域名接入状态
-     *
-     * @param UpdatePremiumHostAccessStatusRequest 请求对象
-     * @return CompletableFuture<UpdatePremiumHostAccessStatusResponse>
-     */
-    public CompletableFuture<UpdatePremiumHostAccessStatusResponse> updatePremiumHostAccessStatusAsync(UpdatePremiumHostAccessStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updatePremiumHostAccessStatus);
-    }
-
-    /**
-     * 修改独享模式域名接入状态
-     * 修改独享模式域名接入状态
-     *
-     * @param UpdatePremiumHostAccessStatusRequest 请求对象
-     * @return AsyncInvoker<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse>
-     */
-    public AsyncInvoker<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse> updatePremiumHostAccessStatusAsyncInvoker(UpdatePremiumHostAccessStatusRequest request) {
-        return new AsyncInvoker<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse>(request, WafMeta.updatePremiumHostAccessStatus, hcClient);
-    }
-
-    /**
      * 修改独享模式域名防护状态
      * 修改独享模式域名防护状态
      *
@@ -1604,113 +1032,69 @@ public class WafAsyncClient {
     }
 
     /**
-     * 创建WAF独享引擎组
-     * 创建WAF独享引擎组
+     * 更新隐私屏蔽防护规则
+     * 更新隐私屏蔽防护规则
      *
-     * @param CreatePoolRequest 请求对象
-     * @return CompletableFuture<CreatePoolResponse>
+     * @param UpdatePrivacyRuleRequest 请求对象
+     * @return CompletableFuture<UpdatePrivacyRuleResponse>
      */
-    public CompletableFuture<CreatePoolResponse> createPoolAsync(CreatePoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.createPool);
+    public CompletableFuture<UpdatePrivacyRuleResponse> updatePrivacyRuleAsync(UpdatePrivacyRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updatePrivacyRule);
     }
 
     /**
-     * 创建WAF独享引擎组
-     * 创建WAF独享引擎组
+     * 更新隐私屏蔽防护规则
+     * 更新隐私屏蔽防护规则
      *
-     * @param CreatePoolRequest 请求对象
-     * @return AsyncInvoker<CreatePoolRequest, CreatePoolResponse>
+     * @param UpdatePrivacyRuleRequest 请求对象
+     * @return AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>
      */
-    public AsyncInvoker<CreatePoolRequest, CreatePoolResponse> createPoolAsyncInvoker(CreatePoolRequest request) {
-        return new AsyncInvoker<CreatePoolRequest, CreatePoolResponse>(request, WafMeta.createPool, hcClient);
+    public AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse> updatePrivacyRuleAsyncInvoker(UpdatePrivacyRuleRequest request) {
+        return new AsyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>(request, WafMeta.updatePrivacyRule, hcClient);
     }
 
     /**
-     * 删除WAF独享引擎组
-     * 删除WAF独享引擎组
+     * 修改引用表
+     * 修改引用表
      *
-     * @param DeletePoolRequest 请求对象
-     * @return CompletableFuture<DeletePoolResponse>
+     * @param UpdateValueListRequest 请求对象
+     * @return CompletableFuture<UpdateValueListResponse>
      */
-    public CompletableFuture<DeletePoolResponse> deletePoolAsync(DeletePoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.deletePool);
+    public CompletableFuture<UpdateValueListResponse> updateValueListAsync(UpdateValueListRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateValueList);
     }
 
     /**
-     * 删除WAF独享引擎组
-     * 删除WAF独享引擎组
+     * 修改引用表
+     * 修改引用表
      *
-     * @param DeletePoolRequest 请求对象
-     * @return AsyncInvoker<DeletePoolRequest, DeletePoolResponse>
+     * @param UpdateValueListRequest 请求对象
+     * @return AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse>
      */
-    public AsyncInvoker<DeletePoolRequest, DeletePoolResponse> deletePoolAsyncInvoker(DeletePoolRequest request) {
-        return new AsyncInvoker<DeletePoolRequest, DeletePoolResponse>(request, WafMeta.deletePool, hcClient);
+    public AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse> updateValueListAsyncInvoker(UpdateValueListRequest request) {
+        return new AsyncInvoker<UpdateValueListRequest, UpdateValueListResponse>(request, WafMeta.updateValueList, hcClient);
     }
 
     /**
-     * 查询WAF独享引擎组列表
-     * 查询WAF独享引擎组列表
+     * 更新黑白名单防护规则
+     * 更新黑白名单防护规则
      *
-     * @param ListPoolsRequest 请求对象
-     * @return CompletableFuture<ListPoolsResponse>
+     * @param UpdateWhiteblackipRuleRequest 请求对象
+     * @return CompletableFuture<UpdateWhiteblackipRuleResponse>
      */
-    public CompletableFuture<ListPoolsResponse> listPoolsAsync(ListPoolsRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.listPools);
+    public CompletableFuture<UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleAsync(UpdateWhiteblackipRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.updateWhiteblackipRule);
     }
 
     /**
-     * 查询WAF独享引擎组列表
-     * 查询WAF独享引擎组列表
+     * 更新黑白名单防护规则
+     * 更新黑白名单防护规则
      *
-     * @param ListPoolsRequest 请求对象
-     * @return AsyncInvoker<ListPoolsRequest, ListPoolsResponse>
+     * @param UpdateWhiteblackipRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>
      */
-    public AsyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsAsyncInvoker(ListPoolsRequest request) {
-        return new AsyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, WafMeta.listPools, hcClient);
-    }
-
-    /**
-     * 查询WAF独享引擎组信息
-     * 查询WAF独享引擎组信息
-     *
-     * @param ShowPoolRequest 请求对象
-     * @return CompletableFuture<ShowPoolResponse>
-     */
-    public CompletableFuture<ShowPoolResponse> showPoolAsync(ShowPoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.showPool);
-    }
-
-    /**
-     * 查询WAF独享引擎组信息
-     * 查询WAF独享引擎组信息
-     *
-     * @param ShowPoolRequest 请求对象
-     * @return AsyncInvoker<ShowPoolRequest, ShowPoolResponse>
-     */
-    public AsyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolAsyncInvoker(ShowPoolRequest request) {
-        return new AsyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, WafMeta.showPool, hcClient);
-    }
-
-    /**
-     * 修改WAF独享引擎组信息
-     * 修改WAF独享引擎组信息
-     *
-     * @param UpdatePoolRequest 请求对象
-     * @return CompletableFuture<UpdatePoolResponse>
-     */
-    public CompletableFuture<UpdatePoolResponse> updatePoolAsync(UpdatePoolRequest request) {
-        return hcClient.asyncInvokeHttp(request, WafMeta.updatePool);
-    }
-
-    /**
-     * 修改WAF独享引擎组信息
-     * 修改WAF独享引擎组信息
-     *
-     * @param UpdatePoolRequest 请求对象
-     * @return AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse>
-     */
-    public AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse> updatePoolAsyncInvoker(UpdatePoolRequest request) {
-        return new AsyncInvoker<UpdatePoolRequest, UpdatePoolResponse>(request, WafMeta.updatePool, hcClient);
+    public AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleAsyncInvoker(UpdateWhiteblackipRuleRequest request) {
+        return new AsyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>(request, WafMeta.updateWhiteblackipRule, hcClient);
     }
 
 }

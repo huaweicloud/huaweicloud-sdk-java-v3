@@ -106,6 +106,28 @@ public class CloudtestClient {
     }
 
     /**
+     * 项目下查询测试计划列表
+     * 项目下查询测试计划列表
+     *
+     * @param ShowPlansRequest 请求对象
+     * @return ShowPlansResponse
+     */
+    public ShowPlansResponse showPlans(ShowPlansRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.showPlans);
+    }
+
+    /**
+     * 项目下查询测试计划列表
+     * 项目下查询测试计划列表
+     *
+     * @param ShowPlansRequest 请求对象
+     * @return SyncInvoker<ShowPlansRequest, ShowPlansResponse>
+     */
+    public SyncInvoker<ShowPlansRequest, ShowPlansResponse> showPlansInvoker(ShowPlansRequest request) {
+        return new SyncInvoker<ShowPlansRequest, ShowPlansResponse>(request, CloudtestMeta.showPlans, hcClient);
+    }
+
+    /**
      * 新测试类型服务注册到云测
      * 新测试类型服务注册到云测
      *

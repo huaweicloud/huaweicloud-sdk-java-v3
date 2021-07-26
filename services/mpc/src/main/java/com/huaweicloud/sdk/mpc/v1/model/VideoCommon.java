@@ -172,18 +172,6 @@ public class VideoCommon  {
     
     private Integer blackCut;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="GOP_structure")
-    
-    private Boolean goPStructure;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sr_factor")
-    
-    private String srFactor;
-
     public VideoCommon withOutputPolicy(OutputPolicyEnum outputPolicy) {
         this.outputPolicy = outputPolicy;
         return this;
@@ -446,50 +434,6 @@ public class VideoCommon  {
 
     
 
-    public VideoCommon withGoPStructure(Boolean goPStructure) {
-        this.goPStructure = goPStructure;
-        return this;
-    }
-
-    
-
-
-    /**
-     * GOP类型（暂不开放） 0: Closed (Default) 1:Open 
-     * @return goPStructure
-     */
-    public Boolean getGoPStructure() {
-        return goPStructure;
-    }
-
-    public void setGoPStructure(Boolean goPStructure) {
-        this.goPStructure = goPStructure;
-    }
-
-    
-
-    public VideoCommon withSrFactor(String srFactor) {
-        this.srFactor = srFactor;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 超分倍数  取值如下： - 2：两倍超分 
-     * @return srFactor
-     */
-    public String getSrFactor() {
-        return srFactor;
-    }
-
-    public void setSrFactor(String srFactor) {
-        this.srFactor = srFactor;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -509,13 +453,11 @@ public class VideoCommon  {
             Objects.equals(this.bframesCount, videoCommon.bframesCount) &&
             Objects.equals(this.frameRate, videoCommon.frameRate) &&
             Objects.equals(this.aspectRatio, videoCommon.aspectRatio) &&
-            Objects.equals(this.blackCut, videoCommon.blackCut) &&
-            Objects.equals(this.goPStructure, videoCommon.goPStructure) &&
-            Objects.equals(this.srFactor, videoCommon.srFactor);
+            Objects.equals(this.blackCut, videoCommon.blackCut);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(outputPolicy, codec, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, aspectRatio, blackCut, goPStructure, srFactor);
+        return Objects.hash(outputPolicy, codec, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, aspectRatio, blackCut);
     }
     @Override
     public String toString() {
@@ -532,8 +474,6 @@ public class VideoCommon  {
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
         sb.append("    aspectRatio: ").append(toIndentedString(aspectRatio)).append("\n");
         sb.append("    blackCut: ").append(toIndentedString(blackCut)).append("\n");
-        sb.append("    goPStructure: ").append(toIndentedString(goPStructure)).append("\n");
-        sb.append("    srFactor: ").append(toIndentedString(srFactor)).append("\n");
         sb.append("}");
         return sb.toString();
     }

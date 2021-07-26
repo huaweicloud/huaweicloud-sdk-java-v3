@@ -94,7 +94,7 @@ public class SetSubCustomerDiscountV2  {
 
 
     /**
-     * 生效时间。discount=1时无需填写。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * 生效时间。仅discount=1时无需填写。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return effectiveTime
      */
     public String getEffectiveTime() {
@@ -116,7 +116,7 @@ public class SetSubCustomerDiscountV2  {
 
 
     /**
-     * 失效时间。discount=1时无需填写。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
+     * 失效时间。仅discount=1时无需填写。 UTC时间，格式：yyyy-MM-dd'T'HH:mm:ss'Z'，如“2019-05-06T08:05:01Z”。
      * @return expireTime
      */
     public String getExpireTime() {

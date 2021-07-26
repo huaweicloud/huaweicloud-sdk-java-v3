@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.dcs.v2.model.ClusterRedisNodeMonitoredObject;
 import com.huaweicloud.sdk.dcs.v2.model.DimChild;
 import com.huaweicloud.sdk.dcs.v2.model.InstancesMonitoredObject;
+import com.huaweicloud.sdk.dcs.v2.model.Proxy2NodeMonitoredObject;
 import com.huaweicloud.sdk.dcs.v2.model.ProxyNodeMonitoredObject;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,12 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
     @JsonProperty(value="dcs_cluster_proxy_node")
     
     private List<ProxyNodeMonitoredObject> dcsClusterProxyNode = null;
+    
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="dcs_cluster_proxy2_node")
+    
+    private List<Proxy2NodeMonitoredObject> dcsClusterProxy2Node = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -241,6 +248,42 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
 
     
 
+    public ListMonitoredObjectsOfInstanceResponse withDcsClusterProxy2Node(List<Proxy2NodeMonitoredObject> dcsClusterProxy2Node) {
+        this.dcsClusterProxy2Node = dcsClusterProxy2Node;
+        return this;
+    }
+
+    
+    public ListMonitoredObjectsOfInstanceResponse addDcsClusterProxy2NodeItem(Proxy2NodeMonitoredObject dcsClusterProxy2NodeItem) {
+        if(this.dcsClusterProxy2Node == null) {
+            this.dcsClusterProxy2Node = new ArrayList<>();
+        }
+        this.dcsClusterProxy2Node.add(dcsClusterProxy2NodeItem);
+        return this;
+    }
+
+    public ListMonitoredObjectsOfInstanceResponse withDcsClusterProxy2Node(Consumer<List<Proxy2NodeMonitoredObject>> dcsClusterProxy2NodeSetter) {
+        if(this.dcsClusterProxy2Node == null) {
+            this.dcsClusterProxy2Node = new ArrayList<>();
+        }
+        dcsClusterProxy2NodeSetter.accept(this.dcsClusterProxy2Node);
+        return this;
+    }
+
+    /**
+     * Redis 4.0和5.0的Proxy集群时才存在，表示集群Proxy节点维度的监控对象列表。字段名称与children的子维度对象名称相同。 
+     * @return dcsClusterProxy2Node
+     */
+    public List<Proxy2NodeMonitoredObject> getDcsClusterProxy2Node() {
+        return dcsClusterProxy2Node;
+    }
+
+    public void setDcsClusterProxy2Node(List<Proxy2NodeMonitoredObject> dcsClusterProxy2Node) {
+        this.dcsClusterProxy2Node = dcsClusterProxy2Node;
+    }
+
+    
+
     public ListMonitoredObjectsOfInstanceResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -277,11 +320,12 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
             Objects.equals(this.instances, listMonitoredObjectsOfInstanceResponse.instances) &&
             Objects.equals(this.dcsClusterRedisNode, listMonitoredObjectsOfInstanceResponse.dcsClusterRedisNode) &&
             Objects.equals(this.dcsClusterProxyNode, listMonitoredObjectsOfInstanceResponse.dcsClusterProxyNode) &&
+            Objects.equals(this.dcsClusterProxy2Node, listMonitoredObjectsOfInstanceResponse.dcsClusterProxy2Node) &&
             Objects.equals(this.total, listMonitoredObjectsOfInstanceResponse.total);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(router, children, instances, dcsClusterRedisNode, dcsClusterProxyNode, total);
+        return Objects.hash(router, children, instances, dcsClusterRedisNode, dcsClusterProxyNode, dcsClusterProxy2Node, total);
     }
     @Override
     public String toString() {
@@ -292,6 +336,7 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("    dcsClusterRedisNode: ").append(toIndentedString(dcsClusterRedisNode)).append("\n");
         sb.append("    dcsClusterProxyNode: ").append(toIndentedString(dcsClusterProxyNode)).append("\n");
+        sb.append("    dcsClusterProxy2Node: ").append(toIndentedString(dcsClusterProxy2Node)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();

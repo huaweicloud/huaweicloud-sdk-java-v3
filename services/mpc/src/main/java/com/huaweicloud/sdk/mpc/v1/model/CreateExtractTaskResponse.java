@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.mpc.v1.model.CommonCreateTaskRsp;
 import com.huaweicloud.sdk.mpc.v1.model.MetaData;
 import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
 import java.util.function.Consumer;

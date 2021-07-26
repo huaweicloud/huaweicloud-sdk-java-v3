@@ -25,6 +25,18 @@ public class ShowRecordingFileDownloadUrlsRequest  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="offset")
+    
+    private Integer offset;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="limit")
+    
+    private Integer limit;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="X-Authorization-Type")
     
     private String xAuthorizationType;
@@ -53,6 +65,50 @@ public class ShowRecordingFileDownloadUrlsRequest  {
 
     public void setConfUUID(String confUUID) {
         this.confUUID = confUUID;
+    }
+
+    
+
+    public ShowRecordingFileDownloadUrlsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据偏移记录。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    
+
+    public ShowRecordingFileDownloadUrlsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 指定返回的记录数，最大500条。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     
@@ -115,18 +171,22 @@ public class ShowRecordingFileDownloadUrlsRequest  {
         }
         ShowRecordingFileDownloadUrlsRequest showRecordingFileDownloadUrlsRequest = (ShowRecordingFileDownloadUrlsRequest) o;
         return Objects.equals(this.confUUID, showRecordingFileDownloadUrlsRequest.confUUID) &&
+            Objects.equals(this.offset, showRecordingFileDownloadUrlsRequest.offset) &&
+            Objects.equals(this.limit, showRecordingFileDownloadUrlsRequest.limit) &&
             Objects.equals(this.xAuthorizationType, showRecordingFileDownloadUrlsRequest.xAuthorizationType) &&
             Objects.equals(this.xSiteId, showRecordingFileDownloadUrlsRequest.xSiteId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(confUUID, xAuthorizationType, xSiteId);
+        return Objects.hash(confUUID, offset, limit, xAuthorizationType, xSiteId);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRecordingFileDownloadUrlsRequest {\n");
         sb.append("    confUUID: ").append(toIndentedString(confUUID)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    xAuthorizationType: ").append(toIndentedString(xAuthorizationType)).append("\n");
         sb.append("    xSiteId: ").append(toIndentedString(xSiteId)).append("\n");
         sb.append("}");

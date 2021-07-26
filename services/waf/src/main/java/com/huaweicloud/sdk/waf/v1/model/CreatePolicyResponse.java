@@ -14,9 +14,7 @@ import com.huaweicloud.sdk.waf.v1.model.BindHost;
 import com.huaweicloud.sdk.waf.v1.model.PolicyAction;
 import com.huaweicloud.sdk.waf.v1.model.PolicyOption;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 import java.util.Objects;
 
@@ -40,6 +38,12 @@ public class CreatePolicyResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="level")
+    
+    private Integer level;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="action")
     
     private PolicyAction action;
@@ -52,16 +56,16 @@ public class CreatePolicyResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
-    private Integer level;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="full_detection")
     
     private Boolean fullDetection;
 
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="hosts")
+    
+    private List<Object> hosts = null;
+    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="bind_host")
@@ -78,8 +82,8 @@ public class CreatePolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="extend")
     
-    private Map<String, String> extend = null;
-    
+    private Object extend;
+
     public CreatePolicyResponse withId(String id) {
         this.id = id;
         return this;
@@ -120,6 +124,28 @@ public class CreatePolicyResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public CreatePolicyResponse withLevel(Integer level) {
+        this.level = level;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 防护等级
+     * @return level
+     */
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     
@@ -182,28 +208,6 @@ public class CreatePolicyResponse extends SdkResponse {
 
     
 
-    public CreatePolicyResponse withLevel(Integer level) {
-        this.level = level;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 防护等级
-     * @return level
-     */
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-    
-
     public CreatePolicyResponse withFullDetection(Boolean fullDetection) {
         this.fullDetection = fullDetection;
         return this;
@@ -222,6 +226,42 @@ public class CreatePolicyResponse extends SdkResponse {
 
     public void setFullDetection(Boolean fullDetection) {
         this.fullDetection = fullDetection;
+    }
+
+    
+
+    public CreatePolicyResponse withHosts(List<Object> hosts) {
+        this.hosts = hosts;
+        return this;
+    }
+
+    
+    public CreatePolicyResponse addHostsItem(Object hostsItem) {
+        if(this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public CreatePolicyResponse withHosts(Consumer<List<Object>> hostsSetter) {
+        if(this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
+    /**
+     * 防护的网站id
+     * @return hosts
+     */
+    public List<Object> getHosts() {
+        return hosts;
+    }
+
+    public void setHosts(List<Object> hosts) {
+        this.hosts = hosts;
     }
 
     
@@ -249,7 +289,7 @@ public class CreatePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 防护域名的信息
+     * 防护的网站信息
      * @return bindHost
      */
     public List<BindHost> getBindHost() {
@@ -284,37 +324,23 @@ public class CreatePolicyResponse extends SdkResponse {
 
     
 
-    public CreatePolicyResponse withExtend(Map<String, String> extend) {
+    public CreatePolicyResponse withExtend(Object extend) {
         this.extend = extend;
         return this;
     }
 
     
 
-    public CreatePolicyResponse putExtendItem(String key, String extendItem) {
-        if(this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        this.extend.put(key, extendItem);
-        return this;
-    }
 
-    public CreatePolicyResponse withExtend(Consumer<Map<String, String>> extendSetter) {
-        if(this.extend == null) {
-            this.extend = new HashMap<>();
-        }
-        extendSetter.accept(this.extend);
-        return this;
-    }
     /**
      * 扩展字段
      * @return extend
      */
-    public Map<String, String> getExtend() {
+    public Object getExtend() {
         return extend;
     }
 
-    public void setExtend(Map<String, String> extend) {
+    public void setExtend(Object extend) {
         this.extend = extend;
     }
 
@@ -331,17 +357,18 @@ public class CreatePolicyResponse extends SdkResponse {
         CreatePolicyResponse createPolicyResponse = (CreatePolicyResponse) o;
         return Objects.equals(this.id, createPolicyResponse.id) &&
             Objects.equals(this.name, createPolicyResponse.name) &&
+            Objects.equals(this.level, createPolicyResponse.level) &&
             Objects.equals(this.action, createPolicyResponse.action) &&
             Objects.equals(this.options, createPolicyResponse.options) &&
-            Objects.equals(this.level, createPolicyResponse.level) &&
             Objects.equals(this.fullDetection, createPolicyResponse.fullDetection) &&
+            Objects.equals(this.hosts, createPolicyResponse.hosts) &&
             Objects.equals(this.bindHost, createPolicyResponse.bindHost) &&
             Objects.equals(this.timestamp, createPolicyResponse.timestamp) &&
             Objects.equals(this.extend, createPolicyResponse.extend);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, action, options, level, fullDetection, bindHost, timestamp, extend);
+        return Objects.hash(id, name, level, action, options, fullDetection, hosts, bindHost, timestamp, extend);
     }
     @Override
     public String toString() {
@@ -349,10 +376,11 @@ public class CreatePolicyResponse extends SdkResponse {
         sb.append("class CreatePolicyResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
-        sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    fullDetection: ").append(toIndentedString(fullDetection)).append("\n");
+        sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    bindHost: ").append(toIndentedString(bindHost)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");

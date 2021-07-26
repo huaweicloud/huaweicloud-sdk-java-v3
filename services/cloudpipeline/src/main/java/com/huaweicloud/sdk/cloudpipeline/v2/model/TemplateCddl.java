@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.cloudpipeline.v2.model.TemplateState;
 import com.huaweicloud.sdk.cloudpipeline.v2.model.Workflow;
 import java.util.HashMap;
 import java.util.List;
@@ -31,7 +32,7 @@ public class TemplateCddl  {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="states")
     
-    private Map<String, Object> states = null;
+    private Map<String, TemplateState> states = null;
     
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -75,14 +76,14 @@ public class TemplateCddl  {
 
     
 
-    public TemplateCddl withStates(Map<String, Object> states) {
+    public TemplateCddl withStates(Map<String, TemplateState> states) {
         this.states = states;
         return this;
     }
 
     
 
-    public TemplateCddl putStatesItem(String key, Object statesItem) {
+    public TemplateCddl putStatesItem(String key, TemplateState statesItem) {
         if(this.states == null) {
             this.states = new HashMap<>();
         }
@@ -90,7 +91,7 @@ public class TemplateCddl  {
         return this;
     }
 
-    public TemplateCddl withStates(Consumer<Map<String, Object>> statesSetter) {
+    public TemplateCddl withStates(Consumer<Map<String, TemplateState>> statesSetter) {
         if(this.states == null) {
             this.states = new HashMap<>();
         }
@@ -101,11 +102,11 @@ public class TemplateCddl  {
      * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
      * @return states
      */
-    public Map<String, Object> getStates() {
+    public Map<String, TemplateState> getStates() {
         return states;
     }
 
-    public void setStates(Map<String, Object> states) {
+    public void setStates(Map<String, TemplateState> states) {
         this.states = states;
     }
 

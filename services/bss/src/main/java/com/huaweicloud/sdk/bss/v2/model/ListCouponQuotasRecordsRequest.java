@@ -74,7 +74,7 @@ public class ListCouponQuotasRecordsRequest  {
 
 
     /**
-     * 精英服务商ID。为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。默认查询所有精英服务商的代金券额度发放回收记录。
+     * 精英服务商ID。获取方法请参见查询精英服务商列表。为空表示查询所有的代金券额度发放回收记录。不为空表示仅查询与该精英服务商相关的代金券额度发放回收记录。默认查询所有精英服务商的代金券额度发放回收记录。
      * @return indirectPartnerId
      */
     public String getIndirectPartnerId() {

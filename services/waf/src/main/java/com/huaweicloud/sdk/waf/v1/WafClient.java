@@ -18,113 +18,47 @@ public class WafClient {
 
 
     /**
-     * 查询租户云模式订购信息
-     * 查询租户云模式订购信息，包括包周期、按需计费
+     * 绑定证书到域名
+     * 绑定证书到域名
      *
-     * @param ConfirmCloudWafSubscriptionInfoRequest 请求对象
-     * @return ConfirmCloudWafSubscriptionInfoResponse
+     * @param ApplyCertificateToHostRequest 请求对象
+     * @return ApplyCertificateToHostResponse
      */
-    public ConfirmCloudWafSubscriptionInfoResponse confirmCloudWafSubscriptionInfo(ConfirmCloudWafSubscriptionInfoRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.confirmCloudWafSubscriptionInfo);
+    public ApplyCertificateToHostResponse applyCertificateToHost(ApplyCertificateToHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.applyCertificateToHost);
     }
 
     /**
-     * 查询租户云模式订购信息
-     * 查询租户云模式订购信息，包括包周期、按需计费
+     * 绑定证书到域名
+     * 绑定证书到域名
      *
-     * @param ConfirmCloudWafSubscriptionInfoRequest 请求对象
-     * @return SyncInvoker<ConfirmCloudWafSubscriptionInfoRequest, ConfirmCloudWafSubscriptionInfoResponse>
+     * @param ApplyCertificateToHostRequest 请求对象
+     * @return SyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>
      */
-    public SyncInvoker<ConfirmCloudWafSubscriptionInfoRequest, ConfirmCloudWafSubscriptionInfoResponse> confirmCloudWafSubscriptionInfoInvoker(ConfirmCloudWafSubscriptionInfoRequest request) {
-        return new SyncInvoker<ConfirmCloudWafSubscriptionInfoRequest, ConfirmCloudWafSubscriptionInfoResponse>(request, WafMeta.confirmCloudWafSubscriptionInfo, hcClient);
+    public SyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse> applyCertificateToHostInvoker(ApplyCertificateToHostRequest request) {
+        return new SyncInvoker<ApplyCertificateToHostRequest, ApplyCertificateToHostResponse>(request, WafMeta.applyCertificateToHost, hcClient);
     }
 
     /**
-     * 获取用户套餐信息
-     * 获取用户购买的WAF规格信息
+     * 创建防篡改规则
+     * 创建防篡改规则
      *
-     * @param ConfirmUserBundleRequest 请求对象
-     * @return ConfirmUserBundleResponse
+     * @param CreateAntiTamperRuleRequest 请求对象
+     * @return CreateAntiTamperRuleResponse
      */
-    public ConfirmUserBundleResponse confirmUserBundle(ConfirmUserBundleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.confirmUserBundle);
+    public CreateAntiTamperRuleResponse createAntiTamperRule(CreateAntiTamperRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createAntiTamperRule);
     }
 
     /**
-     * 获取用户套餐信息
-     * 获取用户购买的WAF规格信息
+     * 创建防篡改规则
+     * 创建防篡改规则
      *
-     * @param ConfirmUserBundleRequest 请求对象
-     * @return SyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse>
+     * @param CreateAntiTamperRuleRequest 请求对象
+     * @return SyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>
      */
-    public SyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse> confirmUserBundleInvoker(ConfirmUserBundleRequest request) {
-        return new SyncInvoker<ConfirmUserBundleRequest, ConfirmUserBundleResponse>(request, WafMeta.confirmUserBundle, hcClient);
-    }
-
-    /**
-     * 创建反爬虫规则
-     * 创建反爬虫规则
-     *
-     * @param CreateAnticrawlerRulesRequest 请求对象
-     * @return CreateAnticrawlerRulesResponse
-     */
-    public CreateAnticrawlerRulesResponse createAnticrawlerRules(CreateAnticrawlerRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createAnticrawlerRules);
-    }
-
-    /**
-     * 创建反爬虫规则
-     * 创建反爬虫规则
-     *
-     * @param CreateAnticrawlerRulesRequest 请求对象
-     * @return SyncInvoker<CreateAnticrawlerRulesRequest, CreateAnticrawlerRulesResponse>
-     */
-    public SyncInvoker<CreateAnticrawlerRulesRequest, CreateAnticrawlerRulesResponse> createAnticrawlerRulesInvoker(CreateAnticrawlerRulesRequest request) {
-        return new SyncInvoker<CreateAnticrawlerRulesRequest, CreateAnticrawlerRulesResponse>(request, WafMeta.createAnticrawlerRules, hcClient);
-    }
-
-    /**
-     * 创建防敏感信息泄露规则
-     * 创建防敏感信息泄露规则
-     *
-     * @param CreateAntileakageRulesRequest 请求对象
-     * @return CreateAntileakageRulesResponse
-     */
-    public CreateAntileakageRulesResponse createAntileakageRules(CreateAntileakageRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createAntileakageRules);
-    }
-
-    /**
-     * 创建防敏感信息泄露规则
-     * 创建防敏感信息泄露规则
-     *
-     * @param CreateAntileakageRulesRequest 请求对象
-     * @return SyncInvoker<CreateAntileakageRulesRequest, CreateAntileakageRulesResponse>
-     */
-    public SyncInvoker<CreateAntileakageRulesRequest, CreateAntileakageRulesResponse> createAntileakageRulesInvoker(CreateAntileakageRulesRequest request) {
-        return new SyncInvoker<CreateAntileakageRulesRequest, CreateAntileakageRulesResponse>(request, WafMeta.createAntileakageRules, hcClient);
-    }
-
-    /**
-     * 创建cc规则
-     * 创建cc规则
-     *
-     * @param CreateCcRuleRequest 请求对象
-     * @return CreateCcRuleResponse
-     */
-    public CreateCcRuleResponse createCcRule(CreateCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createCcRule);
-    }
-
-    /**
-     * 创建cc规则
-     * 创建cc规则
-     *
-     * @param CreateCcRuleRequest 请求对象
-     * @return SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>
-     */
-    public SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse> createCcRuleInvoker(CreateCcRuleRequest request) {
-        return new SyncInvoker<CreateCcRuleRequest, CreateCcRuleResponse>(request, WafMeta.createCcRule, hcClient);
+    public SyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse> createAntiTamperRuleInvoker(CreateAntiTamperRuleRequest request) {
+        return new SyncInvoker<CreateAntiTamperRuleRequest, CreateAntiTamperRuleResponse>(request, WafMeta.createAntiTamperRule, hcClient);
     }
 
     /**
@@ -150,69 +84,47 @@ public class WafClient {
     }
 
     /**
-     * 创建精准防护规则
-     * 创建精准防护规则
+     * 创建地理位置规则
+     * 创建地理位置规则
      *
-     * @param CreateCustomRulesRequest 请求对象
-     * @return CreateCustomRulesResponse
+     * @param CreateGeoipRuleRequest 请求对象
+     * @return CreateGeoipRuleResponse
      */
-    public CreateCustomRulesResponse createCustomRules(CreateCustomRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createCustomRules);
-    }
-
-    /**
-     * 创建精准防护规则
-     * 创建精准防护规则
-     *
-     * @param CreateCustomRulesRequest 请求对象
-     * @return SyncInvoker<CreateCustomRulesRequest, CreateCustomRulesResponse>
-     */
-    public SyncInvoker<CreateCustomRulesRequest, CreateCustomRulesResponse> createCustomRulesInvoker(CreateCustomRulesRequest request) {
-        return new SyncInvoker<CreateCustomRulesRequest, CreateCustomRulesResponse>(request, WafMeta.createCustomRules, hcClient);
+    public CreateGeoipRuleResponse createGeoipRule(CreateGeoipRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createGeoipRule);
     }
 
     /**
      * 创建地理位置规则
      * 创建地理位置规则
      *
-     * @param CreateGeoipRulesRequest 请求对象
-     * @return CreateGeoipRulesResponse
+     * @param CreateGeoipRuleRequest 请求对象
+     * @return SyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>
      */
-    public CreateGeoipRulesResponse createGeoipRules(CreateGeoipRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createGeoipRules);
-    }
-
-    /**
-     * 创建地理位置规则
-     * 创建地理位置规则
-     *
-     * @param CreateGeoipRulesRequest 请求对象
-     * @return SyncInvoker<CreateGeoipRulesRequest, CreateGeoipRulesResponse>
-     */
-    public SyncInvoker<CreateGeoipRulesRequest, CreateGeoipRulesResponse> createGeoipRulesInvoker(CreateGeoipRulesRequest request) {
-        return new SyncInvoker<CreateGeoipRulesRequest, CreateGeoipRulesResponse>(request, WafMeta.createGeoipRules, hcClient);
+    public SyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse> createGeoipRuleInvoker(CreateGeoipRuleRequest request) {
+        return new SyncInvoker<CreateGeoipRuleRequest, CreateGeoipRuleResponse>(request, WafMeta.createGeoipRule, hcClient);
     }
 
     /**
      * 创建云模式防护域名
      * 创建云模式防护域名
      *
-     * @param CreateInstaneRequest 请求对象
-     * @return CreateInstaneResponse
+     * @param CreateHostRequest 请求对象
+     * @return CreateHostResponse
      */
-    public CreateInstaneResponse createInstane(CreateInstaneRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createInstane);
+    public CreateHostResponse createHost(CreateHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createHost);
     }
 
     /**
      * 创建云模式防护域名
      * 创建云模式防护域名
      *
-     * @param CreateInstaneRequest 请求对象
-     * @return SyncInvoker<CreateInstaneRequest, CreateInstaneResponse>
+     * @param CreateHostRequest 请求对象
+     * @return SyncInvoker<CreateHostRequest, CreateHostResponse>
      */
-    public SyncInvoker<CreateInstaneRequest, CreateInstaneResponse> createInstaneInvoker(CreateInstaneRequest request) {
-        return new SyncInvoker<CreateInstaneRequest, CreateInstaneResponse>(request, WafMeta.createInstane, hcClient);
+    public SyncInvoker<CreateHostRequest, CreateHostResponse> createHostInvoker(CreateHostRequest request) {
+        return new SyncInvoker<CreateHostRequest, CreateHostResponse>(request, WafMeta.createHost, hcClient);
     }
 
     /**
@@ -260,69 +172,91 @@ public class WafClient {
     }
 
     /**
-     * 删除反爬虫防护规则
-     * 删除反爬虫防护规则
+     * 创建隐私屏蔽防护规则
+     * 创建隐私屏蔽防护规则
      *
-     * @param DeleteAnticrawlerRuleRequest 请求对象
-     * @return DeleteAnticrawlerRuleResponse
+     * @param CreatePrivacyRuleRequest 请求对象
+     * @return CreatePrivacyRuleResponse
      */
-    public DeleteAnticrawlerRuleResponse deleteAnticrawlerRule(DeleteAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteAnticrawlerRule);
+    public CreatePrivacyRuleResponse createPrivacyRule(CreatePrivacyRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createPrivacyRule);
     }
 
     /**
-     * 删除反爬虫防护规则
-     * 删除反爬虫防护规则
+     * 创建隐私屏蔽防护规则
+     * 创建隐私屏蔽防护规则
      *
-     * @param DeleteAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>
+     * @param CreatePrivacyRuleRequest 请求对象
+     * @return SyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>
      */
-    public SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse> deleteAnticrawlerRuleInvoker(DeleteAnticrawlerRuleRequest request) {
-        return new SyncInvoker<DeleteAnticrawlerRuleRequest, DeleteAnticrawlerRuleResponse>(request, WafMeta.deleteAnticrawlerRule, hcClient);
+    public SyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse> createPrivacyRuleInvoker(CreatePrivacyRuleRequest request) {
+        return new SyncInvoker<CreatePrivacyRuleRequest, CreatePrivacyRuleResponse>(request, WafMeta.createPrivacyRule, hcClient);
     }
 
     /**
-     * 删除防敏感信息泄露防护规则
-     * 删除防敏感信息泄露防护规则
+     * 创建引用表
+     * 创建引用表
      *
-     * @param DeleteAntileakageRuleRequest 请求对象
-     * @return DeleteAntileakageRuleResponse
+     * @param CreateValueListRequest 请求对象
+     * @return CreateValueListResponse
      */
-    public DeleteAntileakageRuleResponse deleteAntileakageRule(DeleteAntileakageRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteAntileakageRule);
+    public CreateValueListResponse createValueList(CreateValueListRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createValueList);
     }
 
     /**
-     * 删除防敏感信息泄露防护规则
-     * 删除防敏感信息泄露防护规则
+     * 创建引用表
+     * 创建引用表
      *
-     * @param DeleteAntileakageRuleRequest 请求对象
-     * @return SyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>
+     * @param CreateValueListRequest 请求对象
+     * @return SyncInvoker<CreateValueListRequest, CreateValueListResponse>
      */
-    public SyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse> deleteAntileakageRuleInvoker(DeleteAntileakageRuleRequest request) {
-        return new SyncInvoker<DeleteAntileakageRuleRequest, DeleteAntileakageRuleResponse>(request, WafMeta.deleteAntileakageRule, hcClient);
+    public SyncInvoker<CreateValueListRequest, CreateValueListResponse> createValueListInvoker(CreateValueListRequest request) {
+        return new SyncInvoker<CreateValueListRequest, CreateValueListResponse>(request, WafMeta.createValueList, hcClient);
     }
 
     /**
-     * 删除cc防护规则
-     * 删除cc防护规则
+     * 创建黑白名单规则
+     * 创建黑白名单规则
      *
-     * @param DeleteCcRuleRequest 请求对象
-     * @return DeleteCcRuleResponse
+     * @param CreateWhiteblackipRuleRequest 请求对象
+     * @return CreateWhiteblackipRuleResponse
      */
-    public DeleteCcRuleResponse deleteCcRule(DeleteCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteCcRule);
+    public CreateWhiteblackipRuleResponse createWhiteblackipRule(CreateWhiteblackipRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.createWhiteblackipRule);
     }
 
     /**
-     * 删除cc防护规则
-     * 删除cc防护规则
+     * 创建黑白名单规则
+     * 创建黑白名单规则
      *
-     * @param DeleteCcRuleRequest 请求对象
-     * @return SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>
+     * @param CreateWhiteblackipRuleRequest 请求对象
+     * @return SyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>
      */
-    public SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse> deleteCcRuleInvoker(DeleteCcRuleRequest request) {
-        return new SyncInvoker<DeleteCcRuleRequest, DeleteCcRuleResponse>(request, WafMeta.deleteCcRule, hcClient);
+    public SyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse> createWhiteblackipRuleInvoker(CreateWhiteblackipRuleRequest request) {
+        return new SyncInvoker<CreateWhiteblackipRuleRequest, CreateWhiteblackipRuleResponse>(request, WafMeta.createWhiteblackipRule, hcClient);
+    }
+
+    /**
+     * 删除防篡改防护规则
+     * 删除防篡改防护规则
+     *
+     * @param DeleteAntitamperRuleRequest 请求对象
+     * @return DeleteAntitamperRuleResponse
+     */
+    public DeleteAntitamperRuleResponse deleteAntitamperRule(DeleteAntitamperRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteAntitamperRule);
+    }
+
+    /**
+     * 删除防篡改防护规则
+     * 删除防篡改防护规则
+     *
+     * @param DeleteAntitamperRuleRequest 请求对象
+     * @return SyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>
+     */
+    public SyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse> deleteAntitamperRuleInvoker(DeleteAntitamperRuleRequest request) {
+        return new SyncInvoker<DeleteAntitamperRuleRequest, DeleteAntitamperRuleResponse>(request, WafMeta.deleteAntitamperRule, hcClient);
     }
 
     /**
@@ -345,28 +279,6 @@ public class WafClient {
      */
     public SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificateInvoker(DeleteCertificateRequest request) {
         return new SyncInvoker<DeleteCertificateRequest, DeleteCertificateResponse>(request, WafMeta.deleteCertificate, hcClient);
-    }
-
-    /**
-     * 删除精准防护规则
-     * 删除精准防护规则
-     *
-     * @param DeleteCustomRuleRequest 请求对象
-     * @return DeleteCustomRuleResponse
-     */
-    public DeleteCustomRuleResponse deleteCustomRule(DeleteCustomRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteCustomRule);
-    }
-
-    /**
-     * 删除精准防护规则
-     * 删除精准防护规则
-     *
-     * @param DeleteCustomRuleRequest 请求对象
-     * @return SyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>
-     */
-    public SyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse> deleteCustomRuleInvoker(DeleteCustomRuleRequest request) {
-        return new SyncInvoker<DeleteCustomRuleRequest, DeleteCustomRuleResponse>(request, WafMeta.deleteCustomRule, hcClient);
     }
 
     /**
@@ -395,22 +307,22 @@ public class WafClient {
      * 删除云模式防护域名
      * 删除云模式防护域名
      *
-     * @param DeleteInstaneRequest 请求对象
-     * @return DeleteInstaneResponse
+     * @param DeleteHostRequest 请求对象
+     * @return DeleteHostResponse
      */
-    public DeleteInstaneResponse deleteInstane(DeleteInstaneRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deleteInstane);
+    public DeleteHostResponse deleteHost(DeleteHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteHost);
     }
 
     /**
      * 删除云模式防护域名
      * 删除云模式防护域名
      *
-     * @param DeleteInstaneRequest 请求对象
-     * @return SyncInvoker<DeleteInstaneRequest, DeleteInstaneResponse>
+     * @param DeleteHostRequest 请求对象
+     * @return SyncInvoker<DeleteHostRequest, DeleteHostResponse>
      */
-    public SyncInvoker<DeleteInstaneRequest, DeleteInstaneResponse> deleteInstaneInvoker(DeleteInstaneRequest request) {
-        return new SyncInvoker<DeleteInstaneRequest, DeleteInstaneResponse>(request, WafMeta.deleteInstane, hcClient);
+    public SyncInvoker<DeleteHostRequest, DeleteHostResponse> deleteHostInvoker(DeleteHostRequest request) {
+        return new SyncInvoker<DeleteHostRequest, DeleteHostResponse>(request, WafMeta.deleteHost, hcClient);
     }
 
     /**
@@ -458,135 +370,91 @@ public class WafClient {
     }
 
     /**
-     * 查询反爬虫规则列表
-     * 查询反爬虫规则列表
+     * 删除隐私屏蔽防护规则
+     * 删除隐私屏蔽防护规则
      *
-     * @param ListAnticrawlerRulesRequest 请求对象
-     * @return ListAnticrawlerRulesResponse
+     * @param DeletePrivacyRuleRequest 请求对象
+     * @return DeletePrivacyRuleResponse
      */
-    public ListAnticrawlerRulesResponse listAnticrawlerRules(ListAnticrawlerRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listAnticrawlerRules);
+    public DeletePrivacyRuleResponse deletePrivacyRule(DeletePrivacyRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deletePrivacyRule);
     }
 
     /**
-     * 查询反爬虫规则列表
-     * 查询反爬虫规则列表
+     * 删除隐私屏蔽防护规则
+     * 删除隐私屏蔽防护规则
      *
-     * @param ListAnticrawlerRulesRequest 请求对象
-     * @return SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>
+     * @param DeletePrivacyRuleRequest 请求对象
+     * @return SyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>
      */
-    public SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse> listAnticrawlerRulesInvoker(ListAnticrawlerRulesRequest request) {
-        return new SyncInvoker<ListAnticrawlerRulesRequest, ListAnticrawlerRulesResponse>(request, WafMeta.listAnticrawlerRules, hcClient);
+    public SyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse> deletePrivacyRuleInvoker(DeletePrivacyRuleRequest request) {
+        return new SyncInvoker<DeletePrivacyRuleRequest, DeletePrivacyRuleResponse>(request, WafMeta.deletePrivacyRule, hcClient);
     }
 
     /**
-     * 查询防敏感信息泄露规则列表
-     * 查询防敏感信息泄露规则列表
+     * 删除引用表
+     * 删除引用表
      *
-     * @param ListAntileakageRulesRequest 请求对象
-     * @return ListAntileakageRulesResponse
+     * @param DeleteValueListRequest 请求对象
+     * @return DeleteValueListResponse
      */
-    public ListAntileakageRulesResponse listAntileakageRules(ListAntileakageRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listAntileakageRules);
+    public DeleteValueListResponse deleteValueList(DeleteValueListRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteValueList);
     }
 
     /**
-     * 查询防敏感信息泄露规则列表
-     * 查询防敏感信息泄露规则列表
+     * 删除引用表
+     * 删除引用表
      *
-     * @param ListAntileakageRulesRequest 请求对象
-     * @return SyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>
+     * @param DeleteValueListRequest 请求对象
+     * @return SyncInvoker<DeleteValueListRequest, DeleteValueListResponse>
      */
-    public SyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse> listAntileakageRulesInvoker(ListAntileakageRulesRequest request) {
-        return new SyncInvoker<ListAntileakageRulesRequest, ListAntileakageRulesResponse>(request, WafMeta.listAntileakageRules, hcClient);
+    public SyncInvoker<DeleteValueListRequest, DeleteValueListResponse> deleteValueListInvoker(DeleteValueListRequest request) {
+        return new SyncInvoker<DeleteValueListRequest, DeleteValueListResponse>(request, WafMeta.deleteValueList, hcClient);
     }
 
     /**
-     * 查询攻击防护类型
-     * 查询攻击防护类型
+     * 删除黑白名单防护规则
+     * 删除黑白名单防护规则
      *
-     * @param ListAttackActionRequest 请求对象
-     * @return ListAttackActionResponse
+     * @param DeleteWhiteBlackIpRuleRequest 请求对象
+     * @return DeleteWhiteBlackIpRuleResponse
      */
-    public ListAttackActionResponse listAttackAction(ListAttackActionRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listAttackAction);
+    public DeleteWhiteBlackIpRuleResponse deleteWhiteBlackIpRule(DeleteWhiteBlackIpRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.deleteWhiteBlackIpRule);
     }
 
     /**
-     * 查询攻击防护类型
-     * 查询攻击防护类型
+     * 删除黑白名单防护规则
+     * 删除黑白名单防护规则
      *
-     * @param ListAttackActionRequest 请求对象
-     * @return SyncInvoker<ListAttackActionRequest, ListAttackActionResponse>
+     * @param DeleteWhiteBlackIpRuleRequest 请求对象
+     * @return SyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>
      */
-    public SyncInvoker<ListAttackActionRequest, ListAttackActionResponse> listAttackActionInvoker(ListAttackActionRequest request) {
-        return new SyncInvoker<ListAttackActionRequest, ListAttackActionResponse>(request, WafMeta.listAttackAction, hcClient);
+    public SyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse> deleteWhiteBlackIpRuleInvoker(DeleteWhiteBlackIpRuleRequest request) {
+        return new SyncInvoker<DeleteWhiteBlackIpRuleRequest, DeleteWhiteBlackIpRuleResponse>(request, WafMeta.deleteWhiteBlackIpRule, hcClient);
     }
 
     /**
-     * 查询攻击事件分布
-     * 查询攻击事件分布
+     * 查询防篡改规则列表
+     * 查询防篡改规则列表
      *
-     * @param ListAttackDistributionRequest 请求对象
-     * @return ListAttackDistributionResponse
+     * @param ListAntitamperRuleRequest 请求对象
+     * @return ListAntitamperRuleResponse
      */
-    public ListAttackDistributionResponse listAttackDistribution(ListAttackDistributionRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listAttackDistribution);
+    public ListAntitamperRuleResponse listAntitamperRule(ListAntitamperRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listAntitamperRule);
     }
 
     /**
-     * 查询攻击事件分布
-     * 查询攻击事件分布
+     * 查询防篡改规则列表
+     * 查询防篡改规则列表
      *
-     * @param ListAttackDistributionRequest 请求对象
-     * @return SyncInvoker<ListAttackDistributionRequest, ListAttackDistributionResponse>
+     * @param ListAntitamperRuleRequest 请求对象
+     * @return SyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>
      */
-    public SyncInvoker<ListAttackDistributionRequest, ListAttackDistributionResponse> listAttackDistributionInvoker(ListAttackDistributionRequest request) {
-        return new SyncInvoker<ListAttackDistributionRequest, ListAttackDistributionResponse>(request, WafMeta.listAttackDistribution, hcClient);
-    }
-
-    /**
-     * 查询安全统计带宽数据
-     * 查询安全统计带宽数据
-     *
-     * @param ListBandwidthTimelineRequest 请求对象
-     * @return ListBandwidthTimelineResponse
-     */
-    public ListBandwidthTimelineResponse listBandwidthTimeline(ListBandwidthTimelineRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listBandwidthTimeline);
-    }
-
-    /**
-     * 查询安全统计带宽数据
-     * 查询安全统计带宽数据
-     *
-     * @param ListBandwidthTimelineRequest 请求对象
-     * @return SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>
-     */
-    public SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse> listBandwidthTimelineInvoker(ListBandwidthTimelineRequest request) {
-        return new SyncInvoker<ListBandwidthTimelineRequest, ListBandwidthTimelineResponse>(request, WafMeta.listBandwidthTimeline, hcClient);
-    }
-
-    /**
-     * 查询cc规则列表
-     * 查询cc规则列表
-     *
-     * @param ListCcRulesRequest 请求对象
-     * @return ListCcRulesResponse
-     */
-    public ListCcRulesResponse listCcRules(ListCcRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listCcRules);
-    }
-
-    /**
-     * 查询cc规则列表
-     * 查询cc规则列表
-     *
-     * @param ListCcRulesRequest 请求对象
-     * @return SyncInvoker<ListCcRulesRequest, ListCcRulesResponse>
-     */
-    public SyncInvoker<ListCcRulesRequest, ListCcRulesResponse> listCcRulesInvoker(ListCcRulesRequest request) {
-        return new SyncInvoker<ListCcRulesRequest, ListCcRulesResponse>(request, WafMeta.listCcRules, hcClient);
+    public SyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse> listAntitamperRuleInvoker(ListAntitamperRuleRequest request) {
+        return new SyncInvoker<ListAntitamperRuleRequest, ListAntitamperRuleResponse>(request, WafMeta.listAntitamperRule, hcClient);
     }
 
     /**
@@ -612,135 +480,113 @@ public class WafClient {
     }
 
     /**
-     * 查询精准防护规则列表
-     * 查询精准防护规则列表
+     * 查询全部防护域名列表
+     * 查询全部防护域名列表
      *
-     * @param ListCustomRulesRequest 请求对象
-     * @return ListCustomRulesResponse
+     * @param ListCompositeHostsRequest 请求对象
+     * @return ListCompositeHostsResponse
      */
-    public ListCustomRulesResponse listCustomRules(ListCustomRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listCustomRules);
+    public ListCompositeHostsResponse listCompositeHosts(ListCompositeHostsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listCompositeHosts);
     }
 
     /**
-     * 查询精准防护规则列表
-     * 查询精准防护规则列表
+     * 查询全部防护域名列表
+     * 查询全部防护域名列表
      *
-     * @param ListCustomRulesRequest 请求对象
-     * @return SyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>
+     * @param ListCompositeHostsRequest 请求对象
+     * @return SyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>
      */
-    public SyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse> listCustomRulesInvoker(ListCustomRulesRequest request) {
-        return new SyncInvoker<ListCustomRulesRequest, ListCustomRulesResponse>(request, WafMeta.listCustomRules, hcClient);
+    public SyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse> listCompositeHostsInvoker(ListCompositeHostsRequest request) {
+        return new SyncInvoker<ListCompositeHostsRequest, ListCompositeHostsResponse>(request, WafMeta.listCompositeHosts, hcClient);
     }
 
     /**
-     * 查询请求/攻击数量统计
-     * 查询请求/攻击数量统计。
+     * 查询攻击事件列表
+     * 查询攻击事件列表
      *
-     * @param ListEventByTimelineRequest 请求对象
-     * @return ListEventByTimelineResponse
+     * @param ListEventRequest 请求对象
+     * @return ListEventResponse
      */
-    public ListEventByTimelineResponse listEventByTimeline(ListEventByTimelineRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listEventByTimeline);
+    public ListEventResponse listEvent(ListEventRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listEvent);
     }
 
     /**
-     * 查询请求/攻击数量统计
-     * 查询请求/攻击数量统计。
+     * 查询攻击事件列表
+     * 查询攻击事件列表
      *
-     * @param ListEventByTimelineRequest 请求对象
-     * @return SyncInvoker<ListEventByTimelineRequest, ListEventByTimelineResponse>
+     * @param ListEventRequest 请求对象
+     * @return SyncInvoker<ListEventRequest, ListEventResponse>
      */
-    public SyncInvoker<ListEventByTimelineRequest, ListEventByTimelineResponse> listEventByTimelineInvoker(ListEventByTimelineRequest request) {
-        return new SyncInvoker<ListEventByTimelineRequest, ListEventByTimelineResponse>(request, WafMeta.listEventByTimeline, hcClient);
-    }
-
-    /**
-     * 查询攻击事件详情列表
-     * 查询攻击事件详情列表
-     *
-     * @param ListEventsRequest 请求对象
-     * @return ListEventsResponse
-     */
-    public ListEventsResponse listEvents(ListEventsRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listEvents);
-    }
-
-    /**
-     * 查询攻击事件详情列表
-     * 查询攻击事件详情列表
-     *
-     * @param ListEventsRequest 请求对象
-     * @return SyncInvoker<ListEventsRequest, ListEventsResponse>
-     */
-    public SyncInvoker<ListEventsRequest, ListEventsResponse> listEventsInvoker(ListEventsRequest request) {
-        return new SyncInvoker<ListEventsRequest, ListEventsResponse>(request, WafMeta.listEvents, hcClient);
+    public SyncInvoker<ListEventRequest, ListEventResponse> listEventInvoker(ListEventRequest request) {
+        return new SyncInvoker<ListEventRequest, ListEventResponse>(request, WafMeta.listEvent, hcClient);
     }
 
     /**
      * 查询地理位置规则列表
      * 查询地理位置规则列表
      *
-     * @param ListGeoipRulesRequest 请求对象
-     * @return ListGeoipRulesResponse
+     * @param ListGeoipRuleRequest 请求对象
+     * @return ListGeoipRuleResponse
      */
-    public ListGeoipRulesResponse listGeoipRules(ListGeoipRulesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listGeoipRules);
+    public ListGeoipRuleResponse listGeoipRule(ListGeoipRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listGeoipRule);
     }
 
     /**
      * 查询地理位置规则列表
      * 查询地理位置规则列表
      *
-     * @param ListGeoipRulesRequest 请求对象
-     * @return SyncInvoker<ListGeoipRulesRequest, ListGeoipRulesResponse>
+     * @param ListGeoipRuleRequest 请求对象
+     * @return SyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>
      */
-    public SyncInvoker<ListGeoipRulesRequest, ListGeoipRulesResponse> listGeoipRulesInvoker(ListGeoipRulesRequest request) {
-        return new SyncInvoker<ListGeoipRulesRequest, ListGeoipRulesResponse>(request, WafMeta.listGeoipRules, hcClient);
-    }
-
-    /**
-     * 查询WAF独享引擎列表
-     * 查询WAF独享引擎列表
-     *
-     * @param ListInstanceRequest 请求对象
-     * @return ListInstanceResponse
-     */
-    public ListInstanceResponse listInstance(ListInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listInstance);
-    }
-
-    /**
-     * 查询WAF独享引擎列表
-     * 查询WAF独享引擎列表
-     *
-     * @param ListInstanceRequest 请求对象
-     * @return SyncInvoker<ListInstanceRequest, ListInstanceResponse>
-     */
-    public SyncInvoker<ListInstanceRequest, ListInstanceResponse> listInstanceInvoker(ListInstanceRequest request) {
-        return new SyncInvoker<ListInstanceRequest, ListInstanceResponse>(request, WafMeta.listInstance, hcClient);
+    public SyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse> listGeoipRuleInvoker(ListGeoipRuleRequest request) {
+        return new SyncInvoker<ListGeoipRuleRequest, ListGeoipRuleResponse>(request, WafMeta.listGeoipRule, hcClient);
     }
 
     /**
      * 查询云模式防护域名列表
      * 查询云模式防护域名列表
      *
-     * @param ListInstanesRequest 请求对象
-     * @return ListInstanesResponse
+     * @param ListHostRequest 请求对象
+     * @return ListHostResponse
      */
-    public ListInstanesResponse listInstanes(ListInstanesRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listInstanes);
+    public ListHostResponse listHost(ListHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listHost);
     }
 
     /**
      * 查询云模式防护域名列表
      * 查询云模式防护域名列表
      *
-     * @param ListInstanesRequest 请求对象
-     * @return SyncInvoker<ListInstanesRequest, ListInstanesResponse>
+     * @param ListHostRequest 请求对象
+     * @return SyncInvoker<ListHostRequest, ListHostResponse>
      */
-    public SyncInvoker<ListInstanesRequest, ListInstanesResponse> listInstanesInvoker(ListInstanesRequest request) {
-        return new SyncInvoker<ListInstanesRequest, ListInstanesResponse>(request, WafMeta.listInstanes, hcClient);
+    public SyncInvoker<ListHostRequest, ListHostResponse> listHostInvoker(ListHostRequest request) {
+        return new SyncInvoker<ListHostRequest, ListHostResponse>(request, WafMeta.listHost, hcClient);
+    }
+
+    /**
+     * 获取云模式域名路由信息
+     * 返回路由信息
+     *
+     * @param ListHostRouteRequest 请求对象
+     * @return ListHostRouteResponse
+     */
+    public ListHostRouteResponse listHostRoute(ListHostRouteRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listHostRoute);
+    }
+
+    /**
+     * 获取云模式域名路由信息
+     * 返回路由信息
+     *
+     * @param ListHostRouteRequest 请求对象
+     * @return SyncInvoker<ListHostRouteRequest, ListHostRouteResponse>
+     */
+    public SyncInvoker<ListHostRouteRequest, ListHostRouteResponse> listHostRouteInvoker(ListHostRouteRequest request) {
+        return new SyncInvoker<ListHostRouteRequest, ListHostRouteResponse>(request, WafMeta.listHostRoute, hcClient);
     }
 
     /**
@@ -788,355 +634,25 @@ public class WafClient {
     }
 
     /**
-     * 查询QPS
-     * 查询QPS。
+     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则
      *
-     * @param ListQpsRequest 请求对象
-     * @return ListQpsResponse
+     * @param ListPrivacyRuleRequest 请求对象
+     * @return ListPrivacyRuleResponse
      */
-    public ListQpsResponse listQps(ListQpsRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listQps);
+    public ListPrivacyRuleResponse listPrivacyRule(ListPrivacyRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listPrivacyRule);
     }
 
     /**
-     * 查询QPS
-     * 查询QPS。
+     * 查询隐私屏蔽防护规则
+     * 查询隐私屏蔽防护规则
      *
-     * @param ListQpsRequest 请求对象
-     * @return SyncInvoker<ListQpsRequest, ListQpsResponse>
+     * @param ListPrivacyRuleRequest 请求对象
+     * @return SyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>
      */
-    public SyncInvoker<ListQpsRequest, ListQpsResponse> listQpsInvoker(ListQpsRequest request) {
-        return new SyncInvoker<ListQpsRequest, ListQpsResponse>(request, WafMeta.listQps, hcClient);
-    }
-
-    /**
-     * 查询安全统计qps次数
-     * 查询安全统计qps次数
-     *
-     * @param ListQpsTimelineRequest 请求对象
-     * @return ListQpsTimelineResponse
-     */
-    public ListQpsTimelineResponse listQpsTimeline(ListQpsTimelineRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listQpsTimeline);
-    }
-
-    /**
-     * 查询安全统计qps次数
-     * 查询安全统计qps次数
-     *
-     * @param ListQpsTimelineRequest 请求对象
-     * @return SyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>
-     */
-    public SyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse> listQpsTimelineInvoker(ListQpsTimelineRequest request) {
-        return new SyncInvoker<ListQpsTimelineRequest, ListQpsTimelineResponse>(request, WafMeta.listQpsTimeline, hcClient);
-    }
-
-    /**
-     * 查询安全统计请求次数
-     * 查询安全统计请求次数
-     *
-     * @param ListRequestTimelineRequest 请求对象
-     * @return ListRequestTimelineResponse
-     */
-    public ListRequestTimelineResponse listRequestTimeline(ListRequestTimelineRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listRequestTimeline);
-    }
-
-    /**
-     * 查询安全统计请求次数
-     * 查询安全统计请求次数
-     *
-     * @param ListRequestTimelineRequest 请求对象
-     * @return SyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>
-     */
-    public SyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse> listRequestTimelineInvoker(ListRequestTimelineRequest request) {
-        return new SyncInvoker<ListRequestTimelineRequest, ListRequestTimelineResponse>(request, WafMeta.listRequestTimeline, hcClient);
-    }
-
-    /**
-     * 查询安全统计响应码数据
-     * 查询安全统计响应码数据
-     *
-     * @param ListResponseCodeTimelineRequest 请求对象
-     * @return ListResponseCodeTimelineResponse
-     */
-    public ListResponseCodeTimelineResponse listResponseCodeTimeline(ListResponseCodeTimelineRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listResponseCodeTimeline);
-    }
-
-    /**
-     * 查询安全统计响应码数据
-     * 查询安全统计响应码数据
-     *
-     * @param ListResponseCodeTimelineRequest 请求对象
-     * @return SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>
-     */
-    public SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse> listResponseCodeTimelineInvoker(ListResponseCodeTimelineRequest request) {
-        return new SyncInvoker<ListResponseCodeTimelineRequest, ListResponseCodeTimelineResponse>(request, WafMeta.listResponseCodeTimeline, hcClient);
-    }
-
-    /**
-     * 查询被攻击次数前五的域名
-     * 查询被攻击次数前五的域名
-     *
-     * @param ListSourceDomainTop5Request 请求对象
-     * @return ListSourceDomainTop5Response
-     */
-    public ListSourceDomainTop5Response listSourceDomainTop5(ListSourceDomainTop5Request request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listSourceDomainTop5);
-    }
-
-    /**
-     * 查询被攻击次数前五的域名
-     * 查询被攻击次数前五的域名
-     *
-     * @param ListSourceDomainTop5Request 请求对象
-     * @return SyncInvoker<ListSourceDomainTop5Request, ListSourceDomainTop5Response>
-     */
-    public SyncInvoker<ListSourceDomainTop5Request, ListSourceDomainTop5Response> listSourceDomainTop5Invoker(ListSourceDomainTop5Request request) {
-        return new SyncInvoker<ListSourceDomainTop5Request, ListSourceDomainTop5Response>(request, WafMeta.listSourceDomainTop5, hcClient);
-    }
-
-    /**
-     * 查询攻击源IP的个数
-     * 查询攻击源IP的个数。
-     *
-     * @param ListSourceIpNumRequest 请求对象
-     * @return ListSourceIpNumResponse
-     */
-    public ListSourceIpNumResponse listSourceIpNum(ListSourceIpNumRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listSourceIpNum);
-    }
-
-    /**
-     * 查询攻击源IP的个数
-     * 查询攻击源IP的个数。
-     *
-     * @param ListSourceIpNumRequest 请求对象
-     * @return SyncInvoker<ListSourceIpNumRequest, ListSourceIpNumResponse>
-     */
-    public SyncInvoker<ListSourceIpNumRequest, ListSourceIpNumResponse> listSourceIpNumInvoker(ListSourceIpNumRequest request) {
-        return new SyncInvoker<ListSourceIpNumRequest, ListSourceIpNumResponse>(request, WafMeta.listSourceIpNum, hcClient);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListSourceIpTop5Request 请求对象
-     * @return ListSourceIpTop5Response
-     */
-    public ListSourceIpTop5Response listSourceIpTop5(ListSourceIpTop5Request request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listSourceIpTop5);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListSourceIpTop5Request 请求对象
-     * @return SyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response>
-     */
-    public SyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response> listSourceIpTop5Invoker(ListSourceIpTop5Request request) {
-        return new SyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response>(request, WafMeta.listSourceIpTop5, hcClient);
-    }
-
-    /**
-     * 查询被攻击次数前五的url
-     * 查询被攻击次数前五的url
-     *
-     * @param ListSourceUrlTop5Request 请求对象
-     * @return ListSourceUrlTop5Response
-     */
-    public ListSourceUrlTop5Response listSourceUrlTop5(ListSourceUrlTop5Request request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listSourceUrlTop5);
-    }
-
-    /**
-     * 查询被攻击次数前五的url
-     * 查询被攻击次数前五的url
-     *
-     * @param ListSourceUrlTop5Request 请求对象
-     * @return SyncInvoker<ListSourceUrlTop5Request, ListSourceUrlTop5Response>
-     */
-    public SyncInvoker<ListSourceUrlTop5Request, ListSourceUrlTop5Response> listSourceUrlTop5Invoker(ListSourceUrlTop5Request request) {
-        return new SyncInvoker<ListSourceUrlTop5Request, ListSourceUrlTop5Response>(request, WafMeta.listSourceUrlTop5, hcClient);
-    }
-
-    /**
-     * 查询安全总览请求数据
-     * 查询安全总览请求数据
-     *
-     * @param ListStatisticsRequest 请求对象
-     * @return ListStatisticsResponse
-     */
-    public ListStatisticsResponse listStatistics(ListStatisticsRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listStatistics);
-    }
-
-    /**
-     * 查询安全总览请求数据
-     * 查询安全总览请求数据
-     *
-     * @param ListStatisticsRequest 请求对象
-     * @return SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>
-     */
-    public SyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsInvoker(ListStatisticsRequest request) {
-        return new SyncInvoker<ListStatisticsRequest, ListStatisticsResponse>(request, WafMeta.listStatistics, hcClient);
-    }
-
-    /**
-     * 查询攻击事件分布类型
-     * 查询攻击事件分布类型。
-     *
-     * @param ListThreatsRequest 请求对象
-     * @return ListThreatsResponse
-     */
-    public ListThreatsResponse listThreats(ListThreatsRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listThreats);
-    }
-
-    /**
-     * 查询攻击事件分布类型
-     * 查询攻击事件分布类型。
-     *
-     * @param ListThreatsRequest 请求对象
-     * @return SyncInvoker<ListThreatsRequest, ListThreatsResponse>
-     */
-    public SyncInvoker<ListThreatsRequest, ListThreatsResponse> listThreatsInvoker(ListThreatsRequest request) {
-        return new SyncInvoker<ListThreatsRequest, ListThreatsResponse>(request, WafMeta.listThreats, hcClient);
-    }
-
-    /**
-     * 查询业务异常监控
-     * 查询业务异常监控
-     *
-     * @param ListTopAbnormalRequest 请求对象
-     * @return ListTopAbnormalResponse
-     */
-    public ListTopAbnormalResponse listTopAbnormal(ListTopAbnormalRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listTopAbnormal);
-    }
-
-    /**
-     * 查询业务异常监控
-     * 查询业务异常监控
-     *
-     * @param ListTopAbnormalRequest 请求对象
-     * @return SyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>
-     */
-    public SyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse> listTopAbnormalInvoker(ListTopAbnormalRequest request) {
-        return new SyncInvoker<ListTopAbnormalRequest, ListTopAbnormalResponse>(request, WafMeta.listTopAbnormal, hcClient);
-    }
-
-    /**
-     * 查询攻击域名
-     * 查询攻击域名
-     *
-     * @param ListTopDomainRequest 请求对象
-     * @return ListTopDomainResponse
-     */
-    public ListTopDomainResponse listTopDomain(ListTopDomainRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listTopDomain);
-    }
-
-    /**
-     * 查询攻击域名
-     * 查询攻击域名
-     *
-     * @param ListTopDomainRequest 请求对象
-     * @return SyncInvoker<ListTopDomainRequest, ListTopDomainResponse>
-     */
-    public SyncInvoker<ListTopDomainRequest, ListTopDomainResponse> listTopDomainInvoker(ListTopDomainRequest request) {
-        return new SyncInvoker<ListTopDomainRequest, ListTopDomainResponse>(request, WafMeta.listTopDomain, hcClient);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListTopIpRequest 请求对象
-     * @return ListTopIpResponse
-     */
-    public ListTopIpResponse listTopIp(ListTopIpRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listTopIp);
-    }
-
-    /**
-     * 查询攻击源ip
-     * 查询攻击源ip
-     *
-     * @param ListTopIpRequest 请求对象
-     * @return SyncInvoker<ListTopIpRequest, ListTopIpResponse>
-     */
-    public SyncInvoker<ListTopIpRequest, ListTopIpResponse> listTopIpInvoker(ListTopIpRequest request) {
-        return new SyncInvoker<ListTopIpRequest, ListTopIpResponse>(request, WafMeta.listTopIp, hcClient);
-    }
-
-    /**
-     * 查询攻击来源区域
-     * 查询攻击来源区域
-     *
-     * @param ListTopRegionRequest 请求对象
-     * @return ListTopRegionResponse
-     */
-    public ListTopRegionResponse listTopRegion(ListTopRegionRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listTopRegion);
-    }
-
-    /**
-     * 查询攻击来源区域
-     * 查询攻击来源区域
-     *
-     * @param ListTopRegionRequest 请求对象
-     * @return SyncInvoker<ListTopRegionRequest, ListTopRegionResponse>
-     */
-    public SyncInvoker<ListTopRegionRequest, ListTopRegionResponse> listTopRegionInvoker(ListTopRegionRequest request) {
-        return new SyncInvoker<ListTopRegionRequest, ListTopRegionResponse>(request, WafMeta.listTopRegion, hcClient);
-    }
-
-    /**
-     * 查询被攻击url
-     * 查询被攻击url
-     *
-     * @param ListTopUrlRequest 请求对象
-     * @return ListTopUrlResponse
-     */
-    public ListTopUrlResponse listTopUrl(ListTopUrlRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listTopUrl);
-    }
-
-    /**
-     * 查询被攻击url
-     * 查询被攻击url
-     *
-     * @param ListTopUrlRequest 请求对象
-     * @return SyncInvoker<ListTopUrlRequest, ListTopUrlResponse>
-     */
-    public SyncInvoker<ListTopUrlRequest, ListTopUrlResponse> listTopUrlInvoker(ListTopUrlRequest request) {
-        return new SyncInvoker<ListTopUrlRequest, ListTopUrlResponse>(request, WafMeta.listTopUrl, hcClient);
-    }
-
-    /**
-     * 查询事件日志中的url
-     * 查询QPS。
-     *
-     * @param ListUrlRequest 请求对象
-     * @return ListUrlResponse
-     */
-    public ListUrlResponse listUrl(ListUrlRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listUrl);
-    }
-
-    /**
-     * 查询事件日志中的url
-     * 查询QPS。
-     *
-     * @param ListUrlRequest 请求对象
-     * @return SyncInvoker<ListUrlRequest, ListUrlResponse>
-     */
-    public SyncInvoker<ListUrlRequest, ListUrlResponse> listUrlInvoker(ListUrlRequest request) {
-        return new SyncInvoker<ListUrlRequest, ListUrlResponse>(request, WafMeta.listUrl, hcClient);
+    public SyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse> listPrivacyRuleInvoker(ListPrivacyRuleRequest request) {
+        return new SyncInvoker<ListPrivacyRuleRequest, ListPrivacyRuleResponse>(request, WafMeta.listPrivacyRule, hcClient);
     }
 
     /**
@@ -1162,69 +678,25 @@ public class WafClient {
     }
 
     /**
-     * 查询反爬虫防护规则
-     * 根据Id查询反爬虫防护规则
+     * 查询黑白名单规则列表
+     * 查询黑白名单规则列表
      *
-     * @param ShowAnticrawlerRuleRequest 请求对象
-     * @return ShowAnticrawlerRuleResponse
+     * @param ListWhiteblackipRuleRequest 请求对象
+     * @return ListWhiteblackipRuleResponse
      */
-    public ShowAnticrawlerRuleResponse showAnticrawlerRule(ShowAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showAnticrawlerRule);
+    public ListWhiteblackipRuleResponse listWhiteblackipRule(ListWhiteblackipRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listWhiteblackipRule);
     }
 
     /**
-     * 查询反爬虫防护规则
-     * 根据Id查询反爬虫防护规则
+     * 查询黑白名单规则列表
+     * 查询黑白名单规则列表
      *
-     * @param ShowAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>
+     * @param ListWhiteblackipRuleRequest 请求对象
+     * @return SyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>
      */
-    public SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse> showAnticrawlerRuleInvoker(ShowAnticrawlerRuleRequest request) {
-        return new SyncInvoker<ShowAnticrawlerRuleRequest, ShowAnticrawlerRuleResponse>(request, WafMeta.showAnticrawlerRule, hcClient);
-    }
-
-    /**
-     * 查询防敏感信息泄露防护规则
-     * 根据Id查询防敏感信息泄露防护规则
-     *
-     * @param ShowAntileakageRuleRequest 请求对象
-     * @return ShowAntileakageRuleResponse
-     */
-    public ShowAntileakageRuleResponse showAntileakageRule(ShowAntileakageRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showAntileakageRule);
-    }
-
-    /**
-     * 查询防敏感信息泄露防护规则
-     * 根据Id查询防敏感信息泄露防护规则
-     *
-     * @param ShowAntileakageRuleRequest 请求对象
-     * @return SyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>
-     */
-    public SyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse> showAntileakageRuleInvoker(ShowAntileakageRuleRequest request) {
-        return new SyncInvoker<ShowAntileakageRuleRequest, ShowAntileakageRuleResponse>(request, WafMeta.showAntileakageRule, hcClient);
-    }
-
-    /**
-     * 根据Id查询cc防护规则
-     * 根据Id查询cc防护规则
-     *
-     * @param ShowCcRuleRequest 请求对象
-     * @return ShowCcRuleResponse
-     */
-    public ShowCcRuleResponse showCcRule(ShowCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showCcRule);
-    }
-
-    /**
-     * 根据Id查询cc防护规则
-     * 根据Id查询cc防护规则
-     *
-     * @param ShowCcRuleRequest 请求对象
-     * @return SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>
-     */
-    public SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse> showCcRuleInvoker(ShowCcRuleRequest request) {
-        return new SyncInvoker<ShowCcRuleRequest, ShowCcRuleResponse>(request, WafMeta.showCcRule, hcClient);
+    public SyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse> listWhiteblackipRuleInvoker(ListWhiteblackipRuleRequest request) {
+        return new SyncInvoker<ListWhiteblackipRuleRequest, ListWhiteblackipRuleResponse>(request, WafMeta.listWhiteblackipRule, hcClient);
     }
 
     /**
@@ -1250,91 +722,91 @@ public class WafClient {
     }
 
     /**
-     * 根据Id查询精准防护规则
-     * 根据Id查询精准防护规则
+     * 根据Id查询防护域名
+     * 根据Id查询防护域名
      *
-     * @param ShowCustomRuleRequest 请求对象
-     * @return ShowCustomRuleResponse
+     * @param ShowCompositeHostRequest 请求对象
+     * @return ShowCompositeHostResponse
      */
-    public ShowCustomRuleResponse showCustomRule(ShowCustomRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showCustomRule);
+    public ShowCompositeHostResponse showCompositeHost(ShowCompositeHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showCompositeHost);
     }
 
     /**
-     * 根据Id查询精准防护规则
-     * 根据Id查询精准防护规则
+     * 根据Id查询防护域名
+     * 根据Id查询防护域名
      *
-     * @param ShowCustomRuleRequest 请求对象
-     * @return SyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>
+     * @param ShowCompositeHostRequest 请求对象
+     * @return SyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>
      */
-    public SyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse> showCustomRuleInvoker(ShowCustomRuleRequest request) {
-        return new SyncInvoker<ShowCustomRuleRequest, ShowCustomRuleResponse>(request, WafMeta.showCustomRule, hcClient);
+    public SyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse> showCompositeHostInvoker(ShowCompositeHostRequest request) {
+        return new SyncInvoker<ShowCompositeHostRequest, ShowCompositeHostResponse>(request, WafMeta.showCompositeHost, hcClient);
     }
 
     /**
-     * 根据Id查询地理位置防护规则
-     * 根据Id查询地理位置防护规则
+     * 查询攻击事件详情
+     * 查询攻击事件详情
      *
-     * @param ShowGeoipRuleRequest 请求对象
-     * @return ShowGeoipRuleResponse
+     * @param ShowEventRequest 请求对象
+     * @return ShowEventResponse
      */
-    public ShowGeoipRuleResponse showGeoipRule(ShowGeoipRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showGeoipRule);
+    public ShowEventResponse showEvent(ShowEventRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showEvent);
     }
 
     /**
-     * 根据Id查询地理位置防护规则
-     * 根据Id查询地理位置防护规则
+     * 查询攻击事件详情
+     * 查询攻击事件详情
      *
-     * @param ShowGeoipRuleRequest 请求对象
-     * @return SyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>
+     * @param ShowEventRequest 请求对象
+     * @return SyncInvoker<ShowEventRequest, ShowEventResponse>
      */
-    public SyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse> showGeoipRuleInvoker(ShowGeoipRuleRequest request) {
-        return new SyncInvoker<ShowGeoipRuleRequest, ShowGeoipRuleResponse>(request, WafMeta.showGeoipRule, hcClient);
-    }
-
-    /**
-     * 根据Id查询云模式防护域名
-     * 根据Id查询云模式防护域名
-     *
-     * @param ShowInstanceRequest 请求对象
-     * @return ShowInstanceResponse
-     */
-    public ShowInstanceResponse showInstance(ShowInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showInstance);
+    public SyncInvoker<ShowEventRequest, ShowEventResponse> showEventInvoker(ShowEventRequest request) {
+        return new SyncInvoker<ShowEventRequest, ShowEventResponse>(request, WafMeta.showEvent, hcClient);
     }
 
     /**
      * 根据Id查询云模式防护域名
      * 根据Id查询云模式防护域名
      *
-     * @param ShowInstanceRequest 请求对象
-     * @return SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>
+     * @param ShowHostRequest 请求对象
+     * @return ShowHostResponse
      */
-    public SyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceInvoker(ShowInstanceRequest request) {
-        return new SyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, WafMeta.showInstance, hcClient);
+    public ShowHostResponse showHost(ShowHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showHost);
     }
 
     /**
-     * 获取云模式域名路由信息
-     * 返回路由信息
+     * 根据Id查询云模式防护域名
+     * 根据Id查询云模式防护域名
      *
-     * @param ShowInstanceRouteRequest 请求对象
-     * @return ShowInstanceRouteResponse
+     * @param ShowHostRequest 请求对象
+     * @return SyncInvoker<ShowHostRequest, ShowHostResponse>
      */
-    public ShowInstanceRouteResponse showInstanceRoute(ShowInstanceRouteRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showInstanceRoute);
+    public SyncInvoker<ShowHostRequest, ShowHostResponse> showHostInvoker(ShowHostRequest request) {
+        return new SyncInvoker<ShowHostRequest, ShowHostResponse>(request, WafMeta.showHost, hcClient);
     }
 
     /**
-     * 获取云模式域名路由信息
-     * 返回路由信息
+     * 根据Id查询防护策略
+     * 根据Id查询防护策略
      *
-     * @param ShowInstanceRouteRequest 请求对象
-     * @return SyncInvoker<ShowInstanceRouteRequest, ShowInstanceRouteResponse>
+     * @param ShowPolicyRequest 请求对象
+     * @return ShowPolicyResponse
      */
-    public SyncInvoker<ShowInstanceRouteRequest, ShowInstanceRouteResponse> showInstanceRouteInvoker(ShowInstanceRouteRequest request) {
-        return new SyncInvoker<ShowInstanceRouteRequest, ShowInstanceRouteResponse>(request, WafMeta.showInstanceRoute, hcClient);
+    public ShowPolicyResponse showPolicy(ShowPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.showPolicy);
+    }
+
+    /**
+     * 根据Id查询防护策略
+     * 根据Id查询防护策略
+     *
+     * @param ShowPolicyRequest 请求对象
+     * @return SyncInvoker<ShowPolicyRequest, ShowPolicyResponse>
+     */
+    public SyncInvoker<ShowPolicyRequest, ShowPolicyResponse> showPolicyInvoker(ShowPolicyRequest request) {
+        return new SyncInvoker<ShowPolicyRequest, ShowPolicyResponse>(request, WafMeta.showPolicy, hcClient);
     }
 
     /**
@@ -1360,72 +832,6 @@ public class WafClient {
     }
 
     /**
-     * 更新反爬虫防护规则
-     * 更新反爬虫防护规则
-     *
-     * @param UpdateAnticrawlerRuleRequest 请求对象
-     * @return UpdateAnticrawlerRuleResponse
-     */
-    public UpdateAnticrawlerRuleResponse updateAnticrawlerRule(UpdateAnticrawlerRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateAnticrawlerRule);
-    }
-
-    /**
-     * 更新反爬虫防护规则
-     * 更新反爬虫防护规则
-     *
-     * @param UpdateAnticrawlerRuleRequest 请求对象
-     * @return SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>
-     */
-    public SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse> updateAnticrawlerRuleInvoker(UpdateAnticrawlerRuleRequest request) {
-        return new SyncInvoker<UpdateAnticrawlerRuleRequest, UpdateAnticrawlerRuleResponse>(request, WafMeta.updateAnticrawlerRule, hcClient);
-    }
-
-    /**
-     * 更新防敏感信息泄露防护规则
-     * 更新防敏感信息泄露防护规则
-     *
-     * @param UpdateAntileakageRuleRequest 请求对象
-     * @return UpdateAntileakageRuleResponse
-     */
-    public UpdateAntileakageRuleResponse updateAntileakageRule(UpdateAntileakageRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateAntileakageRule);
-    }
-
-    /**
-     * 更新防敏感信息泄露防护规则
-     * 更新防敏感信息泄露防护规则
-     *
-     * @param UpdateAntileakageRuleRequest 请求对象
-     * @return SyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>
-     */
-    public SyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse> updateAntileakageRuleInvoker(UpdateAntileakageRuleRequest request) {
-        return new SyncInvoker<UpdateAntileakageRuleRequest, UpdateAntileakageRuleResponse>(request, WafMeta.updateAntileakageRule, hcClient);
-    }
-
-    /**
-     * 更新cc防护规则
-     * 更新cc防护规则
-     *
-     * @param UpdateCcRuleRequest 请求对象
-     * @return UpdateCcRuleResponse
-     */
-    public UpdateCcRuleResponse updateCcRule(UpdateCcRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateCcRule);
-    }
-
-    /**
-     * 更新cc防护规则
-     * 更新cc防护规则
-     *
-     * @param UpdateCcRuleRequest 请求对象
-     * @return SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>
-     */
-    public SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse> updateCcRuleInvoker(UpdateCcRuleRequest request) {
-        return new SyncInvoker<UpdateCcRuleRequest, UpdateCcRuleResponse>(request, WafMeta.updateCcRule, hcClient);
-    }
-
-    /**
      * 修改证书
      * 修改证书
      *
@@ -1445,28 +851,6 @@ public class WafClient {
      */
     public SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificateInvoker(UpdateCertificateRequest request) {
         return new SyncInvoker<UpdateCertificateRequest, UpdateCertificateResponse>(request, WafMeta.updateCertificate, hcClient);
-    }
-
-    /**
-     * 更新精准防护规则
-     * 更新精准防护规则
-     *
-     * @param UpdateCustomRuleRequest 请求对象
-     * @return UpdateCustomRuleResponse
-     */
-    public UpdateCustomRuleResponse updateCustomRule(UpdateCustomRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateCustomRule);
-    }
-
-    /**
-     * 更新精准防护规则
-     * 更新精准防护规则
-     *
-     * @param UpdateCustomRuleRequest 请求对象
-     * @return SyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>
-     */
-    public SyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse> updateCustomRuleInvoker(UpdateCustomRuleRequest request) {
-        return new SyncInvoker<UpdateCustomRuleRequest, UpdateCustomRuleResponse>(request, WafMeta.updateCustomRule, hcClient);
     }
 
     /**
@@ -1495,44 +879,110 @@ public class WafClient {
      * 更新云模式防护域名
      * 更新云模式防护域名
      *
-     * @param UpdateInstanceRequest 请求对象
-     * @return UpdateInstanceResponse
+     * @param UpdateHostRequest 请求对象
+     * @return UpdateHostResponse
      */
-    public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updateInstance);
+    public UpdateHostResponse updateHost(UpdateHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateHost);
     }
 
     /**
      * 更新云模式防护域名
      * 更新云模式防护域名
      *
-     * @param UpdateInstanceRequest 请求对象
-     * @return SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>
+     * @param UpdateHostRequest 请求对象
+     * @return SyncInvoker<UpdateHostRequest, UpdateHostResponse>
      */
-    public SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse> updateInstanceInvoker(UpdateInstanceRequest request) {
-        return new SyncInvoker<UpdateInstanceRequest, UpdateInstanceResponse>(request, WafMeta.updateInstance, hcClient);
+    public SyncInvoker<UpdateHostRequest, UpdateHostResponse> updateHostInvoker(UpdateHostRequest request) {
+        return new SyncInvoker<UpdateHostRequest, UpdateHostResponse>(request, WafMeta.updateHost, hcClient);
+    }
+
+    /**
+     * 修改域名防护状态
+     * 返回路由信息
+     *
+     * @param UpdateHostProtectStatusRequest 请求对象
+     * @return UpdateHostProtectStatusResponse
+     */
+    public UpdateHostProtectStatusResponse updateHostProtectStatus(UpdateHostProtectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateHostProtectStatus);
+    }
+
+    /**
+     * 修改域名防护状态
+     * 返回路由信息
+     *
+     * @param UpdateHostProtectStatusRequest 请求对象
+     * @return SyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>
+     */
+    public SyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse> updateHostProtectStatusInvoker(UpdateHostProtectStatusRequest request) {
+        return new SyncInvoker<UpdateHostProtectStatusRequest, UpdateHostProtectStatusResponse>(request, WafMeta.updateHostProtectStatus, hcClient);
     }
 
     /**
      * 更新防护策略
      * 更新防护策略，请求体可只传需要更新的部分
      *
-     * @param UpdatePatchPolicyRequest 请求对象
-     * @return UpdatePatchPolicyResponse
+     * @param UpdatePolicyRequest 请求对象
+     * @return UpdatePolicyResponse
      */
-    public UpdatePatchPolicyResponse updatePatchPolicy(UpdatePatchPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updatePatchPolicy);
+    public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updatePolicy);
     }
 
     /**
      * 更新防护策略
      * 更新防护策略，请求体可只传需要更新的部分
      *
-     * @param UpdatePatchPolicyRequest 请求对象
-     * @return SyncInvoker<UpdatePatchPolicyRequest, UpdatePatchPolicyResponse>
+     * @param UpdatePolicyRequest 请求对象
+     * @return SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>
      */
-    public SyncInvoker<UpdatePatchPolicyRequest, UpdatePatchPolicyResponse> updatePatchPolicyInvoker(UpdatePatchPolicyRequest request) {
-        return new SyncInvoker<UpdatePatchPolicyRequest, UpdatePatchPolicyResponse>(request, WafMeta.updatePatchPolicy, hcClient);
+    public SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse> updatePolicyInvoker(UpdatePolicyRequest request) {
+        return new SyncInvoker<UpdatePolicyRequest, UpdatePolicyResponse>(request, WafMeta.updatePolicy, hcClient);
+    }
+
+    /**
+     * 更新防护策略的域名
+     * 更新防护策略的防护域名
+     *
+     * @param UpdatePolicyProtectHostRequest 请求对象
+     * @return UpdatePolicyProtectHostResponse
+     */
+    public UpdatePolicyProtectHostResponse updatePolicyProtectHost(UpdatePolicyProtectHostRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updatePolicyProtectHost);
+    }
+
+    /**
+     * 更新防护策略的域名
+     * 更新防护策略的防护域名
+     *
+     * @param UpdatePolicyProtectHostRequest 请求对象
+     * @return SyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>
+     */
+    public SyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse> updatePolicyProtectHostInvoker(UpdatePolicyProtectHostRequest request) {
+        return new SyncInvoker<UpdatePolicyProtectHostRequest, UpdatePolicyProtectHostResponse>(request, WafMeta.updatePolicyProtectHost, hcClient);
+    }
+
+    /**
+     * 修改单条规则的状态
+     * 查询敏感信息选项的详细信息。
+     *
+     * @param UpdatePolicyRuleStatusRequest 请求对象
+     * @return UpdatePolicyRuleStatusResponse
+     */
+    public UpdatePolicyRuleStatusResponse updatePolicyRuleStatus(UpdatePolicyRuleStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updatePolicyRuleStatus);
+    }
+
+    /**
+     * 修改单条规则的状态
+     * 查询敏感信息选项的详细信息。
+     *
+     * @param UpdatePolicyRuleStatusRequest 请求对象
+     * @return SyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>
+     */
+    public SyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse> updatePolicyRuleStatusInvoker(UpdatePolicyRuleStatusRequest request) {
+        return new SyncInvoker<UpdatePolicyRuleStatusRequest, UpdatePolicyRuleStatusResponse>(request, WafMeta.updatePolicyRuleStatus, hcClient);
     }
 
     /**
@@ -1558,28 +1008,6 @@ public class WafClient {
     }
 
     /**
-     * 修改独享模式域名接入状态
-     * 修改独享模式域名接入状态
-     *
-     * @param UpdatePremiumHostAccessStatusRequest 请求对象
-     * @return UpdatePremiumHostAccessStatusResponse
-     */
-    public UpdatePremiumHostAccessStatusResponse updatePremiumHostAccessStatus(UpdatePremiumHostAccessStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updatePremiumHostAccessStatus);
-    }
-
-    /**
-     * 修改独享模式域名接入状态
-     * 修改独享模式域名接入状态
-     *
-     * @param UpdatePremiumHostAccessStatusRequest 请求对象
-     * @return SyncInvoker<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse>
-     */
-    public SyncInvoker<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse> updatePremiumHostAccessStatusInvoker(UpdatePremiumHostAccessStatusRequest request) {
-        return new SyncInvoker<UpdatePremiumHostAccessStatusRequest, UpdatePremiumHostAccessStatusResponse>(request, WafMeta.updatePremiumHostAccessStatus, hcClient);
-    }
-
-    /**
      * 修改独享模式域名防护状态
      * 修改独享模式域名防护状态
      *
@@ -1602,113 +1030,69 @@ public class WafClient {
     }
 
     /**
-     * 创建WAF独享引擎组
-     * 创建WAF独享引擎组
+     * 更新隐私屏蔽防护规则
+     * 更新隐私屏蔽防护规则
      *
-     * @param CreatePoolRequest 请求对象
-     * @return CreatePoolResponse
+     * @param UpdatePrivacyRuleRequest 请求对象
+     * @return UpdatePrivacyRuleResponse
      */
-    public CreatePoolResponse createPool(CreatePoolRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.createPool);
+    public UpdatePrivacyRuleResponse updatePrivacyRule(UpdatePrivacyRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updatePrivacyRule);
     }
 
     /**
-     * 创建WAF独享引擎组
-     * 创建WAF独享引擎组
+     * 更新隐私屏蔽防护规则
+     * 更新隐私屏蔽防护规则
      *
-     * @param CreatePoolRequest 请求对象
-     * @return SyncInvoker<CreatePoolRequest, CreatePoolResponse>
+     * @param UpdatePrivacyRuleRequest 请求对象
+     * @return SyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>
      */
-    public SyncInvoker<CreatePoolRequest, CreatePoolResponse> createPoolInvoker(CreatePoolRequest request) {
-        return new SyncInvoker<CreatePoolRequest, CreatePoolResponse>(request, WafMeta.createPool, hcClient);
+    public SyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse> updatePrivacyRuleInvoker(UpdatePrivacyRuleRequest request) {
+        return new SyncInvoker<UpdatePrivacyRuleRequest, UpdatePrivacyRuleResponse>(request, WafMeta.updatePrivacyRule, hcClient);
     }
 
     /**
-     * 删除WAF独享引擎组
-     * 删除WAF独享引擎组
+     * 修改引用表
+     * 修改引用表
      *
-     * @param DeletePoolRequest 请求对象
-     * @return DeletePoolResponse
+     * @param UpdateValueListRequest 请求对象
+     * @return UpdateValueListResponse
      */
-    public DeletePoolResponse deletePool(DeletePoolRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.deletePool);
+    public UpdateValueListResponse updateValueList(UpdateValueListRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateValueList);
     }
 
     /**
-     * 删除WAF独享引擎组
-     * 删除WAF独享引擎组
+     * 修改引用表
+     * 修改引用表
      *
-     * @param DeletePoolRequest 请求对象
-     * @return SyncInvoker<DeletePoolRequest, DeletePoolResponse>
+     * @param UpdateValueListRequest 请求对象
+     * @return SyncInvoker<UpdateValueListRequest, UpdateValueListResponse>
      */
-    public SyncInvoker<DeletePoolRequest, DeletePoolResponse> deletePoolInvoker(DeletePoolRequest request) {
-        return new SyncInvoker<DeletePoolRequest, DeletePoolResponse>(request, WafMeta.deletePool, hcClient);
+    public SyncInvoker<UpdateValueListRequest, UpdateValueListResponse> updateValueListInvoker(UpdateValueListRequest request) {
+        return new SyncInvoker<UpdateValueListRequest, UpdateValueListResponse>(request, WafMeta.updateValueList, hcClient);
     }
 
     /**
-     * 查询WAF独享引擎组列表
-     * 查询WAF独享引擎组列表
+     * 更新黑白名单防护规则
+     * 更新黑白名单防护规则
      *
-     * @param ListPoolsRequest 请求对象
-     * @return ListPoolsResponse
+     * @param UpdateWhiteblackipRuleRequest 请求对象
+     * @return UpdateWhiteblackipRuleResponse
      */
-    public ListPoolsResponse listPools(ListPoolsRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.listPools);
+    public UpdateWhiteblackipRuleResponse updateWhiteblackipRule(UpdateWhiteblackipRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateWhiteblackipRule);
     }
 
     /**
-     * 查询WAF独享引擎组列表
-     * 查询WAF独享引擎组列表
+     * 更新黑白名单防护规则
+     * 更新黑白名单防护规则
      *
-     * @param ListPoolsRequest 请求对象
-     * @return SyncInvoker<ListPoolsRequest, ListPoolsResponse>
+     * @param UpdateWhiteblackipRuleRequest 请求对象
+     * @return SyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>
      */
-    public SyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsInvoker(ListPoolsRequest request) {
-        return new SyncInvoker<ListPoolsRequest, ListPoolsResponse>(request, WafMeta.listPools, hcClient);
-    }
-
-    /**
-     * 查询WAF独享引擎组信息
-     * 查询WAF独享引擎组信息
-     *
-     * @param ShowPoolRequest 请求对象
-     * @return ShowPoolResponse
-     */
-    public ShowPoolResponse showPool(ShowPoolRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.showPool);
-    }
-
-    /**
-     * 查询WAF独享引擎组信息
-     * 查询WAF独享引擎组信息
-     *
-     * @param ShowPoolRequest 请求对象
-     * @return SyncInvoker<ShowPoolRequest, ShowPoolResponse>
-     */
-    public SyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolInvoker(ShowPoolRequest request) {
-        return new SyncInvoker<ShowPoolRequest, ShowPoolResponse>(request, WafMeta.showPool, hcClient);
-    }
-
-    /**
-     * 修改WAF独享引擎组信息
-     * 修改WAF独享引擎组信息
-     *
-     * @param UpdatePoolRequest 请求对象
-     * @return UpdatePoolResponse
-     */
-    public UpdatePoolResponse updatePool(UpdatePoolRequest request) {
-        return hcClient.syncInvokeHttp(request, WafMeta.updatePool);
-    }
-
-    /**
-     * 修改WAF独享引擎组信息
-     * 修改WAF独享引擎组信息
-     *
-     * @param UpdatePoolRequest 请求对象
-     * @return SyncInvoker<UpdatePoolRequest, UpdatePoolResponse>
-     */
-    public SyncInvoker<UpdatePoolRequest, UpdatePoolResponse> updatePoolInvoker(UpdatePoolRequest request) {
-        return new SyncInvoker<UpdatePoolRequest, UpdatePoolResponse>(request, WafMeta.updatePool, hcClient);
+    public SyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse> updateWhiteblackipRuleInvoker(UpdateWhiteblackipRuleRequest request) {
+        return new SyncInvoker<UpdateWhiteblackipRuleRequest, UpdateWhiteblackipRuleResponse>(request, WafMeta.updateWhiteblackipRule, hcClient);
     }
 
 }

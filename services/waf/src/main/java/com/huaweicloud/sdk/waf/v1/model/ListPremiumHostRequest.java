@@ -56,7 +56,7 @@ public class ListPremiumHostRequest  {
 
 
     /**
-     * 页数
+     * 页码
      * @return page
      */
     public String getPage() {
@@ -78,7 +78,7 @@ public class ListPremiumHostRequest  {
 
 
     /**
-     * 每页数量
+     * 每页条数
      * @return pagesize
      */
     public String getPagesize() {

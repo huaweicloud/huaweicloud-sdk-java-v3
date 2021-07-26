@@ -633,7 +633,7 @@ public class CdnMeta {
         builder.withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            String.class,
             f -> f.withMarshaller(ShowHistoryTaskDetailsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
             })
@@ -729,28 +729,12 @@ public class CdnMeta {
                 req.setOrderType(v);
             })
         );
-        builder.withRequestField("user_domain_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getUserDomainId, (req, v) -> {
-                req.setUserDomainId(v);
-            })
-        );
         builder.withRequestField("file_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             ShowHistoryTasksRequest.FileTypeEnum.class,
             f -> f.withMarshaller(ShowHistoryTasksRequest::getFileType, (req, v) -> {
                 req.setFileType(v);
-            })
-        );
-        builder.withRequestField("task_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowHistoryTasksRequest::getTaskId, (req, v) -> {
-                req.setTaskId(v);
             })
         );
 

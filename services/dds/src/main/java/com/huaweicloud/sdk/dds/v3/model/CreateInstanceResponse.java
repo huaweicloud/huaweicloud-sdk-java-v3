@@ -86,6 +86,12 @@ public class CreateInstanceResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="port")
+    
+    private Long port;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="disk_encryption_id")
     
     private String diskEncryptionId;
@@ -359,6 +365,28 @@ public class CreateInstanceResponse extends SdkResponse {
 
     
 
+    public CreateInstanceResponse withPort(Long port) {
+        this.port = port;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库访问端口。
+     * @return port
+     */
+    public Long getPort() {
+        return port;
+    }
+
+    public void setPort(Long port) {
+        this.port = port;
+    }
+
+    
+
     public CreateInstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
@@ -575,6 +603,7 @@ public class CreateInstanceResponse extends SdkResponse {
             Objects.equals(this.vpcId, createInstanceResponse.vpcId) &&
             Objects.equals(this.subnetId, createInstanceResponse.subnetId) &&
             Objects.equals(this.securityGroupId, createInstanceResponse.securityGroupId) &&
+            Objects.equals(this.port, createInstanceResponse.port) &&
             Objects.equals(this.diskEncryptionId, createInstanceResponse.diskEncryptionId) &&
             Objects.equals(this.mode, createInstanceResponse.mode) &&
             Objects.equals(this.flavor, createInstanceResponse.flavor) &&
@@ -586,7 +615,7 @@ public class CreateInstanceResponse extends SdkResponse {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, datastore, name, created, status, region, availabilityZone, vpcId, subnetId, securityGroupId, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, jobId);
+        return Objects.hash(id, datastore, name, created, status, region, availabilityZone, vpcId, subnetId, securityGroupId, port, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, jobId);
     }
     @Override
     public String toString() {
@@ -602,6 +631,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");

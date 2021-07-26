@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v1.model.DomainSourceInfo;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -112,12 +111,6 @@ public class LiveDomainModifyReq  {
     
     private StatusEnum status;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_source")
-    
-    private DomainSourceInfo domainSource;
-
     public LiveDomainModifyReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -162,35 +155,6 @@ public class LiveDomainModifyReq  {
 
     
 
-    public LiveDomainModifyReq withDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
-        return this;
-    }
-
-    public LiveDomainModifyReq withDomainSource(Consumer<DomainSourceInfo> domainSourceSetter) {
-        if(this.domainSource == null ){
-            this.domainSource = new DomainSourceInfo();
-            domainSourceSetter.accept(this.domainSource);
-        }
-        
-        return this;
-    }
-
-
-    /**
-     * Get domainSource
-     * @return domainSource
-     */
-    public DomainSourceInfo getDomainSource() {
-        return domainSource;
-    }
-
-    public void setDomainSource(DomainSourceInfo domainSource) {
-        this.domainSource = domainSource;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -201,12 +165,11 @@ public class LiveDomainModifyReq  {
         }
         LiveDomainModifyReq liveDomainModifyReq = (LiveDomainModifyReq) o;
         return Objects.equals(this.domain, liveDomainModifyReq.domain) &&
-            Objects.equals(this.status, liveDomainModifyReq.status) &&
-            Objects.equals(this.domainSource, liveDomainModifyReq.domainSource);
+            Objects.equals(this.status, liveDomainModifyReq.status);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(domain, status, domainSource);
+        return Objects.hash(domain, status);
     }
     @Override
     public String toString() {
@@ -214,7 +177,6 @@ public class LiveDomainModifyReq  {
         sb.append("class LiveDomainModifyReq {\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    domainSource: ").append(toIndentedString(domainSource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

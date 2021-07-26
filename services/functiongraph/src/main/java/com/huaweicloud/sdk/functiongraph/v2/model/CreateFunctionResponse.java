@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.Dependency;
 import com.huaweicloud.sdk.functiongraph.v2.model.FuncVpc;
 import com.huaweicloud.sdk.functiongraph.v2.model.MountConfig;
 import com.huaweicloud.sdk.functiongraph.v2.model.StrategyConfig;
@@ -352,6 +351,12 @@ public class CreateFunctionResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="encrypted_user_data")
+    
+    private String encryptedUserData;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="digest")
     
     private String digest;
@@ -388,12 +393,6 @@ public class CreateFunctionResponse extends SdkResponse {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_description")
-    
-    private String versionDescription;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="last_modified")
     
     private OffsetDateTime lastModified;
@@ -409,12 +408,6 @@ public class CreateFunctionResponse extends SdkResponse {
     @JsonProperty(value="mount_config")
     
     private MountConfig mountConfig;
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="concurrency")
-    
-    private Integer concurrency;
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -434,12 +427,6 @@ public class CreateFunctionResponse extends SdkResponse {
     
     private String extendConfig;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependencies")
-    
-    private List<Dependency> dependencies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="initializer_handler")
@@ -810,6 +797,28 @@ public class CreateFunctionResponse extends SdkResponse {
 
     
 
+    public CreateFunctionResponse withEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 用户自定义的name/value信息，用于需要加密的配置。
+     * @return encryptedUserData
+     */
+    public String getEncryptedUserData() {
+        return encryptedUserData;
+    }
+
+    public void setEncryptedUserData(String encryptedUserData) {
+        this.encryptedUserData = encryptedUserData;
+    }
+
+    
+
     public CreateFunctionResponse withDigest(String digest) {
         this.digest = digest;
         return this;
@@ -942,28 +951,6 @@ public class CreateFunctionResponse extends SdkResponse {
 
     
 
-    public CreateFunctionResponse withVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 函数版本描述。
-     * @return versionDescription
-     */
-    public String getVersionDescription() {
-        return versionDescription;
-    }
-
-    public void setVersionDescription(String versionDescription) {
-        this.versionDescription = versionDescription;
-    }
-
-    
-
     public CreateFunctionResponse withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
@@ -1040,28 +1027,6 @@ public class CreateFunctionResponse extends SdkResponse {
 
     public void setMountConfig(MountConfig mountConfig) {
         this.mountConfig = mountConfig;
-    }
-
-    
-
-    public CreateFunctionResponse withConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
-        return this;
-    }
-
-    
-
-
-    /**
-     * Get concurrency
-     * @return concurrency
-     */
-    public Integer getConcurrency() {
-        return concurrency;
-    }
-
-    public void setConcurrency(Integer concurrency) {
-        this.concurrency = concurrency;
     }
 
     
@@ -1149,42 +1114,6 @@ public class CreateFunctionResponse extends SdkResponse {
 
     public void setExtendConfig(String extendConfig) {
         this.extendConfig = extendConfig;
-    }
-
-    
-
-    public CreateFunctionResponse withDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
-        return this;
-    }
-
-    
-    public CreateFunctionResponse addDependenciesItem(Dependency dependenciesItem) {
-        if(this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        this.dependencies.add(dependenciesItem);
-        return this;
-    }
-
-    public CreateFunctionResponse withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if(this.dependencies == null) {
-            this.dependencies = new ArrayList<>();
-        }
-        dependenciesSetter.accept(this.dependencies);
-        return this;
-    }
-
-    /**
-     * 函数依赖代码包列表。
-     * @return dependencies
-     */
-    public List<Dependency> getDependencies() {
-        return dependencies;
-    }
-
-    public void setDependencies(List<Dependency> dependencies) {
-        this.dependencies = dependencies;
     }
 
     
@@ -1280,28 +1209,26 @@ public class CreateFunctionResponse extends SdkResponse {
             Objects.equals(this.codeFilename, createFunctionResponse.codeFilename) &&
             Objects.equals(this.codeSize, createFunctionResponse.codeSize) &&
             Objects.equals(this.userData, createFunctionResponse.userData) &&
+            Objects.equals(this.encryptedUserData, createFunctionResponse.encryptedUserData) &&
             Objects.equals(this.digest, createFunctionResponse.digest) &&
             Objects.equals(this.version, createFunctionResponse.version) &&
             Objects.equals(this.imageName, createFunctionResponse.imageName) &&
             Objects.equals(this.xrole, createFunctionResponse.xrole) &&
             Objects.equals(this.appXrole, createFunctionResponse.appXrole) &&
             Objects.equals(this.description, createFunctionResponse.description) &&
-            Objects.equals(this.versionDescription, createFunctionResponse.versionDescription) &&
             Objects.equals(this.lastModified, createFunctionResponse.lastModified) &&
             Objects.equals(this.funcVpc, createFunctionResponse.funcVpc) &&
             Objects.equals(this.mountConfig, createFunctionResponse.mountConfig) &&
-            Objects.equals(this.concurrency, createFunctionResponse.concurrency) &&
             Objects.equals(this.dependList, createFunctionResponse.dependList) &&
             Objects.equals(this.strategyConfig, createFunctionResponse.strategyConfig) &&
             Objects.equals(this.extendConfig, createFunctionResponse.extendConfig) &&
-            Objects.equals(this.dependencies, createFunctionResponse.dependencies) &&
             Objects.equals(this.initializerHandler, createFunctionResponse.initializerHandler) &&
             Objects.equals(this.initializerTimeout, createFunctionResponse.initializerTimeout) &&
             Objects.equals(this.enterpriseProjectId, createFunctionResponse.enterpriseProjectId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, digest, version, imageName, xrole, appXrole, description, versionDescription, lastModified, funcVpc, mountConfig, concurrency, dependList, strategyConfig, extendConfig, dependencies, initializerHandler, initializerTimeout, enterpriseProjectId);
+        return Objects.hash(funcUrn, funcName, domainId, namespace, projectName, _package, runtime, timeout, handler, memorySize, cpu, codeType, codeUrl, codeFilename, codeSize, userData, encryptedUserData, digest, version, imageName, xrole, appXrole, description, lastModified, funcVpc, mountConfig, dependList, strategyConfig, extendConfig, initializerHandler, initializerTimeout, enterpriseProjectId);
     }
     @Override
     public String toString() {
@@ -1323,21 +1250,19 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    codeSize: ").append(toIndentedString(codeSize)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
+        sb.append("    encryptedUserData: ").append(toIndentedString(encryptedUserData)).append("\n");
         sb.append("    digest: ").append(toIndentedString(digest)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    xrole: ").append(toIndentedString(xrole)).append("\n");
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
-        sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    extendConfig: ").append(toIndentedString(extendConfig)).append("\n");
-        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("    initializerHandler: ").append(toIndentedString(initializerHandler)).append("\n");
         sb.append("    initializerTimeout: ").append(toIndentedString(initializerTimeout)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

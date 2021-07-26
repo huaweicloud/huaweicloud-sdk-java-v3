@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.ValueList;
+import com.huaweicloud.sdk.waf.v1.model.ValueListResponseBody;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -32,7 +32,7 @@ public class ListValueListResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="items")
     
-    private List<ValueList> items = null;
+    private List<ValueListResponseBody> items = null;
     
     public ListValueListResponse withTotal(Integer total) {
         this.total = total;
@@ -58,13 +58,13 @@ public class ListValueListResponse extends SdkResponse {
 
     
 
-    public ListValueListResponse withItems(List<ValueList> items) {
+    public ListValueListResponse withItems(List<ValueListResponseBody> items) {
         this.items = items;
         return this;
     }
 
     
-    public ListValueListResponse addItemsItem(ValueList itemsItem) {
+    public ListValueListResponse addItemsItem(ValueListResponseBody itemsItem) {
         if(this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -72,7 +72,7 @@ public class ListValueListResponse extends SdkResponse {
         return this;
     }
 
-    public ListValueListResponse withItems(Consumer<List<ValueList>> itemsSetter) {
+    public ListValueListResponse withItems(Consumer<List<ValueListResponseBody>> itemsSetter) {
         if(this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -84,11 +84,11 @@ public class ListValueListResponse extends SdkResponse {
      * 引用表列表
      * @return items
      */
-    public List<ValueList> getItems() {
+    public List<ValueListResponseBody> getItems() {
         return items;
     }
 
-    public void setItems(List<ValueList> items) {
+    public void setItems(List<ValueListResponseBody> items) {
         this.items = items;
     }
 

@@ -66,6 +66,12 @@ public class CreateInstanceRequestBody  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="port")
+    
+    private String port;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="password")
     
     private String password;
@@ -275,6 +281,28 @@ public class CreateInstanceRequestBody  {
 
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
+    }
+
+    
+
+    public CreateInstanceRequestBody withPort(String port) {
+        this.port = port;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 数据库访问端口。 取值范围：2100~9500，以及27017、27018、27019。 不传该参数时，创建实例的访问端口默认为8635。
+     * @return port
+     */
+    public String getPort() {
+        return port;
+    }
+
+    public void setPort(String port) {
+        this.port = port;
     }
 
     
@@ -528,6 +556,7 @@ public class CreateInstanceRequestBody  {
             Objects.equals(this.vpcId, createInstanceRequestBody.vpcId) &&
             Objects.equals(this.subnetId, createInstanceRequestBody.subnetId) &&
             Objects.equals(this.securityGroupId, createInstanceRequestBody.securityGroupId) &&
+            Objects.equals(this.port, createInstanceRequestBody.port) &&
             Objects.equals(this.password, createInstanceRequestBody.password) &&
             Objects.equals(this.diskEncryptionId, createInstanceRequestBody.diskEncryptionId) &&
             Objects.equals(this.mode, createInstanceRequestBody.mode) &&
@@ -540,7 +569,7 @@ public class CreateInstanceRequestBody  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, datastore, region, availabilityZone, vpcId, subnetId, securityGroupId, password, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, serverGroupPolicies);
+        return Objects.hash(name, datastore, region, availabilityZone, vpcId, subnetId, securityGroupId, port, password, diskEncryptionId, mode, flavor, backupStrategy, enterpriseProjectId, sslOption, dssPoolId, serverGroupPolicies);
     }
     @Override
     public String toString() {
@@ -553,6 +582,7 @@ public class CreateInstanceRequestBody  {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");

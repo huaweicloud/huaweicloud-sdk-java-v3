@@ -82,12 +82,6 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
     
     private String fileType;
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
-    private String taskId;
-
     public ShowHistoryTaskDetailsResponse withId(String id) {
         this.id = id;
         return this;
@@ -322,28 +316,6 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
 
     
 
-    public ShowHistoryTaskDetailsResponse withTaskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 任务id
-     * @return taskId
-     */
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -362,12 +334,11 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
             Objects.equals(this.succeed, showHistoryTaskDetailsResponse.succeed) &&
             Objects.equals(this.failed, showHistoryTaskDetailsResponse.failed) &&
             Objects.equals(this.total, showHistoryTaskDetailsResponse.total) &&
-            Objects.equals(this.fileType, showHistoryTaskDetailsResponse.fileType) &&
-            Objects.equals(this.taskId, showHistoryTaskDetailsResponse.taskId);
+            Objects.equals(this.fileType, showHistoryTaskDetailsResponse.fileType);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, taskType, status, urls, createTime, processing, succeed, failed, total, fileType, taskId);
+        return Objects.hash(id, taskType, status, urls, createTime, processing, succeed, failed, total, fileType);
     }
     @Override
     public String toString() {
@@ -383,7 +354,6 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    fileType: ").append(toIndentedString(fileType)).append("\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

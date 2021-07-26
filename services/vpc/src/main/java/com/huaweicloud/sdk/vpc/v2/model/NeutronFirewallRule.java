@@ -143,6 +143,12 @@ public class NeutronFirewallRule  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="public")
+    
+    private Boolean _public;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="destination_ip_address")
     
     private String destinationIpAddress;
@@ -333,6 +339,28 @@ public class NeutronFirewallRule  {
 
     
 
+    public NeutronFirewallRule withPublic(Boolean _public) {
+        this._public = _public;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 功能说明：是否支持跨租户共享 取值范围：true/false
+     * @return _public
+     */
+    public Boolean getPublic() {
+        return _public;
+    }
+
+    public void setPublic(Boolean _public) {
+        this._public = _public;
+    }
+
+    
+
     public NeutronFirewallRule withDestinationIpAddress(String destinationIpAddress) {
         this.destinationIpAddress = destinationIpAddress;
         return this;
@@ -481,6 +509,7 @@ public class NeutronFirewallRule  {
             Objects.equals(this.protocol, neutronFirewallRule.protocol) &&
             Objects.equals(this.ipVersion, neutronFirewallRule.ipVersion) &&
             Objects.equals(this.enabled, neutronFirewallRule.enabled) &&
+            Objects.equals(this._public, neutronFirewallRule._public) &&
             Objects.equals(this.destinationIpAddress, neutronFirewallRule.destinationIpAddress) &&
             Objects.equals(this.destinationPort, neutronFirewallRule.destinationPort) &&
             Objects.equals(this.sourceIpAddress, neutronFirewallRule.sourceIpAddress) &&
@@ -490,7 +519,7 @@ public class NeutronFirewallRule  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, action, protocol, ipVersion, enabled, destinationIpAddress, destinationPort, sourceIpAddress, sourcePort, tenantId, projectId);
+        return Objects.hash(id, name, description, action, protocol, ipVersion, enabled, _public, destinationIpAddress, destinationPort, sourceIpAddress, sourcePort, tenantId, projectId);
     }
     @Override
     public String toString() {
@@ -503,6 +532,7 @@ public class NeutronFirewallRule  {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    _public: ").append(toIndentedString(_public)).append("\n");
         sb.append("    destinationIpAddress: ").append(toIndentedString(destinationIpAddress)).append("\n");
         sb.append("    destinationPort: ").append(toIndentedString(destinationPort)).append("\n");
         sb.append("    sourceIpAddress: ").append(toIndentedString(sourceIpAddress)).append("\n");
