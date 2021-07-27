@@ -102,7 +102,7 @@ public class CompareTaskList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -135,7 +135,7 @@ public class CompareTaskList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CompareTaskStatusEnum) {
+            if (obj instanceof CompareTaskStatusEnum) {
                 return this.value.equals(((CompareTaskStatusEnum) obj).value);
             }
             return false;

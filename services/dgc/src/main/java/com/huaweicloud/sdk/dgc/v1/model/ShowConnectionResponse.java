@@ -86,7 +86,7 @@ public class ShowConnectionResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -119,7 +119,7 @@ public class ShowConnectionResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConnectionTypeEnum) {
+            if (obj instanceof ConnectionTypeEnum) {
                 return this.value.equals(((ConnectionTypeEnum) obj).value);
             }
             return false;

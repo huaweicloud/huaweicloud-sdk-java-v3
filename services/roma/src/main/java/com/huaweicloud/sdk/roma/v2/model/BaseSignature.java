@@ -66,7 +66,7 @@ public class BaseSignature  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class BaseSignature  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SignTypeEnum) {
+            if (obj instanceof SignTypeEnum) {
                 return this.value.equals(((SignTypeEnum) obj).value);
             }
             return false;

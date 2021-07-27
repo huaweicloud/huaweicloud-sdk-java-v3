@@ -96,7 +96,7 @@ public class PostPaidServerExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class PostPaidServerExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InterruptionPolicyEnum) {
+            if (obj instanceof InterruptionPolicyEnum) {
                 return this.value.equals(((InterruptionPolicyEnum) obj).value);
             }
             return false;

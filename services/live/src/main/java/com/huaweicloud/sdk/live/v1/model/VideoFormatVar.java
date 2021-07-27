@@ -53,7 +53,7 @@ public class VideoFormatVar {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class VideoFormatVar {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof VideoFormatVar) {
+        if (obj instanceof VideoFormatVar) {
             return this.value.equals(((VideoFormatVar) obj).value);
         }
         return false;

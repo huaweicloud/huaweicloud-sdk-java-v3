@@ -62,7 +62,7 @@ public class UpdateParamsResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class UpdateParamsResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ShouldRestartEnum) {
+            if (obj instanceof ShouldRestartEnum) {
                 return this.value.equals(((ShouldRestartEnum) obj).value);
             }
             return false;

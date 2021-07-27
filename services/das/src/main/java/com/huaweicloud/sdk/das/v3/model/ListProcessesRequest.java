@@ -90,7 +90,7 @@ public class ListProcessesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -123,7 +123,7 @@ public class ListProcessesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof XLanguageEnum) {
+            if (obj instanceof XLanguageEnum) {
                 return this.value.equals(((XLanguageEnum) obj).value);
             }
             return false;

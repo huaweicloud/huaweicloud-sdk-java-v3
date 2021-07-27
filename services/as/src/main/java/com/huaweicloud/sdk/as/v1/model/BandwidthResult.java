@@ -62,7 +62,7 @@ public class BandwidthResult  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class BandwidthResult  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ShareTypeEnum) {
+            if (obj instanceof ShareTypeEnum) {
                 return this.value.equals(((ShareTypeEnum) obj).value);
             }
             return false;
@@ -146,7 +146,7 @@ public class BandwidthResult  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -179,7 +179,7 @@ public class BandwidthResult  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
+            if (obj instanceof ChargingModeEnum) {
                 return this.value.equals(((ChargingModeEnum) obj).value);
             }
             return false;

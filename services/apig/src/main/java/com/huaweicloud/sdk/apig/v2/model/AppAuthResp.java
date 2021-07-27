@@ -90,7 +90,7 @@ public class AppAuthResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -123,7 +123,7 @@ public class AppAuthResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthRoleEnum) {
+            if (obj instanceof AuthRoleEnum) {
                 return this.value.equals(((AuthRoleEnum) obj).value);
             }
             return false;
@@ -174,7 +174,7 @@ public class AppAuthResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -207,7 +207,7 @@ public class AppAuthResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthTunnelEnum) {
+            if (obj instanceof AuthTunnelEnum) {
                 return this.value.equals(((AuthTunnelEnum) obj).value);
             }
             return false;

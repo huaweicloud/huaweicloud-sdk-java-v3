@@ -102,7 +102,7 @@ public class ListTasksRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -135,7 +135,7 @@ public class ListTasksRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StateEnum) {
+            if (obj instanceof StateEnum) {
                 return this.value.equals(((StateEnum) obj).value);
             }
             return false;

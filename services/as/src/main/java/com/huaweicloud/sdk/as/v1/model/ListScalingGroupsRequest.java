@@ -78,7 +78,7 @@ public class ListScalingGroupsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class ListScalingGroupsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingGroupStatusEnum) {
+            if (obj instanceof ScalingGroupStatusEnum) {
                 return this.value.equals(((ScalingGroupStatusEnum) obj).value);
             }
             return false;

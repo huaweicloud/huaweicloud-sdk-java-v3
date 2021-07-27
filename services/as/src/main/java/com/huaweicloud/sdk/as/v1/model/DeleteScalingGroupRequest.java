@@ -60,7 +60,7 @@ public class DeleteScalingGroupRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class DeleteScalingGroupRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ForceDeleteEnum) {
+            if (obj instanceof ForceDeleteEnum) {
                 return this.value.equals(((ForceDeleteEnum) obj).value);
             }
             return false;

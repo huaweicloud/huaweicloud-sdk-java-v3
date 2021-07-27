@@ -90,7 +90,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -123,7 +123,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteEfsEnum) {
+            if (obj instanceof DeleteEfsEnum) {
                 return this.value.equals(((DeleteEfsEnum) obj).value);
             }
             return false;
@@ -192,7 +192,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -225,7 +225,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteEniEnum) {
+            if (obj instanceof DeleteEniEnum) {
                 return this.value.equals(((DeleteEniEnum) obj).value);
             }
             return false;
@@ -294,7 +294,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -327,7 +327,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteEvsEnum) {
+            if (obj instanceof DeleteEvsEnum) {
                 return this.value.equals(((DeleteEvsEnum) obj).value);
             }
             return false;
@@ -396,7 +396,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -429,7 +429,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteNetEnum) {
+            if (obj instanceof DeleteNetEnum) {
                 return this.value.equals(((DeleteNetEnum) obj).value);
             }
             return false;
@@ -498,7 +498,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -531,7 +531,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteObsEnum) {
+            if (obj instanceof DeleteObsEnum) {
                 return this.value.equals(((DeleteObsEnum) obj).value);
             }
             return false;
@@ -600,7 +600,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -633,7 +633,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteSfsEnum) {
+            if (obj instanceof DeleteSfsEnum) {
                 return this.value.equals(((DeleteSfsEnum) obj).value);
             }
             return false;
@@ -678,7 +678,7 @@ public class DeleteClusterRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -711,7 +711,7 @@ public class DeleteClusterRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TobedeletedEnum) {
+            if (obj instanceof TobedeletedEnum) {
                 return this.value.equals(((TobedeletedEnum) obj).value);
             }
             return false;

@@ -76,7 +76,7 @@ public class NovaCreateServersResult  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class NovaCreateServersResult  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsDCFDiskConfigEnum) {
+            if (obj instanceof OsDCFDiskConfigEnum) {
                 return this.value.equals(((OsDCFDiskConfigEnum) obj).value);
             }
             return false;

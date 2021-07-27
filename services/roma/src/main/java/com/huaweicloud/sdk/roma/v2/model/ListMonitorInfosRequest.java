@@ -102,7 +102,7 @@ public class ListMonitorInfosRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -135,7 +135,7 @@ public class ListMonitorInfosRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExecuteStatusEnum) {
+            if (obj instanceof ExecuteStatusEnum) {
                 return this.value.equals(((ExecuteStatusEnum) obj).value);
             }
             return false;

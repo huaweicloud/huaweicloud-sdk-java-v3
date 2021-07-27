@@ -73,7 +73,7 @@ public class CreateMigrationTaskBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -106,7 +106,7 @@ public class CreateMigrationTaskBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationTypeEnum) {
+            if (obj instanceof MigrationTypeEnum) {
                 return this.value.equals(((MigrationTypeEnum) obj).value);
             }
             return false;
@@ -157,7 +157,7 @@ public class CreateMigrationTaskBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -190,7 +190,7 @@ public class CreateMigrationTaskBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationMethodEnum) {
+            if (obj instanceof MigrationMethodEnum) {
                 return this.value.equals(((MigrationMethodEnum) obj).value);
             }
             return false;
@@ -247,7 +247,7 @@ public class CreateMigrationTaskBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -280,7 +280,7 @@ public class CreateMigrationTaskBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NetworkTypeEnum) {
+            if (obj instanceof NetworkTypeEnum) {
                 return this.value.equals(((NetworkTypeEnum) obj).value);
             }
             return false;

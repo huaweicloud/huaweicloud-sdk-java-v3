@@ -61,7 +61,7 @@ public class CreatePasswordAuthRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -94,7 +94,7 @@ public class CreatePasswordAuthRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RepoTypeEnum) {
+            if (obj instanceof RepoTypeEnum) {
                 return this.value.equals(((RepoTypeEnum) obj).value);
             }
             return false;

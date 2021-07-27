@@ -56,7 +56,7 @@ public class Eip  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class Eip  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IptypeEnum) {
+            if (obj instanceof IptypeEnum) {
                 return this.value.equals(((IptypeEnum) obj).value);
             }
             return false;

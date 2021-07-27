@@ -78,7 +78,7 @@ public class VpcBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class VpcBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MemberTypeEnum) {
+            if (obj instanceof MemberTypeEnum) {
                 return this.value.equals(((MemberTypeEnum) obj).value);
             }
             return false;

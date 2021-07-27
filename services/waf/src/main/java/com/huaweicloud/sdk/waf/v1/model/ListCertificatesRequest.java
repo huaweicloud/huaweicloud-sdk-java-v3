@@ -84,7 +84,7 @@ public class ListCertificatesRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class ListCertificatesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExpStatusEnum) {
+            if (obj instanceof ExpStatusEnum) {
                 return this.value.equals(((ExpStatusEnum) obj).value);
             }
             return false;

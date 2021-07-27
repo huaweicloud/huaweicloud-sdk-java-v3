@@ -101,7 +101,7 @@ public class ApiCheckInfoV2  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -134,7 +134,7 @@ public class ApiCheckInfoV2  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReqMethodEnum) {
+            if (obj instanceof ReqMethodEnum) {
                 return this.value.equals(((ReqMethodEnum) obj).value);
             }
             return false;
@@ -191,7 +191,7 @@ public class ApiCheckInfoV2  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -224,7 +224,7 @@ public class ApiCheckInfoV2  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MatchModeEnum) {
+            if (obj instanceof MatchModeEnum) {
                 return this.value.equals(((MatchModeEnum) obj).value);
             }
             return false;
@@ -293,7 +293,7 @@ public class ApiCheckInfoV2  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -326,7 +326,7 @@ public class ApiCheckInfoV2  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;

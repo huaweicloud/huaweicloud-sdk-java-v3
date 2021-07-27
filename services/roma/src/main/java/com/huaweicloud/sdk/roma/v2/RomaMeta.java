@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.roma.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -50,11 +51,11 @@ public class RomaMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<Device>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(AddSubsetsToGatewayResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(Device.class)
@@ -5274,11 +5275,11 @@ public class RomaMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ShadowService>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListShadowsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ShadowService.class)

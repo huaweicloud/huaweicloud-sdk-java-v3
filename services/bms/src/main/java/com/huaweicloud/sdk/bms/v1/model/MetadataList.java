@@ -55,7 +55,7 @@ public class MetadataList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -88,7 +88,7 @@ public class MetadataList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
+            if (obj instanceof ChargingModeEnum) {
                 return this.value.equals(((ChargingModeEnum) obj).value);
             }
             return false;
@@ -169,7 +169,7 @@ public class MetadataList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -202,7 +202,7 @@ public class MetadataList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MeteringImagetypeEnum) {
+            if (obj instanceof MeteringImagetypeEnum) {
                 return this.value.equals(((MeteringImagetypeEnum) obj).value);
             }
             return false;
@@ -283,7 +283,7 @@ public class MetadataList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -316,7 +316,7 @@ public class MetadataList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -373,7 +373,7 @@ public class MetadataList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -406,7 +406,7 @@ public class MetadataList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsBitEnum) {
+            if (obj instanceof OsBitEnum) {
                 return this.value.equals(((OsBitEnum) obj).value);
             }
             return false;

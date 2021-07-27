@@ -162,7 +162,7 @@ public class MetaData  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -195,7 +195,7 @@ public class MetaData  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CodecEnum) {
+            if (obj instanceof CodecEnum) {
                 return this.value.equals(((CodecEnum) obj).value);
             }
             return false;

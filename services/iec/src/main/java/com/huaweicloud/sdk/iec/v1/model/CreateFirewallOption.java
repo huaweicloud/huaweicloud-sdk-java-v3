@@ -60,7 +60,7 @@ public class CreateFirewallOption  {
 
 
     /**
-     * 网络ACL描述。  取值范围：0-255
+     * 网络ACL描述。  取值范围：0-64
      * @return description
      */
     public String getDescription() {

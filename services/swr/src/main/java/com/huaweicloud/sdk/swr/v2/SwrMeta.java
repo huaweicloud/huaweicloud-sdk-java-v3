@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.swr.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -93,11 +94,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<String>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateManualImageSyncRepoResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(String.class)
@@ -788,11 +789,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<SyncRepo>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListImageAutoSyncReposDetailsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(SyncRepo.class)
@@ -859,11 +860,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ShowRepoDomainsResponse>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListRepoDomainsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ShowRepoDomainsResponse.class)
@@ -919,11 +920,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ShowReposResp>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListReposDetailsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ShowReposResp.class)
@@ -1012,11 +1013,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ShowReposTagResp>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListRepositoryTagsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ShowReposTagResp.class)
@@ -1116,11 +1117,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<Retention>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListRetentionsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(Retention.class)
@@ -1152,11 +1153,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ShowReposResp>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSharedReposDetailsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ShowReposResp.class)
@@ -1205,11 +1206,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<Trigger>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTriggersDetailsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(Trigger.class)
@@ -1432,11 +1433,11 @@ public class SwrMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<SyncJob>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowSyncJobResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(SyncJob.class)

@@ -56,7 +56,7 @@ public class CreateServerGroupOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class CreateServerGroupOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PoliciesEnum) {
+            if (obj instanceof PoliciesEnum) {
                 return this.value.equals(((PoliciesEnum) obj).value);
             }
             return false;

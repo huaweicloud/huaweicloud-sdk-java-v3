@@ -55,7 +55,7 @@ public class CreateCompareTaskReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -88,7 +88,7 @@ public class CreateCompareTaskReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ObjectLevelCompareTypeEnum) {
+            if (obj instanceof ObjectLevelCompareTypeEnum) {
                 return this.value.equals(((ObjectLevelCompareTypeEnum) obj).value);
             }
             return false;

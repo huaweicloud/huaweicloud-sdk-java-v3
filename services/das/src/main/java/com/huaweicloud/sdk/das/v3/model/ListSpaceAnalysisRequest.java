@@ -68,7 +68,7 @@ public class ListSpaceAnalysisRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ListSpaceAnalysisRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ObjectTypeEnum) {
+            if (obj instanceof ObjectTypeEnum) {
                 return this.value.equals(((ObjectTypeEnum) obj).value);
             }
             return false;
@@ -176,7 +176,7 @@ public class ListSpaceAnalysisRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -209,7 +209,7 @@ public class ListSpaceAnalysisRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DatastoreTypeEnum) {
+            if (obj instanceof DatastoreTypeEnum) {
                 return this.value.equals(((DatastoreTypeEnum) obj).value);
             }
             return false;

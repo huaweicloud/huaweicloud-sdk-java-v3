@@ -72,7 +72,7 @@ public class UserAuth  {
 
         @JsonValue
         public Long getValue() {
-            return Long.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class UserAuth  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthEnum) {
+            if (obj instanceof AuthEnum) {
                 return this.value.equals(((AuthEnum) obj).value);
             }
             return false;

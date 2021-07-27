@@ -157,7 +157,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -190,7 +190,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RuntimeEnum) {
+            if (obj instanceof RuntimeEnum) {
                 return this.value.equals(((RuntimeEnum) obj).value);
             }
             return false;
@@ -277,7 +277,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -310,7 +310,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CodeTypeEnum) {
+            if (obj instanceof CodeTypeEnum) {
                 return this.value.equals(((CodeTypeEnum) obj).value);
             }
             return false;
@@ -505,7 +505,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -538,7 +538,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;

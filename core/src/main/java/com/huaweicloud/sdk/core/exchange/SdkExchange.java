@@ -21,6 +21,8 @@
 
 package com.huaweicloud.sdk.core.exchange;
 
+import com.huaweicloud.sdk.core.TypeCasts;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -34,7 +36,7 @@ public class SdkExchange {
 
     private ApiTimer apiTimer;
 
-    private Map<String, Object> attributes;
+    private Map<String, Object> attributes = null;
 
     public ApiReference getApiReference() {
         return apiReference;
@@ -79,7 +81,7 @@ public class SdkExchange {
     }
 
     public <T> T getAttribute(String name) {
-        return Objects.isNull(attributes) ? null : (T) attributes.get(name);
+        return Objects.isNull(attributes) ? null : TypeCasts.uncheckedConversion(attributes.get(name));
     }
 
     public <T> SdkExchange addAttribute(String name, T t) {

@@ -76,7 +76,7 @@ public class SqlConvertReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class SqlConvertReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SourceDbVersionEnum) {
+            if (obj instanceof SourceDbVersionEnum) {
                 return this.value.equals(((SourceDbVersionEnum) obj).value);
             }
             return false;
@@ -172,7 +172,7 @@ public class SqlConvertReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -205,7 +205,7 @@ public class SqlConvertReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TargetDbEnum) {
+            if (obj instanceof TargetDbEnum) {
                 return this.value.equals(((TargetDbEnum) obj).value);
             }
             return false;
@@ -274,7 +274,7 @@ public class SqlConvertReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -307,7 +307,7 @@ public class SqlConvertReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TargetDbVersionEnum) {
+            if (obj instanceof TargetDbVersionEnum) {
                 return this.value.equals(((TargetDbVersionEnum) obj).value);
             }
             return false;

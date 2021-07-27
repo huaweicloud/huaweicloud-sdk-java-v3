@@ -68,7 +68,7 @@ public class DataBucketQuery  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class DataBucketQuery  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DataEventEnum) {
+            if (obj instanceof DataEventEnum) {
                 return this.value.equals(((DataEventEnum) obj).value);
             }
             return false;

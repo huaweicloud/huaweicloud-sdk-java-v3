@@ -103,7 +103,7 @@ public class ImageWatermark  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -136,7 +136,7 @@ public class ImageWatermark  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BaseEnum) {
+            if (obj instanceof BaseEnum) {
                 return this.value.equals(((BaseEnum) obj).value);
             }
             return false;

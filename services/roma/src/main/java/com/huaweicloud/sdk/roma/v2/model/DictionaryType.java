@@ -47,7 +47,7 @@ public class DictionaryType {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class DictionaryType {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof DictionaryType) {
+        if (obj instanceof DictionaryType) {
             return this.value.equals(((DictionaryType) obj).value);
         }
         return false;

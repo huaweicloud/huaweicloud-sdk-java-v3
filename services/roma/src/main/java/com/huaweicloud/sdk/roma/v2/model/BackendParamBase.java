@@ -68,7 +68,7 @@ public class BackendParamBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class BackendParamBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LocationEnum) {
+            if (obj instanceof LocationEnum) {
                 return this.value.equals(((LocationEnum) obj).value);
             }
             return false;
@@ -158,7 +158,7 @@ public class BackendParamBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -191,7 +191,7 @@ public class BackendParamBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OriginEnum) {
+            if (obj instanceof OriginEnum) {
                 return this.value.equals(((OriginEnum) obj).value);
             }
             return false;

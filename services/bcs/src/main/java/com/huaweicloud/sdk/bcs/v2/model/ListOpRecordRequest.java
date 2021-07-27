@@ -82,7 +82,7 @@ public class ListOpRecordRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -115,7 +115,7 @@ public class ListOpRecordRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperationStatusEnum) {
+            if (obj instanceof OperationStatusEnum) {
                 return this.value.equals(((OperationStatusEnum) obj).value);
             }
             return false;
@@ -184,7 +184,7 @@ public class ListOpRecordRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -217,7 +217,7 @@ public class ListOpRecordRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResourceTypeEnum) {
+            if (obj instanceof ResourceTypeEnum) {
                 return this.value.equals(((ResourceTypeEnum) obj).value);
             }
             return false;
@@ -304,7 +304,7 @@ public class ListOpRecordRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -337,7 +337,7 @@ public class ListOpRecordRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperationTypeEnum) {
+            if (obj instanceof OperationTypeEnum) {
                 return this.value.equals(((OperationTypeEnum) obj).value);
             }
             return false;

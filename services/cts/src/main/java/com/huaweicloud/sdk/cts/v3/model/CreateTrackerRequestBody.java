@@ -56,7 +56,7 @@ public class CreateTrackerRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class CreateTrackerRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TrackerTypeEnum) {
+            if (obj instanceof TrackerTypeEnum) {
                 return this.value.equals(((TrackerTypeEnum) obj).value);
             }
             return false;

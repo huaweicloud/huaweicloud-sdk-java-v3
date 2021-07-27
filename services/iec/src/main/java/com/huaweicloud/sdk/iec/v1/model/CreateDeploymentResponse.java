@@ -34,6 +34,12 @@ public class CreateDeploymentResponse extends SdkResponse {
     
     private List<Location> locations = null;
     
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="order_id")
+    
+    private String orderId;
+
     public CreateDeploymentResponse withId(String id) {
         this.id = id;
         return this;
@@ -92,6 +98,28 @@ public class CreateDeploymentResponse extends SdkResponse {
 
     
 
+    public CreateDeploymentResponse withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 订单ID。 开通包年/包月资源时返回。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -102,11 +130,12 @@ public class CreateDeploymentResponse extends SdkResponse {
         }
         CreateDeploymentResponse createDeploymentResponse = (CreateDeploymentResponse) o;
         return Objects.equals(this.id, createDeploymentResponse.id) &&
-            Objects.equals(this.locations, createDeploymentResponse.locations);
+            Objects.equals(this.locations, createDeploymentResponse.locations) &&
+            Objects.equals(this.orderId, createDeploymentResponse.orderId);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id, locations);
+        return Objects.hash(id, locations, orderId);
     }
     @Override
     public String toString() {
@@ -114,6 +143,7 @@ public class CreateDeploymentResponse extends SdkResponse {
         sb.append("class CreateDeploymentResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

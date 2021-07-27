@@ -65,7 +65,7 @@ public class ServerDisk  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -98,7 +98,7 @@ public class ServerDisk  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PartitionStyleEnum) {
+            if (obj instanceof PartitionStyleEnum) {
                 return this.value.equals(((PartitionStyleEnum) obj).value);
             }
             return false;
@@ -149,7 +149,7 @@ public class ServerDisk  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -182,7 +182,7 @@ public class ServerDisk  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeviceUseEnum) {
+            if (obj instanceof DeviceUseEnum) {
                 return this.value.equals(((DeviceUseEnum) obj).value);
             }
             return false;

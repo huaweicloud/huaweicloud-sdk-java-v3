@@ -89,7 +89,7 @@ public class ApiBaseInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -122,7 +122,7 @@ public class ApiBaseInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReqProtocolEnum) {
+            if (obj instanceof ReqProtocolEnum) {
                 return this.value.equals(((ReqProtocolEnum) obj).value);
             }
             return false;
@@ -209,7 +209,7 @@ public class ApiBaseInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -242,7 +242,7 @@ public class ApiBaseInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReqMethodEnum) {
+            if (obj instanceof ReqMethodEnum) {
                 return this.value.equals(((ReqMethodEnum) obj).value);
             }
             return false;
@@ -311,7 +311,7 @@ public class ApiBaseInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -344,7 +344,7 @@ public class ApiBaseInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthTypeEnum) {
+            if (obj instanceof AuthTypeEnum) {
                 return this.value.equals(((AuthTypeEnum) obj).value);
             }
             return false;
@@ -407,7 +407,7 @@ public class ApiBaseInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -440,7 +440,7 @@ public class ApiBaseInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MatchModeEnum) {
+            if (obj instanceof MatchModeEnum) {
                 return this.value.equals(((MatchModeEnum) obj).value);
             }
             return false;
@@ -497,7 +497,7 @@ public class ApiBaseInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -530,7 +530,7 @@ public class ApiBaseInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BackendTypeEnum) {
+            if (obj instanceof BackendTypeEnum) {
                 return this.value.equals(((BackendTypeEnum) obj).value);
             }
             return false;

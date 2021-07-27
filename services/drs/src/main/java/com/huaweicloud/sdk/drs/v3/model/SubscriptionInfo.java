@@ -62,7 +62,7 @@ public class SubscriptionInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class SubscriptionInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;

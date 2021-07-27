@@ -73,7 +73,7 @@ public class VideoProcess  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -106,7 +106,7 @@ public class VideoProcess  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AdaptationEnum) {
+            if (obj instanceof AdaptationEnum) {
                 return this.value.equals(((AdaptationEnum) obj).value);
             }
             return false;

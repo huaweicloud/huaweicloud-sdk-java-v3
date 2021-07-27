@@ -64,7 +64,7 @@ public class ReviewInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class ReviewInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SuggestionEnum) {
+            if (obj instanceof SuggestionEnum) {
                 return this.value.equals(((SuggestionEnum) obj).value);
             }
             return false;

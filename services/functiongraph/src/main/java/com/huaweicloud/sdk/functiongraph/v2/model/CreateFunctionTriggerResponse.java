@@ -113,7 +113,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -146,7 +146,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TriggerTypeCodeEnum) {
+            if (obj instanceof TriggerTypeCodeEnum) {
                 return this.value.equals(((TriggerTypeCodeEnum) obj).value);
             }
             return false;
@@ -197,7 +197,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -230,7 +230,7 @@ public class CreateFunctionTriggerResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TriggerStatusEnum) {
+            if (obj instanceof TriggerStatusEnum) {
                 return this.value.equals(((TriggerStatusEnum) obj).value);
             }
             return false;

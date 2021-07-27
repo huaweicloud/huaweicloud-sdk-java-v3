@@ -62,7 +62,7 @@ public class TasksObject  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class TasksObject  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskTypeEnum) {
+            if (obj instanceof TaskTypeEnum) {
                 return this.value.equals(((TaskTypeEnum) obj).value);
             }
             return false;
@@ -182,7 +182,7 @@ public class TasksObject  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -215,7 +215,7 @@ public class TasksObject  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FileTypeEnum) {
+            if (obj instanceof FileTypeEnum) {
                 return this.value.equals(((FileTypeEnum) obj).value);
             }
             return false;

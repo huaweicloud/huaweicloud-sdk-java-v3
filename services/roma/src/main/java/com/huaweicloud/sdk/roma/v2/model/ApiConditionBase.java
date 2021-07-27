@@ -68,7 +68,7 @@ public class ApiConditionBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ApiConditionBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConditionTypeEnum) {
+            if (obj instanceof ConditionTypeEnum) {
                 return this.value.equals(((ConditionTypeEnum) obj).value);
             }
             return false;
@@ -152,7 +152,7 @@ public class ApiConditionBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -185,7 +185,7 @@ public class ApiConditionBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConditionOriginEnum) {
+            if (obj instanceof ConditionOriginEnum) {
                 return this.value.equals(((ConditionOriginEnum) obj).value);
             }
             return false;

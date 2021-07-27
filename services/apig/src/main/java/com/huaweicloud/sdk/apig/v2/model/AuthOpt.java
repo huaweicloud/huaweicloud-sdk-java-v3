@@ -54,7 +54,7 @@ public class AuthOpt  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class AuthOpt  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AppCodeAuthTypeEnum) {
+            if (obj instanceof AppCodeAuthTypeEnum) {
                 return this.value.equals(((AppCodeAuthTypeEnum) obj).value);
             }
             return false;

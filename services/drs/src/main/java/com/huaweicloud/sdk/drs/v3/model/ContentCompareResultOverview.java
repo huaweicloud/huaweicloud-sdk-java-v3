@@ -96,7 +96,7 @@ public class ContentCompareResultOverview  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class ContentCompareResultOverview  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ContentCompareResultEnum) {
+            if (obj instanceof ContentCompareResultEnum) {
                 return this.value.equals(((ContentCompareResultEnum) obj).value);
             }
             return false;

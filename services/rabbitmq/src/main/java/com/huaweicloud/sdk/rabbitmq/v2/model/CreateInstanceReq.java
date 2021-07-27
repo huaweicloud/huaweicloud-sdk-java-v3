@@ -67,7 +67,7 @@ public class CreateInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -100,7 +100,7 @@ public class CreateInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineEnum) {
+            if (obj instanceof EngineEnum) {
                 return this.value.equals(((EngineEnum) obj).value);
             }
             return false;
@@ -145,7 +145,7 @@ public class CreateInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -178,7 +178,7 @@ public class CreateInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineVersionEnum) {
+            if (obj instanceof EngineVersionEnum) {
                 return this.value.equals(((EngineVersionEnum) obj).value);
             }
             return false;
@@ -313,7 +313,7 @@ public class CreateInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -346,7 +346,7 @@ public class CreateInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StorageSpecCodeEnum) {
+            if (obj instanceof StorageSpecCodeEnum) {
                 return this.value.equals(((StorageSpecCodeEnum) obj).value);
             }
             return false;

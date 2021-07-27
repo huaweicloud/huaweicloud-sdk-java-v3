@@ -96,7 +96,7 @@ public class VideoInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class VideoInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DynamicRangeEnum) {
+            if (obj instanceof DynamicRangeEnum) {
                 return this.value.equals(((DynamicRangeEnum) obj).value);
             }
             return false;

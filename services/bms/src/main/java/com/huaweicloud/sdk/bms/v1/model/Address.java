@@ -56,7 +56,7 @@ public class Address  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class Address  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VersionEnum) {
+            if (obj instanceof VersionEnum) {
                 return this.value.equals(((VersionEnum) obj).value);
             }
             return false;
@@ -146,7 +146,7 @@ public class Address  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -179,7 +179,7 @@ public class Address  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEXTIPSTypeEnum) {
+            if (obj instanceof OsEXTIPSTypeEnum) {
                 return this.value.equals(((OsEXTIPSTypeEnum) obj).value);
             }
             return false;

@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.dms.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -187,11 +188,11 @@ public class DmsMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ConsumeDeadlettersMessage>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ConsumeDeadlettersMessageResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ConsumeDeadlettersMessage.class)
@@ -271,11 +272,11 @@ public class DmsMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ConsumeMessage>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ConsumeMessagesResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ConsumeMessage.class)

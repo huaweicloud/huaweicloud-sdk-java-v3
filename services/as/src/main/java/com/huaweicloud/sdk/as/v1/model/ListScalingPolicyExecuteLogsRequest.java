@@ -68,7 +68,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingResourceTypeEnum) {
+            if (obj instanceof ScalingResourceTypeEnum) {
                 return this.value.equals(((ScalingResourceTypeEnum) obj).value);
             }
             return false;
@@ -170,7 +170,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -203,7 +203,7 @@ public class ListScalingPolicyExecuteLogsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExecuteTypeEnum) {
+            if (obj instanceof ExecuteTypeEnum) {
                 return this.value.equals(((ExecuteTypeEnum) obj).value);
             }
             return false;

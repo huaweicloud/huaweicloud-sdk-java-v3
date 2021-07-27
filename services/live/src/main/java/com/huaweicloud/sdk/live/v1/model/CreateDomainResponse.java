@@ -67,7 +67,7 @@ public class CreateDomainResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -100,7 +100,7 @@ public class CreateDomainResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DomainTypeEnum) {
+            if (obj instanceof DomainTypeEnum) {
                 return this.value.equals(((DomainTypeEnum) obj).value);
             }
             return false;
@@ -175,7 +175,7 @@ public class CreateDomainResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -208,7 +208,7 @@ public class CreateDomainResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -277,7 +277,7 @@ public class CreateDomainResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -310,7 +310,7 @@ public class CreateDomainResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ServiceAreaEnum) {
+            if (obj instanceof ServiceAreaEnum) {
                 return this.value.equals(((ServiceAreaEnum) obj).value);
             }
             return false;

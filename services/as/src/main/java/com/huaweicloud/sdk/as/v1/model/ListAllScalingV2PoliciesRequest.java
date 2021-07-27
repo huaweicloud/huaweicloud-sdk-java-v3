@@ -66,7 +66,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingResourceTypeEnum) {
+            if (obj instanceof ScalingResourceTypeEnum) {
                 return this.value.equals(((ScalingResourceTypeEnum) obj).value);
             }
             return false;
@@ -162,7 +162,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -195,7 +195,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingPolicyTypeEnum) {
+            if (obj instanceof ScalingPolicyTypeEnum) {
                 return this.value.equals(((ScalingPolicyTypeEnum) obj).value);
             }
             return false;
@@ -270,7 +270,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -303,7 +303,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortByEnum) {
+            if (obj instanceof SortByEnum) {
                 return this.value.equals(((SortByEnum) obj).value);
             }
             return false;
@@ -354,7 +354,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -387,7 +387,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OrderEnum) {
+            if (obj instanceof OrderEnum) {
                 return this.value.equals(((OrderEnum) obj).value);
             }
             return false;

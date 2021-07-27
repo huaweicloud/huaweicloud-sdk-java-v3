@@ -60,7 +60,7 @@ public class AppConfigModifyRequestV2  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class AppConfigModifyRequestV2  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConfigTypeEnum) {
+            if (obj instanceof ConfigTypeEnum) {
                 return this.value.equals(((ConfigTypeEnum) obj).value);
             }
             return false;

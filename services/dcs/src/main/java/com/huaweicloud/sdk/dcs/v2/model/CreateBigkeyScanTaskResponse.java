@@ -85,7 +85,7 @@ public class CreateBigkeyScanTaskResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -118,7 +118,7 @@ public class CreateBigkeyScanTaskResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -169,7 +169,7 @@ public class CreateBigkeyScanTaskResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -202,7 +202,7 @@ public class CreateBigkeyScanTaskResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScanTypeEnum) {
+            if (obj instanceof ScanTypeEnum) {
                 return this.value.equals(((ScanTypeEnum) obj).value);
             }
             return false;

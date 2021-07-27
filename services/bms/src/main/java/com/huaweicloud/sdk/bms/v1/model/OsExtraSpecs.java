@@ -54,7 +54,7 @@ public class OsExtraSpecs  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class OsExtraSpecs  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResourceTypeEnum) {
+            if (obj instanceof ResourceTypeEnum) {
                 return this.value.equals(((ResourceTypeEnum) obj).value);
             }
             return false;
@@ -138,7 +138,7 @@ public class OsExtraSpecs  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -171,7 +171,7 @@ public class OsExtraSpecs  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CapabilitiesCpuArchEnum) {
+            if (obj instanceof CapabilitiesCpuArchEnum) {
                 return this.value.equals(((CapabilitiesCpuArchEnum) obj).value);
             }
             return false;
@@ -240,7 +240,7 @@ public class OsExtraSpecs  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -273,7 +273,7 @@ public class OsExtraSpecs  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BaremetalExtBootTypeEnum) {
+            if (obj instanceof BaremetalExtBootTypeEnum) {
                 return this.value.equals(((BaremetalExtBootTypeEnum) obj).value);
             }
             return false;
@@ -372,7 +372,7 @@ public class OsExtraSpecs  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -405,7 +405,7 @@ public class OsExtraSpecs  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CondOperationStatusEnum) {
+            if (obj instanceof CondOperationStatusEnum) {
                 return this.value.equals(((CondOperationStatusEnum) obj).value);
             }
             return false;

@@ -66,8 +66,6 @@ public class AKSKSigner {
      **/
     public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
 
-    protected static final SimpleDateFormat ISO_DATE_FORMAT = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
-
     public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
         // ************* TASK 1: CONSTRUCT CANONICAL REQUEST *************
         // Date now = ISODateFormat.parse("20191115T033655Z"); // 设置基准时间
@@ -85,8 +83,9 @@ public class AKSKSigner {
         // Step 1.2: Add X-Sdk-Date
         String dateTimeStamp;
         if (!request.haveHeader(Constants.X_SDK_DATE)) {
-            ISO_DATE_FORMAT.setTimeZone(new SimpleTimeZone(0, "UTC"));
-            dateTimeStamp = ISO_DATE_FORMAT.format(now);
+            SimpleDateFormat isoDateFormat = new SimpleDateFormat(ISO_8601_BASIC_FORMAT);
+            isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
+            dateTimeStamp = isoDateFormat.format(now);
             authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
         } else {
             dateTimeStamp = request.getHeader(Constants.X_SDK_DATE);
@@ -108,10 +107,10 @@ public class AKSKSigner {
 
         // Step 2: Create Canonical URI -- the part of the URI from domain to query
         String pathOld = url.getPath();
-        String canonicalUri = "";
+        StringBuilder canonicalUri = new StringBuilder();
         String[] split = pathOld.split("/");
         for (String urlSplit : split) {
-            canonicalUri += urlEncode(urlSplit) + "/";
+            canonicalUri.append(urlEncode(urlSplit)).append("/");
         }
 
         // Step 3: Create the canonical query string. In this example (a GET request),
@@ -140,8 +139,8 @@ public class AKSKSigner {
         String payloadHash = buildPayloadHash(request);
 
         // Step 7: Combine elements to create canonical request
-        String canonicalRequest = buildCanonicalRequest(request.getMethod().name(), canonicalUri, canonicalQueryString,
-            canonicalHeaders, signedHeaderNames, payloadHash);
+        String canonicalRequest = buildCanonicalRequest(request.getMethod().name(), canonicalUri.toString(),
+            canonicalQueryString, canonicalHeaders, signedHeaderNames, payloadHash);
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
         // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256 (recommended)

@@ -78,7 +78,7 @@ public class PublicipInfoResp  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class PublicipInfoResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IpVersionEnum) {
+            if (obj instanceof IpVersionEnum) {
                 return this.value.equals(((IpVersionEnum) obj).value);
             }
             return false;

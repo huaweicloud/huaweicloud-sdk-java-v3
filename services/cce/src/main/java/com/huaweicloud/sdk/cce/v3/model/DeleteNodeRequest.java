@@ -60,7 +60,7 @@ public class DeleteNodeRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class DeleteNodeRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NodepoolScaleDownEnum) {
+            if (obj instanceof NodepoolScaleDownEnum) {
                 return this.value.equals(((NodepoolScaleDownEnum) obj).value);
             }
             return false;

@@ -68,7 +68,7 @@ public class ApiPolicyFunctionCreate  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ApiPolicyFunctionCreate  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InvocationTypeEnum) {
+            if (obj instanceof InvocationTypeEnum) {
                 return this.value.equals(((InvocationTypeEnum) obj).value);
             }
             return false;
@@ -164,7 +164,7 @@ public class ApiPolicyFunctionCreate  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class ApiPolicyFunctionCreate  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EffectModeEnum) {
+            if (obj instanceof EffectModeEnum) {
                 return this.value.equals(((EffectModeEnum) obj).value);
             }
             return false;

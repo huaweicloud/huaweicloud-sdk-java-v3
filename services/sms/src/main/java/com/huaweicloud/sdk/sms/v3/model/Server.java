@@ -88,7 +88,7 @@ public class Server  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -121,7 +121,7 @@ public class Server  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -178,7 +178,7 @@ public class Server  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -211,7 +211,7 @@ public class Server  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FirmwareEnum) {
+            if (obj instanceof FirmwareEnum) {
                 return this.value.equals(((FirmwareEnum) obj).value);
             }
             return false;
@@ -334,7 +334,7 @@ public class Server  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -367,7 +367,7 @@ public class Server  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BootLoaderEnum) {
+            if (obj instanceof BootLoaderEnum) {
                 return this.value.equals(((BootLoaderEnum) obj).value);
             }
             return false;

@@ -53,7 +53,7 @@ public class ComponentCategory {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class ComponentCategory {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof ComponentCategory) {
+        if (obj instanceof ComponentCategory) {
             return this.value.equals(((ComponentCategory) obj).value);
         }
         return false;

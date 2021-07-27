@@ -57,7 +57,7 @@ public class ModifyTargetParamsReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -90,7 +90,7 @@ public class ModifyTargetParamsReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof GroupEnum) {
+            if (obj instanceof GroupEnum) {
                 return this.value.equals(((GroupEnum) obj).value);
             }
             return false;

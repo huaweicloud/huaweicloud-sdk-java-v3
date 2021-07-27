@@ -84,7 +84,7 @@ public class Location  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class Location  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperatorEnum) {
+            if (obj instanceof OperatorEnum) {
                 return this.value.equals(((OperatorEnum) obj).value);
             }
             return false;

@@ -55,7 +55,7 @@ public class ResetMessagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -88,7 +88,7 @@ public class ResetMessagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionIdEnum) {
+            if (obj instanceof ActionIdEnum) {
                 return this.value.equals(((ActionIdEnum) obj).value);
             }
             return false;

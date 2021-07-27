@@ -53,7 +53,7 @@ public class MeetingStatus {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class MeetingStatus {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof MeetingStatus) {
+        if (obj instanceof MeetingStatus) {
             return this.value.equals(((MeetingStatus) obj).value);
         }
         return false;

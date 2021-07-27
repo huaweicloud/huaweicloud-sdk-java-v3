@@ -70,7 +70,7 @@ public class CreateScalingPolicyV2Option  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -103,7 +103,7 @@ public class CreateScalingPolicyV2Option  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingResourceTypeEnum) {
+            if (obj instanceof ScalingResourceTypeEnum) {
                 return this.value.equals(((ScalingResourceTypeEnum) obj).value);
             }
             return false;
@@ -160,7 +160,7 @@ public class CreateScalingPolicyV2Option  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -193,7 +193,7 @@ public class CreateScalingPolicyV2Option  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingPolicyTypeEnum) {
+            if (obj instanceof ScalingPolicyTypeEnum) {
                 return this.value.equals(((ScalingPolicyTypeEnum) obj).value);
             }
             return false;

@@ -76,7 +76,7 @@ public class TaskMonitorInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class TaskMonitorInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskTypeEnum) {
+            if (obj instanceof TaskTypeEnum) {
                 return this.value.equals(((TaskTypeEnum) obj).value);
             }
             return false;
@@ -160,7 +160,7 @@ public class TaskMonitorInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -193,7 +193,7 @@ public class TaskMonitorInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -280,7 +280,7 @@ public class TaskMonitorInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -313,7 +313,7 @@ public class TaskMonitorInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PeriodEnum) {
+            if (obj instanceof PeriodEnum) {
                 return this.value.equals(((PeriodEnum) obj).value);
             }
             return false;
@@ -376,7 +376,7 @@ public class TaskMonitorInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -409,7 +409,7 @@ public class TaskMonitorInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PositionEnum) {
+            if (obj instanceof PositionEnum) {
                 return this.value.equals(((PositionEnum) obj).value);
             }
             return false;
@@ -484,7 +484,7 @@ public class TaskMonitorInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -517,7 +517,7 @@ public class TaskMonitorInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExecuteStatusEnum) {
+            if (obj instanceof ExecuteStatusEnum) {
                 return this.value.equals(((ExecuteStatusEnum) obj).value);
             }
             return false;
@@ -598,7 +598,7 @@ public class TaskMonitorInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -631,7 +631,7 @@ public class TaskMonitorInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExtTypeEnum) {
+            if (obj instanceof ExtTypeEnum) {
                 return this.value.equals(((ExtTypeEnum) obj).value);
             }
             return false;

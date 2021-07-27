@@ -72,7 +72,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImagetypeEnum) {
+            if (obj instanceof ImagetypeEnum) {
                 return this.value.equals(((ImagetypeEnum) obj).value);
             }
             return false;
@@ -162,7 +162,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -195,7 +195,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsBitEnum) {
+            if (obj instanceof OsBitEnum) {
                 return this.value.equals(((OsBitEnum) obj).value);
             }
             return false;
@@ -252,7 +252,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -285,7 +285,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -396,7 +396,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -429,7 +429,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PlatformEnum) {
+            if (obj instanceof PlatformEnum) {
                 return this.value.equals(((PlatformEnum) obj).value);
             }
             return false;
@@ -552,7 +552,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -585,7 +585,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DiskFormatEnum) {
+            if (obj instanceof DiskFormatEnum) {
                 return this.value.equals(((DiskFormatEnum) obj).value);
             }
             return false;
@@ -720,7 +720,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -753,7 +753,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -816,7 +816,7 @@ public class GlanceListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -849,7 +849,7 @@ public class GlanceListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VisibilityEnum) {
+            if (obj instanceof VisibilityEnum) {
                 return this.value.equals(((VisibilityEnum) obj).value);
             }
             return false;

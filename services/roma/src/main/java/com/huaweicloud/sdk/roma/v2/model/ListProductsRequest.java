@@ -110,7 +110,7 @@ public class ListProductsRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -143,7 +143,7 @@ public class ListProductsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProductTypeEnum) {
+            if (obj instanceof ProductTypeEnum) {
                 return this.value.equals(((ProductTypeEnum) obj).value);
             }
             return false;
@@ -200,7 +200,7 @@ public class ListProductsRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -233,7 +233,7 @@ public class ListProductsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolTypeEnum) {
+            if (obj instanceof ProtocolTypeEnum) {
                 return this.value.equals(((ProtocolTypeEnum) obj).value);
             }
             return false;

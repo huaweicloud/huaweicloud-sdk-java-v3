@@ -69,7 +69,7 @@ public class QueryLTSLogParams  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -102,7 +102,7 @@ public class QueryLTSLogParams  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof KeywordsEnum) {
+            if (obj instanceof KeywordsEnum) {
                 return this.value.equals(((KeywordsEnum) obj).value);
             }
             return false;
@@ -159,7 +159,7 @@ public class QueryLTSLogParams  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -192,7 +192,7 @@ public class QueryLTSLogParams  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SearchTypeEnum) {
+            if (obj instanceof SearchTypeEnum) {
                 return this.value.equals(((SearchTypeEnum) obj).value);
             }
             return false;

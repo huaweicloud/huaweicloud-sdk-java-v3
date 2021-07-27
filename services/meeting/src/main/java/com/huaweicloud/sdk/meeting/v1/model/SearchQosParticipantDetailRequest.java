@@ -62,7 +62,7 @@ public class SearchQosParticipantDetailRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class SearchQosParticipantDetailRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConfTypeEnum) {
+            if (obj instanceof ConfTypeEnum) {
                 return this.value.equals(((ConfTypeEnum) obj).value);
             }
             return false;
@@ -164,7 +164,7 @@ public class SearchQosParticipantDetailRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class SearchQosParticipantDetailRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof QosTypeEnum) {
+            if (obj instanceof QosTypeEnum) {
                 return this.value.equals(((QosTypeEnum) obj).value);
             }
             return false;

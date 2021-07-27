@@ -64,7 +64,7 @@ public class BatchRestartOrDeleteInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class BatchRestartOrDeleteInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionEnum) {
+            if (obj instanceof ActionEnum) {
                 return this.value.equals(((ActionEnum) obj).value);
             }
             return false;
@@ -148,7 +148,7 @@ public class BatchRestartOrDeleteInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -181,7 +181,7 @@ public class BatchRestartOrDeleteInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AllFailureEnum) {
+            if (obj instanceof AllFailureEnum) {
                 return this.value.equals(((AllFailureEnum) obj).value);
             }
             return false;

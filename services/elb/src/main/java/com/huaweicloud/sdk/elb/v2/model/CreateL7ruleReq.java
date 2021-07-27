@@ -66,7 +66,7 @@ public class CreateL7ruleReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class CreateL7ruleReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;

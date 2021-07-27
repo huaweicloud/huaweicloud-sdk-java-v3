@@ -135,7 +135,7 @@ public class AssetSummary  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -168,7 +168,7 @@ public class AssetSummary  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AssetStatusEnum) {
+            if (obj instanceof AssetStatusEnum) {
                 return this.value.equals(((AssetStatusEnum) obj).value);
             }
             return false;
@@ -237,7 +237,7 @@ public class AssetSummary  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -270,7 +270,7 @@ public class AssetSummary  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TranscodeStatusEnum) {
+            if (obj instanceof TranscodeStatusEnum) {
                 return this.value.equals(((TranscodeStatusEnum) obj).value);
             }
             return false;
@@ -333,7 +333,7 @@ public class AssetSummary  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -366,7 +366,7 @@ public class AssetSummary  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ThumbnailStatusEnum) {
+            if (obj instanceof ThumbnailStatusEnum) {
                 return this.value.equals(((ThumbnailStatusEnum) obj).value);
             }
             return false;
@@ -441,7 +441,7 @@ public class AssetSummary  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -474,7 +474,7 @@ public class AssetSummary  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReviewStatusEnum) {
+            if (obj instanceof ReviewStatusEnum) {
                 return this.value.equals(((ReviewStatusEnum) obj).value);
             }
             return false;

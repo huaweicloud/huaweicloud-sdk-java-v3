@@ -70,7 +70,7 @@ public class Common  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -103,7 +103,7 @@ public class Common  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PvcEnum) {
+            if (obj instanceof PvcEnum) {
                 return this.value.equals(((PvcEnum) obj).value);
             }
             return false;
@@ -166,7 +166,7 @@ public class Common  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -199,7 +199,7 @@ public class Common  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VideoCodecEnum) {
+            if (obj instanceof VideoCodecEnum) {
                 return this.value.equals(((VideoCodecEnum) obj).value);
             }
             return false;
@@ -262,7 +262,7 @@ public class Common  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -295,7 +295,7 @@ public class Common  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AudioCodecEnum) {
+            if (obj instanceof AudioCodecEnum) {
                 return this.value.equals(((AudioCodecEnum) obj).value);
             }
             return false;

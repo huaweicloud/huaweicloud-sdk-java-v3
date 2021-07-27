@@ -56,7 +56,7 @@ public class LdApiCheckInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class LdApiCheckInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -158,7 +158,7 @@ public class LdApiCheckInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -191,7 +191,7 @@ public class LdApiCheckInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LdApiMethodEnum) {
+            if (obj instanceof LdApiMethodEnum) {
                 return this.value.equals(((LdApiMethodEnum) obj).value);
             }
             return false;

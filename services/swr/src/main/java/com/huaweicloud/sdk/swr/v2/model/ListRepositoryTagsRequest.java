@@ -84,7 +84,7 @@ public class ListRepositoryTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class ListRepositoryTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OrderTypeEnum) {
+            if (obj instanceof OrderTypeEnum) {
                 return this.value.equals(((OrderTypeEnum) obj).value);
             }
             return false;

@@ -60,7 +60,7 @@ public class SearchQosParticipantsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class SearchQosParticipantsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConfTypeEnum) {
+            if (obj instanceof ConfTypeEnum) {
                 return this.value.equals(((ConfTypeEnum) obj).value);
             }
             return false;

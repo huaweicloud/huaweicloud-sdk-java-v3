@@ -57,7 +57,7 @@ public class RemoveFromSharedBandwidthOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -90,7 +90,7 @@ public class RemoveFromSharedBandwidthOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargeModeEnum) {
+            if (obj instanceof ChargeModeEnum) {
                 return this.value.equals(((ChargeModeEnum) obj).value);
             }
             return false;

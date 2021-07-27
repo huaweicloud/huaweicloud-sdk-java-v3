@@ -54,7 +54,7 @@ public class BillingUpdate  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class BillingUpdate  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConsistentLevelEnum) {
+            if (obj instanceof ConsistentLevelEnum) {
                 return this.value.equals(((ConsistentLevelEnum) obj).value);
             }
             return false;

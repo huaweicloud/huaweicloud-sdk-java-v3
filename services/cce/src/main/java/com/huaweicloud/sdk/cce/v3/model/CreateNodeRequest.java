@@ -55,7 +55,7 @@ public class CreateNodeRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -88,7 +88,7 @@ public class CreateNodeRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NodepoolScaleUpEnum) {
+            if (obj instanceof NodepoolScaleUpEnum) {
                 return this.value.equals(((NodepoolScaleUpEnum) obj).value);
             }
             return false;

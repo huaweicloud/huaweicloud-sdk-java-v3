@@ -109,7 +109,7 @@ public class UpdateTriggerRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -142,7 +142,7 @@ public class UpdateTriggerRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TriggerTypeCodeEnum) {
+            if (obj instanceof TriggerTypeCodeEnum) {
                 return this.value.equals(((TriggerTypeCodeEnum) obj).value);
             }
             return false;

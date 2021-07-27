@@ -102,7 +102,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -135,7 +135,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DiskFormatEnum) {
+            if (obj instanceof DiskFormatEnum) {
                 return this.value.equals(((DiskFormatEnum) obj).value);
             }
             return false;
@@ -222,7 +222,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -255,7 +255,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -372,7 +372,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -405,7 +405,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -462,7 +462,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -495,7 +495,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsBitEnum) {
+            if (obj instanceof OsBitEnum) {
                 return this.value.equals(((OsBitEnum) obj).value);
             }
             return false;
@@ -558,7 +558,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -591,7 +591,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VirtualEnvTypeEnum) {
+            if (obj instanceof VirtualEnvTypeEnum) {
                 return this.value.equals(((VirtualEnvTypeEnum) obj).value);
             }
             return false;

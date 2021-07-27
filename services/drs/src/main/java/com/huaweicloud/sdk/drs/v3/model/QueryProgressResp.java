@@ -80,7 +80,7 @@ public class QueryProgressResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -113,7 +113,7 @@ public class QueryProgressResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskModeEnum) {
+            if (obj instanceof TaskModeEnum) {
                 return this.value.equals(((TaskModeEnum) obj).value);
             }
             return false;

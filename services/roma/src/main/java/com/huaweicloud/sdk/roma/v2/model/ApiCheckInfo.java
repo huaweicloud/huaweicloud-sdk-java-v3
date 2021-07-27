@@ -98,7 +98,7 @@ public class ApiCheckInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -131,7 +131,7 @@ public class ApiCheckInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReqMethodEnum) {
+            if (obj instanceof ReqMethodEnum) {
                 return this.value.equals(((ReqMethodEnum) obj).value);
             }
             return false;
@@ -188,7 +188,7 @@ public class ApiCheckInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -221,7 +221,7 @@ public class ApiCheckInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MatchModeEnum) {
+            if (obj instanceof MatchModeEnum) {
                 return this.value.equals(((MatchModeEnum) obj).value);
             }
             return false;

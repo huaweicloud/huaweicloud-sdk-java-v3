@@ -125,7 +125,7 @@ public class InstanceStatusType {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -158,7 +158,7 @@ public class InstanceStatusType {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof InstanceStatusType) {
+        if (obj instanceof InstanceStatusType) {
             return this.value.equals(((InstanceStatusType) obj).value);
         }
         return false;

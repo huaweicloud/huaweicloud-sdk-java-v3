@@ -76,7 +76,7 @@ public class CinderExportToImageOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class CinderExportToImageOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ContainerFormatEnum) {
+            if (obj instanceof ContainerFormatEnum) {
                 return this.value.equals(((ContainerFormatEnum) obj).value);
             }
             return false;
@@ -178,7 +178,7 @@ public class CinderExportToImageOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -211,7 +211,7 @@ public class CinderExportToImageOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DiskFormatEnum) {
+            if (obj instanceof DiskFormatEnum) {
                 return this.value.equals(((DiskFormatEnum) obj).value);
             }
             return false;
@@ -274,7 +274,7 @@ public class CinderExportToImageOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -307,7 +307,7 @@ public class CinderExportToImageOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;

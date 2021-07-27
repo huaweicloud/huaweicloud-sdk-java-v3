@@ -69,7 +69,7 @@ public class ApiBindAclInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -102,7 +102,7 @@ public class ApiBindAclInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EntityTypeEnum) {
+            if (obj instanceof EntityTypeEnum) {
                 return this.value.equals(((EntityTypeEnum) obj).value);
             }
             return false;
@@ -153,7 +153,7 @@ public class ApiBindAclInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -186,7 +186,7 @@ public class ApiBindAclInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AclTypeEnum) {
+            if (obj instanceof AclTypeEnum) {
                 return this.value.equals(((AclTypeEnum) obj).value);
             }
             return false;

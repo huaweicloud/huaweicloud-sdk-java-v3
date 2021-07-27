@@ -117,7 +117,7 @@ public class SrcNodeResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -150,7 +150,7 @@ public class SrcNodeResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CloudTypeEnum) {
+            if (obj instanceof CloudTypeEnum) {
                 return this.value.equals(((CloudTypeEnum) obj).value);
             }
             return false;

@@ -60,7 +60,7 @@ public class ShowProtectableRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class ShowProtectableRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectableTypeEnum) {
+            if (obj instanceof ProtectableTypeEnum) {
                 return this.value.equals(((ProtectableTypeEnum) obj).value);
             }
             return false;

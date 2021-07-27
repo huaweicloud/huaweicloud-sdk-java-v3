@@ -60,7 +60,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OptionEnum) {
+            if (obj instanceof OptionEnum) {
                 return this.value.equals(((OptionEnum) obj).value);
             }
             return false;

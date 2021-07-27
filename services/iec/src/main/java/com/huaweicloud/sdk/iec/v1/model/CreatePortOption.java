@@ -51,7 +51,7 @@ public class CreatePortOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -84,7 +84,7 @@ public class CreatePortOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeviceOwnerEnum) {
+            if (obj instanceof DeviceOwnerEnum) {
                 return this.value.equals(((DeviceOwnerEnum) obj).value);
             }
             return false;

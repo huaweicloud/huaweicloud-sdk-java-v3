@@ -81,7 +81,7 @@ public class DiskInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -114,7 +114,7 @@ public class DiskInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VolumeTypeEnum) {
+            if (obj instanceof VolumeTypeEnum) {
                 return this.value.equals(((VolumeTypeEnum) obj).value);
             }
             return false;
@@ -165,7 +165,7 @@ public class DiskInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -198,7 +198,7 @@ public class DiskInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DiskTypeEnum) {
+            if (obj instanceof DiskTypeEnum) {
                 return this.value.equals(((DiskTypeEnum) obj).value);
             }
             return false;

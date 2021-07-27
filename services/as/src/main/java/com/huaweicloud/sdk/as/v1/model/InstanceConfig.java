@@ -125,7 +125,7 @@ public class InstanceConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -158,7 +158,7 @@ public class InstanceConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TenancyEnum) {
+            if (obj instanceof TenancyEnum) {
                 return this.value.equals(((TenancyEnum) obj).value);
             }
             return false;
@@ -215,7 +215,7 @@ public class InstanceConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -248,7 +248,7 @@ public class InstanceConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MultiFlavorPriorityPolicyEnum) {
+            if (obj instanceof MultiFlavorPriorityPolicyEnum) {
                 return this.value.equals(((MultiFlavorPriorityPolicyEnum) obj).value);
             }
             return false;
@@ -293,7 +293,7 @@ public class InstanceConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -326,7 +326,7 @@ public class InstanceConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MarketTypeEnum) {
+            if (obj instanceof MarketTypeEnum) {
                 return this.value.equals(((MarketTypeEnum) obj).value);
             }
             return false;

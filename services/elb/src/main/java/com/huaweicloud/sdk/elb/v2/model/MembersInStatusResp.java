@@ -84,7 +84,7 @@ public class MembersInStatusResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class MembersInStatusResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperatingStatusEnum) {
+            if (obj instanceof OperatingStatusEnum) {
                 return this.value.equals(((OperatingStatusEnum) obj).value);
             }
             return false;

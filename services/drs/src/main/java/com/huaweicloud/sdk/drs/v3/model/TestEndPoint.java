@@ -70,7 +70,7 @@ public class TestEndPoint  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -103,7 +103,7 @@ public class TestEndPoint  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NetTypeEnum) {
+            if (obj instanceof NetTypeEnum) {
                 return this.value.equals(((NetTypeEnum) obj).value);
             }
             return false;
@@ -154,7 +154,7 @@ public class TestEndPoint  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -187,7 +187,7 @@ public class TestEndPoint  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DbTypeEnum) {
+            if (obj instanceof DbTypeEnum) {
                 return this.value.equals(((DbTypeEnum) obj).value);
             }
             return false;
@@ -310,7 +310,7 @@ public class TestEndPoint  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -343,7 +343,7 @@ public class TestEndPoint  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EndPointTypeEnum) {
+            if (obj instanceof EndPointTypeEnum) {
                 return this.value.equals(((EndPointTypeEnum) obj).value);
             }
             return false;

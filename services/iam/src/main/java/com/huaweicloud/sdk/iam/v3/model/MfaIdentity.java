@@ -58,7 +58,7 @@ public class MfaIdentity  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -91,7 +91,7 @@ public class MfaIdentity  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MethodsEnum) {
+            if (obj instanceof MethodsEnum) {
                 return this.value.equals(((MethodsEnum) obj).value);
             }
             return false;

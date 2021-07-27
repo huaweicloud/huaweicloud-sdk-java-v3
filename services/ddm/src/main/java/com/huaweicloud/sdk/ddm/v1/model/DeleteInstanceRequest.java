@@ -60,7 +60,7 @@ public class DeleteInstanceRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class DeleteInstanceRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteRdsDataEnum) {
+            if (obj instanceof DeleteRdsDataEnum) {
                 return this.value.equals(((DeleteRdsDataEnum) obj).value);
             }
             return false;

@@ -199,7 +199,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -232,7 +232,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -313,7 +313,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -346,7 +346,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineTypeEnum) {
+            if (obj instanceof EngineTypeEnum) {
                 return this.value.equals(((EngineTypeEnum) obj).value);
             }
             return false;
@@ -403,7 +403,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -436,7 +436,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NetTypeEnum) {
+            if (obj instanceof NetTypeEnum) {
                 return this.value.equals(((NetTypeEnum) obj).value);
             }
             return false;
@@ -493,7 +493,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -526,7 +526,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof JobDirectionEnum) {
+            if (obj instanceof JobDirectionEnum) {
                 return this.value.equals(((JobDirectionEnum) obj).value);
             }
             return false;
@@ -583,7 +583,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -616,7 +616,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DbUseTypeEnum) {
+            if (obj instanceof DbUseTypeEnum) {
                 return this.value.equals(((DbUseTypeEnum) obj).value);
             }
             return false;
@@ -673,7 +673,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -706,7 +706,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskTypeEnum) {
+            if (obj instanceof TaskTypeEnum) {
                 return this.value.equals(((TaskTypeEnum) obj).value);
             }
             return false;

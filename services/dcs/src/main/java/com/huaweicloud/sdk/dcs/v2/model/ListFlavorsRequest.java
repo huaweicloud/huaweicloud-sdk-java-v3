@@ -78,7 +78,7 @@ public class ListFlavorsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class ListFlavorsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CpuTypeEnum) {
+            if (obj instanceof CpuTypeEnum) {
                 return this.value.equals(((CpuTypeEnum) obj).value);
             }
             return false;

@@ -72,7 +72,7 @@ public class ExportImageRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class ExportImageRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FileFormatEnum) {
+            if (obj instanceof FileFormatEnum) {
                 return this.value.equals(((FileFormatEnum) obj).value);
             }
             return false;

@@ -72,7 +72,7 @@ public class DeploymentHostAuthorizationBody  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class DeploymentHostAuthorizationBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TrustedTypeEnum) {
+            if (obj instanceof TrustedTypeEnum) {
                 return this.value.equals(((TrustedTypeEnum) obj).value);
             }
             return false;

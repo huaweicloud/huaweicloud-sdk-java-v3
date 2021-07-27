@@ -68,7 +68,7 @@ public class ShowContentResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ShowContentResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EncodingEnum) {
+            if (obj instanceof EncodingEnum) {
                 return this.value.equals(((EncodingEnum) obj).value);
             }
             return false;

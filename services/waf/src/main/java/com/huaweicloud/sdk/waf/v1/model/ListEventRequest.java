@@ -74,7 +74,7 @@ public class ListEventRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ListEventRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RecentEnum) {
+            if (obj instanceof RecentEnum) {
                 return this.value.equals(((RecentEnum) obj).value);
             }
             return false;

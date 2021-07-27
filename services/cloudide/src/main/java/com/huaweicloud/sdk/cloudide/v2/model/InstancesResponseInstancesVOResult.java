@@ -60,7 +60,7 @@ public class InstancesResponseInstancesVOResult  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class InstancesResponseInstancesVOResult  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ArchEnum) {
+            if (obj instanceof ArchEnum) {
                 return this.value.equals(((ArchEnum) obj).value);
             }
             return false;

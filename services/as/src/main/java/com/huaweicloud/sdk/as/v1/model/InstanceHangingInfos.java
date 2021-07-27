@@ -84,7 +84,7 @@ public class InstanceHangingInfos  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class InstanceHangingInfos  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LifecycleHookStatusEnum) {
+            if (obj instanceof LifecycleHookStatusEnum) {
                 return this.value.equals(((LifecycleHookStatusEnum) obj).value);
             }
             return false;

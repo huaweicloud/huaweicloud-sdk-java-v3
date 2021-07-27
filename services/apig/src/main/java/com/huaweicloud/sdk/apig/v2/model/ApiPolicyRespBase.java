@@ -64,7 +64,7 @@ public class ApiPolicyRespBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class ApiPolicyRespBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EffectModeEnum) {
+            if (obj instanceof EffectModeEnum) {
                 return this.value.equals(((EffectModeEnum) obj).value);
             }
             return false;

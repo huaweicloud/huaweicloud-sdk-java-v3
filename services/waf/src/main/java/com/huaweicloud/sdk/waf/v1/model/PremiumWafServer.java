@@ -56,7 +56,7 @@ public class PremiumWafServer  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class PremiumWafServer  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FrontProtocolEnum) {
+            if (obj instanceof FrontProtocolEnum) {
                 return this.value.equals(((FrontProtocolEnum) obj).value);
             }
             return false;
@@ -140,7 +140,7 @@ public class PremiumWafServer  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -173,7 +173,7 @@ public class PremiumWafServer  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BackProtocolEnum) {
+            if (obj instanceof BackProtocolEnum) {
                 return this.value.equals(((BackProtocolEnum) obj).value);
             }
             return false;

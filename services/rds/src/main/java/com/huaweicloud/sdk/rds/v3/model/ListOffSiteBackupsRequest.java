@@ -72,7 +72,7 @@ public class ListOffSiteBackupsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class ListOffSiteBackupsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BackupTypeEnum) {
+            if (obj instanceof BackupTypeEnum) {
                 return this.value.equals(((BackupTypeEnum) obj).value);
             }
             return false;

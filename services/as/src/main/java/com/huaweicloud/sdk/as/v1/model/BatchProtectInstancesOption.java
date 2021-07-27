@@ -66,7 +66,7 @@ public class BatchProtectInstancesOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class BatchProtectInstancesOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InstanceDeleteEnum) {
+            if (obj instanceof InstanceDeleteEnum) {
                 return this.value.equals(((InstanceDeleteEnum) obj).value);
             }
             return false;
@@ -144,7 +144,7 @@ public class BatchProtectInstancesOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -177,7 +177,7 @@ public class BatchProtectInstancesOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionEnum) {
+            if (obj instanceof ActionEnum) {
                 return this.value.equals(((ActionEnum) obj).value);
             }
             return false;
@@ -228,7 +228,7 @@ public class BatchProtectInstancesOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -261,7 +261,7 @@ public class BatchProtectInstancesOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InstanceAppendEnum) {
+            if (obj instanceof InstanceAppendEnum) {
                 return this.value.equals(((InstanceAppendEnum) obj).value);
             }
             return false;

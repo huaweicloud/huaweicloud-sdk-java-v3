@@ -68,7 +68,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectedEnum) {
+            if (obj instanceof ProtectedEnum) {
                 return this.value.equals(((ProtectedEnum) obj).value);
             }
             return false;
@@ -176,7 +176,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -209,7 +209,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VirtualEnvTypeEnum) {
+            if (obj instanceof VirtualEnvTypeEnum) {
                 return this.value.equals(((VirtualEnvTypeEnum) obj).value);
             }
             return false;
@@ -260,7 +260,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -293,7 +293,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsregisteredEnum) {
+            if (obj instanceof IsregisteredEnum) {
                 return this.value.equals(((IsregisteredEnum) obj).value);
             }
             return false;
@@ -368,7 +368,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -401,7 +401,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortKeyEnum) {
+            if (obj instanceof SortKeyEnum) {
                 return this.value.equals(((SortKeyEnum) obj).value);
             }
             return false;
@@ -452,7 +452,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -485,7 +485,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortDirEnum) {
+            if (obj instanceof SortDirEnum) {
                 return this.value.equals(((SortDirEnum) obj).value);
             }
             return false;
@@ -753,7 +753,7 @@ public class ListImagesRequest  {
 
     /**
      * 用于分页，表示查询几条镜像记录，取值为正整数，最大（默认）取值为500
-     * minimum: 0
+     * minimum: 1
      * maximum: 500
      * @return limit
      */

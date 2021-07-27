@@ -62,7 +62,7 @@ public class ListDependenciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class ListDependenciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DependencyTypeEnum) {
+            if (obj instanceof DependencyTypeEnum) {
                 return this.value.equals(((DependencyTypeEnum) obj).value);
             }
             return false;
@@ -206,7 +206,7 @@ public class ListDependenciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -239,7 +239,7 @@ public class ListDependenciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RuntimeEnum) {
+            if (obj instanceof RuntimeEnum) {
                 return this.value.equals(((RuntimeEnum) obj).value);
             }
             return false;

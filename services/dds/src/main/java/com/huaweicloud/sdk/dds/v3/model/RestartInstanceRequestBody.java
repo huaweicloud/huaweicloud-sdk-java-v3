@@ -60,7 +60,7 @@ public class RestartInstanceRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class RestartInstanceRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TargetTypeEnum) {
+            if (obj instanceof TargetTypeEnum) {
                 return this.value.equals(((TargetTypeEnum) obj).value);
             }
             return false;

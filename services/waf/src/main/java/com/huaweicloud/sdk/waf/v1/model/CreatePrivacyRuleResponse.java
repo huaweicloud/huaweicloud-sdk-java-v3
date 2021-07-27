@@ -86,7 +86,7 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -119,7 +119,7 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CategoryEnum) {
+            if (obj instanceof CategoryEnum) {
                 return this.value.equals(((CategoryEnum) obj).value);
             }
             return false;

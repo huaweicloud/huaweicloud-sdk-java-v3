@@ -54,7 +54,7 @@ public class CinderListQuotasRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class CinderListQuotasRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof UsageEnum) {
+            if (obj instanceof UsageEnum) {
                 return this.value.equals(((UsageEnum) obj).value);
             }
             return false;

@@ -92,7 +92,7 @@ public class ImageDetectionReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -125,7 +125,7 @@ public class ImageDetectionReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CategoriesEnum) {
+            if (obj instanceof CategoriesEnum) {
                 return this.value.equals(((CategoriesEnum) obj).value);
             }
             return false;

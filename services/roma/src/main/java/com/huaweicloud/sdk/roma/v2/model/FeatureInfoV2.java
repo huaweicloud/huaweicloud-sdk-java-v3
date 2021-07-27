@@ -223,7 +223,7 @@ public class FeatureInfoV2  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -256,7 +256,7 @@ public class FeatureInfoV2  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NameEnum) {
+            if (obj instanceof NameEnum) {
                 return this.value.equals(((NameEnum) obj).value);
             }
             return false;

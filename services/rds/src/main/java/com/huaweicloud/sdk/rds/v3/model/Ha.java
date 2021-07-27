@@ -56,7 +56,7 @@ public class Ha  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class Ha  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ModeEnum) {
+            if (obj instanceof ModeEnum) {
                 return this.value.equals(((ModeEnum) obj).value);
             }
             return false;
@@ -146,7 +146,7 @@ public class Ha  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -179,7 +179,7 @@ public class Ha  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReplicationModeEnum) {
+            if (obj instanceof ReplicationModeEnum) {
                 return this.value.equals(((ReplicationModeEnum) obj).value);
             }
             return false;

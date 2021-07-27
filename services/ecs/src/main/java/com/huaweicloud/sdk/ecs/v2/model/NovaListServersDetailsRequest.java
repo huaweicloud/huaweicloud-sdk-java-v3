@@ -164,7 +164,7 @@ public class NovaListServersDetailsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class NovaListServersDetailsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortKeyEnum) {
+            if (obj instanceof SortKeyEnum) {
                 return this.value.equals(((SortKeyEnum) obj).value);
             }
             return false;
@@ -320,7 +320,7 @@ public class NovaListServersDetailsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -353,7 +353,7 @@ public class NovaListServersDetailsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;

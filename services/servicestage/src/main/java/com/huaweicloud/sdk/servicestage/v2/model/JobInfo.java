@@ -66,7 +66,7 @@ public class JobInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class JobInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExecutionStatusEnum) {
+            if (obj instanceof ExecutionStatusEnum) {
                 return this.value.equals(((ExecutionStatusEnum) obj).value);
             }
             return false;

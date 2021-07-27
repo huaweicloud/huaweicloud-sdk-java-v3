@@ -60,7 +60,7 @@ public class HaResponse  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class HaResponse  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ReplicationModeEnum) {
+            if (obj instanceof ReplicationModeEnum) {
                 return this.value.equals(((ReplicationModeEnum) obj).value);
             }
             return false;

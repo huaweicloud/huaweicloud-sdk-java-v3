@@ -77,7 +77,7 @@ public class DomainBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -110,7 +110,7 @@ public class DomainBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BusinessTypeEnum) {
+            if (obj instanceof BusinessTypeEnum) {
                 return this.value.equals(((BusinessTypeEnum) obj).value);
             }
             return false;
@@ -173,7 +173,7 @@ public class DomainBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -206,7 +206,7 @@ public class DomainBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ServiceAreaEnum) {
+            if (obj instanceof ServiceAreaEnum) {
                 return this.value.equals(((ServiceAreaEnum) obj).value);
             }
             return false;

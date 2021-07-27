@@ -78,7 +78,7 @@ public class ListComponentsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class ListComponentsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OrderEnum) {
+            if (obj instanceof OrderEnum) {
                 return this.value.equals(((OrderEnum) obj).value);
             }
             return false;

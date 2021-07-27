@@ -68,7 +68,7 @@ public class ObsDestinationDescriptor  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ObsDestinationDescriptor  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConsumerStrategyEnum) {
+            if (obj instanceof ConsumerStrategyEnum) {
                 return this.value.equals(((ConsumerStrategyEnum) obj).value);
             }
             return false;
@@ -146,7 +146,7 @@ public class ObsDestinationDescriptor  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -179,7 +179,7 @@ public class ObsDestinationDescriptor  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DestinationFileTypeEnum) {
+            if (obj instanceof DestinationFileTypeEnum) {
                 return this.value.equals(((DestinationFileTypeEnum) obj).value);
             }
             return false;

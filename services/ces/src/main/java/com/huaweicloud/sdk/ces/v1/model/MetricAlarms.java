@@ -95,7 +95,7 @@ public class MetricAlarms  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -128,7 +128,7 @@ public class MetricAlarms  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AlarmTypeEnum) {
+            if (obj instanceof AlarmTypeEnum) {
                 return this.value.equals(((AlarmTypeEnum) obj).value);
             }
             return false;

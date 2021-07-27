@@ -67,7 +67,7 @@ public class OsExtendedVolumesInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -100,7 +100,7 @@ public class OsExtendedVolumesInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BootIndexEnum) {
+            if (obj instanceof BootIndexEnum) {
                 return this.value.equals(((BootIndexEnum) obj).value);
             }
             return false;

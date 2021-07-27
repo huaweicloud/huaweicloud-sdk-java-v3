@@ -84,7 +84,7 @@ public class ConfigurationSummaryForCreate  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class ConfigurationSummaryForCreate  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DatastoreNameEnum) {
+            if (obj instanceof DatastoreNameEnum) {
                 return this.value.equals(((DatastoreNameEnum) obj).value);
             }
             return false;

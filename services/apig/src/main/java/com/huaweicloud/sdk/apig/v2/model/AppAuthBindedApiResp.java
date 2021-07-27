@@ -125,7 +125,7 @@ public class AppAuthBindedApiResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -158,7 +158,7 @@ public class AppAuthBindedApiResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AppTypeEnum) {
+            if (obj instanceof AppTypeEnum) {
                 return this.value.equals(((AppTypeEnum) obj).value);
             }
             return false;
@@ -227,7 +227,7 @@ public class AppAuthBindedApiResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -260,7 +260,7 @@ public class AppAuthBindedApiResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthTunnelEnum) {
+            if (obj instanceof AuthTunnelEnum) {
                 return this.value.equals(((AuthTunnelEnum) obj).value);
             }
             return false;

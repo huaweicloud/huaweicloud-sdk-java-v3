@@ -219,7 +219,7 @@ public class TaskResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -252,7 +252,7 @@ public class TaskResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskTypeEnum) {
+            if (obj instanceof TaskTypeEnum) {
                 return this.value.equals(((TaskTypeEnum) obj).value);
             }
             return false;

@@ -96,7 +96,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BillingTypeEnum) {
+            if (obj instanceof BillingTypeEnum) {
                 return this.value.equals(((BillingTypeEnum) obj).value);
             }
             return false;
@@ -264,7 +264,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -297,7 +297,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VolumeTypeEnum) {
+            if (obj instanceof VolumeTypeEnum) {
                 return this.value.equals(((VolumeTypeEnum) obj).value);
             }
             return false;
@@ -360,7 +360,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -393,7 +393,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MasterDataVolumeTypeEnum) {
+            if (obj instanceof MasterDataVolumeTypeEnum) {
                 return this.value.equals(((MasterDataVolumeTypeEnum) obj).value);
             }
             return false;
@@ -444,7 +444,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -477,7 +477,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MasterDataVolumeCountEnum) {
+            if (obj instanceof MasterDataVolumeCountEnum) {
                 return this.value.equals(((MasterDataVolumeCountEnum) obj).value);
             }
             return false;
@@ -540,7 +540,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -573,7 +573,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CoreDataVolumeTypeEnum) {
+            if (obj instanceof CoreDataVolumeTypeEnum) {
                 return this.value.equals(((CoreDataVolumeTypeEnum) obj).value);
             }
             return false;
@@ -666,7 +666,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -699,7 +699,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SafeModeEnum) {
+            if (obj instanceof SafeModeEnum) {
                 return this.value.equals(((SafeModeEnum) obj).value);
             }
             return false;
@@ -750,7 +750,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -783,7 +783,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ClusterTypeEnum) {
+            if (obj instanceof ClusterTypeEnum) {
                 return this.value.equals(((ClusterTypeEnum) obj).value);
             }
             return false;
@@ -834,7 +834,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -867,7 +867,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LogCollectionEnum) {
+            if (obj instanceof LogCollectionEnum) {
                 return this.value.equals(((LogCollectionEnum) obj).value);
             }
             return false;
@@ -930,7 +930,7 @@ public class CreateClusterReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -963,7 +963,7 @@ public class CreateClusterReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LoginModeEnum) {
+            if (obj instanceof LoginModeEnum) {
                 return this.value.equals(((LoginModeEnum) obj).value);
             }
             return false;

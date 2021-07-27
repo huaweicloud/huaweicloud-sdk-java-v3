@@ -97,7 +97,7 @@ public class CreateAssetByFileUploadReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -130,7 +130,7 @@ public class CreateAssetByFileUploadReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CoverTypeEnum) {
+            if (obj instanceof CoverTypeEnum) {
                 return this.value.equals(((CoverTypeEnum) obj).value);
             }
             return false;
@@ -199,7 +199,7 @@ public class CreateAssetByFileUploadReq  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -232,7 +232,7 @@ public class CreateAssetByFileUploadReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AutoPublishEnum) {
+            if (obj instanceof AutoPublishEnum) {
                 return this.value.equals(((AutoPublishEnum) obj).value);
             }
             return false;

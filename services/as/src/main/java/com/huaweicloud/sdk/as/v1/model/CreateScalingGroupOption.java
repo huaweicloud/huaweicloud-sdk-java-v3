@@ -135,7 +135,7 @@ public class CreateScalingGroupOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -168,7 +168,7 @@ public class CreateScalingGroupOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HealthPeriodicAuditMethodEnum) {
+            if (obj instanceof HealthPeriodicAuditMethodEnum) {
                 return this.value.equals(((HealthPeriodicAuditMethodEnum) obj).value);
             }
             return false;
@@ -243,7 +243,7 @@ public class CreateScalingGroupOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -276,7 +276,7 @@ public class CreateScalingGroupOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InstanceTerminatePolicyEnum) {
+            if (obj instanceof InstanceTerminatePolicyEnum) {
                 return this.value.equals(((InstanceTerminatePolicyEnum) obj).value);
             }
             return false;
@@ -351,7 +351,7 @@ public class CreateScalingGroupOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -384,7 +384,7 @@ public class CreateScalingGroupOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MultiAzPriorityPolicyEnum) {
+            if (obj instanceof MultiAzPriorityPolicyEnum) {
                 return this.value.equals(((MultiAzPriorityPolicyEnum) obj).value);
             }
             return false;

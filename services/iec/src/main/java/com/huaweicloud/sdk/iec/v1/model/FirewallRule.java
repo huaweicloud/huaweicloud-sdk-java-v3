@@ -64,7 +64,7 @@ public class FirewallRule  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class FirewallRule  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionEnum) {
+            if (obj instanceof ActionEnum) {
                 return this.value.equals(((ActionEnum) obj).value);
             }
             return false;
@@ -196,7 +196,7 @@ public class FirewallRule  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -229,7 +229,7 @@ public class FirewallRule  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperateTypeEnum) {
+            if (obj instanceof OperateTypeEnum) {
                 return this.value.equals(((OperateTypeEnum) obj).value);
             }
             return false;
@@ -292,7 +292,7 @@ public class FirewallRule  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -325,7 +325,7 @@ public class FirewallRule  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;

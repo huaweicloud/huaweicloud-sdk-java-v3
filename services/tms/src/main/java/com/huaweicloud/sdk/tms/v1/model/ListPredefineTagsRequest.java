@@ -84,7 +84,7 @@ public class ListPredefineTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class ListPredefineTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OrderMethodEnum) {
+            if (obj instanceof OrderMethodEnum) {
                 return this.value.equals(((OrderMethodEnum) obj).value);
             }
             return false;

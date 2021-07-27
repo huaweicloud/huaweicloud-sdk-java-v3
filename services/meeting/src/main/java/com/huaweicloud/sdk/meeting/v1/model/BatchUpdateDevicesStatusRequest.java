@@ -68,7 +68,7 @@ public class BatchUpdateDevicesStatusRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class BatchUpdateDevicesStatusRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ValueEnum) {
+            if (obj instanceof ValueEnum) {
                 return this.value.equals(((ValueEnum) obj).value);
             }
             return false;

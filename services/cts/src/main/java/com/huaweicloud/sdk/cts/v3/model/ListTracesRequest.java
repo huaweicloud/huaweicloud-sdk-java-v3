@@ -56,7 +56,7 @@ public class ListTracesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class ListTracesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TraceTypeEnum) {
+            if (obj instanceof TraceTypeEnum) {
                 return this.value.equals(((TraceTypeEnum) obj).value);
             }
             return false;
@@ -218,7 +218,7 @@ public class ListTracesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -251,7 +251,7 @@ public class ListTracesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TraceRatingEnum) {
+            if (obj instanceof TraceRatingEnum) {
                 return this.value.equals(((TraceRatingEnum) obj).value);
             }
             return false;

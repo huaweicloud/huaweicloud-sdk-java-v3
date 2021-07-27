@@ -54,7 +54,7 @@ public class PreCheckInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class PreCheckInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PrecheckModeEnum) {
+            if (obj instanceof PrecheckModeEnum) {
                 return this.value.equals(((PrecheckModeEnum) obj).value);
             }
             return false;

@@ -62,7 +62,7 @@ public class Schedule  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class Schedule  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScheTypeEnum) {
+            if (obj instanceof ScheTypeEnum) {
                 return this.value.equals(((ScheTypeEnum) obj).value);
             }
             return false;

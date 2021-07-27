@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.cloudpipeline.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -42,11 +43,11 @@ public class CloudPipelineMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<PipelineExecuteStates>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(PipelineExecuteStates.class)

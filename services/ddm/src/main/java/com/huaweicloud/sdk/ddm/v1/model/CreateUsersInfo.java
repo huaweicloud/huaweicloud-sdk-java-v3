@@ -105,7 +105,7 @@ public class CreateUsersInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -138,7 +138,7 @@ public class CreateUsersInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BaseAuthorityEnum) {
+            if (obj instanceof BaseAuthorityEnum) {
                 return this.value.equals(((BaseAuthorityEnum) obj).value);
             }
             return false;

@@ -88,7 +88,7 @@ public class CreatePublicIpOption  {
 
 
     /**
-     * 线路ID。
+     * 线路ID。 不传时默认取当前站点第一条线路
      * @return type
      */
     public String getType() {

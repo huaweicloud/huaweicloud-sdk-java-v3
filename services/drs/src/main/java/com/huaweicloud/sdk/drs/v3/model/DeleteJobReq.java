@@ -60,7 +60,7 @@ public class DeleteJobReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class DeleteJobReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DeleteTypeEnum) {
+            if (obj instanceof DeleteTypeEnum) {
                 return this.value.equals(((DeleteTypeEnum) obj).value);
             }
             return false;

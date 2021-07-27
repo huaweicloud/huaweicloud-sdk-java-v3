@@ -48,7 +48,7 @@ public class ShowApiVersionRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -81,7 +81,7 @@ public class ShowApiVersionRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ApiVersionEnum) {
+            if (obj instanceof ApiVersionEnum) {
                 return this.value.equals(((ApiVersionEnum) obj).value);
             }
             return false;

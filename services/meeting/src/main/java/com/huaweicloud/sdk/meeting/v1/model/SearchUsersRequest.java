@@ -110,7 +110,7 @@ public class SearchUsersRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -143,7 +143,7 @@ public class SearchUsersRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AdminTypeEnum) {
+            if (obj instanceof AdminTypeEnum) {
                 return this.value.equals(((AdminTypeEnum) obj).value);
             }
             return false;

@@ -65,7 +65,7 @@ public class InstanceActionType {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -98,7 +98,7 @@ public class InstanceActionType {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof InstanceActionType) {
+        if (obj instanceof InstanceActionType) {
             return this.value.equals(((InstanceActionType) obj).value);
         }
         return false;

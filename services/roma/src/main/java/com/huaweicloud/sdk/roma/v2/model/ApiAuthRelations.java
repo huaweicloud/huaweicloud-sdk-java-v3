@@ -88,7 +88,7 @@ public class ApiAuthRelations  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -121,7 +121,7 @@ public class ApiAuthRelations  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthRoleEnum) {
+            if (obj instanceof AuthRoleEnum) {
                 return this.value.equals(((AuthRoleEnum) obj).value);
             }
             return false;

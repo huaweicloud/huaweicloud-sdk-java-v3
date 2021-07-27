@@ -54,7 +54,7 @@ public class AudioProcess  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class AudioProcess  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VolumeEnum) {
+            if (obj instanceof VolumeEnum) {
                 return this.value.equals(((VolumeEnum) obj).value);
             }
             return false;

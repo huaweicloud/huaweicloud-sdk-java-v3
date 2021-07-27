@@ -60,7 +60,7 @@ public class VersionInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class VersionInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IdEnum) {
+            if (obj instanceof IdEnum) {
                 return this.value.equals(((IdEnum) obj).value);
             }
             return false;
@@ -162,7 +162,7 @@ public class VersionInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -195,7 +195,7 @@ public class VersionInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;

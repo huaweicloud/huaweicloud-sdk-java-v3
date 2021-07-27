@@ -63,7 +63,7 @@ public class CreateDatabaseDetail  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -96,7 +96,7 @@ public class CreateDatabaseDetail  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ShardModeEnum) {
+            if (obj instanceof ShardModeEnum) {
                 return this.value.equals(((ShardModeEnum) obj).value);
             }
             return false;

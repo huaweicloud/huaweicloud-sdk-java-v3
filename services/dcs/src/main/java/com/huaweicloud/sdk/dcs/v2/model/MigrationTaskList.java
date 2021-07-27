@@ -82,7 +82,7 @@ public class MigrationTaskList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -115,7 +115,7 @@ public class MigrationTaskList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -166,7 +166,7 @@ public class MigrationTaskList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -199,7 +199,7 @@ public class MigrationTaskList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationTypeEnum) {
+            if (obj instanceof MigrationTypeEnum) {
                 return this.value.equals(((MigrationTypeEnum) obj).value);
             }
             return false;
@@ -250,7 +250,7 @@ public class MigrationTaskList  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -283,7 +283,7 @@ public class MigrationTaskList  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationMethodEnum) {
+            if (obj instanceof MigrationMethodEnum) {
                 return this.value.equals(((MigrationMethodEnum) obj).value);
             }
             return false;

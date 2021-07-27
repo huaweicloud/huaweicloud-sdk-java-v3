@@ -1,6 +1,6 @@
 package com.huaweicloud.sdk.meeting.v1.utils;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
@@ -20,25 +20,25 @@ public class HmacSHA256 {
         byte[] hashByte;
         try {
             Mac sha256HMAC = Mac.getInstance("HmacSHA256");
-            SecretKeySpec secretKey = new SecretKeySpec(key.getBytes("UTF-8"), "HmacSHA256");
+            SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
             sha256HMAC.init(secretKey);
 
-            hashByte = sha256HMAC.doFinal(data.getBytes("UTF-8"));
-        } catch (NoSuchAlgorithmException | UnsupportedEncodingException | InvalidKeyException e) {
+            hashByte = sha256HMAC.doFinal(data.getBytes(StandardCharsets.UTF_8));
+        } catch (NoSuchAlgorithmException | InvalidKeyException e) {
             return null;
         }
 
         return bytesToHex(hashByte);
     }
 
-    /*
+    /**
      * bytesToHex()，用来把一个byte类型数组转换成十六进制字符串
      */
     private static String bytesToHex(byte[] bytes) {
-        StringBuffer hexStr = new StringBuffer();
-        for (int i = 0; i < bytes.length; i++) {
-            hexStr.append(DIGEST_ARRAYS[bytes[i] >>> 4 & 0X0F]);
-            hexStr.append(DIGEST_ARRAYS[bytes[i] & 0X0F]);
+        StringBuilder hexStr = new StringBuilder();
+        for (byte b : bytes) {
+            hexStr.append(DIGEST_ARRAYS[b >>> 4 & 0X0F]);
+            hexStr.append(DIGEST_ARRAYS[b & 0X0F]);
         }
 
         return hexStr.toString();

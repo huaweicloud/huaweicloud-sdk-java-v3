@@ -75,7 +75,7 @@ public class Output  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -108,7 +108,7 @@ public class Output  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PlayTypeEnum) {
+            if (obj instanceof PlayTypeEnum) {
                 return this.value.equals(((PlayTypeEnum) obj).value);
             }
             return false;
@@ -183,7 +183,7 @@ public class Output  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -216,7 +216,7 @@ public class Output  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof QualityEnum) {
+            if (obj instanceof QualityEnum) {
                 return this.value.equals(((QualityEnum) obj).value);
             }
             return false;

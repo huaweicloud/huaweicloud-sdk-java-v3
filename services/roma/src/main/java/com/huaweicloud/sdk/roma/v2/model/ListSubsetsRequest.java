@@ -80,7 +80,7 @@ public class ListSubsetsRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -113,7 +113,7 @@ public class ListSubsetsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -170,7 +170,7 @@ public class ListSubsetsRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -203,7 +203,7 @@ public class ListSubsetsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OnlineStatusEnum) {
+            if (obj instanceof OnlineStatusEnum) {
                 return this.value.equals(((OnlineStatusEnum) obj).value);
             }
             return false;

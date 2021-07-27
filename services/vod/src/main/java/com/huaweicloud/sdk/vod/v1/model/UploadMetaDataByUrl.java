@@ -237,7 +237,7 @@ public class UploadMetaDataByUrl  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -270,7 +270,7 @@ public class UploadMetaDataByUrl  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VideoTypeEnum) {
+            if (obj instanceof VideoTypeEnum) {
                 return this.value.equals(((VideoTypeEnum) obj).value);
             }
             return false;

@@ -92,7 +92,7 @@ public class ListBandwidthDetailRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -125,7 +125,7 @@ public class ListBandwidthDetailRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IntervalEnum) {
+            if (obj instanceof IntervalEnum) {
                 return this.value.equals(((IntervalEnum) obj).value);
             }
             return false;

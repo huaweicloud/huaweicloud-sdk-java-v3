@@ -66,7 +66,7 @@ public class CertificateBundingHostBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class CertificateBundingHostBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof WafTypeEnum) {
+            if (obj instanceof WafTypeEnum) {
                 return this.value.equals(((WafTypeEnum) obj).value);
             }
             return false;

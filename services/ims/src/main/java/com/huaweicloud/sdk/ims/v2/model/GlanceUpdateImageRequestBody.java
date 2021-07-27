@@ -60,7 +60,7 @@ public class GlanceUpdateImageRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class GlanceUpdateImageRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OpEnum) {
+            if (obj instanceof OpEnum) {
                 return this.value.equals(((OpEnum) obj).value);
             }
             return false;

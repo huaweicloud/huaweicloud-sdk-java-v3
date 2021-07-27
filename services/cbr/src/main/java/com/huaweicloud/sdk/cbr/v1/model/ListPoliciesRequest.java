@@ -54,7 +54,7 @@ public class ListPoliciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class ListPoliciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperationTypeEnum) {
+            if (obj instanceof OperationTypeEnum) {
                 return this.value.equals(((OperationTypeEnum) obj).value);
             }
             return false;

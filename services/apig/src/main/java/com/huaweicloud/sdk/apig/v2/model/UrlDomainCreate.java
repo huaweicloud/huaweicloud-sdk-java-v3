@@ -55,7 +55,7 @@ public class UrlDomainCreate  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -88,7 +88,7 @@ public class UrlDomainCreate  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MinSslVersionEnum) {
+            if (obj instanceof MinSslVersionEnum) {
                 return this.value.equals(((MinSslVersionEnum) obj).value);
             }
             return false;

@@ -69,7 +69,7 @@ public class PrecheckResult  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -102,7 +102,7 @@ public class PrecheckResult  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResultEnum) {
+            if (obj instanceof ResultEnum) {
                 return this.value.equals(((ResultEnum) obj).value);
             }
             return false;

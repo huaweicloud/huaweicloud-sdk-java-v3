@@ -51,7 +51,7 @@ public class BackupFilesBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -84,7 +84,7 @@ public class BackupFilesBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FileSourceEnum) {
+            if (obj instanceof FileSourceEnum) {
                 return this.value.equals(((FileSourceEnum) obj).value);
             }
             return false;

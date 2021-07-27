@@ -67,7 +67,7 @@ public class ClusterSpec  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -100,7 +100,7 @@ public class ClusterSpec  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CategoryEnum) {
+            if (obj instanceof CategoryEnum) {
                 return this.value.equals(((CategoryEnum) obj).value);
             }
             return false;
@@ -151,7 +151,7 @@ public class ClusterSpec  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -184,7 +184,7 @@ public class ClusterSpec  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -307,7 +307,7 @@ public class ClusterSpec  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -340,7 +340,7 @@ public class ClusterSpec  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof KubeProxyModeEnum) {
+            if (obj instanceof KubeProxyModeEnum) {
                 return this.value.equals(((KubeProxyModeEnum) obj).value);
             }
             return false;

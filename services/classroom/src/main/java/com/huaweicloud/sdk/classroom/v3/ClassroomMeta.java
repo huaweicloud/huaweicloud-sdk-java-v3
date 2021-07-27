@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.classroom.v3;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -11,6 +12,87 @@ import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class ClassroomMeta {
+
+    public static final HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> applyJudgement = genForapplyJudgement();
+
+    private static HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> genForapplyJudgement() {
+        // basic
+        HttpRequestDef.Builder<ApplyJudgementRequest, ApplyJudgementResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ApplyJudgementRequest.class, ApplyJudgementResponse.class)
+                .withName("ApplyJudgement")
+                .withUri("/v1/enablement/judgements")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            JudgementTaskRequestBody.class,
+            f -> f.withMarshaller(ApplyJudgementRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> showJudgementDetail = genForshowJudgementDetail();
+
+    private static HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> genForshowJudgementDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowJudgementDetailRequest, ShowJudgementDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJudgementDetailRequest.class, ShowJudgementDetailResponse.class)
+                .withName("ShowJudgementDetail")
+                .withUri("/v1/enablement/judgements/{judgement_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("judgement_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJudgementDetailRequest::getJudgementId, (req, v) -> {
+                req.setJudgementId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> showJudgementFile = genForshowJudgementFile();
+
+    private static HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> genForshowJudgementFile() {
+        // basic
+        HttpRequestDef.Builder<ShowJudgementFileRequest, ShowJudgementFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJudgementFileRequest.class, ShowJudgementFileResponse.class)
+                .withName("ShowJudgementFile")
+                .withUri("/v1/enablement/judgement/files/{file_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.withRequestField("file_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            String.class,
+            f -> f.withMarshaller(ShowJudgementFileRequest::getFileId, (req, v) -> {
+                req.setFileId(v);
+            })
+        );
+
+        // response
+        
+
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> listClassroomMembers = genForlistClassroomMembers();
 

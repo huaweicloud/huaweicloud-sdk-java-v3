@@ -62,7 +62,7 @@ public class JobRecords  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class JobRecords  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RecordTypeEnum) {
+            if (obj instanceof RecordTypeEnum) {
                 return this.value.equals(((RecordTypeEnum) obj).value);
             }
             return false;
@@ -176,7 +176,7 @@ public class JobRecords  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -209,7 +209,7 @@ public class JobRecords  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof JobStatusEnum) {
+            if (obj instanceof JobStatusEnum) {
                 return this.value.equals(((JobStatusEnum) obj).value);
             }
             return false;

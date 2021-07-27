@@ -54,7 +54,7 @@ public class BssParamEntity  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class BssParamEntity  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsAutoPayEnum) {
+            if (obj instanceof IsAutoPayEnum) {
                 return this.value.equals(((IsAutoPayEnum) obj).value);
             }
             return false;

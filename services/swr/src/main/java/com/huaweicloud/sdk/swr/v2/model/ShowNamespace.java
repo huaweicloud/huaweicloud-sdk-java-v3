@@ -78,7 +78,7 @@ public class ShowNamespace  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class ShowNamespace  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthEnum) {
+            if (obj instanceof AuthEnum) {
                 return this.value.equals(((AuthEnum) obj).value);
             }
             return false;

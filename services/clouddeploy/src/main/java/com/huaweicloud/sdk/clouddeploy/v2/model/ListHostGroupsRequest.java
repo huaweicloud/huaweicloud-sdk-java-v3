@@ -68,7 +68,7 @@ public class ListHostGroupsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ListHostGroupsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEnum) {
+            if (obj instanceof OsEnum) {
                 return this.value.equals(((OsEnum) obj).value);
             }
             return false;
@@ -176,7 +176,7 @@ public class ListHostGroupsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -209,7 +209,7 @@ public class ListHostGroupsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortDirEnum) {
+            if (obj instanceof SortDirEnum) {
                 return this.value.equals(((SortDirEnum) obj).value);
             }
             return false;

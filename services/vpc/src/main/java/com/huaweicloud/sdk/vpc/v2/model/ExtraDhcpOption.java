@@ -48,7 +48,7 @@ public class ExtraDhcpOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -81,7 +81,7 @@ public class ExtraDhcpOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OptNameEnum) {
+            if (obj instanceof OptNameEnum) {
                 return this.value.equals(((OptNameEnum) obj).value);
             }
             return false;

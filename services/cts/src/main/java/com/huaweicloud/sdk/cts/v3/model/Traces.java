@@ -73,7 +73,7 @@ public class Traces  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -106,7 +106,7 @@ public class Traces  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TraceRatingEnum) {
+            if (obj instanceof TraceRatingEnum) {
                 return this.value.equals(((TraceRatingEnum) obj).value);
             }
             return false;

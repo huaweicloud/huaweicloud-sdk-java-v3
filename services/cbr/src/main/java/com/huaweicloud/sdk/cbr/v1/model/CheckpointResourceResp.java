@@ -90,7 +90,7 @@ public class CheckpointResourceResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -123,7 +123,7 @@ public class CheckpointResourceResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectStatusEnum) {
+            if (obj instanceof ProtectStatusEnum) {
                 return this.value.equals(((ProtectStatusEnum) obj).value);
             }
             return false;

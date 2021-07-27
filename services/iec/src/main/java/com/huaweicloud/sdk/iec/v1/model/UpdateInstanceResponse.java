@@ -338,7 +338,7 @@ public class UpdateInstanceResponse extends SdkResponse {
 
 
     /**
-     * 边缘实例修改时间。 UTC时间，格式：yyyy-mm-ddTss:ss:ssZ，例如：0001-01-01T00:00:00Z
+     * 边缘实例修改时间。 UTC时间，格式：yyyy-mm-ddTss:ss:ssZ，例如：2021-04-25T03:21:39Z
      * @return updated
      */
     public String getUpdated() {
@@ -418,7 +418,7 @@ public class UpdateInstanceResponse extends SdkResponse {
 
 
     /**
-     * 边缘实例创建时间。 时间格式：yyyy-mm-ddTss:ss:ssZ，例如：0001-01-01T00:00:00Z
+     * 边缘实例创建时间。 时间格式：yyyy-mm-ddTss:ss:ssZ，例如：2021-04-25T02:46:23Z
      * @return created
      */
     public String getCreated() {

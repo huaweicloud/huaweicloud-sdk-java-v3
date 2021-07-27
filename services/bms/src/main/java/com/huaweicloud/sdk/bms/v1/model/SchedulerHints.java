@@ -56,7 +56,7 @@ public class SchedulerHints  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class SchedulerHints  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DecBaremetalEnum) {
+            if (obj instanceof DecBaremetalEnum) {
                 return this.value.equals(((DecBaremetalEnum) obj).value);
             }
             return false;

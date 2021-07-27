@@ -86,7 +86,7 @@ public class ListUsersOfStreamRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -119,7 +119,7 @@ public class ListUsersOfStreamRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IntervalEnum) {
+            if (obj instanceof IntervalEnum) {
                 return this.value.equals(((IntervalEnum) obj).value);
             }
             return false;

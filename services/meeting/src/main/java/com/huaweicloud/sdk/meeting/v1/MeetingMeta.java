@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.meeting.v1;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -1315,11 +1316,11 @@ public class MeetingMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ConferenceInfo>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateMeetingResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ConferenceInfo.class)
@@ -3565,11 +3566,11 @@ public class MeetingMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<QueryDeptResultDTO>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(SearchDepartmentByNameResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(QueryDeptResultDTO.class)
@@ -5432,11 +5433,11 @@ public class MeetingMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<UserStatusDTO>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowDeviceStatusResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(UserStatusDTO.class)
@@ -5476,11 +5477,11 @@ public class MeetingMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<QueryDeviceTypeResultDTO>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowDeviceTypesResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(QueryDeviceTypeResultDTO.class)
@@ -6782,11 +6783,11 @@ public class MeetingMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ConferenceInfo>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(UpdateMeetingResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ConferenceInfo.class)

@@ -57,7 +57,7 @@ public class LdApiScriptCreate  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -90,7 +90,7 @@ public class LdApiScriptCreate  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ApiTypeEnum) {
+            if (obj instanceof ApiTypeEnum) {
                 return this.value.equals(((ApiTypeEnum) obj).value);
             }
             return false;

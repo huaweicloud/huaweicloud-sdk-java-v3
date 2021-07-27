@@ -60,7 +60,7 @@ public class DeleteScalingInstanceRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class DeleteScalingInstanceRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InstanceDeleteEnum) {
+            if (obj instanceof InstanceDeleteEnum) {
                 return this.value.equals(((InstanceDeleteEnum) obj).value);
             }
             return false;

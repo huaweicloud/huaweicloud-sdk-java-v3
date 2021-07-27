@@ -56,7 +56,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargeModeEnum) {
+            if (obj instanceof ChargeModeEnum) {
                 return this.value.equals(((ChargeModeEnum) obj).value);
             }
             return false;
@@ -140,7 +140,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -173,7 +173,7 @@ public class CreatePrePaidPublicipExtendParamOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PeriodTypeEnum) {
+            if (obj instanceof PeriodTypeEnum) {
                 return this.value.equals(((PeriodTypeEnum) obj).value);
             }
             return false;

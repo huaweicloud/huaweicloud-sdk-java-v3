@@ -90,7 +90,7 @@ public class Property  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -123,7 +123,7 @@ public class Property  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DataTypeEnum) {
+            if (obj instanceof DataTypeEnum) {
                 return this.value.equals(((DataTypeEnum) obj).value);
             }
             return false;

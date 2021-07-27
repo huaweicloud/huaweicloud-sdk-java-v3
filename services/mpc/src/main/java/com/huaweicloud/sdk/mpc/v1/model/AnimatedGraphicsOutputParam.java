@@ -48,7 +48,7 @@ public class AnimatedGraphicsOutputParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -81,7 +81,7 @@ public class AnimatedGraphicsOutputParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FormatEnum) {
+            if (obj instanceof FormatEnum) {
                 return this.value.equals(((FormatEnum) obj).value);
             }
             return false;

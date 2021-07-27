@@ -53,7 +53,7 @@ public class ChargeMode {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class ChargeMode {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof ChargeMode) {
+        if (obj instanceof ChargeMode) {
             return this.value.equals(((ChargeMode) obj).value);
         }
         return false;

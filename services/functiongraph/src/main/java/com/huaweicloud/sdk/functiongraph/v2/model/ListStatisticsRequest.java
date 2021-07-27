@@ -56,7 +56,7 @@ public class ListStatisticsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class ListStatisticsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FilterEnum) {
+            if (obj instanceof FilterEnum) {
                 return this.value.equals(((FilterEnum) obj).value);
             }
             return false;
@@ -158,7 +158,7 @@ public class ListStatisticsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -191,7 +191,7 @@ public class ListStatisticsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MonthCodeEnum) {
+            if (obj instanceof MonthCodeEnum) {
                 return this.value.equals(((MonthCodeEnum) obj).value);
             }
             return false;

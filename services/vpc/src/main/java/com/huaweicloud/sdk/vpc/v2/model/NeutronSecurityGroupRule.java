@@ -61,7 +61,7 @@ public class NeutronSecurityGroupRule  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -94,7 +94,7 @@ public class NeutronSecurityGroupRule  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DirectionEnum) {
+            if (obj instanceof DirectionEnum) {
                 return this.value.equals(((DirectionEnum) obj).value);
             }
             return false;

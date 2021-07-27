@@ -48,7 +48,7 @@ public class BandwidthConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -81,7 +81,7 @@ public class BandwidthConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SharetypeEnum) {
+            if (obj instanceof SharetypeEnum) {
                 return this.value.equals(((SharetypeEnum) obj).value);
             }
             return false;

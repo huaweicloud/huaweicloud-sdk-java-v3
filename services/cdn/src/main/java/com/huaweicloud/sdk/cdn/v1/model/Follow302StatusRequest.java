@@ -54,7 +54,7 @@ public class Follow302StatusRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class Follow302StatusRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof Follow302StatusEnum) {
+            if (obj instanceof Follow302StatusEnum) {
                 return this.value.equals(((Follow302StatusEnum) obj).value);
             }
             return false;

@@ -56,7 +56,7 @@ public class ListTemplateViewHistoriesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class ListTemplateViewHistoriesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof XLanguageEnum) {
+            if (obj instanceof XLanguageEnum) {
                 return this.value.equals(((XLanguageEnum) obj).value);
             }
             return false;
@@ -140,7 +140,7 @@ public class ListTemplateViewHistoriesRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -173,7 +173,7 @@ public class ListTemplateViewHistoriesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PlatformSourceEnum) {
+            if (obj instanceof PlatformSourceEnum) {
                 return this.value.equals(((PlatformSourceEnum) obj).value);
             }
             return false;

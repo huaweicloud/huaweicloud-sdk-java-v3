@@ -97,7 +97,7 @@ public class ApiDebugInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -130,7 +130,7 @@ public class ApiDebugInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MethodEnum) {
+            if (obj instanceof MethodEnum) {
                 return this.value.equals(((MethodEnum) obj).value);
             }
             return false;

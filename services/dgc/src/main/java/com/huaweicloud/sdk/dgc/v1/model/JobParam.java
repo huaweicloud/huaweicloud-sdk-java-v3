@@ -66,7 +66,7 @@ public class JobParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class JobParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ParamTypeEnum) {
+            if (obj instanceof ParamTypeEnum) {
                 return this.value.equals(((ParamTypeEnum) obj).value);
             }
             return false;

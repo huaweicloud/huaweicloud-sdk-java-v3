@@ -50,7 +50,7 @@ public class GetServerRemoteConsoleOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -83,7 +83,7 @@ public class GetServerRemoteConsoleOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;
@@ -128,7 +128,7 @@ public class GetServerRemoteConsoleOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -161,7 +161,7 @@ public class GetServerRemoteConsoleOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;

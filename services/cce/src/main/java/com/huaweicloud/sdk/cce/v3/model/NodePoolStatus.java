@@ -78,7 +78,7 @@ public class NodePoolStatus  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class NodePoolStatus  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PhaseEnum) {
+            if (obj instanceof PhaseEnum) {
                 return this.value.equals(((PhaseEnum) obj).value);
             }
             return false;

@@ -47,7 +47,7 @@ public class SourceKind {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class SourceKind {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof SourceKind) {
+        if (obj instanceof SourceKind) {
             return this.value.equals(((SourceKind) obj).value);
         }
         return false;

@@ -56,7 +56,7 @@ public class CreatePublicipBandwidthOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class CreatePublicipBandwidthOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargeModeEnum) {
+            if (obj instanceof ChargeModeEnum) {
                 return this.value.equals(((ChargeModeEnum) obj).value);
             }
             return false;
@@ -152,7 +152,7 @@ public class CreatePublicipBandwidthOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -185,7 +185,7 @@ public class CreatePublicipBandwidthOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ShareTypeEnum) {
+            if (obj instanceof ShareTypeEnum) {
                 return this.value.equals(((ShareTypeEnum) obj).value);
             }
             return false;

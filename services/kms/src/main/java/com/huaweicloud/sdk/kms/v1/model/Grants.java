@@ -74,7 +74,7 @@ public class Grants  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class Grants  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof GranteePrincipalTypeEnum) {
+            if (obj instanceof GranteePrincipalTypeEnum) {
                 return this.value.equals(((GranteePrincipalTypeEnum) obj).value);
             }
             return false;

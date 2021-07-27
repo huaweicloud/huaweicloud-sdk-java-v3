@@ -54,7 +54,7 @@ public class ListStorageTypeRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class ListStorageTypeRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineNameEnum) {
+            if (obj instanceof EngineNameEnum) {
                 return this.value.equals(((EngineNameEnum) obj).value);
             }
             return false;

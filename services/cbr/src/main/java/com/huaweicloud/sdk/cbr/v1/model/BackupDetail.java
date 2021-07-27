@@ -101,7 +101,7 @@ public class BackupDetail  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -134,7 +134,7 @@ public class BackupDetail  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImageTypeEnum) {
+            if (obj instanceof ImageTypeEnum) {
                 return this.value.equals(((ImageTypeEnum) obj).value);
             }
             return false;
@@ -233,7 +233,7 @@ public class BackupDetail  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -266,7 +266,7 @@ public class BackupDetail  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResourceTypeEnum) {
+            if (obj instanceof ResourceTypeEnum) {
                 return this.value.equals(((ResourceTypeEnum) obj).value);
             }
             return false;
@@ -353,7 +353,7 @@ public class BackupDetail  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -386,7 +386,7 @@ public class BackupDetail  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;

@@ -116,7 +116,7 @@ public class ShowPublicationResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -149,7 +149,7 @@ public class ShowPublicationResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PublishStatusEnum) {
+            if (obj instanceof PublishStatusEnum) {
                 return this.value.equals(((PublishStatusEnum) obj).value);
             }
             return false;

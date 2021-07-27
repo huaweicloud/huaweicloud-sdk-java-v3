@@ -61,7 +61,7 @@ public class Video  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -94,7 +94,7 @@ public class Video  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OutputPolicyEnum) {
+            if (obj instanceof OutputPolicyEnum) {
                 return this.value.equals(((OutputPolicyEnum) obj).value);
             }
             return false;

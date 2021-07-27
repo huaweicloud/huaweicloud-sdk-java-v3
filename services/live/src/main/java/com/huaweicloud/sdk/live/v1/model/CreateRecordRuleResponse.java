@@ -95,7 +95,7 @@ public class CreateRecordRuleResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -128,7 +128,7 @@ public class CreateRecordRuleResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RecordTypeEnum) {
+            if (obj instanceof RecordTypeEnum) {
                 return this.value.equals(((RecordTypeEnum) obj).value);
             }
             return false;

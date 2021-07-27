@@ -290,7 +290,7 @@ public class ConferenceInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -323,7 +323,7 @@ public class ConferenceInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RoleEnum) {
+            if (obj instanceof RoleEnum) {
                 return this.value.equals(((RoleEnum) obj).value);
             }
             return false;
@@ -386,7 +386,7 @@ public class ConferenceInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -419,7 +419,7 @@ public class ConferenceInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConfModeEnum) {
+            if (obj instanceof ConfModeEnum) {
                 return this.value.equals(((ConfModeEnum) obj).value);
             }
             return false;

@@ -108,7 +108,7 @@ public class TaskInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -141,7 +141,7 @@ public class TaskInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskStatusEnum) {
+            if (obj instanceof TaskStatusEnum) {
                 return this.value.equals(((TaskStatusEnum) obj).value);
             }
             return false;

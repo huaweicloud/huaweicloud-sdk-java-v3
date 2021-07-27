@@ -66,7 +66,7 @@ public class InstanceParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class InstanceParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ArchEnum) {
+            if (obj instanceof ArchEnum) {
                 return this.value.equals(((ArchEnum) obj).value);
             }
             return false;
@@ -162,7 +162,7 @@ public class InstanceParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -195,7 +195,7 @@ public class InstanceParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CpuMemoryEnum) {
+            if (obj instanceof CpuMemoryEnum) {
                 return this.value.equals(((CpuMemoryEnum) obj).value);
             }
             return false;
@@ -300,7 +300,7 @@ public class InstanceParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -333,7 +333,7 @@ public class InstanceParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PvcQuantityEnum) {
+            if (obj instanceof PvcQuantityEnum) {
                 return this.value.equals(((PvcQuantityEnum) obj).value);
             }
             return false;

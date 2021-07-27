@@ -80,7 +80,7 @@ public class CreateNotificationOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -113,7 +113,7 @@ public class CreateNotificationOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TopicSceneEnum) {
+            if (obj instanceof TopicSceneEnum) {
                 return this.value.equals(((TopicSceneEnum) obj).value);
             }
             return false;

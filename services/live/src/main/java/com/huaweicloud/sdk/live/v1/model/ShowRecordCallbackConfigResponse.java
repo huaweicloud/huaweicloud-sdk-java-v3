@@ -95,7 +95,7 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -128,7 +128,7 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NotifyEventSubscriptionEnum) {
+            if (obj instanceof NotifyEventSubscriptionEnum) {
                 return this.value.equals(((NotifyEventSubscriptionEnum) obj).value);
             }
             return false;

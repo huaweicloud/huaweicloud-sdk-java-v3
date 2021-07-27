@@ -99,7 +99,7 @@ public class ScalingGroupInstance  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -132,7 +132,7 @@ public class ScalingGroupInstance  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LifeCycleStateEnum) {
+            if (obj instanceof LifeCycleStateEnum) {
                 return this.value.equals(((LifeCycleStateEnum) obj).value);
             }
             return false;
@@ -189,7 +189,7 @@ public class ScalingGroupInstance  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -222,7 +222,7 @@ public class ScalingGroupInstance  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HealthStatusEnum) {
+            if (obj instanceof HealthStatusEnum) {
                 return this.value.equals(((HealthStatusEnum) obj).value);
             }
             return false;

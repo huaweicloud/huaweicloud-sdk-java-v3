@@ -124,7 +124,7 @@ public class LoadBalancer  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -157,7 +157,7 @@ public class LoadBalancer  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperatingStatusEnum) {
+            if (obj instanceof OperatingStatusEnum) {
                 return this.value.equals(((OperatingStatusEnum) obj).value);
             }
             return false;
@@ -340,7 +340,7 @@ public class LoadBalancer  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -373,7 +373,7 @@ public class LoadBalancer  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ElbVirsubnetTypeEnum) {
+            if (obj instanceof ElbVirsubnetTypeEnum) {
                 return this.value.equals(((ElbVirsubnetTypeEnum) obj).value);
             }
             return false;

@@ -68,7 +68,7 @@ public class ListStorageTypesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class ListStorageTypesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DatabaseNameEnum) {
+            if (obj instanceof DatabaseNameEnum) {
                 return this.value.equals(((DatabaseNameEnum) obj).value);
             }
             return false;
@@ -164,7 +164,7 @@ public class ListStorageTypesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class ListStorageTypesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HaModeEnum) {
+            if (obj instanceof HaModeEnum) {
                 return this.value.equals(((HaModeEnum) obj).value);
             }
             return false;

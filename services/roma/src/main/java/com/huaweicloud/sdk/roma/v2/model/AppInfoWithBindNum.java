@@ -76,7 +76,7 @@ public class AppInfoWithBindNum  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class AppInfoWithBindNum  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CreatorEnum) {
+            if (obj instanceof CreatorEnum) {
                 return this.value.equals(((CreatorEnum) obj).value);
             }
             return false;
@@ -190,7 +190,7 @@ public class AppInfoWithBindNum  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -223,7 +223,7 @@ public class AppInfoWithBindNum  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AppTypeEnum) {
+            if (obj instanceof AppTypeEnum) {
                 return this.value.equals(((AppTypeEnum) obj).value);
             }
             return false;

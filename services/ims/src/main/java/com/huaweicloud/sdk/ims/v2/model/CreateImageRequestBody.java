@@ -156,7 +156,7 @@ public class CreateImageRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -189,7 +189,7 @@ public class CreateImageRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -246,7 +246,7 @@ public class CreateImageRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -279,7 +279,7 @@ public class CreateImageRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ArchitectureEnum) {
+            if (obj instanceof ArchitectureEnum) {
                 return this.value.equals(((ArchitectureEnum) obj).value);
             }
             return false;

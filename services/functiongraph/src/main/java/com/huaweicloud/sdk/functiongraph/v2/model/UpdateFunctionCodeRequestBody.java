@@ -76,7 +76,7 @@ public class UpdateFunctionCodeRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class UpdateFunctionCodeRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CodeTypeEnum) {
+            if (obj instanceof CodeTypeEnum) {
                 return this.value.equals(((CodeTypeEnum) obj).value);
             }
             return false;

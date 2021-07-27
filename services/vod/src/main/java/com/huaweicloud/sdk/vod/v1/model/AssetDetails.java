@@ -82,7 +82,7 @@ public class AssetDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -115,7 +115,7 @@ public class AssetDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AssetStatusEnum) {
+            if (obj instanceof AssetStatusEnum) {
                 return this.value.equals(((AssetStatusEnum) obj).value);
             }
             return false;
@@ -184,7 +184,7 @@ public class AssetDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -217,7 +217,7 @@ public class AssetDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TranscodeStatusEnum) {
+            if (obj instanceof TranscodeStatusEnum) {
                 return this.value.equals(((TranscodeStatusEnum) obj).value);
             }
             return false;

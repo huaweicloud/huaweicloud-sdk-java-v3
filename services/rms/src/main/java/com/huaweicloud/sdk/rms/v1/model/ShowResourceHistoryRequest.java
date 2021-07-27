@@ -84,7 +84,7 @@ public class ShowResourceHistoryRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class ShowResourceHistoryRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChronologicalOrderEnum) {
+            if (obj instanceof ChronologicalOrderEnum) {
                 return this.value.equals(((ChronologicalOrderEnum) obj).value);
             }
             return false;

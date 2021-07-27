@@ -94,7 +94,7 @@ public class ListScalingInstancesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -127,7 +127,7 @@ public class ListScalingInstancesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LifeCycleStateEnum) {
+            if (obj instanceof LifeCycleStateEnum) {
                 return this.value.equals(((LifeCycleStateEnum) obj).value);
             }
             return false;
@@ -184,7 +184,7 @@ public class ListScalingInstancesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -217,7 +217,7 @@ public class ListScalingInstancesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HealthStatusEnum) {
+            if (obj instanceof HealthStatusEnum) {
                 return this.value.equals(((HealthStatusEnum) obj).value);
             }
             return false;
@@ -268,7 +268,7 @@ public class ListScalingInstancesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -301,7 +301,7 @@ public class ListScalingInstancesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectFromScalingDownEnum) {
+            if (obj instanceof ProtectFromScalingDownEnum) {
                 return this.value.equals(((ProtectFromScalingDownEnum) obj).value);
             }
             return false;

@@ -77,7 +77,7 @@ public class ListKeysResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -110,7 +110,7 @@ public class ListKeysResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TruncatedEnum) {
+            if (obj instanceof TruncatedEnum) {
                 return this.value.equals(((TruncatedEnum) obj).value);
             }
             return false;

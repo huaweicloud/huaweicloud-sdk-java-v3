@@ -66,7 +66,7 @@ public class ServerAddress  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class ServerAddress  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEXTIPSTypeEnum) {
+            if (obj instanceof OsEXTIPSTypeEnum) {
                 return this.value.equals(((OsEXTIPSTypeEnum) obj).value);
             }
             return false;

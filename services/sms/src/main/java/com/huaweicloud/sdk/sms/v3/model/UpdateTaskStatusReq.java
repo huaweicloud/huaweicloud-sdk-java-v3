@@ -85,7 +85,7 @@ public class UpdateTaskStatusReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -118,7 +118,7 @@ public class UpdateTaskStatusReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperationEnum) {
+            if (obj instanceof OperationEnum) {
                 return this.value.equals(((OperationEnum) obj).value);
             }
             return false;

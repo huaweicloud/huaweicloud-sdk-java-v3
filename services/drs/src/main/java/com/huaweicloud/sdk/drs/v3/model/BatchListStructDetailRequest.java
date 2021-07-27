@@ -99,7 +99,7 @@ public class BatchListStructDetailRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -132,7 +132,7 @@ public class BatchListStructDetailRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -183,7 +183,7 @@ public class BatchListStructDetailRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -216,7 +216,7 @@ public class BatchListStructDetailRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof XLanguageEnum) {
+            if (obj instanceof XLanguageEnum) {
                 return this.value.equals(((XLanguageEnum) obj).value);
             }
             return false;

@@ -225,7 +225,7 @@ public class CreateFeatureV2Response extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -258,7 +258,7 @@ public class CreateFeatureV2Response extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NameEnum) {
+            if (obj instanceof NameEnum) {
                 return this.value.equals(((NameEnum) obj).value);
             }
             return false;

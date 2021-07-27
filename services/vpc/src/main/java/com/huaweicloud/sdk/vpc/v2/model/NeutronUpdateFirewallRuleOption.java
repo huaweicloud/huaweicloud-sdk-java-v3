@@ -54,7 +54,7 @@ public class NeutronUpdateFirewallRuleOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class NeutronUpdateFirewallRuleOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionEnum) {
+            if (obj instanceof ActionEnum) {
                 return this.value.equals(((ActionEnum) obj).value);
             }
             return false;

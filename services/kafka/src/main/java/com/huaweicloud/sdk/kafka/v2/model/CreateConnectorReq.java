@@ -66,7 +66,7 @@ public class CreateConnectorReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class CreateConnectorReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SpecificationEnum) {
+            if (obj instanceof SpecificationEnum) {
                 return this.value.equals(((SpecificationEnum) obj).value);
             }
             return false;

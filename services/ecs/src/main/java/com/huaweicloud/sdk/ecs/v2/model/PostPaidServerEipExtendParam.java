@@ -54,7 +54,7 @@ public class PostPaidServerEipExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class PostPaidServerEipExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
+            if (obj instanceof ChargingModeEnum) {
                 return this.value.equals(((ChargingModeEnum) obj).value);
             }
             return false;

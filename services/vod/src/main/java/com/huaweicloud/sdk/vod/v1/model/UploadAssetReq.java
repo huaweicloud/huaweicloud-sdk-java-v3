@@ -227,7 +227,7 @@ public class UploadAssetReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -260,7 +260,7 @@ public class UploadAssetReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VideoTypeEnum) {
+            if (obj instanceof VideoTypeEnum) {
                 return this.value.equals(((VideoTypeEnum) obj).value);
             }
             return false;
@@ -317,7 +317,7 @@ public class UploadAssetReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -350,7 +350,7 @@ public class UploadAssetReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CoverTypeEnum) {
+            if (obj instanceof CoverTypeEnum) {
                 return this.value.equals(((CoverTypeEnum) obj).value);
             }
             return false;

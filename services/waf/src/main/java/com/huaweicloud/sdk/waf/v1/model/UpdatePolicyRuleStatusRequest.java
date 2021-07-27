@@ -73,7 +73,7 @@ public class UpdatePolicyRuleStatusRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -106,7 +106,7 @@ public class UpdatePolicyRuleStatusRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RuletypeEnum) {
+            if (obj instanceof RuletypeEnum) {
                 return this.value.equals(((RuletypeEnum) obj).value);
             }
             return false;

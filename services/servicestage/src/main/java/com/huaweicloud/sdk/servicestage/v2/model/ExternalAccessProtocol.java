@@ -47,7 +47,7 @@ public class ExternalAccessProtocol {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class ExternalAccessProtocol {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof ExternalAccessProtocol) {
+        if (obj instanceof ExternalAccessProtocol) {
             return this.value.equals(((ExternalAccessProtocol) obj).value);
         }
         return false;

@@ -108,7 +108,7 @@ public class ShowMetricDataRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -141,7 +141,7 @@ public class ShowMetricDataRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FilterEnum) {
+            if (obj instanceof FilterEnum) {
                 return this.value.equals(((FilterEnum) obj).value);
             }
             return false;

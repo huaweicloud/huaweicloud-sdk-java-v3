@@ -56,7 +56,7 @@ public class UpdateLifeCycleHookOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class UpdateLifeCycleHookOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LifecycleHookTypeEnum) {
+            if (obj instanceof LifecycleHookTypeEnum) {
                 return this.value.equals(((LifecycleHookTypeEnum) obj).value);
             }
             return false;
@@ -140,7 +140,7 @@ public class UpdateLifeCycleHookOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -173,7 +173,7 @@ public class UpdateLifeCycleHookOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DefaultResultEnum) {
+            if (obj instanceof DefaultResultEnum) {
                 return this.value.equals(((DefaultResultEnum) obj).value);
             }
             return false;

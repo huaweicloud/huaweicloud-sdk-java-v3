@@ -66,7 +66,7 @@ public class ImportFileReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class ImportFileReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SameNamePolicyEnum) {
+            if (obj instanceof SameNamePolicyEnum) {
                 return this.value.equals(((SameNamePolicyEnum) obj).value);
             }
             return false;

@@ -84,7 +84,7 @@ public class CreateMqsInstanceTopicReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class CreateMqsInstanceTopicReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AccessPolicyEnum) {
+            if (obj instanceof AccessPolicyEnum) {
                 return this.value.equals(((AccessPolicyEnum) obj).value);
             }
             return false;

@@ -61,7 +61,7 @@ public class ModifyPwdEndPoint  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -94,7 +94,7 @@ public class ModifyPwdEndPoint  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EndPointTypeEnum) {
+            if (obj instanceof EndPointTypeEnum) {
                 return this.value.equals(((EndPointTypeEnum) obj).value);
             }
             return false;

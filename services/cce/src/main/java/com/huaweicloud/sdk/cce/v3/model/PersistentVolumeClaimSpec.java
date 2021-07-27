@@ -69,7 +69,7 @@ public class PersistentVolumeClaimSpec  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -102,7 +102,7 @@ public class PersistentVolumeClaimSpec  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AccessModesEnum) {
+            if (obj instanceof AccessModesEnum) {
                 return this.value.equals(((AccessModesEnum) obj).value);
             }
             return false;

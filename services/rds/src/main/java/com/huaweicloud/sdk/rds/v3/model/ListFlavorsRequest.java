@@ -66,7 +66,7 @@ public class ListFlavorsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class ListFlavorsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DatabaseNameEnum) {
+            if (obj instanceof DatabaseNameEnum) {
                 return this.value.equals(((DatabaseNameEnum) obj).value);
             }
             return false;

@@ -93,7 +93,7 @@ public class SourceServersResponseBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -126,7 +126,7 @@ public class SourceServersResponseBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -249,7 +249,7 @@ public class SourceServersResponseBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -282,7 +282,7 @@ public class SourceServersResponseBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StateEnum) {
+            if (obj instanceof StateEnum) {
                 return this.value.equals(((StateEnum) obj).value);
             }
             return false;
@@ -417,7 +417,7 @@ public class SourceServersResponseBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -450,7 +450,7 @@ public class SourceServersResponseBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationCycleEnum) {
+            if (obj instanceof MigrationCycleEnum) {
                 return this.value.equals(((MigrationCycleEnum) obj).value);
             }
             return false;

@@ -85,7 +85,7 @@ public class SwitchoverResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -118,7 +118,7 @@ public class SwitchoverResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof JobDirectionEnum) {
+            if (obj instanceof JobDirectionEnum) {
                 return this.value.equals(((JobDirectionEnum) obj).value);
             }
             return false;

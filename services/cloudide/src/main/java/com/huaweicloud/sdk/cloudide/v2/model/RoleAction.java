@@ -126,7 +126,7 @@ public class RoleAction  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -159,7 +159,7 @@ public class RoleAction  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionsEnum) {
+            if (obj instanceof ActionsEnum) {
                 return this.value.equals(((ActionsEnum) obj).value);
             }
             return false;

@@ -96,7 +96,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -198,7 +198,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -231,7 +231,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DiskFormatEnum) {
+            if (obj instanceof DiskFormatEnum) {
                 return this.value.equals(((DiskFormatEnum) obj).value);
             }
             return false;
@@ -354,7 +354,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -387,7 +387,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImagetypeEnum) {
+            if (obj instanceof ImagetypeEnum) {
                 return this.value.equals(((ImagetypeEnum) obj).value);
             }
             return false;
@@ -450,7 +450,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -483,7 +483,7 @@ public class ShowImageResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;

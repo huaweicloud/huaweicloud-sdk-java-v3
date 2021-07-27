@@ -71,7 +71,7 @@ public class ConfigInfoDO  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -104,7 +104,7 @@ public class ConfigInfoDO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -173,7 +173,7 @@ public class ConfigInfoDO  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -206,7 +206,7 @@ public class ConfigInfoDO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StaticStatusEnum) {
+            if (obj instanceof StaticStatusEnum) {
                 return this.value.equals(((StaticStatusEnum) obj).value);
             }
             return false;

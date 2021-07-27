@@ -77,7 +77,7 @@ public class EndpointVO  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -110,7 +110,7 @@ public class EndpointVO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DbTypeEnum) {
+            if (obj instanceof DbTypeEnum) {
                 return this.value.equals(((DbTypeEnum) obj).value);
             }
             return false;
@@ -305,7 +305,7 @@ public class EndpointVO  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -338,7 +338,7 @@ public class EndpointVO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MongoHaModeEnum) {
+            if (obj instanceof MongoHaModeEnum) {
                 return this.value.equals(((MongoHaModeEnum) obj).value);
             }
             return false;
@@ -449,7 +449,7 @@ public class EndpointVO  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -482,7 +482,7 @@ public class EndpointVO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ClusterModeEnum) {
+            if (obj instanceof ClusterModeEnum) {
                 return this.value.equals(((ClusterModeEnum) obj).value);
             }
             return false;

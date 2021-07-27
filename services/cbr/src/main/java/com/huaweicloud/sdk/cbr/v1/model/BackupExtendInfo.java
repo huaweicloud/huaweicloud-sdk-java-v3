@@ -93,7 +93,7 @@ public class BackupExtendInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -126,7 +126,7 @@ public class BackupExtendInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SupportedRestoreModeEnum) {
+            if (obj instanceof SupportedRestoreModeEnum) {
                 return this.value.equals(((SupportedRestoreModeEnum) obj).value);
             }
             return false;

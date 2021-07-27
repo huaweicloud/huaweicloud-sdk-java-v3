@@ -183,7 +183,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -216,7 +216,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StateEnum) {
+            if (obj instanceof StateEnum) {
                 return this.value.equals(((StateEnum) obj).value);
             }
             return false;
@@ -273,7 +273,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -306,7 +306,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FirmwareEnum) {
+            if (obj instanceof FirmwareEnum) {
                 return this.value.equals(((FirmwareEnum) obj).value);
             }
             return false;
@@ -435,7 +435,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -468,7 +468,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationCycleEnum) {
+            if (obj instanceof MigrationCycleEnum) {
                 return this.value.equals(((MigrationCycleEnum) obj).value);
             }
             return false;

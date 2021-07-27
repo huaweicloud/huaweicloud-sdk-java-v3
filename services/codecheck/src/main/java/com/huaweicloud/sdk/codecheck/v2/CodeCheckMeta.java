@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.codecheck.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -123,11 +124,11 @@ public class CodeCheckMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<JavaReplaceLibInfo>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListJavaLibUpdateSuggestionResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(JavaReplaceLibInfo.class)

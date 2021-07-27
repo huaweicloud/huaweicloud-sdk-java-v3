@@ -84,7 +84,7 @@ public class CreateAgencyOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class CreateAgencyOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DurationEnum) {
+            if (obj instanceof DurationEnum) {
                 return this.value.equals(((DurationEnum) obj).value);
             }
             return false;

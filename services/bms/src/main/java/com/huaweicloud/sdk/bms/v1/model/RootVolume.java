@@ -63,7 +63,7 @@ public class RootVolume  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -96,7 +96,7 @@ public class RootVolume  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VolumetypeEnum) {
+            if (obj instanceof VolumetypeEnum) {
                 return this.value.equals(((VolumetypeEnum) obj).value);
             }
             return false;
@@ -153,7 +153,7 @@ public class RootVolume  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -186,7 +186,7 @@ public class RootVolume  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ClusterTypeEnum) {
+            if (obj instanceof ClusterTypeEnum) {
                 return this.value.equals(((ClusterTypeEnum) obj).value);
             }
             return false;

@@ -53,7 +53,7 @@ public class ExternalAccessType {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class ExternalAccessType {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof ExternalAccessType) {
+        if (obj instanceof ExternalAccessType) {
             return this.value.equals(((ExternalAccessType) obj).value);
         }
         return false;

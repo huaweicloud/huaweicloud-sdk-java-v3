@@ -60,7 +60,7 @@ public class KeystoneListEndpointsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class KeystoneListEndpointsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InterfaceEnum) {
+            if (obj instanceof InterfaceEnum) {
                 return this.value.equals(((InterfaceEnum) obj).value);
             }
             return false;

@@ -72,7 +72,7 @@ public class DependJob  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class DependJob  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DependFailPolicyEnum) {
+            if (obj instanceof DependFailPolicyEnum) {
                 return this.value.equals(((DependFailPolicyEnum) obj).value);
             }
             return false;

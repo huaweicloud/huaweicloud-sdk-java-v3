@@ -96,7 +96,7 @@ public class ListSitesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class ListSitesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VolumeTypeEnum) {
+            if (obj instanceof VolumeTypeEnum) {
                 return this.value.equals(((VolumeTypeEnum) obj).value);
             }
             return false;

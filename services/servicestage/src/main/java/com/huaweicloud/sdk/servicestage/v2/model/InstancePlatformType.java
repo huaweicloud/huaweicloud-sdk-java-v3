@@ -47,7 +47,7 @@ public class InstancePlatformType {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class InstancePlatformType {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof InstancePlatformType) {
+        if (obj instanceof InstancePlatformType) {
             return this.value.equals(((InstancePlatformType) obj).value);
         }
         return false;

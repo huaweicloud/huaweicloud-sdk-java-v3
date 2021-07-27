@@ -68,7 +68,7 @@ public class OpExtendInfoBckup  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -101,7 +101,7 @@ public class OpExtendInfoBckup  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AppConsistencyStatusEnum) {
+            if (obj instanceof AppConsistencyStatusEnum) {
                 return this.value.equals(((AppConsistencyStatusEnum) obj).value);
             }
             return false;
@@ -164,7 +164,7 @@ public class OpExtendInfoBckup  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class OpExtendInfoBckup  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IncrementalEnum) {
+            if (obj instanceof IncrementalEnum) {
                 return this.value.equals(((IncrementalEnum) obj).value);
             }
             return false;

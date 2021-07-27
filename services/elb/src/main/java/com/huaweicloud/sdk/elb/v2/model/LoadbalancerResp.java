@@ -137,7 +137,7 @@ public class LoadbalancerResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -170,7 +170,7 @@ public class LoadbalancerResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperatingStatusEnum) {
+            if (obj instanceof OperatingStatusEnum) {
                 return this.value.equals(((OperatingStatusEnum) obj).value);
             }
             return false;
@@ -227,7 +227,7 @@ public class LoadbalancerResp  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -260,7 +260,7 @@ public class LoadbalancerResp  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProvisioningStatusEnum) {
+            if (obj instanceof ProvisioningStatusEnum) {
                 return this.value.equals(((ProvisioningStatusEnum) obj).value);
             }
             return false;

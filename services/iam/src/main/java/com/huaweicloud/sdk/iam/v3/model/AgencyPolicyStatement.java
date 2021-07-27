@@ -53,7 +53,7 @@ public class AgencyPolicyStatement  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -86,7 +86,7 @@ public class AgencyPolicyStatement  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionEnum) {
+            if (obj instanceof ActionEnum) {
                 return this.value.equals(((ActionEnum) obj).value);
             }
             return false;
@@ -137,7 +137,7 @@ public class AgencyPolicyStatement  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -170,7 +170,7 @@ public class AgencyPolicyStatement  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EffectEnum) {
+            if (obj instanceof EffectEnum) {
                 return this.value.equals(((EffectEnum) obj).value);
             }
             return false;

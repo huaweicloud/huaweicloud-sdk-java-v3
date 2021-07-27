@@ -58,7 +58,7 @@ public class Params  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -91,7 +91,7 @@ public class Params  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CompareResultEnum) {
+            if (obj instanceof CompareResultEnum) {
                 return this.value.equals(((CompareResultEnum) obj).value);
             }
             return false;
@@ -148,7 +148,7 @@ public class Params  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -181,7 +181,7 @@ public class Params  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof GroupEnum) {
+            if (obj instanceof GroupEnum) {
                 return this.value.equals(((GroupEnum) obj).value);
             }
             return false;
@@ -238,7 +238,7 @@ public class Params  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -271,7 +271,7 @@ public class Params  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NeedRestartEnum) {
+            if (obj instanceof NeedRestartEnum) {
                 return this.value.equals(((NeedRestartEnum) obj).value);
             }
             return false;

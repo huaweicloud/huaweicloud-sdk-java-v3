@@ -54,7 +54,7 @@ public class MatchOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class MatchOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof KeyEnum) {
+            if (obj instanceof KeyEnum) {
                 return this.value.equals(((KeyEnum) obj).value);
             }
             return false;

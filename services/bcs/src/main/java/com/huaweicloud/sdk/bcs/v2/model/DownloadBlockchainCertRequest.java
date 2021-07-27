@@ -72,7 +72,7 @@ public class DownloadBlockchainCertRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class DownloadBlockchainCertRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CertTypeEnum) {
+            if (obj instanceof CertTypeEnum) {
                 return this.value.equals(((CertTypeEnum) obj).value);
             }
             return false;

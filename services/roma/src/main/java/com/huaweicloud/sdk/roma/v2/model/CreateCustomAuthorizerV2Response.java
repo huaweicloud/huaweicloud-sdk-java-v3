@@ -69,7 +69,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -102,7 +102,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -153,7 +153,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -186,7 +186,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthorizerTypeEnum) {
+            if (obj instanceof AuthorizerTypeEnum) {
                 return this.value.equals(((AuthorizerTypeEnum) obj).value);
             }
             return false;

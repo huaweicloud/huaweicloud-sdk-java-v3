@@ -54,7 +54,7 @@ public class OriginRangeBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class OriginRangeBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RangeStatusEnum) {
+            if (obj instanceof RangeStatusEnum) {
                 return this.value.equals(((RangeStatusEnum) obj).value);
             }
             return false;

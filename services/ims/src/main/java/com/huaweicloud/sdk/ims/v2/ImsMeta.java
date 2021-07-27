@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.ims.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -848,11 +849,11 @@ public class ImsMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ListOsVersionsResponseBody>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListOsVersionsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ListOsVersionsResponseBody.class)

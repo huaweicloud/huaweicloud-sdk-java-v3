@@ -77,7 +77,7 @@ public class ListConsumerGroupsResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -110,7 +110,7 @@ public class ListConsumerGroupsResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RedrivePolicyEnum) {
+            if (obj instanceof RedrivePolicyEnum) {
                 return this.value.equals(((RedrivePolicyEnum) obj).value);
             }
             return false;

@@ -120,7 +120,7 @@ public class KeyDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -153,7 +153,7 @@ public class KeyDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OriginEnum) {
+            if (obj instanceof OriginEnum) {
                 return this.value.equals(((OriginEnum) obj).value);
             }
             return false;

@@ -72,7 +72,7 @@ public class ListScalingPoliciesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class ListScalingPoliciesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ScalingPolicyTypeEnum) {
+            if (obj instanceof ScalingPolicyTypeEnum) {
                 return this.value.equals(((ScalingPolicyTypeEnum) obj).value);
             }
             return false;

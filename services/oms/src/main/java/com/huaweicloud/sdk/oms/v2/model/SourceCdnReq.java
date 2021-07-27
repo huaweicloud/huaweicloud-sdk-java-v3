@@ -86,7 +86,7 @@ public class SourceCdnReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -119,7 +119,7 @@ public class SourceCdnReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthenticationTypeEnum) {
+            if (obj instanceof AuthenticationTypeEnum) {
                 return this.value.equals(((AuthenticationTypeEnum) obj).value);
             }
             return false;
@@ -176,7 +176,7 @@ public class SourceCdnReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -209,7 +209,7 @@ public class SourceCdnReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;

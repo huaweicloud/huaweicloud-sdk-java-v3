@@ -151,7 +151,7 @@ public class StatisticsAPI  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -184,7 +184,7 @@ public class StatisticsAPI  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CycleEnum) {
+            if (obj instanceof CycleEnum) {
                 return this.value.equals(((CycleEnum) obj).value);
             }
             return false;

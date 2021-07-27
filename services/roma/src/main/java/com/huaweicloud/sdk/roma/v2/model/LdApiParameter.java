@@ -66,7 +66,7 @@ public class LdApiParameter  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class LdApiParameter  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InEnum) {
+            if (obj instanceof InEnum) {
                 return this.value.equals(((InEnum) obj).value);
             }
             return false;

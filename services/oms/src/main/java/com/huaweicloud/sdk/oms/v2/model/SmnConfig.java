@@ -56,7 +56,7 @@ public class SmnConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class SmnConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LanguageEnum) {
+            if (obj instanceof LanguageEnum) {
                 return this.value.equals(((LanguageEnum) obj).value);
             }
             return false;

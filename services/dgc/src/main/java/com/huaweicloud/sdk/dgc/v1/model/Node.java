@@ -152,7 +152,7 @@ public class Node  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -185,7 +185,7 @@ public class Node  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NodeTypeEnum) {
+            if (obj instanceof NodeTypeEnum) {
                 return this.value.equals(((NodeTypeEnum) obj).value);
             }
             return false;
@@ -290,7 +290,7 @@ public class Node  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -323,7 +323,7 @@ public class Node  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FailPolicyEnum) {
+            if (obj instanceof FailPolicyEnum) {
                 return this.value.equals(((FailPolicyEnum) obj).value);
             }
             return false;

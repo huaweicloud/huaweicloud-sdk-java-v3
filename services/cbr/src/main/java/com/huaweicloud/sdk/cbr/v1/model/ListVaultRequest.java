@@ -74,7 +74,7 @@ public class ListVaultRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ListVaultRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CloudTypeEnum) {
+            if (obj instanceof CloudTypeEnum) {
                 return this.value.equals(((CloudTypeEnum) obj).value);
             }
             return false;
@@ -158,7 +158,7 @@ public class ListVaultRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -191,7 +191,7 @@ public class ListVaultRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectTypeEnum) {
+            if (obj instanceof ProtectTypeEnum) {
                 return this.value.equals(((ProtectTypeEnum) obj).value);
             }
             return false;

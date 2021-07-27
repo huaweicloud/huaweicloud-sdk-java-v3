@@ -72,7 +72,7 @@ public class QualityInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class QualityInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PvcEnum) {
+            if (obj instanceof PvcEnum) {
                 return this.value.equals(((PvcEnum) obj).value);
             }
             return false;
@@ -156,7 +156,7 @@ public class QualityInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -189,7 +189,7 @@ public class QualityInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HdlbEnum) {
+            if (obj instanceof HdlbEnum) {
                 return this.value.equals(((HdlbEnum) obj).value);
             }
             return false;
@@ -240,7 +240,7 @@ public class QualityInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -273,7 +273,7 @@ public class QualityInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CodecEnum) {
+            if (obj instanceof CodecEnum) {
                 return this.value.equals(((CodecEnum) obj).value);
             }
             return false;
@@ -354,7 +354,7 @@ public class QualityInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -387,7 +387,7 @@ public class QualityInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;

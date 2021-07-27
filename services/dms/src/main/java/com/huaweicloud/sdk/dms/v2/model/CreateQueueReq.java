@@ -74,7 +74,7 @@ public class CreateQueueReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class CreateQueueReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof QueueModeEnum) {
+            if (obj instanceof QueueModeEnum) {
                 return this.value.equals(((QueueModeEnum) obj).value);
             }
             return false;
@@ -164,7 +164,7 @@ public class CreateQueueReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class CreateQueueReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RedrivePolicyEnum) {
+            if (obj instanceof RedrivePolicyEnum) {
                 return this.value.equals(((RedrivePolicyEnum) obj).value);
             }
             return false;

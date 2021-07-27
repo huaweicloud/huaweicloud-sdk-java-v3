@@ -76,7 +76,7 @@ public class ListDomainsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -109,7 +109,7 @@ public class ListDomainsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BusinessTypeEnum) {
+            if (obj instanceof BusinessTypeEnum) {
                 return this.value.equals(((BusinessTypeEnum) obj).value);
             }
             return false;
@@ -190,7 +190,7 @@ public class ListDomainsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -223,7 +223,7 @@ public class ListDomainsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DomainStatusEnum) {
+            if (obj instanceof DomainStatusEnum) {
                 return this.value.equals(((DomainStatusEnum) obj).value);
             }
             return false;
@@ -280,7 +280,7 @@ public class ListDomainsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -313,7 +313,7 @@ public class ListDomainsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ServiceAreaEnum) {
+            if (obj instanceof ServiceAreaEnum) {
                 return this.value.equals(((ServiceAreaEnum) obj).value);
             }
             return false;

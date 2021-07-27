@@ -60,7 +60,7 @@ public class ResizeInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class ResizeInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NewSpecCodeEnum) {
+            if (obj instanceof NewSpecCodeEnum) {
                 return this.value.equals(((NewSpecCodeEnum) obj).value);
             }
             return false;

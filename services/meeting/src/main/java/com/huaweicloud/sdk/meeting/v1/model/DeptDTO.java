@@ -94,7 +94,7 @@ public class DeptDTO  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -127,7 +127,7 @@ public class DeptDTO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InPermissionEnum) {
+            if (obj instanceof InPermissionEnum) {
                 return this.value.equals(((InPermissionEnum) obj).value);
             }
             return false;
@@ -190,7 +190,7 @@ public class DeptDTO  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -223,7 +223,7 @@ public class DeptDTO  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OutPermissionEnum) {
+            if (obj instanceof OutPermissionEnum) {
                 return this.value.equals(((OutPermissionEnum) obj).value);
             }
             return false;

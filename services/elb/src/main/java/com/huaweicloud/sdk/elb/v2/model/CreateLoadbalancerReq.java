@@ -78,7 +78,7 @@ public class CreateLoadbalancerReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class CreateLoadbalancerReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProviderEnum) {
+            if (obj instanceof ProviderEnum) {
                 return this.value.equals(((ProviderEnum) obj).value);
             }
             return false;

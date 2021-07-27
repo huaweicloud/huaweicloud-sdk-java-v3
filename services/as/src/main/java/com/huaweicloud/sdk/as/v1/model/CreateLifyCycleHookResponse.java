@@ -64,7 +64,7 @@ public class CreateLifyCycleHookResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class CreateLifyCycleHookResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LifecycleHookTypeEnum) {
+            if (obj instanceof LifecycleHookTypeEnum) {
                 return this.value.equals(((LifecycleHookTypeEnum) obj).value);
             }
             return false;
@@ -148,7 +148,7 @@ public class CreateLifyCycleHookResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -181,7 +181,7 @@ public class CreateLifyCycleHookResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DefaultResultEnum) {
+            if (obj instanceof DefaultResultEnum) {
                 return this.value.equals(((DefaultResultEnum) obj).value);
             }
             return false;

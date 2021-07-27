@@ -88,7 +88,7 @@ public class BootstrapScript  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -121,7 +121,7 @@ public class BootstrapScript  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FailActionEnum) {
+            if (obj instanceof FailActionEnum) {
                 return this.value.equals(((FailActionEnum) obj).value);
             }
             return false;
@@ -202,7 +202,7 @@ public class BootstrapScript  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -235,7 +235,7 @@ public class BootstrapScript  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ActionStagesEnum) {
+            if (obj instanceof ActionStagesEnum) {
                 return this.value.equals(((ActionStagesEnum) obj).value);
             }
             return false;

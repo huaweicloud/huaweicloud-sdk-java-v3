@@ -150,7 +150,7 @@ public class ShowDomainItemDetailsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -183,7 +183,7 @@ public class ShowDomainItemDetailsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatTypeEnum) {
+            if (obj instanceof StatTypeEnum) {
                 return this.value.equals(((StatTypeEnum) obj).value);
             }
             return false;

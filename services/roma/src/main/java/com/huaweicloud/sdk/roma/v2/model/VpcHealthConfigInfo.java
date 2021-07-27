@@ -64,7 +64,7 @@ public class VpcHealthConfigInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class VpcHealthConfigInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;
@@ -154,7 +154,7 @@ public class VpcHealthConfigInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -187,7 +187,7 @@ public class VpcHealthConfigInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MethodEnum) {
+            if (obj instanceof MethodEnum) {
                 return this.value.equals(((MethodEnum) obj).value);
             }
             return false;

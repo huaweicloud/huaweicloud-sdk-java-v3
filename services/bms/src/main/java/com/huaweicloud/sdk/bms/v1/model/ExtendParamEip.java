@@ -54,7 +54,7 @@ public class ExtendParamEip  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class ExtendParamEip  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingmodeEnum) {
+            if (obj instanceof ChargingmodeEnum) {
                 return this.value.equals(((ChargingmodeEnum) obj).value);
             }
             return false;

@@ -63,7 +63,7 @@ public class BandWidth  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -96,7 +96,7 @@ public class BandWidth  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SharetypeEnum) {
+            if (obj instanceof SharetypeEnum) {
                 return this.value.equals(((SharetypeEnum) obj).value);
             }
             return false;
@@ -159,7 +159,7 @@ public class BandWidth  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -192,7 +192,7 @@ public class BandWidth  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargemodeEnum) {
+            if (obj instanceof ChargemodeEnum) {
                 return this.value.equals(((ChargemodeEnum) obj).value);
             }
             return false;

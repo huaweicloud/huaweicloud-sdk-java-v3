@@ -78,7 +78,7 @@ public class AvailableZones  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class AvailableZones  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResourceAvailabilityEnum) {
+            if (obj instanceof ResourceAvailabilityEnum) {
                 return this.value.equals(((ResourceAvailabilityEnum) obj).value);
             }
             return false;

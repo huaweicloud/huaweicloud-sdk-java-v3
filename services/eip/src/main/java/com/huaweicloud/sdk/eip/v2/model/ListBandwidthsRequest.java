@@ -72,7 +72,7 @@ public class ListBandwidthsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class ListBandwidthsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ShareTypeEnum) {
+            if (obj instanceof ShareTypeEnum) {
                 return this.value.equals(((ShareTypeEnum) obj).value);
             }
             return false;

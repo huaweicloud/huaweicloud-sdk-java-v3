@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.iec.v1;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -1201,11 +1202,11 @@ public class IecMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<SimpleKeypair>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListKeypairsResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(SimpleKeypair.class)

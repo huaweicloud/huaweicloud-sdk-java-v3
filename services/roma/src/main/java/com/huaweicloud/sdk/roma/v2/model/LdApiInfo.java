@@ -88,7 +88,7 @@ public class LdApiInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -121,7 +121,7 @@ public class LdApiInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MethodEnum) {
+            if (obj instanceof MethodEnum) {
                 return this.value.equals(((MethodEnum) obj).value);
             }
             return false;
@@ -190,7 +190,7 @@ public class LdApiInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -223,7 +223,7 @@ public class LdApiInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ContentTypeEnum) {
+            if (obj instanceof ContentTypeEnum) {
                 return this.value.equals(((ContentTypeEnum) obj).value);
             }
             return false;
@@ -310,7 +310,7 @@ public class LdApiInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -343,7 +343,7 @@ public class LdApiInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;

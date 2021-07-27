@@ -80,7 +80,7 @@ public class ShowNamespaceResponse extends SdkResponse {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -113,7 +113,7 @@ public class ShowNamespaceResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AuthEnum) {
+            if (obj instanceof AuthEnum) {
                 return this.value.equals(((AuthEnum) obj).value);
             }
             return false;

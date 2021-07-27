@@ -79,7 +79,7 @@ public class TaskNodeGroups  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -112,7 +112,7 @@ public class TaskNodeGroups  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DataVolumeTypeEnum) {
+            if (obj instanceof DataVolumeTypeEnum) {
                 return this.value.equals(((DataVolumeTypeEnum) obj).value);
             }
             return false;

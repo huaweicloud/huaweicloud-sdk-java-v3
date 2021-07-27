@@ -80,7 +80,7 @@ public class RealTimeNodeStatus  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -113,7 +113,7 @@ public class RealTimeNodeStatus  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -254,7 +254,7 @@ public class RealTimeNodeStatus  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -287,7 +287,7 @@ public class RealTimeNodeStatus  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NodeTypeEnum) {
+            if (obj instanceof NodeTypeEnum) {
                 return this.value.equals(((NodeTypeEnum) obj).value);
             }
             return false;

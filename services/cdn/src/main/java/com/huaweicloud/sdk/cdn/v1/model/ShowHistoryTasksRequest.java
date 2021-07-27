@@ -74,7 +74,7 @@ public class ShowHistoryTasksRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ShowHistoryTasksRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -182,7 +182,7 @@ public class ShowHistoryTasksRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -215,7 +215,7 @@ public class ShowHistoryTasksRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FileTypeEnum) {
+            if (obj instanceof FileTypeEnum) {
                 return this.value.equals(((FileTypeEnum) obj).value);
             }
             return false;

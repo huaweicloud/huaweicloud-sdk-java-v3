@@ -62,7 +62,7 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ExtendModeEnum) {
+            if (obj instanceof ExtendModeEnum) {
                 return this.value.equals(((ExtendModeEnum) obj).value);
             }
             return false;
@@ -146,7 +146,7 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -179,7 +179,7 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ApiModeEnum) {
+            if (obj instanceof ApiModeEnum) {
                 return this.value.equals(((ApiModeEnum) obj).value);
             }
             return false;

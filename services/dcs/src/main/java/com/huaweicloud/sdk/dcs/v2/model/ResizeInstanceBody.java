@@ -81,7 +81,7 @@ public class ResizeInstanceBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -114,7 +114,7 @@ public class ResizeInstanceBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChangeTypeEnum) {
+            if (obj instanceof ChangeTypeEnum) {
                 return this.value.equals(((ChangeTypeEnum) obj).value);
             }
             return false;

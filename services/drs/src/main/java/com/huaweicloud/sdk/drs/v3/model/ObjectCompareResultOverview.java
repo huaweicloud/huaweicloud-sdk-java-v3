@@ -158,7 +158,7 @@ public class ObjectCompareResultOverview  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -191,7 +191,7 @@ public class ObjectCompareResultOverview  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ObjectTypeEnum) {
+            if (obj instanceof ObjectTypeEnum) {
                 return this.value.equals(((ObjectTypeEnum) obj).value);
             }
             return false;
@@ -272,7 +272,7 @@ public class ObjectCompareResultOverview  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -305,7 +305,7 @@ public class ObjectCompareResultOverview  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ObjectCompareResultEnum) {
+            if (obj instanceof ObjectCompareResultEnum) {
                 return this.value.equals(((ObjectCompareResultEnum) obj).value);
             }
             return false;

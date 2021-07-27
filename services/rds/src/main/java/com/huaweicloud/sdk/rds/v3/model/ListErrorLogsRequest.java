@@ -126,7 +126,7 @@ public class ListErrorLogsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -159,7 +159,7 @@ public class ListErrorLogsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LevelEnum) {
+            if (obj instanceof LevelEnum) {
                 return this.value.equals(((LevelEnum) obj).value);
             }
             return false;

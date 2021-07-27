@@ -71,7 +71,7 @@ public class FlavorId {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -104,7 +104,7 @@ public class FlavorId {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof FlavorId) {
+        if (obj instanceof FlavorId) {
             return this.value.equals(((FlavorId) obj).value);
         }
         return false;

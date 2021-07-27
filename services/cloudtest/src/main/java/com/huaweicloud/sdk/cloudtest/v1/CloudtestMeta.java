@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -222,11 +223,11 @@ public class CloudtestMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ShowPlansResponseBody>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPlansResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ShowPlansResponseBody.class)

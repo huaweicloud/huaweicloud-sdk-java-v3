@@ -167,7 +167,7 @@ public class CreateListenerOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -200,7 +200,7 @@ public class CreateListenerOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TlsCiphersPolicyEnum) {
+            if (obj instanceof TlsCiphersPolicyEnum) {
                 return this.value.equals(((TlsCiphersPolicyEnum) obj).value);
             }
             return false;

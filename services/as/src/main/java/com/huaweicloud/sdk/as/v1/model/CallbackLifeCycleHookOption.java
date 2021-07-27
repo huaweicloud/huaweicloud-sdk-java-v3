@@ -78,7 +78,7 @@ public class CallbackLifeCycleHookOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class CallbackLifeCycleHookOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LifecycleActionResultEnum) {
+            if (obj instanceof LifecycleActionResultEnum) {
                 return this.value.equals(((LifecycleActionResultEnum) obj).value);
             }
             return false;

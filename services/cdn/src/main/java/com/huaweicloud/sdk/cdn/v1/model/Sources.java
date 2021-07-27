@@ -66,7 +66,7 @@ public class Sources  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class Sources  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OriginTypeEnum) {
+            if (obj instanceof OriginTypeEnum) {
                 return this.value.equals(((OriginTypeEnum) obj).value);
             }
             return false;

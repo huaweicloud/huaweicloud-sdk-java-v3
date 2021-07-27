@@ -64,7 +64,7 @@ public class InterfaceAttachments  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class InterfaceAttachments  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PortStateEnum) {
+            if (obj instanceof PortStateEnum) {
                 return this.value.equals(((PortStateEnum) obj).value);
             }
             return false;

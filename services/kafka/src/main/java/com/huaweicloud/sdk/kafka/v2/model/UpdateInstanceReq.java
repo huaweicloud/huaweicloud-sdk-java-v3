@@ -84,7 +84,7 @@ public class UpdateInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class UpdateInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RetentionPolicyEnum) {
+            if (obj instanceof RetentionPolicyEnum) {
                 return this.value.equals(((RetentionPolicyEnum) obj).value);
             }
             return false;

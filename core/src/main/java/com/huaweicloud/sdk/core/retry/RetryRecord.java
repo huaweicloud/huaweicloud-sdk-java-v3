@@ -35,7 +35,6 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
@@ -74,11 +73,6 @@ public class RetryRecord<ResT> {
      */
     AtomicInteger retriesAttempted = new AtomicInteger(0);
 
-    /**
-     * Tracker for progress, better for debug.
-     */
-    Future<?> progressTracker;
-
     SdkException currException = null;
 
     boolean shouldRetry = false;
@@ -95,8 +89,6 @@ public class RetryRecord<ResT> {
         this.func = func;
         this.backoffStrategy = backoffStrategy;
     }
-
-
 
     /**
      * This method should be override cuz the handling process differs in synchronous and asynchronous situation.
@@ -166,12 +158,11 @@ public class RetryRecord<ResT> {
         }
     }
 
-
     /**
      * The entry to send request and handle the result of the asynchronous request.
      */
     public void schedule() {
-        progressTracker = executorService.submit(() -> perform(executorService));
+        executorService.submit(() -> perform(executorService));
     }
 
     /**
@@ -181,7 +172,7 @@ public class RetryRecord<ResT> {
      * @param delay the duration waited before next retry
      */
     public void reschedule(ScheduledExecutorService executor, long delay) {
-        progressTracker = executor.schedule(() -> perform(executor), delay, TimeUnit.MILLISECONDS);
+        executor.schedule(() -> perform(executor), delay, TimeUnit.MILLISECONDS);
     }
 
     private static ThreadFactory initNamedThreadFactory() {
@@ -230,7 +221,7 @@ public class RetryRecord<ResT> {
                 throw new SdkException(noSuchFieldException);
             }
         } else {
-            if (ServiceResponseException.class.isAssignableFrom(e.getClass())) {
+            if (e instanceof ServiceResponseException) {
                 statusCode = ((ServiceResponseException) e).getHttpStatusCode();
             }
         }

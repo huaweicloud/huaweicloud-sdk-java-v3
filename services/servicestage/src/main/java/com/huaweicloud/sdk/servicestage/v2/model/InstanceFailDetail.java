@@ -77,7 +77,7 @@ public class InstanceFailDetail {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -110,7 +110,7 @@ public class InstanceFailDetail {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof InstanceFailDetail) {
+        if (obj instanceof InstanceFailDetail) {
             return this.value.equals(((InstanceFailDetail) obj).value);
         }
         return false;

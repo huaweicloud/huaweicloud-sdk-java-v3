@@ -54,7 +54,7 @@ public class OriginHostBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class OriginHostBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OriginHostTypeEnum) {
+            if (obj instanceof OriginHostTypeEnum) {
                 return this.value.equals(((OriginHostTypeEnum) obj).value);
             }
             return false;

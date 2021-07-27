@@ -116,7 +116,7 @@ public class ListKeypairTaskResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -149,7 +149,7 @@ public class ListKeypairTaskResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TaskStatusEnum) {
+            if (obj instanceof TaskStatusEnum) {
                 return this.value.equals(((TaskStatusEnum) obj).value);
             }
             return false;

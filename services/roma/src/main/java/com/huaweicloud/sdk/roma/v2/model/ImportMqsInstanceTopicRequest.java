@@ -61,7 +61,7 @@ public class ImportMqsInstanceTopicRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -94,7 +94,7 @@ public class ImportMqsInstanceTopicRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ModeEnum) {
+            if (obj instanceof ModeEnum) {
                 return this.value.equals(((ModeEnum) obj).value);
             }
             return false;

@@ -74,7 +74,7 @@ public class ListResizeFlavorsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ListResizeFlavorsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortDirEnum) {
+            if (obj instanceof SortDirEnum) {
                 return this.value.equals(((SortDirEnum) obj).value);
             }
             return false;
@@ -182,7 +182,7 @@ public class ListResizeFlavorsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -215,7 +215,7 @@ public class ListResizeFlavorsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortKeyEnum) {
+            if (obj instanceof SortKeyEnum) {
                 return this.value.equals(((SortKeyEnum) obj).value);
             }
             return false;

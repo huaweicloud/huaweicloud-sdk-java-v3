@@ -66,7 +66,7 @@ public class CreateDatakeyRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class CreateDatakeyRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof KeySpecEnum) {
+            if (obj instanceof KeySpecEnum) {
                 return this.value.equals(((KeySpecEnum) obj).value);
             }
             return false;

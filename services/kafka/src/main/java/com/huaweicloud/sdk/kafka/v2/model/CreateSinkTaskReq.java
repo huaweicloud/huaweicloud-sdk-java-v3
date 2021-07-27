@@ -51,7 +51,7 @@ public class CreateSinkTaskReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -84,7 +84,7 @@ public class CreateSinkTaskReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SourceTypeEnum) {
+            if (obj instanceof SourceTypeEnum) {
                 return this.value.equals(((SourceTypeEnum) obj).value);
             }
             return false;
@@ -135,7 +135,7 @@ public class CreateSinkTaskReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -168,7 +168,7 @@ public class CreateSinkTaskReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DestinationTypeEnum) {
+            if (obj instanceof DestinationTypeEnum) {
                 return this.value.equals(((DestinationTypeEnum) obj).value);
             }
             return false;

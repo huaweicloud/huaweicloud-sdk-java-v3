@@ -62,7 +62,7 @@ public class LiveDomainCreateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class LiveDomainCreateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DomainTypeEnum) {
+            if (obj instanceof DomainTypeEnum) {
                 return this.value.equals(((DomainTypeEnum) obj).value);
             }
             return false;
@@ -158,7 +158,7 @@ public class LiveDomainCreateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -191,7 +191,7 @@ public class LiveDomainCreateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ServiceAreaEnum) {
+            if (obj instanceof ServiceAreaEnum) {
                 return this.value.equals(((ServiceAreaEnum) obj).value);
             }
             return false;

@@ -66,7 +66,7 @@ public class RunningTasks  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -99,7 +99,7 @@ public class RunningTasks  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperateTypeEnum) {
+            if (obj instanceof OperateTypeEnum) {
                 return this.value.equals(((OperateTypeEnum) obj).value);
             }
             return false;

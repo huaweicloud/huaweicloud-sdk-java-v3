@@ -82,7 +82,7 @@ public class ListTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -115,7 +115,7 @@ public class ListTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImagetypeEnum) {
+            if (obj instanceof ImagetypeEnum) {
                 return this.value.equals(((ImagetypeEnum) obj).value);
             }
             return false;
@@ -190,7 +190,7 @@ public class ListTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -223,7 +223,7 @@ public class ListTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -298,7 +298,7 @@ public class ListTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -331,7 +331,7 @@ public class ListTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -388,7 +388,7 @@ public class ListTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -421,7 +421,7 @@ public class ListTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MemberStatusEnum) {
+            if (obj instanceof MemberStatusEnum) {
                 return this.value.equals(((MemberStatusEnum) obj).value);
             }
             return false;
@@ -478,7 +478,7 @@ public class ListTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -511,7 +511,7 @@ public class ListTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VirtualEnvTypeEnum) {
+            if (obj instanceof VirtualEnvTypeEnum) {
                 return this.value.equals(((VirtualEnvTypeEnum) obj).value);
             }
             return false;
@@ -568,7 +568,7 @@ public class ListTagsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -601,7 +601,7 @@ public class ListTagsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ArchitectureEnum) {
+            if (obj instanceof ArchitectureEnum) {
                 return this.value.equals(((ArchitectureEnum) obj).value);
             }
             return false;

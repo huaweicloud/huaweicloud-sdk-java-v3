@@ -65,7 +65,7 @@ public class DecoupledLiveDomainInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -98,7 +98,7 @@ public class DecoupledLiveDomainInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DomainTypeEnum) {
+            if (obj instanceof DomainTypeEnum) {
                 return this.value.equals(((DomainTypeEnum) obj).value);
             }
             return false;
@@ -191,7 +191,7 @@ public class DecoupledLiveDomainInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -224,7 +224,7 @@ public class DecoupledLiveDomainInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VendorEnum) {
+            if (obj instanceof VendorEnum) {
                 return this.value.equals(((VendorEnum) obj).value);
             }
             return false;
@@ -293,7 +293,7 @@ public class DecoupledLiveDomainInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -326,7 +326,7 @@ public class DecoupledLiveDomainInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;

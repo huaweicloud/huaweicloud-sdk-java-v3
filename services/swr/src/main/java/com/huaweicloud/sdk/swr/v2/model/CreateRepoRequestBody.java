@@ -102,7 +102,7 @@ public class CreateRepoRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -135,7 +135,7 @@ public class CreateRepoRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CategoryEnum) {
+            if (obj instanceof CategoryEnum) {
                 return this.value.equals(((CategoryEnum) obj).value);
             }
             return false;

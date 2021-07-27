@@ -80,7 +80,7 @@ public class UpdateOpenIdConnectConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -113,7 +113,7 @@ public class UpdateOpenIdConnectConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResponseTypeEnum) {
+            if (obj instanceof ResponseTypeEnum) {
                 return this.value.equals(((ResponseTypeEnum) obj).value);
             }
             return false;
@@ -164,7 +164,7 @@ public class UpdateOpenIdConnectConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -197,7 +197,7 @@ public class UpdateOpenIdConnectConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ResponseModeEnum) {
+            if (obj instanceof ResponseModeEnum) {
                 return this.value.equals(((ResponseModeEnum) obj).value);
             }
             return false;

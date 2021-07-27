@@ -56,7 +56,7 @@ public class Endpoint  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class Endpoint  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DbTypeEnum) {
+            if (obj instanceof DbTypeEnum) {
                 return this.value.equals(((DbTypeEnum) obj).value);
             }
             return false;
@@ -260,7 +260,7 @@ public class Endpoint  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -293,7 +293,7 @@ public class Endpoint  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ClusterModeEnum) {
+            if (obj instanceof ClusterModeEnum) {
                 return this.value.equals(((ClusterModeEnum) obj).value);
             }
             return false;

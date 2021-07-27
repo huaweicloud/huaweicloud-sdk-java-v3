@@ -60,7 +60,7 @@ public class Pager  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class Pager  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RelEnum) {
+            if (obj instanceof RelEnum) {
                 return this.value.equals(((RelEnum) obj).value);
             }
             return false;

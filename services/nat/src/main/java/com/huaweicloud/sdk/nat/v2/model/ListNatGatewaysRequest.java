@@ -107,7 +107,7 @@ public class ListNatGatewaysRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -140,7 +140,7 @@ public class ListNatGatewaysRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -203,7 +203,7 @@ public class ListNatGatewaysRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -236,7 +236,7 @@ public class ListNatGatewaysRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SpecEnum) {
+            if (obj instanceof SpecEnum) {
                 return this.value.equals(((SpecEnum) obj).value);
             }
             return false;

@@ -74,7 +74,7 @@ public class ListBackupsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ListBackupsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof BackupTypeEnum) {
+            if (obj instanceof BackupTypeEnum) {
                 return this.value.equals(((BackupTypeEnum) obj).value);
             }
             return false;
@@ -188,7 +188,7 @@ public class ListBackupsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -221,7 +221,7 @@ public class ListBackupsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ModeEnum) {
+            if (obj instanceof ModeEnum) {
                 return this.value.equals(((ModeEnum) obj).value);
             }
             return false;

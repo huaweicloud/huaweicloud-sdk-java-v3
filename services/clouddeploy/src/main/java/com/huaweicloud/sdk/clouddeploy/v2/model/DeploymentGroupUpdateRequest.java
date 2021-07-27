@@ -78,7 +78,7 @@ public class DeploymentGroupUpdateRequest  {
 
         @JsonValue
         public Integer getValue() {
-            return Integer.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class DeploymentGroupUpdateRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof AutoConnectionTestSwitchEnum) {
+            if (obj instanceof AutoConnectionTestSwitchEnum) {
                 return this.value.equals(((AutoConnectionTestSwitchEnum) obj).value);
             }
             return false;

@@ -50,7 +50,7 @@ public class CreateSpaceAnalysisTaskBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -83,7 +83,7 @@ public class CreateSpaceAnalysisTaskBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OperateEnum) {
+            if (obj instanceof OperateEnum) {
                 return this.value.equals(((OperateEnum) obj).value);
             }
             return false;
@@ -134,7 +134,7 @@ public class CreateSpaceAnalysisTaskBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -167,7 +167,7 @@ public class CreateSpaceAnalysisTaskBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DatastoreTypeEnum) {
+            if (obj instanceof DatastoreTypeEnum) {
                 return this.value.equals(((DatastoreTypeEnum) obj).value);
             }
             return false;

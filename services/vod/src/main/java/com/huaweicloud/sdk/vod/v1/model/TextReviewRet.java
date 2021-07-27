@@ -60,7 +60,7 @@ public class TextReviewRet  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class TextReviewRet  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SuggestionEnum) {
+            if (obj instanceof SuggestionEnum) {
                 return this.value.equals(((SuggestionEnum) obj).value);
             }
             return false;

@@ -74,7 +74,7 @@ public class SourceServerAssociatedWithTask  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -107,7 +107,7 @@ public class SourceServerAssociatedWithTask  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -230,7 +230,7 @@ public class SourceServerAssociatedWithTask  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -263,7 +263,7 @@ public class SourceServerAssociatedWithTask  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StateEnum) {
+            if (obj instanceof StateEnum) {
                 return this.value.equals(((StateEnum) obj).value);
             }
             return false;

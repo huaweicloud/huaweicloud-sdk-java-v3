@@ -64,7 +64,7 @@ public class ThumbnailPara  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class ThumbnailPara  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -214,7 +214,7 @@ public class ThumbnailPara  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -247,7 +247,7 @@ public class ThumbnailPara  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof FrameTypeEnum) {
+            if (obj instanceof FrameTypeEnum) {
                 return this.value.equals(((FrameTypeEnum) obj).value);
             }
             return false;

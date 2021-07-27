@@ -9,7 +9,7 @@ import com.huaweicloud.sdk.core.region.Region;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 public class CloudtestRegion {
-    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://cloudtest-ext.cn-north-1.myhuaweicloud.com/v1/projects");
+    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://cloudtest-ext.cn-north-1.myhuaweicloud.com");
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cloudtest-ext.cn-north-4.myhuaweicloud.com");
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://cloudtest-ext.cn-south-1.myhuaweicloud.com");
     public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://cloudtest-ext.cn-south-2.myhuaweicloud.com");

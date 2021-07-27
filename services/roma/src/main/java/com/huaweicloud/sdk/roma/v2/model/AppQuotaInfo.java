@@ -85,7 +85,7 @@ public class AppQuotaInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -118,7 +118,7 @@ public class AppQuotaInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TimeUnitEnum) {
+            if (obj instanceof TimeUnitEnum) {
                 return this.value.equals(((TimeUnitEnum) obj).value);
             }
             return false;

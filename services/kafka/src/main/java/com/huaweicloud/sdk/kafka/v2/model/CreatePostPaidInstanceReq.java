@@ -71,7 +71,7 @@ public class CreatePostPaidInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -104,7 +104,7 @@ public class CreatePostPaidInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineEnum) {
+            if (obj instanceof EngineEnum) {
                 return this.value.equals(((EngineEnum) obj).value);
             }
             return false;
@@ -155,7 +155,7 @@ public class CreatePostPaidInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -188,7 +188,7 @@ public class CreatePostPaidInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EngineVersionEnum) {
+            if (obj instanceof EngineVersionEnum) {
                 return this.value.equals(((EngineVersionEnum) obj).value);
             }
             return false;
@@ -251,7 +251,7 @@ public class CreatePostPaidInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -284,7 +284,7 @@ public class CreatePostPaidInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SpecificationEnum) {
+            if (obj instanceof SpecificationEnum) {
                 return this.value.equals(((SpecificationEnum) obj).value);
             }
             return false;
@@ -437,7 +437,7 @@ public class CreatePostPaidInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -470,7 +470,7 @@ public class CreatePostPaidInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RetentionPolicyEnum) {
+            if (obj instanceof RetentionPolicyEnum) {
                 return this.value.equals(((RetentionPolicyEnum) obj).value);
             }
             return false;
@@ -539,7 +539,7 @@ public class CreatePostPaidInstanceReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -572,7 +572,7 @@ public class CreatePostPaidInstanceReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StorageSpecCodeEnum) {
+            if (obj instanceof StorageSpecCodeEnum) {
                 return this.value.equals(((StorageSpecCodeEnum) obj).value);
             }
             return false;

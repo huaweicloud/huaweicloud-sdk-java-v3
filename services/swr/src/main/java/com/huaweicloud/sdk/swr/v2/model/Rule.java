@@ -57,7 +57,7 @@ public class Rule  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -90,7 +90,7 @@ public class Rule  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TemplateEnum) {
+            if (obj instanceof TemplateEnum) {
                 return this.value.equals(((TemplateEnum) obj).value);
             }
             return false;

@@ -86,7 +86,7 @@ public class EventItemDetail  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -119,7 +119,7 @@ public class EventItemDetail  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EventStateEnum) {
+            if (obj instanceof EventStateEnum) {
                 return this.value.equals(((EventStateEnum) obj).value);
             }
             return false;
@@ -182,7 +182,7 @@ public class EventItemDetail  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -215,7 +215,7 @@ public class EventItemDetail  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EventLevelEnum) {
+            if (obj instanceof EventLevelEnum) {
                 return this.value.equals(((EventLevelEnum) obj).value);
             }
             return false;

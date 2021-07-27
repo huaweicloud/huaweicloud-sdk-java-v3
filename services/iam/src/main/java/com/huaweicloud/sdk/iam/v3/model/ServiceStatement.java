@@ -62,7 +62,7 @@ public class ServiceStatement  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class ServiceStatement  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof EffectEnum) {
+            if (obj instanceof EffectEnum) {
                 return this.value.equals(((EffectEnum) obj).value);
             }
             return false;

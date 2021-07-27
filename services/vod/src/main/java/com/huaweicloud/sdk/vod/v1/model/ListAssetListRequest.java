@@ -166,7 +166,7 @@ public class ListAssetListRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -199,7 +199,7 @@ public class ListAssetListRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -298,7 +298,7 @@ public class ListAssetListRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -331,7 +331,7 @@ public class ListAssetListRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OrderEnum) {
+            if (obj instanceof OrderEnum) {
                 return this.value.equals(((OrderEnum) obj).value);
             }
             return false;

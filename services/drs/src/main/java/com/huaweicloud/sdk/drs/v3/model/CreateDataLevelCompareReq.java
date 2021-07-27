@@ -62,7 +62,7 @@ public class CreateDataLevelCompareReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class CreateDataLevelCompareReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConflictPolicyEnum) {
+            if (obj instanceof ConflictPolicyEnum) {
                 return this.value.equals(((ConflictPolicyEnum) obj).value);
             }
             return false;
@@ -146,7 +146,7 @@ public class CreateDataLevelCompareReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -179,7 +179,7 @@ public class CreateDataLevelCompareReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CompareTypeEnum) {
+            if (obj instanceof CompareTypeEnum) {
                 return this.value.equals(((CompareTypeEnum) obj).value);
             }
             return false;
@@ -224,7 +224,7 @@ public class CreateDataLevelCompareReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -257,7 +257,7 @@ public class CreateDataLevelCompareReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CompareModeEnum) {
+            if (obj instanceof CompareModeEnum) {
                 return this.value.equals(((CompareModeEnum) obj).value);
             }
             return false;

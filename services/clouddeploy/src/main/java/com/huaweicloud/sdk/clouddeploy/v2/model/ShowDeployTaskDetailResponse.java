@@ -101,7 +101,7 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -134,7 +134,7 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StateEnum) {
+            if (obj instanceof StateEnum) {
                 return this.value.equals(((StateEnum) obj).value);
             }
             return false;

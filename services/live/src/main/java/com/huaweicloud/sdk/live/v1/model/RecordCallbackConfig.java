@@ -93,7 +93,7 @@ public class RecordCallbackConfig  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -126,7 +126,7 @@ public class RecordCallbackConfig  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof NotifyEventSubscriptionEnum) {
+            if (obj instanceof NotifyEventSubscriptionEnum) {
                 return this.value.equals(((NotifyEventSubscriptionEnum) obj).value);
             }
             return false;

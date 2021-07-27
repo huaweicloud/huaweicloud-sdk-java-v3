@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.functiongraph.v2;
 
+import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
@@ -893,11 +894,11 @@ public class FunctionGraphMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ListVersionAliasResult>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListVersionAliasesResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ListVersionAliasResult.class)
@@ -1500,11 +1501,11 @@ public class FunctionGraphMeta {
 
         // response
         
-        builder.withResponseField(
+        builder.<List<ListFunctionTriggerResult>>withResponseField(
             "body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListFunctionTriggersResponse::getBody, (response, data)->{
                 response.setBody(data);
             }).withInnerContainerType(ListFunctionTriggerResult.class)

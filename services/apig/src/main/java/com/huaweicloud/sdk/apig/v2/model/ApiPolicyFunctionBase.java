@@ -60,7 +60,7 @@ public class ApiPolicyFunctionBase  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -93,7 +93,7 @@ public class ApiPolicyFunctionBase  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InvocationTypeEnum) {
+            if (obj instanceof InvocationTypeEnum) {
                 return this.value.equals(((InvocationTypeEnum) obj).value);
             }
             return false;

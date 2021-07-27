@@ -96,7 +96,7 @@ public class LineCompareResultOverview  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -129,7 +129,7 @@ public class LineCompareResultOverview  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LineCompareResultEnum) {
+            if (obj instanceof LineCompareResultEnum) {
                 return this.value.equals(((LineCompareResultEnum) obj).value);
             }
             return false;

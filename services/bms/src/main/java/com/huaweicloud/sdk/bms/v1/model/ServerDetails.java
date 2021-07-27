@@ -177,7 +177,7 @@ public class ServerDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -210,7 +210,7 @@ public class ServerDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -315,7 +315,7 @@ public class ServerDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -348,7 +348,7 @@ public class ServerDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEXTSTSTaskStateEnum) {
+            if (obj instanceof OsEXTSTSTaskStateEnum) {
                 return this.value.equals(((OsEXTSTSTaskStateEnum) obj).value);
             }
             return false;
@@ -411,7 +411,7 @@ public class ServerDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -444,7 +444,7 @@ public class ServerDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEXTSTSVmStateEnum) {
+            if (obj instanceof OsEXTSTSVmStateEnum) {
                 return this.value.equals(((OsEXTSTSVmStateEnum) obj).value);
             }
             return false;
@@ -525,7 +525,7 @@ public class ServerDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -558,7 +558,7 @@ public class ServerDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsDCFDiskConfigEnum) {
+            if (obj instanceof OsDCFDiskConfigEnum) {
                 return this.value.equals(((OsDCFDiskConfigEnum) obj).value);
             }
             return false;
@@ -651,7 +651,7 @@ public class ServerDetails  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -684,7 +684,7 @@ public class ServerDetails  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HostStatusEnum) {
+            if (obj instanceof HostStatusEnum) {
                 return this.value.equals(((HostStatusEnum) obj).value);
             }
             return false;

@@ -77,7 +77,7 @@ public class CreateListenerReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -110,7 +110,7 @@ public class CreateListenerReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtocolEnum) {
+            if (obj instanceof ProtocolEnum) {
                 return this.value.equals(((ProtocolEnum) obj).value);
             }
             return false;
@@ -245,7 +245,7 @@ public class CreateListenerReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -278,7 +278,7 @@ public class CreateListenerReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TlsCiphersPolicyEnum) {
+            if (obj instanceof TlsCiphersPolicyEnum) {
                 return this.value.equals(((TlsCiphersPolicyEnum) obj).value);
             }
             return false;

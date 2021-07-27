@@ -64,7 +64,7 @@ public class CreateWatermarkTemplateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -97,7 +97,7 @@ public class CreateWatermarkTemplateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof WatermarkTypeEnum) {
+            if (obj instanceof WatermarkTypeEnum) {
                 return this.value.equals(((WatermarkTypeEnum) obj).value);
             }
             return false;
@@ -154,7 +154,7 @@ public class CreateWatermarkTemplateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -187,7 +187,7 @@ public class CreateWatermarkTemplateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImageProcessEnum) {
+            if (obj instanceof ImageProcessEnum) {
                 return this.value.equals(((ImageProcessEnum) obj).value);
             }
             return false;
@@ -262,7 +262,7 @@ public class CreateWatermarkTemplateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -295,7 +295,7 @@ public class CreateWatermarkTemplateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PositionEnum) {
+            if (obj instanceof PositionEnum) {
                 return this.value.equals(((PositionEnum) obj).value);
             }
             return false;

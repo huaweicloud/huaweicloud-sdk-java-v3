@@ -128,7 +128,7 @@ public class LdApiScript  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -161,7 +161,7 @@ public class LdApiScript  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DsTypeEnum) {
+            if (obj instanceof DsTypeEnum) {
                 return this.value.equals(((DsTypeEnum) obj).value);
             }
             return false;

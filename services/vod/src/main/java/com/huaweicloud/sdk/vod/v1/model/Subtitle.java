@@ -56,7 +56,7 @@ public class Subtitle  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -89,7 +89,7 @@ public class Subtitle  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;
@@ -140,7 +140,7 @@ public class Subtitle  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -173,7 +173,7 @@ public class Subtitle  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof LanguageEnum) {
+            if (obj instanceof LanguageEnum) {
                 return this.value.equals(((LanguageEnum) obj).value);
             }
             return false;

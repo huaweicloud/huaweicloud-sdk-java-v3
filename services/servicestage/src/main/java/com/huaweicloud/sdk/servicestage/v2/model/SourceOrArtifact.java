@@ -57,7 +57,7 @@ public class SourceOrArtifact  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -90,7 +90,7 @@ public class SourceOrArtifact  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StorageEnum) {
+            if (obj instanceof StorageEnum) {
                 return this.value.equals(((StorageEnum) obj).value);
             }
             return false;
@@ -135,7 +135,7 @@ public class SourceOrArtifact  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -168,7 +168,7 @@ public class SourceOrArtifact  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TypeEnum) {
+            if (obj instanceof TypeEnum) {
                 return this.value.equals(((TypeEnum) obj).value);
             }
             return false;

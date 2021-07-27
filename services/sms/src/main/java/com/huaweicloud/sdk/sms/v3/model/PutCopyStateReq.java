@@ -110,7 +110,7 @@ public class PutCopyStateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -143,7 +143,7 @@ public class PutCopyStateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CopystateEnum) {
+            if (obj instanceof CopystateEnum) {
                 return this.value.equals(((CopystateEnum) obj).value);
             }
             return false;
@@ -218,7 +218,7 @@ public class PutCopyStateReq  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -251,7 +251,7 @@ public class PutCopyStateReq  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MigrationcycleEnum) {
+            if (obj instanceof MigrationcycleEnum) {
                 return this.value.equals(((MigrationcycleEnum) obj).value);
             }
             return false;

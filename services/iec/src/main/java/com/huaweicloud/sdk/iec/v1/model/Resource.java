@@ -32,6 +32,12 @@ public class Resource  {
 
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value="with_prefix")
+    
+    private Boolean withPrefix;
+
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value="image_ref")
     
     private String imageRef;
@@ -114,6 +120,28 @@ public class Resource  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+
+    public Resource withWithPrefix(Boolean withPrefix) {
+        this.withPrefix = withPrefix;
+        return this;
+    }
+
+    
+
+
+    /**
+     * 是否自动添加名称前缀。 - with_prefix为false时不拼接IEC前缀 - with_prefix不传或者传true时拼自动IEC前缀  以name为iec为例： 不添加前缀时实例名称为：iec-0001 自动添加前缀实例名称为：IEC-ZS01-iec-0001 0001为创建边缘业务时根据实例个数自动添加的编号
+     * @return withPrefix
+     */
+    public Boolean getWithPrefix() {
+        return withPrefix;
+    }
+
+    public void setWithPrefix(Boolean withPrefix) {
+        this.withPrefix = withPrefix;
     }
 
     
@@ -419,6 +447,7 @@ public class Resource  {
         }
         Resource resource = (Resource) o;
         return Objects.equals(this.name, resource.name) &&
+            Objects.equals(this.withPrefix, resource.withPrefix) &&
             Objects.equals(this.imageRef, resource.imageRef) &&
             Objects.equals(this.flavorRef, resource.flavorRef) &&
             Objects.equals(this.adminPass, resource.adminPass) &&
@@ -433,13 +462,14 @@ public class Resource  {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, imageRef, flavorRef, adminPass, keyName, netConfig, bandwidth, rootVolume, dataVolumes, count, securityGroups, userData);
+        return Objects.hash(name, withPrefix, imageRef, flavorRef, adminPass, keyName, netConfig, bandwidth, rootVolume, dataVolumes, count, securityGroups, userData);
     }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Resource {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    withPrefix: ").append(toIndentedString(withPrefix)).append("\n");
         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    adminPass: ").append(toIndentedString(adminPass)).append("\n");

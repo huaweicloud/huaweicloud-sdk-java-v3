@@ -18,6 +18,72 @@ public class ClassroomClient {
 
 
     /**
+     * 下发判题任务
+     * 下发判题任务，根据回调地址、代码来源、源代码文本、语言类型、超时时长、输出类型，触发后台代码编译运行和判题
+     *
+     * @param ApplyJudgementRequest 请求对象
+     * @return ApplyJudgementResponse
+     */
+    public ApplyJudgementResponse applyJudgement(ApplyJudgementRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.applyJudgement);
+    }
+
+    /**
+     * 下发判题任务
+     * 下发判题任务，根据回调地址、代码来源、源代码文本、语言类型、超时时长、输出类型，触发后台代码编译运行和判题
+     *
+     * @param ApplyJudgementRequest 请求对象
+     * @return SyncInvoker<ApplyJudgementRequest, ApplyJudgementResponse>
+     */
+    public SyncInvoker<ApplyJudgementRequest, ApplyJudgementResponse> applyJudgementInvoker(ApplyJudgementRequest request) {
+        return new SyncInvoker<ApplyJudgementRequest, ApplyJudgementResponse>(request, ClassroomMeta.applyJudgement, hcClient);
+    }
+
+    /**
+     * 获取判题结果详情
+     * 根据判题任务ID获取判题结果详情
+     *
+     * @param ShowJudgementDetailRequest 请求对象
+     * @return ShowJudgementDetailResponse
+     */
+    public ShowJudgementDetailResponse showJudgementDetail(ShowJudgementDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.showJudgementDetail);
+    }
+
+    /**
+     * 获取判题结果详情
+     * 根据判题任务ID获取判题结果详情
+     *
+     * @param ShowJudgementDetailRequest 请求对象
+     * @return SyncInvoker<ShowJudgementDetailRequest, ShowJudgementDetailResponse>
+     */
+    public SyncInvoker<ShowJudgementDetailRequest, ShowJudgementDetailResponse> showJudgementDetailInvoker(ShowJudgementDetailRequest request) {
+        return new SyncInvoker<ShowJudgementDetailRequest, ShowJudgementDetailResponse>(request, ClassroomMeta.showJudgementDetail, hcClient);
+    }
+
+    /**
+     * 下载判题结果文件
+     * 根据文件id或图片id下载输出结果文件
+     *
+     * @param ShowJudgementFileRequest 请求对象
+     * @return ShowJudgementFileResponse
+     */
+    public ShowJudgementFileResponse showJudgementFile(ShowJudgementFileRequest request) {
+        return hcClient.syncInvokeHttp(request, ClassroomMeta.showJudgementFile);
+    }
+
+    /**
+     * 下载判题结果文件
+     * 根据文件id或图片id下载输出结果文件
+     *
+     * @param ShowJudgementFileRequest 请求对象
+     * @return SyncInvoker<ShowJudgementFileRequest, ShowJudgementFileResponse>
+     */
+    public SyncInvoker<ShowJudgementFileRequest, ShowJudgementFileResponse> showJudgementFileInvoker(ShowJudgementFileRequest request) {
+        return new SyncInvoker<ShowJudgementFileRequest, ShowJudgementFileResponse>(request, ClassroomMeta.showJudgementFile, hcClient);
+    }
+
+    /**
      * 根据课堂ID获取指定课堂的课堂成员列表
      * 根据课堂ID获取指定课堂的课堂成员列表，支持分页，搜索字段默认同时匹配姓名，学号，用户名，班级。
      *

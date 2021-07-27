@@ -97,7 +97,7 @@ public class CreateRomaAppResponse extends SdkResponse {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -130,7 +130,7 @@ public class CreateRomaAppResponse extends SdkResponse {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof RolesEnum) {
+            if (obj instanceof RolesEnum) {
                 return this.value.equals(((RolesEnum) obj).value);
             }
             return false;

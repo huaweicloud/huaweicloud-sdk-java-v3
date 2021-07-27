@@ -102,7 +102,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -135,7 +135,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImageSourceTypeEnum) {
+            if (obj instanceof ImageSourceTypeEnum) {
                 return this.value.equals(((ImageSourceTypeEnum) obj).value);
             }
             return false;
@@ -192,7 +192,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -225,7 +225,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImagetypeEnum) {
+            if (obj instanceof ImagetypeEnum) {
                 return this.value.equals(((ImagetypeEnum) obj).value);
             }
             return false;
@@ -276,7 +276,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -309,7 +309,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsregisteredEnum) {
+            if (obj instanceof IsregisteredEnum) {
                 return this.value.equals(((IsregisteredEnum) obj).value);
             }
             return false;
@@ -366,7 +366,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -399,7 +399,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsBitEnum) {
+            if (obj instanceof OsBitEnum) {
                 return this.value.equals(((OsBitEnum) obj).value);
             }
             return false;
@@ -456,7 +456,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -489,7 +489,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -606,7 +606,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -639,7 +639,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PlatformEnum) {
+            if (obj instanceof PlatformEnum) {
                 return this.value.equals(((PlatformEnum) obj).value);
             }
             return false;
@@ -864,7 +864,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -897,7 +897,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -966,7 +966,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -999,7 +999,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VirtualEnvTypeEnum) {
+            if (obj instanceof VirtualEnvTypeEnum) {
                 return this.value.equals(((VirtualEnvTypeEnum) obj).value);
             }
             return false;
@@ -1056,7 +1056,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1089,7 +1089,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VisibilityEnum) {
+            if (obj instanceof VisibilityEnum) {
                 return this.value.equals(((VisibilityEnum) obj).value);
             }
             return false;
@@ -1140,7 +1140,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1173,7 +1173,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SupportFcInjectEnum) {
+            if (obj instanceof SupportFcInjectEnum) {
                 return this.value.equals(((SupportFcInjectEnum) obj).value);
             }
             return false;
@@ -1224,7 +1224,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1257,7 +1257,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HwFirmwareTypeEnum) {
+            if (obj instanceof HwFirmwareTypeEnum) {
                 return this.value.equals(((HwFirmwareTypeEnum) obj).value);
             }
             return false;
@@ -1308,7 +1308,7 @@ public class ImageInfo  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1341,7 +1341,7 @@ public class ImageInfo  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SupportArmEnum) {
+            if (obj instanceof SupportArmEnum) {
                 return this.value.equals(((SupportArmEnum) obj).value);
             }
             return false;

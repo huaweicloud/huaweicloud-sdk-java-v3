@@ -78,7 +78,7 @@ public class ListProtectableRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -111,7 +111,7 @@ public class ListProtectableRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectableTypeEnum) {
+            if (obj instanceof ProtectableTypeEnum) {
                 return this.value.equals(((ProtectableTypeEnum) obj).value);
             }
             return false;

@@ -62,7 +62,7 @@ public class PrePaidServerExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -95,7 +95,7 @@ public class PrePaidServerExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
+            if (obj instanceof ChargingModeEnum) {
                 return this.value.equals(((ChargingModeEnum) obj).value);
             }
             return false;
@@ -152,7 +152,7 @@ public class PrePaidServerExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -185,7 +185,7 @@ public class PrePaidServerExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PeriodTypeEnum) {
+            if (obj instanceof PeriodTypeEnum) {
                 return this.value.equals(((PeriodTypeEnum) obj).value);
             }
             return false;
@@ -242,7 +242,7 @@ public class PrePaidServerExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -275,7 +275,7 @@ public class PrePaidServerExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsAutoRenewEnum) {
+            if (obj instanceof IsAutoRenewEnum) {
                 return this.value.equals(((IsAutoRenewEnum) obj).value);
             }
             return false;
@@ -326,7 +326,7 @@ public class PrePaidServerExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -359,7 +359,7 @@ public class PrePaidServerExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsAutoPayEnum) {
+            if (obj instanceof IsAutoPayEnum) {
                 return this.value.equals(((IsAutoPayEnum) obj).value);
             }
             return false;
@@ -440,7 +440,7 @@ public class PrePaidServerExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -473,7 +473,7 @@ public class PrePaidServerExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InterruptionPolicyEnum) {
+            if (obj instanceof InterruptionPolicyEnum) {
                 return this.value.equals(((InterruptionPolicyEnum) obj).value);
             }
             return false;

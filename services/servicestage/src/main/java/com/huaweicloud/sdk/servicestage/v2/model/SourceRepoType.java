@@ -59,7 +59,7 @@ public class SourceRepoType {
 
     @JsonValue
     public String getValue() {
-        return String.valueOf(value);
+        return value;
     }
 
     @Override
@@ -92,7 +92,7 @@ public class SourceRepoType {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj != null && obj instanceof SourceRepoType) {
+        if (obj instanceof SourceRepoType) {
             return this.value.equals(((SourceRepoType) obj).value);
         }
         return false;

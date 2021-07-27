@@ -72,7 +72,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
+            if (obj instanceof ChargingModeEnum) {
                 return this.value.equals(((ChargingModeEnum) obj).value);
             }
             return false;
@@ -156,7 +156,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -189,7 +189,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof CloudTypeEnum) {
+            if (obj instanceof CloudTypeEnum) {
                 return this.value.equals(((CloudTypeEnum) obj).value);
             }
             return false;
@@ -240,7 +240,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -273,7 +273,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConsistentLevelEnum) {
+            if (obj instanceof ConsistentLevelEnum) {
                 return this.value.equals(((ConsistentLevelEnum) obj).value);
             }
             return false;
@@ -324,7 +324,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -357,7 +357,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ObjectTypeEnum) {
+            if (obj instanceof ObjectTypeEnum) {
                 return this.value.equals(((ObjectTypeEnum) obj).value);
             }
             return false;
@@ -426,7 +426,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -459,7 +459,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ProtectTypeEnum) {
+            if (obj instanceof ProtectTypeEnum) {
                 return this.value.equals(((ProtectTypeEnum) obj).value);
             }
             return false;
@@ -516,7 +516,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -549,7 +549,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SpecCodeEnum) {
+            if (obj instanceof SpecCodeEnum) {
                 return this.value.equals(((SpecCodeEnum) obj).value);
             }
             return false;
@@ -618,7 +618,7 @@ public class Billing  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -651,7 +651,7 @@ public class Billing  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;

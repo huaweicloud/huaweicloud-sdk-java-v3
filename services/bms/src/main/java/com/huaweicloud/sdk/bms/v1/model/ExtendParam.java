@@ -50,7 +50,7 @@ public class ExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -83,7 +83,7 @@ public class ExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ChargingModeEnum) {
+            if (obj instanceof ChargingModeEnum) {
                 return this.value.equals(((ChargingModeEnum) obj).value);
             }
             return false;
@@ -140,7 +140,7 @@ public class ExtendParam  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -173,7 +173,7 @@ public class ExtendParam  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PeriodTypeEnum) {
+            if (obj instanceof PeriodTypeEnum) {
                 return this.value.equals(((PeriodTypeEnum) obj).value);
             }
             return false;

@@ -148,7 +148,7 @@ public class Domains  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -181,7 +181,7 @@ public class Domains  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ServiceAreaEnum) {
+            if (obj instanceof ServiceAreaEnum) {
                 return this.value.equals(((ServiceAreaEnum) obj).value);
             }
             return false;

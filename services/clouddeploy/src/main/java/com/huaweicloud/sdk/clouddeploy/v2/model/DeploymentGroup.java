@@ -72,7 +72,7 @@ public class DeploymentGroup  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -105,7 +105,7 @@ public class DeploymentGroup  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsEnum) {
+            if (obj instanceof OsEnum) {
                 return this.value.equals(((OsEnum) obj).value);
             }
             return false;

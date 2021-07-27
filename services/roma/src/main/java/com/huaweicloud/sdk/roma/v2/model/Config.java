@@ -332,7 +332,7 @@ public class Config  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -365,7 +365,7 @@ public class Config  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ConfigNameEnum) {
+            if (obj instanceof ConfigNameEnum) {
                 return this.value.equals(((ConfigNameEnum) obj).value);
             }
             return false;

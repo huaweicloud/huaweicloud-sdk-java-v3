@@ -121,7 +121,7 @@ public class UpdateScalingGroupOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -154,7 +154,7 @@ public class UpdateScalingGroupOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof HealthPeriodicAuditMethodEnum) {
+            if (obj instanceof HealthPeriodicAuditMethodEnum) {
                 return this.value.equals(((HealthPeriodicAuditMethodEnum) obj).value);
             }
             return false;
@@ -229,7 +229,7 @@ public class UpdateScalingGroupOption  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -262,7 +262,7 @@ public class UpdateScalingGroupOption  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof InstanceTerminatePolicyEnum) {
+            if (obj instanceof InstanceTerminatePolicyEnum) {
                 return this.value.equals(((InstanceTerminatePolicyEnum) obj).value);
             }
             return false;

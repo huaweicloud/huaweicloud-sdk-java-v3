@@ -98,7 +98,7 @@ public class CreateFunctionTriggerRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -131,7 +131,7 @@ public class CreateFunctionTriggerRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TriggerTypeCodeEnum) {
+            if (obj instanceof TriggerTypeCodeEnum) {
                 return this.value.equals(((TriggerTypeCodeEnum) obj).value);
             }
             return false;
@@ -182,7 +182,7 @@ public class CreateFunctionTriggerRequestBody  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -215,7 +215,7 @@ public class CreateFunctionTriggerRequestBody  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof TriggerStatusEnum) {
+            if (obj instanceof TriggerStatusEnum) {
                 return this.value.equals(((TriggerStatusEnum) obj).value);
             }
             return false;

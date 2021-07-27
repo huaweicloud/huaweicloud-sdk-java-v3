@@ -54,7 +54,7 @@ public class ListDatastoreVersionsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -87,7 +87,7 @@ public class ListDatastoreVersionsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DatastoreNameEnum) {
+            if (obj instanceof DatastoreNameEnum) {
                 return this.value.equals(((DatastoreNameEnum) obj).value);
             }
             return false;

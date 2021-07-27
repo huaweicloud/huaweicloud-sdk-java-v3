@@ -90,7 +90,7 @@ public class ListHostsRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -123,7 +123,7 @@ public class ListHostsRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortDirEnum) {
+            if (obj instanceof SortDirEnum) {
                 return this.value.equals(((SortDirEnum) obj).value);
             }
             return false;

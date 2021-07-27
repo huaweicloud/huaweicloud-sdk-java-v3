@@ -84,7 +84,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ImagetypeEnum) {
+            if (obj instanceof ImagetypeEnum) {
                 return this.value.equals(((ImagetypeEnum) obj).value);
             }
             return false;
@@ -168,7 +168,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -201,7 +201,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof IsregisteredEnum) {
+            if (obj instanceof IsregisteredEnum) {
                 return this.value.equals(((IsregisteredEnum) obj).value);
             }
             return false;
@@ -252,7 +252,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -285,7 +285,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsBitEnum) {
+            if (obj instanceof OsBitEnum) {
                 return this.value.equals(((OsBitEnum) obj).value);
             }
             return false;
@@ -342,7 +342,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -375,7 +375,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof OsTypeEnum) {
+            if (obj instanceof OsTypeEnum) {
                 return this.value.equals(((OsTypeEnum) obj).value);
             }
             return false;
@@ -486,7 +486,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -519,7 +519,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof PlatformEnum) {
+            if (obj instanceof PlatformEnum) {
                 return this.value.equals(((PlatformEnum) obj).value);
             }
             return false;
@@ -648,7 +648,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -681,7 +681,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof DiskFormatEnum) {
+            if (obj instanceof DiskFormatEnum) {
                 return this.value.equals(((DiskFormatEnum) obj).value);
             }
             return false;
@@ -762,7 +762,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -795,7 +795,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof MemberStatusEnum) {
+            if (obj instanceof MemberStatusEnum) {
                 return this.value.equals(((MemberStatusEnum) obj).value);
             }
             return false;
@@ -876,7 +876,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -909,7 +909,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortDirEnum) {
+            if (obj instanceof SortDirEnum) {
                 return this.value.equals(((SortDirEnum) obj).value);
             }
             return false;
@@ -990,7 +990,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1023,7 +1023,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof SortKeyEnum) {
+            if (obj instanceof SortKeyEnum) {
                 return this.value.equals(((SortKeyEnum) obj).value);
             }
             return false;
@@ -1092,7 +1092,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1125,7 +1125,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof StatusEnum) {
+            if (obj instanceof StatusEnum) {
                 return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
@@ -1188,7 +1188,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1221,7 +1221,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VirtualEnvTypeEnum) {
+            if (obj instanceof VirtualEnvTypeEnum) {
                 return this.value.equals(((VirtualEnvTypeEnum) obj).value);
             }
             return false;
@@ -1272,7 +1272,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1305,7 +1305,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VisibilityEnum) {
+            if (obj instanceof VisibilityEnum) {
                 return this.value.equals(((VisibilityEnum) obj).value);
             }
             return false;
@@ -1380,7 +1380,7 @@ public class ListImagesRequest  {
 
         @JsonValue
         public String getValue() {
-            return String.valueOf(value);
+            return value;
         }
 
         @Override
@@ -1413,7 +1413,7 @@ public class ListImagesRequest  {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof ArchitectureEnum) {
+            if (obj instanceof ArchitectureEnum) {
                 return this.value.equals(((ArchitectureEnum) obj).value);
             }
             return false;
